@@ -1,0 +1,53 @@
+{
+  "notes": "Starter source list for manual or semi-automated Clearforge daily briefs. Keep sources reputable, check original links, and avoid copying wording.",
+  "sources": [
+    {
+      "name": "OpenAI News",
+      "type": "official",
+      "url": "https://openai.com/news/",
+      "use_for": "official OpenAI announcements and product updates"
+    },
+    {
+      "name": "Google DeepMind Blog",
+      "type": "official",
+      "url": "https://deepmind.google/discover/blog/",
+      "use_for": "research and model announcements"
+    },
+    {
+      "name": "Anthropic News",
+      "type": "official",
+      "url": "https://www.anthropic.com/news",
+      "use_for": "official Anthropic product and safety updates"
+    },
+    {
+      "name": "Microsoft AI Blog",
+      "type": "official",
+      "url": "https://blogs.microsoft.com/ai/",
+      "use_for": "Microsoft AI product and business updates"
+    },
+    {
+      "name": "Meta AI Blog",
+      "type": "official",
+      "url": "https://ai.meta.com/blog/",
+      "use_for": "Meta AI research and product updates"
+    },
+    {
+      "name": "MIT Technology Review AI",
+      "type": "journalism",
+      "url": "https://www.technologyreview.com/topic/artificial-intelligence/",
+      "use_for": "analysis and wider AI context"
+    },
+    {
+      "name": "The Verge AI",
+      "type": "journalism",
+      "url": "https://www.theverge.com/ai-artificial-intelligence",
+      "use_for": "consumer-facing AI product coverage"
+    },
+    {
+      "name": "Ars Technica AI",
+      "type": "journalism",
+      "url": "https://arstechnica.com/tag/ai/",
+      "use_for": "technical and policy context"
+    }
+  ]
+}

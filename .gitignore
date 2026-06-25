@@ -1,0 +1,37 @@
+# Clearforge local files
+.env
+.env.*
+!.env.example
+
+# Secrets and tokens
+*.key
+*.pem
+*.token
+secrets.json
+credentials.json
+client_secret*.json
+token*.json
+
+# Node / Python
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Build/output
+/dist/
+/build/
+/output/
+/exports/
+/drafts/generated/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+/logs/

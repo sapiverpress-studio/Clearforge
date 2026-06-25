@@ -1,0 +1,16 @@
+{
+  "name": "clearforge-daily-ai-brief-builder",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Clearforge draft-first daily AI brief builder.",
+  "scripts": {
+    "draft": "node src/generate-daily-brief.mjs",
+    "build:site": "node src/build-site.mjs",
+    "check": "node src/check-approval.mjs"
+  },
+  "dependencies": {
+    "openai": "latest"
+  },
+  "devDependencies": {}
+}

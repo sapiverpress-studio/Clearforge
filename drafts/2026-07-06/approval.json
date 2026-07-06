@@ -1,0 +1,8 @@
+{
+  "date": "2026-07-06",
+  "article_approved": false,
+  "facebook_approved": false,
+  "pinterest_approved": false,
+  "youtube_approved": false,
+  "notes": "Set approval flags manually after human review. Publishing scripts must refuse to run unless the relevant flag is true."
+}

@@ -4,10 +4,10 @@
   "failures": [],
   "warnings": [],
   "stats": {
-    "source_count": 3,
-    "story_count": 3,
-    "article_words": 737,
-    "feature_words": 1986,
-    "unique_source_domains": 2
+    "source_count": 5,
+    "story_count": 4,
+    "article_words": 833,
+    "feature_words": 2334,
+    "unique_source_domains": 3
   }
 }

@@ -1,0 +1,26 @@
+[
+  {
+    "source_name": "OpenAI",
+    "title": "Introducing GPT‑Live",
+    "url": "https://openai.com/index/introducing-gpt-live/",
+    "published_date": "2026-07-08",
+    "confirmed_fact": "OpenAI launched GPT‑Live, a new generation of voice models for ChatGPT Voice. The company says the models use full-duplex speech, can listen and speak at the same time, and are rolling out to ChatGPT users globally.",
+    "interpretation": "OpenAI is trying to make voice interactions feel less like command-and-response and more like a natural conversation, which could make voice more useful for everyday productivity tasks."
+  },
+  {
+    "source_name": "OpenAI",
+    "title": "Separating signal from noise in coding evaluations",
+    "url": "https://openai.com/news/",
+    "published_date": "2026-07-08",
+    "confirmed_fact": "OpenAI posted a research update on July 8, 2026 saying its analysis found issues in SWE-Bench Pro, a popular coding benchmark, and that the benchmark may not be as reliable for evaluating AI models as people assume.",
+    "interpretation": "This is a reminder that model comparisons can look more precise than they really are, especially when the test itself has weaknesses or noise."
+  },
+  {
+    "source_name": "Microsoft",
+    "title": "New cohort of AI Economy Institute Fellows to examine frontier AI firms and the transformation of work",
+    "url": "https://blogs.microsoft.com/on-the-issues/2026/07/07/new-cohort-of-ai-economy-institute-fellows-to-examine-frontier-ai-firms-and-the-transformation-of-work/",
+    "published_date": "2026-07-07",
+    "confirmed_fact": "Microsoft said its AI Economy Institute is launching a third cohort of researchers focused on how frontier AI firms are reshaping work, organizations, education, and the broader economy.",
+    "interpretation": "Microsoft is signaling that the most useful AI conversation is shifting from raw capability to measurable effects on jobs, workflows, and productivity."
+  }
+]

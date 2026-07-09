@@ -1,40 +1,40 @@
 {
   "version": 1,
   "date": "2026-07-09",
-  "headline": "OpenAI’s voice push and benchmark warning show where AI is actually moving next",
-  "dek": "Today’s useful AI story is not “bigger models.” It’s better voice interaction, a warning about shaky coding benchmarks, and more serious research into how AI changes work.",
+  "headline": "AI’s real momentum this week: cheaper enterprise tooling, model benchmarks, security risks, and chip independence",
+  "dek": "A practical look at four fresh AI developments from July 8, 2026: enterprise teams are funding their own agent stacks, Google is updating a coding benchmark, researchers showed a new botnet risk in agentic tools, and DeepSeek is reportedly pursuing in-house chips. The common thread is less hype, more control, cost, and safety.",
   "hook": "Three AI updates that actually matter today",
   "stories": [
     {
       "file": "media/2026-07-09/story-1.png",
-      "title": "OpenAI ships GPT‑Live for ChatGPT Voice",
-      "source_name": "OpenAI",
-      "source_url": "https://openai.com/index/introducing-gpt-live/",
-      "summary": "OpenAI says GPT‑Live is a new voice model family built for more natural conversation. The company says it can listen and speak at the same time, can keep the flow of conversation while calling on stronger models in the background, and is rolling out globally to ChatGPT users. ([openai.com](https://openai.com/index/introducing-gpt-live/))",
-      "why_it_matters": "For creators and small businesses, voice input is only valuable if it feels quick and usable. This update points toward voice as a practical interface for drafting, brainstorming, and hands-free work. ([openai.com](https://openai.com/index/introducing-gpt-live/))",
-      "practical_angle": "If voice becomes smoother, it may be easier to capture ideas, outline content, or ask follow-up questions without stopping your workflow."
+      "title": "Prime Intellect raises $130M to help enterprises build their own AI agents",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/07/08/prime-intellect-raises-130m-series-a-to-help-enterprises-build-their-own-ai-agents/",
+      "summary": "Prime Intellect announced a large Series A round and said it offers compute, reinforcement-learning tooling, and evaluation tools for companies that want to build and refine their own agent systems.",
+      "why_it_matters": "This is a sign that some businesses want more than a chatbot subscription; they want infrastructure they can control, tune, and own.",
+      "practical_angle": "For creators and small teams, the lesson is to think in workflows, not models: what repeatable task could be turned into a supervised agent stack?"
     },
     {
       "file": "media/2026-07-09/story-2.png",
-      "title": "OpenAI warns that coding benchmarks can be misleading",
-      "source_name": "OpenAI",
-      "source_url": "https://openai.com/news/",
-      "summary": "OpenAI published a July 8 research note saying its analysis found problems in SWE-Bench Pro, a benchmark used to measure coding performance, and that benchmark results can give a false sense of precision. ([openai.com](https://openai.com/research/index/?tags=o1&utm_source=openai))",
-      "why_it_matters": "If you use model scores to choose tools, this is a reminder to test them on your own tasks instead of trusting leaderboard rankings alone. ([openai.com](https://openai.com/research/index/?tags=o1&utm_source=openai))",
-      "practical_angle": "Creators and small teams should care less about abstract benchmark wins and more about whether a model can handle their actual workflow, documents, and edge cases."
+      "title": "Google updates Android Bench with new LLMs",
+      "source_name": "Ars Technica",
+      "source_url": "https://arstechnica.com/google/2026/07/google-revamps-android-ai-dev-benchmark-adds-fable-5-and-other-agents/",
+      "summary": "Google refreshed its Android development benchmark with eight new models and added cost and efficiency to the evaluation, while Gemini 3.1 Pro still ranked behind some rivals.",
+      "why_it_matters": "Benchmarks matter more when they reflect real tradeoffs like runtime and token cost, not only test accuracy.",
+      "practical_angle": "If you use AI for coding, compare models on the actual job you need done, then include cost and latency in your decision."
     },
     {
       "file": "media/2026-07-09/story-3.png",
-      "title": "Microsoft doubles down on research into AI and work",
-      "source_name": "Microsoft",
-      "source_url": "https://blogs.microsoft.com/on-the-issues/2026/07/07/new-cohort-of-ai-economy-institute-fellows-to-examine-frontier-ai-firms-and-the-transformation-of-work/",
-      "summary": "Microsoft said the AI Economy Institute is launching a third cohort of researchers to study how frontier firms are changing work, education, productivity, and opportunity. The institute says the evidence base is still too thin. ([blogs.microsoft.com](https://blogs.microsoft.com/on-the-issues/2026/07/07/new-cohort-of-ai-economy-institute-fellows-to-examine-frontier-ai-firms-and-the-transformation-of-work/))",
-      "why_it_matters": "This matters because a lot of AI advice is based on anecdotes. Microsoft is pointing to the need for better evidence before making big claims about productivity or job change. ([blogs.microsoft.com](https://blogs.microsoft.com/on-the-issues/2026/07/07/new-cohort-of-ai-economy-institute-fellows-to-examine-frontier-ai-firms-and-the-transformation-of-work/))",
-      "practical_angle": "For freelancers and small businesses, the useful question is not whether AI is transformative in theory, but which tasks it reliably improves today."
+      "title": "Researchers warn about HalluSquatting and agentic botnets",
+      "source_name": "Ars Technica",
+      "source_url": "https://arstechnica.com/security/2026/07/hackers-can-use-9-of-the-most-popular-ai-tools-to-assemble-massive-botnets/",
+      "summary": "Ars reported on a new attack pattern in which AI coding assistants can be tricked into fetching malicious resources that appear to match hallucinated package names, potentially enabling large-scale compromise.",
+      "why_it_matters": "This moves the risk discussion from isolated prompt injections to system-level abuse of tools that can browse, fetch, and execute code.",
+      "practical_angle": "Anyone using agentic coding tools should reduce privileges, restrict package sources, and require human review before execution."
     }
   ],
   "narration": "media/2026-07-09/narration.mp3",
-  "narration_text": "Three useful AI updates today: OpenAI launched GPT‑Live for more natural ChatGPT Voice, OpenAI warned that a coding benchmark can be misleading, and Microsoft launched a new research cohort focused on how AI changes work. The takeaway? Stop chasing hype. Test tools on your actual tasks.",
-  "practical_takeaway": "Pick one recurring task this week and test an AI workflow on it for 15 minutes: voice note capture, first-draft writing, or meeting-summary cleanup. Measure whether it saves time, not whether it sounds impressive.",
-  "what_to_test_next": "Run a simple 3-day experiment: use one voice-based AI flow to capture ideas or draft notes, then compare the result against your normal process for speed, edit time, and usefulness."
+  "narration_text": "Today’s AI story is simple: the industry is moving from chatbots to controlled systems. Prime Intellect raised $130 million for enterprise agent infrastructure. Google updated Android Bench and added cost metrics. Security researchers warned that some agentic tools can be tricked into fetching malicious code. And DeepSeek is reportedly chasing its own chips. The practical lesson: measure cost, add guardrails, and keep humans in the loop.",
+  "practical_takeaway": "Pick one repetitive AI task this week and test it as a controlled workflow with limits, review, and a simple cost/time scorecard.",
+  "what_to_test_next": "Set up one agentic workflow for a single task, but only allow it to use approved sources, run in a sandbox, and produce a draft that a human must approve before use."
 }

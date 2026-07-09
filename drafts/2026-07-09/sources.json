@@ -1,26 +1,42 @@
 [
   {
-    "source_name": "OpenAI",
-    "title": "Introducing GPT‑Live",
-    "url": "https://openai.com/index/introducing-gpt-live/",
+    "source_name": "TechCrunch",
+    "title": "Prime Intellect raises $130M Series A to help enterprises build their own AI agents",
+    "url": "https://techcrunch.com/2026/07/08/prime-intellect-raises-130m-series-a-to-help-enterprises-build-their-own-ai-agents/",
     "published_date": "2026-07-08",
-    "confirmed_fact": "OpenAI launched GPT‑Live, a new generation of voice models for ChatGPT Voice. The company says the models use full-duplex speech, can listen and speak at the same time, and are rolling out to ChatGPT users globally.",
-    "interpretation": "OpenAI is trying to make voice interactions feel less like command-and-response and more like a natural conversation, which could make voice more useful for everyday productivity tasks."
+    "confirmed_fact": "Prime Intellect said it raised a $130 million Series A at a $1 billion valuation and sells infrastructure for companies building AI agents.",
+    "interpretation": "This signals that more buyers want agent-building infrastructure they can control instead of relying only on frontier model vendors."
   },
   {
-    "source_name": "OpenAI",
-    "title": "Separating signal from noise in coding evaluations",
-    "url": "https://openai.com/news/",
+    "source_name": "Ars Technica",
+    "title": "Google updates Android Bench with new LLMs, but Gemini still lags behind",
+    "url": "https://arstechnica.com/google/2026/07/google-revamps-android-ai-dev-benchmark-adds-fable-5-and-other-agents/",
     "published_date": "2026-07-08",
-    "confirmed_fact": "OpenAI posted a research update on July 8, 2026 saying its analysis found issues in SWE-Bench Pro, a popular coding benchmark, and that the benchmark may not be as reliable for evaluating AI models as people assume.",
-    "interpretation": "This is a reminder that model comparisons can look more precise than they really are, especially when the test itself has weaknesses or noise."
+    "confirmed_fact": "Google expanded Android Bench with eight new models, added cost/efficiency metrics, and Gemini 3.1 Pro ranked fifth in the updated leaderboard.",
+    "interpretation": "Benchmarks are becoming more useful when they include cost and workflow realism, not just raw accuracy."
   },
   {
-    "source_name": "Microsoft",
-    "title": "New cohort of AI Economy Institute Fellows to examine frontier AI firms and the transformation of work",
-    "url": "https://blogs.microsoft.com/on-the-issues/2026/07/07/new-cohort-of-ai-economy-institute-fellows-to-examine-frontier-ai-firms-and-the-transformation-of-work/",
+    "source_name": "Ars Technica",
+    "title": "Hackers can use 9 of the most popular AI tools to assemble massive botnets",
+    "url": "https://arstechnica.com/security/2026/07/hackers-can-use-9-of-the-most-popular-ai-tools-to-assemble-massive-botnets/",
+    "published_date": "2026-07-08",
+    "confirmed_fact": "Researchers described a pull-based prompt-injection attack called HalluSquatting that can affect coding assistants and agents including Cursor, Gemini CLI, Windsurf, and GitHub Copilot.",
+    "interpretation": "Agentic tools that can fetch and run code create a larger security surface than chat-only systems."
+  },
+  {
+    "source_name": "Ars Technica",
+    "title": "Facing US export controls, China’s DeepSeek plans to make its own chips",
+    "url": "https://arstechnica.com/ai/2026/07/facing-us-export-controls-chinas-deepseek-plans-to-make-its-own-chips/",
     "published_date": "2026-07-07",
-    "confirmed_fact": "Microsoft said its AI Economy Institute is launching a third cohort of researchers focused on how frontier AI firms are reshaping work, organizations, education, and the broader economy.",
-    "interpretation": "Microsoft is signaling that the most useful AI conversation is shifting from raw capability to measurable effects on jobs, workflows, and productivity."
+    "confirmed_fact": "The report says DeepSeek is planning to enter chip development in response to US export controls and tighter access to Nvidia hardware.",
+    "interpretation": "AI labs are increasingly treating compute supply as a strategic dependency, not a commodity purchase."
+  },
+  {
+    "source_name": "Anthropic",
+    "title": "Anthropic’s Responsible Scaling Policy",
+    "url": "https://www.anthropic.com/responsible-scaling-policy?pubDate=20260225",
+    "published_date": "2026-07-08",
+    "confirmed_fact": "Anthropic published a July 8, 2026 update to its Responsible Scaling Policy, changing thresholds, internal review requirements, and redaction rules for risk reports.",
+    "interpretation": "Safety policies are being updated to reflect faster-moving model capabilities and more formal review processes."
   }
 ]

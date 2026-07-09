@@ -1,6 +1,7 @@
 # Claims To Verify — 2026-07-09
 
-- [ ] Whether GPT‑Live is available in your region and on your plan at launch.
-- [ ] Whether GPT‑Live supports all ChatGPT surfaces or only specific apps and account tiers.
-- [ ] Exactly which flaws OpenAI identified in SWE-Bench Pro and whether they affect your preferred model comparison.
-- [ ] The full list of Microsoft AI Economy Institute fellows and research topics if you plan to reference them publicly.
+- [ ] Whether Prime Intellect’s customers see sustained gains outside of pilot projects.
+- [ ] Whether Android Bench reflects your own coding workload well enough to guide tool selection.
+- [ ] Which agentic tools in your stack are vulnerable to pull-based prompt injection or unsafe package fetching.
+- [ ] Whether DeepSeek’s chip plan becomes a real manufacturing or design partnership.
+- [ ] How Anthropic’s July 8 policy changes affect external review and risk-report publication in practice.

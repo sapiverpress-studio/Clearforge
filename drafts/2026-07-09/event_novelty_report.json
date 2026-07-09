@@ -1,0 +1,94 @@
+{
+  "date": "2026-07-09",
+  "passed": true,
+  "prior_run_count": 1,
+  "current_story_count": 4,
+  "prior_story_count": 3,
+  "duplicate_events": [],
+  "comparisons": [
+    {
+      "current_story_index": 0,
+      "prior_story_title": "OpenAI ships GPT‑Live for ChatGPT Voice",
+      "same_underlying_event": false,
+      "confidence": 0.09,
+      "reason": "Different announcement and company. Prime Intellect’s funding round for enterprise AI-agent infrastructure is unrelated to OpenAI’s voice model launch."
+    },
+    {
+      "current_story_index": 0,
+      "prior_story_title": "OpenAI warns that coding benchmarks can be misleading",
+      "same_underlying_event": false,
+      "confidence": 0.14,
+      "reason": "The only overlap is a broad AI infrastructure context. One story is a startup fundraising event; the other is an OpenAI research note about benchmarks."
+    },
+    {
+      "current_story_index": 0,
+      "prior_story_title": "Microsoft doubles down on research into AI and work",
+      "same_underlying_event": false,
+      "confidence": 0.08,
+      "reason": "Completely different event type and organization. Microsoft’s research-fellows update is not the same underlying event as Prime Intellect’s Series A."
+    },
+    {
+      "current_story_index": 1,
+      "prior_story_title": "OpenAI ships GPT‑Live for ChatGPT Voice",
+      "same_underlying_event": false,
+      "confidence": 0.12,
+      "reason": "Both touch AI model/product updates, but one is an OpenAI voice-model launch and the other is Google updating Android Bench with new models."
+    },
+    {
+      "current_story_index": 1,
+      "prior_story_title": "OpenAI warns that coding benchmarks can be misleading",
+      "same_underlying_event": false,
+      "confidence": 0.21,
+      "reason": "Both involve evaluation/benchmarks, but they are separate events from different companies: Google’s benchmark refresh versus OpenAI’s critique of SWE-Bench Pro."
+    },
+    {
+      "current_story_index": 1,
+      "prior_story_title": "Microsoft doubles down on research into AI and work",
+      "same_underlying_event": false,
+      "confidence": 0.05,
+      "reason": "No meaningful event overlap. Microsoft’s institute announcement is unrelated to Google’s benchmark update."
+    },
+    {
+      "current_story_index": 2,
+      "prior_story_title": "OpenAI ships GPT‑Live for ChatGPT Voice",
+      "same_underlying_event": false,
+      "confidence": 0.06,
+      "reason": "Different subject matter: a security risk disclosure versus a voice-model launch."
+    },
+    {
+      "current_story_index": 2,
+      "prior_story_title": "OpenAI warns that coding benchmarks can be misleading",
+      "same_underlying_event": false,
+      "confidence": 0.17,
+      "reason": "Both relate to AI coding tools, but one is about benchmark quality and the other is a newly reported attack pattern exploiting agentic tools."
+    },
+    {
+      "current_story_index": 2,
+      "prior_story_title": "Microsoft doubles down on research into AI and work",
+      "same_underlying_event": false,
+      "confidence": 0.04,
+      "reason": "No overlap in underlying event; Microsoft research funding and a security report are distinct."
+    },
+    {
+      "current_story_index": 3,
+      "prior_story_title": "OpenAI ships GPT‑Live for ChatGPT Voice",
+      "same_underlying_event": false,
+      "confidence": 0.05,
+      "reason": "Unrelated events: OpenAI’s voice release versus reporting that DeepSeek may develop its own chips."
+    },
+    {
+      "current_story_index": 3,
+      "prior_story_title": "OpenAI warns that coding benchmarks can be misleading",
+      "same_underlying_event": false,
+      "confidence": 0.08,
+      "reason": "No shared event. This is about supply-chain/compute strategy at DeepSeek, not benchmark methodology."
+    },
+    {
+      "current_story_index": 3,
+      "prior_story_title": "Microsoft doubles down on research into AI and work",
+      "same_underlying_event": false,
+      "confidence": 0.05,
+      "reason": "Different company, different event, and different topic. Microsoft’s work-research cohort is unrelated to DeepSeek’s chip plans."
+    }
+  ]
+}

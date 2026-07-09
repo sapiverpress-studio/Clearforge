@@ -153,6 +153,28 @@ jobs:
           commit_message: "Run Clearforge daily autopilot"
           file_pattern: "drafts/** media/** bridge/** public/**"
 
+      - name: Trigger full video render and live social distribution
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        env:
+          CROSS_REPO_GITHUB_TOKEN: ${{ secrets.CROSS_REPO_GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${CROSS_REPO_GITHUB_TOKEN:-}" ]; then
+            echo "::error::Missing CROSS_REPO_GITHUB_TOKEN repository secret."
+            exit 1
+          fi
+
+          curl --fail-with-body \
+            --request POST \
+            --header "Accept: application/vnd.github+json" \
+            --header "Authorization: Bearer ${CROSS_REPO_GITHUB_TOKEN}" \
+            --header "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/sapiverpress-studio/SapiverPress_comic_public/dispatches" \
+            --data "{\"event_type\":\"clearforge_publish\",\"client_payload\":{\"date\":\"${CLEARFORGE_DATE}\"}}"
+
+          echo "Triggered full Clearforge video render and live social distribution for ${CLEARFORGE_DATE}."
+
       - name: Open final failure issue after retry
         if: failure() && steps.gate.outputs.retry == 'true'
         env:

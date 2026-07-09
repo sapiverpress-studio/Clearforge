@@ -5,21 +5,29 @@ on:
   schedule:
     - cron: "30 3 * * *"
     - cron: "30 4 * * *"
+    - cron: "15 4 * * *"
+    - cron: "15 5 * * *"
 
 permissions:
   contents: write
+  issues: write
+
+concurrency:
+  group: clearforge-daily-autopilot
+  cancel-in-progress: false
 
 jobs:
   autopilot:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Decide whether this is the 04:30 UK run
+      - name: Decide whether this is a UK run window
         id: gate
         shell: bash
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "retry=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
@@ -27,44 +35,61 @@ jobs:
           echo "Europe/London local time: ${LOCAL_TIME}"
           if [ "${LOCAL_TIME}" = "04:30" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "retry=false" >> "$GITHUB_OUTPUT"
+          elif [ "${LOCAL_TIME}" = "05:15" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "retry=true" >> "$GITHUB_OUTPUT"
           else
             echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "retry=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Checkout
         if: steps.gate.outputs.run == 'true'
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        if: steps.gate.outputs.run == 'true'
-        uses: actions/setup-node@v4
-        with:
-          node-version: "24"
-
-      - name: Install dependencies
-        if: steps.gate.outputs.run == 'true'
-        run: npm install
-
       - name: Set London date
         if: steps.gate.outputs.run == 'true'
         shell: bash
         run: echo "CLEARFORGE_DATE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
 
+      - name: Skip retry when today's bundle already exists
+        if: steps.gate.outputs.run == 'true' && steps.gate.outputs.retry == 'true'
+        id: retrycheck
+        shell: bash
+        run: |
+          if [ -f "bridge/clearforge/${CLEARFORGE_DATE}/manifest.json" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "Today's bundle already exists; retry not needed."
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Setup Node
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Install dependencies
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        run: npm install
+
       - name: Research current AI news and generate daily pack
-        if: steps.gate.outputs.run == 'true'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
         run: npm run daily
 
       - name: Validate and auto approve only when checks pass
-        if: steps.gate.outputs.run == 'true'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
         run: npm run validate:auto
 
       - name: Generate story-specific AI visuals and narration
-        if: steps.gate.outputs.run == 'true'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -75,19 +100,34 @@ jobs:
         run: npm run media:ai
 
       - name: Build approved static site
-        if: steps.gate.outputs.run == 'true'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         run: npm run build:site
 
       - name: Export approved distribution bundle
-        if: steps.gate.outputs.run == 'true'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           BLOG_BASE_URL: ${{ vars.BLOG_BASE_URL }}
         run: npm run export:approved
 
       - name: Commit daily article media bridge and site
-        if: steps.gate.outputs.run == 'true'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Run Clearforge daily autopilot"
           file_pattern: "drafts/** media/** bridge/** public/**"
+
+      - name: Open final failure issue after retry
+        if: failure() && steps.gate.outputs.retry == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          TITLE="Clearforge autopilot failed ${CLEARFORGE_DATE}"
+          BODY="The automatic retry also failed. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          EXISTING="$(gh issue list --state open --search \"${TITLE} in:title\" --json number --jq '.[0].number // empty')"
+          if [ -z "${EXISTING}" ]; then
+            gh issue create --title "${TITLE}" --body "${BODY}"
+          else
+            echo "Failure issue already exists: #${EXISTING}"
+          fi

@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "date": "2026-07-09",
+  "headline": "4 AI updates from the last 36 hours that matter for everyday work",
+  "dek": "OpenAI, Meta, Anthropic, and Microsoft all pushed out recent updates that point in the same direction: faster voice, more agentic tools, stronger safety framing, and more pressure on teams to adapt their workflows.",
+  "hook": "Three AI updates that actually matter today",
+  "stories": [
+    {
+      "file": "media/2026-07-09/story-1.png",
+      "title": "OpenAI: GPT-Live makes voice more continuous",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/introducing-gpt-live/",
+      "summary": "OpenAI introduced GPT-Live, a new generation of voice models for ChatGPT Voice. The key idea is full-duplex conversation: the system can listen and speak at the same time, while handing deeper tasks to a frontier model behind the scenes.",
+      "why_it_matters": "For creators, freelancers, and small teams, this is less about novelty and more about speed. A voice assistant that can stay in the flow may be useful for brainstorming, drafting, translations, and hands-free work.",
+      "practical_angle": "Try voice for short planning sessions, rough outlines, and quick information lookup rather than polished final output."
+    },
+    {
+      "file": "media/2026-07-09/story-2.png",
+      "title": "Meta: Muse Image and Muse Video bring generation into social surfaces",
+      "source_name": "Meta AI",
+      "source_url": "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/",
+      "summary": "Meta launched Muse Image and previewed Muse Video. Muse Image is already available in Meta AI, meta.ai, Instagram Stories in the US, and limited WhatsApp markets, with provenance features built in.",
+      "why_it_matters": "If Meta keeps bundling generation into the apps people already use, AI creation may become more casual and more frequent, especially for social content.",
+      "practical_angle": "This could matter most for creators who make posts, thumbnails, promo visuals, and short-form content inside Meta’s ecosystem."
+    },
+    {
+      "file": "media/2026-07-09/story-3.png",
+      "title": "Anthropic: safety roadmap shows where frontier AI vendors are focusing",
+      "source_name": "Anthropic",
+      "source_url": "https://www.anthropic.com/responsible-scaling-policy/roadmap",
+      "summary": "Anthropic published a Frontier Safety Roadmap centered on security, safeguards, alignment, and policy. It also said the roadmap may change as the company learns more.",
+      "why_it_matters": "This shows that safety is becoming a visible product and governance priority, not just an internal research topic.",
+      "practical_angle": "For buyers, this is a reminder to ask vendors how they handle jailbreaks, prompt injection, misuse, and model governance before adopting tools for business use."
+    }
+  ],
+  "narration": "media/2026-07-09/narration.mp3",
+  "narration_text": "Three AI updates matter right now: OpenAI made voice more natural with GPT-Live, Meta launched Muse Image and previewed Muse Video, and Anthropic published a frontier safety roadmap. The takeaway? AI is getting more useful inside everyday workflows, but the winners will be people who test it on one real task at a time.",
+  "practical_takeaway": "Pick one repetitive task this week — for example, drafting a rough outline, creating a promo image, or summarizing a meeting — and test whether a new AI tool can save 15 minutes without creating extra cleanup work.",
+  "what_to_test_next": "Run a one-hour experiment: use a voice AI for brainstorming only, then compare its output with a typed workflow. Measure time saved, accuracy, and how much editing was needed afterward."
+}

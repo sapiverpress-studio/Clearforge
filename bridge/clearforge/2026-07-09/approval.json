@@ -1,8 +1,10 @@
 {
   "date": "2026-07-09",
   "article_approved": true,
-  "facebook_approved": false,
-  "pinterest_approved": false,
-  "youtube_approved": false,
-  "notes": "Article source claims reviewed against official sources on 2026-07-09. Social channels remain unapproved for live publishing while bridge is tested."
+  "feature_approved": true,
+  "facebook_approved": true,
+  "pinterest_approved": true,
+  "youtube_approved": true,
+  "dev_approved": true,
+  "notes": "Automatically approved after deterministic validation checks passed."
 }

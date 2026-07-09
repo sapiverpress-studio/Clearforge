@@ -1,42 +1,26 @@
 [
   {
     "source_name": "OpenAI",
-    "title": "Introducing GPT-Live",
+    "title": "Introducing GPT‑Live",
     "url": "https://openai.com/index/introducing-gpt-live/",
     "published_date": "2026-07-08",
-    "confirmed_fact": "OpenAI launched GPT-Live, a new voice model for ChatGPT Voice that uses full-duplex interaction and can handle continuous conversation while delegating deeper work to GPT-5.5 in the background.",
-    "interpretation": "The practical shift is toward voice tools that feel less like Q&A and more like an assistant you can keep talking to while it works in the background."
+    "confirmed_fact": "OpenAI launched GPT‑Live, a new generation of voice models for ChatGPT Voice. The company says the models use full-duplex speech, can listen and speak at the same time, and are rolling out to ChatGPT users globally.",
+    "interpretation": "OpenAI is trying to make voice interactions feel less like command-and-response and more like a natural conversation, which could make voice more useful for everyday productivity tasks."
   },
   {
-    "source_name": "Meta AI",
-    "title": "Introducing Muse Image and Muse Video",
-    "url": "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/",
-    "published_date": "2026-07-07",
-    "confirmed_fact": "Meta launched Muse Image and previewed Muse Video; Muse Image is available in Meta AI, on meta.ai, in Instagram Stories in the US, and in WhatsApp in limited countries.",
-    "interpretation": "Meta is trying to make image and video generation more useful inside everyday social apps, not just as standalone creative tools."
-  },
-  {
-    "source_name": "Anthropic",
-    "title": "Anthropic's Frontier Safety Roadmap",
-    "url": "https://www.anthropic.com/responsible-scaling-policy/roadmap",
+    "source_name": "OpenAI",
+    "title": "Separating signal from noise in coding evaluations",
+    "url": "https://openai.com/news/",
     "published_date": "2026-07-08",
-    "confirmed_fact": "Anthropic published a Frontier Safety Roadmap focused on security, safeguards, alignment, and policy, and said the roadmap is meant to be updated over time.",
-    "interpretation": "This is a signal that frontier model companies are treating safety work as an active product roadmap, not just a compliance appendix."
+    "confirmed_fact": "OpenAI posted a research update on July 8, 2026 saying its analysis found issues in SWE-Bench Pro, a popular coding benchmark, and that the benchmark may not be as reliable for evaluating AI models as people assume.",
+    "interpretation": "This is a reminder that model comparisons can look more precise than they really are, especially when the test itself has weaknesses or noise."
   },
   {
     "source_name": "Microsoft",
-    "title": "The latest in our company transformation",
-    "url": "https://blogs.microsoft.com/blog/2026/07/06/the-latest-in-our-company-transformation/",
-    "published_date": "2026-07-06",
-    "confirmed_fact": "Microsoft said it is eliminating around 4,800 roles and stated that the roles are not being replaced by AI, while also saying AI is changing how work gets done and that employees need to keep building skills.",
-    "interpretation": "Even when companies deny direct AI replacement, AI is still being used to justify workflow changes, reskilling, and organizational reshaping."
-  },
-  {
-    "source_name": "Anthropic",
-    "title": "Newsroom update: The Making of Claude Code",
-    "url": "https://www.anthropic.com/features/making-of-claude-code",
-    "published_date": "2026-07-06",
-    "confirmed_fact": "Anthropic published a feature about how Claude Code evolved from an internal CLI into a coding agent.",
-    "interpretation": "The broader trend is clear: code assistants are becoming more productized, more operational, and more central to how AI vendors explain value."
+    "title": "New cohort of AI Economy Institute Fellows to examine frontier AI firms and the transformation of work",
+    "url": "https://blogs.microsoft.com/on-the-issues/2026/07/07/new-cohort-of-ai-economy-institute-fellows-to-examine-frontier-ai-firms-and-the-transformation-of-work/",
+    "published_date": "2026-07-07",
+    "confirmed_fact": "Microsoft said its AI Economy Institute is launching a third cohort of researchers focused on how frontier AI firms are reshaping work, organizations, education, and the broader economy.",
+    "interpretation": "Microsoft is signaling that the most useful AI conversation is shifting from raw capability to measurable effects on jobs, workflows, and productivity."
   }
 ]

@@ -1,40 +1,40 @@
 {
   "version": 1,
   "date": "2026-07-09",
-  "headline": "4 AI updates from the last 36 hours that matter for everyday work",
-  "dek": "OpenAI, Meta, Anthropic, and Microsoft all pushed out recent updates that point in the same direction: faster voice, more agentic tools, stronger safety framing, and more pressure on teams to adapt their workflows.",
+  "headline": "OpenAI’s voice push and benchmark warning show where AI is actually moving next",
+  "dek": "Today’s useful AI story is not “bigger models.” It’s better voice interaction, a warning about shaky coding benchmarks, and more serious research into how AI changes work.",
   "hook": "Three AI updates that actually matter today",
   "stories": [
     {
       "file": "media/2026-07-09/story-1.png",
-      "title": "OpenAI: GPT-Live makes voice more continuous",
+      "title": "OpenAI ships GPT‑Live for ChatGPT Voice",
       "source_name": "OpenAI",
       "source_url": "https://openai.com/index/introducing-gpt-live/",
-      "summary": "OpenAI introduced GPT-Live, a new generation of voice models for ChatGPT Voice. The key idea is full-duplex conversation: the system can listen and speak at the same time, while handing deeper tasks to a frontier model behind the scenes.",
-      "why_it_matters": "For creators, freelancers, and small teams, this is less about novelty and more about speed. A voice assistant that can stay in the flow may be useful for brainstorming, drafting, translations, and hands-free work.",
-      "practical_angle": "Try voice for short planning sessions, rough outlines, and quick information lookup rather than polished final output."
+      "summary": "OpenAI says GPT‑Live is a new voice model family built for more natural conversation. The company says it can listen and speak at the same time, can keep the flow of conversation while calling on stronger models in the background, and is rolling out globally to ChatGPT users. ([openai.com](https://openai.com/index/introducing-gpt-live/))",
+      "why_it_matters": "For creators and small businesses, voice input is only valuable if it feels quick and usable. This update points toward voice as a practical interface for drafting, brainstorming, and hands-free work. ([openai.com](https://openai.com/index/introducing-gpt-live/))",
+      "practical_angle": "If voice becomes smoother, it may be easier to capture ideas, outline content, or ask follow-up questions without stopping your workflow."
     },
     {
       "file": "media/2026-07-09/story-2.png",
-      "title": "Meta: Muse Image and Muse Video bring generation into social surfaces",
-      "source_name": "Meta AI",
-      "source_url": "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/",
-      "summary": "Meta launched Muse Image and previewed Muse Video. Muse Image is already available in Meta AI, meta.ai, Instagram Stories in the US, and limited WhatsApp markets, with provenance features built in.",
-      "why_it_matters": "If Meta keeps bundling generation into the apps people already use, AI creation may become more casual and more frequent, especially for social content.",
-      "practical_angle": "This could matter most for creators who make posts, thumbnails, promo visuals, and short-form content inside Meta’s ecosystem."
+      "title": "OpenAI warns that coding benchmarks can be misleading",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/news/",
+      "summary": "OpenAI published a July 8 research note saying its analysis found problems in SWE-Bench Pro, a benchmark used to measure coding performance, and that benchmark results can give a false sense of precision. ([openai.com](https://openai.com/research/index/?tags=o1&utm_source=openai))",
+      "why_it_matters": "If you use model scores to choose tools, this is a reminder to test them on your own tasks instead of trusting leaderboard rankings alone. ([openai.com](https://openai.com/research/index/?tags=o1&utm_source=openai))",
+      "practical_angle": "Creators and small teams should care less about abstract benchmark wins and more about whether a model can handle their actual workflow, documents, and edge cases."
     },
     {
       "file": "media/2026-07-09/story-3.png",
-      "title": "Anthropic: safety roadmap shows where frontier AI vendors are focusing",
-      "source_name": "Anthropic",
-      "source_url": "https://www.anthropic.com/responsible-scaling-policy/roadmap",
-      "summary": "Anthropic published a Frontier Safety Roadmap centered on security, safeguards, alignment, and policy. It also said the roadmap may change as the company learns more.",
-      "why_it_matters": "This shows that safety is becoming a visible product and governance priority, not just an internal research topic.",
-      "practical_angle": "For buyers, this is a reminder to ask vendors how they handle jailbreaks, prompt injection, misuse, and model governance before adopting tools for business use."
+      "title": "Microsoft doubles down on research into AI and work",
+      "source_name": "Microsoft",
+      "source_url": "https://blogs.microsoft.com/on-the-issues/2026/07/07/new-cohort-of-ai-economy-institute-fellows-to-examine-frontier-ai-firms-and-the-transformation-of-work/",
+      "summary": "Microsoft said the AI Economy Institute is launching a third cohort of researchers to study how frontier firms are changing work, education, productivity, and opportunity. The institute says the evidence base is still too thin. ([blogs.microsoft.com](https://blogs.microsoft.com/on-the-issues/2026/07/07/new-cohort-of-ai-economy-institute-fellows-to-examine-frontier-ai-firms-and-the-transformation-of-work/))",
+      "why_it_matters": "This matters because a lot of AI advice is based on anecdotes. Microsoft is pointing to the need for better evidence before making big claims about productivity or job change. ([blogs.microsoft.com](https://blogs.microsoft.com/on-the-issues/2026/07/07/new-cohort-of-ai-economy-institute-fellows-to-examine-frontier-ai-firms-and-the-transformation-of-work/))",
+      "practical_angle": "For freelancers and small businesses, the useful question is not whether AI is transformative in theory, but which tasks it reliably improves today."
     }
   ],
   "narration": "media/2026-07-09/narration.mp3",
-  "narration_text": "Three AI updates matter right now: OpenAI made voice more natural with GPT-Live, Meta launched Muse Image and previewed Muse Video, and Anthropic published a frontier safety roadmap. The takeaway? AI is getting more useful inside everyday workflows, but the winners will be people who test it on one real task at a time.",
-  "practical_takeaway": "Pick one repetitive task this week — for example, drafting a rough outline, creating a promo image, or summarizing a meeting — and test whether a new AI tool can save 15 minutes without creating extra cleanup work.",
-  "what_to_test_next": "Run a one-hour experiment: use a voice AI for brainstorming only, then compare its output with a typed workflow. Measure time saved, accuracy, and how much editing was needed afterward."
+  "narration_text": "Three useful AI updates today: OpenAI launched GPT‑Live for more natural ChatGPT Voice, OpenAI warned that a coding benchmark can be misleading, and Microsoft launched a new research cohort focused on how AI changes work. The takeaway? Stop chasing hype. Test tools on your actual tasks.",
+  "practical_takeaway": "Pick one recurring task this week and test an AI workflow on it for 15 minutes: voice note capture, first-draft writing, or meeting-summary cleanup. Measure whether it saves time, not whether it sounds impressive.",
+  "what_to_test_next": "Run a simple 3-day experiment: use one voice-based AI flow to capture ideas or draft notes, then compare the result against your normal process for speed, edit time, and usefulness."
 }

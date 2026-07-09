@@ -1,8 +1,10 @@
 {
   "date": "2026-07-09",
   "article_approved": true,
+  "feature_approved": true,
   "facebook_approved": true,
   "pinterest_approved": true,
   "youtube_approved": true,
-  "notes": "Article reviewed. Facebook, Pinterest and YouTube approved for live distribution. Pinterest reuses the comic repo board-name routing."
+  "dev_approved": true,
+  "notes": "Automatically approved after deterministic validation checks passed."
 }

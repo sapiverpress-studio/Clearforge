@@ -1,0 +1,37 @@
+name: Generate Clearforge AI Media
+
+on:
+  workflow_dispatch:
+    inputs:
+      date_override:
+        description: "Draft date YYYY-MM-DD"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  media:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: npm install
+      - name: Generate AI visuals and narration
+        env:
+          CLEARFORGE_DATE: ${{ github.event.inputs.date_override }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: npm run media:ai
+      - name: Export reviewed bundle
+        env:
+          CLEARFORGE_DATE: ${{ github.event.inputs.date_override }}
+          BLOG_BASE_URL: ${{ vars.BLOG_BASE_URL }}
+        run: npm run export:approved
+      - name: Commit generated media
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Generate Clearforge AI media"
+          file_pattern: "media/** bridge/**"

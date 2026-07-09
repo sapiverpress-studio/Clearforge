@@ -20,21 +20,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm install
 
-      - name: Generate draft
+      - name: Research AI news and generate draft pack
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-4.1-mini' }}
-        run: npm run draft
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
+        run: npm run daily
 
-      - name: Build static site from approved posts
+      - name: Build static site from approved posts only
         run: npm run build:site
 
       - name: Commit generated drafts and site
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Generate Clearforge daily draft"
+          commit_message: "Generate Clearforge daily AI brief draft"
           file_pattern: "drafts/** public/**"

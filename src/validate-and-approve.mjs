@@ -8,6 +8,7 @@ const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
 
 const draftDir = path.join(ROOT, "drafts", DATE);
 const structuredPath = path.join(draftDir, "structured_output.json");
+const featurePath = path.join(draftDir, "feature.md");
 const approvalPath = path.join(draftDir, "approval.json");
 const validationPath = path.join(draftDir, "validation.json");
 
@@ -20,12 +21,20 @@ const warnings = [];
 const sources = Array.isArray(data.sources) ? data.sources : [];
 const stories = Array.isArray(data.story_summaries) ? data.story_summaries : [];
 const article = String(data.main_article || "").trim();
+const feature = fs.existsSync(featurePath) ? fs.readFileSync(featurePath, "utf8").trim() : "";
 const social = data.social || {};
+const articleWords = article.split(/\s+/).filter(Boolean).length;
+const featureWords = feature.split(/\s+/).filter(Boolean).length;
 
 if (sources.length < 3 || sources.length > 5) failures.push(`Expected 3–5 sources, got ${sources.length}`);
 if (stories.length < 3 || stories.length > 5) failures.push(`Expected 3–5 stories, got ${stories.length}`);
-if (article.split(/\s+/).filter(Boolean).length < 650) failures.push("Article is shorter than 650 words");
-if (article.split(/\s+/).filter(Boolean).length > 1200) failures.push("Article is longer than 1200 words");
+if (articleWords < 650) failures.push("Article is shorter than 650 words");
+if (articleWords > 1200) failures.push("Article is longer than 1200 words");
+if (!feature) failures.push("Missing full feature piece");
+if (feature && featureWords < 1400) failures.push("Full feature is shorter than 1,400 words");
+if (featureWords > 2800) failures.push("Full feature is longer than 2,800 words");
+if (feature && !/^#\s+/m.test(feature)) failures.push("Full feature has no H1 headline");
+if (feature && !/##\s+Sources/i.test(feature)) failures.push("Full feature has no Sources section");
 
 const urls = new Set();
 for (const [i, source] of sources.entries()) {
@@ -44,7 +53,7 @@ const bannedPatterns = [
   /100% accurate/i,
   /no risk/i
 ];
-const joined = JSON.stringify(data);
+const joined = `${JSON.stringify(data)}\n${feature}`;
 for (const pattern of bannedPatterns) if (pattern.test(joined)) failures.push(`Blocked wording matched ${pattern}`);
 
 if (!String(social.facebook_post || "").trim()) failures.push("Missing Facebook post");
@@ -59,9 +68,11 @@ const approved = failures.length === 0;
 const approval = {
   date: DATE,
   article_approved: approved,
+  feature_approved: approved,
   facebook_approved: approved,
   pinterest_approved: approved,
   youtube_approved: approved,
+  dev_approved: approved,
   notes: approved
     ? "Automatically approved after deterministic validation checks passed."
     : `Automatically blocked: ${failures.join("; ")}`
@@ -75,7 +86,8 @@ const validation = {
   stats: {
     source_count: sources.length,
     story_count: stories.length,
-    article_words: article.split(/\s+/).filter(Boolean).length,
+    article_words: articleWords,
+    feature_words: featureWords,
     unique_source_domains: uniqueHosts.size
   }
 };

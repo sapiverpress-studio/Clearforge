@@ -14,40 +14,54 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Enforce 04:30 Europe London on scheduled runs
+      - name: Decide whether this is the 04:30 UK run
+        id: gate
         shell: bash
         run: |
-          if [ "${{ github.event_name }}" = "schedule" ]; then
-            LOCAL_TIME="$(TZ=Europe/London date +%H:%M)"
-            echo "Europe/London local time: ${LOCAL_TIME}"
-            if [ "${LOCAL_TIME}" != "04:30" ]; then
-              echo "Not the 04:30 local-time slot. Exiting cleanly."
-              exit 0
-            fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          LOCAL_TIME="$(TZ=Europe/London date +%H:%M)"
+          echo "Europe/London local time: ${LOCAL_TIME}"
+          if [ "${LOCAL_TIME}" = "04:30" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Checkout
+        if: steps.gate.outputs.run == 'true'
         uses: actions/checkout@v4
 
       - name: Setup Node
+        if: steps.gate.outputs.run == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: "24"
 
       - name: Install dependencies
+        if: steps.gate.outputs.run == 'true'
         run: npm install
 
+      - name: Set London date
+        if: steps.gate.outputs.run == 'true'
+        shell: bash
+        run: echo "CLEARFORGE_DATE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
+
       - name: Research current AI news and generate daily pack
+        if: steps.gate.outputs.run == 'true'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
         run: npm run daily
 
       - name: Set automatic publication approvals
+        if: steps.gate.outputs.run == 'true'
         shell: bash
         run: |
-          DATE="$(TZ=Europe/London date +%F)"
-          APPROVAL="drafts/${DATE}/approval.json"
+          APPROVAL="drafts/${CLEARFORGE_DATE}/approval.json"
           node - "${APPROVAL}" <<'NODE'
           const fs = require('fs');
           const file = process.argv[2];
@@ -61,6 +75,7 @@ jobs:
           NODE
 
       - name: Generate story-specific AI visuals and narration
+        if: steps.gate.outputs.run == 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -68,20 +83,21 @@ jobs:
           OPENAI_IMAGE_QUALITY: ${{ vars.OPENAI_IMAGE_QUALITY || 'low' }}
           OPENAI_TTS_MODEL: ${{ vars.OPENAI_TTS_MODEL || 'gpt-4o-mini-tts' }}
           OPENAI_TTS_VOICE: ${{ vars.OPENAI_TTS_VOICE || 'coral' }}
-        run: |
-          echo "CLEARFORGE_DATE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
-          npm run media:ai
+        run: npm run media:ai
 
       - name: Build approved static site
+        if: steps.gate.outputs.run == 'true'
         run: npm run build:site
 
       - name: Export approved distribution bundle
+        if: steps.gate.outputs.run == 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           BLOG_BASE_URL: ${{ vars.BLOG_BASE_URL }}
         run: npm run export:approved
 
       - name: Commit daily article media bridge and site
+        if: steps.gate.outputs.run == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Run Clearforge daily autopilot"

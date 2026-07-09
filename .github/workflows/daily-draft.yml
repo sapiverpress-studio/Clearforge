@@ -1,18 +1,31 @@
-name: Clearforge Daily Draft
+name: Clearforge Daily Autopilot
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 7 * * *"
+    - cron: "30 3 * * *"
+    - cron: "30 4 * * *"
 
 permissions:
   contents: write
 
 jobs:
-  draft:
+  autopilot:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Enforce 04:30 Europe London on scheduled runs
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            LOCAL_TIME="$(TZ=Europe/London date +%H:%M)"
+            echo "Europe/London local time: ${LOCAL_TIME}"
+            if [ "${LOCAL_TIME}" != "04:30" ]; then
+              echo "Not the 04:30 local-time slot. Exiting cleanly."
+              exit 0
+            fi
+          fi
+
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -24,22 +37,52 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Research AI news and generate draft pack
+      - name: Research current AI news and generate daily pack
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
         run: npm run daily
 
-      - name: Build static site from approved posts only
+      - name: Set automatic publication approvals
+        shell: bash
+        run: |
+          DATE="$(TZ=Europe/London date +%F)"
+          APPROVAL="drafts/${DATE}/approval.json"
+          node - "${APPROVAL}" <<'NODE'
+          const fs = require('fs');
+          const file = process.argv[2];
+          const approval = JSON.parse(fs.readFileSync(file, 'utf8'));
+          approval.article_approved = true;
+          approval.facebook_approved = true;
+          approval.pinterest_approved = true;
+          approval.youtube_approved = true;
+          approval.notes = 'Automatically approved by Clearforge Daily Autopilot after structured source-led generation.';
+          fs.writeFileSync(file, JSON.stringify(approval, null, 2) + '\n');
+          NODE
+
+      - name: Generate story-specific AI visuals and narration
+        env:
+          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_IMAGE_MODEL: ${{ vars.OPENAI_IMAGE_MODEL || 'gpt-image-2' }}
+          OPENAI_IMAGE_QUALITY: ${{ vars.OPENAI_IMAGE_QUALITY || 'low' }}
+          OPENAI_TTS_MODEL: ${{ vars.OPENAI_TTS_MODEL || 'gpt-4o-mini-tts' }}
+          OPENAI_TTS_VOICE: ${{ vars.OPENAI_TTS_VOICE || 'coral' }}
+        run: |
+          echo "CLEARFORGE_DATE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
+          npm run media:ai
+
+      - name: Build approved static site
         run: npm run build:site
 
-      - name: Export approved distribution bundle when available
+      - name: Export approved distribution bundle
         env:
+          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           BLOG_BASE_URL: ${{ vars.BLOG_BASE_URL }}
         run: npm run export:approved
 
-      - name: Commit generated drafts and site
+      - name: Commit daily article media bridge and site
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Generate Clearforge daily AI brief draft"
-          file_pattern: "drafts/** public/**"
+          commit_message: "Run Clearforge daily autopilot"
+          file_pattern: "drafts/** media/** bridge/** public/**"

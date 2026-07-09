@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
 
       - name: Install dependencies
         run: npm install
@@ -38,8 +38,8 @@ jobs:
           BLOG_BASE_URL: ${{ vars.BLOG_BASE_URL }}
         run: npm run export:approved
 
-      - name: Commit generated drafts, approved bundles and site
+      - name: Commit generated drafts and site
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Generate Clearforge daily AI brief draft"
-          file_pattern: "drafts/** bridge/** public/**"
+          file_pattern: "drafts/** public/**"

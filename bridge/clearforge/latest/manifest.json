@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "brand": "Clearforge",
+  "date": "2026-07-09",
+  "type": "clearforge_daily_ai_brief",
+  "approved": {
+    "article": true,
+    "facebook": false,
+    "pinterest": false,
+    "youtube": false
+  },
+  "article": {
+    "headline": "Three AI updates that matter more than the hype: voice, work tools, and safety rules",
+    "dek": "A practical read on three recent AI changes from OpenAI and Anthropic: voice gets more natural, ChatGPT keeps moving into office work, and Anthropic tightens its safety policy. The common thread is less magic, more productization and control.",
+    "url": "",
+    "markdown": "daily_brief.md"
+  },
+  "facebook": {
+    "post": "A useful AI update is not always a dramatic launch. This week’s biggest signals are practical: OpenAI made ChatGPT Voice more natural, OpenAI is positioning AI inside everyday work workflows, and Anthropic updated its safety governance. If you’re a creator, freelancer, or small business, the real opportunity is to use AI for capture, summaries, and repeatable systems—not just brainstorming."
+  },
+  "pinterest": {
+    "title": "3 AI Updates That Actually Matter for Work",
+    "description": "A practical look at recent AI changes from OpenAI and Anthropic: better voice chat, more workflow focus, and tighter safety governance. Useful for creators, freelancers, and small businesses who want AI that saves time, not just makes noise.",
+    "destination_url": ""
+  },
+  "youtube": {
+    "title": "Three AI updates that matter more than the hype",
+    "script": "Three AI updates that matter this week: ChatGPT Voice got more natural, OpenAI is talking more about AI in real workflows, and Anthropic tightened its safety policy. The takeaway is simple: AI is becoming more like infrastructure. For creators and small businesses, the win is faster capture, better summaries, and fewer messy handoffs.",
+    "description": "Try using AI to capture and structure real work, not just generate content. A good first use is turning one spoken brain-dump or meeting recap into a clean outline, task list, and next-step summary."
+  },
+  "quote_card_lines": [
+    "AI is moving from novelty to infrastructure.",
+    "Voice is useful when it reduces friction.",
+    "The best AI tools preserve context.",
+    "Workflow beats hype.",
+    "Better capture is often the real productivity gain."
+  ],
+  "headline_options": [
+    "Three AI updates that matter more than the hype",
+    "What actually changed in AI this week",
+    "AI gets more useful: voice, workflows, and safety",
+    "Three practical AI changes worth watching",
+    "Less hype, more infrastructure: this week in AI"
+  ],
+  "sources": [
+    {
+      "source_name": "OpenAI Help Center",
+      "title": "ChatGPT — Release Notes: Introducing GPT-Live-1 in ChatGPT Voice",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "published_date": "2026-07-08"
+    },
+    {
+      "source_name": "OpenAI Academy",
+      "title": "The End of Performance Reviews Written from Memory",
+      "url": "https://academy.openai.com/en/public/blogs/performancemanagement",
+      "published_date": "2026-07-08"
+    },
+    {
+      "source_name": "Anthropic",
+      "title": "Anthropic’s Responsible Scaling Policy",
+      "url": "https://www.anthropic.com/responsible-scaling-policy",
+      "published_date": "2026-07-08"
+    }
+  ]
+}

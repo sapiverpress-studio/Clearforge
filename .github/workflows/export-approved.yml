@@ -1,0 +1,42 @@
+name: Export Approved Clearforge Bundle
+
+on:
+  workflow_dispatch:
+    inputs:
+      date_override:
+        description: "Approved draft date YYYY-MM-DD"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build approved site pages
+        run: npm run build:site
+
+      - name: Export approved bundle
+        env:
+          CLEARFORGE_DATE: ${{ github.event.inputs.date_override }}
+          BLOG_BASE_URL: ${{ vars.BLOG_BASE_URL }}
+        run: npm run export:approved
+
+      - name: Commit approved bundle and site
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Export approved Clearforge bundle for ${{ github.event.inputs.date_override }}"
+          file_pattern: "bridge/** public/**"

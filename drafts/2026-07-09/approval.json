@@ -2,7 +2,7 @@
   "date": "2026-07-09",
   "article_approved": true,
   "facebook_approved": true,
-  "pinterest_approved": false,
+  "pinterest_approved": true,
   "youtube_approved": true,
-  "notes": "Article reviewed. Facebook and YouTube approved for live distribution. Pinterest remains blocked until PINTEREST_BOARD_ID is configured."
+  "notes": "Article reviewed. Facebook, Pinterest and YouTube approved for live distribution. Pinterest reuses the comic repo board-name routing."
 }

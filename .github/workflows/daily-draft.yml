@@ -57,22 +57,11 @@ jobs:
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
         run: npm run daily
 
-      - name: Set automatic publication approvals
+      - name: Validate and auto approve only when checks pass
         if: steps.gate.outputs.run == 'true'
-        shell: bash
-        run: |
-          APPROVAL="drafts/${CLEARFORGE_DATE}/approval.json"
-          node - "${APPROVAL}" <<'NODE'
-          const fs = require('fs');
-          const file = process.argv[2];
-          const approval = JSON.parse(fs.readFileSync(file, 'utf8'));
-          approval.article_approved = true;
-          approval.facebook_approved = true;
-          approval.pinterest_approved = true;
-          approval.youtube_approved = true;
-          approval.notes = 'Automatically approved by Clearforge Daily Autopilot after structured source-led generation.';
-          fs.writeFileSync(file, JSON.stringify(approval, null, 2) + '\n');
-          NODE
+        env:
+          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+        run: npm run validate:auto
 
       - name: Generate story-specific AI visuals and narration
         if: steps.gate.outputs.run == 'true'

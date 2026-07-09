@@ -1,53 +1,29 @@
 {
-  "notes": "Starter source list for manual or semi-automated Clearforge daily briefs. Keep sources reputable, check original links, and avoid copying wording.",
+  "notes": "Curated Clearforge source pool. Prefer primary sources for facts, use reputable reporting for discovery and wider context, and never copy source wording.",
   "sources": [
-    {
-      "name": "OpenAI News",
-      "type": "official",
-      "url": "https://openai.com/news/",
-      "use_for": "official OpenAI announcements and product updates"
-    },
-    {
-      "name": "Google DeepMind Blog",
-      "type": "official",
-      "url": "https://deepmind.google/discover/blog/",
-      "use_for": "research and model announcements"
-    },
-    {
-      "name": "Anthropic News",
-      "type": "official",
-      "url": "https://www.anthropic.com/news",
-      "use_for": "official Anthropic product and safety updates"
-    },
-    {
-      "name": "Microsoft AI Blog",
-      "type": "official",
-      "url": "https://blogs.microsoft.com/ai/",
-      "use_for": "Microsoft AI product and business updates"
-    },
-    {
-      "name": "Meta AI Blog",
-      "type": "official",
-      "url": "https://ai.meta.com/blog/",
-      "use_for": "Meta AI research and product updates"
-    },
-    {
-      "name": "MIT Technology Review AI",
-      "type": "journalism",
-      "url": "https://www.technologyreview.com/topic/artificial-intelligence/",
-      "use_for": "analysis and wider AI context"
-    },
-    {
-      "name": "The Verge AI",
-      "type": "journalism",
-      "url": "https://www.theverge.com/ai-artificial-intelligence",
-      "use_for": "consumer-facing AI product coverage"
-    },
-    {
-      "name": "Ars Technica AI",
-      "type": "journalism",
-      "url": "https://arstechnica.com/tag/ai/",
-      "use_for": "technical and policy context"
-    }
+    { "name": "OpenAI", "type": "official", "url": "https://openai.com/news/", "use_for": "OpenAI announcements, products, research and policy" },
+    { "name": "Google DeepMind", "type": "official", "url": "https://deepmind.google/discover/blog/", "use_for": "AI research and model announcements" },
+    { "name": "Google Blog", "type": "official", "url": "https://blog.google/technology/ai/", "use_for": "Google AI products and platform updates" },
+    { "name": "Anthropic", "type": "official", "url": "https://www.anthropic.com/news", "use_for": "Anthropic products, research and safety updates" },
+    { "name": "Microsoft AI", "type": "official", "url": "https://blogs.microsoft.com/ai/", "use_for": "Microsoft AI product and business updates" },
+    { "name": "Microsoft Research", "type": "official", "url": "https://www.microsoft.com/en-us/research/blog/", "use_for": "AI research and technical developments" },
+    { "name": "Meta AI", "type": "official", "url": "https://ai.meta.com/blog/", "use_for": "Meta AI research and product updates" },
+    { "name": "NVIDIA", "type": "official", "url": "https://blogs.nvidia.com/blog/category/deep-learning/", "use_for": "AI infrastructure, models and enterprise deployment" },
+    { "name": "AWS Machine Learning", "type": "official", "url": "https://aws.amazon.com/blogs/machine-learning/", "use_for": "cloud AI, agents and applied ML" },
+    { "name": "Hugging Face", "type": "official", "url": "https://huggingface.co/blog", "use_for": "open models, datasets, tooling and research" },
+    { "name": "Mistral AI", "type": "official", "url": "https://mistral.ai/news", "use_for": "Mistral models and products" },
+    { "name": "Cohere", "type": "official", "url": "https://cohere.com/blog", "use_for": "enterprise AI and model updates" },
+    { "name": "IBM Research", "type": "official", "url": "https://research.ibm.com/blog", "use_for": "AI research and enterprise technology" },
+    { "name": "GitHub Blog AI", "type": "official", "url": "https://github.blog/ai-and-ml/", "use_for": "AI coding tools and developer workflows" },
+    { "name": "Apple Machine Learning Research", "type": "official", "url": "https://machinelearning.apple.com/", "use_for": "Apple ML research" },
+    { "name": "Reuters Technology", "type": "journalism", "url": "https://www.reuters.com/technology/", "use_for": "breaking AI business, policy and infrastructure reporting" },
+    { "name": "AP Technology", "type": "journalism", "url": "https://apnews.com/technology", "use_for": "broad technology and policy reporting" },
+    { "name": "BBC Innovation", "type": "journalism", "url": "https://www.bbc.com/innovation", "use_for": "accessible technology context and societal impact" },
+    { "name": "MIT Technology Review AI", "type": "journalism", "url": "https://www.technologyreview.com/topic/artificial-intelligence/", "use_for": "AI analysis and wider context" },
+    { "name": "The Verge AI", "type": "journalism", "url": "https://www.theverge.com/ai-artificial-intelligence", "use_for": "consumer-facing AI products and platforms" },
+    { "name": "Ars Technica AI", "type": "journalism", "url": "https://arstechnica.com/tag/ai/", "use_for": "technical, science and policy context" },
+    { "name": "TechCrunch AI", "type": "journalism", "url": "https://techcrunch.com/category/artificial-intelligence/", "use_for": "AI startups, products and funding" },
+    { "name": "Wired AI", "type": "journalism", "url": "https://www.wired.com/tag/artificial-intelligence/", "use_for": "AI culture, products, security and policy" },
+    { "name": "IEEE Spectrum AI", "type": "journalism", "url": "https://spectrum.ieee.org/artificial-intelligence", "use_for": "engineering and technical AI developments" }
   ]
 }

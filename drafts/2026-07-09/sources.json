@@ -1,26 +1,42 @@
 [
   {
-    "source_name": "OpenAI Help Center",
-    "title": "ChatGPT — Release Notes: Introducing GPT-Live-1 in ChatGPT Voice",
-    "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes?tpcc=TCreviewnewsletter",
+    "source_name": "OpenAI",
+    "title": "Introducing GPT-Live",
+    "url": "https://openai.com/index/introducing-gpt-live/",
     "published_date": "2026-07-08",
-    "confirmed_fact": "OpenAI says ChatGPT Voice is now powered by GPT-Live-1 for paid users and GPT-Live-1 mini for Free users, with simultaneous listening and speaking, streamed text responses, and support for web search, memory, widgets, text, and images in the same conversation. It is rolling out across consumer plans, including Free, in supported regions, but is not available in Business, Enterprise, or Edu at launch.",
-    "interpretation": "This looks like an effort to make voice chat feel less like a demo and more like a daily interface for general users, while keeping workspace products on a separate rollout path."
+    "confirmed_fact": "OpenAI launched GPT-Live, a new voice model for ChatGPT Voice that uses full-duplex interaction and can handle continuous conversation while delegating deeper work to GPT-5.5 in the background.",
+    "interpretation": "The practical shift is toward voice tools that feel less like Q&A and more like an assistant you can keep talking to while it works in the background."
   },
   {
-    "source_name": "OpenAI Academy",
-    "title": "The End of Performance Reviews Written from Memory",
-    "url": "https://academy.openai.com/en/public/blogs/performancemanagement",
-    "published_date": "2026-07-08",
-    "confirmed_fact": "OpenAI published a July 8 article arguing that AI can help organizations make performance management more continuous and evidence-based by connecting work activity to outcomes instead of relying mainly on recall at review time.",
-    "interpretation": "This is less a product launch than a positioning signal: OpenAI is pushing the idea that AI belongs inside everyday management workflows, not just chat windows."
+    "source_name": "Meta AI",
+    "title": "Introducing Muse Image and Muse Video",
+    "url": "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/",
+    "published_date": "2026-07-07",
+    "confirmed_fact": "Meta launched Muse Image and previewed Muse Video; Muse Image is available in Meta AI, on meta.ai, in Instagram Stories in the US, and in WhatsApp in limited countries.",
+    "interpretation": "Meta is trying to make image and video generation more useful inside everyday social apps, not just as standalone creative tools."
   },
   {
     "source_name": "Anthropic",
-    "title": "Anthropic’s Responsible Scaling Policy",
-    "url": "https://www.anthropic.com/responsible-scaling-policy",
+    "title": "Anthropic's Frontier Safety Roadmap",
+    "url": "https://www.anthropic.com/responsible-scaling-policy/roadmap",
     "published_date": "2026-07-08",
-    "confirmed_fact": "Anthropic updated its Responsible Scaling Policy to version 3.4, effective July 8, 2026. The update revises the threshold for automated R&D, changes internal sharing requirements for risk reports, allows risk reports to analyze risks as of a coverage date, adds redaction markers in public risk reports, and clarifies external review expectations.",
-    "interpretation": "Anthropic is formalizing a more operational safety process, which matters because model capability is advancing fast enough that governance details are becoming part of the product story, not just policy language."
+    "confirmed_fact": "Anthropic published a Frontier Safety Roadmap focused on security, safeguards, alignment, and policy, and said the roadmap is meant to be updated over time.",
+    "interpretation": "This is a signal that frontier model companies are treating safety work as an active product roadmap, not just a compliance appendix."
+  },
+  {
+    "source_name": "Microsoft",
+    "title": "The latest in our company transformation",
+    "url": "https://blogs.microsoft.com/blog/2026/07/06/the-latest-in-our-company-transformation/",
+    "published_date": "2026-07-06",
+    "confirmed_fact": "Microsoft said it is eliminating around 4,800 roles and stated that the roles are not being replaced by AI, while also saying AI is changing how work gets done and that employees need to keep building skills.",
+    "interpretation": "Even when companies deny direct AI replacement, AI is still being used to justify workflow changes, reskilling, and organizational reshaping."
+  },
+  {
+    "source_name": "Anthropic",
+    "title": "Newsroom update: The Making of Claude Code",
+    "url": "https://www.anthropic.com/features/making-of-claude-code",
+    "published_date": "2026-07-06",
+    "confirmed_fact": "Anthropic published a feature about how Claude Code evolved from an internal CLI into a coding agent.",
+    "interpretation": "The broader trend is clear: code assistants are becoming more productized, more operational, and more central to how AI vendors explain value."
   }
 ]

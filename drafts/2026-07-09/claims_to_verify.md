@@ -1,5 +1,7 @@
 # Claims To Verify — 2026-07-09
 
-- [ ] Confirm GPT-Live-1 availability by region and plan before mentioning it as a broadly accessible feature. ([help.openai.com](https://help.openai.com/en/articles/6825453-chatgpt-release-notes?tpcc=TCreviewnewsletter&utm_source=openai))
-- [ ] Check whether any OpenAI workplace products received a related performance-management feature; the July 8 article is explanatory, not a product release note. ([academy.openai.com](https://academy.openai.com/en/public/blogs/performancemanagement?utm_source=openai))
-- [ ] Verify whether Anthropic’s Responsible Scaling Policy update changes any public-facing product behavior or only internal governance. ([anthropic.com](https://www.anthropic.com/responsible-scaling-policy?utm_source=openai))
+- [ ] Whether GPT-Live performs reliably in real-world conversations beyond OpenAI’s reported evaluations.
+- [ ] How durable Meta’s Content Seal watermark is after common editing, reposting, compression, and screenshots.
+- [ ] Whether Anthropic’s Frontier Safety Roadmap leads to measurable product changes users can notice.
+- [ ] How much of Microsoft’s July 6 restructuring is specifically related to AI versus broader business changes.
+- [ ] Whether Claude Code’s recent feature story reflects a new product capability or mostly a narrative update.

@@ -7,6 +7,7 @@ const publicDir = path.join(ROOT, "public");
 const postsDir = path.join(publicDir, "posts");
 const featuresDir = path.join(publicDir, "features");
 const blogBase = String(process.env.BLOG_BASE_URL || "").replace(/\/$/, "");
+const hubUrl = "https://sapiverpress-hub.netlify.app/";
 
 function ensureDir(dir) { fs.mkdirSync(dir, { recursive: true }); }
 function escapeHtml(value) {
@@ -66,9 +67,15 @@ function pageTemplate(title, description, body) {
   <header class="site-header">
     <a class="brand" href="/">Clearforge</a>
     <p>Human-led. AI-empowered.</p>
+    <nav aria-label="Site links">
+      <a href="${hubUrl}" rel="noopener noreferrer">Sapiver Press Hub</a>
+    </nav>
   </header>
   <main class="content">${body}</main>
-  <footer class="site-footer"><p>Turning human input into clear, usable systems.</p></footer>
+  <footer class="site-footer">
+    <p>Turning human input into clear, usable systems.</p>
+    <p><a href="${hubUrl}" rel="noopener noreferrer">Explore more tools and projects at the Sapiver Press Hub</a></p>
+  </footer>
 </body>
 </html>`;
 }
@@ -115,7 +122,7 @@ function main() {
   }
 
   const indexBody = `
-<section class="hero"><h1>Clear AI learning from noisy AI news.</h1><p>Clearforge turns daily AI updates into practical learning, careful takeaways, and usable workflow tests.</p></section>
+<section class="hero"><h1>Clear AI learning from noisy AI news.</h1><p>Clearforge turns daily AI updates into practical learning, careful takeaways, and usable workflow tests.</p><p><a href="${hubUrl}" rel="noopener noreferrer">Visit the Sapiver Press Hub</a></p></section>
 <section class="posts"><h2>Feature Analysis</h2>${featureLinks.length ? `<ul>${featureLinks.join("\n")}</ul>` : `<p>No approved features yet.</p>`}</section>
 <section class="posts"><h2>Daily Briefs</h2>${briefLinks.length ? `<ul>${briefLinks.join("\n")}</ul>` : `<p>No approved public briefs yet.</p>`}</section>`;
 

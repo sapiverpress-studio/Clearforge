@@ -33,8 +33,13 @@ jobs:
       - name: Build static site from approved posts only
         run: npm run build:site
 
-      - name: Commit generated drafts and site
+      - name: Export approved distribution bundle when available
+        env:
+          BLOG_BASE_URL: ${{ vars.BLOG_BASE_URL }}
+        run: npm run export:approved
+
+      - name: Commit generated drafts, approved bundles and site
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Generate Clearforge daily AI brief draft"
-          file_pattern: "drafts/** public/**"
+          file_pattern: "drafts/** bridge/** public/**"

@@ -1,8 +1,8 @@
 {
   "date": "2026-07-09",
-  "article_approved": false,
+  "article_approved": true,
   "facebook_approved": false,
   "pinterest_approved": false,
   "youtube_approved": false,
-  "notes": "Human review required before any publication step."
+  "notes": "Article source claims reviewed against official sources on 2026-07-09. Social channels remain unapproved for live publishing while bridge is tested."
 }

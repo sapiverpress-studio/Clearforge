@@ -1,12 +1,13 @@
 {
   "name": "clearforge-daily-ai-brief-builder",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "type": "module",
-  "description": "Clearforge draft-first daily AI news research, article and social repurposing system.",
+  "description": "Clearforge automated daily AI news research, validation, media and distribution system.",
   "scripts": {
     "daily": "node src/run-daily.mjs",
     "draft": "node src/generate-daily-brief.mjs",
+    "validate:auto": "node src/validate-and-approve.mjs",
     "media:ai": "node src/generate-ai-media.mjs",
     "export:approved": "node src/export-approved-bundle.mjs",
     "build:site": "node src/build-site.mjs",

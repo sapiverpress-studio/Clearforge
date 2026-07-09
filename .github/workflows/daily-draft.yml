@@ -109,6 +109,8 @@ jobs:
 
       - name: Build approved static site
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        env:
+          BLOG_BASE_URL: ${{ vars.BLOG_BASE_URL }}
         run: npm run build:site
 
       - name: Export approved distribution bundle
@@ -118,7 +120,15 @@ jobs:
           BLOG_BASE_URL: ${{ vars.BLOG_BASE_URL }}
         run: npm run export:approved
 
-      - name: Commit daily article media bridge and site
+      - name: Syndicate full feature to DEV
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        env:
+          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+          DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
+          BLOG_BASE_URL: ${{ vars.BLOG_BASE_URL }}
+        run: npm run syndicate:dev
+
+      - name: Commit daily article feature media bridge site and syndication state
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:

@@ -16,6 +16,10 @@ concurrency:
   group: clearforge-daily-autopilot
   cancel-in-progress: false
 
+env:
+  BLOG_BASE_URL: "https://clearforge-daily-brief.netlify.app"
+  NETLIFY_SITE_ID: "8e72a4fc-5ad6-4377-8f4a-399d4c936060"
+
 jobs:
   autopilot:
     runs-on: ubuntu-latest
@@ -109,15 +113,30 @@ jobs:
 
       - name: Build approved static site
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
-        env:
-          BLOG_BASE_URL: ${{ vars.BLOG_BASE_URL }}
         run: npm run build:site
+
+      - name: Deploy Clearforge production site to Netlify
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${NETLIFY_AUTH_TOKEN:-}" ]; then
+            echo "::error::Missing NETLIFY_AUTH_TOKEN repository secret."
+            exit 1
+          fi
+          npx --yes netlify-cli@latest deploy \
+            --prod \
+            --dir=public \
+            --site="${NETLIFY_SITE_ID}" \
+            --auth="${NETLIFY_AUTH_TOKEN}" \
+            --message="Clearforge autopilot ${CLEARFORGE_DATE}"
 
       - name: Export approved distribution bundle
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
-          BLOG_BASE_URL: ${{ vars.BLOG_BASE_URL }}
         run: npm run export:approved
 
       - name: Syndicate full feature to DEV
@@ -125,7 +144,6 @@ jobs:
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
-          BLOG_BASE_URL: ${{ vars.BLOG_BASE_URL }}
         run: npm run syndicate:dev
 
       - name: Commit daily article feature media bridge site and syndication state

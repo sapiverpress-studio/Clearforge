@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Clearforge automated daily AI news research, validation, media and distribution system.",
   "scripts": {
-    "daily": "node src/run-daily.mjs",
+    "daily": "bash scripts/run-daily-with-retry.sh",
     "draft": "node src/generate-daily-brief.mjs",
     "novelty:event": "node src/check-event-novelty.mjs",
     "feature": "node src/generate-full-feature.mjs",

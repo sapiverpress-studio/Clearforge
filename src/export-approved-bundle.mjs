@@ -16,6 +16,7 @@ const structuredPath = path.join(draftDir, "structured_output.json");
 const articlePath = path.join(draftDir, "daily_brief.md");
 const socialPath = path.join(draftDir, "social_pack.md");
 const outDir = path.join(ROOT, "bridge", "clearforge", DATE);
+const socialHashtags = "#AINews #AIWorkflow #PracticalAI #AITools #FacelessContentCreator #SapiverPress";
 
 function requireFile(file) {
   if (!fs.existsSync(file)) throw new Error(`Required file missing: ${file}`);
@@ -37,6 +38,20 @@ function copyDir(src, dest) {
     else fs.copyFileSync(from, to);
   }
   return true;
+}
+function appendHashtags(text) {
+  const base = String(text || "").trim();
+  const withoutKnownTags = base
+    .replace(/#AINews\b/gi, "")
+    .replace(/#AIWorkflow\b/gi, "")
+    .replace(/#PracticalAI\b/gi, "")
+    .replace(/#AITools\b/gi, "")
+    .replace(/#FacelessContentCreator\b/gi, "")
+    .replace(/#SapiverPress\b/gi, "")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+  return `${withoutKnownTags}\n\n${socialHashtags}`;
 }
 
 requireFile(approvalPath);
@@ -88,7 +103,7 @@ const manifest = {
     source_url: data.sources?.[i]?.url || ""
   })),
   facebook: {
-    post: data.social.facebook_post
+    post: appendHashtags(data.social.facebook_post)
   },
   pinterest: {
     title: data.social.pinterest_title,

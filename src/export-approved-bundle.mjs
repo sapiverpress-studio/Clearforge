@@ -16,7 +16,7 @@ const structuredPath = path.join(draftDir, "structured_output.json");
 const articlePath = path.join(draftDir, "daily_brief.md");
 const socialPath = path.join(draftDir, "social_pack.md");
 const outDir = path.join(ROOT, "bridge", "clearforge", DATE);
-const socialHashtags = "#AINews #AIWorkflow #PracticalAI #AITools #FacelessContentCreator #SapiverPress";
+const socialHashtags = "#AINews #AIWorkflow #PracticalAI #FacelessContentCreator #SapiverPress";
 
 function requireFile(file) {
   if (!fs.existsSync(file)) throw new Error(`Required file missing: ${file}`);

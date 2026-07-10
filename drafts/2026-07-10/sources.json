@@ -1,0 +1,42 @@
+[
+  {
+    "source_name": "OpenAI",
+    "title": "Introducing GPT‑Live",
+    "url": "https://openai.com/index/introducing-gpt-live/",
+    "published_date": "2026-07-08",
+    "confirmed_fact": "OpenAI launched GPT‑Live, a full-duplex voice model that can listen and speak at the same time and now powers ChatGPT Voice. The company says it can also delegate harder questions to a frontier model behind the scenes. ([openai.com](https://openai.com/index/introducing-gpt-live/?utm_source=openai))",
+    "interpretation": "This looks like a push to make voice interactions feel less like dictation and more like a live assistant that can stay in the flow while you work. ([openai.com](https://openai.com/index/introducing-gpt-live/?utm_source=openai))"
+  },
+  {
+    "source_name": "Meta",
+    "title": "Introducing Muse Image and Muse Video",
+    "url": "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/",
+    "published_date": "2026-07-07",
+    "confirmed_fact": "Meta launched Muse Image and previewed Muse Video, describing them as the first media generation models from Meta Superintelligence Labs. Muse Image is available in the Meta AI app, on meta.ai, in Instagram Stories in the US, and in limited countries on WhatsApp. ([ai.meta.com](https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/?utm_source=openai))",
+    "interpretation": "Meta is trying to keep users inside its own apps by making creation and editing a built-in feature rather than something people do elsewhere. ([ai.meta.com](https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/?utm_source=openai))"
+  },
+  {
+    "source_name": "Google Blog",
+    "title": "Create videos in seconds with Video Remix in Google Photos",
+    "url": "https://blog.google/products-and-platforms/products/photos/video-remix/",
+    "published_date": "2026-07-08",
+    "confirmed_fact": "Google added Video Remix to Google Photos, powered by Gemini Omni, letting eligible subscribers stylize or relight videos from the Create tab. Google says it is rolling out in select countries. ([blog.google](https://blog.google/products-and-platforms/products/photos/video-remix/?utm_source=openai))",
+    "interpretation": "This is a small but practical creator tool: faster social-ready edits inside a mainstream app people already use for storage and sharing. ([blog.google](https://blog.google/products-and-platforms/products/photos/video-remix/?utm_source=openai))"
+  },
+  {
+    "source_name": "Microsoft",
+    "title": "Microsoft Frontier Company: AI engineering that amplifies and protects your intelligence",
+    "url": "https://blogs.microsoft.com/blog/2026/07/02/microsoft-frontier-company-ai-engineering-that-amplifies-and-protects-your-intelligence/",
+    "published_date": "2026-07-02",
+    "confirmed_fact": "Microsoft announced Frontier Company, a new operating business focused on enterprise AI engineering, and said it is investing $2.5 billion and embedding 6,000 industry and engineering experts with customers. ([blogs.microsoft.com](https://blogs.microsoft.com/blog/2026/07/02/microsoft-frontier-company-ai-engineering-that-amplifies-and-protects-your-intelligence/))",
+    "interpretation": "Microsoft is packaging AI adoption as hands-on implementation work, not just software licenses, which may matter more to mid-market firms than the model names themselves. ([blogs.microsoft.com](https://blogs.microsoft.com/blog/2026/07/02/microsoft-frontier-company-ai-engineering-that-amplifies-and-protects-your-intelligence/))"
+  },
+  {
+    "source_name": "TechCrunch",
+    "title": "Hot French startup ZML releases free product to speed inference across lots of AI chips",
+    "url": "https://techcrunch.com/2026/07/08/hot-french-startup-zml-releases-free-product-to-speed-inference-across-lots-of-ai-chips/",
+    "published_date": "2026-07-08",
+    "confirmed_fact": "ZML released ZML/LLMD, an inference server meant to run open-source models across multiple chip types, including Nvidia, AMD, Google TPU, Apple Metal, and Intel Arc. ([techcrunch.com](https://techcrunch.com/2026/07/08/hot-french-startup-zml-releases-free-product-to-speed-inference-across-lots-of-ai-chips/?utm_source=openai))",
+    "interpretation": "This points to a quieter but important trend: the market is shifting toward cheaper, more flexible inference rather than only chasing bigger training runs. ([techcrunch.com](https://techcrunch.com/2026/07/08/hot-french-startup-zml-releases-free-product-to-speed-inference-across-lots-of-ai-chips/?utm_source=openai))"
+  }
+]

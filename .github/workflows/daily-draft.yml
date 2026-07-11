@@ -2,11 +2,32 @@ name: Clearforge Daily Autopilot
 
 on:
   workflow_dispatch:
+    inputs:
+      edition_mode:
+        description: "Fresh research or alternate angle from today's source base"
+        required: true
+        default: "fresh"
+        type: choice
+        options:
+          - fresh
+          - alternate
+      angle:
+        description: "Alternate-angle lens"
+        required: false
+        default: "creator_workflow"
+        type: choice
+        options:
+          - creator_workflow
+          - risk_control
+          - beginner_learning
+          - business_systems
   schedule:
     - cron: "30 3 * * *"
     - cron: "30 4 * * *"
     - cron: "15 4 * * *"
     - cron: "15 5 * * *"
+    - cron: "30 15 * * *"
+    - cron: "30 16 * * *"
 
 permissions:
   contents: write
@@ -32,6 +53,8 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "retry=false" >> "$GITHUB_OUTPUT"
+            echo "edition=${{ github.event.inputs.edition_mode }}" >> "$GITHUB_OUTPUT"
+            echo "angle=${{ github.event.inputs.angle }}" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
@@ -40,12 +63,23 @@ jobs:
           if [ "${LOCAL_TIME}" = "04:30" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "retry=false" >> "$GITHUB_OUTPUT"
+            echo "edition=fresh" >> "$GITHUB_OUTPUT"
+            echo "angle=creator_workflow" >> "$GITHUB_OUTPUT"
           elif [ "${LOCAL_TIME}" = "05:15" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "retry=true" >> "$GITHUB_OUTPUT"
+            echo "edition=fresh" >> "$GITHUB_OUTPUT"
+            echo "angle=creator_workflow" >> "$GITHUB_OUTPUT"
+          elif [ "${LOCAL_TIME}" = "16:30" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "retry=false" >> "$GITHUB_OUTPUT"
+            echo "edition=alternate" >> "$GITHUB_OUTPUT"
+            echo "angle=creator_workflow" >> "$GITHUB_OUTPUT"
           else
             echo "run=false" >> "$GITHUB_OUTPUT"
             echo "retry=false" >> "$GITHUB_OUTPUT"
+            echo "edition=fresh" >> "$GITHUB_OUTPUT"
+            echo "angle=creator_workflow" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Checkout
@@ -79,20 +113,21 @@ jobs:
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         run: npm install
 
-      - name: Research current AI news and generate daily pack
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+      - name: Generate fresh research edition
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.edition == 'fresh'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
         run: npm run daily
 
-      - name: Check same-day underlying event novelty
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+      - name: Generate alternate-angle edition from today's source base
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.edition == 'alternate'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+          CLEARFORGE_ANGLE: ${{ steps.gate.outputs.angle }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
-        run: npm run novelty:event
+        run: npm run angle:alternate
 
       - name: Generate long-form feature from research pack
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'

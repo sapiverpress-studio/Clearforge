@@ -86,10 +86,19 @@ jobs:
         if: steps.gate.outputs.run == 'true'
         uses: actions/checkout@v4
 
-      - name: Set London date
+      - name: Set edition identity
         if: steps.gate.outputs.run == 'true'
         shell: bash
-        run: echo "CLEARFORGE_DATE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
+        run: |
+          BASE_DATE="$(TZ=Europe/London date +%F)"
+          echo "CLEARFORGE_BASE_DATE=${BASE_DATE}" >> "$GITHUB_ENV"
+          if [ "${{ steps.gate.outputs.edition }}" = "alternate" ]; then
+            echo "CLEARFORGE_DATE=${BASE_DATE}-alt" >> "$GITHUB_ENV"
+            echo "Using alternate edition ID: ${BASE_DATE}-alt from source date ${BASE_DATE}"
+          else
+            echo "CLEARFORGE_DATE=${BASE_DATE}" >> "$GITHUB_ENV"
+            echo "Using fresh edition ID: ${BASE_DATE}"
+          fi
 
       - name: Skip retry when today's bundle already exists
         if: steps.gate.outputs.run == 'true' && steps.gate.outputs.retry == 'true'
@@ -124,6 +133,7 @@ jobs:
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.edition == 'alternate'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+          CLEARFORGE_BASE_DATE: ${{ env.CLEARFORGE_BASE_DATE }}
           CLEARFORGE_ANGLE: ${{ steps.gate.outputs.angle }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
@@ -226,7 +236,7 @@ jobs:
         run: |
           TITLE="Clearforge autopilot failed ${CLEARFORGE_DATE}"
           BODY="The automatic retry also failed. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          EXISTING="$(gh issue list --state open --search \"${TITLE} in:title\" --json number --jq '.[0].number // empty')"
+          EXISTING="$(gh issue list --state open --search "${TITLE} in:title" --json number --jq '.[0].number // empty')"
           if [ -z "${EXISTING}" ]; then
             gh issue create --title "${TITLE}" --body "${BODY}"
           else

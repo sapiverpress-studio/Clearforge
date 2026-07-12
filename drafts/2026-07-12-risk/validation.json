@@ -1,0 +1,15 @@
+{
+  "date": "2026-07-12-risk",
+  "passed": true,
+  "failures": [],
+  "warnings": [
+    "Fewer than two distinct source domains"
+  ],
+  "stats": {
+    "source_count": 5,
+    "story_count": 5,
+    "article_words": 869,
+    "feature_words": 2190,
+    "unique_source_domains": 1
+  }
+}

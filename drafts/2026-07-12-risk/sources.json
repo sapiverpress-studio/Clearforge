@@ -1,0 +1,42 @@
+[
+  {
+    "source_name": "TechCrunch",
+    "title": "OpenAI bets on families as ChatGPT goes deeper into households",
+    "url": "https://techcrunch.com/2026/07/11/openai-bets-on-families-as-chatgpt-goes-deeper-into-households/",
+    "published_date": "2026-07-11",
+    "confirmed_fact": "OpenAI is hiring a product manager in San Francisco focused on families, caregivers, and older adults; the article also cites Sensor Tower estimates showing ChatGPT’s user mix is aging and that parent usage is rising.",
+    "interpretation": "As AI moves into shared homes and mixed-age use, the risk question shifts from individual productivity to permissions, supervision, and age-appropriate defaults."
+  },
+  {
+    "source_name": "TechCrunch",
+    "title": "Meta removes controversial AI feature on Instagram after backlash",
+    "url": "https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/",
+    "published_date": "2026-07-10",
+    "confirmed_fact": "Meta removed an Instagram AI feature that let users modify photos from public accounts after backlash; the company said the feature had 'missed the mark.'",
+    "interpretation": "AI products that touch real people’s images need strong consent rules and quick rollback plans, because public tolerance can disappear fast."
+  },
+  {
+    "source_name": "TechCrunch",
+    "title": "Google will now disclose which ads are made with AI",
+    "url": "https://techcrunch.com/2026/07/09/google-will-now-disclose-which-ads-are-made-with-ai/",
+    "published_date": "2026-07-09",
+    "confirmed_fact": "Google is rolling out a disclosure feature for ads made with AI technology; TechCrunch says Google previously required disclosure only for election ads.",
+    "interpretation": "Disclosure is becoming part of the control stack, not just a nice-to-have transparency feature."
+  },
+  {
+    "source_name": "TechCrunch",
+    "title": "Open source AI matters more than ever, according to Hugging Face’s Clem Delangue",
+    "url": "https://techcrunch.com/podcast/open-source-ai-matters-more-than-ever-according-to-hugging-faces-clem-delangue/",
+    "published_date": "2026-07-10",
+    "confirmed_fact": "The TechCrunch podcast says Hugging Face now serves roughly half of the Fortune 500 and argues that companies often move from frontier APIs to open-source models as costs scale.",
+    "interpretation": "Open source is increasingly a control and dependency-management choice, not just a developer preference."
+  },
+  {
+    "source_name": "TechCrunch",
+    "title": "Popular open source AI developer tool Ollama raises $65M, grows to nearly 9M users",
+    "url": "https://techcrunch.com/2026/07/09/popular-open-source-ai-developer-tool-ollama-raises-65m-grows-to-nearly-9m-users/",
+    "published_date": "2026-07-09",
+    "confirmed_fact": "Ollama raised a $65 million Series B led by Theory Ventures, and TechCrunch says the tool has nearly 9 million users.",
+    "interpretation": "Local model running is becoming mainstream enough to matter as a risk-reduction option for private or repeatable tasks, even though it still needs oversight."
+  }
+]

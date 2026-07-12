@@ -26,6 +26,10 @@ if (fs.existsSync(statePath)) {
     console.log(`DEV syndication skipped: already posted ${existing.url}`);
     process.exit(0);
   }
+  if (existing?.skipped === true && existing?.reason) {
+    console.log(`DEV syndication skipped: ${existing.reason}`);
+    process.exit(0);
+  }
 }
 
 const apiKey = String(process.env.DEV_API_KEY || "").trim();
@@ -62,7 +66,26 @@ const response = await fetch("https://dev.to/api/articles", {
 const raw = await response.text();
 let body = {};
 try { body = raw ? JSON.parse(raw) : {}; } catch { body = { raw }; }
-if (!response.ok) throw new Error(`DEV publish failed ${response.status}: ${JSON.stringify(body).slice(0, 1600)}`);
+
+if (!response.ok) {
+  const message = JSON.stringify(body).slice(0, 1600);
+  const duplicateCanonical = response.status === 422 && /canonical url has already been taken/i.test(message);
+  if (duplicateCanonical) {
+    fs.writeFileSync(statePath, JSON.stringify({
+      date: DATE,
+      skipped: true,
+      reason: "duplicate_canonical_url",
+      canonical_url: canonicalUrl || null,
+      title: meta.feature_headline,
+      response_status: response.status,
+      response_body: body,
+      checked_at: new Date().toISOString()
+    }, null, 2) + "\n");
+    console.log(`DEV syndication skipped: duplicate canonical URL ${canonicalUrl}`);
+    process.exit(0);
+  }
+  throw new Error(`DEV publish failed ${response.status}: ${message}`);
+}
 
 fs.writeFileSync(statePath, JSON.stringify({
   date: DATE,

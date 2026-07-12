@@ -7,7 +7,8 @@ const publicDir = path.join(ROOT, "public");
 const postsDir = path.join(publicDir, "posts");
 const featuresDir = path.join(publicDir, "features");
 const blogBase = String(process.env.BLOG_BASE_URL || "").replace(/\/$/, "");
-const hubUrl = "https://sapiverpress-hub.netlify.app/";
+const reportsSourceDir = path.join(ROOT, "reports");
+const reportsPublicDir = path.join(publicDir, "reports");
 
 function ensureDir(dir) { fs.mkdirSync(dir, { recursive: true }); }
 function escapeHtml(value) {
@@ -74,11 +75,53 @@ function pageTemplate(title, description, body) {
   <main class="content">${body}</main>
   <footer class="site-footer">
     <p>Turning human input into clear, usable systems.</p>
-    <p><a href="${hubUrl}" rel="noopener noreferrer">Explore more tools and projects at the Sapiver Press Hub</a></p>
+    <p><a href="/reports/">Browse Clearforge Reports</a></p>
   </footer>
 </body>
 </html>`;
 }
+function buildReports() {
+  ensureDir(reportsPublicDir);
+  const weeklySource = path.join(reportsSourceDir, "weekly");
+  const weekly = fs.existsSync(weeklySource)
+    ? fs.readdirSync(weeklySource).filter((date) => fs.existsSync(path.join(weeklySource, date, "report.json"))).sort().reverse()
+    : [];
+  const cards = [];
+  for (const date of weekly) {
+    const sourceDir = path.join(weeklySource, date);
+    const meta = JSON.parse(fs.readFileSync(path.join(sourceDir, "report.json"), "utf8"));
+    if (meta.approved_for_publication !== true) continue;
+    const targetDir = path.join(reportsPublicDir, "weekly", date);
+    ensureDir(targetDir);
+    const pdfName = meta.pdf_filename;
+    const encoded = fs.readFileSync(path.join(sourceDir, "learning-brief.pdf.base64"), "utf8").replace(/\s+/g, "");
+    fs.writeFileSync(path.join(targetDir, pdfName), Buffer.from(encoded, "base64"));
+    const sourceNotes = fs.existsSync(path.join(sourceDir, "source-notes.md"))
+      ? markdownToHtml(fs.readFileSync(path.join(sourceDir, "source-notes.md"), "utf8"))
+      : "";
+    const summary = `<article class="report-detail">
+      <p class="eyebrow">Weekly AI Learning Brief</p>
+      <h1>${escapeHtml(meta.title)}</h1>
+      <p class="report-meta">Published ${escapeHtml(meta.date)} · Last verified ${escapeHtml(meta.last_verified)}</p>
+      <p>${escapeHtml(meta.description)}</p>
+      <div class="report-actions">
+        <a class="button" href="./${encodeURIComponent(pdfName)}">Download PDF</a>
+        <a class="button button-secondary" href="/reports/">All reports</a>
+      </div>
+      <h2>Inside this edition</h2>
+      <ul>${meta.highlights.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+      ${sourceNotes ? `<section id="source-notes"><h2>Source notes</h2>${sourceNotes}</section>` : ""}
+    </article>`;
+    fs.writeFileSync(path.join(targetDir, "index.html"), pageTemplate(meta.title, meta.description, summary), "utf8");
+    cards.push(`<li class="report-card"><p class="eyebrow">Weekly AI Learning Brief</p><h3><a href="/reports/weekly/${date}/">${escapeHtml(meta.title)}</a></h3><p class="report-meta">${escapeHtml(meta.date)} · Last verified ${escapeHtml(meta.last_verified)}</p><p>${escapeHtml(meta.description)}</p><div class="report-actions"><a class="button" href="/reports/weekly/${date}/${encodeURIComponent(pdfName)}">Download PDF</a><a class="button button-secondary" href="/reports/weekly/${date}/">Read summary</a>${sourceNotes ? `<a href="/reports/weekly/${date}/#source-notes">Source notes</a>` : ""}</div></li>`);
+  }
+  const body = `<section class="hero"><p class="eyebrow">Clearforge Reports</p><h1>Practical AI learning, checked and explained.</h1><p>Weekly learning guides and focused research papers for creators, small businesses and practical AI learners.</p></section>
+  <section class="posts"><h2>Weekly AI Learning Briefs</h2>${cards.length ? `<ul>${cards.join("")}</ul>` : "<p>No weekly reports published yet.</p>"}</section>
+  <section class="posts"><h2>Major Release Research Papers</h2><p>Standalone papers will appear here after significant releases are independently researched on their release date.</p></section>`;
+  fs.writeFileSync(path.join(reportsPublicDir, "index.html"), pageTemplate("Clearforge Reports", "Clearforge weekly AI learning briefs and major release research papers.", body), "utf8");
+  return cards.length;
+}
+
 function textFromMarkdown(markdown) {
   return markdown.replace(/[#*_`>\[\]()]/g, " ").replace(/https?:\/\/\S+/g, " ").replace(/\s+/g, " ").trim();
 }
@@ -87,7 +130,7 @@ function xmlEscape(value) {
 }
 
 function main() {
-  ensureDir(publicDir); ensureDir(postsDir); ensureDir(featuresDir);
+  ensureDir(publicDir); ensureDir(postsDir); ensureDir(featuresDir);\n  const reportCount = buildReports();
   const dates = fs.existsSync(draftsDir)
     ? fs.readdirSync(draftsDir).filter((name) => fs.existsSync(path.join(draftsDir, name, "daily_brief.md"))).sort().reverse()
     : [];
@@ -122,14 +165,14 @@ function main() {
   }
 
   const indexBody = `
-<section class="hero"><h1>Clear AI learning from noisy AI news.</h1><p>Clearforge turns daily AI updates into practical learning, careful takeaways, and usable workflow tests.</p><p><a href="${hubUrl}" rel="noopener noreferrer">Visit the Sapiver Press Hub</a></p></section>
+<section class="hero"><h1>Clear AI learning from noisy AI news.</h1><p>Clearforge turns daily AI updates into practical learning, careful takeaways, and usable workflow tests.</p><p><a href="/reports/">Explore Clearforge Reports</a></p></section>\n<section class="posts"><h2>Clearforge Reports</h2><p>Go deeper with weekly AI learning briefs and standalone research papers on major releases.</p><p><a class="button" href="/reports/">Browse all reports</a></p></section>
 <section class="posts"><h2>Feature Analysis</h2>${featureLinks.length ? `<ul>${featureLinks.join("\n")}</ul>` : `<p>No approved features yet.</p>`}</section>
 <section class="posts"><h2>Daily Briefs</h2>${briefLinks.length ? `<ul>${briefLinks.join("\n")}</ul>` : `<p>No approved public briefs yet.</p>`}</section>`;
 
   fs.writeFileSync(path.join(publicDir, "index.html"), pageTemplate("Clearforge", "Practical AI news, analysis and workflow learning.", indexBody), "utf8");
   const rss = `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Clearforge Features</title><link>${xmlEscape(blogBase || "https://clearforge-daily-brief.netlify.app")}</link><description>Long-form practical AI analysis from Clearforge.</description>${feedItems.join("")}</channel></rss>`;
   fs.writeFileSync(path.join(publicDir, "features.xml"), rss, "utf8");
-  console.log(`Built site with ${briefLinks.length} briefs and ${featureLinks.length} features.`);
+  console.log(`Built site with ${briefLinks.length} briefs, ${featureLinks.length} features, and ${reportCount} reports.`);
 }
 
 main();

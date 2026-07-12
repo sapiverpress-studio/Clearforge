@@ -69,7 +69,7 @@ function pageTemplate(title, description, body) {
     <a class="brand" href="/">Clearforge</a>
     <p>Human-led. AI-empowered.</p>
     <nav aria-label="Site links">
-      <a href="${hubUrl}" rel="noopener noreferrer">Sapiver Press Hub</a>
+      <a href="/reports/">Clearforge Reports</a>
     </nav>
   </header>
   <main class="content">${body}</main>

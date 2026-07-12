@@ -1,0 +1,39 @@
+PERMANENT NARRATOR
+Name: Irene
+ElevenLabs Voice ID: w9xM4Spfmuw28ZXAirWK
+Substitution permitted: No
+
+DELIVERY
+Calm, intelligent and practical.
+Warm without sounding promotional.
+Moderate pace.
+Allow a clean pause between topics.
+Keep emphasis restrained; this is an educational briefing, not breaking-news theatre.
+
+PRONUNCIATION
+GPT-5.6: "G P T five point six"
+OpenAI: "Open A I"
+ChatGPT: "Chat G P T"
+Meta: conventional pronunciation
+Muse: "mewz"
+Claude: "clawd"
+Anthropic: "an-THROP-ik"
+API: "A P I"
+Programmatic Tool Calling: speak naturally, with slight emphasis on "Tool Calling"
+
+GENERATION NOTES
+Generate the narration in sequential topic-sized chunks rather than one long request.
+Keep the same model and voice settings across every chunk.
+Do not add music beneath technical explanations.
+If intro or outro music is added later, keep it brief and ensure the spoken voice remains clear.
+Listen specifically for model names, version numbers, prices and company names.
+Regenerate only defective chunks, then assemble in the stated order.
+
+FINAL QA
+Confirm Irene's Voice ID before generation.
+Confirm every chunk is present and ordered correctly.
+Check pronunciation and unnatural pauses.
+Check that no source URL is read aloud.
+Check final duration and loudness consistency.
+Do not publish automatically.
+

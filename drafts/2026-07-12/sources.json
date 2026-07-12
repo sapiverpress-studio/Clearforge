@@ -1,0 +1,42 @@
+[
+  {
+    "source_name": "TechCrunch",
+    "title": "OpenAI bets on families as ChatGPT goes deeper into households",
+    "url": "https://techcrunch.com/2026/07/11/openai-bets-on-families-as-chatgpt-goes-deeper-into-households/",
+    "published_date": "2026-07-11",
+    "confirmed_fact": "OpenAI is hiring a product manager in San Francisco focused on families, caregivers, and older adults; the article also cites Sensor Tower estimates showing ChatGPT’s user mix is aging and that parent usage is rising. ([techcrunch.com](https://techcrunch.com/2026/07/11/openai-bets-on-families-as-chatgpt-goes-deeper-into-households/))",
+    "interpretation": "OpenAI appears to be shifting from a single-user productivity tool toward household-oriented products with more safety and oversight features. ([techcrunch.com](https://techcrunch.com/2026/07/11/openai-bets-on-families-as-chatgpt-goes-deeper-into-households/))"
+  },
+  {
+    "source_name": "TechCrunch",
+    "title": "Meta removes controversial AI feature on Instagram after backlash",
+    "url": "https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/",
+    "published_date": "2026-07-10",
+    "confirmed_fact": "Meta removed an Instagram AI feature that let users modify photos from public accounts after backlash; the company said the feature had 'missed the mark.' ([techcrunch.com](https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/))",
+    "interpretation": "Consumer AI features now face a fast feedback loop: if they feel creepy, misleading, or permission-light, platforms may pull them quickly. ([techcrunch.com](https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/))"
+  },
+  {
+    "source_name": "TechCrunch",
+    "title": "Google will now disclose which ads are made with AI",
+    "url": "https://techcrunch.com/2026/07/09/google-will-now-disclose-which-ads-are-made-with-ai/",
+    "published_date": "2026-07-09",
+    "confirmed_fact": "Google is rolling out a disclosure feature for ads made with AI technology; TechCrunch says Google previously required disclosure only for election ads. ([techcrunch.com](https://techcrunch.com/2026/07/09/google-will-now-disclose-which-ads-are-made-with-ai/))",
+    "interpretation": "AI-generated marketing is moving from hidden production trick to something platforms may label more explicitly, which matters for trust and ad compliance. ([techcrunch.com](https://techcrunch.com/2026/07/09/google-will-now-disclose-which-ads-are-made-with-ai/))"
+  },
+  {
+    "source_name": "TechCrunch",
+    "title": "Open source AI matters more than ever, according to Hugging Face’s Clem Delangue",
+    "url": "https://techcrunch.com/podcast/open-source-ai-matters-more-than-ever-according-to-hugging-faces-clem-delangue/",
+    "published_date": "2026-07-10",
+    "confirmed_fact": "The TechCrunch podcast says Hugging Face now serves roughly half of the Fortune 500 and argues that companies often move from frontier APIs to open-source models as costs scale. ([techcrunch.com](https://techcrunch.com/podcast/open-source-ai-matters-more-than-ever-according-to-hugging-faces-clem-delangue/))",
+    "interpretation": "Open models are increasingly framed as a cost-control and independence play, not just a developer hobby. ([techcrunch.com](https://techcrunch.com/podcast/open-source-ai-matters-more-than-ever-according-to-hugging-faces-clem-delangue/))"
+  },
+  {
+    "source_name": "TechCrunch",
+    "title": "Popular open source AI developer tool Ollama raises $65M, grows to nearly 9M users",
+    "url": "https://techcrunch.com/2026/07/09/popular-open-source-ai-developer-tool-ollama-raises-65m-grows-to-nearly-9m-users/",
+    "published_date": "2026-07-09",
+    "confirmed_fact": "Ollama raised a $65 million Series B led by Theory Ventures, and TechCrunch says the tool has nearly 9 million users. ([techcrunch.com](https://techcrunch.com/2026/07/09/popular-open-source-ai-developer-tool-ollama-raises-65m-grows-to-nearly-9m-users/))",
+    "interpretation": "Local model running is becoming mainstream enough to attract serious funding, which suggests more creators and small teams will be able to experiment without sending every task to a cloud API. ([techcrunch.com](https://techcrunch.com/2026/07/09/popular-open-source-ai-developer-tool-ollama-raises-65m-grows-to-nearly-9m-users/))"
+  }
+]

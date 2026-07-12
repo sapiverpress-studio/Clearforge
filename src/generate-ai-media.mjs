@@ -17,13 +17,54 @@ const data = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 fs.mkdirSync(outDir, { recursive: true });
 
+function editionSeed() {
+  return [...String(DATE)].reduce((sum, char) => sum + char.charCodeAt(0), 0);
+}
+
+function pick(list, index) {
+  return list[(editionSeed() + index) % list.length];
+}
+
 function visualPrompt(story, index) {
-  const styles = [
-    "cinematic near-future editorial image, human speaking naturally with a responsive AI voice interface represented by elegant translucent audio forms and contextual panels",
-    "cinematic editorial scene of real workplace knowledge becoming organized by AI into structured timelines, summaries and evidence trails, sophisticated modern office, no readable text",
-    "cinematic editorial visualization of frontier AI governance and safety, luminous layered control systems, risk thresholds, review gates and human oversight, no readable text"
+  const metaphors = [
+    "a practical workshop bench where index cards, brass clips, paper tags and small wooden blocks are being arranged into a clear operating system",
+    "a quiet teaching-room wall with hand-drawn process diagrams, pinned source cards, string lines and simple review checkpoints",
+    "an overhead editorial desk scene with printed source sheets, a pencil, folded notes, transparent overlays and a tidy decision map",
+    "a compact print-room planning table with proof sheets, page grids, stamps, folders and a visible before-to-after sorting process",
+    "a cartographer-style strategy board with layered paper maps, route markers, labelled tabs without readable words and controlled pathways",
+    "a librarian-style research table with archive boxes, evidence slips, colour-coded dividers and a calm human review process",
+    "a maker-space scene with modular trays, checklist cards, ruler marks and physical tokens showing a workflow being assembled",
+    "a kitchen-table planning scene with notebooks, sticky tabs, filing wallets and simple household-object metaphors for system design",
+    "a museum-display style arrangement of everyday objects representing control, judgement, automation, cost and review",
+    "a classroom demonstration table with paper levers, sliders, timers and cards showing how a complex system becomes understandable"
   ];
-  return `${styles[index] || styles[0]}. Story context: ${story.title}. Practical angle: ${story.practical_angle}. Premium technology journalism aesthetic, realistic lighting, dramatic depth, teal and warm gold accents, visually specific, sophisticated, no logos, no brand marks, no typography, no watermarks, portrait composition for a vertical short.`;
+
+  const compositions = [
+    "clean overhead flat-lay composition",
+    "three-quarter editorial photograph with shallow depth of field",
+    "wide vertical still-life scene with strong foreground object",
+    "documentary-style close-up of hands arranging materials, no identifiable face",
+    "structured product-photography layout with strong negative space",
+    "calm instructional scene with visible layers and hierarchy"
+  ];
+
+  const visualDevices = [
+    "use one strong physical metaphor rather than a screen interface",
+    "include three distinct object clusters so each story frame feels different",
+    "show the transition from messy input to ordered output using real materials",
+    "use paper, wood, fabric, card, folders and desk objects instead of neon tech graphics",
+    "make it look like an editorial magazine photograph, not a SaaS advert",
+    "make the scene understandable even without any text"
+  ];
+
+  const palette = [
+    "warm cream, forest green, dark teal and muted brass accents",
+    "cream paper, charcoal ink, deep green and soft gold accents",
+    "dark teal background with warm paper objects and restrained brass highlights",
+    "soft daylight, cream surfaces, green folders and muted amber shadows"
+  ];
+
+  return `${pick(metaphors, index * 3)}. ${pick(compositions, index * 5)}. ${pick(visualDevices, index * 7)}. Story context: ${story.title}. Practical angle: ${story.practical_angle}. Clearforge brand feel: human-led, practical, editorial, calm, precise. Palette: ${pick(palette, index * 11)}. Avoid generic AI imagery: no robots, no glowing brains, no hologram faces, no neon circuit boards, no floating code, no generic laptop dashboard, no stock-photo handshake, no unreadable fake UI, no logos, no brand marks, no typography, no watermarks. Portrait composition for a vertical short, visually specific, coherent with Sapiver Press but clearly Clearforge.`;
 }
 
 const stories = (data.story_summaries || []).slice(0, 3);
@@ -31,9 +72,10 @@ if (stories.length < 3) throw new Error("Need at least three story summaries for
 
 const images = [];
 for (let i = 0; i < stories.length; i++) {
+  const prompt = visualPrompt(stories[i], i);
   const result = await client.images.generate({
     model: process.env.OPENAI_IMAGE_MODEL || "gpt-image-2",
-    prompt: visualPrompt(stories[i], i),
+    prompt,
     size: "1024x1536",
     quality: process.env.OPENAI_IMAGE_QUALITY || "low"
   });
@@ -48,7 +90,8 @@ for (let i = 0; i < stories.length; i++) {
     source_url: data.sources?.[i]?.url || "",
     summary: stories[i].summary,
     why_it_matters: stories[i].why_it_matters,
-    practical_angle: stories[i].practical_angle
+    practical_angle: stories[i].practical_angle,
+    visual_prompt: prompt
   });
 }
 
@@ -68,11 +111,12 @@ const narrationFile = path.join(outDir, "narration.mp3");
 fs.writeFileSync(narrationFile, Buffer.from(await speech.arrayBuffer()));
 
 const manifest = {
-  version: 1,
+  version: 2,
   date: DATE,
   headline: data.headline,
   dek: data.dek,
   hook: "Three AI updates that actually matter today",
+  visual_system: "Clearforge physical editorial metaphor set",
   stories: images,
   narration: path.relative(ROOT, narrationFile).replaceAll("\\", "/"),
   narration_text: narrationText,

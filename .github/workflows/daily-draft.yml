@@ -91,10 +91,24 @@ jobs:
         shell: bash
         run: |
           BASE_DATE="$(TZ=Europe/London date +%F)"
+          ANGLE="${{ steps.gate.outputs.angle }}"
+          case "${ANGLE}" in
+            creator_workflow) ANGLE_SLUG="creator" ;;
+            risk_control) ANGLE_SLUG="risk" ;;
+            beginner_learning) ANGLE_SLUG="beginner" ;;
+            business_systems) ANGLE_SLUG="systems" ;;
+            *) ANGLE_SLUG="$(printf '%s' "${ANGLE}" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g')" ;;
+          esac
+          if [ -z "${ANGLE_SLUG}" ]; then
+            ANGLE_SLUG="angle"
+          fi
+
           echo "CLEARFORGE_BASE_DATE=${BASE_DATE}" >> "$GITHUB_ENV"
+          echo "CLEARFORGE_ANGLE=${ANGLE}" >> "$GITHUB_ENV"
+          echo "CLEARFORGE_ANGLE_SLUG=${ANGLE_SLUG}" >> "$GITHUB_ENV"
           if [ "${{ steps.gate.outputs.edition }}" = "alternate" ]; then
-            echo "CLEARFORGE_DATE=${BASE_DATE}-alt" >> "$GITHUB_ENV"
-            echo "Using alternate edition ID: ${BASE_DATE}-alt from source date ${BASE_DATE}"
+            echo "CLEARFORGE_DATE=${BASE_DATE}-${ANGLE_SLUG}" >> "$GITHUB_ENV"
+            echo "Using alternate edition ID: ${BASE_DATE}-${ANGLE_SLUG} from source date ${BASE_DATE} using angle ${ANGLE}"
           else
             echo "CLEARFORGE_DATE=${BASE_DATE}" >> "$GITHUB_ENV"
             echo "Using fresh edition ID: ${BASE_DATE}"
@@ -134,7 +148,7 @@ jobs:
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           CLEARFORGE_BASE_DATE: ${{ env.CLEARFORGE_BASE_DATE }}
-          CLEARFORGE_ANGLE: ${{ steps.gate.outputs.angle }}
+          CLEARFORGE_ANGLE: ${{ env.CLEARFORGE_ANGLE }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
         run: npm run angle:alternate

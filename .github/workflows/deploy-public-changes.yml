@@ -1,0 +1,42 @@
+name: Deploy Clearforge public changes
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "public/**"
+      - ".github/workflows/deploy-public-changes.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: clearforge-netlify-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Clearforge
+        uses: actions/checkout@v4
+
+      - name: Deploy public to Netlify production
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: 8e72a4fc-5ad6-4377-8f4a-399d4c936060
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${NETLIFY_AUTH_TOKEN:-}" ]; then
+            echo "::error::Missing NETLIFY_AUTH_TOKEN repository secret."
+            exit 1
+          fi
+          npx --yes netlify-cli@latest deploy \
+            --prod \
+            --dir=public \
+            --site="${NETLIFY_SITE_ID}" \
+            --auth="${NETLIFY_AUTH_TOKEN}" \
+            --message="Deploy Clearforge public content"

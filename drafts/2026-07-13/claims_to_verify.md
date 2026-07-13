@@ -1,7 +1,7 @@
 # Claims To Verify — 2026-07-13
 
-- [ ] Verify the exact allegations and filing details in Apple’s lawsuit against OpenAI.
-- [ ] Confirm whether Meta’s Instagram feature was removed globally or only in certain versions.
-- [ ] Check which Atlas features OpenAI is actually moving into ChatGPT desktop and Chrome.
-- [ ] Confirm whether Fidji Simo’s change in role has a named successor or revised reporting line.
-- [ ] Verify how Google’s AI ad disclosure will appear to advertisers and users.
+- [ ] GPT‑5.6’s efficiency and quality claims on real-world tasks, not just benchmarks.
+- [ ] GPT‑Live’s stability in noisy environments and whether its safety controls work consistently in practice.
+- [ ] Whether Anthropic’s government collaboration changes public access, export handling, or enterprise procurement.
+- [ ] Whether Microsoft’s layoffs are truly unrelated to AI-driven automation inside the company.
+- [ ] Whether NVIDIA’s new compute-financing model meaningfully lowers barriers for smaller customers.

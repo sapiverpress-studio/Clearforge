@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "date": "2026-07-13",
+  "brand": "Clearforge",
+  "type": "clearforge_daily_biggest_story_podcast_script",
+  "human_review_required": true,
+  "narrator": "Irene",
+  "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+  "episode_title": "GPT-5.6 moves AI closer to everyday work",
+  "selected_story_index": 0,
+  "selected_story_title": "OpenAI pushes GPT‑5.6 toward real work",
+  "selection_reason": "This is the biggest practical story of the edition because it signals a shift from AI as a novelty to AI as a work utility. It affects creators and small teams across drafting, research, coding, and routine operations, and it is backed by a direct product announcement with clear claims to verify.",
+  "word_count": 1463,
+  "estimated_duration_minutes": 10.1,
+  "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+  "source_notes": "source-notes.md",
+  "first_spoken_line": "Today’s biggest story is OpenAI’s GPT-5.6 announcement, because it points to a very practical shift: models are being sold less as clever demos and more as work tools.",
+  "final_spoken_line": "If you want the shortest version of today’s advice, it is this: do not ask whether the model is impressive. Ask whether it makes one real task faster, cleaner, and easier to repeat. That is the standard that matters now.",
+  "validation_warnings": [],
+  "non_spoken_instruction_candidates": []
+}

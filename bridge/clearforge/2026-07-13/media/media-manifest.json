@@ -1,44 +1,63 @@
 {
-  "version": 2,
+  "version": 3,
   "date": "2026-07-13",
-  "headline": "AI is becoming a workplace and platform feature — and the rules are tightening",
-  "dek": "Five recent stories show the same shift: AI is moving from flashy demos into product policy, legal disputes, and everyday workflows that creators and small businesses will actually feel.",
+  "headline": "AI is shifting from novelty to operations: faster models, live voice, safer scanning, and more infrastructure",
+  "dek": "A practical daily brief on what changed in the last two days, what is confirmed, and what creators and small teams should actually do with it.",
   "hook": "Three AI updates that actually matter today",
-  "visual_system": "Clearforge physical editorial metaphor set",
+  "visual_system": "Clearforge AI briefing podcast studio system",
+  "visual_style_rules": {
+    "include": [
+      "dark navy AI briefing or podcast studio atmosphere",
+      "microphone or audio-briefing cues where appropriate",
+      "subtle circuit traces, waveform motifs, model cards or data-routing lines",
+      "physical source notes, checklists and human-review materials",
+      "premium editorial technology-magazine lighting"
+    ],
+    "avoid": [
+      "robots",
+      "glowing brains",
+      "hologram faces",
+      "generic dashboards",
+      "random floating code",
+      "excessive neon",
+      "fake readable text",
+      "Sapiver or unrelated branding"
+    ]
+  },
   "stories": [
     {
       "file": "media/2026-07-13/story-1.png",
-      "title": "Apple vs OpenAI over trade secrets",
-      "source_name": "TechCrunch",
-      "source_url": "https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/",
-      "summary": "Apple has sued OpenAI, alleging trade secret theft and breach of contract tied to recruiting and confidential product information.",
-      "why_it_matters": "Big AI companies are no longer competing only on model quality. Legal risk, employee movement, and product secrecy are now part of the market.",
-      "practical_angle": "If you run a small team, tighten your own hiring, confidentiality, and data-handling practices before you start using AI more deeply.",
-      "visual_prompt": "a librarian-style research table with archive boxes, evidence slips, colour-coded dividers and a calm human review process. documentary-style close-up of hands arranging materials, no identifiable face. use paper, wood, fabric, card, folders and desk objects instead of neon tech graphics. Story context: Apple vs OpenAI over trade secrets. Practical angle: If you run a small team, tighten your own hiring, confidentiality, and data-handling practices before you start using AI more deeply.. Clearforge brand feel: human-led, practical, editorial, calm, precise. Palette: soft daylight, cream surfaces, green folders and muted amber shadows. Avoid generic AI imagery: no robots, no glowing brains, no hologram faces, no neon circuit boards, no floating code, no generic laptop dashboard, no stock-photo handshake, no unreadable fake UI, no logos, no brand marks, no typography, no watermarks. Portrait composition for a vertical short, visually specific, coherent with Sapiver Press but clearly Clearforge."
+      "title": "OpenAI pushes GPT‑5.6 toward real work",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/gpt-5-6/",
+      "summary": "OpenAI says GPT‑5.6 is designed to get more useful work out of every token, with better performance on coding, knowledge work, design, and long-horizon tasks.",
+      "why_it_matters": "If the claims hold up, teams may care less about raw model size and more about cost, speed, and how well the model handles repetitive work.",
+      "practical_angle": "Creators and small businesses should watch whether this makes outline-to-draft, research-to-report, and spreadsheet-style work faster and cheaper.",
+      "visual_prompt": "a modern audio briefing desk where AI developments are represented by physical cards, circuit-like connection lines, a restrained waveform panel and careful human notes. clean editorial technology-magazine composition, practical rather than sci-fi. make the AI element clear through subtle circuit traces, waveform graphics, model cards and data-routing lines, not robots. change the hero object placement so this frame does not resemble the previous edition. Story context: OpenAI pushes GPT‑5.6 toward real work. Practical angle: Creators and small businesses should watch whether this makes outline-to-draft, research-to-report, and spreadsheet-style work faster and cheaper.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
     },
     {
       "file": "media/2026-07-13/story-2.png",
-      "title": "Meta pulls Instagram AI photo feature",
-      "source_name": "TechCrunch",
-      "source_url": "https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/",
-      "summary": "Meta removed an AI feature that let people edit or generate images from public Instagram accounts after user backlash.",
-      "why_it_matters": "This is a clear example of the consent problem in consumer AI: just because content is public does not mean people want it reused by AI tools.",
-      "practical_angle": "Creators should check platform settings and assume public content may be repurposed unless a platform clearly says otherwise.",
-      "visual_prompt": "a museum-display style arrangement of everyday objects representing control, judgement, automation, cost and review. wide vertical still-life scene with strong foreground object. make it look like an editorial magazine photograph, not a SaaS advert. Story context: Meta pulls Instagram AI photo feature. Practical angle: Creators should check platform settings and assume public content may be repurposed unless a platform clearly says otherwise.. Clearforge brand feel: human-led, practical, editorial, calm, precise. Palette: dark teal background with warm paper objects and restrained brass highlights. Avoid generic AI imagery: no robots, no glowing brains, no hologram faces, no neon circuit boards, no floating code, no generic laptop dashboard, no stock-photo handshake, no unreadable fake UI, no logos, no brand marks, no typography, no watermarks. Portrait composition for a vertical short, visually specific, coherent with Sapiver Press but clearly Clearforge."
+      "title": "OpenAI makes voice feel more conversational",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/introducing-gpt-live/",
+      "summary": "GPT‑Live is a new voice system that listens and responds continuously, instead of forcing rigid turn-taking, and OpenAI says it can hand deeper work to other models in the background.",
+      "why_it_matters": "Voice is becoming easier to use for real tasks like quick drafting, reminders, live translation, and hands-free support.",
+      "practical_angle": "This could help solo operators, commuters, and frontline workers use AI while moving, cooking, driving, or multitasking.",
+      "visual_prompt": "a practical creator workflow table showing verified source notes, timeline cards, a muted blue AI signal pattern, a microphone, headphones and a structured review checklist. vertical social-video still with a strong microphone foreground and clear desk detail. use restrained blue technology accents to signal AI without making the image look like generic AI stock art. include a different arrangement of source cards, notebook, microphone angle and background signal pattern. Story context: OpenAI makes voice feel more conversational. Practical angle: This could help solo operators, commuters, and frontline workers use AI while moving, cooking, driving, or multitasking.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
     },
     {
       "file": "media/2026-07-13/story-3.png",
-      "title": "OpenAI closes Atlas but keeps browser AI alive",
-      "source_name": "TechCrunch",
-      "source_url": "https://techcrunch.com/2026/07/09/openai-is-shutting-down-atlas-but-its-ai-browser-ambitions-are-still-growing/",
-      "summary": "OpenAI is shutting down Atlas, its AI browser, but moving some of its agentic browsing functions into ChatGPT desktop and Chrome.",
-      "why_it_matters": "The browser race is shifting from standalone products to embedded features inside tools people already use.",
-      "practical_angle": "For everyday work, the useful question is not “Which AI browser wins?” but “Which browsing tasks can I safely automate?”",
-      "visual_prompt": "a quiet teaching-room wall with hand-drawn process diagrams, pinned source cards, string lines and simple review checkpoints. three-quarter editorial photograph with shallow depth of field. make the scene understandable even without any text. Story context: OpenAI closes Atlas but keeps browser AI alive. Practical angle: For everyday work, the useful question is not “Which AI browser wins?” but “Which browsing tasks can I safely automate?”. Clearforge brand feel: human-led, practical, editorial, calm, precise. Palette: cream paper, charcoal ink, deep green and soft gold accents. Avoid generic AI imagery: no robots, no glowing brains, no hologram faces, no neon circuit boards, no floating code, no generic laptop dashboard, no stock-photo handshake, no unreadable fake UI, no logos, no brand marks, no typography, no watermarks. Portrait composition for a vertical short, visually specific, coherent with Sapiver Press but clearly Clearforge."
+      "title": "Anthropic ties model deployment more tightly to safety and government testing",
+      "source_name": "Anthropic",
+      "source_url": "https://www.anthropic.com/news/redeploying-fable-5",
+      "summary": "Anthropic says Fable 5 is back globally and that it will increase cooperation with government partners on testing, red-teaming, and security standards.",
+      "why_it_matters": "The release shows how frontier AI companies are increasingly selling safety posture alongside capability.",
+      "practical_angle": "Smaller teams should expect more enterprise buyers to ask about controls, auditability, and model governance before adopting new AI tools.",
+      "visual_prompt": "a podcast-ready AI learning desk with a microphone in the foreground, tidy source folders, simple model cards, a soft waveform motif and a dark professional newsroom mood. cinematic three-quarter studio photograph with shallow depth of field. make it instantly understandable as an AI briefing or AI podcast image, but grounded in real studio objects. vary camera distance, desk depth and object hierarchy while keeping the same Clearforge identity. Story context: Anthropic ties model deployment more tightly to safety and government testing. Practical angle: Smaller teams should expect more enterprise buyers to ask about controls, auditability, and model governance before adopting new AI tools.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: dark blue studio background, graphite desk, white paper, blue highlights and restrained green accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
     }
   ],
   "narration": "media/2026-07-13/narration.mp3",
-  "narration_text": "Big AI update: the story is shifting from model hype to real-world guardrails. Apple sued OpenAI, Meta removed an Instagram AI feature after backlash, OpenAI is shutting down Atlas, and Google is adding AI ad disclosure. For creators and small businesses, the lesson is simple: use AI to speed up work, but keep human control over content, consent, and final approval.",
-  "practical_takeaway": "Before adopting a new AI feature, ask three questions: Does it use my content or customer data? Does it disclose that AI was involved? Can I turn it off or export my work if the product changes?",
-  "what_to_test_next": "Run one 20-minute experiment: pick a repetitive task such as summarizing client research, drafting ad copy, or turning meeting notes into action items, and test whether an AI tool can do 80% of it while a human does the final 20%."
+  "narration_text": "Big AI update: the story is shifting from flashy demos to practical systems. OpenAI launched GPT‑5.6 for harder work and GPT‑Live for more natural voice conversations. Anthropic restored Fable 5 and added more safety collaboration. Microsoft says AI is changing work, but layoffs are more complicated than a simple automation story. NVIDIA is also making compute easier to scale. The real question now: what can AI do for your workflow this week?",
+  "practical_takeaway": "Pick one repetitive weekly task — drafting, research, note-taking, or support replies — and test whether a faster model or the new voice workflow saves you time without adding cleanup.",
+  "what_to_test_next": "Run a 20-minute workflow experiment: use voice for rough input, then use a text model to refine the output into a final draft, and measure whether the combined process is faster than typing from scratch."
 }

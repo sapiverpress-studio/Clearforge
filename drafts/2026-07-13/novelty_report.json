@@ -1,7 +1,7 @@
 {
   "date": "2026-07-13",
-  "same_day_prior_runs": 0,
-  "excluded_url_count": 19,
-  "excluded_story_title_count": 18,
+  "same_day_prior_runs": 1,
+  "excluded_url_count": 22,
+  "excluded_story_title_count": 23,
   "passed": true
 }

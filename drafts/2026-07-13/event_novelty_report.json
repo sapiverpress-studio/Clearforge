@@ -1,7 +1,185 @@
 {
   "date": "2026-07-13",
   "passed": true,
-  "prior_run_count": 0,
+  "prior_run_count": 1,
+  "current_story_count": 5,
+  "prior_story_count": 5,
   "duplicate_events": [],
-  "note": "No earlier same-day run exists."
+  "comparisons": [
+    {
+      "current_story_index": 0,
+      "prior_story_title": "Apple vs OpenAI over trade secrets",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "Different event type: legal dispute versus a new OpenAI model announcement."
+    },
+    {
+      "current_story_index": 0,
+      "prior_story_title": "Meta pulls Instagram AI photo feature",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "Completely different company and action; Meta feature removal is unrelated to GPT-5.6."
+    },
+    {
+      "current_story_index": 0,
+      "prior_story_title": "OpenAI closes Atlas but keeps browser AI alive",
+      "same_underlying_event": false,
+      "confidence": 0.12,
+      "reason": "Same company, but this is a different OpenAI product/event: model release versus browser product restructuring."
+    },
+    {
+      "current_story_index": 0,
+      "prior_story_title": "OpenAI leadership shift continues",
+      "same_underlying_event": false,
+      "confidence": 0.05,
+      "reason": "Both involve OpenAI, but one is a personnel change and the other is a model launch."
+    },
+    {
+      "current_story_index": 0,
+      "prior_story_title": "Google adds AI ad disclosure",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "Unrelated company policy change versus OpenAI model release."
+    },
+    {
+      "current_story_index": 1,
+      "prior_story_title": "Apple vs OpenAI over trade secrets",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "Different event type: lawsuit versus OpenAI voice-system launch."
+    },
+    {
+      "current_story_index": 1,
+      "prior_story_title": "Meta pulls Instagram AI photo feature",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "Different company and product area; no shared underlying event."
+    },
+    {
+      "current_story_index": 1,
+      "prior_story_title": "OpenAI closes Atlas but keeps browser AI alive",
+      "same_underlying_event": false,
+      "confidence": 0.15,
+      "reason": "Both are OpenAI product stories, but Atlas/browser changes are distinct from the GPT-Live voice system announcement."
+    },
+    {
+      "current_story_index": 1,
+      "prior_story_title": "OpenAI leadership shift continues",
+      "same_underlying_event": false,
+      "confidence": 0.05,
+      "reason": "Personnel change is separate from the voice product release."
+    },
+    {
+      "current_story_index": 1,
+      "prior_story_title": "Google adds AI ad disclosure",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "Unrelated policy announcement by another company."
+    },
+    {
+      "current_story_index": 2,
+      "prior_story_title": "Apple vs OpenAI over trade secrets",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "A legal case against OpenAI is unrelated to Anthropic's Fable 5 safety/testing announcement."
+    },
+    {
+      "current_story_index": 2,
+      "prior_story_title": "Meta pulls Instagram AI photo feature",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "Different company and product; no shared event."
+    },
+    {
+      "current_story_index": 2,
+      "prior_story_title": "OpenAI closes Atlas but keeps browser AI alive",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "OpenAI browser changes are unrelated to Anthropic's redeployment and safety posture update."
+    },
+    {
+      "current_story_index": 2,
+      "prior_story_title": "OpenAI leadership shift continues",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "Different company and event type."
+    },
+    {
+      "current_story_index": 2,
+      "prior_story_title": "Google adds AI ad disclosure",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "Unrelated transparency policy by Google, not Anthropic's model deployment/testing update."
+    },
+    {
+      "current_story_index": 3,
+      "prior_story_title": "Apple vs OpenAI over trade secrets",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "Legal dispute versus Microsoft's workforce/reorg commentary."
+    },
+    {
+      "current_story_index": 3,
+      "prior_story_title": "Meta pulls Instagram AI photo feature",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "Different company and unrelated product policy."
+    },
+    {
+      "current_story_index": 3,
+      "prior_story_title": "OpenAI closes Atlas but keeps browser AI alive",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "OpenAI browser story is unrelated to Microsoft's layoff/transformation statement."
+    },
+    {
+      "current_story_index": 3,
+      "prior_story_title": "OpenAI leadership shift continues",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "Different company and no shared event."
+    },
+    {
+      "current_story_index": 3,
+      "prior_story_title": "Google adds AI ad disclosure",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "Google ad disclosure policy is unrelated to Microsoft's workforce update."
+    },
+    {
+      "current_story_index": 4,
+      "prior_story_title": "Apple vs OpenAI over trade secrets",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "Legal dispute versus NVIDIA infrastructure-financing announcement."
+    },
+    {
+      "current_story_index": 4,
+      "prior_story_title": "Meta pulls Instagram AI photo feature",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "Different company and unrelated consumer-product action."
+    },
+    {
+      "current_story_index": 4,
+      "prior_story_title": "OpenAI closes Atlas but keeps browser AI alive",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "OpenAI browser/product story is unrelated to NVIDIA's compute-financing initiative."
+    },
+    {
+      "current_story_index": 4,
+      "prior_story_title": "OpenAI leadership shift continues",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "Different company and event type."
+    },
+    {
+      "current_story_index": 4,
+      "prior_story_title": "Google adds AI ad disclosure",
+      "same_underlying_event": false,
+      "confidence": 0.01,
+      "reason": "Unrelated policy change versus NVIDIA infrastructure financing."
+    }
+  ]
 }

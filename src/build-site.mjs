@@ -128,9 +128,16 @@ function textFromMarkdown(markdown) {
 function xmlEscape(value) {
   return String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&apos;");
 }
+function datePart(editionId) {
+  const match = String(editionId || "").match(/^\d{4}-\d{2}-\d{2}/);
+  return match ? match[0] : new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+}
 
 function main() {
-  ensureDir(publicDir); ensureDir(postsDir); ensureDir(featuresDir);\n  const reportCount = buildReports();
+  ensureDir(publicDir);
+  ensureDir(postsDir);
+  ensureDir(featuresDir);
+  const reportCount = buildReports();
   const dates = fs.existsSync(draftsDir)
     ? fs.readdirSync(draftsDir).filter((name) => fs.existsSync(path.join(draftsDir, name, "daily_brief.md"))).sort().reverse()
     : [];
@@ -160,12 +167,13 @@ function main() {
       fs.writeFileSync(path.join(featuresDir, filename), pageTemplate(meta.feature_headline, meta.seo_description || meta.feature_dek, `<article class="feature">${markdownToHtml(markdown)}</article>`), "utf8");
       featureLinks.push(`<li><a href="/features/${filename}">${escapeHtml(meta.feature_headline)}</a><span> — ${date}</span></li>`);
       const url = blogBase ? `${blogBase}/features/${filename}` : `/features/${filename}`;
-      feedItems.push(`<item><title>${xmlEscape(meta.feature_headline)}</title><link>${xmlEscape(url)}</link><guid>${xmlEscape(url)}</guid><pubDate>${new Date(`${date}T08:00:00Z`).toUTCString()}</pubDate><description>${xmlEscape(meta.seo_description || meta.feature_dek || "")}</description></item>`);
+      feedItems.push(`<item><title>${xmlEscape(meta.feature_headline)}</title><link>${xmlEscape(url)}</link><guid>${xmlEscape(url)}</guid><pubDate>${new Date(`${datePart(date)}T08:00:00Z`).toUTCString()}</pubDate><description>${xmlEscape(meta.seo_description || meta.feature_dek || "")}</description></item>`);
     }
   }
 
   const indexBody = `
-<section class="hero"><h1>Clear AI learning from noisy AI news.</h1><p>Clearforge turns daily AI updates into practical learning, careful takeaways, and usable workflow tests.</p><p><a href="/reports/">Explore Clearforge Reports</a></p></section>\n<section class="posts"><h2>Clearforge Reports</h2><p>Go deeper with weekly AI learning briefs and standalone research papers on major releases.</p><p><a class="button" href="/reports/">Browse all reports</a></p></section>
+<section class="hero"><h1>Clear AI learning from noisy AI news.</h1><p>Clearforge turns daily AI updates into practical learning, careful takeaways, and usable workflow tests.</p><p><a href="/reports/">Explore Clearforge Reports</a></p></section>
+<section class="posts"><h2>Clearforge Reports</h2><p>Go deeper with weekly AI learning briefs and standalone research papers on major releases.</p><p><a class="button" href="/reports/">Browse all reports</a></p></section>
 <section class="posts"><h2>Feature Analysis</h2>${featureLinks.length ? `<ul>${featureLinks.join("\n")}</ul>` : `<p>No approved features yet.</p>`}</section>
 <section class="posts"><h2>Daily Briefs</h2>${briefLinks.length ? `<ul>${briefLinks.join("\n")}</ul>` : `<p>No approved public briefs yet.</p>`}</section>`;
 

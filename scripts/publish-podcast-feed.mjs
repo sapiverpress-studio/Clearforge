@@ -66,6 +66,7 @@ const feed = `<?xml version="1.0" encoding="UTF-8"?>
     <link>${BASE}/podcast/</link>
     <description>AI news is noisy. Clearforge turns it into clear, usable learning and content for creators, small businesses and practical AI learners.</description>
     <language>en-gb</language>
+    <managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>
     <copyright>Clearforge</copyright>
     <generator>Clearforge hosted podcast feed</generator>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>

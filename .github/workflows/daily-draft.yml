@@ -178,7 +178,7 @@ jobs:
       - name: Generate full daily podcast MP3 with Irene
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:
-          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVELAB_API }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVENLAB_API || secrets.ELEVELAB_API }}
           ELEVENLABS_VOICE_ID: w9xM4Spfmuw28ZXAirWK
           ELEVENLABS_MODEL_ID: eleven_multilingual_v2
           INPUT_PATH: drafts/${{ env.CLEARFORGE_DATE }}/podcast/COPY_PASTE_INTO_ELEVENLABS.txt

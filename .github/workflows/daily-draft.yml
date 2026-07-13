@@ -268,10 +268,27 @@ jobs:
 
       - name: Commit daily article feature media bridge site and syndication state
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Run Clearforge daily autopilot"
-          file_pattern: "drafts/** media/** bridge/** public/**"
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898242+github-actions[bot]@users.noreply.github.com"
+          git add -- drafts media bridge public
+          if git diff --cached --quiet; then
+            echo "No Clearforge changes to commit."
+            exit 0
+          fi
+          git commit -m "Run Clearforge daily autopilot"
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push attempt ${attempt} failed; retrying after synchronising main."
+            git rebase --abort 2>/dev/null || true
+            sleep 2
+          done
+          echo "::error::Could not save Clearforge outputs after three attempts."
+          exit 1
 
       - name: Trigger full video render and live social distribution
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'

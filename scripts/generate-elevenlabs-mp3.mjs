@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import crypto from "node:crypto";
 
 const inputPath = process.env.INPUT_PATH;
 const outputPath = process.env.OUTPUT_PATH;
@@ -33,6 +34,16 @@ if (/^\s*(TITLE|SUBTITLE|EPISODE|CHAPTER|OPEN|CLOSE|PAUSE|NARRATOR|VOICE ID|SOUR
 }
 if (/\[[^\]]+\]/.test(text)) {
   throw new Error("Narration contains bracketed stage directions.");
+}
+
+const inputHash = crypto.createHash("sha256").update(text, "utf8").digest("hex");
+const hashPath = `${outputPath}.source-sha256`;
+if (fs.existsSync(outputPath) && fs.existsSync(hashPath)) {
+  const previousHash = fs.readFileSync(hashPath, "utf8").trim();
+  if (previousHash === inputHash) {
+    console.log(`MP3 is already current for ${inputPath}; no ElevenLabs credits used.`);
+    process.exit(0);
+  }
 }
 
 function splitNarration(value, limit) {
@@ -127,4 +138,5 @@ if (!looksLikeMp3) {
 
 fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 fs.writeFileSync(outputPath, audio);
+fs.writeFileSync(hashPath, `${inputHash}\n`, "utf8");
 console.log(`Saved ${outputPath} (${audio.length} bytes) using Irene, ${voiceId}.`);

@@ -21,6 +21,11 @@ on:
           - risk_control
           - beginner_learning
           - business_systems
+      generate_irene:
+        description: "Generate the paid full Irene podcast MP3 for this manual run"
+        required: true
+        default: false
+        type: boolean
   schedule:
     - cron: "30 3 * * *"
     - cron: "30 4 * * *"
@@ -55,31 +60,37 @@ jobs:
             echo "retry=false" >> "$GITHUB_OUTPUT"
             echo "edition=${{ github.event.inputs.edition_mode }}" >> "$GITHUB_OUTPUT"
             echo "angle=${{ github.event.inputs.angle }}" >> "$GITHUB_OUTPUT"
+            echo "irene=${{ github.event.inputs.generate_irene }}" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
           LOCAL_TIME="$(TZ=Europe/London date +%H:%M)"
-          echo "Europe/London local time: ${LOCAL_TIME}"
+          LOCAL_DAY="$(TZ=Europe/London date +%u)"
+          echo "Europe/London local time: ${LOCAL_TIME}; weekday: ${LOCAL_DAY}"
           if [ "${LOCAL_TIME}" = "04:30" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "retry=false" >> "$GITHUB_OUTPUT"
             echo "edition=fresh" >> "$GITHUB_OUTPUT"
             echo "angle=creator_workflow" >> "$GITHUB_OUTPUT"
+            if [ "${LOCAL_DAY}" = "4" ]; then echo "irene=true" >> "$GITHUB_OUTPUT"; else echo "irene=false" >> "$GITHUB_OUTPUT"; fi
           elif [ "${LOCAL_TIME}" = "05:15" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "retry=true" >> "$GITHUB_OUTPUT"
             echo "edition=fresh" >> "$GITHUB_OUTPUT"
             echo "angle=creator_workflow" >> "$GITHUB_OUTPUT"
+            if [ "${LOCAL_DAY}" = "4" ]; then echo "irene=true" >> "$GITHUB_OUTPUT"; else echo "irene=false" >> "$GITHUB_OUTPUT"; fi
           elif [ "${LOCAL_TIME}" = "16:30" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "retry=false" >> "$GITHUB_OUTPUT"
             echo "edition=alternate" >> "$GITHUB_OUTPUT"
             echo "angle=creator_workflow" >> "$GITHUB_OUTPUT"
+            echo "irene=false" >> "$GITHUB_OUTPUT"
           else
             echo "run=false" >> "$GITHUB_OUTPUT"
             echo "retry=false" >> "$GITHUB_OUTPUT"
             echo "edition=fresh" >> "$GITHUB_OUTPUT"
             echo "angle=creator_workflow" >> "$GITHUB_OUTPUT"
+            echo "irene=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Checkout
@@ -177,7 +188,7 @@ jobs:
 
       - name: Generate full daily podcast MP3 with Irene
         id: irene
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.irene == 'true'
         continue-on-error: true
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVENLAB_API || secrets.ELEVELAB_API }}
@@ -188,7 +199,7 @@ jobs:
         run: node scripts/generate-elevenlabs-mp3.mjs
 
       - name: Record Irene generation warning
-        if: always() && steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.irene.outcome == 'failure'
+        if: always() && steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.irene == 'true' && steps.irene.outcome == 'failure'
         shell: bash
         run: |
           {
@@ -200,7 +211,7 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Publish Irene episode to Clearforge RSS feed
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.irene.outcome == 'success'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.irene == 'true' && steps.irene.outcome == 'success'
         env:
           PODCAST_KIND: daily
           EPISODE_SLUG: ${{ env.CLEARFORGE_DATE }}

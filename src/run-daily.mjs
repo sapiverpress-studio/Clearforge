@@ -34,6 +34,63 @@ function similarity(a, b) {
 }
 function safeReadJson(file) { try { return readJson(file); } catch { return null; } }
 
+function baseDatePart(value) {
+  const match = String(value || "").match(/^\d{4}-\d{2}-\d{2}/);
+  return match ? match[0] : new Intl.DateTimeFormat("sv-SE", {
+    timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
+  }).format(new Date());
+}
+
+function editorialTheme(dateValue) {
+  const datePart = baseDatePart(dateValue);
+  const day = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/London", weekday: "long" }).format(new Date(`${datePart}T12:00:00Z`));
+  const themes = {
+    Monday: {
+      slug: "work",
+      title: "Work",
+      focus: "AI at work: daily tasks, teams, productivity, research, writing, support, admin, meetings and practical workplace use.",
+      instruction: "Prioritise stories that help creators, small operators and small businesses test AI in real work. Ask what changes a workday, what still needs human review, and what is ready to try this week."
+    },
+    Tuesday: {
+      slug: "life",
+      title: "Life",
+      focus: "Life-admin and personal usefulness: learning, household planning, accessibility, personal knowledge management, family logistics, study, note-taking and everyday problem solving.",
+      instruction: "Keep the angle practical and careful. Avoid medical, legal or financial advice. Focus on how AI can help people understand, organise or learn, not replace judgement."
+    },
+    Wednesday: {
+      slug: "systems-automation",
+      title: "Systems and automation",
+      focus: "Systems, automation, agents, reliability, review loops, handoffs, repeatable processes, governance, failure points and human accountability.",
+      instruction: "Emphasise what should and should not be automated. Explain where human checks, logs, approvals and fallbacks belong."
+    },
+    Thursday: {
+      slug: "stacks-workflows",
+      title: "Stacks and workflows",
+      focus: "Tool combinations: models, apps, APIs, image, video, voice, documents, databases, scheduling, publishing and creator pipelines.",
+      instruction: "Explain how pieces fit together rather than treating tools as isolated announcements. Include practical stack or workflow examples where supported by the sources."
+    },
+    Friday: {
+      slug: "new-to-scene-watchlist",
+      title: "New to the scene / what to watch",
+      focus: "Emerging tools, early releases, previews, newly visible trends and practical watchlist items.",
+      instruction: "Make clear what is actually available now, what is staged, and what remains uncertain. Help readers decide what to test, watch or ignore."
+    },
+    Saturday: {
+      slug: "clearforge-forecast",
+      title: "Clearforge forecast",
+      focus: "Evidence-based forecast piece using the week’s confirmed developments.",
+      instruction: "Ask: if this happened this week, what might reasonably follow? Which companies may follow suit? What should creators and small businesses watch? Clearly label forecasts as forecasts. Do not present predictions as facts."
+    },
+    Sunday: {
+      slug: "weekly-recap-prediction-check",
+      title: "Recap and prediction check",
+      focus: "Recap the strongest developments of the week, check any recent Clearforge forecasts where evidence exists, and prepare the reader for the following week.",
+      instruction: "Separate confirmed outcomes from still-open questions. Make the piece useful as a Sunday reset before the next week of AI news."
+    }
+  };
+  return { day, date: datePart, ...themes[day] };
+}
+
 function archiveCurrentRun() {
   const currentStructured = path.join(outDir, "structured_output.json");
   if (!fs.existsSync(currentStructured)) return null;
@@ -120,18 +177,18 @@ function preserveOrCreateApproval() {
   }, null, 2));
 }
 
-function renderBrief(data) {
+function renderBrief(data, theme) {
   const sourceLines = data.sources.map((s, i) =>
     `${i + 1}. [${s.title}](${s.url}) — ${s.source_name} (${s.published_date})\n   - Confirmed: ${s.confirmed_fact}\n   - Interpretation: ${s.interpretation}`
   ).join("\n\n");
   const summaries = data.story_summaries.map((s) =>
     `### ${s.title}\n\n${s.summary}\n\n**Why it matters:** ${s.why_it_matters}\n\n**Practical angle:** ${s.practical_angle}\n\n**Claim to verify:** ${s.claim_to_verify}`
   ).join("\n\n");
-  return `# ${data.headline}\n\nStatus: Draft — automatic validation pending\n\n${data.dek}\n\n## Source List\n\n${sourceLines}\n\n## Story Summaries\n\n${summaries}\n\n## Main Article\n\n${data.main_article}\n\n## Practical Takeaway\n\n${data.practical_takeaway}\n\n## What To Test Next\n\n${data.what_to_test_next}\n\n## Claims To Verify Before Publishing\n\n${data.claims_to_verify.map((x) => `- ${x}`).join("\n")}\n`;
+  return `# ${data.headline}\n\nStatus: Draft — automatic validation pending\n\nEditorial theme: ${theme.day} — ${theme.title}\n\n${data.dek}\n\n## Source List\n\n${sourceLines}\n\n## Story Summaries\n\n${summaries}\n\n## Main Article\n\n${data.main_article}\n\n## Practical Takeaway\n\n${data.practical_takeaway}\n\n## What To Test Next\n\n${data.what_to_test_next}\n\n## Claims To Verify Before Publishing\n\n${data.claims_to_verify.map((x) => `- ${x}`).join("\n")}\n`;
 }
 
-function renderSocial(data) {
-  return `# Clearforge Social Repurpose Pack — ${today}\n\nStatus: Draft — automatic validation pending\n\n## TikTok Script\n\n${data.social.tiktok_script}\n\n## YouTube Shorts Script\n\n${data.social.youtube_shorts_script}\n\n## Facebook Post\n\n${data.social.facebook_post}\n\n## Pinterest Pin\n\n**Title:** ${data.social.pinterest_title}\n\n**Description:** ${data.social.pinterest_description}\n\n## LinkedIn-Style Post\n\n${data.social.linkedin_post}\n\n## 5 Short Quote/Card Lines\n\n${data.social.quote_card_lines.map((x) => `- ${x}`).join("\n")}\n\n## Suggested Headlines\n\n${data.headline_options.map((x) => `- ${x}`).join("\n")}\n`;
+function renderSocial(data, theme) {
+  return `# Clearforge Social Repurpose Pack — ${today}\n\nStatus: Draft — automatic validation pending\n\nEditorial theme: ${theme.day} — ${theme.title}\n\n## TikTok Script\n\n${data.social.tiktok_script}\n\n## YouTube Shorts Script\n\n${data.social.youtube_shorts_script}\n\n## Facebook Post\n\n${data.social.facebook_post}\n\n## Pinterest Pin\n\n**Title:** ${data.social.pinterest_title}\n\n**Description:** ${data.social.pinterest_description}\n\n## LinkedIn-Style Post\n\n${data.social.linkedin_post}\n\n## 5 Short Quote/Card Lines\n\n${data.social.quote_card_lines.map((x) => `- ${x}`).join("\n")}\n\n## Suggested Headlines\n\n${data.headline_options.map((x) => `- ${x}`).join("\n")}\n`;
 }
 
 const schema = {
@@ -157,6 +214,7 @@ async function main() {
   const config = readJson(configPath);
   const allowedDomains = [...new Set(config.sources.map((s) => domainFromUrl(s.url)).filter(Boolean))];
   const prompt = fs.readFileSync(promptPath, "utf8");
+  const theme = editorialTheme(today);
   const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
   const model = process.env.OPENAI_MODEL || "gpt-5.4-mini";
 
@@ -176,8 +234,8 @@ async function main() {
       tools: [{ type: "web_search", filters: { allowed_domains: allowedDomains }, user_location: { type: "approximate", country: "GB", city: "London" } }],
       include: ["web_search_call.action.sources"],
       input: [
-        { role: "system", content: "You are the Clearforge Daily AI Brief Builder. Research first. Use the broad allowed source pool. Prefer primary sources for facts and reputable journalism for discovery/context. Distinguish confirmed facts from interpretation. Never copy article wording. A rerun must be genuinely new, not a reframing of earlier stories." },
-        { role: "user", content: `${prompt}\n\nTODAY: ${today}\n\nEXCLUSIONS FROM EARLIER RUNS:\n${JSON.stringify(exclusions)}\n\nResearch the most useful AI developments from roughly the last 48 hours. Select 3 to 5 distinct stories. Do not use any excluded URL. Do not select a story substantially similar to any excluded story title, even from a different publication. Prefer developments not covered in earlier runs. Use a wider mix of companies, research, policy, infrastructure, open-source, creator tools, business use and safety. The main article must be 700 to 1000 words and practical for creators, small businesses, and AI learners.` }
+        { role: "system", content: "You are the Clearforge Daily AI Brief Builder. Research first. Use the broad allowed source pool. Prefer primary sources for facts and reputable journalism for discovery/context. Distinguish confirmed facts from interpretation. Never copy article wording. A rerun must be genuinely new, not a reframing of earlier stories. Follow the supplied weekday editorial theme so the output has a distinct daily purpose." },
+        { role: "user", content: `${prompt}\n\nTODAY: ${today}\n\nCLEARFORGE WEEKDAY EDITORIAL THEME:\nDay: ${theme.day}\nTheme: ${theme.title}\nFocus: ${theme.focus}\nInstruction: ${theme.instruction}\n\nFor Saturday forecast editions, label forecasts as forecasts and do not present predictions as confirmed facts. For Sunday recap editions, separate confirmed outcomes from open questions and prepare the reader for the following week.\n\nEXCLUSIONS FROM EARLIER RUNS:\n${JSON.stringify(exclusions)}\n\nResearch the most useful AI developments from roughly the last 48 hours, filtered through today’s editorial theme. Select 3 to 5 distinct stories. Do not use any excluded URL. Do not select a story substantially similar to any excluded story title, even from a different publication. Prefer developments not covered in earlier runs. Use a wider mix of companies, research, policy, infrastructure, open-source, creator tools, business use and safety. The main article must be 700 to 1000 words and practical for creators, small businesses, and AI learners.` }
       ],
       text: { format: { type: "json_schema", name: "clearforge_daily_brief", strict: true, schema } }
     });
@@ -191,14 +249,16 @@ async function main() {
 
   if (!data) throw new Error(`Could not produce a genuinely fresh same-day story set after 4 attempts: ${lastNoveltyFailures.join("; ")}`);
 
-  write(path.join(outDir, "daily_brief.md"), renderBrief(data));
-  write(path.join(outDir, "social_pack.md"), renderSocial(data));
-  write(path.join(outDir, "sources.json"), JSON.stringify(data.sources, null, 2));
-  write(path.join(outDir, "structured_output.json"), JSON.stringify(data, null, 2));
-  write(path.join(outDir, "novelty_report.json"), JSON.stringify({ date: today, same_day_prior_runs: fs.existsSync(runsDir) ? fs.readdirSync(runsDir).length : 0, excluded_url_count: history.usedUrls.length, excluded_story_title_count: history.usedStoryTitles.length, passed: true }, null, 2));
-  write(path.join(outDir, "claims_to_verify.md"), `# Claims To Verify — ${today}\n\n${data.claims_to_verify.map((x) => `- [ ] ${x}`).join("\n")}\n`);
-  write(path.join(outDir, "editor_checklist.md"), `# Clearforge Automatic QA Context — ${today}\n\n- Current run passed same-day URL exclusion.\n- Current run passed same-day story-title similarity gate.\n- Previous same-day runs are archived under drafts/${today}/runs/.\n- Automatic validation still controls publication approvals.\n`);
-  console.log(`Clearforge fresh daily pack created in drafts/${today}`);
+  const enrichedData = { ...data, editorial_theme: theme };
+  write(path.join(outDir, "daily_brief.md"), renderBrief(enrichedData, theme));
+  write(path.join(outDir, "social_pack.md"), renderSocial(enrichedData, theme));
+  write(path.join(outDir, "sources.json"), JSON.stringify(enrichedData.sources, null, 2));
+  write(path.join(outDir, "structured_output.json"), JSON.stringify(enrichedData, null, 2));
+  write(path.join(outDir, "editorial_theme.json"), JSON.stringify(theme, null, 2));
+  write(path.join(outDir, "novelty_report.json"), JSON.stringify({ date: today, editorial_theme: theme, same_day_prior_runs: fs.existsSync(runsDir) ? fs.readdirSync(runsDir).length : 0, excluded_url_count: history.usedUrls.length, excluded_story_title_count: history.usedStoryTitles.length, passed: true }, null, 2));
+  write(path.join(outDir, "claims_to_verify.md"), `# Claims To Verify — ${today}\n\nEditorial theme: ${theme.day} — ${theme.title}\n\n${enrichedData.claims_to_verify.map((x) => `- [ ] ${x}`).join("\n")}\n`);
+  write(path.join(outDir, "editor_checklist.md"), `# Clearforge Automatic QA Context — ${today}\n\n- Editorial theme: ${theme.day} — ${theme.title}.\n- Current run passed same-day URL exclusion.\n- Current run passed same-day story-title similarity gate.\n- Previous same-day runs are archived under drafts/${today}/runs/.\n- Automatic validation still controls publication approvals.\n`);
+  console.log(`Clearforge fresh daily pack created in drafts/${today} using ${theme.day} theme: ${theme.title}`);
 }
 
 main().catch((error) => { console.error(error); process.exit(1); });

@@ -51,6 +51,10 @@ const items = episodes.map((item) => `    <item>
       <pubDate>${rfc822(item.published)}</pubDate>
       <enclosure url="${esc(item.audio_url)}" length="${item.size}" type="audio/mpeg"/>
       <itunes:author>Clearforge</itunes:author>
+    <itunes:owner>
+      <itunes:name>Clearforge</itunes:name>
+      <itunes:email>clearforge@sapiverpress.co.uk</itunes:email>
+    </itunes:owner>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       ${item.duration ? `<itunes:duration>${esc(item.duration)}</itunes:duration>` : ""}

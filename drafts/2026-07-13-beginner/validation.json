@@ -1,0 +1,13 @@
+{
+  "date": "2026-07-13-beginner",
+  "passed": true,
+  "failures": [],
+  "warnings": [],
+  "stats": {
+    "source_count": 5,
+    "story_count": 5,
+    "article_words": 898,
+    "feature_words": 2194,
+    "unique_source_domains": 4
+  }
+}

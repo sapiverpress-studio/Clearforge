@@ -1,0 +1,42 @@
+[
+  {
+    "source_name": "OpenAI",
+    "title": "GPT‑5.6: Frontier intelligence that scales with your ambition",
+    "url": "https://openai.com/index/gpt-5-6/",
+    "published_date": "2026-07-09",
+    "confirmed_fact": "OpenAI announced the GPT‑5.6 family, including Sol, Terra, and Luna, and said it is focused on efficiency, knowledge work, coding, and stronger safeguards.",
+    "interpretation": "For beginners, this suggests AI is being tuned less like a toy and more like a daily work tool that should handle longer, more ordinary tasks."
+  },
+  {
+    "source_name": "OpenAI",
+    "title": "Introducing GPT‑Live",
+    "url": "https://openai.com/index/introducing-gpt-live/",
+    "published_date": "2026-07-08",
+    "confirmed_fact": "OpenAI launched GPT‑Live and said it is rolling it out to ChatGPT users globally, with a new full-duplex voice experience and safer voice-specific controls.",
+    "interpretation": "This points to a simpler way to use AI: talk naturally instead of waiting for rigid back-and-forth prompts."
+  },
+  {
+    "source_name": "Anthropic",
+    "title": "Redeploying Fable 5",
+    "url": "https://www.anthropic.com/news/redeploying-fable-5",
+    "published_date": "2026-06-30",
+    "confirmed_fact": "Anthropic said Fable 5 access was restored globally and described new government collaboration, including dedicated teams, compute for testing, and red-teaming support.",
+    "interpretation": "Beginners should see this as a reminder that powerful AI tools also come with rules, checks, and oversight."
+  },
+  {
+    "source_name": "Microsoft",
+    "title": "The latest in our company transformation",
+    "url": "https://blogs.microsoft.com/blog/2026/07/06/the-latest-in-our-company-transformation/",
+    "published_date": "2026-07-06",
+    "confirmed_fact": "Microsoft said the latest job cuts are not being replaced by AI, while also saying AI is changing how work gets done and that the company will keep investing in AI skills.",
+    "interpretation": "This shows that AI changes often look like new workflows and new skills, not just a robot replacing a person."
+  },
+  {
+    "source_name": "NVIDIA",
+    "title": "NVIDIA Unlocks AI Compute at Scale, Inviting Partners to Power the AI Infrastructure Buildout",
+    "url": "https://blogs.nvidia.com/blog/nvidia-unlocks-ai-compute-at-scale-capital-partners-to-power-ai-infrastructure-buildout/",
+    "published_date": "2026-07-01",
+    "confirmed_fact": "NVIDIA said it is introducing a new business model for AI clouds and multi-tenant AI factories, using revenue-sharing and credit-support structures.",
+    "interpretation": "For beginners, this is a clue that AI is not just software; it also depends on expensive computers, electricity, and financing behind the scenes."
+  }
+]

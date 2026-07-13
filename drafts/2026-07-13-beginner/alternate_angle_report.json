@@ -1,0 +1,22 @@
+{
+  "date": "2026-07-13-beginner",
+  "base_date": "2026-07-13",
+  "angle": "beginner_learning",
+  "editorial_theme": {
+    "day": "Monday",
+    "date": "2026-07-13",
+    "slug": "work",
+    "title": "Work",
+    "focus": "AI at work: daily tasks, teams, productivity, research, writing, support, admin, meetings and practical workplace use.",
+    "instruction": "Prioritise what creators, small operators and small businesses can test in real work this week."
+  },
+  "reused_base_run": "base-current-2026-07-13",
+  "source_urls_reused": [
+    "https://openai.com/index/gpt-5-6/",
+    "https://openai.com/index/introducing-gpt-live/",
+    "https://www.anthropic.com/news/redeploying-fable-5",
+    "https://blogs.microsoft.com/blog/2026/07/06/the-latest-in-our-company-transformation/",
+    "https://blogs.nvidia.com/blog/nvidia-unlocks-ai-compute-at-scale-capital-partners-to-power-ai-infrastructure-buildout/"
+  ],
+  "passed": true
+}

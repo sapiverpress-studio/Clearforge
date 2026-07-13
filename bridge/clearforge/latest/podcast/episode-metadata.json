@@ -1,23 +1,21 @@
 {
   "version": 1,
-  "date": "2026-07-13-risk",
+  "date": "2026-07-13-beginner",
   "brand": "Clearforge",
   "type": "clearforge_daily_biggest_story_podcast_script",
   "human_review_required": true,
   "narrator": "Irene",
   "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
-  "episode_title": "AI is getting more useful — and the risk controls matter more",
+  "episode_title": "AI work tools are getting easier to use, not just smarter",
   "selected_story_index": 0,
-  "selected_story_title": "OpenAI’s faster model still needs a review layer",
-  "selection_reason": "This is the clearest lead story for the edition because it captures the main theme: newer AI tools are becoming more capable, but the practical question for small teams is still control, review, and safe use. It also gives the most actionable guidance for creators and businesses trying AI in real workflows.",
-  "word_count": 1144,
-  "estimated_duration_minutes": 7.9,
+  "selected_story_title": "OpenAI is trying to make AI feel more useful at work",
+  "selection_reason": "This is the clearest lead story for the edition because it directly matches the headline and the practical takeaway: AI is moving toward everyday work tasks, not just bigger demos or louder claims.",
+  "word_count": 1341,
+  "estimated_duration_minutes": 9.2,
   "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
   "source_notes": "source-notes.md",
-  "first_spoken_line": "If you have been waiting for a moment when AI starts to feel less like a demo and more like a useful work tool, this week brings another step in that direction. But the bigger story is not just that the tools are getting better. It is that the review layer around them matters even more.",
-  "final_spoken_line": "If you want the shortest version of today’s brief, it is this: the tools are improving, but the control layer is now part of the job. Start with low-risk drafting and capture. Verify before you send. And build your workflow as if the model is helpful, not infallible.",
-  "validation_warnings": [
-    "Script is shorter than target: 1144 words."
-  ],
+  "first_spoken_line": "Today’s story is not about an AI model becoming more dazzling for its own sake. It is about a change that matters much more for normal people: OpenAI says its new GPT-5.6 family is aimed at getting more done with less effort, especially in coding, writing, and knowledge work.",
+  "final_spoken_line": "So the bottom line is simple. This is not just a story about a smarter AI. It is a story about a more usable AI. If the tool helps you get from rough idea to usable draft with less friction, that is real progress. If it only shifts the work around, then the promise is still ahead of the practice.",
+  "validation_warnings": [],
   "non_spoken_instruction_candidates": []
 }

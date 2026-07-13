@@ -1,0 +1,215 @@
+{
+  "version": 3,
+  "brand": "Clearforge",
+  "date": "2026-07-13-beginner",
+  "type": "clearforge_daily_ai_brief",
+  "approved": {
+    "article": true,
+    "facebook": true,
+    "pinterest": true,
+    "youtube": true
+  },
+  "article": {
+    "headline": "AI work tools are getting easier to use, not just smarter",
+    "dek": "A beginner-friendly daily brief on what changed, what it means in plain language, and the one thing small teams should try first.",
+    "url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-13-beginner.html",
+    "markdown": "daily_brief.md"
+  },
+  "stories": [
+    {
+      "title": "OpenAI is trying to make AI feel more useful at work",
+      "summary": "OpenAI says GPT‑5.6 is built to get more done with less effort, especially in coding, writing, and knowledge work.",
+      "why_it_matters": "If you are new to AI, the big idea is that better tools should save time on boring tasks, not just produce flashy answers.",
+      "practical_angle": "Think of it as a test of whether AI can help with drafts, summaries, research notes, and repetitive writing without a lot of cleanup.",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/gpt-5-6/"
+    },
+    {
+      "title": "Voice is becoming a normal way to use AI",
+      "summary": "GPT‑Live is designed to talk more naturally, with continuous listening and responding instead of a rigid question-and-answer rhythm.",
+      "why_it_matters": "Beginners often struggle with prompts. Voice can lower that barrier by letting you explain a task out loud.",
+      "practical_angle": "This could be useful for rough notes, reminders, quick brainstorming, and hands-free work while doing something else.",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/introducing-gpt-live/"
+    },
+    {
+      "title": "Anthropic shows that safety is part of the product now",
+      "summary": "Anthropic says Fable 5 is available again and that it is working more closely with government partners on testing and red-teaming.",
+      "why_it_matters": "New users should understand that AI tools are not just about power; they also come with guardrails and review processes.",
+      "practical_angle": "If you are choosing tools for a team, expect more questions about controls, audit trails, and how risky uses are managed.",
+      "source_name": "Anthropic",
+      "source_url": "https://www.anthropic.com/news/redeploying-fable-5"
+    }
+  ],
+  "facebook": {
+    "post": "If you are new to AI, this week’s updates are best read as a learning guide, not a race. OpenAI is making its models more practical for work and easier to use by voice. Anthropic is showing that safety and testing are now part of the product story. Microsoft says AI is changing work, but not every change is just automation. NVIDIA is focusing on the infrastructure behind the tools. The best way to learn? Pick one simple task and test whether AI helps.\n\n#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI"
+  },
+  "pinterest": {
+    "title": "A Beginner’s Guide to This Week in AI at Work",
+    "description": "A plain-language look at how AI is changing everyday work: easier drafting, voice tools, safety controls, and the infrastructure behind the apps. Built for beginners, creators, and small teams.",
+    "destination_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-13-beginner.html"
+  },
+  "youtube": {
+    "title": "AI is becoming a work tool, not just a demo",
+    "script": "AI beginner tip: do not start by asking what the biggest model can do. Start by asking what task you do every week that AI could make simpler. This week, OpenAI launched GPT‑5.6 for more useful work and GPT‑Live for more natural voice chat. Anthropic is tying AI more closely to safety and testing. Microsoft says AI is changing work in ways that are bigger than simple replacement. NVIDIA is focusing on the compute behind the tools. The lesson: learn AI by using it on one small task at a time.",
+    "description": "Start with one easy work task this week, like a draft email or meeting notes, and test whether AI makes it faster without making the final edit harder.\n\nRead the full brief: https://clearforge-daily-brief.netlify.app/posts/2026-07-13-beginner.html"
+  },
+  "podcast": {
+    "generated": true,
+    "folder": "podcast/",
+    "copy_paste_script": "podcast/COPY_PASTE_INTO_ELEVENLABS.txt",
+    "full_review_script": "podcast/podcast-script.md",
+    "metadata": "podcast/episode-metadata.json",
+    "source_notes": "podcast/source-notes.md",
+    "episode": {
+      "version": 1,
+      "date": "2026-07-13-beginner",
+      "brand": "Clearforge",
+      "type": "clearforge_daily_biggest_story_podcast_script",
+      "human_review_required": true,
+      "narrator": "Irene",
+      "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+      "episode_title": "AI work tools are getting easier to use, not just smarter",
+      "selected_story_index": 0,
+      "selected_story_title": "OpenAI is trying to make AI feel more useful at work",
+      "selection_reason": "This is the clearest lead story for the edition because it directly matches the headline and the practical takeaway: AI is moving toward everyday work tasks, not just bigger demos or louder claims.",
+      "word_count": 1341,
+      "estimated_duration_minutes": 9.2,
+      "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+      "source_notes": "source-notes.md",
+      "first_spoken_line": "Today’s story is not about an AI model becoming more dazzling for its own sake. It is about a change that matters much more for normal people: OpenAI says its new GPT-5.6 family is aimed at getting more done with less effort, especially in coding, writing, and knowledge work.",
+      "final_spoken_line": "So the bottom line is simple. This is not just a story about a smarter AI. It is a story about a more usable AI. If the tool helps you get from rough idea to usable draft with less friction, that is real progress. If it only shifts the work around, then the promise is still ahead of the practice.",
+      "validation_warnings": [],
+      "non_spoken_instruction_candidates": []
+    }
+  },
+  "ai_media": {
+    "manifest": "media/media-manifest.json",
+    "narration": "media/narration.mp3",
+    "story_images": [
+      "media/story-1.png",
+      "media/story-2.png",
+      "media/story-3.png"
+    ],
+    "generated": true
+  },
+  "quote_card_lines": [
+    "AI is becoming a work tool, not just a demo.",
+    "Voice lowers the barrier for beginners.",
+    "Safety is now part of the product story.",
+    "Not every workplace change is simple automation.",
+    "Learn AI by using it on one small task."
+  ],
+  "headline_options": [
+    "AI is becoming a work tool, not just a demo",
+    "A beginner’s guide to the new AI work shift",
+    "What this week’s AI news means if you’re just starting",
+    "AI is getting easier to use, not just smarter",
+    "The beginner takeaway: start small, test one task"
+  ],
+  "sources": [
+    {
+      "source_name": "OpenAI",
+      "title": "GPT‑5.6: Frontier intelligence that scales with your ambition",
+      "url": "https://openai.com/index/gpt-5-6/",
+      "published_date": "2026-07-09",
+      "confirmed_fact": "OpenAI announced the GPT‑5.6 family, including Sol, Terra, and Luna, and said it is focused on efficiency, knowledge work, coding, and stronger safeguards.",
+      "interpretation": "For beginners, this suggests AI is being tuned less like a toy and more like a daily work tool that should handle longer, more ordinary tasks."
+    },
+    {
+      "source_name": "OpenAI",
+      "title": "Introducing GPT‑Live",
+      "url": "https://openai.com/index/introducing-gpt-live/",
+      "published_date": "2026-07-08",
+      "confirmed_fact": "OpenAI launched GPT‑Live and said it is rolling it out to ChatGPT users globally, with a new full-duplex voice experience and safer voice-specific controls.",
+      "interpretation": "This points to a simpler way to use AI: talk naturally instead of waiting for rigid back-and-forth prompts."
+    },
+    {
+      "source_name": "Anthropic",
+      "title": "Redeploying Fable 5",
+      "url": "https://www.anthropic.com/news/redeploying-fable-5",
+      "published_date": "2026-06-30",
+      "confirmed_fact": "Anthropic said Fable 5 access was restored globally and described new government collaboration, including dedicated teams, compute for testing, and red-teaming support.",
+      "interpretation": "Beginners should see this as a reminder that powerful AI tools also come with rules, checks, and oversight."
+    },
+    {
+      "source_name": "Microsoft",
+      "title": "The latest in our company transformation",
+      "url": "https://blogs.microsoft.com/blog/2026/07/06/the-latest-in-our-company-transformation/",
+      "published_date": "2026-07-06",
+      "confirmed_fact": "Microsoft said the latest job cuts are not being replaced by AI, while also saying AI is changing how work gets done and that the company will keep investing in AI skills.",
+      "interpretation": "This shows that AI changes often look like new workflows and new skills, not just a robot replacing a person."
+    },
+    {
+      "source_name": "NVIDIA",
+      "title": "NVIDIA Unlocks AI Compute at Scale, Inviting Partners to Power the AI Infrastructure Buildout",
+      "url": "https://blogs.nvidia.com/blog/nvidia-unlocks-ai-compute-at-scale-capital-partners-to-power-ai-infrastructure-buildout/",
+      "published_date": "2026-07-01",
+      "confirmed_fact": "NVIDIA said it is introducing a new business model for AI clouds and multi-tenant AI factories, using revenue-sharing and credit-support structures.",
+      "interpretation": "For beginners, this is a clue that AI is not just software; it also depends on expensive computers, electricity, and financing behind the scenes."
+    }
+  ],
+  "media_metadata": {
+    "version": 3,
+    "date": "2026-07-13-beginner",
+    "headline": "AI work tools are getting easier to use, not just smarter",
+    "dek": "A beginner-friendly daily brief on what changed, what it means in plain language, and the one thing small teams should try first.",
+    "hook": "Three AI updates that actually matter today",
+    "visual_system": "Clearforge AI briefing podcast studio system",
+    "visual_style_rules": {
+      "include": [
+        "dark navy AI briefing or podcast studio atmosphere",
+        "microphone or audio-briefing cues where appropriate",
+        "subtle circuit traces, waveform motifs, model cards or data-routing lines",
+        "physical source notes, checklists and human-review materials",
+        "premium editorial technology-magazine lighting"
+      ],
+      "avoid": [
+        "robots",
+        "glowing brains",
+        "hologram faces",
+        "generic dashboards",
+        "random floating code",
+        "excessive neon",
+        "fake readable text",
+        "Sapiver or unrelated branding"
+      ]
+    },
+    "stories": [
+      {
+        "file": "media/2026-07-13-beginner/story-1.png",
+        "title": "OpenAI is trying to make AI feel more useful at work",
+        "source_name": "OpenAI",
+        "source_url": "https://openai.com/index/gpt-5-6/",
+        "summary": "OpenAI says GPT‑5.6 is built to get more done with less effort, especially in coding, writing, and knowledge work.",
+        "why_it_matters": "If you are new to AI, the big idea is that better tools should save time on boring tasks, not just produce flashy answers.",
+        "practical_angle": "Think of it as a test of whether AI can help with drafts, summaries, research notes, and repetitive writing without a lot of cleanup.",
+        "visual_prompt": "a practical AI systems review scene with a microphone, pinned evidence cards, process arrows, muted blue signal lines and a clear before-to-after analysis structure. vertical social-video still with a strong microphone foreground and clear desk detail. use restrained blue technology accents to signal AI without making the image look like generic AI stock art. vary camera distance, desk depth and object hierarchy while keeping the same Clearforge identity. Story context: OpenAI is trying to make AI feel more useful at work. Practical angle: Think of it as a test of whether AI can help with drafts, summaries, research notes, and repetitive writing without a lot of cleanup.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      },
+      {
+        "file": "media/2026-07-13-beginner/story-2.png",
+        "title": "Voice is becoming a normal way to use AI",
+        "source_name": "OpenAI",
+        "source_url": "https://openai.com/index/introducing-gpt-live/",
+        "summary": "GPT‑Live is designed to talk more naturally, with continuous listening and responding instead of a rigid question-and-answer rhythm.",
+        "why_it_matters": "Beginners often struggle with prompts. Voice can lower that barrier by letting you explain a task out loud.",
+        "practical_angle": "This could be useful for rough notes, reminders, quick brainstorming, and hands-free work while doing something else.",
+        "visual_prompt": "an editorial AI news analysis desk with printed source cards, model comparison sheets, a compact microphone arm, blue data-light accents and a calm control-room atmosphere. cinematic three-quarter studio photograph with shallow depth of field. make it instantly understandable as an AI briefing or AI podcast image, but grounded in real studio objects. use a different AI signal motif: waveform, routing lines, model cards, calendar markers or evidence board. Story context: Voice is becoming a normal way to use AI. Practical angle: This could be useful for rough notes, reminders, quick brainstorming, and hands-free work while doing something else.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      },
+      {
+        "file": "media/2026-07-13-beginner/story-3.png",
+        "title": "Anthropic shows that safety is part of the product now",
+        "source_name": "Anthropic",
+        "source_url": "https://www.anthropic.com/news/redeploying-fable-5",
+        "summary": "Anthropic says Fable 5 is available again and that it is working more closely with government partners on testing and red-teaming.",
+        "why_it_matters": "New users should understand that AI tools are not just about power; they also come with guardrails and review processes.",
+        "practical_angle": "If you are choosing tools for a team, expect more questions about controls, audit trails, and how risky uses are managed.",
+        "visual_prompt": "a weekly AI briefing workspace with layered research cards, calendar markers, a studio microphone, restrained blue interface glow and visible human review materials. premium podcast-cover composition with strong negative space for later text overlay. show AI as a system being reviewed by a person through notes, checks, source cards and controlled audio tools. make the story context visible through objects and composition rather than readable text. Story context: Anthropic shows that safety is part of the product now. Practical angle: If you are choosing tools for a team, expect more questions about controls, audit trails, and how risky uses are managed.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      }
+    ],
+    "narration": "media/2026-07-13-beginner/narration.mp3",
+    "narration_text": "AI beginner tip: do not start by asking what the biggest model can do. Start by asking what task you do every week that AI could make simpler. This week, OpenAI launched GPT‑5.6 for more useful work and GPT‑Live for more natural voice chat. Anthropic is tying AI more closely to safety and testing. Microsoft says AI is changing work in ways that are bigger than simple replacement. NVIDIA is focusing on the compute behind the tools. The lesson: learn AI by using it on one small task at a time.",
+    "practical_takeaway": "Start with one easy work task this week, like a draft email or meeting notes, and test whether AI makes it faster without making the final edit harder.",
+    "what_to_test_next": "Try this beginner exercise: speak a rough idea into a voice tool, then ask a text model to turn it into a clean email or summary. Compare that with doing it from scratch."
+  }
+}

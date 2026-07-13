@@ -22,7 +22,7 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     env:
-      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVELAB_API }}
+      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVENLAB_API || secrets.ELEVELAB_API }}
       ELEVENLABS_VOICE_ID: w9xM4Spfmuw28ZXAirWK
       ELEVENLABS_MODEL_ID: eleven_multilingual_v2
 
@@ -76,7 +76,7 @@ jobs:
         run: |
           set -euo pipefail
           if [[ -z "${ELEVENLABS_API_KEY:-}" ]]; then
-            echo "Neither ELEVENLABS_API_KEY nor ELEVELAB_API is configured."
+            echo "No ElevenLabs API secret is configured. Expected ELEVENLABS_API_KEY or ELEVENLAB_API."
             exit 1
           fi
 

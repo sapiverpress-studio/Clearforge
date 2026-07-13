@@ -86,6 +86,13 @@ jobs:
             output="$folder/clearforge-spoken-edition-$slug.mp3"
             echo "Generating $output from $script"
             INPUT_PATH="$script" OUTPUT_PATH="$output" node scripts/generate-elevenlabs-mp3.mjs
+            metadata="$folder/episode-metadata.json"
+            if [[ "$script" == reports/weekly/* ]]; then
+              kind="weekly"
+            else
+              kind="special"
+            fi
+            PODCAST_KIND="$kind" EPISODE_SLUG="$slug" SOURCE_MP3="$output" METADATA_PATH="$metadata" PODCAST_BASE_URL="https://clearforge-daily-brief.netlify.app" node scripts/publish-podcast-feed.mjs
           done < "${{ steps.narration.outputs.list_file }}"
 
       - name: Upload MP3 package
@@ -100,13 +107,13 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if git diff --quiet -- reports; then
+          if git diff --quiet -- reports public/podcast; then
             echo "No new MP3 changes to commit."
             exit 0
           fi
 
           git config user.name "clearforge-audio-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add -- 'reports/**/*.mp3' 'reports/**/*.mp3.source-sha256'
+          git add -- 'reports/**/*.mp3' 'reports/**/*.mp3.source-sha256' public/podcast
           git commit -m "Generate Clearforge podcast MP3 with Irene"
           git push

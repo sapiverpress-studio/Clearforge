@@ -13,6 +13,10 @@
     <lastBuildDate>Mon, 13 Jul 2026 20:55:09 GMT</lastBuildDate>
     <atom:link href="https://clearforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Clearforge</itunes:author>
+    <itunes:owner>
+      <itunes:name>Clearforge</itunes:name>
+      <itunes:email>clearforge@sapiverpress.co.uk</itunes:email>
+    </itunes:owner>
     <itunes:summary>Human-led, practical AI learning without the hype. Daily briefings, weekly learning editions and focused major-release research.</itunes:summary>
     <itunes:type>episodic</itunes:type>
     <itunes:explicit>false</itunes:explicit>

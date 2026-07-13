@@ -1,0 +1,42 @@
+[
+  {
+    "source_name": "OpenAI",
+    "title": "GPT‑5.6: Frontier intelligence that scales with your ambition",
+    "url": "https://openai.com/index/gpt-5-6/",
+    "published_date": "2026-07-09",
+    "confirmed_fact": "OpenAI announced the GPT‑5.6 family, including Sol, Terra, and Luna, and said it emphasizes efficiency, knowledge work, coding, and stronger safeguards.",
+    "interpretation": "The risk question is no longer only whether the model is capable; it is whether teams can use it with enough control to trust the output in routine work."
+  },
+  {
+    "source_name": "OpenAI",
+    "title": "Introducing GPT‑Live",
+    "url": "https://openai.com/index/introducing-gpt-live/",
+    "published_date": "2026-07-08",
+    "confirmed_fact": "OpenAI launched GPT‑Live and said it is rolling it out globally to ChatGPT users, with a new full-duplex voice experience and safer voice-specific controls.",
+    "interpretation": "A more natural voice interface lowers friction, but it also raises the stakes for mistakes, misunderstandings, and accidental use in sensitive situations."
+  },
+  {
+    "source_name": "Anthropic",
+    "title": "Redeploying Fable 5",
+    "url": "https://www.anthropic.com/news/redeploying-fable-5",
+    "published_date": "2026-06-30",
+    "confirmed_fact": "Anthropic said Fable 5 access was restored globally and described new government collaboration, including dedicated teams, compute for testing, and red-teaming support.",
+    "interpretation": "Safety, testing, and deployment governance are becoming part of the product pitch, which matters for any buyer who needs auditability and controlled rollout."
+  },
+  {
+    "source_name": "Microsoft",
+    "title": "The latest in our company transformation",
+    "url": "https://blogs.microsoft.com/blog/2026/07/06/the-latest-in-our-company-transformation/",
+    "published_date": "2026-07-06",
+    "confirmed_fact": "Microsoft said the latest job cuts are not being replaced by AI, while also saying AI is changing how work gets done and that the company will keep investing in AI skills.",
+    "interpretation": "The practical risk is misreading AI change as a simple replacement story, when the real disruption may come through reorganized work, changed approvals, and new dependency points."
+  },
+  {
+    "source_name": "NVIDIA",
+    "title": "NVIDIA Unlocks AI Compute at Scale, Inviting Partners to Power the AI Infrastructure Buildout",
+    "url": "https://blogs.nvidia.com/blog/nvidia-unlocks-ai-compute-at-scale-capital-partners-to-power-ai-infrastructure-buildout/",
+    "published_date": "2026-07-01",
+    "confirmed_fact": "NVIDIA said it is introducing a new business model for AI clouds and multi-tenant AI factories, using revenue-sharing and credit-support structures.",
+    "interpretation": "The risk is not just model quality; it is concentration, financing, and who ends up controlling the compute layer behind AI services."
+  }
+]

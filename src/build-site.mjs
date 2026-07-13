@@ -9,6 +9,7 @@ const featuresDir = path.join(publicDir, "features");
 const blogBase = String(process.env.BLOG_BASE_URL || "").replace(/\/$/, "");
 const reportsSourceDir = path.join(ROOT, "reports");
 const reportsPublicDir = path.join(publicDir, "reports");
+const podcastUrl = "https://open.spotify.com/show/033OE4kukRlRAdyj9thlIW";
 
 function ensureDir(dir) { fs.mkdirSync(dir, { recursive: true }); }
 function escapeHtml(value) {
@@ -70,12 +71,13 @@ function pageTemplate(title, description, body) {
     <p>Human-led. AI-empowered.</p>
     <nav aria-label="Site links">
       <a href="/reports/">Clearforge Reports</a>
+      <a href="${podcastUrl}" rel="noopener noreferrer">Listen on Spotify</a>
     </nav>
   </header>
   <main class="content">${body}</main>
   <footer class="site-footer">
     <p>Turning human input into clear, usable systems.</p>
-    <p><a href="/reports/">Browse Clearforge Reports</a></p>
+    <p><a href="/reports/">Browse Clearforge Reports</a> · <a href="${podcastUrl}" rel="noopener noreferrer">Listen to the Clearforge podcast on Spotify</a></p>
   </footer>
 </body>
 </html>`;
@@ -107,6 +109,7 @@ function buildReports() {
       <div class="report-actions">
         <a class="button" href="./${encodeURIComponent(pdfName)}">Download PDF</a>
         <a class="button button-secondary" href="/reports/">All reports</a>
+        <a class="button button-secondary" href="${podcastUrl}" rel="noopener noreferrer">Listen on Spotify</a>
       </div>
       <h2>Inside this edition</h2>
       <ul>${meta.highlights.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
@@ -115,7 +118,7 @@ function buildReports() {
     fs.writeFileSync(path.join(targetDir, "index.html"), pageTemplate(meta.title, meta.description, summary), "utf8");
     cards.push(`<li class="report-card"><p class="eyebrow">Weekly AI Learning Brief</p><h3><a href="/reports/weekly/${date}/">${escapeHtml(meta.title)}</a></h3><p class="report-meta">${escapeHtml(meta.date)} · Last verified ${escapeHtml(meta.last_verified)}</p><p>${escapeHtml(meta.description)}</p><div class="report-actions"><a class="button" href="/reports/weekly/${date}/${encodeURIComponent(pdfName)}">Download PDF</a><a class="button button-secondary" href="/reports/weekly/${date}/">Read summary</a>${sourceNotes ? `<a href="/reports/weekly/${date}/#source-notes">Source notes</a>` : ""}</div></li>`);
   }
-  const body = `<section class="hero"><p class="eyebrow">Clearforge Reports</p><h1>Practical AI learning, checked and explained.</h1><p>Weekly learning guides and focused research papers for creators, small businesses and practical AI learners.</p></section>
+  const body = `<section class="hero"><p class="eyebrow">Clearforge Reports</p><h1>Practical AI learning, checked and explained.</h1><p>Weekly learning guides and focused research papers for creators, small businesses and practical AI learners.</p><p><a class="button" href="${podcastUrl}" rel="noopener noreferrer">Listen to the Clearforge podcast</a></p></section>
   <section class="posts"><h2>Weekly AI Learning Briefs</h2>${cards.length ? `<ul>${cards.join("")}</ul>` : "<p>No weekly reports published yet.</p>"}</section>
   <section class="posts"><h2>Major Release Research Papers</h2><p>Standalone papers will appear here after significant releases are independently researched on their release date.</p></section>`;
   fs.writeFileSync(path.join(reportsPublicDir, "index.html"), pageTemplate("Clearforge Reports", "Clearforge weekly AI learning briefs and major release research papers.", body), "utf8");
@@ -172,7 +175,7 @@ function main() {
   }
 
   const indexBody = `
-<section class="hero"><h1>Clear AI learning from noisy AI news.</h1><p>Clearforge turns daily AI updates into practical learning, careful takeaways, and usable workflow tests.</p><p><a href="/reports/">Explore Clearforge Reports</a></p></section>
+<section class="hero"><h1>Clear AI learning from noisy AI news.</h1><p>Clearforge turns daily AI updates into practical learning, careful takeaways, and usable workflow tests.</p><div class="report-actions"><a class="button" href="/reports/">Explore Clearforge Reports</a><a class="button button-secondary" href="${podcastUrl}" rel="noopener noreferrer">Listen on Spotify</a></div></section>
 <section class="posts"><h2>Clearforge Reports</h2><p>Go deeper with weekly AI learning briefs and standalone research papers on major releases.</p><p><a class="button" href="/reports/">Browse all reports</a></p></section>
 <section class="posts"><h2>Feature Analysis</h2>${featureLinks.length ? `<ul>${featureLinks.join("\n")}</ul>` : `<p>No approved features yet.</p>`}</section>
 <section class="posts"><h2>Daily Briefs</h2>${briefLinks.length ? `<ul>${briefLinks.join("\n")}</ul>` : `<p>No approved public briefs yet.</p>`}</section>`;

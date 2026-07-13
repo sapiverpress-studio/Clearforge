@@ -26,45 +26,50 @@ function pick(list, index) {
 }
 
 function visualPrompt(story, index) {
-  const metaphors = [
-    "a practical workshop bench where index cards, brass clips, paper tags and small wooden blocks are being arranged into a clear operating system",
-    "a quiet teaching-room wall with hand-drawn process diagrams, pinned source cards, string lines and simple review checkpoints",
-    "an overhead editorial desk scene with printed source sheets, a pencil, folded notes, transparent overlays and a tidy decision map",
-    "a compact print-room planning table with proof sheets, page grids, stamps, folders and a visible before-to-after sorting process",
-    "a cartographer-style strategy board with layered paper maps, route markers, labelled tabs without readable words and controlled pathways",
-    "a librarian-style research table with archive boxes, evidence slips, colour-coded dividers and a calm human review process",
-    "a maker-space scene with modular trays, checklist cards, ruler marks and physical tokens showing a workflow being assembled",
-    "a kitchen-table planning scene with notebooks, sticky tabs, filing wallets and simple household-object metaphors for system design",
-    "a museum-display style arrangement of everyday objects representing control, judgement, automation, cost and review",
-    "a classroom demonstration table with paper levers, sliders, timers and cards showing how a complex system becomes understandable"
+  const aiBriefingScenes = [
+    "a dark navy AI briefing studio desk with a professional podcast microphone, source notes, a small audio waveform display, subtle circuit-board lines in the background and one practical notebook open on the desk",
+    "an editorial AI news analysis desk with printed source cards, model comparison sheets, a compact microphone arm, blue data-light accents and a calm control-room atmosphere",
+    "a practical creator workflow table showing verified source notes, timeline cards, a muted blue AI signal pattern, a microphone, headphones and a structured review checklist",
+    "a high-end technology briefing set with a dark blue wall, subtle circuit traces, a clean desk, paper research packs, audio waveforms and one human-operated control surface",
+    "a weekly AI briefing workspace with layered research cards, calendar markers, a studio microphone, restrained blue interface glow and visible human review materials",
+    "a podcast-ready AI learning desk with a microphone in the foreground, tidy source folders, simple model cards, a soft waveform motif and a dark professional newsroom mood",
+    "a practical AI systems review scene with a microphone, pinned evidence cards, process arrows, muted blue signal lines and a clear before-to-after analysis structure",
+    "a modern audio briefing desk where AI developments are represented by physical cards, circuit-like connection lines, a restrained waveform panel and careful human notes"
   ];
 
   const compositions = [
-    "clean overhead flat-lay composition",
-    "three-quarter editorial photograph with shallow depth of field",
-    "wide vertical still-life scene with strong foreground object",
-    "documentary-style close-up of hands arranging materials, no identifiable face",
-    "structured product-photography layout with strong negative space",
-    "calm instructional scene with visible layers and hierarchy"
+    "premium podcast-cover composition with strong negative space for later text overlay",
+    "cinematic three-quarter studio photograph with shallow depth of field",
+    "vertical social-video still with a strong microphone foreground and clear desk detail",
+    "clean editorial technology-magazine composition, practical rather than sci-fi",
+    "wide briefing-room still life cropped for vertical short-form video",
+    "dark professional podcast artwork composition with source materials visible"
   ];
 
-  const visualDevices = [
-    "use one strong physical metaphor rather than a screen interface",
-    "include three distinct object clusters so each story frame feels different",
-    "show the transition from messy input to ordered output using real materials",
-    "use paper, wood, fabric, card, folders and desk objects instead of neon tech graphics",
-    "make it look like an editorial magazine photograph, not a SaaS advert",
-    "make the scene understandable even without any text"
+  const aiSignals = [
+    "make the AI element clear through subtle circuit traces, waveform graphics, model cards and data-routing lines, not robots",
+    "show AI as a system being reviewed by a person through notes, checks, source cards and controlled audio tools",
+    "use restrained blue technology accents to signal AI without making the image look like generic AI stock art",
+    "combine physical human-review materials with light digital signal motifs so it feels human-led and AI-empowered",
+    "make it instantly understandable as an AI briefing or AI podcast image, but grounded in real studio objects"
+  ];
+
+  const variationDevices = [
+    "change the hero object placement so this frame does not resemble the previous edition",
+    "include a different arrangement of source cards, notebook, microphone angle and background signal pattern",
+    "vary camera distance, desk depth and object hierarchy while keeping the same Clearforge identity",
+    "use a different AI signal motif: waveform, routing lines, model cards, calendar markers or evidence board",
+    "make the story context visible through objects and composition rather than readable text"
   ];
 
   const palette = [
-    "warm cream, forest green, dark teal and muted brass accents",
-    "cream paper, charcoal ink, deep green and soft gold accents",
-    "dark teal background with warm paper objects and restrained brass highlights",
-    "soft daylight, cream surfaces, green folders and muted amber shadows"
+    "deep navy, near-black blue, clean white, cool electric blue and soft mint accents",
+    "dark blue studio background, graphite desk, white paper, blue highlights and restrained green accents",
+    "midnight navy, charcoal, soft white, clear blue and muted brass details",
+    "professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light"
   ];
 
-  return `${pick(metaphors, index * 3)}. ${pick(compositions, index * 5)}. ${pick(visualDevices, index * 7)}. Story context: ${story.title}. Practical angle: ${story.practical_angle}. Clearforge brand feel: human-led, practical, editorial, calm, precise. Palette: ${pick(palette, index * 11)}. Avoid generic AI imagery: no robots, no glowing brains, no hologram faces, no neon circuit boards, no floating code, no generic laptop dashboard, no stock-photo handshake, no unreadable fake UI, no logos, no brand marks, no typography, no watermarks. Portrait composition for a vertical short, visually specific, coherent with Sapiver Press but clearly Clearforge.`;
+  return `${pick(aiBriefingScenes, index * 3)}. ${pick(compositions, index * 5)}. ${pick(aiSignals, index * 7)}. ${pick(variationDevices, index * 11)}. Story context: ${story.title}. Practical angle: ${story.practical_angle}. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: ${pick(palette, index * 13)}. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective.`;
 }
 
 const stories = (data.story_summaries || []).slice(0, 3);
@@ -111,12 +116,31 @@ const narrationFile = path.join(outDir, "narration.mp3");
 fs.writeFileSync(narrationFile, Buffer.from(await speech.arrayBuffer()));
 
 const manifest = {
-  version: 2,
+  version: 3,
   date: DATE,
   headline: data.headline,
   dek: data.dek,
   hook: "Three AI updates that actually matter today",
-  visual_system: "Clearforge physical editorial metaphor set",
+  visual_system: "Clearforge AI briefing podcast studio system",
+  visual_style_rules: {
+    include: [
+      "dark navy AI briefing or podcast studio atmosphere",
+      "microphone or audio-briefing cues where appropriate",
+      "subtle circuit traces, waveform motifs, model cards or data-routing lines",
+      "physical source notes, checklists and human-review materials",
+      "premium editorial technology-magazine lighting"
+    ],
+    avoid: [
+      "robots",
+      "glowing brains",
+      "hologram faces",
+      "generic dashboards",
+      "random floating code",
+      "excessive neon",
+      "fake readable text",
+      "Sapiver or unrelated branding"
+    ]
+  },
   stories: images,
   narration: path.relative(ROOT, narrationFile).replaceAll("\\", "/"),
   narration_text: narrationText,

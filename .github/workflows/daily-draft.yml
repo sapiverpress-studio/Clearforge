@@ -176,7 +176,9 @@ jobs:
         run: npm run validate:auto
 
       - name: Generate full daily podcast MP3 with Irene
+        id: irene
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        continue-on-error: true
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVENLAB_API || secrets.ELEVELAB_API }}
           ELEVENLABS_VOICE_ID: w9xM4Spfmuw28ZXAirWK
@@ -185,8 +187,20 @@ jobs:
           OUTPUT_PATH: drafts/${{ env.CLEARFORGE_DATE }}/podcast/clearforge-daily-podcast-${{ env.CLEARFORGE_DATE }}.mp3
         run: node scripts/generate-elevenlabs-mp3.mjs
 
+      - name: Record Irene generation warning
+        if: always() && steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.irene.outcome == 'failure'
+        shell: bash
+        run: |
+          {
+            echo "## Irene MP3 not generated"
+            echo
+            echo "ElevenLabs failed or was unavailable. The full podcast MP3 and RSS episode were skipped."
+            echo "All non-Irene Clearforge outputs will continue. No substitute narrator was used."
+            echo "The validated COPY_PASTE_INTO_ELEVENLABS.txt production script remains available in the daily package."
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Publish Irene episode to Clearforge RSS feed
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.irene.outcome == 'success'
         env:
           PODCAST_KIND: daily
           EPISODE_SLUG: ${{ env.CLEARFORGE_DATE }}

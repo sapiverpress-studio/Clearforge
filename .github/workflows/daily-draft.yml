@@ -175,6 +175,16 @@ jobs:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
         run: npm run validate:auto
 
+      - name: Generate full daily podcast MP3 with Irene
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVELAB_API }}
+          ELEVENLABS_VOICE_ID: w9xM4Spfmuw28ZXAirWK
+          ELEVENLABS_MODEL_ID: eleven_multilingual_v2
+          INPUT_PATH: drafts/${{ env.CLEARFORGE_DATE }}/podcast/COPY_PASTE_INTO_ELEVENLABS.txt
+          OUTPUT_PATH: drafts/${{ env.CLEARFORGE_DATE }}/podcast/clearforge-daily-podcast-${{ env.CLEARFORGE_DATE }}.mp3
+        run: node scripts/generate-elevenlabs-mp3.mjs
+
       - name: Generate story-specific AI visuals and narration
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:

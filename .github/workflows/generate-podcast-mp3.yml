@@ -1,0 +1,112 @@
+name: Generate Clearforge podcast MP3
+
+on:
+  push:
+    paths:
+      - "reports/**/COPY_PASTE_INTO_ELEVENLABS.txt"
+  workflow_dispatch:
+    inputs:
+      script_path:
+        description: "Optional path to a COPY_PASTE_INTO_ELEVENLABS.txt file"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: clearforge-podcast-mp3
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    env:
+      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVELAB_API }}
+      ELEVENLABS_VOICE_ID: w9xM4Spfmuw28ZXAirWK
+      ELEVENLABS_MODEL_ID: eleven_multilingual_v2
+
+    steps:
+      - name: Check out Clearforge
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Find narration files
+        id: narration
+        shell: bash
+        run: |
+          set -euo pipefail
+          list_file="$RUNNER_TEMP/clearforge-narrations.txt"
+          requested="${{ github.event.inputs.script_path || '' }}"
+
+          if [[ -n "$requested" ]]; then
+            printf '%s\n' "$requested" > "$list_file"
+          elif [[ "${{ github.event_name }}" == "push" ]]; then
+            git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" |
+              grep -E '^reports/(weekly|specials)/.+/COPY_PASTE_INTO_ELEVENLABS\.txt$' |
+              sort -u > "$list_file" || true
+          else
+            find reports -type f -name COPY_PASTE_INTO_ELEVENLABS.txt |
+              sort |
+              tail -n 1 > "$list_file"
+          fi
+
+          if [[ ! -s "$list_file" ]]; then
+            echo "No narration file was selected."
+            exit 1
+          fi
+
+          while IFS= read -r script; do
+            if [[ ! -f "$script" ]]; then
+              echo "Narration file does not exist: $script"
+              exit 1
+            fi
+          done < "$list_file"
+
+          echo "list_file=$list_file" >> "$GITHUB_OUTPUT"
+
+      - name: Generate Irene MP3
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -z "${ELEVENLABS_API_KEY:-}" ]]; then
+            echo "Neither ELEVENLABS_API_KEY nor ELEVELAB_API is configured."
+            exit 1
+          fi
+
+          while IFS= read -r script; do
+            folder="$(dirname "$script")"
+            slug="$(basename "$folder")"
+            output="$folder/clearforge-spoken-edition-$slug.mp3"
+            echo "Generating $output from $script"
+            INPUT_PATH="$script" OUTPUT_PATH="$output" node scripts/generate-elevenlabs-mp3.mjs
+          done < "${{ steps.narration.outputs.list_file }}"
+
+      - name: Upload MP3 package
+        uses: actions/upload-artifact@v4
+        with:
+          name: clearforge-podcast-mp3-${{ github.run_number }}
+          path: reports/**/*.mp3
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Save generated MP3s
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- reports; then
+            echo "No new MP3 changes to commit."
+            exit 0
+          fi
+
+          git config user.name "clearforge-audio-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add "reports/**/*.mp3"
+          git commit -m "Generate Clearforge podcast MP3 with Irene"
+          git push

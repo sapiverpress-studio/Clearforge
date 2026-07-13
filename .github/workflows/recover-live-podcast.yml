@@ -1,0 +1,52 @@
+name: Recover live Clearforge podcast archive
+
+on:
+  push:
+    paths:
+      - "scripts/sync-live-podcast.mjs"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: clearforge-podcast-recovery
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Clearforge
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Recover live podcast files without regenerating audio
+        run: node scripts/sync-live-podcast.mjs
+
+      - name: Save recovered podcast archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "clearforge-audio-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -- public/podcast
+          if git diff --cached --quiet; then
+            echo "Live podcast archive already matches the repository."
+            exit 0
+          fi
+          git commit -m "Recover live Clearforge podcast archive"
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep 2
+          done
+          exit 1

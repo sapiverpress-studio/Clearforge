@@ -10,7 +10,7 @@ https://clearforge-daily-brief.netlify.app/podcast/
 
 ## Before submitting the feed
 
-1. Upload the approved 3000 x 3000 PNG cover as `public/podcast/cover.png`.
+1. Confirm the approved 3000 x 3000 cover loads from `public/podcast/cover.png`.
 2. Run Clearforge Daily Autopilot successfully so the feed contains at least one complete Irene MP3 episode.
 3. Open the feed URL and confirm the episode title, description, artwork and playable enclosure.
 4. Validate the feed with a podcast RSS validator.

@@ -185,6 +185,16 @@ jobs:
           OUTPUT_PATH: drafts/${{ env.CLEARFORGE_DATE }}/podcast/clearforge-daily-podcast-${{ env.CLEARFORGE_DATE }}.mp3
         run: node scripts/generate-elevenlabs-mp3.mjs
 
+      - name: Publish Irene episode to Clearforge RSS feed
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        env:
+          PODCAST_KIND: daily
+          EPISODE_SLUG: ${{ env.CLEARFORGE_DATE }}
+          SOURCE_MP3: drafts/${{ env.CLEARFORGE_DATE }}/podcast/clearforge-daily-podcast-${{ env.CLEARFORGE_DATE }}.mp3
+          METADATA_PATH: drafts/${{ env.CLEARFORGE_DATE }}/podcast/episode-metadata.json
+          PODCAST_BASE_URL: https://clearforge-daily-brief.netlify.app
+        run: node scripts/publish-podcast-feed.mjs
+
       - name: Generate story-specific AI visuals and narration
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:

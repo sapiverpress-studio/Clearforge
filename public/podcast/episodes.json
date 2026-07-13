@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "slug": "2026-07-13",
+    "kind": "daily",
+    "title": "Claude gets easier to buy in India, and that matters more than it sounds",
+    "description": "This is the strongest story for the edition because it captures a major practical shift: AI is not just getting more capable, it is getting easier to purchase in a real market. The confirmed facts are concrete — Anthropic has started showing local pricing in rupees for some users in India, but payments still rely on cards or app stores rather than UPI. TechCrunch also reports that India is Claude’s second-largest market and that Anthropic has expanded its India presence through a Bengaluru office and local partnerships. That makes this story more than a pricing note. It is a signal about adoption, distribution, and the real-world frictions that shape whether small teams actually use AI.",
+    "published": "2026-07-13T07:00:00+01:00",
+    "duration": "00:08:36",
+    "size": 7621529,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-13.mp3",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-13.html"
+  }
+]

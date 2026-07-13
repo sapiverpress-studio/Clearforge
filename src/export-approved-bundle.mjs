@@ -11,12 +11,13 @@ const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
 
 const draftDir = path.join(ROOT, "drafts", DATE);
 const mediaDir = path.join(ROOT, "media", DATE);
+const podcastDir = path.join(draftDir, "podcast");
 const approvalPath = path.join(draftDir, "approval.json");
 const structuredPath = path.join(draftDir, "structured_output.json");
 const articlePath = path.join(draftDir, "daily_brief.md");
 const socialPath = path.join(draftDir, "social_pack.md");
 const outDir = path.join(ROOT, "bridge", "clearforge", DATE);
-const socialHashtags = "#AINews #AIWorkflow #PracticalAI #FacelessContentCreator #SapiverPress";
+const socialHashtags = "#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI";
 
 function requireFile(file) {
   if (!fs.existsSync(file)) throw new Error(`Required file missing: ${file}`);
@@ -48,6 +49,8 @@ function appendHashtags(text) {
     .replace(/#AITools\b/gi, "")
     .replace(/#FacelessContentCreator\b/gi, "")
     .replace(/#SapiverPress\b/gi, "")
+    .replace(/#Clearforge\b/gi, "")
+    .replace(/#HumanLedAI\b/gi, "")
     .replace(/[ \t]+\n/g, "\n")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
@@ -71,14 +74,18 @@ const articleUrl = blogBase ? `${blogBase}/posts/${DATE}.html` : "";
 const mediaManifestPath = path.join(mediaDir, "media-manifest.json");
 const hasMedia = fs.existsSync(mediaManifestPath);
 const mediaManifest = hasMedia ? readJson(mediaManifestPath) : null;
+const podcastMetadataPath = path.join(podcastDir, "episode-metadata.json");
+const hasPodcast = fs.existsSync(podcastMetadataPath);
+const podcastMetadata = hasPodcast ? readJson(podcastMetadataPath) : null;
 
 fs.rmSync(outDir, { recursive: true, force: true });
 fs.mkdirSync(outDir, { recursive: true });
 
 if (hasMedia) copyDir(mediaDir, path.join(outDir, "media"));
+if (hasPodcast) copyDir(podcastDir, path.join(outDir, "podcast"));
 
 const manifest = {
-  version: 2,
+  version: 3,
   brand: "Clearforge",
   date: DATE,
   type: "clearforge_daily_ai_brief",
@@ -115,6 +122,17 @@ const manifest = {
     script: data.social.youtube_shorts_script,
     description: `${data.practical_takeaway}${articleUrl ? `\n\nRead the full brief: ${articleUrl}` : ""}`
   },
+  podcast: hasPodcast ? {
+    generated: true,
+    folder: "podcast/",
+    copy_paste_script: "podcast/COPY_PASTE_INTO_ELEVENLABS.txt",
+    full_review_script: "podcast/podcast-script.md",
+    metadata: "podcast/episode-metadata.json",
+    source_notes: "podcast/source-notes.md",
+    episode: podcastMetadata
+  } : {
+    generated: false
+  },
   ai_media: hasMedia ? {
     manifest: "media/media-manifest.json",
     narration: "media/narration.mp3",
@@ -139,4 +157,4 @@ const latestDir = path.join(ROOT, "bridge", "clearforge", "latest");
 fs.rmSync(latestDir, { recursive: true, force: true });
 copyDir(outDir, latestDir);
 
-console.log(`Exported approved Clearforge bundle for ${DATE}${hasMedia ? " with AI media" : " without AI media"}.`);
+console.log(`Exported approved Clearforge bundle for ${DATE}${hasMedia ? " with AI media" : " without AI media"}${hasPodcast ? " and podcast script" : ""}.`);

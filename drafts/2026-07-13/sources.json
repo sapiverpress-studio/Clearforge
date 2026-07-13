@@ -1,0 +1,42 @@
+[
+  {
+    "source_name": "TechCrunch",
+    "title": "Apple sues OpenAI over alleged trade secret theft",
+    "url": "https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/",
+    "published_date": "2026-07-10",
+    "confirmed_fact": "Apple filed a lawsuit against OpenAI alleging trade secret theft and breach of contract, with claims involving Apple’s confidential project code names and recruiting practices.",
+    "interpretation": "The case signals that AI competition is increasingly being fought through courts, not just product launches. ([techcrunch.com](https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/?utm_source=openai))"
+  },
+  {
+    "source_name": "TechCrunch",
+    "title": "Meta removes controversial AI feature on Instagram after backlash",
+    "url": "https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/",
+    "published_date": "2026-07-10",
+    "confirmed_fact": "Meta removed an AI feature that let users modify photos from public Instagram accounts after backlash, saying the feature “missed the mark.”",
+    "interpretation": "Platforms are learning that AI tools that touch other people’s content need clearer consent and safer defaults. ([techcrunch.com](https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/?utm_source=openai))"
+  },
+  {
+    "source_name": "TechCrunch",
+    "title": "OpenAI is shutting down Atlas, but its AI browser ambitions are still growing",
+    "url": "https://techcrunch.com/2026/07/09/openai-is-shutting-down-atlas-but-its-ai-browser-ambitions-are-still-growing/",
+    "published_date": "2026-07-09",
+    "confirmed_fact": "OpenAI is sunsetting Atlas, its AI-powered browser, while moving some browsing features into the ChatGPT desktop app and a Chrome extension.",
+    "interpretation": "OpenAI appears to be simplifying its product line while keeping the “AI helps you do things on the web” idea alive in other tools. ([techcrunch.com](https://techcrunch.com/2026/07/09/openai-is-shutting-down-atlas-but-its-ai-browser-ambitions-are-still-growing/?utm_source=openai))"
+  },
+  {
+    "source_name": "TechCrunch",
+    "title": "Fidji Simo steps down from OpenAI’s No. 2 role",
+    "url": "https://techcrunch.com/2026/07/09/fidji-simo-steps-down-from-openais-no-2-role/",
+    "published_date": "2026-07-09",
+    "confirmed_fact": "Fidji Simo is stepping down from her full-time role at OpenAI and moving to a part-time advisory role, according to the report cited by TechCrunch.",
+    "interpretation": "This suggests OpenAI may be rebalancing how it runs product and operations as it expands beyond a single consumer app. ([techcrunch.com](https://techcrunch.com/2026/07/09/fidji-simo-steps-down-from-openais-no-2-role/?utm_source=openai))"
+  },
+  {
+    "source_name": "TechCrunch",
+    "title": "Google will now disclose which ads are made with AI",
+    "url": "https://techcrunch.com/2026/07/09/google-will-now-disclose-which-ads-are-made-with-ai/",
+    "published_date": "2026-07-09",
+    "confirmed_fact": "Google said it will disclose which ads are made with AI.",
+    "interpretation": "Disclosure is becoming part of the normal AI product stack, which matters for trust, compliance, and marketing workflows. ([techcrunch.com](https://techcrunch.com/2026/07/09/google-will-now-disclose-which-ads-are-made-with-ai/?utm_source=openai))"
+  }
+]

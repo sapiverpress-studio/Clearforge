@@ -161,6 +161,14 @@ jobs:
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
         run: npm run feature
 
+      - name: Generate daily biggest-story podcast script
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        env:
+          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
+        run: npm run podcast:daily
+
       - name: Validate and auto approve only when checks pass
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:
@@ -223,23 +231,16 @@ jobs:
       - name: Trigger full video render and live social distribution
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:
-          CROSS_REPO_GITHUB_TOKEN: ${{ secrets.CROSS_REPO_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.CROSS_REPO_GITHUB_TOKEN }}
         shell: bash
         run: |
           set -euo pipefail
-          if [ -z "${CROSS_REPO_GITHUB_TOKEN:-}" ]; then
+          if [ -z "${GH_TOKEN:-}" ]; then
             echo "::error::Missing CROSS_REPO_GITHUB_TOKEN repository secret."
             exit 1
           fi
-
-          curl --fail-with-body \
-            --request POST \
-            --header "Accept: application/vnd.github+json" \
-            --header "Authorization: Bearer ${CROSS_REPO_GITHUB_TOKEN}" \
-            --header "X-GitHub-Api-Version: 2022-11-28" \
-            "https://api.github.com/repos/sapiverpress-studio/SapiverPress_comic_public/dispatches" \
-            --data "{\"event_type\":\"clearforge_publish\",\"client_payload\":{\"date\":\"${CLEARFORGE_DATE}\"}}"
-
+          PAYLOAD="{\"event_type\":\"clearforge_publish\",\"client_payload\":{\"date\":\"${CLEARFORGE_DATE}\"}}"
+          gh api repos/sapiverpress-studio/SapiverPress_comic_public/dispatches --method POST --input - <<< "${PAYLOAD}"
           echo "Triggered full Clearforge video render and live social distribution for ${CLEARFORGE_DATE}."
 
       - name: Open final failure issue after retry

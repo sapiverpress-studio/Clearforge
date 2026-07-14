@@ -1,0 +1,145 @@
+import fs from "node:fs";
+import path from "node:path";
+import OpenAI from "openai";
+
+const ROOT = process.cwd();
+const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
+  timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
+}).format(new Date());
+const draftDir = path.join(ROOT, "drafts", DATE);
+const structuredPath = path.join(draftDir, "structured_output.json");
+
+if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY is required for audience-fit optimisation.");
+if (!fs.existsSync(structuredPath)) throw new Error(`Missing ${structuredPath}`);
+
+const source = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
+const stories = Array.isArray(source.story_summaries) ? source.story_summaries : [];
+if (stories.length < 3) throw new Error("Audience-fit optimisation needs at least three verified stories.");
+
+const schema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["story_assessments", "platform_selections", "social", "overall_reasoning"],
+  properties: {
+    story_assessments: {
+      type: "array", minItems: 3, maxItems: 5,
+      items: {
+        type: "object", additionalProperties: false,
+        required: ["story_index", "story_title", "target_audience", "audience_problem_or_desire", "interest_signal", "stop_reason", "promised_payoff", "proof_point", "search_phrases", "scores", "overall_score", "score_reason"],
+        properties: {
+          story_index: { type: "integer", minimum: 0, maximum: 4 },
+          story_title: { type: "string" },
+          target_audience: { type: "string" },
+          audience_problem_or_desire: { type: "string" },
+          interest_signal: { type: "string" },
+          stop_reason: { type: "string" },
+          promised_payoff: { type: "string" },
+          proof_point: { type: "string" },
+          search_phrases: { type: "array", minItems: 3, maxItems: 5, items: { type: "string" } },
+          scores: {
+            type: "object", additionalProperties: false,
+            required: ["audience_fit", "practical_consequence", "searchability", "stranger_usefulness", "novelty", "visual_potential", "discussion_potential", "short_form_clarity"],
+            properties: {
+              audience_fit: { type: "integer", minimum: 1, maximum: 10 },
+              practical_consequence: { type: "integer", minimum: 1, maximum: 10 },
+              searchability: { type: "integer", minimum: 1, maximum: 10 },
+              stranger_usefulness: { type: "integer", minimum: 1, maximum: 10 },
+              novelty: { type: "integer", minimum: 1, maximum: 10 },
+              visual_potential: { type: "integer", minimum: 1, maximum: 10 },
+              discussion_potential: { type: "integer", minimum: 1, maximum: 10 },
+              short_form_clarity: { type: "integer", minimum: 1, maximum: 10 }
+            }
+          },
+          overall_score: { type: "integer", minimum: 1, maximum: 10 },
+          score_reason: { type: "string" }
+        }
+      }
+    },
+    platform_selections: {
+      type: "object", additionalProperties: false,
+      required: ["tiktok", "youtube", "facebook", "pinterest", "linkedin"],
+      properties: Object.fromEntries(["tiktok", "youtube", "facebook", "pinterest", "linkedin"].map((platform) => [platform, {
+        type: "object", additionalProperties: false,
+        required: ["story_index", "story_title", "target_audience", "format", "opening", "payoff", "selection_reason", "platform_fit_score"],
+        properties: {
+          story_index: { type: "integer", minimum: 0, maximum: 4 },
+          story_title: { type: "string" },
+          target_audience: { type: "string" },
+          format: { type: "string" },
+          opening: { type: "string" },
+          payoff: { type: "string" },
+          selection_reason: { type: "string" },
+          platform_fit_score: { type: "integer", minimum: 7, maximum: 10 }
+        }
+      }]))
+    },
+    social: {
+      type: "object", additionalProperties: false,
+      required: ["tiktok_script", "youtube_shorts_script", "facebook_post", "pinterest_title", "pinterest_description", "linkedin_post", "quote_card_lines"],
+      properties: {
+        tiktok_script: { type: "string" },
+        youtube_shorts_script: { type: "string" },
+        facebook_post: { type: "string" },
+        pinterest_title: { type: "string" },
+        pinterest_description: { type: "string" },
+        linkedin_post: { type: "string" },
+        quote_card_lines: { type: "array", minItems: 5, maxItems: 5, items: { type: "string" } }
+      }
+    },
+    overall_reasoning: { type: "string" }
+  }
+};
+
+const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const response = await client.responses.create({
+  model: process.env.OPENAI_MODEL || "gpt-5.4-mini",
+  reasoning: { effort: "medium" },
+  input: [
+    {
+      role: "system",
+      content: "You are the Clearforge audience-fit editor. Treat social feeds as interest graphs. Assess every verified story before selecting content. Choose the strongest story independently for each platform; do not force one lead story everywhere. Use only facts already present in the supplied research pack. Never invent details, urgency, popularity or outcomes."
+    },
+    {
+      role: "user",
+      content: `CLEARFORGE EDITION: ${DATE}\n\nVERIFIED RESEARCH PACK:\n${JSON.stringify(source)}\n\nEvaluate every story on audience specificity, practical consequence, searchability, usefulness to a stranger, novelty, visual potential, discussion potential and whether the payoff can be explained clearly in under 30 seconds.\n\nThen choose the best story separately for TikTok, YouTube Shorts, Facebook, Pinterest and LinkedIn. Different platforms may use different stories. Every selected platform concept must score at least 7/10 for platform fit.\n\nWrite final social assets around those platform selections. Rules:\n- Never start with generic phrases such as 'AI news is noisy', 'today in AI', 'here is the latest AI news' or Clearforge branding.\n- The opening must immediately reveal the audience interest or practical consequence.\n- TikTok: 70–130 spoken words, one strong stop reason and one payoff.\n- YouTube Shorts: 80–150 spoken words, searchable question or problem, clear answer.\n- Facebook: recognisable situation, useful explanation and a meaningful question about a real choice or experience.\n- Pinterest: searchable problem/guide/checklist title and a description that clearly states the benefit.\n- LinkedIn: workplace decision, operational consequence or professional lesson.\n- Quote lines must each be a complete useful thought, not a slogan.\n- Keep Clearforge calm, practical and human-led.\n- Do not add facts beyond the supplied verified pack.`
+    }
+  ],
+  text: { format: { type: "json_schema", name: "clearforge_audience_fit", strict: true, schema } }
+});
+
+if (!response.output_text) throw new Error("OpenAI returned no audience-fit output.");
+const result = JSON.parse(response.output_text);
+if (result.story_assessments.length !== stories.length) throw new Error(`Expected ${stories.length} story assessments, got ${result.story_assessments.length}`);
+const indexes = new Set(result.story_assessments.map((item) => item.story_index));
+for (let i = 0; i < stories.length; i += 1) if (!indexes.has(i)) throw new Error(`Missing audience assessment for story ${i}`);
+for (const [platform, selection] of Object.entries(result.platform_selections)) {
+  if (selection.story_index >= stories.length) throw new Error(`${platform} selected unavailable story index ${selection.story_index}`);
+  if (selection.platform_fit_score < 7) throw new Error(`${platform} platform fit below 7`);
+}
+
+const enriched = {
+  ...source,
+  social: result.social,
+  audience_fit: {
+    generated_at: new Date().toISOString(),
+    story_assessments: result.story_assessments,
+    platform_selections: result.platform_selections,
+    overall_reasoning: result.overall_reasoning
+  }
+};
+fs.writeFileSync(structuredPath, JSON.stringify(enriched, null, 2) + "\n", "utf8");
+fs.writeFileSync(path.join(draftDir, "audience_fit_report.json"), JSON.stringify(enriched.audience_fit, null, 2) + "\n", "utf8");
+
+const selectionLines = Object.entries(result.platform_selections).map(([platform, item]) =>
+  `### ${platform[0].toUpperCase()}${platform.slice(1)}\n\n- Selected story: ${item.story_title}\n- Audience: ${item.target_audience}\n- Format: ${item.format}\n- Opening: ${item.opening}\n- Payoff: ${item.payoff}\n- Platform fit: ${item.platform_fit_score}/10\n- Why selected: ${item.selection_reason}`
+).join("\n\n");
+const assessmentLines = result.story_assessments.map((item) =>
+  `### ${item.story_title}\n\n- Audience: ${item.target_audience}\n- Interest signal: ${item.interest_signal}\n- Stop reason: ${item.stop_reason}\n- Payoff: ${item.promised_payoff}\n- Proof: ${item.proof_point}\n- Overall score: ${item.overall_score}/10\n- Reason: ${item.score_reason}`
+).join("\n\n");
+fs.writeFileSync(path.join(draftDir, "audience_fit_report.md"), `# Clearforge Audience-Fit Report — ${DATE}\n\n## Story comparison\n\n${assessmentLines}\n\n## Platform selections\n\n${selectionLines}\n\n## Overall reasoning\n\n${result.overall_reasoning}\n`, "utf8");
+
+const social = result.social;
+const theme = source.editorial_theme ? `${source.editorial_theme.day} — ${source.editorial_theme.title}` : "Not specified";
+fs.writeFileSync(path.join(draftDir, "social_pack.md"), `# Clearforge Social Repurpose Pack — ${DATE}\n\nStatus: Draft — audience-fit optimised; automatic validation pending\n\nEditorial theme: ${theme}\n\n## Platform Story Selections\n\n${selectionLines}\n\n## TikTok Script\n\n${social.tiktok_script}\n\n## YouTube Shorts Script\n\n${social.youtube_shorts_script}\n\n## Facebook Post\n\n${social.facebook_post}\n\n## Pinterest Pin\n\n**Title:** ${social.pinterest_title}\n\n**Description:** ${social.pinterest_description}\n\n## LinkedIn-Style Post\n\n${social.linkedin_post}\n\n## 5 Short Quote/Card Lines\n\n${social.quote_card_lines.map((line) => `- ${line}`).join("\n")}\n`, "utf8");
+
+console.log(`Audience-fit optimisation completed for ${DATE}.`);

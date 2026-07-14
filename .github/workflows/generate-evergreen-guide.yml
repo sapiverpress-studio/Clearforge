@@ -2,6 +2,12 @@ name: Clearforge Evergreen Guide
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/generate-evergreen-guide.yml"
+      - "src/generate-evergreen-explainer.mjs"
+      - "src/build-evergreen-guides.mjs"
+      - "package.json"
   schedule:
     - cron: "15 9 * * 0"
 

@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 set -uo pipefail
 
-# Manual and scheduled fresh runs should not repeatedly chase uniqueness against
-# failed test drafts. Prune unpublished same-day archives before researching.
+# Failed test output must not be archived by run-daily.mjs and then immediately
+# treated as novelty history. Remove the unapproved current draft first, then
+# prune any older unpublished archives.
+node src/prune-unapproved-current-draft.mjs
 node src/prune-unpublished-run-history.mjs
 
 max_attempts=1

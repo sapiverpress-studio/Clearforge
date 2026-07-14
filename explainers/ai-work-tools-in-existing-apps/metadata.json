@@ -3,7 +3,7 @@
   "slug": "ai-work-tools-in-existing-apps",
   "title": "How to adopt AI work tools inside the apps your team already uses",
   "description": "A practical guide to using AI where work already happens: in docs, spreadsheets, chat, and connected files. It explains the likely benefits, the real limits, and the questions to ask before rolling anything out.",
-  "search_question": "How should a team adopt AI work tools inside existing apps safely?",
+  "search_question": "How do you adopt AI work tools inside the apps your team already uses?",
   "topic_slugs": [
     "ai-adoption",
     "ai-inside-products",
@@ -15,6 +15,7 @@
     "2026-07-09",
     "2026-07-10",
     "2026-07-11",
+    "2026-07-11-alt",
     "2026-07-13",
     "2026-07-14"
   ],
@@ -39,6 +40,14 @@
         "2026-07-11",
         "2026-07-10",
         "2026-07-09"
+      ]
+    },
+    {
+      "date": "2026-07-14",
+      "summary": "Updated the guide to reflect current in-app AI adoption examples from ChatGPT Work, Microsoft 365 Copilot, Slack-based Claude usage, and Google ad disclosure. Added clearer guidance on permissions, review steps, rollout uncertainty, and the difference between projected benefits and measured outcomes.",
+      "source_editions": [
+        "2026-07-14",
+        "2026-07-11-alt"
       ]
     }
   ],

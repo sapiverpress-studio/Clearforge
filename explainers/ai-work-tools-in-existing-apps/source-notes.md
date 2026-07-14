@@ -15,3 +15,4 @@ Last checked: 2026-07-14
 ## Revision history
 
 - 2026-07-14: Created a durable explainer on adopting AI work tools inside existing apps, focusing on workflow fit, human review, permissions, and current examples from OpenAI, Microsoft, Anthropic, and Google.
+- 2026-07-14: Updated the guide to reflect current in-app AI adoption examples from ChatGPT Work, Microsoft 365 Copilot, Slack-based Claude usage, and Google ad disclosure. Added clearer guidance on permissions, review steps, rollout uncertainty, and the difference between projected benefits and measured outcomes.

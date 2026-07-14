@@ -1,47 +1,43 @@
-# Clearforge Social Repurpose Pack — 2026-07-13-beginner
+# Clearforge Social Repurpose Pack — 2026-07-14
 
-Status: Alternate-angle draft — automatic validation pending
+Status: Draft — automatic validation pending
 
-Source edition: 2026-07-13
-
-Edition angle: beginner_learning
-
-Editorial theme: Monday — Work
+Editorial theme: Tuesday — Life
 
 ## TikTok Script
 
-If you are new to AI, here is the simple version of this week’s news: the tools are becoming easier to use at work. OpenAI says GPT‑5.6 is built for more useful everyday tasks. GPT‑Live lets you talk to AI more naturally instead of typing perfect prompts. Anthropic is showing that safety and testing matter more. Microsoft says AI changes work, but not every job cut is just automation. And NVIDIA is reminding us that AI also depends on expensive infrastructure. Beginner takeaway: pick one boring task and see if AI makes it easier.
+AI news for real life: this week, the useful stuff is not hype — it’s workflow. ChatGPT Work is getting better at turning notes and files into finished drafts, Microsoft 365 Copilot is moving to GPT-5.6, and Google is adding clearer labels for AI-made ads. The takeaway? AI is becoming a better assistant for admin, study, and small-business tasks — but you still need to check the result.
 
 ## YouTube Shorts Script
 
-AI beginner tip: do not start by asking what the biggest model can do. Start by asking what task you do every week that AI could make simpler. This week, OpenAI launched GPT‑5.6 for more useful work and GPT‑Live for more natural voice chat. Anthropic is tying AI more closely to safety and testing. Microsoft says AI is changing work in ways that are bigger than simple replacement. NVIDIA is focusing on the compute behind the tools. The lesson: learn AI by using it on one small task at a time.
+Three practical AI updates to know: ChatGPT Work is built for longer tasks, GPT-5.6 is moving into Microsoft 365 Copilot, and Google is adding clearer AI labels to ads. For everyday users, that means AI is getting more useful for planning, writing, and spotting synthetic marketing — but human review still matters.
 
 ## Facebook Post
 
-If you are new to AI, this week’s updates are best read as a learning guide, not a race. OpenAI is making its models more practical for work and easier to use by voice. Anthropic is showing that safety and testing are now part of the product story. Microsoft says AI is changing work, but not every change is just automation. NVIDIA is focusing on the infrastructure behind the tools. The best way to learn? Pick one simple task and test whether AI helps.
+Today’s AI news is practical, not flashy: better tools for work, clearer ad transparency, and more family-focused controls. ChatGPT Work is built to help turn notes and files into finished drafts, GPT-5.6 is moving into Microsoft 365 Copilot, and Google is making it easier to see when ads were made with AI. Useful progress — as long as humans still verify the output.
 
 ## Pinterest Pin
 
-**Title:** A Beginner’s Guide to This Week in AI at Work
+**Title:** 3 AI updates that actually help with everyday life
 
-**Description:** A plain-language look at how AI is changing everyday work: easier drafting, voice tools, safety controls, and the infrastructure behind the apps. Built for beginners, creators, and small teams.
+**Description:** A plain-English look at the latest AI changes for work, family use, and ad transparency. Includes a practical takeaway for creators, freelancers, students, and small businesses.
 
 ## LinkedIn-Style Post
 
-For people learning AI, the useful takeaway from this week is simple: the technology is becoming more practical, more conversational, and more tied to safety and infrastructure. OpenAI is pushing efficiency and voice. Anthropic is emphasizing testing and governance. Microsoft is framing AI as a work redesign issue, not a simple replacement story. NVIDIA is addressing the cost of compute itself. If you are just starting, do not try to learn everything. Choose one repeated task and test how AI fits into it.
+The most useful AI news right now is not about bigger demos — it is about everyday usefulness. ChatGPT Work is designed to turn notes and files into finished drafts. GPT-5.6 is moving into Microsoft 365 Copilot. Google is adding clearer disclosure for AI-made ads. That points to a broader trend: AI is moving into real workflows, family settings, and media literacy. The best way to use it remains the same — let it draft, sort, and summarize, then verify the result yourself.
 
 ## 5 Short Quote/Card Lines
 
-- AI is becoming a work tool, not just a demo.
-- Voice lowers the barrier for beginners.
-- Safety is now part of the product story.
-- Not every workplace change is simple automation.
-- Learn AI by using it on one small task.
+- AI is moving into everyday admin.
+- Useful AI saves time on first drafts.
+- Transparency matters when ads are synthetic.
+- Family settings are becoming part of AI design.
+- Human review still beats blind automation.
 
 ## Suggested Headlines
 
-- AI is becoming a work tool, not just a demo
-- A beginner’s guide to the new AI work shift
-- What this week’s AI news means if you’re just starting
-- AI is getting easier to use, not just smarter
-- The beginner takeaway: start small, test one task
+- AI becomes more useful for everyday life: work, ads, and family settings
+- This week’s AI news is about practical help, not hype
+- AI moves closer to real life: drafting, disclosure, and family controls
+- The useful AI shift: fewer blank pages, clearer ads, more household guardrails
+- What changed this week in AI: work tools, ad labels, and family features

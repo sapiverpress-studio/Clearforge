@@ -1,0 +1,63 @@
+{
+  "version": 3,
+  "date": "2026-07-14",
+  "headline": "AI gets more useful for everyday life: work, ads, and family settings",
+  "dek": "Today’s practical AI news is less about spectacle and more about control: better work tools, clearer disclosure, and more family-focused safeguards.",
+  "hook": "Three AI updates that actually matter today",
+  "visual_system": "Clearforge AI briefing podcast studio system",
+  "visual_style_rules": {
+    "include": [
+      "dark navy AI briefing or podcast studio atmosphere",
+      "microphone or audio-briefing cues where appropriate",
+      "subtle circuit traces, waveform motifs, model cards or data-routing lines",
+      "physical source notes, checklists and human-review materials",
+      "premium editorial technology-magazine lighting"
+    ],
+    "avoid": [
+      "robots",
+      "glowing brains",
+      "hologram faces",
+      "generic dashboards",
+      "random floating code",
+      "excessive neon",
+      "fake readable text",
+      "Sapiver or unrelated branding"
+    ]
+  },
+  "stories": [
+    {
+      "file": "media/2026-07-14/story-1.png",
+      "title": "ChatGPT Work is designed for longer tasks",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/products/release-notes/",
+      "summary": "OpenAI says ChatGPT Work can research, analyze, and create finished documents, spreadsheets, presentations, reports, and Sites, while the desktop app brings Chat, Work, and Codex into one place. Work can also use local files and desktop apps when users grant permission. ([openai.com](https://openai.com/products/release-notes/?utm_source=openai))",
+      "why_it_matters": "For solo operators, students, and small teams, the useful change is not just better answers. It is fewer handoffs between notes, files, drafts, and final output. ([openai.com](https://openai.com/chatgpt-work/?utm_source=openai))",
+      "practical_angle": "This is most useful for turning messy inputs into a draft plan, checklist, summary, or presentation outline.",
+      "visual_prompt": "a dark navy AI briefing studio desk with a professional podcast microphone, source notes, a small audio waveform display, subtle circuit-board lines in the background and one practical notebook open on the desk. wide briefing-room still life cropped for vertical short-form video. show AI as a system being reviewed by a person through notes, checks, source cards and controlled audio tools. include a different arrangement of source cards, notebook, microphone angle and background signal pattern. Story context: ChatGPT Work is designed for longer tasks. Practical angle: This is most useful for turning messy inputs into a draft plan, checklist, summary, or presentation outline.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-07-14/story-2.png",
+      "title": "GPT-5.6 is moving into Microsoft 365 Copilot",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/",
+      "summary": "OpenAI says GPT-5.6 is becoming the preferred model in Microsoft 365 Copilot, including Word, Excel, PowerPoint, Chat, and Cowork. ([openai.com](https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/?utm_source=openai))",
+      "why_it_matters": "This matters because many people will meet AI inside familiar office apps rather than in a separate chatbot. That lowers friction for learning and everyday admin. ([openai.com](https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/?utm_source=openai))",
+      "practical_angle": "The practical use case is drafting, reorganizing, and summarizing routine work inside the apps people already open every day.",
+      "visual_prompt": "a high-end technology briefing set with a dark blue wall, subtle circuit traces, a clean desk, paper research packs, audio waveforms and one human-operated control surface. clean editorial technology-magazine composition, practical rather than sci-fi. combine physical human-review materials with light digital signal motifs so it feels human-led and AI-empowered. vary camera distance, desk depth and object hierarchy while keeping the same Clearforge identity. Story context: GPT-5.6 is moving into Microsoft 365 Copilot. Practical angle: The practical use case is drafting, reorganizing, and summarizing routine work inside the apps people already open every day.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: dark blue studio background, graphite desk, white paper, blue highlights and restrained green accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-07-14/story-3.png",
+      "title": "Google is labeling AI-made ads more clearly",
+      "source_name": "Google",
+      "source_url": "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
+      "summary": "Google says it is adding AI transparency features in My Ad Center, including a 'How this ad was made' panel for ads on Search, YouTube, and Discover. ([blog.google](https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/?utm_source=openai))",
+      "why_it_matters": "For consumers, this is a small but useful media-literacy upgrade. For creators and small businesses, it is a reminder that AI-made ad assets may need clearer disclosure and extra checking. ([blog.google](https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/?utm_source=openai))",
+      "practical_angle": "If you run ads or make marketing graphics, this is a cue to keep a simple record of what was AI-generated and what was edited by a human.",
+      "visual_prompt": "a practical AI systems review scene with a microphone, pinned evidence cards, process arrows, muted blue signal lines and a clear before-to-after analysis structure. vertical social-video still with a strong microphone foreground and clear desk detail. make the AI element clear through subtle circuit traces, waveform graphics, model cards and data-routing lines, not robots. use a different AI signal motif: waveform, routing lines, model cards, calendar markers or evidence board. Story context: Google is labeling AI-made ads more clearly. Practical angle: If you run ads or make marketing graphics, this is a cue to keep a simple record of what was AI-generated and what was edited by a human.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    }
+  ],
+  "narration": "media/2026-07-14/narration.mp3",
+  "narration_text": "Three practical AI updates to know: ChatGPT Work is built for longer tasks, GPT-5.6 is moving into Microsoft 365 Copilot, and Google is adding clearer AI labels to ads. For everyday users, that means AI is getting more useful for planning, writing, and spotting synthetic marketing — but human review still matters.",
+  "practical_takeaway": "Use AI for one boring admin task today — a weekly plan, a meeting summary, or a draft checklist — then spend your time checking and improving the result rather than starting from scratch.",
+  "what_to_test_next": "Try a 15-minute workflow: paste a messy list of tasks, notes, or emails into ChatGPT Work or Microsoft Copilot, ask for a clean table with priorities and deadlines, then compare the output against your own judgment before acting on it. ([openai.com](https://openai.com/chatgpt-work/?utm_source=openai))"
+}

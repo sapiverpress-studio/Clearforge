@@ -1,21 +1,23 @@
 {
   "version": 1,
-  "date": "2026-07-13-beginner",
+  "date": "2026-07-14",
   "brand": "Clearforge",
   "type": "clearforge_daily_biggest_story_podcast_script",
   "human_review_required": true,
   "narrator": "Irene",
   "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
-  "episode_title": "AI work tools are getting easier to use, not just smarter",
+  "episode_title": "ChatGPT Work is trying to turn AI into a real workbench",
   "selected_story_index": 0,
-  "selected_story_title": "OpenAI is trying to make AI feel more useful at work",
-  "selection_reason": "This is the clearest lead story for the edition because it directly matches the headline and the practical takeaway: AI is moving toward everyday work tasks, not just bigger demos or louder claims.",
-  "word_count": 1341,
-  "estimated_duration_minutes": 9.2,
+  "selected_story_title": "ChatGPT Work is designed for longer tasks",
+  "selection_reason": "This is the biggest practical shift for most listeners because it moves AI from isolated chat toward everyday work output: drafting, organizing, and finishing real tasks inside a workspace many people can actually use.",
+  "word_count": 1137,
+  "estimated_duration_minutes": 7.8,
   "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
   "source_notes": "source-notes.md",
-  "first_spoken_line": "Today’s story is not about an AI model becoming more dazzling for its own sake. It is about a change that matters much more for normal people: OpenAI says its new GPT-5.6 family is aimed at getting more done with less effort, especially in coding, writing, and knowledge work.",
-  "final_spoken_line": "So the bottom line is simple. This is not just a story about a smarter AI. It is a story about a more usable AI. If the tool helps you get from rough idea to usable draft with less friction, that is real progress. If it only shifts the work around, then the promise is still ahead of the practice.",
-  "validation_warnings": [],
+  "first_spoken_line": "Today’s biggest AI story is not about a flashy demo or a bigger benchmark. It is about something much more ordinary, and much more useful: turning messy work into something finished.",
+  "final_spoken_line": "That is the shift worth noticing today: less spectacle, more control. Less empty automation, more practical assistance. And for most people, that is where AI starts to become genuinely useful.",
+  "validation_warnings": [
+    "Script is shorter than target: 1137 words."
+  ],
   "non_spoken_instruction_candidates": []
 }

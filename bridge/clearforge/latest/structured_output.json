@@ -1,127 +1,107 @@
 {
-  "headline": "AI work tools are getting easier to use, not just smarter",
-  "dek": "A beginner-friendly daily brief on what changed, what it means in plain language, and the one thing small teams should try first.",
-  "edition_angle": "beginner_learning",
+  "headline": "AI gets more useful for everyday life: work, ads, and family settings",
+  "dek": "Today’s practical AI news is less about spectacle and more about control: better work tools, clearer disclosure, and more family-focused safeguards.",
   "sources": [
     {
       "source_name": "OpenAI",
-      "title": "GPT‑5.6: Frontier intelligence that scales with your ambition",
-      "url": "https://openai.com/index/gpt-5-6/",
+      "title": "ChatGPT Work, desktop app, and Sites release notes",
+      "url": "https://openai.com/products/release-notes/",
       "published_date": "2026-07-09",
-      "confirmed_fact": "OpenAI announced the GPT‑5.6 family, including Sol, Terra, and Luna, and said it is focused on efficiency, knowledge work, coding, and stronger safeguards.",
-      "interpretation": "For beginners, this suggests AI is being tuned less like a toy and more like a daily work tool that should handle longer, more ordinary tasks."
+      "confirmed_fact": "OpenAI says ChatGPT Work is rolling out, the desktop app now combines Chat, Work, and Codex, and Work can use local files and desktop apps with permission.",
+      "interpretation": "OpenAI is trying to make ChatGPT feel less like a chat box and more like a practical helper for documents, files, and repeatable tasks."
     },
     {
       "source_name": "OpenAI",
-      "title": "Introducing GPT‑Live",
-      "url": "https://openai.com/index/introducing-gpt-live/",
-      "published_date": "2026-07-08",
-      "confirmed_fact": "OpenAI launched GPT‑Live and said it is rolling it out to ChatGPT users globally, with a new full-duplex voice experience and safer voice-specific controls.",
-      "interpretation": "This points to a simpler way to use AI: talk naturally instead of waiting for rigid back-and-forth prompts."
+      "title": "GPT-5.6 is now the preferred model in Microsoft 365 Copilot",
+      "url": "https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/",
+      "published_date": "2026-07-09",
+      "confirmed_fact": "OpenAI says GPT-5.6 is becoming the preferred model in Microsoft 365 Copilot across Word, Excel, PowerPoint, Chat, and Cowork.",
+      "interpretation": "The most important shift for many users may be invisible: AI is moving deeper into the everyday office apps people already use."
     },
     {
-      "source_name": "Anthropic",
-      "title": "Redeploying Fable 5",
-      "url": "https://www.anthropic.com/news/redeploying-fable-5",
-      "published_date": "2026-06-30",
-      "confirmed_fact": "Anthropic said Fable 5 access was restored globally and described new government collaboration, including dedicated teams, compute for testing, and red-teaming support.",
-      "interpretation": "Beginners should see this as a reminder that powerful AI tools also come with rules, checks, and oversight."
+      "source_name": "Google",
+      "title": "Expanding AI transparency in ads",
+      "url": "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
+      "published_date": "2026-07-09",
+      "confirmed_fact": "Google says it is adding a 'How this ad was made' panel and new AI disclosures in My Ad Center for ads on Search, YouTube, and Discover.",
+      "interpretation": "This looks like a small trust feature, but it could help normal users and creators spot when an ad image or asset has been heavily AI-assisted."
     },
     {
-      "source_name": "Microsoft",
-      "title": "The latest in our company transformation",
-      "url": "https://blogs.microsoft.com/blog/2026/07/06/the-latest-in-our-company-transformation/",
-      "published_date": "2026-07-06",
-      "confirmed_fact": "Microsoft said the latest job cuts are not being replaced by AI, while also saying AI is changing how work gets done and that the company will keep investing in AI skills.",
-      "interpretation": "This shows that AI changes often look like new workflows and new skills, not just a robot replacing a person."
-    },
-    {
-      "source_name": "NVIDIA",
-      "title": "NVIDIA Unlocks AI Compute at Scale, Inviting Partners to Power the AI Infrastructure Buildout",
-      "url": "https://blogs.nvidia.com/blog/nvidia-unlocks-ai-compute-at-scale-capital-partners-to-power-ai-infrastructure-buildout/",
-      "published_date": "2026-07-01",
-      "confirmed_fact": "NVIDIA said it is introducing a new business model for AI clouds and multi-tenant AI factories, using revenue-sharing and credit-support structures.",
-      "interpretation": "For beginners, this is a clue that AI is not just software; it also depends on expensive computers, electricity, and financing behind the scenes."
+      "source_name": "OpenAI",
+      "title": "Parental controls in ChatGPT FAQ",
+      "url": "https://help.openai.com/en/articles/12315553--parental-controls-on-chatgpt-faq",
+      "published_date": "2026-07-10",
+      "confirmed_fact": "OpenAI says parental controls are designed for teen accounts and family management, and the company also documents Trusted Contact support for adults.",
+      "interpretation": "OpenAI is broadening ChatGPT from an individual tool into something that can be set up with family boundaries and safety settings in mind."
     }
   ],
   "story_summaries": [
     {
-      "title": "OpenAI is trying to make AI feel more useful at work",
-      "summary": "OpenAI says GPT‑5.6 is built to get more done with less effort, especially in coding, writing, and knowledge work.",
-      "why_it_matters": "If you are new to AI, the big idea is that better tools should save time on boring tasks, not just produce flashy answers.",
-      "practical_angle": "Think of it as a test of whether AI can help with drafts, summaries, research notes, and repetitive writing without a lot of cleanup.",
-      "claim_to_verify": "Whether the gains appear in everyday work, not only in product demos or benchmark scores."
+      "title": "ChatGPT Work is designed for longer tasks",
+      "summary": "OpenAI says ChatGPT Work can research, analyze, and create finished documents, spreadsheets, presentations, reports, and Sites, while the desktop app brings Chat, Work, and Codex into one place. Work can also use local files and desktop apps when users grant permission. ([openai.com](https://openai.com/products/release-notes/?utm_source=openai))",
+      "why_it_matters": "For solo operators, students, and small teams, the useful change is not just better answers. It is fewer handoffs between notes, files, drafts, and final output. ([openai.com](https://openai.com/chatgpt-work/?utm_source=openai))",
+      "practical_angle": "This is most useful for turning messy inputs into a draft plan, checklist, summary, or presentation outline.",
+      "claim_to_verify": "Check exactly which plans and regions have ChatGPT Work and desktop features enabled right now. ([openai.com](https://openai.com/products/release-notes/?utm_source=openai))"
     },
     {
-      "title": "Voice is becoming a normal way to use AI",
-      "summary": "GPT‑Live is designed to talk more naturally, with continuous listening and responding instead of a rigid question-and-answer rhythm.",
-      "why_it_matters": "Beginners often struggle with prompts. Voice can lower that barrier by letting you explain a task out loud.",
-      "practical_angle": "This could be useful for rough notes, reminders, quick brainstorming, and hands-free work while doing something else.",
-      "claim_to_verify": "Whether the voice mode stays accurate and stable in normal environments, especially when there is background noise."
+      "title": "GPT-5.6 is moving into Microsoft 365 Copilot",
+      "summary": "OpenAI says GPT-5.6 is becoming the preferred model in Microsoft 365 Copilot, including Word, Excel, PowerPoint, Chat, and Cowork. ([openai.com](https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/?utm_source=openai))",
+      "why_it_matters": "This matters because many people will meet AI inside familiar office apps rather than in a separate chatbot. That lowers friction for learning and everyday admin. ([openai.com](https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/?utm_source=openai))",
+      "practical_angle": "The practical use case is drafting, reorganizing, and summarizing routine work inside the apps people already open every day.",
+      "claim_to_verify": "Verify the rollout timing and whether your Microsoft 365 plan has access yet. ([openai.com](https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/?utm_source=openai))"
     },
     {
-      "title": "Anthropic shows that safety is part of the product now",
-      "summary": "Anthropic says Fable 5 is available again and that it is working more closely with government partners on testing and red-teaming.",
-      "why_it_matters": "New users should understand that AI tools are not just about power; they also come with guardrails and review processes.",
-      "practical_angle": "If you are choosing tools for a team, expect more questions about controls, audit trails, and how risky uses are managed.",
-      "claim_to_verify": "How much of the collaboration becomes visible to users and whether it changes access or usage rules."
+      "title": "Google is labeling AI-made ads more clearly",
+      "summary": "Google says it is adding AI transparency features in My Ad Center, including a 'How this ad was made' panel for ads on Search, YouTube, and Discover. ([blog.google](https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/?utm_source=openai))",
+      "why_it_matters": "For consumers, this is a small but useful media-literacy upgrade. For creators and small businesses, it is a reminder that AI-made ad assets may need clearer disclosure and extra checking. ([blog.google](https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/?utm_source=openai))",
+      "practical_angle": "If you run ads or make marketing graphics, this is a cue to keep a simple record of what was AI-generated and what was edited by a human.",
+      "claim_to_verify": "Check how the disclosure appears in your own market and whether all ad types are covered. ([blog.google](https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/?utm_source=openai))"
     },
     {
-      "title": "Microsoft says AI changes work, but not always through automation",
-      "summary": "Microsoft said recent layoffs are not being replaced by AI, while also saying AI is changing how work gets done and skills need to change with it.",
-      "why_it_matters": "This is a reminder that AI adoption usually starts with rearranging tasks, not with a full replacement of people.",
-      "practical_angle": "For beginners at work, the first question is which parts of a job can be simplified or standardized before anything is automated.",
-      "claim_to_verify": "Whether Microsoft’s internal changes match the way it describes AI’s role over the next few quarters."
-    },
-    {
-      "title": "NVIDIA is focused on the cost side of AI",
-      "summary": "NVIDIA said it is building new ways for AI clouds to finance large-scale compute using revenue-sharing and credit-support structures.",
-      "why_it_matters": "A lot of AI is limited by hardware, not by ideas. That can shape which tools are affordable for small teams.",
-      "practical_angle": "Beginners should remember that every AI feature depends on a hidden stack of servers, chips, and funding.",
-      "claim_to_verify": "Whether the new model lowers barriers for smaller customers or mainly helps large infrastructure partners."
+      "title": "OpenAI is adding more family-oriented controls",
+      "summary": "OpenAI’s help materials say parental controls are meant to support teen accounts and family use, and the company also documents Trusted Contact for adults. ([help.openai.com](https://help.openai.com/en/articles/12315553--parental-controls-on-chatgpt-faq?utm_source=openai))",
+      "why_it_matters": "This is a sign that AI tools are being shaped for shared household use, not just individual experimentation. That matters for parents, caregivers, and people helping older family members. ([techcrunch.com](https://techcrunch.com/2026/07/11/openai-bets-on-families-as-chatgpt-goes-deeper-into-households/?utm_source=openai))",
+      "practical_angle": "The practical use case is setting boundaries, reducing confusion, and making AI use more understandable in a household context.",
+      "claim_to_verify": "Confirm which family and safety features are available on your account and whether age-related protections are active. ([help.openai.com](https://help.openai.com/en/articles/12315553--parental-controls-on-chatgpt-faq?utm_source=openai))"
     }
   ],
-  "main_article": "If you are new to AI, this week’s updates can feel like a lot of company names and product announcements. But the simple story is easy to miss: AI is becoming less like a novelty you try once, and more like a set of work tools you may use every day.\n\nThat matters because beginners usually do not need the biggest model or the most technical explanation. They need to know what problem the tool solves. The latest updates from OpenAI, Anthropic, Microsoft, and NVIDIA all point toward the same basic shift: AI is moving closer to real work, with more attention on ease of use, safety, and the systems behind the software.\n\nStart with OpenAI’s GPT‑5.6. The company says the new family is aimed at efficiency and useful work, especially in coding, knowledge work, and longer tasks. For a beginner, the practical meaning is not “this model is smarter than the last one” so much as “this model is meant to spend less of your time.” That could mean faster first drafts, cleaner summaries, better research notes, or fewer back-and-forth edits. It also includes stronger safeguards, which is a reminder that better AI is not only about output quality. It is also about making the tool safer to use in real settings. The claim still needs independent testing, but the direction is clear: AI vendors are trying to make the experience feel more dependable for everyday users, not just impressive in demos. ([openai.com](https://openai.com/index/gpt-5-6/))\n\nThen there is GPT‑Live, which is useful to think of as a voice-first AI assistant. Instead of the old pattern where you had to stop, wait, type, and read, OpenAI says this system is built for a more natural conversation. That sounds small, but for beginners it can be a big deal. A lot of people do not know how to “prompt” well. Talking out loud is often easier than writing a perfect instruction. You can say, “Help me write a client update,” or “Turn these rough notes into bullet points,” and keep going. In that sense, voice is not just a convenience feature. It is a lower-friction on-ramp into AI use. The useful test is whether it works well in normal life, not just in a quiet room. ([openai.com](https://openai.com/index/introducing-gpt-live/))\n\nAnthropic’s Fable 5 update adds a different lesson for beginners: powerful AI systems are increasingly tied to oversight. The company says access was restored globally and that it is expanding work with government partners on testing and red-teaming. You do not need to follow the policy details to understand the point. When tools get more capable, people also ask who checks them, how they are tested, and what happens when something goes wrong. That is why safety shows up in the product story now, not just in a separate policy conversation. If you work at a small business, this is worth remembering when choosing tools for customer support, internal writing, or decision-making: the question is not only “Can it do the task?” but also “What controls are built in?” ([anthropic.com](https://www.anthropic.com/news/redeploying-fable-5))\n\nMicrosoft’s message is useful for beginners because it cuts through the most common AI misunderstanding: not every workplace change is a simple case of “AI replaced a person.” Microsoft said its latest job cuts are not being replaced by AI, while also saying AI is changing how work gets done and that it will keep investing in AI skills. That is a more realistic picture of how adoption usually works. Teams do not instantly become fully automated. Instead, they change how tasks are split up, which steps are manual, and what skills people need to keep up. For someone learning AI at work, this is a reminder to look for the workflow first. What takes too long? What gets repeated? What can be standardized before it is automated? ([blogs.microsoft.com](https://blogs.microsoft.com/blog/2026/07/06/the-latest-in-our-company-transformation/))\n\nNVIDIA’s announcement helps explain the hidden side of all this. AI tools do not run on ideas alone. They run on chips, servers, electricity, and money. NVIDIA said it is introducing a new way to finance AI clouds and multi-tenant AI factories with revenue-sharing and credit-support structures. You do not need to be a finance expert to see why that matters. If the infrastructure is easier to fund and operate, more companies may be able to offer AI services at scale. If it is not, the biggest players keep the advantage. For beginners, this is a good reminder that every chatbot or voice tool sits on top of a much larger machine room. ([blogs.nvidia.com](https://blogs.nvidia.com/blog/nvidia-unlocks-ai-compute-at-scale-capital-partners-to-power-ai-infrastructure-buildout/))\n\nSo what should a beginner actually take from all this? Not “learn everything at once.” The smarter move is to pick one small task you already do and see whether AI can make it easier. A weekly status update. A rough draft of an email. Notes from a meeting. A quick research summary. A voice note turned into a tidy outline. That is the real beginner path: not chasing the biggest headline, but finding one repetitive task where the tool saves time without creating more cleanup.\n\nThat is what this week’s AI news is really about. The technology is becoming less mysterious, but also more integrated into work. If you are just starting, focus on simple use cases, basic safety, and whether the output actually helps you finish the task. The learning curve is not just about how AI works. It is about learning where it fits into your day. ([openai.com](https://openai.com/index/gpt-5-6/))",
-  "practical_takeaway": "Start with one easy work task this week, like a draft email or meeting notes, and test whether AI makes it faster without making the final edit harder.",
-  "what_to_test_next": "Try this beginner exercise: speak a rough idea into a voice tool, then ask a text model to turn it into a clean email or summary. Compare that with doing it from scratch.",
+  "main_article": "The most useful AI news this week is not about who has the biggest model. It is about where the tools are landing: inside work apps, inside ad systems, and inside family settings. That shift matters because most people do not need AI for grand demos. They need it to help with a school project, a weekly report, a household plan, or a marketing task without adding more clutter.\n\nOpenAI’s new ChatGPT Work push is the clearest example. The company says Work is meant for longer tasks: researching, analyzing, and turning messy inputs into finished documents, spreadsheets, presentations, reports, and Sites. It also says the desktop app now brings Chat, Work, and Codex together, and that Work can use local files and desktop apps when users give permission. The practical message is simple: AI is being positioned less as a chat toy and more as a draft-and-organize layer for real work. ([openai.com](https://openai.com/products/release-notes/?utm_source=openai))\n\nFor a freelancer, that could mean taking a client brief, a folder of notes, and a rough outline, then asking the system to turn them into a cleaner proposal. For a parent, it might mean turning a pile of school emails, calendar notes, and shopping reminders into a week plan. For a student, it could mean converting a set of reading notes into a study guide. None of that removes the need to check the output, but it does reduce the time spent on first drafts and basic sorting. That is the real productivity gain most people can feel. ([openai.com](https://openai.com/chatgpt-work/?utm_source=openai))\n\nA second story shows the same pattern inside Microsoft 365. OpenAI says GPT-5.6 is becoming the preferred model in Microsoft 365 Copilot across Word, Excel, PowerPoint, Chat, and Cowork. In plain English, that means more AI assistance is moving into the tools where people already write, calculate, and present. If ChatGPT Work is about a general task runner, GPT-5.6 in Microsoft 365 is about making familiar office apps a little less manual. ([openai.com](https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/?utm_source=openai))\n\nThat matters for everyday users because the learning curve is lower. You do not need to invent a new workflow. You can start with something small: ask for a cleaner summary in Word, a clearer data explanation in Excel, or a first-pass slide deck in PowerPoint. The caveat is that office-native AI can encourage overconfidence if people assume the model’s output is already polished. It still needs a human to check numbers, tone, and structure. ([openai.com](https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/?utm_source=openai))\n\nThe third story is less flashy but arguably more useful for trust: Google says it is adding a 'How this ad was made' panel in My Ad Center for ads on Search, YouTube, and Discover, with AI disclosures when generative tools are used. That may sound like a niche ad-tech update, but it touches a daily-life problem. People increasingly see synthetic product photos, altered scenes, and fast-made marketing images. A disclosure does not solve misinformation, but it gives viewers one more clue about what they are looking at. ([blog.google](https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/?utm_source=openai))\n\nFor small businesses and creators, this is also a useful reminder to keep your own process tidy. If you use AI to mock up an ad or product image, keep notes on what was generated, what was edited, and what was verified. That does not just help with compliance and internal review; it also helps you answer questions later if a customer asks how the creative was made. ([blog.google](https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/?utm_source=openai))\n\nThe family angle is where the life-admin theme becomes strongest. OpenAI’s help material now documents parental controls for teen accounts and Trusted Contact for adults. That suggests a wider push toward household use: parents helping teens, caregivers helping older relatives, and families trying to set boundaries around when and how AI is used. The important point is not that AI has become 'safe' or 'family-ready' in some absolute sense. It is that the product is beginning to acknowledge that people use these tools in shared, messy, real-world contexts. ([help.openai.com](https://help.openai.com/en/articles/12315553--parental-controls-on-chatgpt-faq?utm_source=openai))\n\nTaken together, these updates show a consistent direction. AI is moving closer to ordinary workflows: school notes, family logistics, office documents, and ad review. That is good news for practical users because it means the most valuable skill is not prompt wizardry. It is knowing how to use AI for a first draft, a cleaner summary, a better checklist, or a clearer explanation — and then checking the result yourself. ([openai.com](https://openai.com/chatgpt-work/?utm_source=openai))\n\nThe caveat is still the same: more integration does not equal more truth. Whether you are using Work, Copilot, or ad disclosures, the human job remains the same: verify numbers, check names, confirm dates, and decide what should not be automated. That is the practical middle ground worth watching this week. ([openai.com](https://openai.com/chatgpt-work/?utm_source=openai))",
+  "practical_takeaway": "Use AI for one boring admin task today — a weekly plan, a meeting summary, or a draft checklist — then spend your time checking and improving the result rather than starting from scratch.",
+  "what_to_test_next": "Try a 15-minute workflow: paste a messy list of tasks, notes, or emails into ChatGPT Work or Microsoft Copilot, ask for a clean table with priorities and deadlines, then compare the output against your own judgment before acting on it. ([openai.com](https://openai.com/chatgpt-work/?utm_source=openai))",
   "claims_to_verify": [
-    "Whether GPT‑5.6 really improves ordinary work tasks in independent testing.",
-    "Whether GPT‑Live is reliable enough for everyday use in noisy or busy settings.",
-    "Whether Anthropic’s government collaboration changes access, rules, or enterprise review steps.",
-    "Whether Microsoft’s layoffs are separate from AI-driven workflow changes inside the company.",
-    "Whether NVIDIA’s financing model helps smaller AI customers or mostly large partners."
+    "Which specific ChatGPT plans and regions have Work and desktop features enabled today.",
+    "Whether GPT-5.6 is already active in your Microsoft 365 Copilot tenant or only rolling out gradually.",
+    "How Google’s new AI ad disclosures appear in your country and whether they cover the ad formats you actually use.",
+    "Which parental controls and Trusted Contact features are available on your ChatGPT account type and age group."
   ],
   "social": {
-    "tiktok_script": "If you are new to AI, here is the simple version of this week’s news: the tools are becoming easier to use at work. OpenAI says GPT‑5.6 is built for more useful everyday tasks. GPT‑Live lets you talk to AI more naturally instead of typing perfect prompts. Anthropic is showing that safety and testing matter more. Microsoft says AI changes work, but not every job cut is just automation. And NVIDIA is reminding us that AI also depends on expensive infrastructure. Beginner takeaway: pick one boring task and see if AI makes it easier.",
-    "youtube_shorts_script": "AI beginner tip: do not start by asking what the biggest model can do. Start by asking what task you do every week that AI could make simpler. This week, OpenAI launched GPT‑5.6 for more useful work and GPT‑Live for more natural voice chat. Anthropic is tying AI more closely to safety and testing. Microsoft says AI is changing work in ways that are bigger than simple replacement. NVIDIA is focusing on the compute behind the tools. The lesson: learn AI by using it on one small task at a time.",
-    "facebook_post": "If you are new to AI, this week’s updates are best read as a learning guide, not a race. OpenAI is making its models more practical for work and easier to use by voice. Anthropic is showing that safety and testing are now part of the product story. Microsoft says AI is changing work, but not every change is just automation. NVIDIA is focusing on the infrastructure behind the tools. The best way to learn? Pick one simple task and test whether AI helps.",
-    "pinterest_title": "A Beginner’s Guide to This Week in AI at Work",
-    "pinterest_description": "A plain-language look at how AI is changing everyday work: easier drafting, voice tools, safety controls, and the infrastructure behind the apps. Built for beginners, creators, and small teams.",
-    "linkedin_post": "For people learning AI, the useful takeaway from this week is simple: the technology is becoming more practical, more conversational, and more tied to safety and infrastructure. OpenAI is pushing efficiency and voice. Anthropic is emphasizing testing and governance. Microsoft is framing AI as a work redesign issue, not a simple replacement story. NVIDIA is addressing the cost of compute itself. If you are just starting, do not try to learn everything. Choose one repeated task and test how AI fits into it.",
+    "tiktok_script": "AI news for real life: this week, the useful stuff is not hype — it’s workflow. ChatGPT Work is getting better at turning notes and files into finished drafts, Microsoft 365 Copilot is moving to GPT-5.6, and Google is adding clearer labels for AI-made ads. The takeaway? AI is becoming a better assistant for admin, study, and small-business tasks — but you still need to check the result.",
+    "youtube_shorts_script": "Three practical AI updates to know: ChatGPT Work is built for longer tasks, GPT-5.6 is moving into Microsoft 365 Copilot, and Google is adding clearer AI labels to ads. For everyday users, that means AI is getting more useful for planning, writing, and spotting synthetic marketing — but human review still matters.",
+    "facebook_post": "Today’s AI news is practical, not flashy: better tools for work, clearer ad transparency, and more family-focused controls. ChatGPT Work is built to help turn notes and files into finished drafts, GPT-5.6 is moving into Microsoft 365 Copilot, and Google is making it easier to see when ads were made with AI. Useful progress — as long as humans still verify the output.",
+    "pinterest_title": "3 AI updates that actually help with everyday life",
+    "pinterest_description": "A plain-English look at the latest AI changes for work, family use, and ad transparency. Includes a practical takeaway for creators, freelancers, students, and small businesses.",
+    "linkedin_post": "The most useful AI news right now is not about bigger demos — it is about everyday usefulness. ChatGPT Work is designed to turn notes and files into finished drafts. GPT-5.6 is moving into Microsoft 365 Copilot. Google is adding clearer disclosure for AI-made ads. That points to a broader trend: AI is moving into real workflows, family settings, and media literacy. The best way to use it remains the same — let it draft, sort, and summarize, then verify the result yourself.",
     "quote_card_lines": [
-      "AI is becoming a work tool, not just a demo.",
-      "Voice lowers the barrier for beginners.",
-      "Safety is now part of the product story.",
-      "Not every workplace change is simple automation.",
-      "Learn AI by using it on one small task."
+      "AI is moving into everyday admin.",
+      "Useful AI saves time on first drafts.",
+      "Transparency matters when ads are synthetic.",
+      "Family settings are becoming part of AI design.",
+      "Human review still beats blind automation."
     ]
   },
   "headline_options": [
-    "AI is becoming a work tool, not just a demo",
-    "A beginner’s guide to the new AI work shift",
-    "What this week’s AI news means if you’re just starting",
-    "AI is getting easier to use, not just smarter",
-    "The beginner takeaway: start small, test one task"
+    "AI becomes more useful for everyday life: work, ads, and family settings",
+    "This week’s AI news is about practical help, not hype",
+    "AI moves closer to real life: drafting, disclosure, and family controls",
+    "The useful AI shift: fewer blank pages, clearer ads, more household guardrails",
+    "What changed this week in AI: work tools, ad labels, and family features"
   ],
   "editorial_theme": {
-    "day": "Monday",
-    "date": "2026-07-13",
-    "slug": "work",
-    "title": "Work",
-    "focus": "AI at work: daily tasks, teams, productivity, research, writing, support, admin, meetings and practical workplace use.",
-    "instruction": "Prioritise what creators, small operators and small businesses can test in real work this week."
-  },
-  "edition_id": "2026-07-13-beginner",
-  "base_date": "2026-07-13",
-  "edition_mode": "alternate_angle"
+    "day": "Tuesday",
+    "date": "2026-07-14",
+    "slug": "life",
+    "title": "Life",
+    "focus": "Life-admin and personal usefulness: learning, household planning, accessibility, personal knowledge management, family logistics, study, note-taking and everyday problem solving.",
+    "instruction": "Keep the angle practical and careful. Avoid medical, legal or financial advice. Focus on how AI can help people understand, organise or learn, not replace judgement."
+  }
 }

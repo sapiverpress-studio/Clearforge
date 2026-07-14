@@ -1,14 +1,15 @@
 {
   "name": "clearforge-daily-ai-brief-builder",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "private": true,
   "type": "module",
-  "description": "Clearforge automated daily AI news research, validation, evergreen learning, media and distribution system.",
+  "description": "Clearforge automated daily AI news research, validation, evergreen learning, audience-fit optimisation, media and distribution system.",
   "scripts": {
     "daily": "bash scripts/run-fresh-daily-with-event-retry.sh",
     "angle:alternate": "node src/reangle-daily.mjs",
     "draft": "node src/generate-daily-brief.mjs",
     "novelty:event": "node src/check-event-novelty.mjs",
+    "social:optimise": "node src/optimise-social-audience-fit.mjs",
     "feature": "node src/generate-full-feature.mjs",
     "evergreen": "node src/generate-evergreen-explainer.mjs",
     "podcast:daily": "node src/generate-daily-podcast-script.mjs",

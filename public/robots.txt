@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://clearforge-daily-brief.netlify.app/sitemap.xml

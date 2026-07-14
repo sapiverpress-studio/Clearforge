@@ -1,0 +1,40 @@
+name: Rebuild Clearforge Organic Growth Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/build-site.mjs"
+      - ".github/workflows/rebuild-organic-growth.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: clearforge-organic-growth-rebuild
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Build approved static site
+        env:
+          BLOG_BASE_URL: https://clearforge-daily-brief.netlify.app
+        run: npm run build:site
+
+      - name: Commit organic discovery pages
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Rebuild Clearforge organic discovery pages"
+          file_pattern: "public/**"

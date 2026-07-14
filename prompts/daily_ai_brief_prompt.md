@@ -39,8 +39,12 @@ Rules:
 - Look for real organisations adopting, piloting, buying, integrating, or expanding AI technology.
 - Distinguish between a pilot, partnership, contract, integration, staged rollout, and full deployment.
 - Do not present promised benefits as measured results.
+- A supplier newsroom alone can confirm what the supplier announced, but not that a customer outcome was achieved.
+- For adoption, contract, partnership, deployment, or customer-result claims, seek confirmation from the adopting organisation or credible independent reporting.
+- If material access, timing, scale, pricing, deployment, eligibility, or outcome details cannot be verified, drop the story rather than preparing it for automatic publication.
+- Every material claim in a publishable edition must be resolved against the cited sources.
 
-Discovery must cover:
+Discovery should draw from these four lanes across the week. A single daily edition does not need to force all four lanes:
 
 1. Core AI advances: models, research, infrastructure, safety, policy, open source, and developer tools.
 2. AI inside everyday products: design, media, ecommerce, publishing, productivity, office software, education, accessibility, customer service, audio, video, and administration.
@@ -96,7 +100,7 @@ For each story include:
 - What happened
 - Why it matters
 - Practical angle
-- Claim to verify
+- Verification check. Use exactly `NONE — verified from cited sources.` only when the material access, date, scale, pricing, deployment and outcome claims used in the story are supported. Otherwise state the unresolved claim plainly so validation blocks publication.
 
 For adoption and embedded-product stories, answer the relevant who, what, why, how, when, scale, intended outcome, evidence, and wider-significance questions. State when details have not been disclosed.
 
@@ -126,7 +130,7 @@ Give one small workflow experiment.
 
 ## Claims To Verify Before Publishing
 
-List anything that needs checking before the draft is published, including rollout timing, deployment scale, availability, customer claims, and whether outcomes are measured or projected.
+List every unresolved material claim, including rollout timing, deployment scale, availability, pricing, customer claims, and whether outcomes are measured or projected. For an automatically publishable edition this list must be empty. Never hide uncertainty merely to pass validation; replace or drop a story when the evidence is insufficient.
 
 ## Social Repurpose Pack
 

@@ -1,4 +1,26 @@
 {
   "version": 1,
-  "explainers": []
+  "explainers": [
+    {
+      "slug": "ai-work-tools-in-existing-apps",
+      "title": "How to adopt AI work tools inside the apps your team already uses",
+      "description": "A practical guide to using AI where work already happens: in docs, spreadsheets, chat, and connected files. It explains the likely benefits, the real limits, and the questions to ask before rolling anything out.",
+      "search_question": "How should a team adopt AI work tools inside existing apps safely?",
+      "topic_slugs": [
+        "ai-adoption",
+        "ai-inside-products",
+        "systems-automation"
+      ],
+      "created": "2026-07-14",
+      "last_updated": "2026-07-14",
+      "source_dates": [
+        "2026-07-09",
+        "2026-07-10",
+        "2026-07-11",
+        "2026-07-13",
+        "2026-07-14"
+      ],
+      "approved_for_publication": true
+    }
+  ]
 }

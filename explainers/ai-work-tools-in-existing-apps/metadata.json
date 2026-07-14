@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "slug": "ai-work-tools-in-existing-apps",
+  "title": "How to adopt AI work tools inside the apps your team already uses",
+  "description": "A practical guide to using AI where work already happens: in docs, spreadsheets, chat, and connected files. It explains the likely benefits, the real limits, and the questions to ask before rolling anything out.",
+  "search_question": "How should a team adopt AI work tools inside existing apps safely?",
+  "topic_slugs": [
+    "ai-adoption",
+    "ai-inside-products",
+    "systems-automation"
+  ],
+  "created": "2026-07-14",
+  "last_updated": "2026-07-14",
+  "source_editions": [
+    "2026-07-09",
+    "2026-07-10",
+    "2026-07-11",
+    "2026-07-13",
+    "2026-07-14"
+  ],
+  "source_urls": [
+    "https://openai.com/products/release-notes/",
+    "https://openai.com/index/chatgpt-for-your-most-ambitious-work/",
+    "https://openai.com/index/gpt-5-6/",
+    "https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/",
+    "https://www.anthropic.com/news/introducing-claude-tag",
+    "https://www.anthropic.com/responsible-scaling-policy/roadmap",
+    "https://openai.com/index/introducing-gpt-live/",
+    "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
+    "https://help.openai.com/en/articles/12315553--parental-controls-on-chatgpt-faq"
+  ],
+  "revisions": [
+    {
+      "date": "2026-07-14",
+      "summary": "Created a durable explainer on adopting AI work tools inside existing apps, focusing on workflow fit, human review, permissions, and current examples from OpenAI, Microsoft, Anthropic, and Google.",
+      "source_editions": [
+        "2026-07-14",
+        "2026-07-13",
+        "2026-07-11",
+        "2026-07-10",
+        "2026-07-09"
+      ]
+    }
+  ],
+  "approved_for_publication": true,
+  "editorial_basis": "Generated only from Clearforge research packs that had already passed publication approval and material-claim verification."
+}

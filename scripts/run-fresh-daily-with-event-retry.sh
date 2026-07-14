@@ -1,12 +1,23 @@
 #!/usr/bin/env bash
 set -uo pipefail
 
-max_attempts=4
+# Two complete story-set attempts are enough. More than this can multiply API
+# rate-limit delays and leave a manual run consuming a runner for over an hour.
+max_attempts=2
 attempt=1
 
-echo "Clearforge fresh-story loop starting."
+start_epoch=$(date +%s)
+wall_limit_seconds="${CLEARFORGE_FRESH_WALL_LIMIT_SECONDS:-1500}"
+
+echo "Clearforge fresh-story loop starting (maximum ${max_attempts} story sets; wall limit ${wall_limit_seconds}s)."
 
 while [ "$attempt" -le "$max_attempts" ]; do
+  elapsed=$(( $(date +%s) - start_epoch ))
+  if [ "$elapsed" -ge "$wall_limit_seconds" ]; then
+    echo "Fresh research reached its wall-time limit. Stopping instead of continuing retries."
+    exit 124
+  fi
+
   echo "Fresh story-set attempt ${attempt}/${max_attempts}"
 
   set +e
@@ -15,7 +26,7 @@ while [ "$attempt" -le "$max_attempts" ]; do
   set -e
 
   if [ "$research_status" -ne 0 ]; then
-    echo "Research failed before event novelty could be checked."
+    echo "Research failed or timed out before event novelty could be checked."
     exit "$research_status"
   fi
 
@@ -36,7 +47,7 @@ while [ "$attempt" -le "$max_attempts" ]; do
 
   if grep -Eqi 'Event novelty failed|same underlying event|duplicate_events' "$novelty_log"; then
     if [ "$attempt" -lt "$max_attempts" ]; then
-      echo "Event-level duplicate detected. Researching a replacement story set automatically."
+      echo "Event-level duplicate detected. Researching one replacement story set."
       rm -f "$novelty_log"
       attempt=$((attempt+1))
       sleep 10

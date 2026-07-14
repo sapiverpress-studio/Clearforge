@@ -1,0 +1,52 @@
+name: Clearforge Evergreen Guide
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 9 * * 0"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: clearforge-evergreen-guide
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create or update one evergreen guide
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
+        run: npm run evergreen
+
+      - name: Rebuild approved static site
+        env:
+          BLOG_BASE_URL: https://clearforge-daily-brief.netlify.app
+        run: npm run build:site
+
+      - name: Commit evergreen guide and public pages
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Publish Clearforge evergreen guide"
+          file_pattern: "explainers/** public/**"
+
+      - name: Confirm safe scope
+        run: |
+          echo "Evergreen guide pipeline completed."
+          echo "This workflow does not dispatch social publishing or generate ElevenLabs audio."

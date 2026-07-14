@@ -10,120 +10,135 @@ Source article status: Draft / Checked / Approved
 
 ---
 
+## Interest Check Before Writing
+
+Target audience:
+[One specific group likely to care about this subject.]
+
+Existing audience problem, curiosity or desired outcome:
+[What they already care about before seeing the post.]
+
+Strongest verified proof point:
+[One concrete fact that earns attention.]
+
+Promised payoff:
+[What useful answer, warning, comparison or action they will receive.]
+
+Natural search phrases:
+[Three to five phrases a person might actually type or say.]
+
+Interest score:
+[1–10. Rewrite the concept when below 7.]
+
+Why a relevant stranger would stop:
+[One sentence.]
+
+---
+
 ## TikTok Script
 
 Hook:
-AI news is noisy. Here’s the part that actually matters today.
+[Lead with the audience problem, a concrete consequence, a direct question or a surprising verified change. Make the topic unmistakable in the first sentence.]
 
 Body:
-[Plain English explanation of the useful story.]
+[Explain one useful idea in plain English. Assume the viewer has never heard of Clearforge.]
+
+Proof:
+[Use the strongest verified detail.]
 
 Practical point:
-For creators and small businesses, the lesson is not to chase every new tool. The useful move is to test one workflow and see whether it saves time or improves clarity.
+[Give one action, test or decision.]
 
 Close:
-Clearforge turns AI noise into clear, usable systems.
+[Finish the thought. Do not replace the payoff with a brand slogan.]
 
 ---
 
 ## YouTube Shorts Script
 
 Title idea:
+[A search-friendly question, consequence or practical promise.]
 
-Script:
-Today in practical AI: [main update].
+Opening:
+[State the topic and why it matters immediately.]
 
-Here’s the confirmed part:
-[confirmed fact]
+Confirmed part:
+[Confirmed fact.]
 
-Here’s the careful interpretation:
-[interpretation]
+Meaning:
+[Careful interpretation for the named audience.]
 
-Here’s what to test:
-[test idea]
-
-Do not treat this as magic. Treat it as one small workflow experiment.
+What to do:
+[One useful action or test.]
 
 ---
 
 ## Facebook Post
 
-AI news moves fast, but most of it is not immediately useful.
+Opening:
+[Start with a recognisable problem, choice or consequence.]
 
-Today’s practical signal:
+Useful signal:
+[Short explanation with a concrete verified detail.]
 
-[short explanation]
+What it means:
+[Practical explanation for the intended audience.]
 
-What this means for normal creators, small businesses, and practical AI learners:
-
-[practical explanation]
-
-What to test:
-[test]
-
-What to verify first:
-[claim checks]
-
-Clearforge: human-led, AI-empowered.
+Question:
+[Ask about a genuine experience, workflow or decision. Do not ask for empty engagement.]
 
 ---
 
 ## Pinterest Pin
 
 Title:
-[clear useful headline]
+[A searchable problem, checklist, guide or practical question.]
 
 Description:
-AI news is noisy. This Clearforge daily brief turns today’s AI update into a practical takeaway, a simple workflow test, and clear claims to check before publishing.
+[Explain exactly what the reader will learn or be able to do. Use natural search language.]
 
 Destination URL:
-[approved blog article URL]
+[Approved blog article URL.]
 
 Image/card text:
-[short clear card line]
+[A complete useful promise, not a brand slogan.]
 
 ---
 
 ## LinkedIn-Style Post
 
-Most AI news is too noisy to act on immediately.
+Opening:
+[Lead with a workplace decision, operational consequence or professional lesson.]
 
-The useful question is not:
-“What is the biggest AI headline today?”
+Evidence:
+[One concrete verified fact.]
 
-The better question is:
-“What can a normal person or small business actually test from this?”
+Implication:
+[What changes for teams, workflows or accountability.]
 
-Today’s practical takeaway:
-
-[main takeaway]
-
-The responsible workflow:
-
-1. Read the source.
-2. Separate fact from interpretation.
-3. Test one small use case.
-4. Check the output.
-5. Publish only after human review.
-
-That is the Clearforge approach: human-led, AI-empowered.
+Practical response:
+[One action or question for a professional audience.]
 
 ---
 
 ## 5 Short Quote/Card Lines
 
-1. AI news is noisy. Systems make it useful.
-2. Do not chase every tool. Test one workflow.
-3. Separate facts from interpretation before publishing.
-4. Useful AI starts with human judgement.
-5. Clear beats clever.
+Each line must communicate a complete useful idea. Avoid generic lines such as “Clear beats clever” unless the line also carries a concrete lesson.
+
+1. [Useful idea]
+2. [Useful idea]
+3. [Useful idea]
+4. [Useful idea]
+5. [Useful idea]
 
 ---
 
 ## Headline Options
 
-1. Today’s AI News, Turned Into One Practical Workflow
-2. What Actually Matters In AI Today
-3. The Clearforge Daily AI Brief
-4. AI News Without The Hype
-5. One Useful AI Lesson For Creators Today
+Use a mix of:
+
+1. Direct audience problem.
+2. Practical consequence.
+3. Searchable question.
+4. Useful comparison or warning.
+5. Concrete action or checklist.

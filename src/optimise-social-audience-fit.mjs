@@ -97,11 +97,11 @@ const response = await client.responses.create({
   input: [
     {
       role: "system",
-      content: "You are the Clearforge audience-fit editor. Treat social feeds as interest graphs. Assess every verified story before selecting content. Choose the strongest story independently for each platform; do not force one lead story everywhere. Use only facts already present in the supplied research pack. Never invent details, urgency, popularity or outcomes."
+      content: "You are the Clearforge audience-fit editor. Treat social feeds as interest graphs. Assess every verified story before selecting content. Choose the strongest story independently for each platform; do not force one lead story everywhere. Use only facts already present in the supplied research pack. Never invent details, urgency, popularity or outcomes. Story indexes are zero-based: the first story is 0, the second is 1, and so on."
     },
     {
       role: "user",
-      content: `CLEARFORGE EDITION: ${DATE}\n\nVERIFIED RESEARCH PACK:\n${JSON.stringify(source)}\n\nEvaluate every story on audience specificity, practical consequence, searchability, usefulness to a stranger, novelty, visual potential, discussion potential and whether the payoff can be explained clearly in under 30 seconds.\n\nThen choose the best story separately for TikTok, YouTube Shorts, Facebook, Pinterest and LinkedIn. Different platforms may use different stories. Every selected platform concept must score at least 7/10 for platform fit.\n\nWrite final social assets around those platform selections. Rules:\n- Never start with generic phrases such as 'AI news is noisy', 'today in AI', 'here is the latest AI news' or Clearforge branding.\n- The opening must immediately reveal the audience interest or practical consequence.\n- TikTok: 70–130 spoken words, one strong stop reason and one payoff.\n- YouTube Shorts: 80–150 spoken words, searchable question or problem, clear answer.\n- Facebook: recognisable situation, useful explanation and a meaningful question about a real choice or experience.\n- Pinterest: searchable problem/guide/checklist title and a description that clearly states the benefit.\n- LinkedIn: workplace decision, operational consequence or professional lesson.\n- Quote lines must each be a complete useful thought, not a slogan.\n- Keep Clearforge calm, practical and human-led.\n- Do not add facts beyond the supplied verified pack.`
+      content: `CLEARFORGE EDITION: ${DATE}\n\nVERIFIED RESEARCH PACK:\n${JSON.stringify(source)}\n\nEvaluate every story on audience specificity, practical consequence, searchability, usefulness to a stranger, novelty, visual potential, discussion potential and whether the payoff can be explained clearly in under 30 seconds. Return exactly one assessment per supplied story, in the same order, using zero-based story_index values 0 through ${stories.length - 1}.\n\nThen choose the best story separately for TikTok, YouTube Shorts, Facebook, Pinterest and LinkedIn. Different platforms may use different stories. Every selected platform concept must score at least 7/10 for platform fit.\n\nWrite final social assets around those platform selections. Rules:\n- Never start with generic phrases such as 'AI news is noisy', 'today in AI', 'here is the latest AI news' or Clearforge branding.\n- The opening must immediately reveal the audience interest or practical consequence.\n- TikTok: 70–130 spoken words, one strong stop reason and one payoff.\n- YouTube Shorts: 80–150 spoken words, searchable question or problem, clear answer.\n- Facebook: recognisable situation, useful explanation and a meaningful question about a real choice or experience.\n- Pinterest: searchable problem/guide/checklist title and a description that clearly states the benefit.\n- LinkedIn: workplace decision, operational consequence or professional lesson.\n- Quote lines must each be a complete useful thought, not a slogan.\n- Keep Clearforge calm, practical and human-led.\n- Do not add facts beyond the supplied verified pack.`
     }
   ],
   text: { format: { type: "json_schema", name: "clearforge_audience_fit", strict: true, schema } }
@@ -109,11 +109,44 @@ const response = await client.responses.create({
 
 if (!response.output_text) throw new Error("OpenAI returned no audience-fit output.");
 const result = JSON.parse(response.output_text);
-if (result.story_assessments.length !== stories.length) throw new Error(`Expected ${stories.length} story assessments, got ${result.story_assessments.length}`);
-const indexes = new Set(result.story_assessments.map((item) => item.story_index));
-for (let i = 0; i < stories.length; i += 1) if (!indexes.has(i)) throw new Error(`Missing audience assessment for story ${i}`);
+
+function normaliseTitle(value) {
+  return String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+function resolveStoryIndex(item) {
+  const byTitle = stories.findIndex((story) => normaliseTitle(story.title) === normaliseTitle(item.story_title));
+  if (byTitle >= 0) return byTitle;
+  const raw = Number(item.story_index);
+  if (Number.isInteger(raw) && raw >= 0 && raw < stories.length) return raw;
+  if (Number.isInteger(raw) && raw >= 1 && raw <= stories.length) return raw - 1;
+  return -1;
+}
+
+result.story_assessments = result.story_assessments.map((item) => ({
+  ...item,
+  story_index: resolveStoryIndex(item)
+}));
+for (const selection of Object.values(result.platform_selections)) {
+  selection.story_index = resolveStoryIndex(selection);
+}
+
+const assessmentByIndex = new Map();
+for (const item of result.story_assessments) {
+  if (item.story_index < 0 || item.story_index >= stories.length) continue;
+  if (!assessmentByIndex.has(item.story_index)) assessmentByIndex.set(item.story_index, item);
+}
+if (assessmentByIndex.size !== stories.length) {
+  const missing = [];
+  for (let i = 0; i < stories.length; i += 1) if (!assessmentByIndex.has(i)) missing.push(i);
+  throw new Error(`Audience-fit response did not cover every story. Missing indexes: ${missing.join(", ")}`);
+}
+result.story_assessments = [...assessmentByIndex.entries()]
+  .sort(([a], [b]) => a - b)
+  .map(([, item]) => item);
+
 for (const [platform, selection] of Object.entries(result.platform_selections)) {
-  if (selection.story_index >= stories.length) throw new Error(`${platform} selected unavailable story index ${selection.story_index}`);
+  if (selection.story_index < 0 || selection.story_index >= stories.length) throw new Error(`${platform} selected an unavailable story`);
+  selection.story_title = stories[selection.story_index].title;
   if (selection.platform_fit_score < 7) throw new Error(`${platform} platform fit below 7`);
 }
 
@@ -134,7 +167,7 @@ const selectionLines = Object.entries(result.platform_selections).map(([platform
   `### ${platform[0].toUpperCase()}${platform.slice(1)}\n\n- Selected story: ${item.story_title}\n- Audience: ${item.target_audience}\n- Format: ${item.format}\n- Opening: ${item.opening}\n- Payoff: ${item.payoff}\n- Platform fit: ${item.platform_fit_score}/10\n- Why selected: ${item.selection_reason}`
 ).join("\n\n");
 const assessmentLines = result.story_assessments.map((item) =>
-  `### ${item.story_title}\n\n- Audience: ${item.target_audience}\n- Interest signal: ${item.interest_signal}\n- Stop reason: ${item.stop_reason}\n- Payoff: ${item.promised_payoff}\n- Proof: ${item.proof_point}\n- Overall score: ${item.overall_score}/10\n- Reason: ${item.score_reason}`
+  `### ${stories[item.story_index].title}\n\n- Audience: ${item.target_audience}\n- Interest signal: ${item.interest_signal}\n- Stop reason: ${item.stop_reason}\n- Payoff: ${item.promised_payoff}\n- Proof: ${item.proof_point}\n- Overall score: ${item.overall_score}/10\n- Reason: ${item.score_reason}`
 ).join("\n\n");
 fs.writeFileSync(path.join(draftDir, "audience_fit_report.md"), `# Clearforge Audience-Fit Report — ${DATE}\n\n## Story comparison\n\n${assessmentLines}\n\n## Platform selections\n\n${selectionLines}\n\n## Overall reasoning\n\n${result.overall_reasoning}\n`, "utf8");
 

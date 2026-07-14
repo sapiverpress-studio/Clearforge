@@ -23,6 +23,9 @@ const stories = Array.isArray(data.story_summaries) ? data.story_summaries : [];
 const article = String(data.main_article || "").trim();
 const feature = fs.existsSync(featurePath) ? fs.readFileSync(featurePath, "utf8").trim() : "";
 const social = data.social || {};
+const openClaims = Array.isArray(data.claims_to_verify)
+  ? data.claims_to_verify.map((claim) => String(claim || "").trim()).filter(Boolean)
+  : [];
 const articleWords = article.split(/\s+/).filter(Boolean).length;
 const featureWords = feature.split(/\s+/).filter(Boolean).length;
 
@@ -35,11 +38,27 @@ if (feature && featureWords < 1400) failures.push("Full feature is shorter than 
 if (featureWords > 2800) failures.push("Full feature is longer than 2,800 words");
 if (feature && !/^#\s+/m.test(feature)) failures.push("Full feature has no H1 headline");
 if (feature && !/##\s+Sources/i.test(feature)) failures.push("Full feature has no Sources section");
+if (openClaims.length) failures.push(`Unresolved claims remain: ${openClaims.join(" | ")}`);
+
+for (const [i, story] of stories.entries()) {
+  const check = String(story?.claim_to_verify || "").trim();
+  if (!/^none\b/i.test(check)) {
+    failures.push(`Story ${i + 1} still has an unresolved verification check: ${check || "missing claim_to_verify"}`);
+  }
+}
 
 const urls = new Set();
+const editionDate = new Date(`${String(DATE).slice(0, 10)}T23:59:59Z`);
 for (const [i, source] of sources.entries()) {
   if (!source?.url || !/^https:\/\//i.test(source.url)) failures.push(`Source ${i + 1} has no valid HTTPS URL`);
-  if (!source?.published_date || !/^\d{4}-\d{2}-\d{2}$/.test(source.published_date)) failures.push(`Source ${i + 1} has invalid date`);
+  if (!source?.published_date || !/^\d{4}-\d{2}-\d{2}$/.test(source.published_date)) {
+    failures.push(`Source ${i + 1} has invalid date`);
+  } else {
+    const published = new Date(`${source.published_date}T00:00:00Z`);
+    if (published > editionDate) failures.push(`Source ${i + 1} has a future publication date: ${source.published_date}`);
+    const ageDays = Math.floor((editionDate - published) / 86400000);
+    if (ageDays > 7) warnings.push(`Source ${i + 1} is ${ageDays} days old; confirm it is background rather than current news`);
+  }
   if (!source?.confirmed_fact) failures.push(`Source ${i + 1} missing confirmed_fact`);
   if (!source?.interpretation) failures.push(`Source ${i + 1} missing interpretation`);
   if (urls.has(source.url)) failures.push(`Duplicate source URL: ${source.url}`);
@@ -62,7 +81,7 @@ if (!String(social.pinterest_title || "").trim()) failures.push("Missing Pintere
 if (!String(social.pinterest_description || "").trim()) failures.push("Missing Pinterest description");
 
 const uniqueHosts = new Set(sources.map((s) => { try { return new URL(s.url).hostname; } catch { return ""; } }).filter(Boolean));
-if (uniqueHosts.size < 2) warnings.push("Fewer than two distinct source domains");
+if (uniqueHosts.size < 2) failures.push("Fewer than two distinct source domains");
 
 const approved = failures.length === 0;
 const approval = {
@@ -88,7 +107,8 @@ const validation = {
     story_count: stories.length,
     article_words: articleWords,
     feature_words: featureWords,
-    unique_source_domains: uniqueHosts.size
+    unique_source_domains: uniqueHosts.size,
+    unresolved_claim_count: openClaims.length
   }
 };
 

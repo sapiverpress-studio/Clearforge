@@ -28,6 +28,9 @@ while [ "$attempt" -le "$max_attempts" ]; do
   if [ "$novelty_status" -eq 0 ]; then
     rm -f "$novelty_log"
     echo "Fresh story-set passed event novelty."
+    echo "Comparing verified stories and optimising each social platform for audience fit."
+    node src/optimise-social-audience-fit.mjs
+    echo "Audience-fit report and platform-specific social pack created."
     exit 0
   fi
 

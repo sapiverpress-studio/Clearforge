@@ -100,18 +100,7 @@ Create:
 
 Treat social platforms as interest graphs, not follower-only feeds. Every piece must make its likely audience and subject obvious immediately so the platform can match it to people who care.
 
-Before writing the social assets, define:
-
-- target_audience: one specific audience, not "everyone";
-- audience_problem_or_desire: the problem, fear, curiosity or useful outcome that audience already cares about;
-- interest_signal: the plain-language topic phrase the opening clearly communicates;
-- stop_reason: why a relevant stranger would pause in the first two seconds;
-- promised_payoff: what useful answer, warning, comparison or action the viewer will receive;
-- proof_point: the strongest concrete verified detail supporting the content;
-- recommended_format: explanation, warning, comparison, checklist, demonstration, myth correction, reaction or practical test;
-- search_phrases: 3 to 5 natural phrases a person might search for;
-- interest_score: integer 1 to 10. Scores below 7 must be rewritten before output;
-- interest_score_reason: explain why this is likely to matter to the named audience now.
+Before drafting, internally identify one specific target audience, the problem or useful outcome they already care about, the strongest verified proof point, the promised payoff and 3 to 5 natural search phrases. Do not output these as extra fields. Use them to shape every required social field. Internally score the idea from 1 to 10 for likely audience interest; rewrite it before output when the score is below 7.
 
 Social rules:
 

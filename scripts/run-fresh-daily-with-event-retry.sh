@@ -1,20 +1,21 @@
 #!/usr/bin/env bash
 set -uo pipefail
 
-# Two complete story-set attempts are enough. More than this can multiply API
-# rate-limit delays and leave a manual run consuming a runner for over an hour.
-max_attempts=2
+# Manual and scheduled fresh runs should not repeatedly chase uniqueness against
+# failed test drafts. Prune unpublished same-day archives before researching.
+node src/prune-unpublished-run-history.mjs
+
+max_attempts=1
 attempt=1
-
 start_epoch=$(date +%s)
-wall_limit_seconds="${CLEARFORGE_FRESH_WALL_LIMIT_SECONDS:-1500}"
+wall_limit_seconds="${CLEARFORGE_FRESH_WALL_LIMIT_SECONDS:-600}"
 
-echo "Clearforge fresh-story loop starting (maximum ${max_attempts} story sets; wall limit ${wall_limit_seconds}s)."
+echo "Clearforge fresh-story loop starting (one bounded story set; wall limit ${wall_limit_seconds}s)."
 
 while [ "$attempt" -le "$max_attempts" ]; do
   elapsed=$(( $(date +%s) - start_epoch ))
   if [ "$elapsed" -ge "$wall_limit_seconds" ]; then
-    echo "Fresh research reached its wall-time limit. Stopping instead of continuing retries."
+    echo "Fresh research reached its wall-time limit. Stopping."
     exit 124
   fi
 
@@ -45,17 +46,7 @@ while [ "$attempt" -le "$max_attempts" ]; do
     exit 0
   fi
 
-  if grep -Eqi 'Event novelty failed|same underlying event|duplicate_events' "$novelty_log"; then
-    if [ "$attempt" -lt "$max_attempts" ]; then
-      echo "Event-level duplicate detected. Researching one replacement story set."
-      rm -f "$novelty_log"
-      attempt=$((attempt+1))
-      sleep 10
-      continue
-    fi
-  fi
-
-  echo "Event novelty failed with no retry budget left, or with a non-retryable error."
+  echo "Event novelty failed. No second full research cycle will be started automatically."
   rm -f "$novelty_log"
   exit "$novelty_status"
 done

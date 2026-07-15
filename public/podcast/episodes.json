@@ -1,5 +1,19 @@
 [
   {
+    "slug": "2026-07-15",
+    "kind": "daily",
+    "title": "AI’s next gains depend on logs, controls, and handoffs",
+    "description": "This is the clearest example of the edition’s core theme: AI is becoming a systems problem. The story is not about a new model or chatbot. It is about the control layer around automation, including logs, routing, incident response, and human handoffs, which directly affects how businesses should deploy AI tools.",
+    "published": "2026-07-15T07:00:00+01:00",
+    "duration": "00:08:00",
+    "size": 7156341,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-15.mp3",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-15.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-15.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-15.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-15.html"
+  },
+  {
     "slug": "2026-07-14",
     "kind": "daily",
     "title": "ChatGPT Work is trying to turn AI into a real workbench",

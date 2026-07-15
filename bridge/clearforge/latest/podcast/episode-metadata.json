@@ -1,23 +1,23 @@
 {
   "version": 1,
-  "date": "2026-07-14",
+  "date": "2026-07-15",
   "brand": "Clearforge",
   "type": "clearforge_daily_biggest_story_podcast_script",
   "human_review_required": true,
   "narrator": "Irene",
   "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
-  "episode_title": "ChatGPT Work is trying to turn AI into a real workbench",
+  "episode_title": "AI’s next gains depend on logs, controls, and handoffs",
   "selected_story_index": 0,
-  "selected_story_title": "ChatGPT Work is designed for longer tasks",
-  "selection_reason": "This is the biggest practical shift for most listeners because it moves AI from isolated chat toward everyday work output: drafting, organizing, and finishing real tasks inside a workspace many people can actually use.",
-  "word_count": 1137,
-  "estimated_duration_minutes": 7.8,
+  "selected_story_title": "The White House is building a cyber coordination layer for AI-era vulnerabilities",
+  "selection_reason": "This is the clearest example of the edition’s core theme: AI is becoming a systems problem. The story is not about a new model or chatbot. It is about the control layer around automation, including logs, routing, incident response, and human handoffs, which directly affects how businesses should deploy AI tools.",
+  "word_count": 1164,
+  "estimated_duration_minutes": 8,
   "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
   "source_notes": "source-notes.md",
-  "first_spoken_line": "Today’s biggest AI story is not about a flashy demo or a bigger benchmark. It is about something much more ordinary, and much more useful: turning messy work into something finished.",
-  "final_spoken_line": "That is the shift worth noticing today: less spectacle, more control. Less empty automation, more practical assistance. And for most people, that is where AI starts to become genuinely useful.",
+  "first_spoken_line": "If you have been waiting for the next big AI breakthrough to look like a smarter chatbot, today’s story points in a different direction.",
+  "final_spoken_line": "That is where the real story is today. Not a smarter chatbot. A sturdier system around the chatbot. And that is the direction AI is heading next.",
   "validation_warnings": [
-    "Script is shorter than target: 1137 words."
+    "Script is shorter than target: 1164 words."
   ],
   "non_spoken_instruction_candidates": []
 }

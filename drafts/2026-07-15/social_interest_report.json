@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-15",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "If your AI can act across apps and services, the real question is whether you can see what it did.",
+      "words": 89,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "How do you keep AI agents from becoming a black box?",
+      "words": 78,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "If your team uses AI in a customer workflow, who gets the alert when something breaks?",
+      "words": 84,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "If an AI system can act across apps and services, observability is no longer optional.",
+      "words": 91,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "AI Workflow Cost Checklist: Watch the Hidden Infrastructure Spend",
+    "title_words": 9,
+    "description_words": 37
+  },
+  "warnings": []
+}

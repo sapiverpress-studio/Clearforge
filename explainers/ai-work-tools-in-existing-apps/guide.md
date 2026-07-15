@@ -1,117 +1,107 @@
 # How to adopt AI work tools inside the apps your team already uses
 
-**Short direct answer:** AI work tools are most useful when they sit inside the apps your team already uses, but they work best as draft-and-review systems, not as autopilot. The main gain is less copying between tools; the main risk is giving a system more access than your workflow can safely handle.
+Short direct answer: use AI where it removes copying, drafting and sorting, but treat any tool that can act across apps as a systems project. Keep the task narrow, limit the data, add logs and approval gates, and make rollback possible before you widen access.
 
 ## What it means
 
-AI work tools inside existing apps are features that help you draft, summarize, analyze, reorganize, or create work without leaving the environment where the work already lives. That can mean a chatbot inside a document editor, a model inside a spreadsheet, or an assistant in team chat that turns conversation into a usable summary.
+AI is moving from a separate chat box into the places where work already happens: documents, spreadsheets, chat, connected files and desktop apps. OpenAI says ChatGPT Work can research, analyze and create docs, spreadsheets, presentations, reports and Sites, and can use local files and desktop apps when users grant permission. OpenAI also says GPT-5.6 is becoming the preferred model in Microsoft 365 Copilot across Word, Excel, PowerPoint, Chat and Cowork. Anthropic has also launched Claude Tag in beta for Slack users on Claude Enterprise and Team plans.
 
-The practical shift is from “open a separate AI site and paste everything in” to “ask for help where the file, thread, or task already exists.” OpenAI says ChatGPT Work can research, analyze, and create finished documents, spreadsheets, presentations, reports, and Sites, and that its desktop app brings Chat, Work, and Codex into one place. OpenAI also says Work can use local files and desktop apps when users grant permission. Microsoft says GPT-5.6 is becoming the preferred model in Microsoft 365 Copilot across Word, Excel, PowerPoint, Chat, and Cowork.
+The useful shift is not just better answers. It is less copying between tools and fewer handoffs between people. But once an AI tool can reach into multiple apps, it stops being only a drafting aid. It becomes part of how work is routed, reviewed and recorded.
 
-That is why this category matters. It reduces the number of handoffs between notes, files, drafts, and final output. It also lowers the learning curve, because people can stay inside familiar software instead of switching to a new interface for every task.
+That is why observability matters. Microsoft says its Azure Copilot Observability Agent is generally available and uses Azure Monitor to correlate logs, metrics, traces and operational context across agents, applications, infrastructure and services. In plain English: if a tool can do more than write text, you need to be able to see what it did, why it did it and where a human has to step in.
 
 ## How it works in practice
 
-In a typical setup, a user opens the app they already use and asks the built-in AI to help with a specific task. In a document app, that may mean turning bullet points into a first draft. In a spreadsheet, it may mean summarizing rows, reorganizing data, or helping explain a pattern. In team chat, it may mean turning a conversation into action items.
+The most durable way to adopt these tools is to start with one boring, repeatable task. Good candidates are weekly summaries, first-draft emails, meeting notes, support reply drafts, simple research briefs or spreadsheet cleanup. These are useful because the input and the expected output are both easy to describe.
 
-OpenAI’s description of ChatGPT Work shows the direction of travel: the tool is meant to handle longer tasks, not just answer one-off questions. The company says it can work with local files and desktop apps when the user gives permission. Microsoft’s Copilot update points in a similar direction inside the office suite people already know.
+A practical workflow usually looks like this:
 
-A good way to think about these tools is as “context-aware drafting layers.” They do better when they can see the surrounding task, but they should only see the context you intentionally give them. That means the design question is not just “What can the model do?” It is also “What should this tool be allowed to see, change, or send onward?”
+- A person starts with a task they already do in a familiar app.
+- The AI tool reads only the files, threads or sheets it needs.
+- The tool drafts, sorts, summarizes or reorganizes the work.
+- A human checks the result before anything is sent, published, scheduled or used to make a decision.
+- The team keeps a log of what the tool touched, who approved it and what happened next.
 
-In a healthy workflow, the AI produces a first pass and a human still owns the final decision. That is true for a meeting summary, a slide deck outline, a support reply, or a spreadsheet narrative. The tool can speed up the boring part. The person still has to check that the result is accurate, appropriate, and safe to share.
+That last step is the one many teams skip. If the system can work across apps, you need a place to see failure alerts, review outputs and trace changes. The White House’s GOLD EAGLE initiative is a useful reminder of why this matters: when software touches critical workflows, faster routing, patching and accountability become part of the operating model, not an optional extra.
+
+The same pattern applies inside a business. AI is most useful when it helps turn messy inputs into a first pass. It is less useful when it is allowed to make the final call by itself.
 
 ## Why organisations are adopting it
 
-Organisations are adopting AI inside existing apps for three broad reasons.
+Organisations are adopting embedded AI tools for three practical reasons.
 
-First, it saves time on repetitive work. The most likely benefit is faster drafting, summarizing, and reorganizing. OpenAI frames ChatGPT Work as a way to turn messy inputs into finished work products. Microsoft’s Copilot direction suggests the same logic inside office software. These are projected benefits from the vendors’ own descriptions, not measured outcomes from the sources here.
+First, they reduce friction. If people can ask for a summary, draft or analysis inside the app they already use, they are more likely to use the tool consistently.
 
-Second, it reduces friction. People are more likely to use AI when it is already inside Word, Excel, Slack, or another daily tool. That matters for adoption because many teams do not fail on model quality; they fail on inconvenience.
+Second, they can standardise routine work. A team that uses the same prompt pattern, file scope and approval step can get more predictable output than a team that sends every task to a separate chat assistant.
 
-Third, it helps standardize routine tasks. A team can build a repeatable path from input to draft to review. That can be useful for weekly reports, meeting notes, first-draft client communication, or internal research briefs.
+Third, they can improve control, at least in principle. A platform that connects to logs, permissions and workflow rules is easier to govern than a tool that lives outside the stack. Google’s new AI transparency features in My Ad Center point in the same direction: even in advertising, platforms are starting to ask for clearer records of what was AI-made.
 
-What the sources do **not** give you is independent evidence that these features have already produced a specific productivity gain across ordinary business tasks. So it is better to treat the current case as “likely workflow value” rather than “proven ROI.”
+The expected benefits are straightforward: faster drafting, fewer handoffs, more consistent formatting and a better chance of keeping work inside one system. The source material does not show a universal measured productivity gain. It shows companies building the plumbing they think will make those gains possible.
+
+There is also a cost story here. Reuters reported that IBM’s latest forecast suggested buyer appetite for infrastructure may be stronger than for software. That does not prove every business is shifting the same way, but it does reinforce a practical point: the real cost of AI is not only the subscription fee. Monitoring, review, integration and compute can matter just as much.
 
 ## What changes for people and workflows
 
-The biggest change is that more of the work shifts from creation to review.
+When AI moves into existing apps, people usually spend less time starting from scratch and more time reviewing, correcting and approving.
 
-Instead of starting from a blank page, people will increasingly:
-- gather inputs,
-- ask the embedded AI for a first draft,
-- check the output,
-- correct it,
-- and decide whether it is ready to send or publish.
+That changes roles in a few ways:
 
-That changes job behavior in a few practical ways.
+- The person who used to draft everything may become the person who reviews and edits.
+- The team lead may need to define the allowed task scope and the approval rule.
+- Someone has to own logs, access and incident response.
+- Someone has to decide what happens when the tool is wrong or unavailable.
 
-**1) People need clearer prompts and clearer ownership.**
-If an AI tool is inside the app where work happens, the prompt is no longer a side activity. It becomes part of the workflow. Teams need to know who owns the prompt, who checks the output, and who approves the final version.
+This is especially important for customer-facing, financial, legal, HR-related or production workflows. For those cases, AI should usually do the first pass, not the final action. The safest default is still a human approval step for anything that changes money, access, customers or production systems.
 
-**2) Review becomes a real step, not an afterthought.**
-AI can save time on drafting, but it can also create confident errors, wrong assumptions, or awkward wording. For anything client-facing, financial, legal, HR-related, or irreversible, the review step should stay explicit.
-
-**3) Permissions matter more.**
-OpenAI says ChatGPT Work can use local files and desktop apps when users grant permission. That is useful, but it also means the permissions model needs to be understood before rollout. If the tool can see more files, messages, or apps, then the cost of a mistake goes up.
-
-**4) Shared environments need clearer rules.**
-Once AI is embedded in team apps, the boundary between personal use and company use gets blurrier. Teams should decide whether the tool is allowed in shared folders, internal threads, public campaigns, or sensitive records.
-
-**5) Output labeling and record-keeping become part of operations.**
-Google says it is adding ad transparency features, including a “How this ad was made” panel for ads on Search, YouTube, and Discover. That is a reminder that when AI touches public work, records matter. If your team uses AI for marketing, keep a simple log of what was generated, edited, and approved.
+The other big change is that visibility becomes part of the user experience. If the tool is working inside Word, Excel, Slack or a connected file system, users need to know where the output came from, which data it saw and whether the system can be audited later. Microsoft’s observability framing is useful here: telemetry is not just for engineers, it is what lets a team trust an automated process.
 
 ## Limits, risks and what remains uncertain
 
-The biggest limit is that embedded AI can be more powerful than users realize. When a tool sits inside a familiar app, it can feel safe by default. It is not automatically safe just because it is convenient.
+The most important limitation is that rollout details are often incomplete. In the source material, OpenAI does not fully disclose which plans or regions have all ChatGPT Work and desktop features enabled. The same is true for Microsoft 365 Copilot timing in each tenant. Google’s disclosure changes are also described without full detail on every market and ad format. If you are writing policy or planning a rollout, do not assume that a feature announcement means full availability everywhere.
 
-A few uncertainties remain in the sources:
-- OpenAI says ChatGPT Work is rolling out, but the pack does **not** specify the exact plan or region coverage for all features.
-- Microsoft says GPT-5.6 is becoming the preferred model in Microsoft 365 Copilot, but the pack does **not** say that every tenant already has it.
-- Google says it is adding AI ad disclosure, but the pack does **not** spell out every market, format, or rollout detail.
-- Anthropic says Claude Tag is in beta for Slack users on Claude Enterprise and Team plans, but access and retention settings still need to be checked before team-wide use.
+A second limitation is that visibility is uneven. A tool may be generally available, but that does not mean your team has the right connector scopes, admin controls or retention settings. Check what the tool can actually access in your environment before you allow it near live files.
 
-There are also workflow risks that apply regardless of vendor:
+A third risk is black-box automation. If the system can act across apps but you cannot inspect logs, metrics and traces, then you may not know what it did when something goes wrong. That is where observability is not optional.
 
-- **Hallucinations or bad assumptions:** AI may produce plausible but wrong content.
-- **Over-permissioning:** if a model can see too much, a mistake can expose too much.
-- **Over-automation:** not every task should be fully automated end to end.
-- **Disclosure gaps:** if AI helps create public-facing assets, you may need an internal record of that use.
-- **Vendor dependence:** if one tool becomes deeply embedded, changing providers later may be hard.
+A fourth risk is trust and consent. Google’s AI ad disclosure work and Meta’s rollback of an Instagram AI feature show that public-facing AI can create backlash quickly when people think the system is permission-light or hard to understand. Even if your use case is internal, the same principle applies: if the workflow touches real people or published material, build in clear records and a rollback path.
 
-The safest operating principle is to use AI for low-risk drafting and capture first, then keep humans in the loop for anything that is public, sensitive, or hard to undo.
+Finally, the benefits are still mostly projected, not universally measured. The source material shows what the vendors are shipping and what they believe will help. It does not prove that every team will save time. The right way to find out is to test one small workflow and measure both the time saved and the review time added.
 
 ## Practical questions to ask before using it
 
-Before adopting an AI tool inside an existing app, ask these questions:
+Before you adopt an AI work tool inside an app, ask these questions:
 
-1. **What exact task will it do?** Drafting, summarizing, reorganizing, classifying, or something else?
-2. **What data can it access?** Files, chats, spreadsheets, desktop apps, or only the content you paste in?
-3. **What permissions are required?** Can users grant access themselves, or does an admin need to approve it?
-4. **What is the review step?** Who checks the output before it is sent, published, or stored?
-5. **Can the tool be limited by role or team?** Not every department should have the same access.
-6. **Where is the output recorded?** Is there an audit trail, a disclosure log, or a version history?
-7. **What happens if the model is wrong?** Is there a rollback path?
-8. **Is the feature actually available on your plan or in your region?** Do not build a workflow around a feature that is still rolling out.
-9. **Does the task touch public-facing content?** If yes, should you disclose or label AI use?
-10. **What can stay human?** Client approval, financial signoff, legal review, or HR decisions should not be delegated casually.
+1. What single task are we trying to improve?
+2. Which app, file set or chat thread does the tool need to see?
+3. What data is off limits?
+4. Who approves the output before it is sent or used?
+5. Where do the logs live, and who reviews them?
+6. What is the rollback plan if the tool makes a bad change?
+7. What alert goes to whom if the workflow fails?
+8. Does the rollout apply to our plan, region or tenant yet?
+9. Can we limit the tool to drafting, sorting or monitoring only?
+10. How will we know whether it saved time instead of creating more cleanup?
 
-A useful rule of thumb: if the task can be safely wrong, AI can help draft it. If the task cannot be safely wrong, AI should support the work, not own the outcome.
+If you cannot answer those questions clearly, the workflow is probably too broad for first deployment.
 
 ## Current examples
 
-- **ChatGPT Work**: OpenAI says it can research, analyze, and create finished documents, spreadsheets, presentations, reports, and Sites, and that it can use local files and desktop apps with permission. The desktop app combines Chat, Work, and Codex. Exact plan and region availability should still be verified.
-- **Microsoft 365 Copilot with GPT-5.6**: OpenAI says GPT-5.6 is becoming the preferred model in Microsoft 365 Copilot across Word, Excel, PowerPoint, Chat, and Cowork. The source pack does not give independent outcome data, so treat this as a rollout and capability update, not proven productivity evidence.
-- **Claude Tag in Slack**: Anthropic says Claude Tag is launching in beta for Slack users on Claude Enterprise and Team plans. This is a good example of AI appearing inside the collaboration tool people already use.
-- **Google ad transparency**: Google says it is adding a “How this ad was made” panel in My Ad Center for ads on Search, YouTube, and Discover. For teams using AI in marketing workflows, that is a reminder to keep source and approval records.
+These examples show the current direction of travel. They are not proof of universal success, and several rollout details are not fully disclosed.
 
-These examples point to the same trend: the most practical AI tools are moving closer to the work surface itself.
+- OpenAI says ChatGPT Work can create docs, spreadsheets, presentations, reports and Sites, and can use local files and desktop apps with permission. The source material does not fully disclose which plans and regions have all features enabled.
+- OpenAI says GPT-5.6 is becoming the preferred model in Microsoft 365 Copilot across Word, Excel, PowerPoint, Chat and Cowork.
+- Microsoft says its Azure Copilot Observability Agent is generally available and uses Azure Monitor to connect logs, metrics, traces and operational context.
+- Anthropic launched Claude Tag in beta for Slack users on Claude Enterprise and Team plans.
+- The White House launched GOLD EAGLE as a cyber vulnerability coordination clearinghouse across several agencies.
+- Google is adding AI transparency panels in My Ad Center for ads on Search, YouTube and Discover.
+
+Together, these examples suggest the same practical lesson: the value of AI in work apps is shifting from novelty to workflow control.
 
 ## Sources and further reading
 
-- OpenAI, **ChatGPT Work, desktop app, and Sites release notes** — https://openai.com/products/release-notes/
-- OpenAI, **ChatGPT is now a partner for your most ambitious work** — https://openai.com/index/chatgpt-for-your-most-ambitious-work/
-- OpenAI, **GPT-5.6 is now the preferred model in Microsoft 365 Copilot** — https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/
-- Google, **Expanding AI transparency in ads** — https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/
-- Anthropic, **Introducing Claude Tag** — https://www.anthropic.com/news/introducing-claude-tag
-
-If you are rolling AI out in a team, start with one narrow task inside one existing app. Keep the permission scope small, require review, and measure whether the tool saves time without creating new cleanup work.
+- OpenAI, ChatGPT Work, desktop app and Sites release notes: https://openai.com/products/release-notes/
+- OpenAI, GPT-5.6 is now the preferred model in Microsoft 365 Copilot: https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/
+- Microsoft, Rethinking cloud operations with agentic observability: https://blogs.microsoft.com/blog/2026/06/23/rethinking-cloud-operations-with-agentic-observability/
+- The White House, White House Launches Gold Eagle Initiative for Unprecedented Cybersecurity Vulnerability Coordination: https://www.whitehouse.gov/releases/2026/07/white-house-launches-gold-eagle-initiative-for-unprecedented-cybersecurity-vulnerability-coordination/
+- Google, Expanding AI transparency in ads: https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/
+- Anthropic, Introducing Claude Tag: https://www.anthropic.com/news/introducing-claude-tag

@@ -2,22 +2,23 @@
   "version": 1,
   "slug": "ai-work-tools-in-existing-apps",
   "title": "How to adopt AI work tools inside the apps your team already uses",
-  "description": "A practical guide to using AI where work already happens: in docs, spreadsheets, chat, and connected files. It explains the likely benefits, the real limits, and the questions to ask before rolling anything out.",
-  "search_question": "How do you adopt AI work tools inside the apps your team already uses?",
+  "description": "A practical guide to using AI inside docs, spreadsheets, chat and connected files. It explains where the gains come from, why logs and approval steps matter, and what to check before rolling it out.",
+  "search_question": "How should a team adopt AI work tools inside the apps it already uses?",
   "topic_slugs": [
     "ai-adoption",
     "ai-inside-products",
     "systems-automation"
   ],
   "created": "2026-07-14",
-  "last_updated": "2026-07-14",
+  "last_updated": "2026-07-15",
   "source_editions": [
     "2026-07-09",
     "2026-07-10",
     "2026-07-11",
     "2026-07-11-alt",
     "2026-07-13",
-    "2026-07-14"
+    "2026-07-14",
+    "2026-07-15"
   ],
   "source_urls": [
     "https://openai.com/products/release-notes/",
@@ -28,7 +29,9 @@
     "https://www.anthropic.com/responsible-scaling-policy/roadmap",
     "https://openai.com/index/introducing-gpt-live/",
     "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
-    "https://help.openai.com/en/articles/12315553--parental-controls-on-chatgpt-faq"
+    "https://help.openai.com/en/articles/12315553--parental-controls-on-chatgpt-faq",
+    "https://www.whitehouse.gov/releases/2026/07/white-house-launches-gold-eagle-initiative-for-unprecedented-cybersecurity-vulnerability-coordination/",
+    "https://blogs.microsoft.com/blog/2026/06/23/rethinking-cloud-operations-with-agentic-observability/"
   ],
   "revisions": [
     {
@@ -48,6 +51,17 @@
       "source_editions": [
         "2026-07-14",
         "2026-07-11-alt"
+      ]
+    },
+    {
+      "date": "2026-07-15",
+      "summary": "Updated the existing work-tools guide to reflect the new shift from standalone AI assistants to embedded, agentic workflows that require logs, approval gates and rollback plans. Added current examples from OpenAI, Microsoft, Google, Anthropic and the White House, and clarified rollout uncertainty, projected benefits versus measured outcomes, and the practical questions teams should ask before enabling AI inside their existing apps.",
+      "source_editions": [
+        "2026-07-15",
+        "2026-07-14",
+        "2026-07-11",
+        "2026-07-09",
+        "2026-07-10"
       ]
     }
   ],

@@ -1,0 +1,59 @@
+name: Build Clearforge weekly newsletter draft
+
+on:
+  workflow_dispatch:
+    inputs:
+      week_end:
+        description: "Optional week-end date YYYY-MM-DD"
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  build-draft:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Clearforge
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate reviewable newsletter files
+        env:
+          CLEARFORGE_WEEK_END: ${{ inputs.week_end }}
+          BLOG_BASE_URL: https://clearforge-daily-brief.netlify.app
+        run: npm run newsletter:weekly
+
+      - name: Upload newsletter preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: clearforge-weekly-newsletter-draft
+          path: newsletters/**
+          if-no-files-found: error
+
+      - name: Commit newsletter draft
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add newsletters
+          if git diff --cached --quiet; then
+            echo "No newsletter changes to commit."
+            exit 0
+          fi
+          git commit -m "Generate Clearforge weekly newsletter draft"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Confirm review requirement
+        run: |
+          echo "## Newsletter draft generated" >> "$GITHUB_STEP_SUMMARY"
+          echo "This workflow does not send email." >> "$GITHUB_STEP_SUMMARY"
+          echo "Review draft.md and email.html before importing them into an email provider." >> "$GITHUB_STEP_SUMMARY"

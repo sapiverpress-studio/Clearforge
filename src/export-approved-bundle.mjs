@@ -65,7 +65,7 @@ function appendHashtags(text) {
     .replace(/[ \t]+\n/g, "\n")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
-  return `${withoutKnownTags}\n\n${cta.caption}\n\n${socialHashtags}`;
+  return `${withoutKnownTags}\n\n${socialHashtags}`;
 }
 
 requireFile(approvalPath);
@@ -132,7 +132,7 @@ const manifest = {
   youtube: {
     title: (data.headline_options?.[0] || data.headline || "Clearforge Daily AI Brief").slice(0, 95),
     script: `${String(data.social.youtube_shorts_script || "").trim()} ${cta.spoken}`.trim(),
-    description: `${String(data.practical_takeaway || "").trim()}\n\n${cta.caption}`.trim()
+    description: String(data.practical_takeaway || "").trim()
   },
   podcast: hasPodcast ? {
     generated: true,

@@ -17,6 +17,8 @@ const data = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 fs.mkdirSync(outDir, { recursive: true });
 
+const spokenCta = "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.";
+
 function editionSeed() {
   return [...String(DATE)].reduce((sum, char) => sum + char.charCodeAt(0), 0);
 }
@@ -100,27 +102,29 @@ for (let i = 0; i < stories.length; i++) {
   });
 }
 
-const narrationText = data.social?.youtube_shorts_script || [
-  `Here are three AI updates that matter today.`,
+const baseNarration = data.social?.youtube_shorts_script || [
+  "Here are three AI updates that matter today.",
   ...stories.map((s) => `${s.title}. ${s.why_it_matters}`),
   data.practical_takeaway || "Focus on what changes your workflow, not what creates the most hype."
 ].join(" ");
+const narrationText = `${String(baseNarration).trim()} ${spokenCta}`;
 
 const speech = await client.audio.speech.create({
   model: process.env.OPENAI_TTS_MODEL || "gpt-4o-mini-tts",
   voice: process.env.OPENAI_TTS_VOICE || "coral",
   input: narrationText,
-  instructions: "Speak like a sharp British technology news presenter. Natural, confident, energetic but not overhyped. Use clear pacing and slight emphasis on the practical takeaway."
+  instructions: "Speak like a sharp British technology news presenter. Natural, confident, energetic but not overhyped. Use clear pacing, slight emphasis on the practical takeaway, and a warm, concise delivery for the final Clearforge call to action."
 });
 const narrationFile = path.join(outDir, "narration.mp3");
 fs.writeFileSync(narrationFile, Buffer.from(await speech.arrayBuffer()));
 
 const manifest = {
-  version: 3,
+  version: 4,
   date: DATE,
   headline: data.headline,
   dek: data.dek,
   hook: "Three AI updates that actually matter today",
+  spoken_cta: spokenCta,
   visual_system: "Clearforge AI briefing podcast studio system",
   visual_style_rules: {
     include: [
@@ -148,4 +152,4 @@ const manifest = {
   what_to_test_next: data.what_to_test_next
 };
 fs.writeFileSync(path.join(outDir, "media-manifest.json"), JSON.stringify(manifest, null, 2) + "\n");
-console.log(`Generated AI media pack for ${DATE}`);
+console.log(`Generated AI media pack for ${DATE} with link-free Clearforge CTA`);

@@ -68,11 +68,12 @@ Only set claim to verify to `NONE — verified from cited sources.` when every m
 
 ## Main Article
 
-Write 700 to 1,000 words.
+Write 750 to 1,000 words. The `main_article` field alone must contain at least 700 words; do not count the headline, story summaries, practical takeaway, test section, source list or any other field toward that total. Count the words before returning the final structured output and expand the explanation when it is below 700 words.
 
 - Give the edition one coherent angle rather than a list of headlines.
 - Explain who, why, how and when where relevant.
 - Separate projected benefits from measured outcomes.
+- Include enough practical context to make the article useful without the story summaries.
 - End with a practical takeaway.
 
 ## Practical Takeaway

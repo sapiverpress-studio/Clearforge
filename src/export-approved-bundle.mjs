@@ -18,6 +18,17 @@ const articlePath = path.join(draftDir, "daily_brief.md");
 const socialPath = path.join(draftDir, "social_pack.md");
 const outDir = path.join(ROOT, "bridge", "clearforge", DATE);
 const socialHashtags = "#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI";
+const cta = {
+  spoken: "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+  screen_lines: [
+    "READ THE FULL BREAKDOWN",
+    "Link in bio",
+    "LISTEN ON THE GO",
+    "Search: Clearforge AI Briefing"
+  ],
+  caption: "Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+  direct_links_allowed_in_social_copy: false
+};
 
 function requireFile(file) {
   if (!fs.existsSync(file)) throw new Error(`Required file missing: ${file}`);
@@ -54,7 +65,7 @@ function appendHashtags(text) {
     .replace(/[ \t]+\n/g, "\n")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
-  return `${withoutKnownTags}\n\n${socialHashtags}`;
+  return `${withoutKnownTags}\n\n${cta.caption}\n\n${socialHashtags}`;
 }
 
 requireFile(approvalPath);
@@ -85,7 +96,7 @@ if (hasMedia) copyDir(mediaDir, path.join(outDir, "media"));
 if (hasPodcast) copyDir(podcastDir, path.join(outDir, "podcast"));
 
 const manifest = {
-  version: 3,
+  version: 4,
   brand: "Clearforge",
   date: DATE,
   type: "clearforge_daily_ai_brief",
@@ -101,6 +112,7 @@ const manifest = {
     url: articleUrl,
     markdown: "daily_brief.md"
   },
+  calls_to_action: cta,
   stories: (data.story_summaries || []).slice(0, 3).map((story, i) => ({
     title: story.title,
     summary: story.summary,
@@ -119,8 +131,8 @@ const manifest = {
   },
   youtube: {
     title: (data.headline_options?.[0] || data.headline || "Clearforge Daily AI Brief").slice(0, 95),
-    script: data.social.youtube_shorts_script,
-    description: `${data.practical_takeaway}${articleUrl ? `\n\nRead the full brief: ${articleUrl}` : ""}`
+    script: `${String(data.social.youtube_shorts_script || "").trim()} ${cta.spoken}`.trim(),
+    description: `${String(data.practical_takeaway || "").trim()}\n\n${cta.caption}`.trim()
   },
   podcast: hasPodcast ? {
     generated: true,

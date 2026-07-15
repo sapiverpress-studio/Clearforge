@@ -13,6 +13,7 @@
     "feature": "node src/generate-full-feature.mjs",
     "evergreen": "node src/generate-evergreen-explainer.mjs",
     "podcast:daily": "node src/generate-daily-podcast-script.mjs",
+    "newsletter:weekly": "node src/generate-weekly-newsletter.mjs",
     "validate:auto": "bash scripts/validate-with-report.sh",
     "media:ai": "node src/generate-ai-media.mjs",
     "syndicate:dev": "node src/post-feature-to-dev.mjs",

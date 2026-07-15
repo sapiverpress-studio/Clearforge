@@ -1,0 +1,77 @@
+name: Send Clearforge weekly newsletter
+
+on:
+  schedule:
+    - cron: "0 8 * * 6"
+  workflow_dispatch:
+    inputs:
+      week_end:
+        description: "Week-end date YYYY-MM-DD; leave blank for today"
+        required: false
+        type: string
+      test_send:
+        description: "Mark this as a test run; still sends to the configured Brevo list"
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: clearforge-weekly-newsletter
+  cancel-in-progress: false
+
+jobs:
+  build-and-send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Clearforge
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Resolve newsletter date
+        shell: bash
+        env:
+          INPUT_DATE: ${{ inputs.week_end }}
+        run: |
+          if [ -n "${INPUT_DATE:-}" ]; then
+            echo "CLEARFORGE_WEEK_END=${INPUT_DATE}" >> "$GITHUB_ENV"
+          else
+            echo "CLEARFORGE_WEEK_END=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
+          fi
+
+      - name: Generate Saturday newsletter
+        env:
+          BLOG_BASE_URL: https://clearforge-daily-brief.netlify.app
+        run: node src/generate-weekly-newsletter.mjs
+
+      - name: Send newsletter through Brevo
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          BREVO_LIST_ID: ${{ secrets.BREVO_LIST_ID }}
+          BREVO_SENDER_EMAIL: clearforge@sapiverpress.co.uk
+          BREVO_SENDER_NAME: Clearforge
+          BREVO_TEST_ONLY: ${{ github.event_name == 'workflow_dispatch' && inputs.test_send || 'false' }}
+        run: node src/send-weekly-newsletter-brevo.mjs
+
+      - name: Save sent newsletter record
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898242+github-actions[bot]@users.noreply.github.com"
+          git add "newsletters/${CLEARFORGE_WEEK_END}"
+          if git diff --cached --quiet; then
+            echo "No newsletter record changes to commit."
+            exit 0
+          fi
+          git commit -m "Send Clearforge weekly newsletter ${CLEARFORGE_WEEK_END}"
+          git pull --rebase origin main
+          git push origin HEAD:main

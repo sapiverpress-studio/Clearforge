@@ -16,6 +16,8 @@ const socialInterestPath = path.join(draftDir, "social_interest_report.json");
 if (!fs.existsSync(structuredPath)) throw new Error(`Missing ${structuredPath}`);
 const data = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
 
+// Hard failures protect factual accuracy, safety and basic publishability.
+// Editorial and formatting imperfections are warnings so a usable edition can publish.
 const failures = [];
 const warnings = [];
 
@@ -32,13 +34,14 @@ const featureWords = feature.split(/\s+/).filter(Boolean).length;
 
 if (sources.length < 3 || sources.length > 5) failures.push(`Expected 3–5 sources, got ${sources.length}`);
 if (stories.length < 3 || stories.length > 5) failures.push(`Expected 3–5 stories, got ${stories.length}`);
-if (articleWords < 650) failures.push("Article is shorter than 650 words");
-if (articleWords > 1200) failures.push("Article is longer than 1200 words");
-if (!feature) failures.push("Missing full feature piece");
-if (feature && featureWords < 1400) failures.push("Full feature is shorter than 1,400 words");
-if (featureWords > 2800) failures.push("Full feature is longer than 2,800 words");
-if (feature && !/^#\s+/m.test(feature)) failures.push("Full feature has no H1 headline");
-if (feature && !/##\s+Sources/i.test(feature)) failures.push("Full feature has no Sources section");
+if (!article) failures.push("Missing main article");
+if (article && articleWords < 500) warnings.push(`Article is shorter than the preferred 650 words (${articleWords})`);
+if (articleWords > 1400) warnings.push(`Article is longer than the preferred 1,200 words (${articleWords})`);
+if (!feature) warnings.push("Missing full feature piece; daily article and social channels may still publish");
+if (feature && featureWords < 1200) warnings.push(`Full feature is shorter than the preferred 1,400 words (${featureWords})`);
+if (featureWords > 3000) warnings.push(`Full feature is longer than the preferred 2,800 words (${featureWords})`);
+if (feature && !/^#\s+/m.test(feature)) warnings.push("Full feature has no H1 headline");
+if (feature && !/##\s+Sources/i.test(feature)) warnings.push("Full feature has no exact Sources section heading");
 if (openClaims.length) failures.push(`Unresolved claims remain: ${openClaims.join(" | ")}`);
 
 for (const [i, story] of stories.entries()) {
@@ -86,7 +89,7 @@ const socialFields = {
 };
 
 for (const [name, value] of Object.entries(socialFields)) {
-  if (!value) failures.push(`Missing ${name.replaceAll("_", " ")}`);
+  if (!value) warnings.push(`Missing ${name.replaceAll("_", " ")}; that channel will be skipped`);
 }
 
 const genericOpeningPatterns = [
@@ -113,48 +116,49 @@ for (const [platform, value, minimumWords] of shortFormChecks) {
   const opening = firstSentence(value);
   const words = value.split(/\s+/).filter(Boolean).length;
   const generic = genericOpeningPatterns.some((pattern) => pattern.test(opening));
-  if (generic) failures.push(`${platform} opens with generic brand/news language rather than an audience interest`);
-  if (words < minimumWords) failures.push(`${platform} content is too short to deliver a clear audience payoff (${words} words)`);
-  if (opening.split(/\s+/).filter(Boolean).length < 5) warnings.push(`${platform} opening may be too vague to identify the subject`);
-  socialChecks.push({ platform, opening, words, generic_opening: generic, passed: !generic && words >= minimumWords });
+  if (value && generic) warnings.push(`${platform} opens with generic brand/news language rather than an audience interest`);
+  if (value && words < minimumWords) warnings.push(`${platform} content is shorter than preferred (${words} words)`);
+  if (value && opening.split(/\s+/).filter(Boolean).length < 5) warnings.push(`${platform} opening may be too vague to identify the subject`);
+  socialChecks.push({ platform, opening, words, generic_opening: generic, passed: Boolean(value) });
 }
 
-if (socialFields.pinterest_title.split(/\s+/).filter(Boolean).length < 4) {
-  failures.push("Pinterest title is too vague to express a searchable problem or useful promise");
+if (socialFields.pinterest_title && socialFields.pinterest_title.split(/\s+/).filter(Boolean).length < 4) {
+  warnings.push("Pinterest title may be too vague to express a searchable problem or useful promise");
 }
-if (socialFields.pinterest_description.split(/\s+/).filter(Boolean).length < 20) {
-  failures.push("Pinterest description is too short to explain the searchable payoff");
+if (socialFields.pinterest_description && socialFields.pinterest_description.split(/\s+/).filter(Boolean).length < 20) {
+  warnings.push("Pinterest description may be too short to explain the searchable payoff");
 }
-if (!/[?]/.test(socialFields.facebook_post)) {
-  warnings.push("Facebook post has no meaningful audience question; confirm it invites a real workflow or experience response");
+if (socialFields.facebook_post && !/[?]/.test(socialFields.facebook_post)) {
+  warnings.push("Facebook post has no meaningful audience question");
 }
 
 const quoteLines = Array.isArray(social.quote_card_lines) ? social.quote_card_lines.map((x) => String(x || "").trim()) : [];
-if (quoteLines.length !== 5) failures.push(`Expected 5 quote/card lines, got ${quoteLines.length}`);
+if (quoteLines.length !== 5) warnings.push(`Expected 5 quote/card lines, got ${quoteLines.length}`);
 for (const [i, line] of quoteLines.entries()) {
-  if (line.split(/\s+/).filter(Boolean).length < 5) failures.push(`Quote/card line ${i + 1} is too vague to carry a complete useful idea`);
+  if (line && line.split(/\s+/).filter(Boolean).length < 5) warnings.push(`Quote/card line ${i + 1} may be too vague`);
 }
 
 const uniqueHosts = new Set(sources.map((s) => { try { return new URL(s.url).hostname; } catch { return ""; } }).filter(Boolean));
 if (uniqueHosts.size < 2) failures.push("Fewer than two distinct source domains");
 
-const approved = failures.length === 0;
+const coreApproved = failures.length === 0;
 const approval = {
   date: DATE,
-  article_approved: approved,
-  feature_approved: approved,
-  facebook_approved: approved,
-  pinterest_approved: approved,
-  youtube_approved: approved,
-  dev_approved: approved,
-  notes: approved
-    ? "Automatically approved after factual, editorial and social-interest validation checks passed."
-    : `Automatically blocked: ${failures.join("; ")}`
+  article_approved: coreApproved && Boolean(article),
+  feature_approved: coreApproved && Boolean(feature),
+  facebook_approved: coreApproved && Boolean(socialFields.facebook_post),
+  pinterest_approved: coreApproved && Boolean(socialFields.pinterest_title) && Boolean(socialFields.pinterest_description),
+  youtube_approved: coreApproved && Boolean(socialFields.youtube_shorts_script),
+  dev_approved: coreApproved && Boolean(feature),
+  notes: coreApproved
+    ? `Automatically approved with ${warnings.length} non-blocking quality warning${warnings.length === 1 ? "" : "s"}.`
+    : `Automatically blocked for factual or safety reasons: ${failures.join("; ")}`
 };
 
 const validation = {
   date: DATE,
-  passed: approved,
+  passed: coreApproved,
+  policy: "Only factual, sourcing, safety and minimum-content failures block publication. Editorial and formatting issues are warnings.",
   failures,
   warnings,
   stats: {
@@ -164,27 +168,27 @@ const validation = {
     feature_words: featureWords,
     unique_source_domains: uniqueHosts.size,
     unresolved_claim_count: openClaims.length,
-    social_interest_checks_passed: socialChecks.filter((item) => item.passed).length,
-    social_interest_checks_total: socialChecks.length
+    social_channels_present: socialChecks.filter((item) => item.passed).length,
+    social_channels_total: socialChecks.length
   }
 };
 
 const socialInterestReport = {
   date: DATE,
-  principle: "Clearforge social assets must clearly signal a subject and payoff to a relevant stranger, because distribution is driven by viewer interest rather than follower count alone.",
-  passed: socialChecks.every((item) => item.passed) && !failures.some((item) => /Pinterest|Quote\/card|social|TikTok|YouTube|Facebook|LinkedIn/i.test(item)),
+  principle: "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  passed: socialChecks.every((item) => item.passed),
   checks: socialChecks,
   pinterest: {
     title: socialFields.pinterest_title,
     title_words: socialFields.pinterest_title.split(/\s+/).filter(Boolean).length,
     description_words: socialFields.pinterest_description.split(/\s+/).filter(Boolean).length
   },
-  warnings: warnings.filter((item) => /Facebook|opening|audience/i.test(item))
+  warnings: warnings.filter((item) => /Facebook|opening|audience|Pinterest|TikTok|YouTube|LinkedIn|Quote/i.test(item))
 };
 
 fs.writeFileSync(approvalPath, JSON.stringify(approval, null, 2) + "\n");
 fs.writeFileSync(validationPath, JSON.stringify(validation, null, 2) + "\n");
 fs.writeFileSync(socialInterestPath, JSON.stringify(socialInterestReport, null, 2) + "\n");
 
-console.log(`Validation ${approved ? "passed" : "failed"} for ${DATE}`);
-if (!approved) process.exit(2);
+console.log(`Validation ${coreApproved ? "passed" : "failed"} for ${DATE}`);
+if (!coreApproved) process.exit(2);

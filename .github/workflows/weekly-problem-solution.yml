@@ -1,0 +1,87 @@
+name: Clearforge Weekly Problem-Solution Engine
+
+on:
+  schedule:
+    - cron: "15 19 * * 0"
+  workflow_dispatch:
+    inputs:
+      week_end:
+        description: "Week-end date YYYY-MM-DD; leave blank for today"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: clearforge-weekly-problem-solution
+  cancel-in-progress: false
+
+jobs:
+  generate-opportunity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Clearforge
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Resolve campaign week
+        shell: bash
+        env:
+          INPUT_DATE: ${{ inputs.week_end }}
+        run: |
+          if [ -n "${INPUT_DATE:-}" ]; then
+            echo "CLEARFORGE_WEEK_END=${INPUT_DATE}" >> "$GITHUB_ENV"
+          else
+            echo "CLEARFORGE_WEEK_END=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
+          fi
+
+      - name: Generate evidence-led problem, product route and seven-day campaign
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
+        run: npm run opportunity:weekly
+
+      - name: Add review summary
+        shell: bash
+        run: |
+          BRIEF="weekly-campaigns/${CLEARFORGE_WEEK_END}/opportunity-brief.md"
+          MANIFEST="weekly-campaigns/${CLEARFORGE_WEEK_END}/manifest.json"
+          {
+            echo "# Clearforge weekly opportunity"
+            echo
+            echo "Generated an evidence-led problem/solution recommendation and a seven-day campaign."
+            echo
+            echo "The campaign remains marked **human_review_required**. No product or promotional claim is automatically published."
+            echo
+            if [ -f "$BRIEF" ]; then
+              sed -n '1,120p' "$BRIEF"
+            fi
+            echo
+            echo "Manifest: \`$MANIFEST\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit weekly campaign brief
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898242+github-actions[bot]@users.noreply.github.com"
+          git add "weekly-campaigns/${CLEARFORGE_WEEK_END}"
+          if git diff --cached --quiet; then
+            echo "No weekly opportunity changes to commit."
+            exit 0
+          fi
+          git commit -m "Generate Clearforge weekly opportunity ${CLEARFORGE_WEEK_END}"
+          git pull --rebase origin main
+          git push origin HEAD:main

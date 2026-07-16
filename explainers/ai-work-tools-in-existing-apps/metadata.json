@@ -2,15 +2,15 @@
   "version": 1,
   "slug": "ai-work-tools-in-existing-apps",
   "title": "How to adopt AI work tools inside the apps your team already uses",
-  "description": "A practical guide to using AI inside docs, spreadsheets, chat and connected files. It explains where the gains come from, why logs and approval steps matter, and what to check before rolling it out.",
-  "search_question": "How should a team adopt AI work tools inside the apps it already uses?",
+  "description": "A practical guide to using AI inside docs, spreadsheets, design tools, chat and project boards. It explains where the workflow gains come from, why review and disclosure matter, and what to check before rolling it out.",
+  "search_question": "How should a team adopt AI tools inside the apps it already uses without losing control of review, permissions and disclosure?",
   "topic_slugs": [
     "ai-adoption",
     "ai-inside-products",
-    "systems-automation"
+    "creators-small-business"
   ],
   "created": "2026-07-14",
-  "last_updated": "2026-07-15",
+  "last_updated": "2026-07-16",
   "source_editions": [
     "2026-07-09",
     "2026-07-10",
@@ -18,7 +18,9 @@
     "2026-07-11-alt",
     "2026-07-13",
     "2026-07-14",
-    "2026-07-15"
+    "2026-07-15",
+    "2026-07-16",
+    "2026-07-16-risk"
   ],
   "source_urls": [
     "https://openai.com/products/release-notes/",
@@ -31,7 +33,10 @@
     "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
     "https://help.openai.com/en/articles/12315553--parental-controls-on-chatgpt-faq",
     "https://www.whitehouse.gov/releases/2026/07/white-house-launches-gold-eagle-initiative-for-unprecedented-cybersecurity-vulnerability-coordination/",
-    "https://blogs.microsoft.com/blog/2026/06/23/rethinking-cloud-operations-with-agentic-observability/"
+    "https://blogs.microsoft.com/blog/2026/06/23/rethinking-cloud-operations-with-agentic-observability/",
+    "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
+    "https://www.notion.com/releases/2026-07-01",
+    "https://www.anthropic.com/news/ust-claude"
   ],
   "revisions": [
     {
@@ -62,6 +67,16 @@
         "2026-07-11",
         "2026-07-09",
         "2026-07-10"
+      ]
+    },
+    {
+      "date": "2026-07-16",
+      "summary": "Updated the workflow-tools guide to reflect newer evidence that AI is moving into connected app workflows, shared agent boards, creative publishing stacks and disclosure controls. Added current examples from OpenAI, Canva, Notion, Anthropic and Google, and strengthened guidance on review gates, permissions and provenance.",
+      "source_editions": [
+        "2026-07-16-risk",
+        "2026-07-16",
+        "2026-07-15",
+        "2026-07-14"
       ]
     }
   ],

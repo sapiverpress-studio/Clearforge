@@ -1,0 +1,13 @@
+{
+  "subject": "Clearforge Weekly Digest — 2026-07-16",
+  "week_start": "2026-07-10",
+  "week_end": "2026-07-16",
+  "edition_count": 6,
+  "status": "sent",
+  "send_automatically": true,
+  "includes_weekly_outlook": true,
+  "sent_at": "2026-07-16T05:23:25.878Z",
+  "brevo_campaign_id": 1,
+  "recipient_list_id": 2,
+  "test_run": true
+}

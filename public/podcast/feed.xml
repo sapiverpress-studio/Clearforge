@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>
     <copyright>Clearforge</copyright>
     <generator>Clearforge hosted podcast feed</generator>
-    <lastBuildDate>Wed, 15 Jul 2026 06:32:36 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jul 2026 05:46:49 GMT</lastBuildDate>
     <atom:link href="https://clearforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Clearforge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://clearforge-daily-brief.netlify.app/podcast/cover.png"/>
+    <item>
+      <title>AI is becoming a workflow layer, and ChatGPT is the clearest example today</title>
+      <description>This is the biggest story because it captures the core shift in this edition: AI is moving from a chat box into a practical work layer that can sit inside real business routines. OpenAI’s announcement is the broadest example of that change, and it connects directly to the daily workflows creators and small businesses already use.</description>
+      <content:encoded><![CDATA[<p>This is the biggest story because it captures the core shift in this edition: AI is moving from a chat box into a practical work layer that can sit inside real business routines. OpenAI’s announcement is the broadest example of that change, and it connects directly to the daily workflows creators and small businesses already use.</p><p><strong>Read alongside this episode:</strong> <a href="https://clearforge-daily-brief.netlify.app/posts/2026-07-16.html">daily briefing</a> · <a href="https://clearforge-daily-brief.netlify.app/features/2026-07-16.html">feature analysis</a></p><p><a href="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-16.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-16.html</link>
+      <guid isPermaLink="false">clearforge:2026-07-16</guid>
+      <pubDate>Thu, 16 Jul 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-16.mp3" length="6556987" type="audio/mpeg"/>
+      <itunes:author>Clearforge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:07:42</itunes:duration>
+      <podcast:transcript url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-16.txt" type="text/plain"/>
+    </item>
     <item>
       <title>AI’s next gains depend on logs, controls, and handoffs</title>
       <description>This is the clearest example of the edition’s core theme: AI is becoming a systems problem. The story is not about a new model or chatbot. It is about the control layer around automation, including logs, routing, incident response, and human handoffs, which directly affects how businesses should deploy AI tools.</description>

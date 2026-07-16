@@ -1,87 +1,87 @@
-# Clearforge Social Repurpose Pack — 2026-07-15
+# Clearforge Social Repurpose Pack — 2026-07-16
 
 Status: Draft — audience-fit optimised; automatic validation pending
 
-Editorial theme: Wednesday — Systems and automation
+Editorial theme: Thursday — Stacks and workflows
 
 ## Platform Story Selections
 
 ### Tiktok
 
-- Selected story: Microsoft is treating observability as the control layer for agentic systems
-- Audience: Ops teams, cloud users, IT managers, support automation teams, and practical AI learners
-- Format: short video
-- Opening: If your AI can act across apps and services, the real question is whether you can see what it did.
-- Payoff: Microsoft’s observability framing says the smart move is to automate detection and triage first, then keep a human on approvals, rollback and anything with real downside.
+- Selected story: Canva is bundling design, research, scheduling and sheets into one creative workflow
+- Audience: Creators, social media managers, and small marketing teams
+- Format: short-form spoken explainer
+- Opening: If you run content for a small brand, the biggest AI shift is not image generation. It is Canva trying to connect research, design, brand rules and scheduling in one workflow.
+- Payoff: That means one place can help you build the brief, make the assets, keep the brand consistent, and prep the publishing plan.
 - Platform fit: 9/10
-- Why selected: This story has a crisp tension, a concrete control concept and a fast practical takeaway that works well as spoken short-form advice.
+- Why selected: This story is visually easy to understand, clearly practical for creators, and has the strongest stop-and-watch value for a short video.
 
 ### Youtube
 
-- Selected story: Microsoft is treating observability as the control layer for agentic systems
-- Audience: Ops teams, cloud users, IT managers, support automation teams, and practical AI learners
-- Format: short video
-- Opening: How do you keep AI agents from becoming a black box?
-- Payoff: The answer is observability: logs, metrics, traces and clear approval gates so automation stays visible, auditable and safe to use.
-- Platform fit: 9/10
-- Why selected: The searchable question is strong, the answer is direct, and the story cleanly explains a common problem viewers can recognize immediately.
+- Selected story: ChatGPT Work is being framed as a repeatable business system, not a general chatbot
+- Audience: Small business owners, operators, and productivity-focused knowledge workers
+- Format: searchable problem/solution short
+- Opening: How can ChatGPT help with a weekly pipeline review instead of just answering prompts?
+- Payoff: OpenAI says ChatGPT Work can move across web, mobile and desktop, and the useful move is to feed it source material from Sheets, CRM, email or Jira so it drafts the first pass of a recurring review.
+- Platform fit: 8/10
+- Why selected: This version answers a specific, searchable workflow question and gives a practical use case that is easy to understand in under a minute.
 
 ### Facebook
 
-- Selected story: The White House is building a cyber coordination layer for AI-era vulnerabilities
-- Audience: Small business operators, IT/security leads, and teams using AI in customer-facing or operational workflows
-- Format: post
-- Opening: If your team uses AI in a customer workflow, who gets the alert when something breaks?
-- Payoff: The White House says GOLD EAGLE is meant to speed vulnerability detection and patch prioritization across critical infrastructure, which is a reminder that AI systems need clear alert routing, human approval and a rollback path.
+- Selected story: Enterprise AI is moving into regulated workflows, with humans still in the loop
+- Audience: Managers, operations teams, and professionals in approval-heavy industries
+- Format: discussion post
+- Opening: If your work lives inside approvals, the most useful AI is not full autonomy. It is AI that helps the review step move faster without removing the person who signs off.
+- Payoff: Anthropic says UST is using Claude in engineering and client workflows, and that recommended actions still route to a person for approval in sensitive settings.
 - Platform fit: 8/10
-- Why selected: This is recognizable to everyday operators, it explains the operational lesson plainly, and it invites a real discussion about who owns failure handling.
+- Why selected: Facebook performs well with recognizable workplace situations and practical discussion questions, and this story naturally invites people to compare how their own teams handle review.
 
 ### Pinterest
 
-- Selected story: IBM’s warning suggests AI is shifting spend from software to infrastructure
-- Audience: Small businesses, creators, finance-minded operators, and anyone budgeting AI workflows
-- Format: searchable guide
-- Opening: AI Workflow Cost Checklist: Watch the Hidden Infrastructure Spend
-- Payoff: Before you scale a workflow, estimate the full cost of compute, storage, monitoring, review and handoff so the automation saves labor without creating a bigger bill.
-- Platform fit: 8/10
-- Why selected: Pinterest favors searchable, evergreen guide content, and this story maps neatly to a practical budgeting checklist people can save.
+- Selected story: Canva is bundling design, research, scheduling and sheets into one creative workflow
+- Audience: Creators, marketers, and small business teams building content systems
+- Format: searchable guide/checklist pin
+- Opening: AI Workflow Stack Checklist for Creators: Connect Design, Research, Scheduling and Brand Control
+- Payoff: A practical guide to using one tool for drafting, one for design, one for scheduling and one for review so a campaign can move from idea to published output with less app-hopping.
+- Platform fit: 9/10
+- Why selected: Pinterest rewards searchable how-to content and visual systems. This story already reads like a practical guide and is easy to package as a checklist.
 
 ### Linkedin
 
-- Selected story: Microsoft is treating observability as the control layer for agentic systems
-- Audience: Ops teams, cloud users, IT managers, support automation teams, and practical AI learners
-- Format: professional post
-- Opening: If an AI system can act across apps and services, observability is no longer optional.
-- Payoff: Logs, metrics, traces and approval gates are part of the control plane, not an add-on, because visibility determines whether automation is safe to run in production.
+- Selected story: Google is making AI ads easier to identify
+- Audience: Marketers, ad operations teams, and workplace decision-makers
+- Format: professional lesson post
+- Opening: When AI touches ad creative, disclosure becomes part of production.
+- Payoff: Google says it is adding a 'How this ad was made' panel across Search, YouTube and Discover, and advertisers must label AI-generated or AI-edited content using its tools.
 - Platform fit: 9/10
-- Why selected: This is the strongest workplace lesson in the pack: it speaks directly to operational decisions, risk management and production readiness.
+- Why selected: LinkedIn is the best fit for an operational lesson about workflow, compliance, and provenance. It frames the change as a team process rather than a novelty update.
 
 ## TikTok Script
 
-If your AI can act across apps and services, the real question is whether you can see what it did. Microsoft is treating observability as the control layer for agentic systems, because logs, metrics and traces are what turn automation into something you can trust. The smart move is to automate detection and triage first, then keep a human on approvals, rollback, and anything with real downside. The payoff is not a flashier model — it’s a workflow that stays visible, auditable, and safe enough to use in production.
+If you run content for a small brand, the biggest AI shift is not image generation. It is Canva trying to connect research, design, brand rules and scheduling in one workflow. So instead of bouncing from a doc to a design app to a calendar, you can move one campaign from idea to publish inside the same stack. The stop reason is simple: this is not another tool that only makes pictures. The payoff is better handoffs. You get a briefing doc, a social batch, and a publishing plan from one place.
 
 ## YouTube Shorts Script
 
-How do you keep AI agents from becoming a black box? Microsoft’s answer is observability: logs, metrics, traces and operational context that show what the system did and why. That matters because once AI starts acting across apps and services, visibility becomes the difference between useful automation and risky automation. The practical rule is simple: automate detection and triage first, then keep humans on approvals, rollback steps and any decision that can affect customers, money or production systems.
+How can ChatGPT help with a weekly pipeline review instead of just answering prompts? OpenAI says ChatGPT Work, with Codex built in, can move across web, mobile and desktop. The useful move is to feed it source material already living in Sheets, CRM, email or Jira, then ask for the first pass of a recurring review, release check or event postmortem. That means less copying between tools and more time checking the gaps. If your work already lives in spreadsheets and task trackers, this is the question to ask: which recurring review should AI draft first, and which step still needs your sign-off?
 
 ## Facebook Post
 
-If your team uses AI in a customer workflow, who gets the alert when something breaks? The White House says GOLD EAGLE is meant to speed vulnerability detection and patch prioritization across critical infrastructure, which is a reminder that AI systems need clear alert routing, human approval and a rollback path. The useful question is not whether automation is possible — it is who is accountable when it fails. In your own workflow, where do you draw the line between automation and human sign-off?
+If your work lives inside approvals, the most useful AI is not full autonomy. It is AI that helps the review step move faster without removing the person who signs off. Anthropic says UST is using Claude in engineering and client workflows, and that recommended actions still route to a person for approval in sensitive settings. That means the workflow gets faster without changing who owns the decision. Where would that help most in your own work: triage, drafting next steps, or spotting exceptions?
 
 ## Pinterest Pin
 
-**Title:** AI Workflow Cost Checklist: Watch the Hidden Infrastructure Spend
+**Title:** AI Workflow Stack Checklist for Creators: Connect Design, Research, Scheduling and Brand Control
 
-**Description:** Before you scale an AI workflow, estimate the full cost of compute, storage, monitoring, review and handoff. This checklist helps you spot the hidden infrastructure spend so the workflow saves labor instead of creating a bigger bill.
+**Description:** A practical guide to the new AI workflow stack. Use one tool for drafting, one for design, one for scheduling and one for review so a campaign can move from idea to published output with less app-hopping. Built around Canva AI 2.0's connected workflow for creators and small businesses.
 
 ## LinkedIn-Style Post
 
-If an AI system can act across apps and services, observability is no longer optional. Microsoft’s agentic observability framing is a useful workplace lesson: logs, metrics, traces and approval gates are part of the control plane, not an add-on. For teams automating support, ops or incident response, the decision is not just whether AI can do the task. It is whether you can see what happened, review it quickly and roll it back if needed. If your workflow has no audit trail or rollback path, it is not ready for production.
+When AI touches ad creative, disclosure becomes part of production. Google says it is adding a 'How this ad was made' panel across Search, YouTube and Discover, and advertisers must label AI-generated or AI-edited content using its tools. The operational lesson is simple: provenance is no longer a cleanup step at the end. If your team creates or buys ads, the checklist now includes what was AI-made, what was edited, and where the label will appear. That is a workflow change, not just a policy update.
 
 ## 5 Short Quote/Card Lines
 
-- Automate the repetitive steps, but keep people accountable for the decisions that carry real risk.
-- If an AI system acts, it should leave a log that someone can review.
-- Observability is what turns a black box into a workflow you can trust.
-- Approval gates matter most when the action affects customers, money or production systems.
-- A useful AI workflow needs a fallback plan before it needs more autonomy.
+- AI is becoming a workflow layer, not just a chatbot.
+- The real gain is in better handoffs between tools.
+- Design, research and scheduling are starting to merge.
+- AI is most useful when it drafts, organizes and hands off.
+- The next productivity win is a connected stack.

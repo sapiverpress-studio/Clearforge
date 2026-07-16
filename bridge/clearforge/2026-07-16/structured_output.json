@@ -1,0 +1,315 @@
+{
+  "headline": "AI tools are turning into workflow layers: design, documents, ads and approvals are moving into one stack",
+  "dek": "Today’s useful AI change is not a bigger model. It is better handoffs between the tools people already use: ChatGPT into spreadsheets and CRM, Canva into design and scheduling, Notion into shared agent boards, and Google into ad transparency. The practical story is workflow control, not novelty.",
+  "sources": [
+    {
+      "source_name": "OpenAI",
+      "title": "ChatGPT is now a partner for your most ambitious work",
+      "url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work/",
+      "published_date": "2026-07-09",
+      "confirmed_fact": "OpenAI says ChatGPT Work, with Codex built in, can move beyond answering questions and into work across web, mobile and desktop; it also cites examples from Zapier, RingCentral, Virgin Atlantic and NVIDIA.",
+      "interpretation": "OpenAI is positioning ChatGPT as a work layer that can sit inside recurring business processes, not just a chat interface."
+    },
+    {
+      "source_name": "Canva",
+      "title": "Introducing Canva AI 2.0: Reimagining how the world creates",
+      "url": "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
+      "published_date": "2026-07-16",
+      "confirmed_fact": "Canva says Canva AI 2.0 is in research preview and adds connectors, scheduling, web research, brand intelligence, Sheets AI and Canva Code 2.0 on top of conversational design and agentic editing.",
+      "interpretation": "Canva is trying to become the place where teams draft, source, brand, schedule and publish creative work in one loop."
+    },
+    {
+      "source_name": "Notion",
+      "title": "Notion 3.6: External Agents, HTML blocks, and more",
+      "url": "https://www.notion.com/releases/2026-07-01",
+      "published_date": "2026-07-01",
+      "confirmed_fact": "Notion says users can assign tasks to external agents such as Claude and Cursor from a shared board, while AI Meeting Notes now include speaker labels and agents can read/write more file types.",
+      "interpretation": "Notion is moving from note-taking and docs toward a shared control surface for multiple AI tools."
+    },
+    {
+      "source_name": "Anthropic",
+      "title": "UST is bringing Claude to physical AI",
+      "url": "https://www.anthropic.com/news/ust-claude",
+      "published_date": "2026-07-09",
+      "confirmed_fact": "Anthropic says UST is integrating Claude into engineering and client workflows, with examples in chip design, telecom operations, healthcare, and banking, and that UST plans to train 20,000 associates on Claude.",
+      "interpretation": "The announcement shows a broader enterprise pattern: AI is being adopted where it can plug into regulated, approval-based workflows rather than replace them outright."
+    },
+    {
+      "source_name": "Google Blog",
+      "title": "Expanding AI transparency in ads",
+      "url": "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
+      "published_date": "2026-07-09",
+      "confirmed_fact": "Google says it is adding a 'How this ad was made' panel across Search, YouTube and Discover, and that advertisers must label AI-generated or AI-edited content using provided tools.",
+      "interpretation": "As AI tools become part of ad production, disclosure and provenance are becoming part of the publishing stack."
+    }
+  ],
+  "story_summaries": [
+    {
+      "title": "ChatGPT Work is being framed as a repeatable business system, not a general chatbot",
+      "summary": "OpenAI’s latest push is about turning ChatGPT and Codex into a tool that can sit inside sales, finance, recruiting and launch operations. The company highlights workflows that trace CRM touchpoints, check release plans, reconcile source data and synthesize event notes into reports.",
+      "why_it_matters": "Creators and small businesses already live in spreadsheets, email, calendars and task trackers. The interesting shift is that one AI layer can now move across those surfaces instead of being trapped in a single chat window.",
+      "practical_angle": "Use AI to draft the first pass of a recurring review: weekly pipeline, monthly launch check, or event postmortem. The value is highest when the input data already lives in tools like Sheets, Jira, CRM and email.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "Canva is bundling design, research, scheduling and sheets into one creative workflow",
+      "summary": "Canva AI 2.0 combines conversational design, layered editing, connectors, scheduling, web research, brand controls, Sheets AI and Canva Code 2.0. The company says it is in research preview now and is designed to carry a project from idea to published output.",
+      "why_it_matters": "This is a practical stack story for creators: one tool can now take on research, asset creation, brand consistency and publishing prep without forcing a jump between apps.",
+      "practical_angle": "If you run content for a small brand, the most useful test is to connect your calendar, drive and Slack, then ask for a weekly campaign pack, a briefing doc and a social content batch.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "Notion is becoming the place where teams coordinate multiple agents",
+      "summary": "Notion 3.6 lets teams assign work to external agents such as Claude and Cursor from a shared board, and it adds speaker labels to meeting notes plus richer file handling for agents. It also supports interactive HTML blocks inside docs.",
+      "why_it_matters": "This matters because AI work now needs coordination as much as generation. Teams need a visible place to track what the agent did, who approved it and what came next.",
+      "practical_angle": "Use Notion as the handoff layer: one person captures the brief, an agent drafts the work, another teammate reviews output, and the result stays attached to the project record.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "Enterprise AI is moving into regulated workflows, with humans still in the loop",
+      "summary": "Anthropic says UST is putting Claude into engineering, telecom, healthcare and banking workflows, including chip-schematic reading, regression testing, network-issue detection, claims routing and decision support. The company says recommended actions still route to a person for approval in sensitive settings.",
+      "why_it_matters": "This is the adoption pattern to watch: not full autonomy, but AI that reduces manual scripting, speeds triage and works inside systems people already trust.",
+      "practical_angle": "For a service business, the lesson is to start where approvals already exist. Use AI to summarize cases, draft next steps and surface exceptions, then keep the human sign-off where risk is high.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "Google is making AI ads easier to identify",
+      "summary": "Google says it is expanding AI disclosure across Search, YouTube and Discover with a 'How this ad was made' panel and mandatory labeling tools for advertisers using AI.",
+      "why_it_matters": "If your content pipeline includes ad creative, this changes the workflow. Disclosure is becoming part of production, not a cleanup step at the end.",
+      "practical_angle": "Creators and small businesses should treat provenance as part of the ad checklist: what was AI-made, what was edited, and where the disclosure will appear.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    }
+  ],
+  "main_article": "The clearest AI story for this Thursday is not that one model got better. It is that the software stack around AI is starting to look more like a working pipeline. Chat, design, notes, ads and approvals are getting stitched together so a person can move from idea to output without constantly copying work between tools. That matters more to creators and small businesses than another benchmark headline because most real work is still handoffs: between a brief and a draft, a draft and a review, a review and a published asset. OpenAI’s latest ChatGPT Work messaging is a good example of this shift. The company says ChatGPT, with Codex built in, can now move beyond answering questions and into work across web, mobile and desktop. It points to workflows that trace customer touchpoints across CRM and email, review release plans and Jira tasks, and automate event prep that used to take large chunks of time. The important part is not the individual testimonial. It is the shape of the task: ChatGPT is being positioned as a layer that can read source material, summarize the gaps, and produce a next-step document that a human can inspect and act on. ([openai.com](https://openai.com/index/chatgpt-for-your-most-ambitious-work/))\n\nCanva is making a similar move on the creative side. Canva AI 2.0, which the company says is available as a research preview, adds connectors, scheduling, web research, brand intelligence, Sheets AI and Canva Code 2.0 on top of conversational design and agentic editing. That combination is the edition’s clearest example of a workflow stack: pull context from Slack, Gmail, Drive, Calendar, Notion, Zoom, HubSpot, Microsoft, Atlassian and Linear; research the topic; generate editable design assets; keep the brand consistent; and schedule the repeat work in the background. For a creator or small marketing team, that is much more useful than a single image generator or a single copy tool. It means one system can help assemble the briefing document, the campaign visual, the spreadsheet, and the publishing calendar. Canva is not claiming that every part of that pipeline is fully automated; it is saying the pieces are now connected in one place. ([canva.com](https://www.canva.com/newsroom/news/canva-create-2026-ai/))\n\nNotion is taking the coordination problem seriously from another angle. In Notion 3.6, the company says users can assign external agents such as Claude and Cursor from a shared board, rather than leaving them in isolated chat windows or separate apps. It also adds speaker labels to AI meeting notes and lets agents read and write more file types, including Excel and PowerPoint. That may sound small, but it addresses a real pain point: AI work is easy to start and hard to track. Shared boards, speaker-labeled notes and editable outputs turn AI from a sidecar into a managed part of the team process. If Canva is showing how a creative workflow can be connected, Notion is showing how the task handoff itself can be tracked. ([notion.com](https://www.notion.com/releases/2026-07-01))\n\nThe enterprise side tells the same story with different constraints. Anthropic says UST is integrating Claude into engineering and client systems for physical AI, telecom, healthcare and banking. The examples are concrete: Claude Code reads chip pinouts and schematics, writes and runs regression tests, compares live data against digital twins, and flags faults; in healthcare and banking, recommended actions still route to a person for approval. Anthropic also says UST plans to train 20,000 associates on Claude. That matters because it shows how adoption works in regulated environments: not by replacing people, but by removing repetitive analysis, reducing hand scripting and tightening the path from signal to review. For practical users, the takeaway is that the strongest AI deployments are often not fully autonomous. They are the ones that make a human reviewer faster and better informed. ([anthropic.com](https://www.anthropic.com/news/ust-claude))\n\nGoogle’s new ad transparency update rounds out the stack because it treats provenance as part of the workflow. The company says it is adding a “How this ad was made” panel across Search, YouTube and Discover, and that advertisers must label AI-generated or AI-edited content using its tools. In other words, once AI touches the creative process, disclosure becomes part of publishing. That is useful for trust, but it is also operationally useful: teams now need to track which assets were generated, which were edited, and where the labels will appear. For small businesses buying or making ads, this means the creative checklist is expanding from “is it ready?” to “is it labeled correctly?” ([blog.google](https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/))\n\nPut together, these stories point to the same practical conclusion. AI is moving from isolated assistant to connected workflow layer. The value is no longer just in making one draft faster. It is in linking the draft to the data, the review, the schedule and the disclosure step. That is the shape of useful AI in 2026: fewer dead ends, fewer copy-paste loops, and clearer human control at the points where risk is highest. For anyone building content, running a small business or learning AI, the next win is not picking one “best” model. It is wiring together the tools you already use so the work can move from one step to the next with less manual friction. Practical takeaway: map one recurring workflow you repeat every week, then decide which step AI should draft, which step it should organize, and which step must still wait for your approval. ([openai.com](https://openai.com/index/chatgpt-for-your-most-ambitious-work/))",
+  "practical_takeaway": "Map one recurring workflow you repeat every week, then assign AI to draft the first pass, organize the context, and leave approval to a human.",
+  "what_to_test_next": "Build a one-page weekly content or launch brief in Notion, connect one source of context, and have an AI tool generate both the draft summary and the checklist of missing steps.",
+  "claims_to_verify": [],
+  "social": {
+    "tiktok_script": "If you run content for a small brand, the biggest AI shift is not image generation. It is Canva trying to connect research, design, brand rules and scheduling in one workflow. So instead of bouncing from a doc to a design app to a calendar, you can move one campaign from idea to publish inside the same stack. The stop reason is simple: this is not another tool that only makes pictures. The payoff is better handoffs. You get a briefing doc, a social batch, and a publishing plan from one place.",
+    "youtube_shorts_script": "How can ChatGPT help with a weekly pipeline review instead of just answering prompts? OpenAI says ChatGPT Work, with Codex built in, can move across web, mobile and desktop. The useful move is to feed it source material already living in Sheets, CRM, email or Jira, then ask for the first pass of a recurring review, release check or event postmortem. That means less copying between tools and more time checking the gaps. If your work already lives in spreadsheets and task trackers, this is the question to ask: which recurring review should AI draft first, and which step still needs your sign-off?",
+    "facebook_post": "If your work lives inside approvals, the most useful AI is not full autonomy. It is AI that helps the review step move faster without removing the person who signs off. Anthropic says UST is using Claude in engineering and client workflows, and that recommended actions still route to a person for approval in sensitive settings. That means the workflow gets faster without changing who owns the decision. Where would that help most in your own work: triage, drafting next steps, or spotting exceptions?",
+    "pinterest_title": "AI Workflow Stack Checklist for Creators: Connect Design, Research, Scheduling and Brand Control",
+    "pinterest_description": "A practical guide to the new AI workflow stack. Use one tool for drafting, one for design, one for scheduling and one for review so a campaign can move from idea to published output with less app-hopping. Built around Canva AI 2.0's connected workflow for creators and small businesses.",
+    "linkedin_post": "When AI touches ad creative, disclosure becomes part of production. Google says it is adding a 'How this ad was made' panel across Search, YouTube and Discover, and advertisers must label AI-generated or AI-edited content using its tools. The operational lesson is simple: provenance is no longer a cleanup step at the end. If your team creates or buys ads, the checklist now includes what was AI-made, what was edited, and where the label will appear. That is a workflow change, not just a policy update.",
+    "quote_card_lines": [
+      "AI is becoming a workflow layer, not just a chatbot.",
+      "The real gain is in better handoffs between tools.",
+      "Design, research and scheduling are starting to merge.",
+      "AI is most useful when it drafts, organizes and hands off.",
+      "The next productivity win is a connected stack."
+    ]
+  },
+  "headline_options": [
+    "AI is becoming a workflow layer: the tools finally start talking to each other",
+    "The useful AI shift this week is not a model upgrade, it is better handoffs",
+    "ChatGPT, Canva and Notion are turning AI into a connected workflow stack",
+    "AI is moving from isolated features to connected creator pipelines",
+    "The next AI advantage is the stack: draft, design, schedule, review"
+  ],
+  "editorial_theme": {
+    "day": "Thursday",
+    "date": "2026-07-16",
+    "slug": "stacks-workflows",
+    "title": "Stacks and workflows",
+    "focus": "Tool combinations: models, apps, APIs, image, video, voice, documents, databases, scheduling, publishing and creator pipelines.",
+    "instruction": "Explain how pieces fit together rather than treating tools as isolated announcements. Include practical stack or workflow examples where supported by the sources."
+  },
+  "audience_fit": {
+    "generated_at": "2026-07-16T05:45:07.470Z",
+    "story_assessments": [
+      {
+        "story_index": 0,
+        "story_title": "ChatGPT Work is being framed as a repeatable business system, not a general chatbot",
+        "target_audience": "Creators, small business operators, and ops-minded knowledge workers who live in spreadsheets, email, calendars, CRM and task trackers",
+        "audience_problem_or_desire": "They want faster first drafts and cleaner recurring reviews without copying information between too many tools",
+        "interest_signal": "OpenAI says ChatGPT Work, with Codex built in, can move beyond answering questions and into work across web, mobile and desktop, with examples from Zapier, RingCentral, Virgin Atlantic and NVIDIA",
+        "stop_reason": "This is not just a chatbot upgrade; it is a shift toward AI handling recurring business tasks across the tools people already use",
+        "promised_payoff": "One AI layer can draft a weekly review, launch check or postmortem from source material already in work systems",
+        "proof_point": "OpenAI says ChatGPT Work can move beyond answering questions and into work across web, mobile and desktop, and cites real workflow examples from several companies",
+        "search_phrases": [
+          "ChatGPT Work",
+          "weekly pipeline review AI",
+          "use ChatGPT with CRM and spreadsheets",
+          "AI for recurring business tasks"
+        ],
+        "scores": {
+          "audience_fit": 8,
+          "practical_consequence": 9,
+          "searchability": 8,
+          "stranger_usefulness": 9,
+          "novelty": 7,
+          "visual_potential": 6,
+          "discussion_potential": 7,
+          "short_form_clarity": 8
+        },
+        "overall_score": 8,
+        "score_reason": "Strong practical fit for people who manage repeatable work. The story is clear, searchable and easy to translate into a workflow example, though it is less visually striking than the Canva story."
+      },
+      {
+        "story_index": 1,
+        "story_title": "Canva is bundling design, research, scheduling and sheets into one creative workflow",
+        "target_audience": "Creators, social media managers, small marketing teams, and brand operators",
+        "audience_problem_or_desire": "They want one place to move from idea to asset to schedule without app-hopping or losing brand consistency",
+        "interest_signal": "Canva says Canva AI 2.0 adds connectors, scheduling, web research, brand intelligence, Sheets AI and Canva Code 2.0 on top of conversational design and agentic editing",
+        "stop_reason": "This is a workflow stack story, not another isolated image tool announcement",
+        "promised_payoff": "A single system can help build the brief, create the design, keep the brand consistent and prepare publishing steps",
+        "proof_point": "Canva says Canva AI 2.0 is in research preview and connects drafting, research, brand controls and scheduling in one loop",
+        "search_phrases": [
+          "Canva AI 2.0",
+          "AI design workflow",
+          "Canva scheduling connectors",
+          "creator workflow stack"
+        ],
+        "scores": {
+          "audience_fit": 9,
+          "practical_consequence": 9,
+          "searchability": 8,
+          "stranger_usefulness": 9,
+          "novelty": 8,
+          "visual_potential": 10,
+          "discussion_potential": 7,
+          "short_form_clarity": 9
+        },
+        "overall_score": 9,
+        "score_reason": "The strongest mix of practicality and visual clarity. It is easy to explain quickly, immediately useful to creators, and highly suited to short-form and visual platforms."
+      },
+      {
+        "story_index": 2,
+        "story_title": "Notion is becoming the place where teams coordinate multiple agents",
+        "target_audience": "Team leads, operations managers, and knowledge workers coordinating AI-assisted projects",
+        "audience_problem_or_desire": "They need a visible place to assign AI work, review output and keep the handoff attached to the project record",
+        "interest_signal": "Notion says users can assign external agents such as Claude and Cursor from a shared board, while meeting notes get speaker labels and agents can handle more file types",
+        "stop_reason": "The real change is coordination, not generation; teams need to track what the agent did and what happens next",
+        "promised_payoff": "A shared board can act as the handoff layer for brief, draft, review and approved output",
+        "proof_point": "Notion 3.6 adds external agents, speaker-labeled meeting notes and support for more file types including Excel and PowerPoint",
+        "search_phrases": [
+          "Notion external agents",
+          "Notion Claude Cursor board",
+          "AI project coordination",
+          "shared board AI handoff"
+        ],
+        "scores": {
+          "audience_fit": 7,
+          "practical_consequence": 8,
+          "searchability": 7,
+          "stranger_usefulness": 8,
+          "novelty": 8,
+          "visual_potential": 6,
+          "discussion_potential": 8,
+          "short_form_clarity": 8
+        },
+        "overall_score": 8,
+        "score_reason": "Useful and distinctive for teams, with a strong coordination angle. It is slightly less immediate than the Canva and ChatGPT stories, but it has solid operational relevance."
+      },
+      {
+        "story_index": 3,
+        "story_title": "Enterprise AI is moving into regulated workflows, with humans still in the loop",
+        "target_audience": "Enterprise leaders, operations teams, and service businesses working in approval-based environments",
+        "audience_problem_or_desire": "They want faster triage and analysis without removing the human approval step in sensitive workflows",
+        "interest_signal": "Anthropic says UST is integrating Claude into engineering and client workflows across chip design, telecom, healthcare and banking, with recommended actions still routed to a person for approval in sensitive settings",
+        "stop_reason": "This is the adoption pattern to watch: AI is being used where approval and review already matter",
+        "promised_payoff": "AI can reduce manual scripting, speed triage and make human review more informed",
+        "proof_point": "Anthropic says UST plans to train 20,000 associates on Claude and that sensitive workflows still keep human sign-off",
+        "search_phrases": [
+          "Claude regulated workflows",
+          "human in the loop AI",
+          "enterprise AI approval workflow",
+          "UST Claude integration"
+        ],
+        "scores": {
+          "audience_fit": 7,
+          "practical_consequence": 8,
+          "searchability": 6,
+          "stranger_usefulness": 8,
+          "novelty": 7,
+          "visual_potential": 5,
+          "discussion_potential": 8,
+          "short_form_clarity": 8
+        },
+        "overall_score": 7,
+        "score_reason": "Good workplace relevance and strong discussion potential, but less visual and slightly less searchable than the consumer-facing workflow stories."
+      },
+      {
+        "story_index": 4,
+        "story_title": "Google is making AI ads easier to identify",
+        "target_audience": "Advertisers, marketers, content teams, and anyone managing paid creative",
+        "audience_problem_or_desire": "They need to know how provenance and disclosure fit into the ad production process",
+        "interest_signal": "Google says it is adding a 'How this ad was made' panel across Search, YouTube and Discover, and advertisers must label AI-generated or AI-edited content using provided tools",
+        "stop_reason": "Once AI touches creative, disclosure becomes part of production instead of a cleanup step",
+        "promised_payoff": "Teams can treat provenance like a checklist item for publishing, buying and review",
+        "proof_point": "Google is expanding AI transparency across Search, YouTube and Discover with disclosure tools for advertisers",
+        "search_phrases": [
+          "Google AI ad transparency",
+          "How this ad was made",
+          "AI ad labels",
+          "ad provenance workflow"
+        ],
+        "scores": {
+          "audience_fit": 8,
+          "practical_consequence": 8,
+          "searchability": 8,
+          "stranger_usefulness": 7,
+          "novelty": 8,
+          "visual_potential": 6,
+          "discussion_potential": 8,
+          "short_form_clarity": 8
+        },
+        "overall_score": 8,
+        "score_reason": "Highly relevant for marketers and platform users, with a clear operational consequence. It is strong for professional audiences and discussion, though less broadly appealing than the Canva story."
+      }
+    ],
+    "platform_selections": {
+      "tiktok": {
+        "story_index": 1,
+        "story_title": "Canva is bundling design, research, scheduling and sheets into one creative workflow",
+        "target_audience": "Creators, social media managers, and small marketing teams",
+        "format": "short-form spoken explainer",
+        "opening": "If you run content for a small brand, the biggest AI shift is not image generation. It is Canva trying to connect research, design, brand rules and scheduling in one workflow.",
+        "payoff": "That means one place can help you build the brief, make the assets, keep the brand consistent, and prep the publishing plan.",
+        "selection_reason": "This story is visually easy to understand, clearly practical for creators, and has the strongest stop-and-watch value for a short video.",
+        "platform_fit_score": 9
+      },
+      "youtube": {
+        "story_index": 0,
+        "story_title": "ChatGPT Work is being framed as a repeatable business system, not a general chatbot",
+        "target_audience": "Small business owners, operators, and productivity-focused knowledge workers",
+        "format": "searchable problem/solution short",
+        "opening": "How can ChatGPT help with a weekly pipeline review instead of just answering prompts?",
+        "payoff": "OpenAI says ChatGPT Work can move across web, mobile and desktop, and the useful move is to feed it source material from Sheets, CRM, email or Jira so it drafts the first pass of a recurring review.",
+        "selection_reason": "This version answers a specific, searchable workflow question and gives a practical use case that is easy to understand in under a minute.",
+        "platform_fit_score": 8
+      },
+      "facebook": {
+        "story_index": 3,
+        "story_title": "Enterprise AI is moving into regulated workflows, with humans still in the loop",
+        "target_audience": "Managers, operations teams, and professionals in approval-heavy industries",
+        "format": "discussion post",
+        "opening": "If your work lives inside approvals, the most useful AI is not full autonomy. It is AI that helps the review step move faster without removing the person who signs off.",
+        "payoff": "Anthropic says UST is using Claude in engineering and client workflows, and that recommended actions still route to a person for approval in sensitive settings.",
+        "selection_reason": "Facebook performs well with recognizable workplace situations and practical discussion questions, and this story naturally invites people to compare how their own teams handle review.",
+        "platform_fit_score": 8
+      },
+      "pinterest": {
+        "story_index": 1,
+        "story_title": "Canva is bundling design, research, scheduling and sheets into one creative workflow",
+        "target_audience": "Creators, marketers, and small business teams building content systems",
+        "format": "searchable guide/checklist pin",
+        "opening": "AI Workflow Stack Checklist for Creators: Connect Design, Research, Scheduling and Brand Control",
+        "payoff": "A practical guide to using one tool for drafting, one for design, one for scheduling and one for review so a campaign can move from idea to published output with less app-hopping.",
+        "selection_reason": "Pinterest rewards searchable how-to content and visual systems. This story already reads like a practical guide and is easy to package as a checklist.",
+        "platform_fit_score": 9
+      },
+      "linkedin": {
+        "story_index": 4,
+        "story_title": "Google is making AI ads easier to identify",
+        "target_audience": "Marketers, ad operations teams, and workplace decision-makers",
+        "format": "professional lesson post",
+        "opening": "When AI touches ad creative, disclosure becomes part of production.",
+        "payoff": "Google says it is adding a 'How this ad was made' panel across Search, YouTube and Discover, and advertisers must label AI-generated or AI-edited content using its tools.",
+        "selection_reason": "LinkedIn is the best fit for an operational lesson about workflow, compliance, and provenance. It frames the change as a team process rather than a novelty update.",
+        "platform_fit_score": 9
+      }
+    },
+    "overall_reasoning": "The research pack points to one clear theme: AI is becoming a connected workflow layer rather than a set of isolated features. Canva is the strongest visual and practical short-form story, so it leads TikTok and Pinterest. ChatGPT Work is the clearest searchable productivity question, so it fits YouTube Shorts. The enterprise approval story is the best discussion starter on Facebook. Google’s ad transparency update is the cleanest workplace consequence for LinkedIn because it turns provenance into an operational checklist item. All selections stay inside the verified facts and emphasize handoffs, review, scheduling, and disclosure rather than hype."
+  }
+}

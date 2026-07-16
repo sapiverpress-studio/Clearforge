@@ -1,0 +1,42 @@
+[
+  {
+    "source_name": "OpenAI",
+    "title": "ChatGPT is now a partner for your most ambitious work",
+    "url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work/",
+    "published_date": "2026-07-09",
+    "confirmed_fact": "OpenAI says ChatGPT Work, with Codex built in, can move beyond answering questions and into work across web, mobile and desktop; it also cites examples from Zapier, RingCentral, Virgin Atlantic and NVIDIA.",
+    "interpretation": "OpenAI is positioning ChatGPT as a work layer that can sit inside recurring business processes, not just a chat interface."
+  },
+  {
+    "source_name": "Canva",
+    "title": "Introducing Canva AI 2.0: Reimagining how the world creates",
+    "url": "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
+    "published_date": "2026-07-16",
+    "confirmed_fact": "Canva says Canva AI 2.0 is in research preview and adds connectors, scheduling, web research, brand intelligence, Sheets AI and Canva Code 2.0 on top of conversational design and agentic editing.",
+    "interpretation": "Canva is trying to become the place where teams draft, source, brand, schedule and publish creative work in one loop."
+  },
+  {
+    "source_name": "Notion",
+    "title": "Notion 3.6: External Agents, HTML blocks, and more",
+    "url": "https://www.notion.com/releases/2026-07-01",
+    "published_date": "2026-07-01",
+    "confirmed_fact": "Notion says users can assign tasks to external agents such as Claude and Cursor from a shared board, while AI Meeting Notes now include speaker labels and agents can read/write more file types.",
+    "interpretation": "Notion is moving from note-taking and docs toward a shared control surface for multiple AI tools."
+  },
+  {
+    "source_name": "Anthropic",
+    "title": "UST is bringing Claude to physical AI",
+    "url": "https://www.anthropic.com/news/ust-claude",
+    "published_date": "2026-07-09",
+    "confirmed_fact": "Anthropic says UST is integrating Claude into engineering and client workflows, with examples in chip design, telecom operations, healthcare, and banking, and that UST plans to train 20,000 associates on Claude.",
+    "interpretation": "The announcement shows a broader enterprise pattern: AI is being adopted where it can plug into regulated, approval-based workflows rather than replace them outright."
+  },
+  {
+    "source_name": "Google Blog",
+    "title": "Expanding AI transparency in ads",
+    "url": "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
+    "published_date": "2026-07-09",
+    "confirmed_fact": "Google says it is adding a 'How this ad was made' panel across Search, YouTube and Discover, and that advertisers must label AI-generated or AI-edited content using provided tools.",
+    "interpretation": "As AI tools become part of ad production, disclosure and provenance are becoming part of the publishing stack."
+  }
+]

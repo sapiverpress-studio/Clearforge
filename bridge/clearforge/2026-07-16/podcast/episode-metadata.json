@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "date": "2026-07-16",
+  "brand": "Clearforge",
+  "type": "clearforge_daily_biggest_story_podcast_script",
+  "human_review_required": true,
+  "narrator": "Irene",
+  "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+  "episode_title": "AI is becoming a workflow layer, and ChatGPT is the clearest example today",
+  "selected_story_index": 0,
+  "selected_story_title": "ChatGPT Work is being framed as a repeatable business system, not a general chatbot",
+  "selection_reason": "This is the biggest story because it captures the core shift in this edition: AI is moving from a chat box into a practical work layer that can sit inside real business routines. OpenAI’s announcement is the broadest example of that change, and it connects directly to the daily workflows creators and small businesses already use.",
+  "word_count": 1122,
+  "estimated_duration_minutes": 7.7,
+  "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+  "source_notes": "source-notes.md",
+  "first_spoken_line": "If you have been following AI news for a while, you can feel the direction of travel changing.",
+  "final_spoken_line": "Not because the idea is weak, but because the shift is real. AI is moving from a place where you ask for a response to a place where you ask for help inside a process. That is a more useful change for most businesses, and it is also a more demanding one. The tools are getting closer to the work itself. The next step is learning how to put them in the right place, with the right review, and with clear limits on what they can do on their own.",
+  "validation_warnings": [
+    "Script is shorter than target: 1122 words."
+  ],
+  "non_spoken_instruction_candidates": []
+}

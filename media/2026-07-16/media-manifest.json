@@ -1,0 +1,64 @@
+{
+  "version": 4,
+  "date": "2026-07-16",
+  "headline": "AI tools are turning into workflow layers: design, documents, ads and approvals are moving into one stack",
+  "dek": "Today’s useful AI change is not a bigger model. It is better handoffs between the tools people already use: ChatGPT into spreadsheets and CRM, Canva into design and scheduling, Notion into shared agent boards, and Google into ad transparency. The practical story is workflow control, not novelty.",
+  "hook": "Three AI updates that actually matter today",
+  "spoken_cta": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+  "visual_system": "Clearforge AI briefing podcast studio system",
+  "visual_style_rules": {
+    "include": [
+      "dark navy AI briefing or podcast studio atmosphere",
+      "microphone or audio-briefing cues where appropriate",
+      "subtle circuit traces, waveform motifs, model cards or data-routing lines",
+      "physical source notes, checklists and human-review materials",
+      "premium editorial technology-magazine lighting"
+    ],
+    "avoid": [
+      "robots",
+      "glowing brains",
+      "hologram faces",
+      "generic dashboards",
+      "random floating code",
+      "excessive neon",
+      "fake readable text",
+      "Sapiver or unrelated branding"
+    ]
+  },
+  "stories": [
+    {
+      "file": "media/2026-07-16/story-1.png",
+      "title": "ChatGPT Work is being framed as a repeatable business system, not a general chatbot",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work/",
+      "summary": "OpenAI’s latest push is about turning ChatGPT and Codex into a tool that can sit inside sales, finance, recruiting and launch operations. The company highlights workflows that trace CRM touchpoints, check release plans, reconcile source data and synthesize event notes into reports.",
+      "why_it_matters": "Creators and small businesses already live in spreadsheets, email, calendars and task trackers. The interesting shift is that one AI layer can now move across those surfaces instead of being trapped in a single chat window.",
+      "practical_angle": "Use AI to draft the first pass of a recurring review: weekly pipeline, monthly launch check, or event postmortem. The value is highest when the input data already lives in tools like Sheets, Jira, CRM and email.",
+      "visual_prompt": "a practical creator workflow table showing verified source notes, timeline cards, a muted blue AI signal pattern, a microphone, headphones and a structured review checklist. premium podcast-cover composition with strong negative space for later text overlay. combine physical human-review materials with light digital signal motifs so it feels human-led and AI-empowered. use a different AI signal motif: waveform, routing lines, model cards, calendar markers or evidence board. Story context: ChatGPT Work is being framed as a repeatable business system, not a general chatbot. Practical angle: Use AI to draft the first pass of a recurring review: weekly pipeline, monthly launch check, or event postmortem. The value is highest when the input data already lives in tools like Sheets, Jira, CRM and email.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-07-16/story-2.png",
+      "title": "Canva is bundling design, research, scheduling and sheets into one creative workflow",
+      "source_name": "Canva",
+      "source_url": "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
+      "summary": "Canva AI 2.0 combines conversational design, layered editing, connectors, scheduling, web research, brand controls, Sheets AI and Canva Code 2.0. The company says it is in research preview now and is designed to carry a project from idea to published output.",
+      "why_it_matters": "This is a practical stack story for creators: one tool can now take on research, asset creation, brand consistency and publishing prep without forcing a jump between apps.",
+      "practical_angle": "If you run content for a small brand, the most useful test is to connect your calendar, drive and Slack, then ask for a weekly campaign pack, a briefing doc and a social content batch.",
+      "visual_prompt": "a podcast-ready AI learning desk with a microphone in the foreground, tidy source folders, simple model cards, a soft waveform motif and a dark professional newsroom mood. dark professional podcast artwork composition with source materials visible. make the AI element clear through subtle circuit traces, waveform graphics, model cards and data-routing lines, not robots. make the story context visible through objects and composition rather than readable text. Story context: Canva is bundling design, research, scheduling and sheets into one creative workflow. Practical angle: If you run content for a small brand, the most useful test is to connect your calendar, drive and Slack, then ask for a weekly campaign pack, a briefing doc and a social content batch.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-07-16/story-3.png",
+      "title": "Notion is becoming the place where teams coordinate multiple agents",
+      "source_name": "Notion",
+      "source_url": "https://www.notion.com/releases/2026-07-01",
+      "summary": "Notion 3.6 lets teams assign work to external agents such as Claude and Cursor from a shared board, and it adds speaker labels to meeting notes plus richer file handling for agents. It also supports interactive HTML blocks inside docs.",
+      "why_it_matters": "This matters because AI work now needs coordination as much as generation. Teams need a visible place to track what the agent did, who approved it and what came next.",
+      "practical_angle": "Use Notion as the handoff layer: one person captures the brief, an agent drafts the work, another teammate reviews output, and the result stays attached to the project record.",
+      "visual_prompt": "a dark navy AI briefing studio desk with a professional podcast microphone, source notes, a small audio waveform display, subtle circuit-board lines in the background and one practical notebook open on the desk. wide briefing-room still life cropped for vertical short-form video. use restrained blue technology accents to signal AI without making the image look like generic AI stock art. change the hero object placement so this frame does not resemble the previous edition. Story context: Notion is becoming the place where teams coordinate multiple agents. Practical angle: Use Notion as the handoff layer: one person captures the brief, an agent drafts the work, another teammate reviews output, and the result stays attached to the project record.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    }
+  ],
+  "narration": "media/2026-07-16/narration.mp3",
+  "narration_text": "How can ChatGPT help with a weekly pipeline review instead of just answering prompts? OpenAI says ChatGPT Work, with Codex built in, can move across web, mobile and desktop. The useful move is to feed it source material already living in Sheets, CRM, email or Jira, then ask for the first pass of a recurring review, release check or event postmortem. That means less copying between tools and more time checking the gaps. If your work already lives in spreadsheets and task trackers, this is the question to ask: which recurring review should AI draft first, and which step still needs your sign-off? Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+  "practical_takeaway": "Map one recurring workflow you repeat every week, then assign AI to draft the first pass, organize the context, and leave approval to a human.",
+  "what_to_test_next": "Build a one-page weekly content or launch brief in Notion, connect one source of context, and have an AI tool generate both the draft summary and the checklist of missing steps."
+}

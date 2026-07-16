@@ -1,5 +1,19 @@
 [
   {
+    "slug": "2026-07-16",
+    "kind": "daily",
+    "title": "AI is becoming a workflow layer, and ChatGPT is the clearest example today",
+    "description": "This is the biggest story because it captures the core shift in this edition: AI is moving from a chat box into a practical work layer that can sit inside real business routines. OpenAI’s announcement is the broadest example of that change, and it connects directly to the daily workflows creators and small businesses already use.",
+    "published": "2026-07-16T07:00:00+01:00",
+    "duration": "00:07:42",
+    "size": 6556987,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-16.mp3",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-16.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-16.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-16.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-16.html"
+  },
+  {
     "slug": "2026-07-15",
     "kind": "daily",
     "title": "AI’s next gains depend on logs, controls, and handoffs",

@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-16",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "If you run content for a small brand, the biggest AI shift is not image generation.",
+      "words": 92,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "How can ChatGPT help with a weekly pipeline review instead of just answering prompts?",
+      "words": 103,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "If your work lives inside approvals, the most useful AI is not full autonomy.",
+      "words": 84,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "When AI touches ad creative, disclosure becomes part of production.",
+      "words": 86,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "AI Workflow Stack Checklist for Creators: Connect Design, Research, Scheduling and Brand Control",
+    "title_words": 13,
+    "description_words": 49
+  },
+  "warnings": []
+}

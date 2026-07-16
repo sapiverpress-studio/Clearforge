@@ -1,0 +1,22 @@
+{
+  "date": "2026-07-16-risk",
+  "base_date": "2026-07-16",
+  "angle": "risk_control",
+  "editorial_theme": {
+    "day": "Thursday",
+    "date": "2026-07-16",
+    "slug": "stacks-workflows",
+    "title": "Stacks and workflows",
+    "focus": "Tool combinations: models, apps, APIs, image, video, voice, documents, databases, scheduling, publishing and creator pipelines.",
+    "instruction": "Explain how pieces fit together rather than treating tools as isolated announcements. Include practical stack or workflow examples where supported by the sources."
+  },
+  "reused_base_run": "base-current-2026-07-16",
+  "source_urls_reused": [
+    "https://openai.com/index/chatgpt-for-your-most-ambitious-work/",
+    "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
+    "https://www.notion.com/releases/2026-07-01",
+    "https://www.anthropic.com/news/ust-claude",
+    "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/"
+  ],
+  "passed": true
+}

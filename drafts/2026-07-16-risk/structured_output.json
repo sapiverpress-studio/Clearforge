@@ -1,0 +1,121 @@
+{
+  "headline": "AI workflow stacks are getting useful — and easier to audit",
+  "dek": "This week’s AI shift is less about raw capability and more about control points. ChatGPT, Canva, Notion, Claude and Google are being wired into the places where work gets drafted, reviewed, approved and disclosed, which makes the risk question more concrete: where should humans still stay in the loop?",
+  "edition_angle": "risk_control",
+  "sources": [
+    {
+      "source_name": "OpenAI",
+      "title": "ChatGPT is now a partner for your most ambitious work",
+      "url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work/",
+      "published_date": "2026-07-09",
+      "confirmed_fact": "OpenAI says ChatGPT Work, with Codex built in, can move beyond answering questions and into work across web, mobile and desktop; it also cites examples from Zapier, RingCentral, Virgin Atlantic and NVIDIA.",
+      "interpretation": "OpenAI is positioning ChatGPT as a work layer that can sit inside recurring business processes, which raises the value of source review and sign-off before anything is finalized."
+    },
+    {
+      "source_name": "Canva",
+      "title": "Introducing Canva AI 2.0: Reimagining how the world creates",
+      "url": "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
+      "published_date": "2026-07-16",
+      "confirmed_fact": "Canva says Canva AI 2.0 is in research preview and adds connectors, scheduling, web research, brand intelligence, Sheets AI and Canva Code 2.0 on top of conversational design and agentic editing.",
+      "interpretation": "Canva is trying to become the place where teams draft, source, brand, schedule and publish creative work in one loop, which makes review gates and brand controls more important, not less."
+    },
+    {
+      "source_name": "Notion",
+      "title": "Notion 3.6: External Agents, HTML blocks, and more",
+      "url": "https://www.notion.com/releases/2026-07-01",
+      "published_date": "2026-07-01",
+      "confirmed_fact": "Notion says users can assign tasks to external agents such as Claude and Cursor from a shared board, while AI Meeting Notes now include speaker labels and agents can read/write more file types.",
+      "interpretation": "Notion is moving from note-taking and docs toward a shared control surface for multiple AI tools, which is useful because it keeps the handoff visible."
+    },
+    {
+      "source_name": "Anthropic",
+      "title": "UST is bringing Claude to physical AI",
+      "url": "https://www.anthropic.com/news/ust-claude",
+      "published_date": "2026-07-09",
+      "confirmed_fact": "Anthropic says UST is integrating Claude into engineering and client workflows, with examples in chip design, telecom operations, healthcare, and banking, and that UST plans to train 20,000 associates on Claude.",
+      "interpretation": "The announcement shows a broader enterprise pattern: AI is being adopted where it can plug into regulated, approval-based workflows rather than replace them outright."
+    },
+    {
+      "source_name": "Google Blog",
+      "title": "Expanding AI transparency in ads",
+      "url": "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
+      "published_date": "2026-07-09",
+      "confirmed_fact": "Google says it is adding a 'How this ad was made' panel across Search, YouTube and Discover, and that advertisers must label AI-generated or AI-edited content using provided tools.",
+      "interpretation": "As AI tools become part of ad production, disclosure and provenance are becoming part of the publishing stack, which changes what teams need to track before launch."
+    }
+  ],
+  "story_summaries": [
+    {
+      "title": "ChatGPT Work can speed up drafts, but source control still matters",
+      "summary": "OpenAI says ChatGPT Work, with Codex built in, can move across web, mobile and desktop and help with recurring business tasks. The source examples point to workflows where the tool reviews source material, summarizes gaps and prepares a first pass for a human to inspect.",
+      "why_it_matters": "The risk question is not whether AI can write. It is whether the team knows what data it used and who checks the result before it gets sent, filed or published.",
+      "practical_angle": "Use ChatGPT on repeatable reviews, but keep the source file, the draft and the final approval visible to a person.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "Canva is connecting creation and publishing, so brand checks matter earlier",
+      "summary": "Canva AI 2.0 adds connectors, scheduling, web research, brand intelligence, Sheets AI and Canva Code 2.0 on top of conversational design and agentic editing. That means a campaign can move from research to draft to design to scheduling inside one workflow.",
+      "why_it_matters": "When creation and publishing live in one place, mistakes can travel faster too. Brand consistency, asset review and disclosure need to happen before the schedule step, not after.",
+      "practical_angle": "If you use Canva for campaigns, treat brand controls and approval as part of the build, not the cleanup.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "Notion gives teams a place to track AI handoffs instead of losing them in chat",
+      "summary": "Notion 3.6 lets users assign external agents such as Claude and Cursor from a shared board, and it adds speaker labels to AI Meeting Notes plus broader file support for agents.",
+      "why_it_matters": "A shared board makes AI work easier to audit. Teams can see what was requested, what the agent produced and what still needs review.",
+      "practical_angle": "Use Notion as the checkpoint layer: brief, agent task, review note and final decision should all stay attached to the project record.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "Enterprise AI is spreading where approvals already exist",
+      "summary": "Anthropic says UST is integrating Claude into engineering and client workflows across chip design, telecom, healthcare and banking, and that recommended actions still route to a person for approval in sensitive settings.",
+      "why_it_matters": "This is the safest pattern in the source set: AI handles the draft or the triage, while a human keeps the sign-off where risk is high.",
+      "practical_angle": "For any service workflow, start with summarizing and flagging exceptions, then keep human approval at the step that carries the most liability.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "Google is making AI disclosure part of ad production",
+      "summary": "Google says it is adding a 'How this ad was made' panel across Search, YouTube and Discover, and that advertisers must label AI-generated or AI-edited content with its tools.",
+      "why_it_matters": "Provenance is no longer an afterthought. If an ad passes through AI, the team now needs a record of what changed and where disclosure appears.",
+      "practical_angle": "Build a simple ad checklist that includes AI use, edit history and disclosure placement before anything goes live.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    }
+  ],
+  "main_article": "The useful AI story on this Thursday is not about a larger model or a flashier demo. It is about where the guardrails go. Across the tools in today’s source set, the pattern is the same: AI is moving closer to the real workflow, which means the most important design choice is no longer how much it can do on its own, but how clearly a person can see, review and stop it.\n\nThat starts with ChatGPT Work. OpenAI says ChatGPT, with Codex built in, can move beyond answering questions and into work across web, mobile and desktop, and it points to examples from Zapier, RingCentral, Virgin Atlantic and NVIDIA. The risk-control reading is straightforward: when an AI tool is able to move through more of the stack, the quality of the source material matters even more. In practice, that means the best use is not “let it decide,” but “let it draft from the record.” If your weekly pipeline review already lives in Sheets, CRM, email or Jira, ChatGPT can assemble the first pass. A human still needs to check whether the inputs were complete, whether the summary left anything out, and whether the next step is actually safe to send.\n\nCanva is pushing a similar idea into design, but the control problem changes shape. Canva says Canva AI 2.0, now in research preview, adds connectors, scheduling, web research, brand intelligence, Sheets AI and Canva Code 2.0 on top of conversational design and agentic editing. That means a project can start with context, move through creation and end up scheduled from the same place. The upside is speed. The downside is that a weak draft can become a published asset very quickly if nobody inserts a check. For small teams, the practical fix is simple: treat the brand rules, asset review and disclosure as part of the build process, not a late cleanup step. If the workflow includes a calendar, connect review to the calendar. If it includes a spreadsheet, make the source row visible before the final design is approved.\n\nNotion is interesting because it addresses the other half of the problem: keeping the handoff visible. Notion 3.6 lets users assign tasks to external agents such as Claude and Cursor from a shared board, and its AI Meeting Notes now include speaker labels while agents can read and write more file types. That turns the board into more than a place to store notes. It becomes a checkpoint. In a world where one person can launch multiple AI actions in minutes, the shared board is where accountability lives. It helps answer three questions: what was asked, what came back, and who signed off. For teams trying to avoid “AI did something, but nobody knows where,” that matters more than another feature list.\n\nThe enterprise example from Anthropic and UST makes the same point under stricter conditions. Anthropic says UST is integrating Claude into engineering and client workflows in chip design, telecom, healthcare and banking, and that recommended actions still route to a person for approval in sensitive settings. UST also plans to train 20,000 associates on Claude. That is the clearest approval-based model in the package. AI is not replacing the person who owns the risk; it is taking over prep work, triage and analysis so that person has less to read and more context when they decide. For any regulated or customer-facing operation, that is the model to copy: start with summaries, exception flags and draft actions, but keep the decision where the liability sits.\n\nGoogle’s ad transparency update shows what happens when AI enters the publishing side of the stack. Google says it is adding a “How this ad was made” panel across Search, YouTube and Discover, and that advertisers must label AI-generated or AI-edited content using its tools. That changes the workflow before launch. Teams now need to know which creative was generated, which parts were edited and where the disclosure appears. In other words, provenance is becoming a production step. If you make or buy ads, this is not just a policy box to tick after the fact. It is a record-keeping task that has to happen alongside copy review and media approval.\n\nPut together, these tools suggest a practical rule for 2026: the safest AI stack is the one with visible checkpoints. Let AI draft where the source material is structured. Let it organize where the team already keeps the record. Let it schedule or publish only after a person has reviewed what changed. And in higher-risk settings — ads, client work, healthcare, banking, engineering — keep the human approval where the consequences are real. The workflow is getting smarter, but the control logic still belongs to the team running it.\n\nThe simplest next test is to map one recurring workflow you already repeat each week and mark four steps: input, draft, review, publish. Then decide which step AI can handle, which step needs a shared board, and which step still requires a person to say yes. That is the difference between using AI as a shortcut and using it as a controlled system.",
+  "practical_takeaway": "Map one recurring workflow and make the review step explicit: AI can draft or organize, but the final sign-off should stay visible and human-controlled.",
+  "what_to_test_next": "Pick one weekly workflow, put the source data in a shared doc or board, have AI produce a draft, and add one required review checkpoint before anything is sent or published.",
+  "claims_to_verify": [],
+  "social": {
+    "tiktok_script": "The safest way to use AI is not to give it the whole job. It is to give it the first draft and keep the checkpoints visible. OpenAI, Canva, Notion and Google are all pointing at the same thing: AI is getting closer to the workflow, so review matters more. Use AI to gather, draft and organize. Then stop before publish, before send, before approval. If you cannot see who checked it, the stack is too loose.",
+    "youtube_shorts_script": "What is the real AI workflow upgrade this week? It is not just faster generation — it is better control points. OpenAI says ChatGPT Work can move across web, mobile and desktop. Canva says its new AI stack adds research, scheduling and brand controls. Notion lets you assign external agents from a shared board. The practical lesson: let AI draft from your source files, but keep a human review step before anything goes out the door. If the workflow has no checkpoint, it is not ready.",
+    "facebook_post": "The most useful AI setups are not the ones with the most automation. They are the ones where the risky step still has a clear owner. Anthropic says UST is using Claude in approved workflows, and Google says AI ads now need disclosure as part of production. That tells me the same thing twice: the stack is getting smarter, but the review step still matters. Where would a visible checkpoint help your team most — drafts, approvals, or publishing?",
+    "pinterest_title": "AI Workflow Risk Checklist: Draft, Review, Approve, Publish",
+    "pinterest_description": "A practical control checklist for teams using AI in creative, ops or publishing workflows. Use tools like ChatGPT, Canva, Notion and ad platforms for drafting and organization, but keep brand review, approval and disclosure as required checkpoints before anything goes live.",
+    "linkedin_post": "The clearest operational lesson in today’s AI updates is that provenance and approval are becoming part of the workflow. Google says advertisers must label AI-generated or AI-edited content, and Anthropic says sensitive UST workflows still route recommended actions to a person for approval. That is the right operating model for teams: let AI accelerate draft and triage work, but keep the final decision tied to a human checkpoint. Automation is useful; untracked automation is not.",
+    "quote_card_lines": [
+      "AI is useful when the checkpoints are visible.",
+      "Draft faster, but review harder.",
+      "The stack is smarter; the sign-off still matters.",
+      "Provenance is becoming part of production.",
+      "If you cannot audit it, do not rush it."
+    ]
+  },
+  "headline_options": [
+    "AI workflow stacks are getting useful — and easier to audit",
+    "The best AI change this week is better control, not bigger hype",
+    "ChatGPT, Canva, Notion and Google are putting checkpoints into the stack",
+    "AI is moving closer to publishing — and review has to move with it",
+    "The practical AI story is control: draft, review, approve, then publish"
+  ],
+  "editorial_theme": {
+    "day": "Thursday",
+    "date": "2026-07-16",
+    "slug": "stacks-workflows",
+    "title": "Stacks and workflows",
+    "focus": "Tool combinations: models, apps, APIs, image, video, voice, documents, databases, scheduling, publishing and creator pipelines.",
+    "instruction": "Explain how pieces fit together rather than treating tools as isolated announcements. Include practical stack or workflow examples where supported by the sources."
+  },
+  "edition_id": "2026-07-16-risk",
+  "base_date": "2026-07-16",
+  "edition_mode": "alternate_angle"
+}

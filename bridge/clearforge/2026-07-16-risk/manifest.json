@@ -1,0 +1,227 @@
+{
+  "version": 4,
+  "brand": "Clearforge",
+  "date": "2026-07-16-risk",
+  "type": "clearforge_daily_ai_brief",
+  "approved": {
+    "article": true,
+    "facebook": true,
+    "pinterest": true,
+    "youtube": true
+  },
+  "article": {
+    "headline": "AI workflow stacks are getting useful — and easier to audit",
+    "dek": "This week’s AI shift is less about raw capability and more about control points. ChatGPT, Canva, Notion, Claude and Google are being wired into the places where work gets drafted, reviewed, approved and disclosed, which makes the risk question more concrete: where should humans still stay in the loop?",
+    "url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-16-risk.html",
+    "markdown": "daily_brief.md"
+  },
+  "calls_to_action": {
+    "spoken": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "screen_lines": [
+      "READ THE FULL BREAKDOWN",
+      "Link in bio",
+      "LISTEN ON THE GO",
+      "Search: Clearforge AI Briefing"
+    ],
+    "caption": "Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+    "direct_links_allowed_in_social_copy": false
+  },
+  "stories": [
+    {
+      "title": "ChatGPT Work can speed up drafts, but source control still matters",
+      "summary": "OpenAI says ChatGPT Work, with Codex built in, can move across web, mobile and desktop and help with recurring business tasks. The source examples point to workflows where the tool reviews source material, summarizes gaps and prepares a first pass for a human to inspect.",
+      "why_it_matters": "The risk question is not whether AI can write. It is whether the team knows what data it used and who checks the result before it gets sent, filed or published.",
+      "practical_angle": "Use ChatGPT on repeatable reviews, but keep the source file, the draft and the final approval visible to a person.",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work/"
+    },
+    {
+      "title": "Canva is connecting creation and publishing, so brand checks matter earlier",
+      "summary": "Canva AI 2.0 adds connectors, scheduling, web research, brand intelligence, Sheets AI and Canva Code 2.0 on top of conversational design and agentic editing. That means a campaign can move from research to draft to design to scheduling inside one workflow.",
+      "why_it_matters": "When creation and publishing live in one place, mistakes can travel faster too. Brand consistency, asset review and disclosure need to happen before the schedule step, not after.",
+      "practical_angle": "If you use Canva for campaigns, treat brand controls and approval as part of the build, not the cleanup.",
+      "source_name": "Canva",
+      "source_url": "https://www.canva.com/newsroom/news/canva-create-2026-ai/"
+    },
+    {
+      "title": "Notion gives teams a place to track AI handoffs instead of losing them in chat",
+      "summary": "Notion 3.6 lets users assign external agents such as Claude and Cursor from a shared board, and it adds speaker labels to AI Meeting Notes plus broader file support for agents.",
+      "why_it_matters": "A shared board makes AI work easier to audit. Teams can see what was requested, what the agent produced and what still needs review.",
+      "practical_angle": "Use Notion as the checkpoint layer: brief, agent task, review note and final decision should all stay attached to the project record.",
+      "source_name": "Notion",
+      "source_url": "https://www.notion.com/releases/2026-07-01"
+    }
+  ],
+  "facebook": {
+    "post": "The most useful AI setups are not the ones with the most automation. They are the ones where the risky step still has a clear owner. Anthropic says UST is using Claude in approved workflows, and Google says AI ads now need disclosure as part of production. That tells me the same thing twice: the stack is getting smarter, but the review step still matters. Where would a visible checkpoint help your team most — drafts, approvals, or publishing?\n\n#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI"
+  },
+  "pinterest": {
+    "title": "AI Workflow Risk Checklist: Draft, Review, Approve, Publish",
+    "description": "A practical control checklist for teams using AI in creative, ops or publishing workflows. Use tools like ChatGPT, Canva, Notion and ad platforms for drafting and organization, but keep brand review, approval and disclosure as required checkpoints before anything goes live.",
+    "destination_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-16-risk.html"
+  },
+  "youtube": {
+    "title": "AI workflow stacks are getting useful — and easier to audit",
+    "script": "What is the real AI workflow upgrade this week? It is not just faster generation — it is better control points. OpenAI says ChatGPT Work can move across web, mobile and desktop. Canva says its new AI stack adds research, scheduling and brand controls. Notion lets you assign external agents from a shared board. The practical lesson: let AI draft from your source files, but keep a human review step before anything goes out the door. If the workflow has no checkpoint, it is not ready. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "description": "Map one recurring workflow and make the review step explicit: AI can draft or organize, but the final sign-off should stay visible and human-controlled."
+  },
+  "podcast": {
+    "generated": true,
+    "folder": "podcast/",
+    "copy_paste_script": "podcast/COPY_PASTE_INTO_ELEVENLABS.txt",
+    "full_review_script": "podcast/podcast-script.md",
+    "metadata": "podcast/episode-metadata.json",
+    "source_notes": "podcast/source-notes.md",
+    "episode": {
+      "version": 1,
+      "date": "2026-07-16-risk",
+      "brand": "Clearforge",
+      "type": "clearforge_daily_biggest_story_podcast_script",
+      "human_review_required": true,
+      "narrator": "Irene",
+      "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+      "episode_title": "AI disclosure is moving into the ad workflow",
+      "selected_story_index": 4,
+      "selected_story_title": "Google is making AI disclosure part of ad production",
+      "selection_reason": "This is the clearest example in today’s set of a control point becoming part of the workflow itself. It is not just about generating content faster; it is about tracking what changed, where disclosure appears, and who approves publication. That makes it the strongest fit for the edition’s focus on auditability and human sign-off.",
+      "word_count": 1380,
+      "estimated_duration_minutes": 9.5,
+      "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+      "source_notes": "source-notes.md",
+      "first_spoken_line": "Today’s biggest story is not that AI can help make ads faster. It is that the ad workflow is starting to come with a built-in record of how the ad was made.",
+      "final_spoken_line": "And that is the real story today: AI is getting more useful, but the winning teams will be the ones that can still show their work.",
+      "validation_warnings": [],
+      "non_spoken_instruction_candidates": []
+    }
+  },
+  "ai_media": {
+    "manifest": "media/media-manifest.json",
+    "narration": "media/narration.mp3",
+    "story_images": [
+      "media/story-1.png",
+      "media/story-2.png",
+      "media/story-3.png"
+    ],
+    "generated": true
+  },
+  "quote_card_lines": [
+    "AI is useful when the checkpoints are visible.",
+    "Draft faster, but review harder.",
+    "The stack is smarter; the sign-off still matters.",
+    "Provenance is becoming part of production.",
+    "If you cannot audit it, do not rush it."
+  ],
+  "headline_options": [
+    "AI workflow stacks are getting useful — and easier to audit",
+    "The best AI change this week is better control, not bigger hype",
+    "ChatGPT, Canva, Notion and Google are putting checkpoints into the stack",
+    "AI is moving closer to publishing — and review has to move with it",
+    "The practical AI story is control: draft, review, approve, then publish"
+  ],
+  "sources": [
+    {
+      "source_name": "OpenAI",
+      "title": "ChatGPT is now a partner for your most ambitious work",
+      "url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work/",
+      "published_date": "2026-07-09",
+      "confirmed_fact": "OpenAI says ChatGPT Work, with Codex built in, can move beyond answering questions and into work across web, mobile and desktop; it also cites examples from Zapier, RingCentral, Virgin Atlantic and NVIDIA.",
+      "interpretation": "OpenAI is positioning ChatGPT as a work layer that can sit inside recurring business processes, which raises the value of source review and sign-off before anything is finalized."
+    },
+    {
+      "source_name": "Canva",
+      "title": "Introducing Canva AI 2.0: Reimagining how the world creates",
+      "url": "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
+      "published_date": "2026-07-16",
+      "confirmed_fact": "Canva says Canva AI 2.0 is in research preview and adds connectors, scheduling, web research, brand intelligence, Sheets AI and Canva Code 2.0 on top of conversational design and agentic editing.",
+      "interpretation": "Canva is trying to become the place where teams draft, source, brand, schedule and publish creative work in one loop, which makes review gates and brand controls more important, not less."
+    },
+    {
+      "source_name": "Notion",
+      "title": "Notion 3.6: External Agents, HTML blocks, and more",
+      "url": "https://www.notion.com/releases/2026-07-01",
+      "published_date": "2026-07-01",
+      "confirmed_fact": "Notion says users can assign tasks to external agents such as Claude and Cursor from a shared board, while AI Meeting Notes now include speaker labels and agents can read/write more file types.",
+      "interpretation": "Notion is moving from note-taking and docs toward a shared control surface for multiple AI tools, which is useful because it keeps the handoff visible."
+    },
+    {
+      "source_name": "Anthropic",
+      "title": "UST is bringing Claude to physical AI",
+      "url": "https://www.anthropic.com/news/ust-claude",
+      "published_date": "2026-07-09",
+      "confirmed_fact": "Anthropic says UST is integrating Claude into engineering and client workflows, with examples in chip design, telecom operations, healthcare, and banking, and that UST plans to train 20,000 associates on Claude.",
+      "interpretation": "The announcement shows a broader enterprise pattern: AI is being adopted where it can plug into regulated, approval-based workflows rather than replace them outright."
+    },
+    {
+      "source_name": "Google Blog",
+      "title": "Expanding AI transparency in ads",
+      "url": "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
+      "published_date": "2026-07-09",
+      "confirmed_fact": "Google says it is adding a 'How this ad was made' panel across Search, YouTube and Discover, and that advertisers must label AI-generated or AI-edited content using provided tools.",
+      "interpretation": "As AI tools become part of ad production, disclosure and provenance are becoming part of the publishing stack, which changes what teams need to track before launch."
+    }
+  ],
+  "media_metadata": {
+    "version": 4,
+    "date": "2026-07-16-risk",
+    "headline": "AI workflow stacks are getting useful — and easier to audit",
+    "dek": "This week’s AI shift is less about raw capability and more about control points. ChatGPT, Canva, Notion, Claude and Google are being wired into the places where work gets drafted, reviewed, approved and disclosed, which makes the risk question more concrete: where should humans still stay in the loop?",
+    "hook": "Three AI updates that actually matter today",
+    "spoken_cta": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "visual_system": "Clearforge AI briefing podcast studio system",
+    "visual_style_rules": {
+      "include": [
+        "dark navy AI briefing or podcast studio atmosphere",
+        "microphone or audio-briefing cues where appropriate",
+        "subtle circuit traces, waveform motifs, model cards or data-routing lines",
+        "physical source notes, checklists and human-review materials",
+        "premium editorial technology-magazine lighting"
+      ],
+      "avoid": [
+        "robots",
+        "glowing brains",
+        "hologram faces",
+        "generic dashboards",
+        "random floating code",
+        "excessive neon",
+        "fake readable text",
+        "Sapiver or unrelated branding"
+      ]
+    },
+    "stories": [
+      {
+        "file": "media/2026-07-16-risk/story-1.png",
+        "title": "ChatGPT Work can speed up drafts, but source control still matters",
+        "source_name": "OpenAI",
+        "source_url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work/",
+        "summary": "OpenAI says ChatGPT Work, with Codex built in, can move across web, mobile and desktop and help with recurring business tasks. The source examples point to workflows where the tool reviews source material, summarizes gaps and prepares a first pass for a human to inspect.",
+        "why_it_matters": "The risk question is not whether AI can write. It is whether the team knows what data it used and who checks the result before it gets sent, filed or published.",
+        "practical_angle": "Use ChatGPT on repeatable reviews, but keep the source file, the draft and the final approval visible to a person.",
+        "visual_prompt": "a dark navy AI briefing studio desk with a professional podcast microphone, source notes, a small audio waveform display, subtle circuit-board lines in the background and one practical notebook open on the desk. premium podcast-cover composition with strong negative space for later text overlay. make it instantly understandable as an AI briefing or AI podcast image, but grounded in real studio objects. make the story context visible through objects and composition rather than readable text. Story context: ChatGPT Work can speed up drafts, but source control still matters. Practical angle: Use ChatGPT on repeatable reviews, but keep the source file, the draft and the final approval visible to a person.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      },
+      {
+        "file": "media/2026-07-16-risk/story-2.png",
+        "title": "Canva is connecting creation and publishing, so brand checks matter earlier",
+        "source_name": "Canva",
+        "source_url": "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
+        "summary": "Canva AI 2.0 adds connectors, scheduling, web research, brand intelligence, Sheets AI and Canva Code 2.0 on top of conversational design and agentic editing. That means a campaign can move from research to draft to design to scheduling inside one workflow.",
+        "why_it_matters": "When creation and publishing live in one place, mistakes can travel faster too. Brand consistency, asset review and disclosure need to happen before the schedule step, not after.",
+        "practical_angle": "If you use Canva for campaigns, treat brand controls and approval as part of the build, not the cleanup.",
+        "visual_prompt": "a high-end technology briefing set with a dark blue wall, subtle circuit traces, a clean desk, paper research packs, audio waveforms and one human-operated control surface. dark professional podcast artwork composition with source materials visible. show AI as a system being reviewed by a person through notes, checks, source cards and controlled audio tools. change the hero object placement so this frame does not resemble the previous edition. Story context: Canva is connecting creation and publishing, so brand checks matter earlier. Practical angle: If you use Canva for campaigns, treat brand controls and approval as part of the build, not the cleanup.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: dark blue studio background, graphite desk, white paper, blue highlights and restrained green accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      },
+      {
+        "file": "media/2026-07-16-risk/story-3.png",
+        "title": "Notion gives teams a place to track AI handoffs instead of losing them in chat",
+        "source_name": "Notion",
+        "source_url": "https://www.notion.com/releases/2026-07-01",
+        "summary": "Notion 3.6 lets users assign external agents such as Claude and Cursor from a shared board, and it adds speaker labels to AI Meeting Notes plus broader file support for agents.",
+        "why_it_matters": "A shared board makes AI work easier to audit. Teams can see what was requested, what the agent produced and what still needs review.",
+        "practical_angle": "Use Notion as the checkpoint layer: brief, agent task, review note and final decision should all stay attached to the project record.",
+        "visual_prompt": "a practical AI systems review scene with a microphone, pinned evidence cards, process arrows, muted blue signal lines and a clear before-to-after analysis structure. wide briefing-room still life cropped for vertical short-form video. combine physical human-review materials with light digital signal motifs so it feels human-led and AI-empowered. include a different arrangement of source cards, notebook, microphone angle and background signal pattern. Story context: Notion gives teams a place to track AI handoffs instead of losing them in chat. Practical angle: Use Notion as the checkpoint layer: brief, agent task, review note and final decision should all stay attached to the project record.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      }
+    ],
+    "narration": "media/2026-07-16-risk/narration.mp3",
+    "narration_text": "What is the real AI workflow upgrade this week? It is not just faster generation — it is better control points. OpenAI says ChatGPT Work can move across web, mobile and desktop. Canva says its new AI stack adds research, scheduling and brand controls. Notion lets you assign external agents from a shared board. The practical lesson: let AI draft from your source files, but keep a human review step before anything goes out the door. If the workflow has no checkpoint, it is not ready. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "practical_takeaway": "Map one recurring workflow and make the review step explicit: AI can draft or organize, but the final sign-off should stay visible and human-controlled.",
+    "what_to_test_next": "Pick one weekly workflow, put the source data in a shared doc or board, have AI produce a draft, and add one required review checkpoint before anything is sent or published."
+  }
+}

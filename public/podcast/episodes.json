@@ -1,5 +1,19 @@
 [
   {
+    "slug": "2026-07-16-risk",
+    "kind": "daily",
+    "title": "AI disclosure is moving into the ad workflow",
+    "description": "This is the clearest example in today’s set of a control point becoming part of the workflow itself. It is not just about generating content faster; it is about tracking what changed, where disclosure appears, and who approves publication. That makes it the strongest fit for the edition’s focus on auditability and human sign-off.",
+    "published": "2026-07-16T07:00:00+01:00",
+    "duration": "00:09:30",
+    "size": 8373020,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-16-risk.mp3",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-16-risk.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-16-risk.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-16-risk.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-16-risk.html"
+  },
+  {
     "slug": "2026-07-16",
     "kind": "daily",
     "title": "AI is becoming a workflow layer, and ChatGPT is the clearest example today",

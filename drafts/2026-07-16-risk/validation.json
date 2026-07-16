@@ -1,0 +1,19 @@
+{
+  "date": "2026-07-16-risk",
+  "passed": true,
+  "policy": "Only factual, sourcing, safety and minimum-content failures block publication. Editorial and formatting issues are warnings.",
+  "failures": [],
+  "warnings": [
+    "Source 3 is 15 days old; confirm it is background rather than current news"
+  ],
+  "stats": {
+    "source_count": 5,
+    "story_count": 5,
+    "article_words": 851,
+    "feature_words": 1897,
+    "unique_source_domains": 5,
+    "unresolved_claim_count": 0,
+    "social_channels_present": 4,
+    "social_channels_total": 4
+  }
+}

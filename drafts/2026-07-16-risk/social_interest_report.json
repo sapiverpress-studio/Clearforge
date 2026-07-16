@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-16-risk",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "The safest way to use AI is not to give it the whole job.",
+      "words": 77,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "What is the real AI workflow upgrade this week?",
+      "words": 86,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "The most useful AI setups are not the ones with the most automation.",
+      "words": 79,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "The clearest operational lesson in today’s AI updates is that provenance and approval are becoming part of the workflow.",
+      "words": 75,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "AI Workflow Risk Checklist: Draft, Review, Approve, Publish",
+    "title_words": 8,
+    "description_words": 41
+  },
+  "warnings": []
+}

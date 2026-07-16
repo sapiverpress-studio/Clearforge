@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "date": "2026-07-16-risk",
+  "brand": "Clearforge",
+  "type": "clearforge_daily_biggest_story_podcast_script",
+  "human_review_required": true,
+  "narrator": "Irene",
+  "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+  "episode_title": "AI disclosure is moving into the ad workflow",
+  "selected_story_index": 4,
+  "selected_story_title": "Google is making AI disclosure part of ad production",
+  "selection_reason": "This is the clearest example in today’s set of a control point becoming part of the workflow itself. It is not just about generating content faster; it is about tracking what changed, where disclosure appears, and who approves publication. That makes it the strongest fit for the edition’s focus on auditability and human sign-off.",
+  "word_count": 1380,
+  "estimated_duration_minutes": 9.5,
+  "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+  "source_notes": "source-notes.md",
+  "first_spoken_line": "Today’s biggest story is not that AI can help make ads faster. It is that the ad workflow is starting to come with a built-in record of how the ad was made.",
+  "final_spoken_line": "And that is the real story today: AI is getting more useful, but the winning teams will be the ones that can still show their work.",
+  "validation_warnings": [],
+  "non_spoken_instruction_candidates": []
+}

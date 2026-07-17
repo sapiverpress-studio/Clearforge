@@ -1,121 +1,272 @@
 {
-  "headline": "AI workflow stacks are getting useful — and easier to audit",
-  "dek": "This week’s AI shift is less about raw capability and more about control points. ChatGPT, Canva, Notion, Claude and Google are being wired into the places where work gets drafted, reviewed, approved and disclosed, which makes the risk question more concrete: where should humans still stay in the loop?",
-  "edition_angle": "risk_control",
+  "headline": "Friday watchlist: open weights, AI security checks, and the compute race are showing where the market is headed",
+  "dek": "Today’s useful signal is not one giant breakthrough. It is a cluster of early releases and capacity bets that tell creators, small businesses and AI learners where to test, where to wait, and where the real bottlenecks are.",
   "sources": [
     {
-      "source_name": "OpenAI",
-      "title": "ChatGPT is now a partner for your most ambitious work",
-      "url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work/",
-      "published_date": "2026-07-09",
-      "confirmed_fact": "OpenAI says ChatGPT Work, with Codex built in, can move beyond answering questions and into work across web, mobile and desktop; it also cites examples from Zapier, RingCentral, Virgin Atlantic and NVIDIA.",
-      "interpretation": "OpenAI is positioning ChatGPT as a work layer that can sit inside recurring business processes, which raises the value of source review and sign-off before anything is finalized."
+      "source_name": "Thinking Machines Lab",
+      "title": "Inkling: Our open-weights model",
+      "url": "https://thinkingmachines.ai/news/introducing-inkling/",
+      "published_date": "2026-07-15",
+      "confirmed_fact": "Thinking Machines Lab released Inkling on July 15, 2026 as an open-weights multimodal model, said it is available on Tinker today, and stated the model is also offered via multiple deployment partners and Hugging Face.",
+      "interpretation": "This is a concrete sign that open-weight models are still moving fast enough to matter for teams that want customization, local control, or lower long-term dependency on a single vendor."
     },
     {
-      "source_name": "Canva",
-      "title": "Introducing Canva AI 2.0: Reimagining how the world creates",
-      "url": "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
-      "published_date": "2026-07-16",
-      "confirmed_fact": "Canva says Canva AI 2.0 is in research preview and adds connectors, scheduling, web research, brand intelligence, Sheets AI and Canva Code 2.0 on top of conversational design and agentic editing.",
-      "interpretation": "Canva is trying to become the place where teams draft, source, brand, schedule and publish creative work in one loop, which makes review gates and brand controls more important, not less."
+      "source_name": "GitHub Changelog",
+      "title": "Code scanning shows AI security detections on pull requests",
+      "url": "https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests/",
+      "published_date": "2026-07-14",
+      "confirmed_fact": "GitHub said AI-powered security detections are now in public preview, run when a pull request is opened or updated, appear directly in pull requests, and are informational rather than merge-blocking.",
+      "interpretation": "AI is moving into the review layer of software work, not just code generation, which matters for small teams trying to ship faster without losing basic security discipline."
     },
     {
-      "source_name": "Notion",
-      "title": "Notion 3.6: External Agents, HTML blocks, and more",
-      "url": "https://www.notion.com/releases/2026-07-01",
-      "published_date": "2026-07-01",
-      "confirmed_fact": "Notion says users can assign tasks to external agents such as Claude and Cursor from a shared board, while AI Meeting Notes now include speaker labels and agents can read/write more file types.",
-      "interpretation": "Notion is moving from note-taking and docs toward a shared control surface for multiple AI tools, which is useful because it keeps the handoff visible."
+      "source_name": "Reuters via Investing.com",
+      "title": "AI startup Reflection signs over $1 billion computing deal with Nebius",
+      "url": "https://www.investing.com/news/stock-market-news/ai-startup-reflection-signs-over-1-billion-computing-deal-with-nebius-4790506",
+      "published_date": "2026-07-14",
+      "confirmed_fact": "Reuters reported that Reflection signed a more than $1 billion deal with Nebius for computing capacity, including access to Nvidia’s latest chips, after an earlier June agreement with SpaceX.",
+      "interpretation": "The frontier-model race is still being constrained by compute access, so the biggest near-term advantage may go to labs that can lock in infrastructure before everyone else does."
     },
     {
-      "source_name": "Anthropic",
-      "title": "UST is bringing Claude to physical AI",
-      "url": "https://www.anthropic.com/news/ust-claude",
-      "published_date": "2026-07-09",
-      "confirmed_fact": "Anthropic says UST is integrating Claude into engineering and client workflows, with examples in chip design, telecom operations, healthcare, and banking, and that UST plans to train 20,000 associates on Claude.",
-      "interpretation": "The announcement shows a broader enterprise pattern: AI is being adopted where it can plug into regulated, approval-based workflows rather than replace them outright."
-    },
-    {
-      "source_name": "Google Blog",
-      "title": "Expanding AI transparency in ads",
-      "url": "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
-      "published_date": "2026-07-09",
-      "confirmed_fact": "Google says it is adding a 'How this ad was made' panel across Search, YouTube and Discover, and that advertisers must label AI-generated or AI-edited content using provided tools.",
-      "interpretation": "As AI tools become part of ad production, disclosure and provenance are becoming part of the publishing stack, which changes what teams need to track before launch."
+      "source_name": "Reuters via Sahm Capital",
+      "title": "ASML raises 2026 forecast, expands capacity on AI chip demand",
+      "url": "https://www.sahmcapital.com/news/content/update-3-asml-raises-2026-forecast-expands-capacity-on-ai-chip-demand-2026-07-15",
+      "published_date": "2026-07-15",
+      "confirmed_fact": "Reuters reported that ASML raised its 2026 revenue forecast, said AI demand drove stronger-than-expected second-quarter earnings, and said Intel will use ASML’s High-NA tool for some Panther Lake chips.",
+      "interpretation": "The AI boom is still pushing through the hardware stack, and that means chipmaking capacity and lithography remain practical watchpoints for anyone tracking how quickly new AI products can scale."
     }
   ],
   "story_summaries": [
     {
-      "title": "ChatGPT Work can speed up drafts, but source control still matters",
-      "summary": "OpenAI says ChatGPT Work, with Codex built in, can move across web, mobile and desktop and help with recurring business tasks. The source examples point to workflows where the tool reviews source material, summarizes gaps and prepares a first pass for a human to inspect.",
-      "why_it_matters": "The risk question is not whether AI can write. It is whether the team knows what data it used and who checks the result before it gets sent, filed or published.",
-      "practical_angle": "Use ChatGPT on repeatable reviews, but keep the source file, the draft and the final approval visible to a person.",
+      "title": "Thinking Machines makes open weights newly visible again",
+      "summary": "Thinking Machines Lab released Inkling, an open-weights multimodal model, on July 15 and said it is available on Tinker today, with full weights on Hugging Face and partner access through several model platforms. The company says Inkling is meant for customization, fine-tuning and tool-use workflows, not just benchmark bragging.",
+      "why_it_matters": "For creators and small teams, this is a reminder that open-weight models are still becoming more usable, more multimodal and easier to adapt to specific workflows.",
+      "practical_angle": "If you want to test a model you can actually customize, this is one of the clearest new candidates to try in a controlled workflow.",
       "claim_to_verify": "NONE — verified from cited sources."
     },
     {
-      "title": "Canva is connecting creation and publishing, so brand checks matter earlier",
-      "summary": "Canva AI 2.0 adds connectors, scheduling, web research, brand intelligence, Sheets AI and Canva Code 2.0 on top of conversational design and agentic editing. That means a campaign can move from research to draft to design to scheduling inside one workflow.",
-      "why_it_matters": "When creation and publishing live in one place, mistakes can travel faster too. Brand consistency, asset review and disclosure need to happen before the schedule step, not after.",
-      "practical_angle": "If you use Canva for campaigns, treat brand controls and approval as part of the build, not the cleanup.",
+      "title": "GitHub is moving AI into security review, not just code generation",
+      "summary": "GitHub said AI security detections are now in public preview on pull requests. The detections run when a pull request opens or updates, show up in the pull request itself, and are labeled as AI findings. GitHub also says they are informational and do not block merges.",
+      "why_it_matters": "This is a practical sign that AI is being added to the review layer of everyday software work, which is where small teams feel the most friction and the most risk.",
+      "practical_angle": "Useful for teams that want faster code review without abandoning human approval.",
       "claim_to_verify": "NONE — verified from cited sources."
     },
     {
-      "title": "Notion gives teams a place to track AI handoffs instead of losing them in chat",
-      "summary": "Notion 3.6 lets users assign external agents such as Claude and Cursor from a shared board, and it adds speaker labels to AI Meeting Notes plus broader file support for agents.",
-      "why_it_matters": "A shared board makes AI work easier to audit. Teams can see what was requested, what the agent produced and what still needs review.",
-      "practical_angle": "Use Notion as the checkpoint layer: brief, agent task, review note and final decision should all stay attached to the project record.",
+      "title": "Reflection’s $1 billion compute deal shows how expensive AI scale still is",
+      "summary": "Reuters reported that Reflection signed a more than $1 billion computing deal with Nebius, including access to Nvidia’s latest chips. The report frames the deal as part of a broader scramble among AI startups to secure enough capacity to train and run models.",
+      "why_it_matters": "This is a reminder that model quality is only half the story; access to compute can decide who gets to iterate quickly and who stalls out.",
+      "practical_angle": "For smaller businesses, it argues for choosing tools with clear availability, pricing and fallback plans rather than assuming the newest model will stay easy to access.",
       "claim_to_verify": "NONE — verified from cited sources."
     },
     {
-      "title": "Enterprise AI is spreading where approvals already exist",
-      "summary": "Anthropic says UST is integrating Claude into engineering and client workflows across chip design, telecom, healthcare and banking, and that recommended actions still route to a person for approval in sensitive settings.",
-      "why_it_matters": "This is the safest pattern in the source set: AI handles the draft or the triage, while a human keeps the sign-off where risk is high.",
-      "practical_angle": "For any service workflow, start with summarizing and flagging exceptions, then keep human approval at the step that carries the most liability.",
-      "claim_to_verify": "NONE — verified from cited sources."
-    },
-    {
-      "title": "Google is making AI disclosure part of ad production",
-      "summary": "Google says it is adding a 'How this ad was made' panel across Search, YouTube and Discover, and that advertisers must label AI-generated or AI-edited content with its tools.",
-      "why_it_matters": "Provenance is no longer an afterthought. If an ad passes through AI, the team now needs a record of what changed and where disclosure appears.",
-      "practical_angle": "Build a simple ad checklist that includes AI use, edit history and disclosure placement before anything goes live.",
+      "title": "ASML’s higher forecast is another signal that AI demand is still hitting the hardware layer",
+      "summary": "Reuters reported that ASML raised its 2026 forecast after stronger second-quarter earnings driven by AI demand. The same report said Intel will use ASML’s High-NA tool for some Panther Lake chips, which is a useful marker for where advanced manufacturing is headed.",
+      "why_it_matters": "AI product launches depend on a supply chain that still has bottlenecks, and ASML sits close to the center of that story.",
+      "practical_angle": "If you are tracking whether AI capacity will get cheaper or easier to access, chip equipment and advanced manufacturing demand remain worth watching.",
       "claim_to_verify": "NONE — verified from cited sources."
     }
   ],
-  "main_article": "The useful AI story on this Thursday is not about a larger model or a flashier demo. It is about where the guardrails go. Across the tools in today’s source set, the pattern is the same: AI is moving closer to the real workflow, which means the most important design choice is no longer how much it can do on its own, but how clearly a person can see, review and stop it.\n\nThat starts with ChatGPT Work. OpenAI says ChatGPT, with Codex built in, can move beyond answering questions and into work across web, mobile and desktop, and it points to examples from Zapier, RingCentral, Virgin Atlantic and NVIDIA. The risk-control reading is straightforward: when an AI tool is able to move through more of the stack, the quality of the source material matters even more. In practice, that means the best use is not “let it decide,” but “let it draft from the record.” If your weekly pipeline review already lives in Sheets, CRM, email or Jira, ChatGPT can assemble the first pass. A human still needs to check whether the inputs were complete, whether the summary left anything out, and whether the next step is actually safe to send.\n\nCanva is pushing a similar idea into design, but the control problem changes shape. Canva says Canva AI 2.0, now in research preview, adds connectors, scheduling, web research, brand intelligence, Sheets AI and Canva Code 2.0 on top of conversational design and agentic editing. That means a project can start with context, move through creation and end up scheduled from the same place. The upside is speed. The downside is that a weak draft can become a published asset very quickly if nobody inserts a check. For small teams, the practical fix is simple: treat the brand rules, asset review and disclosure as part of the build process, not a late cleanup step. If the workflow includes a calendar, connect review to the calendar. If it includes a spreadsheet, make the source row visible before the final design is approved.\n\nNotion is interesting because it addresses the other half of the problem: keeping the handoff visible. Notion 3.6 lets users assign tasks to external agents such as Claude and Cursor from a shared board, and its AI Meeting Notes now include speaker labels while agents can read and write more file types. That turns the board into more than a place to store notes. It becomes a checkpoint. In a world where one person can launch multiple AI actions in minutes, the shared board is where accountability lives. It helps answer three questions: what was asked, what came back, and who signed off. For teams trying to avoid “AI did something, but nobody knows where,” that matters more than another feature list.\n\nThe enterprise example from Anthropic and UST makes the same point under stricter conditions. Anthropic says UST is integrating Claude into engineering and client workflows in chip design, telecom, healthcare and banking, and that recommended actions still route to a person for approval in sensitive settings. UST also plans to train 20,000 associates on Claude. That is the clearest approval-based model in the package. AI is not replacing the person who owns the risk; it is taking over prep work, triage and analysis so that person has less to read and more context when they decide. For any regulated or customer-facing operation, that is the model to copy: start with summaries, exception flags and draft actions, but keep the decision where the liability sits.\n\nGoogle’s ad transparency update shows what happens when AI enters the publishing side of the stack. Google says it is adding a “How this ad was made” panel across Search, YouTube and Discover, and that advertisers must label AI-generated or AI-edited content using its tools. That changes the workflow before launch. Teams now need to know which creative was generated, which parts were edited and where the disclosure appears. In other words, provenance is becoming a production step. If you make or buy ads, this is not just a policy box to tick after the fact. It is a record-keeping task that has to happen alongside copy review and media approval.\n\nPut together, these tools suggest a practical rule for 2026: the safest AI stack is the one with visible checkpoints. Let AI draft where the source material is structured. Let it organize where the team already keeps the record. Let it schedule or publish only after a person has reviewed what changed. And in higher-risk settings — ads, client work, healthcare, banking, engineering — keep the human approval where the consequences are real. The workflow is getting smarter, but the control logic still belongs to the team running it.\n\nThe simplest next test is to map one recurring workflow you already repeat each week and mark four steps: input, draft, review, publish. Then decide which step AI can handle, which step needs a shared board, and which step still requires a person to say yes. That is the difference between using AI as a shortcut and using it as a controlled system.",
-  "practical_takeaway": "Map one recurring workflow and make the review step explicit: AI can draft or organize, but the final sign-off should stay visible and human-controlled.",
-  "what_to_test_next": "Pick one weekly workflow, put the source data in a shared doc or board, have AI produce a draft, and add one required review checkpoint before anything is sent or published.",
+  "main_article": "The clearest Friday signal is not a single breakthrough. It is a set of early moves that show where AI is becoming more useful, and where it is still hard to scale. The watchlist for this week is simple: open weights are getting more practical, security review is starting to absorb AI, and the compute layer is still expensive enough to shape who can compete. That matters for creators, small businesses and practical AI learners because the next useful AI stack will not be defined only by model quality. It will be defined by access, control and workflow fit.\n\nThe newest concrete release is Inkling from Thinking Machines Lab. The company says it released the model on July 15, 2026 as an open-weights multimodal system with text, image and audio input, and that it is available for fine-tuning on Tinker today. It also says the full weights are on Hugging Face, with additional access through partner platforms. ([thinkingmachines.ai](https://thinkingmachines.ai/news/introducing-inkling/)) That combination matters. An open-weight model is not automatically the best model, and Thinking Machines explicitly says Inkling is not the strongest overall model available today. But it is designed to be customized, and that is the practical point. For small teams, “good enough and tunable” is often more valuable than “top benchmark and locked down.” A model that you can adapt to your own tone, domain or internal process may save more time than a marginally stronger closed system that you cannot modify.\n\nThe second signal is that AI is moving one layer deeper into the software development workflow. GitHub said AI-powered security detections are now in public preview on pull requests, run when a pull request is opened or updated, and appear directly in the review flow. GitHub also says the detections are informational rather than merge-blocking. ([github.blog](https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests/)) That last detail is important. This is not a fully automated security gate. It is a new review assist layer. For small engineering teams, that makes it easier to test without changing the whole release process. It is also a reminder that AI in production software is becoming more about control points than about autocomplete. The value is not only that the model can write code; it is that it can help spot issues before code lands.\n\nThe third signal is the infrastructure race underneath all of this. Reuters reported that Reflection, an AI startup founded by former Google DeepMind researchers, signed a more than $1 billion computing deal with Nebius, including access to Nvidia’s latest chips. Reuters also said the company had already signed a June agreement with SpaceX for compute. ([investing.com](https://www.investing.com/news/stock-market-news/ai-startup-reflection-signs-over-1-billion-computing-deal-with-nebius-4790506)) This is a blunt reminder that frontier AI is still a capital-intensive business. It is easy to focus on model launches and miss the more durable lesson: whoever can secure long-term compute can keep training, fine-tuning and shipping. For practical users, that affects tool reliability. If a product depends on expensive external compute, pricing, limits and availability can change quickly. That is why “what can I do with this today?” is still a better question than “what did the demo show?”\n\nThe fourth signal comes from ASML, where Reuters reported that the chip-equipment maker raised its 2026 forecast after stronger second-quarter earnings driven by AI demand. The report also said Intel will use ASML’s High-NA tool for some Panther Lake chips. ([sahmcapital.com](https://www.sahmcapital.com/news/content/update-3-asml-raises-2026-forecast-expands-capacity-on-ai-chip-demand-2026-07-15)) This may feel far away from everyday AI use, but it is not. Every new model release depends on the industrial stack that makes advanced chips possible. When ASML says demand is still strong and customers are expanding capacity, that tells you the AI buildout has not slowed to a normal pace. It is still pushing on the hardware frontier. For readers who are deciding what to watch and what to ignore, the useful conclusion is this: the AI market is no longer only about software launches. It is also about whether the plumbing underneath those launches can keep up.\n\nPut together, these stories suggest a practical rule for the next few months. Watch for tools that are either open enough to customize or embedded enough to govern. Ignore claims that a model alone will solve the workflow. The likely winners for many teams will be the systems that combine control, review and deployment. Inkling points to customization. GitHub’s preview points to review-time safety. Reflection and ASML point to the cost of scale. None of these stories guarantees a better outcome on its own. But together they show where AI is becoming more usable in the real world: less hype, more integration, more constraints, and more attention to what can actually ship.\n\nPractical takeaway: if you are choosing one thing to test this week, pick either an open-weight model you can fine-tune or a workflow tool that adds review-time checks, not both at once. Start small, measure whether it saves time, and only then decide whether the new stack is worth adopting.",
+  "practical_takeaway": "Test one controllable AI workflow this week: either fine-tune an open-weight model on a small internal task, or add AI-assisted review to one approval step and measure whether it reduces errors without slowing you down.",
+  "what_to_test_next": "Run a one-week pilot where you use an open-weight model for a narrow writing or support task, then compare time saved, edit count and failure rate against your current workflow.",
   "claims_to_verify": [],
   "social": {
-    "tiktok_script": "The safest way to use AI is not to give it the whole job. It is to give it the first draft and keep the checkpoints visible. OpenAI, Canva, Notion and Google are all pointing at the same thing: AI is getting closer to the workflow, so review matters more. Use AI to gather, draft and organize. Then stop before publish, before send, before approval. If you cannot see who checked it, the stack is too loose.",
-    "youtube_shorts_script": "What is the real AI workflow upgrade this week? It is not just faster generation — it is better control points. OpenAI says ChatGPT Work can move across web, mobile and desktop. Canva says its new AI stack adds research, scheduling and brand controls. Notion lets you assign external agents from a shared board. The practical lesson: let AI draft from your source files, but keep a human review step before anything goes out the door. If the workflow has no checkpoint, it is not ready.",
-    "facebook_post": "The most useful AI setups are not the ones with the most automation. They are the ones where the risky step still has a clear owner. Anthropic says UST is using Claude in approved workflows, and Google says AI ads now need disclosure as part of production. That tells me the same thing twice: the stack is getting smarter, but the review step still matters. Where would a visible checkpoint help your team most — drafts, approvals, or publishing?",
-    "pinterest_title": "AI Workflow Risk Checklist: Draft, Review, Approve, Publish",
-    "pinterest_description": "A practical control checklist for teams using AI in creative, ops or publishing workflows. Use tools like ChatGPT, Canva, Notion and ad platforms for drafting and organization, but keep brand review, approval and disclosure as required checkpoints before anything goes live.",
-    "linkedin_post": "The clearest operational lesson in today’s AI updates is that provenance and approval are becoming part of the workflow. Google says advertisers must label AI-generated or AI-edited content, and Anthropic says sensitive UST workflows still route recommended actions to a person for approval. That is the right operating model for teams: let AI accelerate draft and triage work, but keep the final decision tied to a human checkpoint. Automation is useful; untracked automation is not.",
+    "tiktok_script": "If you want an AI model you can actually customize, this one is worth a look. Thinking Machines released Inkling as an open-weights multimodal model, and it is available on Tinker today. That matters because it gives you something you can fine-tune instead of only prompt. The stop-and-think part is simple: open weights are not just a buzzword here. They change what you can do with the model in your own workflow. The payoff is control, not hype.",
+    "youtube_shorts_script": "Can AI help catch security issues in pull requests without blocking your merge process? GitHub says yes, at least in public preview. Its AI-powered security detections now run when a pull request is opened or updated, and they show up directly inside the pull request. The key detail is that they are informational, not merge-blocking. So this is not a full automatic gate. It is a new review assist layer for teams that want faster checks without giving up human approval.",
+    "facebook_post": "Have you ever picked a tool and then wondered whether the service behind it could actually keep up? Reuters reported that Reflection signed a more than $1 billion compute deal with Nebius, including access to Nvidia’s latest chips. That is a reminder that AI product quality is only part of the story. Availability, pricing and fallback plans can matter just as much when the infrastructure is expensive. How do you decide when a tool is good enough to rely on, even if the backend is still shifting?",
+    "pinterest_title": "Open-Weights AI Model Checklist: What to Test Before You Fine-Tune",
+    "pinterest_description": "Use this practical checklist to evaluate a new open-weights multimodal model before you adopt it. The benefit is simple: you can decide whether the model is controllable enough for your workflow, then run a small pilot instead of guessing from the demo.",
+    "linkedin_post": "The next useful AI layer in software is not just code generation; it is review-time control. GitHub said its AI-powered security detections are now in public preview on pull requests, where they run when a pull request is opened or updated and appear directly in the review flow. The important operational detail is that they are informational rather than merge-blocking. That makes this a low-friction way for teams to test AI-assisted security review without redesigning the release process. For engineering leaders, the lesson is straightforward: AI is moving deeper into the workflow, and the value is increasingly about control points, not just output generation.",
     "quote_card_lines": [
-      "AI is useful when the checkpoints are visible.",
-      "Draft faster, but review harder.",
-      "The stack is smarter; the sign-off still matters.",
-      "Provenance is becoming part of production.",
-      "If you cannot audit it, do not rush it."
+      "Open weights matter when customization matters.",
+      "AI is moving from writing code to reviewing it.",
+      "The real question is whether you can trust the workflow, not just the demo.",
+      "Useful AI is the kind you can adapt to your own process.",
+      "When infrastructure is expensive, availability and pricing become part of the product choice."
     ]
   },
   "headline_options": [
-    "AI workflow stacks are getting useful — and easier to audit",
-    "The best AI change this week is better control, not bigger hype",
-    "ChatGPT, Canva, Notion and Google are putting checkpoints into the stack",
-    "AI is moving closer to publishing — and review has to move with it",
-    "The practical AI story is control: draft, review, approve, then publish"
+    "Friday watchlist: the new AI tools worth testing now",
+    "Open weights, AI security checks and compute: what changed this week",
+    "What to watch in AI right now: customization, review and infrastructure",
+    "The useful AI signal this Friday is control, not hype",
+    "AI’s newest releases are telling us where the real bottlenecks are"
   ],
   "editorial_theme": {
-    "day": "Thursday",
-    "date": "2026-07-16",
-    "slug": "stacks-workflows",
-    "title": "Stacks and workflows",
-    "focus": "Tool combinations: models, apps, APIs, image, video, voice, documents, databases, scheduling, publishing and creator pipelines.",
-    "instruction": "Explain how pieces fit together rather than treating tools as isolated announcements. Include practical stack or workflow examples where supported by the sources."
+    "day": "Friday",
+    "date": "2026-07-17",
+    "slug": "new-to-scene-watchlist",
+    "title": "New to the scene / what to watch",
+    "focus": "Emerging tools, early releases, previews, newly visible trends and practical watchlist items.",
+    "instruction": "Make clear what is actually available now, what is staged, and what remains uncertain. Help readers decide what to test, watch or ignore."
   },
-  "edition_id": "2026-07-16-risk",
-  "base_date": "2026-07-16",
-  "edition_mode": "alternate_angle"
+  "audience_fit": {
+    "generated_at": "2026-07-17T04:05:59.740Z",
+    "story_assessments": [
+      {
+        "story_index": 0,
+        "story_title": "Thinking Machines makes open weights newly visible again",
+        "target_audience": "Creators, small teams, AI builders and learners who want more control over models",
+        "audience_problem_or_desire": "They want a model they can customize, fine-tune and deploy with less vendor lock-in.",
+        "interest_signal": "A new open-weights multimodal model is available now and can be tried on Tinker today.",
+        "stop_reason": "It is a concrete model release you can test instead of another abstract AI announcement.",
+        "promised_payoff": "A tunable multimodal model may fit specific workflows better than a closed system you cannot modify.",
+        "proof_point": "Thinking Machines Lab said Inkling is open-weights, multimodal, available on Tinker today, and also offered through multiple deployment partners and Hugging Face.",
+        "search_phrases": [
+          "open weights model released July 2026",
+          "Thinking Machines Inkling open weights",
+          "multimodal open-weights model Tinker Hugging Face",
+          "fine-tune open weights AI model"
+        ],
+        "scores": {
+          "audience_fit": 9,
+          "practical_consequence": 8,
+          "searchability": 8,
+          "stranger_usefulness": 8,
+          "novelty": 7,
+          "visual_potential": 7,
+          "discussion_potential": 6,
+          "short_form_clarity": 9
+        },
+        "overall_score": 8,
+        "score_reason": "Strong fit for practical AI users because it is newly available, customizable and easy to explain quickly. It is slightly less debate-heavy than the security or compute stories, but very clear and actionable."
+      },
+      {
+        "story_index": 1,
+        "story_title": "GitHub is moving AI into security review, not just code generation",
+        "target_audience": "Developers, engineering leads and small software teams",
+        "audience_problem_or_desire": "They want faster code review without giving up basic security checks or changing the merge process too much.",
+        "interest_signal": "GitHub is showing AI security detections directly inside pull requests.",
+        "stop_reason": "This changes where AI sits in the workflow: inside the review step people already use.",
+        "promised_payoff": "Teams can test AI-assisted security review as a lightweight assist layer rather than a hard gate.",
+        "proof_point": "GitHub said the detections run when a pull request is opened or updated, appear in the pull request, and are informational rather than merge-blocking.",
+        "search_phrases": [
+          "GitHub AI security detections pull requests",
+          "code scanning AI public preview GitHub",
+          "AI security review in pull requests",
+          "GitHub changelog July 2026 security detections"
+        ],
+        "scores": {
+          "audience_fit": 10,
+          "practical_consequence": 9,
+          "searchability": 9,
+          "stranger_usefulness": 9,
+          "novelty": 8,
+          "visual_potential": 6,
+          "discussion_potential": 7,
+          "short_form_clarity": 10
+        },
+        "overall_score": 9,
+        "score_reason": "This is highly specific, operationally useful and easy to search. It also has a clear before-and-after workflow story, which makes it strong for both professionals and short-form explanation."
+      },
+      {
+        "story_index": 2,
+        "story_title": "Reflection’s $1 billion compute deal shows how expensive AI scale still is",
+        "target_audience": "Founders, AI buyers, operators and practical tech watchers",
+        "audience_problem_or_desire": "They want to understand why AI tools, training and availability can change so quickly.",
+        "interest_signal": "A startup reportedly locked in more than $1 billion of compute capacity, including Nvidia’s latest chips.",
+        "stop_reason": "The number is large enough to make the hidden cost of AI scale instantly legible.",
+        "promised_payoff": "It helps readers think about availability, pricing and fallback plans instead of assuming every model will stay cheap and easy to access.",
+        "proof_point": "Reuters reported that Reflection signed a more than $1 billion computing deal with Nebius and had already signed a June agreement with SpaceX for compute.",
+        "search_phrases": [
+          "Reflection Nebius $1 billion compute deal",
+          "Reuters AI startup compute capacity Nvidia latest chips",
+          "AI startup compute race 2026",
+          "compute costs AI tools availability"
+        ],
+        "scores": {
+          "audience_fit": 7,
+          "practical_consequence": 8,
+          "searchability": 8,
+          "stranger_usefulness": 7,
+          "novelty": 8,
+          "visual_potential": 6,
+          "discussion_potential": 8,
+          "short_form_clarity": 8
+        },
+        "overall_score": 7,
+        "score_reason": "Very strong as a market signal and good for discussion, but it is less immediately hands-on than the product and workflow stories. It fits best when the audience cares about the business side of AI."
+      },
+      {
+        "story_index": 3,
+        "story_title": "ASML’s higher forecast is another signal that AI demand is still hitting the hardware layer",
+        "target_audience": "Investors, supply-chain watchers, tech professionals and hardware-minded readers",
+        "audience_problem_or_desire": "They want to understand whether AI growth is still constrained by the chipmaking stack.",
+        "interest_signal": "ASML raised its 2026 forecast as AI demand strengthened, and Intel will use its High-NA tool for some Panther Lake chips.",
+        "stop_reason": "It shows the AI story reaching deep into the manufacturing layer, not just software launches.",
+        "promised_payoff": "Readers get a clearer picture of where AI scaling can still bottleneck and what to watch in the hardware chain.",
+        "proof_point": "Reuters reported that ASML raised its 2026 revenue forecast, cited AI demand for stronger second-quarter earnings, and said Intel will use ASML’s High-NA tool for some Panther Lake chips.",
+        "search_phrases": [
+          "ASML raises 2026 forecast AI demand",
+          "High-NA tool Panther Lake Intel ASML",
+          "AI chip manufacturing bottleneck 2026",
+          "Reuters ASML July 2026 earnings forecast"
+        ],
+        "scores": {
+          "audience_fit": 6,
+          "practical_consequence": 5,
+          "searchability": 7,
+          "stranger_usefulness": 5,
+          "novelty": 7,
+          "visual_potential": 6,
+          "discussion_potential": 6,
+          "short_form_clarity": 7
+        },
+        "overall_score": 6,
+        "score_reason": "Important macro signal, but the practical takeaway is more indirect for a general audience. It is better for hardware and market watchers than for broad social distribution."
+      }
+    ],
+    "platform_selections": {
+      "tiktok": {
+        "story_index": 0,
+        "story_title": "Thinking Machines makes open weights newly visible again",
+        "target_audience": "Creators, small teams, AI builders and learners who want more control over models",
+        "format": "short spoken explainer",
+        "opening": "If you want an AI model you can actually customize, this one is worth a look.",
+        "payoff": "Thinking Machines released Inkling as an open-weights multimodal model, and it is available on Tinker today. That matters because it gives you something you can fine-tune instead of only prompt.",
+        "selection_reason": "TikTok rewards a concrete, visually understandable tool story with a fast payoff. Open weights and customization are easy to grasp in one pass, and the practical question is instantly clear.",
+        "platform_fit_score": 8
+      },
+      "youtube": {
+        "story_index": 1,
+        "story_title": "GitHub is moving AI into security review, not just code generation",
+        "target_audience": "Developers, engineering leads and small software teams",
+        "format": "searchable explainer",
+        "opening": "Can AI help catch security issues in pull requests without blocking your merge process?",
+        "payoff": "GitHub says its AI-powered security detections now run when a pull request is opened or updated, appear directly in the pull request, and are informational rather than merge-blocking.",
+        "selection_reason": "YouTube Shorts works well when the opening is a real workflow question and the answer is specific. This story is searchable, practical and easy to explain in under a minute.",
+        "platform_fit_score": 9
+      },
+      "facebook": {
+        "story_index": 2,
+        "story_title": "Reflection’s $1 billion compute deal shows how expensive AI scale still is",
+        "target_audience": "Founders, AI buyers, operators and practical tech watchers",
+        "format": "discussion post",
+        "opening": "Have you ever chosen a tool and then worried whether the service behind it could keep up with demand?",
+        "payoff": "Reuters reported that Reflection signed a more than $1 billion compute deal with Nebius, which is a reminder that AI tools depend on expensive infrastructure and that availability and pricing can matter as much as model quality.",
+        "selection_reason": "Facebook does well with recognizable real-world tradeoffs and a question people can answer from experience. This story naturally leads to a practical discussion about reliability, cost and fallback plans.",
+        "platform_fit_score": 7
+      },
+      "pinterest": {
+        "story_index": 0,
+        "story_title": "Thinking Machines makes open weights newly visible again",
+        "target_audience": "Creators, small teams, AI builders and learners who want more control over models",
+        "format": "searchable guide",
+        "opening": "Open-Weights AI Model Checklist: What to Test Before You Fine-Tune",
+        "payoff": "A practical guide for deciding whether a customizable multimodal model is a better fit for your workflow, with a focus on control, fit and a small pilot you can actually run.",
+        "selection_reason": "Pinterest favors searchable, evergreen utility. This story supports a clean guide-style title and a benefit-driven description that people can save for later.",
+        "platform_fit_score": 8
+      },
+      "linkedin": {
+        "story_index": 1,
+        "story_title": "GitHub is moving AI into security review, not just code generation",
+        "target_audience": "Developers, engineering leads and small software teams",
+        "format": "workplace lesson",
+        "opening": "The next useful AI layer in software is not just code generation; it is review-time control.",
+        "payoff": "GitHub’s AI security detections now appear inside pull requests and are informational rather than merge-blocking, which means teams can test AI-assisted review without changing their release process overnight.",
+        "selection_reason": "LinkedIn is strongest when the lesson is operational. This story has a clear workplace consequence: AI is moving deeper into the review layer, where teams care about speed, control and risk.",
+        "platform_fit_score": 9
+      }
+    },
+    "overall_reasoning": "The strongest audience-fit stories are the ones with a concrete, immediate workflow consequence: the open-weights release and GitHub’s AI security preview. Those two also translate best across short-form and professional platforms because they are easy to explain without inventing any extra context. The compute-deal story is valuable for discussion and market interpretation, while the ASML story is a broader hardware signal that is more indirect for general social audiences. Each platform selection is matched to its native interest graph: TikTok gets a customizable model hook, YouTube Shorts gets a searchable workflow question, Facebook gets a recognizable choice-and-tradeoff discussion, Pinterest gets a saveable guide, and LinkedIn gets an operational lesson about AI moving into review rather than only generation."
+  }
 }

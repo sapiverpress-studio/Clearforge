@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "date": "2026-07-17",
+  "brand": "Clearforge",
+  "type": "clearforge_daily_biggest_story_podcast_script",
+  "human_review_required": true,
+  "narrator": "Irene",
+  "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+  "episode_title": "The real AI race right now is compute, not headlines",
+  "selected_story_index": 2,
+  "selected_story_title": "Reflection’s $1 billion compute deal shows how expensive AI scale still is",
+  "selection_reason": "This is the biggest market signal in today’s lineup because it shows the hidden constraint behind many AI advances: access to enough compute. A reported billion-dollar infrastructure deal says more about the current state of the industry than a single model launch does, and it affects how quickly new AI systems can actually be built and served.",
+  "word_count": 1272,
+  "estimated_duration_minutes": 8.8,
+  "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+  "source_notes": "source-notes.md",
+  "first_spoken_line": "If you want to understand where the AI market is heading, it helps to look past the product announcements and follow the infrastructure money.",
+  "final_spoken_line": "And when the wall becomes visible, good operators stop guessing and start planning.",
+  "validation_warnings": [],
+  "non_spoken_instruction_candidates": []
+}

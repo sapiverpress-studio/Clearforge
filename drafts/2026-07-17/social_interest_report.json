@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-17",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "If you want an AI model you can actually customize, this one is worth a look.",
+      "words": 78,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Can AI help catch security issues in pull requests without blocking your merge process?",
+      "words": 81,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Have you ever picked a tool and then wondered whether the service behind it could actually keep up?",
+      "words": 87,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "The next useful AI layer in software is not just code generation; it is review-time control.",
+      "words": 104,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "Open-Weights AI Model Checklist: What to Test Before You Fine-Tune",
+    "title_words": 10,
+    "description_words": 42
+  },
+  "warnings": []
+}

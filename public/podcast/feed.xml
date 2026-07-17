@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>
     <copyright>Clearforge</copyright>
     <generator>Clearforge hosted podcast feed</generator>
-    <lastBuildDate>Thu, 16 Jul 2026 12:32:29 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jul 2026 04:07:50 GMT</lastBuildDate>
     <atom:link href="https://clearforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Clearforge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://clearforge-daily-brief.netlify.app/podcast/cover.png"/>
+    <item>
+      <title>The real AI race right now is compute, not headlines</title>
+      <description>This is the biggest market signal in today’s lineup because it shows the hidden constraint behind many AI advances: access to enough compute. A reported billion-dollar infrastructure deal says more about the current state of the industry than a single model launch does, and it affects how quickly new AI systems can actually be built and served.</description>
+      <content:encoded><![CDATA[<p>This is the biggest market signal in today’s lineup because it shows the hidden constraint behind many AI advances: access to enough compute. A reported billion-dollar infrastructure deal says more about the current state of the industry than a single model launch does, and it affects how quickly new AI systems can actually be built and served.</p><p><strong>Read alongside this episode:</strong> <a href="https://clearforge-daily-brief.netlify.app/posts/2026-07-17.html">daily briefing</a> · <a href="https://clearforge-daily-brief.netlify.app/features/2026-07-17.html">feature analysis</a></p><p><a href="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-17.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-17.html</link>
+      <guid isPermaLink="false">clearforge:2026-07-17</guid>
+      <pubDate>Fri, 17 Jul 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-17.mp3" length="7814208" type="audio/mpeg"/>
+      <itunes:author>Clearforge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:08:48</itunes:duration>
+      <podcast:transcript url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-17.txt" type="text/plain"/>
+    </item>
     <item>
       <title>AI disclosure is moving into the ad workflow</title>
       <description>This is the clearest example in today’s set of a control point becoming part of the workflow itself. It is not just about generating content faster; it is about tracking what changed, where disclosure appears, and who approves publication. That makes it the strongest fit for the edition’s focus on auditability and human sign-off.</description>

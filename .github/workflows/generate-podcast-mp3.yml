@@ -1,4 +1,4 @@
-name: Generate Clearforge podcast MP3
+name: Generate Clearforge podcast MP3 and MP4
 
 on:
   push:
@@ -71,7 +71,7 @@ jobs:
 
           echo "list_file=$list_file" >> "$GITHUB_OUTPUT"
 
-      - name: Generate Irene MP3
+      - name: Generate Irene MP3 and full-length MP4
         shell: bash
         run: |
           set -euo pipefail
@@ -84,36 +84,40 @@ jobs:
             folder="$(dirname "$script")"
             slug="$(basename "$folder")"
             output="$folder/clearforge-spoken-edition-$slug.mp3"
+            video="$folder/clearforge-spoken-edition-$slug.mp4"
             echo "Generating $output from $script"
             INPUT_PATH="$script" OUTPUT_PATH="$output" node scripts/generate-elevenlabs-mp3.mjs
+            bash scripts/generate-podcast-mp4.sh "$output" "$video" public/podcast/cover.png
             metadata="$folder/episode-metadata.json"
             if [[ "$script" == reports/weekly/* ]]; then
               kind="weekly"
             else
               kind="special"
             fi
-            PODCAST_KIND="$kind" EPISODE_SLUG="$slug" SOURCE_MP3="$output" METADATA_PATH="$metadata" PODCAST_BASE_URL="https://clearforge-daily-brief.netlify.app" node scripts/publish-podcast-feed.mjs
+            PODCAST_KIND="$kind" EPISODE_SLUG="$slug" SOURCE_MP3="$output" SOURCE_MP4="$video" METADATA_PATH="$metadata" PODCAST_BASE_URL="https://clearforge-daily-brief.netlify.app" node scripts/publish-podcast-feed.mjs
           done < "${{ steps.narration.outputs.list_file }}"
 
-      - name: Upload MP3 package
+      - name: Upload MP3 and MP4 package
         uses: actions/upload-artifact@v4
         with:
-          name: clearforge-podcast-mp3-${{ github.run_number }}
-          path: reports/**/*.mp3
+          name: clearforge-podcast-media-${{ github.run_number }}
+          path: |
+            reports/**/*.mp3
+            reports/**/*.mp4
           if-no-files-found: error
           retention-days: 90
 
-      - name: Save generated MP3s
+      - name: Save generated podcast media
         shell: bash
         run: |
           set -euo pipefail
           if git diff --quiet -- reports public/podcast; then
-            echo "No new MP3 changes to commit."
+            echo "No new podcast media changes to commit."
             exit 0
           fi
 
           git config user.name "clearforge-audio-bot"
           git config user.email "actions@users.noreply.github.com"
           git add -- 'reports/**/*.mp3' 'reports/**/*.mp3.source-sha256' public/podcast
-          git commit -m "Generate Clearforge podcast MP3 with Irene"
+          git commit -m "Generate Clearforge podcast MP3 and MP4 with Irene"
           git push

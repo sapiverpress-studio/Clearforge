@@ -239,6 +239,39 @@ jobs:
           OPENAI_TTS_VOICE: ${{ vars.OPENAI_TTS_VOICE || 'coral' }}
         run: npm run media:ai
 
+      - name: Generate full daily podcast MP4
+        id: podcast_video
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.irene == 'true' && steps.irene.outcome == 'success'
+        continue-on-error: true
+        shell: bash
+        run: |
+          bash scripts/generate-podcast-mp4.sh \
+            "drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp3" \
+            "drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp4" \
+            "media/${CLEARFORGE_DATE}/story-1.png"
+
+      - name: Add MP4 download to the podcast episode
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.podcast_video.outcome == 'success'
+        env:
+          PODCAST_KIND: daily
+          EPISODE_SLUG: ${{ env.CLEARFORGE_DATE }}
+          SOURCE_MP3: drafts/${{ env.CLEARFORGE_DATE }}/podcast/clearforge-daily-podcast-${{ env.CLEARFORGE_DATE }}.mp3
+          SOURCE_MP4: drafts/${{ env.CLEARFORGE_DATE }}/podcast/clearforge-daily-podcast-${{ env.CLEARFORGE_DATE }}.mp4
+          METADATA_PATH: drafts/${{ env.CLEARFORGE_DATE }}/podcast/episode-metadata.json
+          PODCAST_BASE_URL: https://clearforge-daily-brief.netlify.app
+        run: node scripts/publish-podcast-feed.mjs
+
+      - name: Upload daily podcast MP3 and MP4 package
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.podcast_video.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: clearforge-daily-podcast-${{ env.CLEARFORGE_DATE }}
+          path: |
+            drafts/${{ env.CLEARFORGE_DATE }}/podcast/*.mp3
+            drafts/${{ env.CLEARFORGE_DATE }}/podcast/*.mp4
+          if-no-files-found: error
+          retention-days: 90
+
       - name: Build approved static site
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         run: npm run build:site

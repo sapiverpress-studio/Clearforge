@@ -2,15 +2,15 @@
   "version": 1,
   "slug": "ai-work-tools-in-existing-apps",
   "title": "How to adopt AI work tools inside the apps your team already uses",
-  "description": "A practical guide to using AI inside docs, spreadsheets, design tools, chat and project boards. It explains where the workflow gains come from, why review and disclosure matter, and what to check before rolling it out.",
-  "search_question": "How should a team adopt AI tools inside the apps it already uses without losing control of review, permissions and disclosure?",
+  "description": "A practical guide to using AI inside docs, spreadsheets, design tools, chat and project boards. It explains where the workflow gains come from, why review, disclosure and control matter, and what to check before rolling it out.",
+  "search_question": "How should a team adopt AI tools inside the apps it already uses?",
   "topic_slugs": [
     "ai-adoption",
     "ai-inside-products",
     "creators-small-business"
   ],
   "created": "2026-07-14",
-  "last_updated": "2026-07-16",
+  "last_updated": "2026-07-17",
   "source_editions": [
     "2026-07-09",
     "2026-07-10",
@@ -20,7 +20,8 @@
     "2026-07-14",
     "2026-07-15",
     "2026-07-16",
-    "2026-07-16-risk"
+    "2026-07-16-risk",
+    "2026-07-17-systems"
   ],
   "source_urls": [
     "https://openai.com/products/release-notes/",
@@ -36,7 +37,9 @@
     "https://blogs.microsoft.com/blog/2026/06/23/rethinking-cloud-operations-with-agentic-observability/",
     "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
     "https://www.notion.com/releases/2026-07-01",
-    "https://www.anthropic.com/news/ust-claude"
+    "https://www.anthropic.com/news/ust-claude",
+    "https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests/",
+    "https://thinkingmachines.ai/news/introducing-inkling/"
   ],
   "revisions": [
     {
@@ -77,6 +80,14 @@
         "2026-07-16",
         "2026-07-15",
         "2026-07-14"
+      ]
+    },
+    {
+      "date": "2026-07-17",
+      "summary": "Updated the existing workflow-adoption guide with newer evidence on AI embedded inside apps, review-gate controls, disclosure requirements, and open-weight/private-control options. Added current examples from ChatGPT Work, Canva AI 2.0, Notion 3.6, GitHub pull-request detections, Google ad transparency, and Thinking Machines Inkling, while keeping the guide focused on durable workflow design rather than transient product hype.",
+      "source_editions": [
+        "2026-07-16-risk",
+        "2026-07-17-systems"
       ]
     }
   ],

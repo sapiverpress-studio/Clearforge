@@ -30,8 +30,11 @@ export default async function pinterestOauthStart(req) {
   const clientSecret = env("PINTEREST_APP_SECRET") || env("PINTEREST_CLIENT_SECRET");
   const redirectUri = env("PINTEREST_REDIRECT_URI");
 
-  if (!expectedKey || suppliedKey !== expectedKey) {
-    return html(401, "<h1>Access denied</h1><p>The one-time Pinterest setup key is missing or incorrect.</p>");
+  if (!expectedKey) {
+    return html(500, "<h1>Setup key unavailable</h1><p>The deployed function cannot read <code>PINTEREST_OAUTH_SETUP_KEY</code>. Redeploy the production site after saving the environment variable.</p>");
+  }
+  if (!suppliedKey || suppliedKey !== expectedKey) {
+    return html(401, "<h1>Access denied</h1><p>The URL setup key is missing or does not match the production environment value.</p>");
   }
   if (!clientId || !clientSecret || !redirectUri) {
     return html(500, "<h1>Setup incomplete</h1><p>Netlify still needs <code>PINTEREST_APP_ID</code>, <code>PINTEREST_APP_SECRET</code>, and <code>PINTEREST_REDIRECT_URI</code>.</p>");

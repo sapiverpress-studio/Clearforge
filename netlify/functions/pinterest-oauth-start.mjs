@@ -1,4 +1,4 @@
-// Redeploy trigger: refresh production Pinterest OAuth environment values after redirect URI update.
+// Redeploy trigger: production Pinterest redirect URI has now been added in Netlify.
 import crypto from "node:crypto";
 
 function env(name) {

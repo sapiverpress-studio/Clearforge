@@ -1,4 +1,4 @@
-// Redeploy trigger: refresh production Pinterest OAuth environment values.
+// Redeploy trigger: refresh production Pinterest OAuth environment values after redirect URI update.
 import crypto from "node:crypto";
 
 function env(name) {

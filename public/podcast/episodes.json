@@ -1,5 +1,19 @@
 [
   {
+    "slug": "2026-07-17-systems",
+    "kind": "daily",
+    "title": "Friday watchlist: AI is moving into the review gate",
+    "description": "This is the clearest example in today’s set of how AI is shifting from standalone demos into an existing workflow step. It is practical, easy to explain, and directly relevant to creators and small teams who care about review quality, control, and overhead.",
+    "published": "2026-07-17T07:00:00+01:00",
+    "duration": "00:08:36",
+    "size": 7333973,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-17-systems.mp3",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-17-systems.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-17-systems.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-17-systems.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-17-systems.html"
+  },
+  {
     "slug": "2026-07-17",
     "kind": "daily",
     "title": "The real AI race right now is compute, not headlines",

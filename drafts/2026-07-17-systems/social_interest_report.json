@@ -1,0 +1,43 @@
+{
+  "date": "2026-07-17-systems",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Don’t start your AI rollout with the biggest model.",
+      "words": 70,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Three AI signals worth watching this Friday: first, Thinking Machines released Inkling as an open-weights multimodal model, and it’s available on Tinker today.",
+      "words": 82,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "If you’re buying or testing AI tools, the important question is no longer just “what can it do?” It’s “can we run it consistently?” Today’s signals all point that way: an open-weights model you can customize, AI security detections showing up inside pull requests, and a massive compute deal that shows how expensive scale still is.",
+      "words": 86,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "The strongest AI signal this week is not a single breakthrough.",
+      "words": 97,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "AI Systems Checklist: What to Test, Gate, and Budget For",
+    "title_words": 10,
+    "description_words": 37
+  },
+  "warnings": [
+    "Quote/card line 2 may be too vague"
+  ]
+}

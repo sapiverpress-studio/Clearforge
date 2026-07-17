@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "date": "2026-07-17-systems",
+  "brand": "Clearforge",
+  "type": "clearforge_daily_biggest_story_podcast_script",
+  "human_review_required": true,
+  "narrator": "Irene",
+  "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+  "episode_title": "Friday watchlist: AI is moving into the review gate",
+  "selected_story_index": 1,
+  "selected_story_title": "GitHub is adding AI to the review gate, not the generator",
+  "selection_reason": "This is the clearest example in today’s set of how AI is shifting from standalone demos into an existing workflow step. It is practical, easy to explain, and directly relevant to creators and small teams who care about review quality, control, and overhead.",
+  "word_count": 1251,
+  "estimated_duration_minutes": 8.6,
+  "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+  "source_notes": "source-notes.md",
+  "first_spoken_line": "Today’s most useful AI story is not about a bigger model or a flashier demo. It is about where AI gets placed inside a real workflow.",
+  "final_spoken_line": "Not bigger. Not louder. Just closer to the way teams actually work.",
+  "validation_warnings": [],
+  "non_spoken_instruction_candidates": []
+}

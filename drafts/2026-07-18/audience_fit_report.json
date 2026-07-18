@@ -1,0 +1,193 @@
+{
+  "generated_at": "2026-07-18T06:04:04.206Z",
+  "story_assessments": [
+    {
+      "story_index": 0,
+      "story_title": "OpenAI’s new scorecard points AI buyers toward workflow economics",
+      "target_audience": "Creators, small-business owners, AI buyers, and ops teams",
+      "audience_problem_or_desire": "They want proof that AI saves time, reduces cleanup, and improves finished output rather than just producing impressive drafts.",
+      "interest_signal": "OpenAI said AI adoption deepens in stages, and argued companies should measure useful work completed, cost per successful task, dependability, and whether each AI dollar buys more work at scale.",
+      "stop_reason": "It replaces vague hype with a practical scorecard for real workflows.",
+      "promised_payoff": "A simple way to test whether one AI workflow is actually worth keeping.",
+      "proof_point": "Confirmed from OpenAI’s published scorecard framing and metrics.",
+      "search_phrases": [
+        "AI scorecard useful work completed",
+        "cost per successful task AI",
+        "measure whether AI saves time"
+      ],
+      "scores": {
+        "audience_fit": 9,
+        "practical_consequence": 9,
+        "searchability": 8,
+        "stranger_usefulness": 9,
+        "novelty": 8,
+        "visual_potential": 6,
+        "discussion_potential": 8,
+        "short_form_clarity": 9
+      },
+      "overall_score": 9,
+      "score_reason": "Broad audience, immediate business value, and a very clear testable takeaway make this the strongest utility story in the pack."
+    },
+    {
+      "story_index": 1,
+      "story_title": "GPT-Red suggests safety is becoming a production system, not a side project",
+      "target_audience": "Teams using connected AI tools, security-minded users, and product builders",
+      "audience_problem_or_desire": "They want AI that can use tools without being tricked into unsafe actions or exposing private data.",
+      "interest_signal": "OpenAI said it trained GPT-Red, an automated internal red-teaming model, and used it to adversarially train GPT-5.6 against prompt injection.",
+      "stop_reason": "Safety is being folded into training, not bolted on afterward.",
+      "promised_payoff": "A clearer rule for keeping human approval on sensitive AI actions.",
+      "proof_point": "Confirmed automated internal red-teaming and GPT-5.6 hardening were described by OpenAI.",
+      "search_phrases": [
+        "GPT-Red prompt injection",
+        "OpenAI red-teaming model",
+        "human approval AI connected tools"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 9,
+        "searchability": 7,
+        "stranger_usefulness": 8,
+        "novelty": 8,
+        "visual_potential": 7,
+        "discussion_potential": 7,
+        "short_form_clarity": 7
+      },
+      "overall_score": 8,
+      "score_reason": "Strong practical consequence and a crisp safety takeaway, though the topic is slightly more technical and niche than the workflow-economics story."
+    },
+    {
+      "story_index": 2,
+      "story_title": "Google’s ad disclosure move hints that AI labels are becoming standard",
+      "target_audience": "Advertisers, creators, small brands, and marketing teams",
+      "audience_problem_or_desire": "They need to know when AI-edited creative requires disclosure and how to document assets cleanly.",
+      "interest_signal": "Google said it is adding a \"How this ad was made\" panel and requiring labels for ads created or edited with generative AI.",
+      "stop_reason": "Disclosure is becoming built into the ad product itself.",
+      "promised_payoff": "A simple rule for keeping prompts, edit history, and disclosure text with each asset.",
+      "proof_point": "Confirmed Google transparency changes on Search, YouTube, and Discover.",
+      "search_phrases": [
+        "Google AI ad disclosure",
+        "How this ad was made panel",
+        "label AI edited ads"
+      ],
+      "scores": {
+        "audience_fit": 9,
+        "practical_consequence": 8,
+        "searchability": 10,
+        "stranger_usefulness": 8,
+        "novelty": 8,
+        "visual_potential": 7,
+        "discussion_potential": 8,
+        "short_form_clarity": 9
+      },
+      "overall_score": 9,
+      "score_reason": "This is highly searchable, easy to explain, and immediately relevant to marketers and creators who handle ad assets."
+    },
+    {
+      "story_index": 3,
+      "story_title": "ASML’s higher forecast says the AI buildout is still running hot",
+      "target_audience": "AI investors, infrastructure watchers, and tech ops teams",
+      "audience_problem_or_desire": "They want to know whether AI infrastructure pressure is easing or still expanding.",
+      "interest_signal": "Reuters reported that ASML raised its 2026 sales forecast and plans to expand capacity by 30% in each of the next two years because of AI chip and data-center demand.",
+      "stop_reason": "The hardware layer is still scaling, which keeps compute economics in focus.",
+      "promised_payoff": "A practical reason to budget AI as recurring operating spend.",
+      "proof_point": "Confirmed Reuters reporting via Investing.com on the forecast and capacity expansion.",
+      "search_phrases": [
+        "ASML AI chip demand capacity expansion",
+        "AI supply chain forecast",
+        "compute budget recurring cost"
+      ],
+      "scores": {
+        "audience_fit": 7,
+        "practical_consequence": 8,
+        "searchability": 7,
+        "stranger_usefulness": 7,
+        "novelty": 7,
+        "visual_potential": 8,
+        "discussion_potential": 6,
+        "short_form_clarity": 8
+      },
+      "overall_score": 7,
+      "score_reason": "Useful as a macro signal, but less universally actionable than the workflow, safety, disclosure, or family-control stories."
+    },
+    {
+      "story_index": 4,
+      "story_title": "OpenAI’s teen-safety push shows consumer AI is moving toward household controls",
+      "target_audience": "Families, education product teams, consumer AI users, and youth-safety watchers",
+      "audience_problem_or_desire": "They want age-appropriate access, parental controls, and clearer safeguards around consumer AI.",
+      "interest_signal": "OpenAI said it strengthened teen protections, rolled out age prediction, and expanded parental controls.",
+      "stop_reason": "Consumer AI is moving toward household governance.",
+      "promised_payoff": "A clearer view of where family controls may become the standard expectation.",
+      "proof_point": "Confirmed teen-safety rollout and continued safeguard additions were described by OpenAI.",
+      "search_phrases": [
+        "OpenAI teen protections parental controls",
+        "age prediction AI safeguards",
+        "consumer AI family controls"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 8,
+        "searchability": 8,
+        "stranger_usefulness": 7,
+        "novelty": 7,
+        "visual_potential": 7,
+        "discussion_potential": 7,
+        "short_form_clarity": 8
+      },
+      "overall_score": 8,
+      "score_reason": "Strong consumer trust angle with clear household relevance, though slightly narrower than the workflow-economics story."
+    }
+  ],
+  "platform_selections": {
+    "tiktok": {
+      "story_index": 0,
+      "story_title": "OpenAI’s new scorecard points AI buyers toward workflow economics",
+      "target_audience": "Creators, small-business owners, AI buyers, and ops teams",
+      "format": "short-form utility hook",
+      "opening": "Is your AI saving time or just making drafts?",
+      "payoff": "Use OpenAI’s scorecard idea to test one workflow by measuring completed work, cost per task, and cleanup.",
+      "selection_reason": "Short-form audiences respond well to a concrete self-test, and this story gives them an easy, practical challenge.",
+      "platform_fit_score": 9
+    },
+    "youtube": {
+      "story_index": 1,
+      "story_title": "GPT-Red suggests safety is becoming a production system, not a side project",
+      "target_audience": "Teams using connected AI tools, security-minded users, and product builders",
+      "format": "searchable safety explainer",
+      "opening": "Can your AI read files safely?",
+      "payoff": "OpenAI said GPT-Red was used to harden GPT-5.6 against prompt injection, so connected tools need a human checkpoint for sensitive actions.",
+      "selection_reason": "The safety angle is easy to search, easy to explain quickly, and has a clear operational takeaway for connected AI workflows.",
+      "platform_fit_score": 8
+    },
+    "facebook": {
+      "story_index": 2,
+      "story_title": "Google’s ad disclosure move hints that AI labels are becoming standard",
+      "target_audience": "Advertisers, creators, small brands, and marketing teams",
+      "format": "practical business update",
+      "opening": "Do your ads need an AI label now?",
+      "payoff": "Google is adding a \"How this ad was made\" panel and requiring labels for generative-AI-made or edited ads, so teams should keep prompts, edit history, and disclosure text together.",
+      "selection_reason": "This is a recognizable business situation with a concrete documentation consequence, which fits Facebook’s discussion style well.",
+      "platform_fit_score": 9
+    },
+    "pinterest": {
+      "story_index": 0,
+      "story_title": "OpenAI’s new scorecard points AI buyers toward workflow economics",
+      "target_audience": "Creators, small-business owners, AI buyers, and ops teams",
+      "format": "searchable checklist guide",
+      "opening": "How do you know if AI actually saves time?",
+      "payoff": "Track one workflow end to end and compare time, error rate, and human cleanup before deciding whether to keep the tool.",
+      "selection_reason": "Pinterest rewards evergreen, searchable how-to guidance, and this story naturally becomes a checklist people can save.",
+      "platform_fit_score": 8
+    },
+    "linkedin": {
+      "story_index": 0,
+      "story_title": "OpenAI’s new scorecard points AI buyers toward workflow economics",
+      "target_audience": "Creators, small-business owners, AI buyers, and ops teams",
+      "format": "workplace decision post",
+      "opening": "Are you measuring AI output or AI usage?",
+      "payoff": "OpenAI’s framing points teams toward useful work completed, cost per successful task, dependability, and less human rework.",
+      "selection_reason": "Workflow metrics and operational consequences map directly to LinkedIn’s professional audience and team decision-making.",
+      "platform_fit_score": 10
+    }
+  },
+  "overall_reasoning": "Story 0 is the strongest general utility angle, so it anchors TikTok, Pinterest, and LinkedIn with a measurable workflow payoff. Story 1 is the best short-form safety hook for YouTube Shorts because prompt-injection risk is easy to explain quickly. Story 2 is the best Facebook fit because ad disclosure is a recognizable business decision with a concrete documentation takeaway. The quote lines stay calm, practical, and discussion-ready while staying inside the verified research pack."
+}

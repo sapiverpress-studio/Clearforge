@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-18",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Is your AI saving time or just making drafts?",
+      "words": 95,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Can your AI read files safely?",
+      "words": 98,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Do your ads need an AI label now?",
+      "words": 105,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Are you measuring AI output or AI usage?",
+      "words": 92,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "How to Measure Whether AI Actually Saves Time at Work",
+    "title_words": 10,
+    "description_words": 33
+  },
+  "warnings": []
+}

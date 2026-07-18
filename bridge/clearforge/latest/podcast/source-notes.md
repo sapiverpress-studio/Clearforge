@@ -1,26 +1,31 @@
-# Source notes — 2026-07-17-systems
+# Source notes — 2026-07-18
 
-Podcast focused on: GitHub is adding AI to the review gate, not the generator
+Podcast focused on: OpenAI’s new scorecard points AI buyers toward workflow economics
 
 ## Sources supplied to the script generator
 
-- 1. Thinking Machines Lab: Inkling: Our open-weights model
-  - URL: https://thinkingmachines.ai/news/introducing-inkling/
+- 1. OpenAI: A scorecard for the AI age
+  - URL: https://openai.com/index/a-scorecard-for-the-ai-age/
+  - Published/date field: 2026-07-17
+  - Confirmed fact: OpenAI said AI adoption deepens in stages, and argued companies should measure useful work completed, cost per successful task, dependability, and whether each AI dollar buys more work at scale.
+  - Interpretation: That framing suggests vendors and buyers are moving from feature-counting toward workflow and unit-economics metrics.
+- 2. OpenAI: GPT-Red: Unlocking Self-Improvement for Robustness
+  - URL: https://openai.com/index/unlocking-self-improvement-gpt-red/
   - Published/date field: 2026-07-15
-  - Confirmed fact: Thinking Machines Lab released Inkling on July 15, 2026 as an open-weights multimodal model, said it is available on Tinker today, and stated the model is also offered via multiple deployment partners and Hugging Face.
-  - Interpretation: This is a practical sign that open-weight models are still becoming easier to slot into real workflows where teams want customization, local control, or less vendor dependency.
-- 2. GitHub Changelog: Code scanning shows AI security detections on pull requests
-  - URL: https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests/
-  - Published/date field: 2026-07-14
-  - Confirmed fact: GitHub said AI-powered security detections are now in public preview, run when a pull request is opened or updated, appear directly in pull requests, and are informational rather than merge-blocking.
-  - Interpretation: AI is moving into a review step that teams already use, which makes it more relevant as a process-control tool than as a novelty feature.
-- 3. Reuters via Investing.com: AI startup Reflection signs over $1 billion computing deal with Nebius
-  - URL: https://www.investing.com/news/stock-market-news/ai-startup-reflection-signs-over-1-billion-computing-deal-with-nebius-4790506
-  - Published/date field: 2026-07-14
-  - Confirmed fact: Reuters reported that Reflection signed a more than $1 billion deal with Nebius for computing capacity, including access to Nvidia’s latest chips, after an earlier June agreement with SpaceX.
-  - Interpretation: The scale of the deal is a reminder that AI systems are still constrained by infrastructure costs, not just model quality.
-- 4. Reuters via Sahm Capital: ASML raises 2026 forecast, expands capacity on AI chip demand
-  - URL: https://www.sahmcapital.com/news/content/update-3-asml-raises-2026-forecast-expands-capacity-on-ai-chip-demand-2026-07-15
+  - Confirmed fact: OpenAI said it trained GPT-Red, an automated internal red-teaming model, and used it to adversarially train GPT-5.6 to improve resistance to prompt injection.
+  - Interpretation: Safety work is becoming more automated and more tightly tied to model release cycles.
+- 3. OpenAI: Why teens deserve access to safe AI
+  - URL: https://openai.com/index/why-teens-deserve-access-safe-ai/
+  - Published/date field: 2026-07-16
+  - Confirmed fact: OpenAI said it had strengthened default teen protections, rolled out age prediction, expanded parental controls, and will keep adding age-appropriate safeguards in the coming months.
+  - Interpretation: Consumer AI products are increasingly being designed around age-gating and family controls, not just general access.
+- 4. Google: Expanding AI transparency in ads
+  - URL: https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/
+  - Published/date field: 2026-07-09
+  - Confirmed fact: Google said it is adding a 'How this ad was made' panel in My Ad Center on Search, YouTube and Discover, and that advertisers must label ads created or edited with generative AI.
+  - Interpretation: Disclosure is becoming a normal product feature, which may spread to more ad platforms and creator tools.
+- 5. Reuters via Investing.com: ASML capacity upgrade soothes AI chip bottleneck fears
+  - URL: https://www.investing.com/news/stock-market-news/asml-tops-q2-estimates-on-ai-chip-demand-4792151
   - Published/date field: 2026-07-15
-  - Confirmed fact: Reuters reported that ASML raised its 2026 revenue forecast, said AI demand drove stronger-than-expected second-quarter earnings, and said Intel will use ASML’s High-NA tool for some Panther Lake chips.
-  - Interpretation: The hardware stack is still absorbing AI demand, which matters because supply constraints can shape rollout speed, pricing and availability across the market.
+  - Confirmed fact: Reuters reported that ASML raised its 2026 sales forecast and said it would expand capacity by 30% in each of the next two years because of strong demand linked to AI chips and data-center buildout.
+  - Interpretation: The AI supply chain is still being pulled forward by demand, and equipment makers are planning for sustained pressure rather than a short spike.

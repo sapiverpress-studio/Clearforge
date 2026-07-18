@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-18",
+    "kind": "daily",
+    "title": "From Demos to Dollars: AI’s New Workflow Scorecard",
+    "description": "This is the broadest practical shift in the edition: it changes how AI is judged, bought, and measured across everyday workflows, which directly affects creators, small businesses, and teams deciding whether AI is actually worth paying for.",
+    "published": "2026-07-18T07:00:00+01:00",
+    "duration": "00:08:00",
+    "size": 6695750,
+    "video_size": 0,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-18.mp3",
+    "video_url": "",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-18.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-18.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-18.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-18.html",
+    "source_dir": "drafts/2026-07-18/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-17-systems",
     "kind": "daily",
     "title": "Friday watchlist: AI is moving into the review gate",

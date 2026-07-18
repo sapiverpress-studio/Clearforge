@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>
     <copyright>Clearforge</copyright>
     <generator>Clearforge hosted podcast feed</generator>
-    <lastBuildDate>Fri, 17 Jul 2026 10:31:03 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jul 2026 06:05:59 GMT</lastBuildDate>
     <atom:link href="https://clearforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Clearforge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://clearforge-daily-brief.netlify.app/podcast/cover.png"/>
+    <item>
+      <title>From Demos to Dollars: AI’s New Workflow Scorecard</title>
+      <description>This is the broadest practical shift in the edition: it changes how AI is judged, bought, and measured across everyday workflows, which directly affects creators, small businesses, and teams deciding whether AI is actually worth paying for.</description>
+      <content:encoded><![CDATA[<p>This is the broadest practical shift in the edition: it changes how AI is judged, bought, and measured across everyday workflows, which directly affects creators, small businesses, and teams deciding whether AI is actually worth paying for.</p><p><strong>Read alongside this episode:</strong> <a href="https://clearforge-daily-brief.netlify.app/posts/2026-07-18.html">daily briefing</a> · <a href="https://clearforge-daily-brief.netlify.app/features/2026-07-18.html">feature analysis</a></p><p><a href="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-18.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-18.html</link>
+      <guid isPermaLink="false">clearforge:2026-07-18</guid>
+      <pubDate>Sat, 18 Jul 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-18.mp3" length="6695750" type="audio/mpeg"/>
+      <itunes:author>Clearforge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:08:00</itunes:duration>
+      <podcast:transcript url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-18.txt" type="text/plain"/>
+    </item>
     <item>
       <title>Friday watchlist: AI is moving into the review gate</title>
       <description>This is the clearest example in today’s set of how AI is shifting from standalone demos into an existing workflow step. It is practical, easy to explain, and directly relevant to creators and small teams who care about review quality, control, and overhead.</description>

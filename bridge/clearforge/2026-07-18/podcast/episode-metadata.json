@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "date": "2026-07-18",
+  "brand": "Clearforge",
+  "type": "clearforge_daily_biggest_story_podcast_script",
+  "human_review_required": true,
+  "narrator": "Irene",
+  "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+  "episode_title": "From Demos to Dollars: AI’s New Workflow Scorecard",
+  "selected_story_index": 0,
+  "selected_story_title": "OpenAI’s new scorecard points AI buyers toward workflow economics",
+  "selection_reason": "This is the broadest practical shift in the edition: it changes how AI is judged, bought, and measured across everyday workflows, which directly affects creators, small businesses, and teams deciding whether AI is actually worth paying for.",
+  "word_count": 1158,
+  "estimated_duration_minutes": 8,
+  "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+  "source_notes": "source-notes.md",
+  "first_spoken_line": "Here’s the biggest story for today: OpenAI is trying to change how people judge AI from the inside out. In a new scorecard, the company argues that the right way to evaluate AI is not by flashy demos or raw usage numbers, but by whether it completes useful work, how much each successful task costs, how dependable the system is, and whether each AI dollar buys more work at scale.",
+  "final_spoken_line": "My verdict is: test carefully. This is the right frame for most practical AI use, but the benefits only show up when you measure your own workflow honestly. Start small, compare against your normal process, keep a human approval step, and judge the tool by finished work, not by the first draft alone.",
+  "validation_warnings": [
+    "Script is shorter than target: 1158 words."
+  ],
+  "non_spoken_instruction_candidates": []
+}

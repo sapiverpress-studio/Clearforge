@@ -1,0 +1,42 @@
+[
+  {
+    "source_name": "OpenAI",
+    "title": "A scorecard for the AI age",
+    "url": "https://openai.com/index/a-scorecard-for-the-ai-age/",
+    "published_date": "2026-07-17",
+    "confirmed_fact": "OpenAI said AI adoption deepens in stages, and argued companies should measure useful work completed, cost per successful task, dependability, and whether each AI dollar buys more work at scale.",
+    "interpretation": "That framing suggests vendors and buyers are moving from feature-counting toward workflow and unit-economics metrics."
+  },
+  {
+    "source_name": "OpenAI",
+    "title": "GPT-Red: Unlocking Self-Improvement for Robustness",
+    "url": "https://openai.com/index/unlocking-self-improvement-gpt-red/",
+    "published_date": "2026-07-15",
+    "confirmed_fact": "OpenAI said it trained GPT-Red, an automated internal red-teaming model, and used it to adversarially train GPT-5.6 to improve resistance to prompt injection.",
+    "interpretation": "Safety work is becoming more automated and more tightly tied to model release cycles."
+  },
+  {
+    "source_name": "OpenAI",
+    "title": "Why teens deserve access to safe AI",
+    "url": "https://openai.com/index/why-teens-deserve-access-safe-ai/",
+    "published_date": "2026-07-16",
+    "confirmed_fact": "OpenAI said it had strengthened default teen protections, rolled out age prediction, expanded parental controls, and will keep adding age-appropriate safeguards in the coming months.",
+    "interpretation": "Consumer AI products are increasingly being designed around age-gating and family controls, not just general access."
+  },
+  {
+    "source_name": "Google",
+    "title": "Expanding AI transparency in ads",
+    "url": "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
+    "published_date": "2026-07-09",
+    "confirmed_fact": "Google said it is adding a 'How this ad was made' panel in My Ad Center on Search, YouTube and Discover, and that advertisers must label ads created or edited with generative AI.",
+    "interpretation": "Disclosure is becoming a normal product feature, which may spread to more ad platforms and creator tools."
+  },
+  {
+    "source_name": "Reuters via Investing.com",
+    "title": "ASML capacity upgrade soothes AI chip bottleneck fears",
+    "url": "https://www.investing.com/news/stock-market-news/asml-tops-q2-estimates-on-ai-chip-demand-4792151",
+    "published_date": "2026-07-15",
+    "confirmed_fact": "Reuters reported that ASML raised its 2026 sales forecast and said it would expand capacity by 30% in each of the next two years because of strong demand linked to AI chips and data-center buildout.",
+    "interpretation": "The AI supply chain is still being pulled forward by demand, and equipment makers are planning for sustained pressure rather than a short spike."
+  }
+]

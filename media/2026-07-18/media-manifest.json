@@ -1,0 +1,64 @@
+{
+  "version": 4,
+  "date": "2026-07-18",
+  "headline": "Saturday forecast: AI is shifting from demos to proof, controls and cost discipline",
+  "dek": "This week’s confirmed moves point to a practical next phase: teams will be asked to measure what AI finishes, disclose how AI shapes outputs, and prove safety before they scale further.",
+  "hook": "Three AI updates that actually matter today",
+  "spoken_cta": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+  "visual_system": "Clearforge AI briefing podcast studio system",
+  "visual_style_rules": {
+    "include": [
+      "dark navy AI briefing or podcast studio atmosphere",
+      "microphone or audio-briefing cues where appropriate",
+      "subtle circuit traces, waveform motifs, model cards or data-routing lines",
+      "physical source notes, checklists and human-review materials",
+      "premium editorial technology-magazine lighting"
+    ],
+    "avoid": [
+      "robots",
+      "glowing brains",
+      "hologram faces",
+      "generic dashboards",
+      "random floating code",
+      "excessive neon",
+      "fake readable text",
+      "Sapiver or unrelated branding"
+    ]
+  },
+  "stories": [
+    {
+      "file": "media/2026-07-18/story-1.png",
+      "title": "OpenAI’s new scorecard points AI buyers toward workflow economics",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/a-scorecard-for-the-ai-age/",
+      "summary": "OpenAI argued that the right way to judge AI is by useful work completed, cost per successful task, dependability, and value at scale. That is a notable shift away from vanity metrics like seat counts or raw token usage.",
+      "why_it_matters": "Creators and small businesses are usually judged on output, not tool usage. If this framing spreads, buyers will expect AI tools to prove they save time or raise quality in a specific workflow.",
+      "practical_angle": "Track one repetitive job this month, such as drafting proposals, summarizing meetings, or answering support emails, and measure whether AI reduces total time per completed task.",
+      "visual_prompt": "a weekly AI briefing workspace with layered research cards, calendar markers, a studio microphone, restrained blue interface glow and visible human review materials. vertical social-video still with a strong microphone foreground and clear desk detail. make the AI element clear through subtle circuit traces, waveform graphics, model cards and data-routing lines, not robots. change the hero object placement so this frame does not resemble the previous edition. Story context: OpenAI’s new scorecard points AI buyers toward workflow economics. Practical angle: Track one repetitive job this month, such as drafting proposals, summarizing meetings, or answering support emails, and measure whether AI reduces total time per completed task.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-07-18/story-2.png",
+      "title": "GPT-Red suggests safety is becoming a production system, not a side project",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/unlocking-self-improvement-gpt-red/",
+      "summary": "OpenAI said it built an automated red-teaming model and used it to harden GPT-5.6 against prompt injection. The important detail is not just that testing exists, but that safety is being automated and folded into training.",
+      "why_it_matters": "As AI systems get more connected to files, browsers and tools, prompt-injection resistance will matter more for everyday users and small teams using connected workflows.",
+      "practical_angle": "If you use AI with connected apps or document access, keep a human approval step for any action that sends money, posts publicly, or exposes private data.",
+      "visual_prompt": "a modern audio briefing desk where AI developments are represented by physical cards, circuit-like connection lines, a restrained waveform panel and careful human notes. cinematic three-quarter studio photograph with shallow depth of field. use restrained blue technology accents to signal AI without making the image look like generic AI stock art. include a different arrangement of source cards, notebook, microphone angle and background signal pattern. Story context: GPT-Red suggests safety is becoming a production system, not a side project. Practical angle: If you use AI with connected apps or document access, keep a human approval step for any action that sends money, posts publicly, or exposes private data.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: dark blue studio background, graphite desk, white paper, blue highlights and restrained green accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-07-18/story-3.png",
+      "title": "Google’s ad disclosure move hints that AI labels are becoming standard",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/why-teens-deserve-access-safe-ai/",
+      "summary": "Google said it will add a 'How this ad was made' panel and require advertisers to label ads that were made or edited with generative AI. That makes AI disclosure easier to see without forcing users to guess.",
+      "why_it_matters": "Any business running ads, social creative or product imagery should expect more pressure to disclose AI use clearly, especially as platforms respond to trust concerns.",
+      "practical_angle": "Build a simple internal rule now: if AI materially changes a visual or headline, store the source prompt, edit history and disclosure text alongside the asset.",
+      "visual_prompt": "a practical creator workflow table showing verified source notes, timeline cards, a muted blue AI signal pattern, a microphone, headphones and a structured review checklist. premium podcast-cover composition with strong negative space for later text overlay. make it instantly understandable as an AI briefing or AI podcast image, but grounded in real studio objects. vary camera distance, desk depth and object hierarchy while keeping the same Clearforge identity. Story context: Google’s ad disclosure move hints that AI labels are becoming standard. Practical angle: Build a simple internal rule now: if AI materially changes a visual or headline, store the source prompt, edit history and disclosure text alongside the asset.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    }
+  ],
+  "narration": "media/2026-07-18/narration.mp3",
+  "narration_text": "Can your AI read files safely? OpenAI said it trained GPT-Red, an internal red-teaming model, and used it to harden GPT-5.6 against prompt injection. That matters when an AI can browse, open files, or act through connected tools, because the safest habit is still a human checkpoint before anything sensitive happens. So if your system can send a payment, post publicly, or share private data, treat that step as approval-only. If you use connected AI tools, where would you add the checkpoint first: payments or publishing? Leave it in the comments, and I can cover the checklist next. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+  "practical_takeaway": "Measure one AI workflow end to end this week: time saved, errors introduced, and how much human cleanup remains.",
+  "what_to_test_next": "Pick one repeatable task — for example a client proposal draft or ad variant set — and run it through AI with a mandatory human approval step, then compare total completion time and edit load against your normal process."
+}

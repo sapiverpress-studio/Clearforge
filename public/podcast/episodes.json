@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-18-systems",
+    "kind": "daily",
+    "title": "From demos to operating systems",
+    "description": "This is the biggest story because it points to the core shift underneath the rest of the week: AI is moving from novelty and demos toward workflow management, measurement, and operational controls. That affects creators, small businesses, and product teams alike, even if they never use the same model or vendor.",
+    "published": "2026-07-18T07:00:00+01:00",
+    "duration": "00:07:30",
+    "size": 6484262,
+    "video_size": 20662999,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-18-systems.mp3",
+    "video_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-18-systems.mp4",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-18-systems.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-18-systems.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-18-systems.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-18-systems.html",
+    "source_dir": "drafts/2026-07-18-systems/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-18",
     "kind": "daily",
     "title": "From Demos to Dollars: AI’s New Workflow Scorecard",

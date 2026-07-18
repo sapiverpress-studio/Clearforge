@@ -1,0 +1,22 @@
+{
+  "date": "2026-07-18-systems",
+  "base_date": "2026-07-18",
+  "angle": "business_systems",
+  "editorial_theme": {
+    "day": "Saturday",
+    "date": "2026-07-18",
+    "slug": "clearforge-forecast",
+    "title": "Clearforge forecast",
+    "focus": "Evidence-based forecast piece using the week’s confirmed developments.",
+    "instruction": "Ask: if this happened this week, what might reasonably follow? Which companies may follow suit? What should creators and small businesses watch? Clearly label forecasts as forecasts. Do not present predictions as facts."
+  },
+  "reused_base_run": "base-current-2026-07-18",
+  "source_urls_reused": [
+    "https://openai.com/index/a-scorecard-for-the-ai-age/",
+    "https://openai.com/index/unlocking-self-improvement-gpt-red/",
+    "https://openai.com/index/why-teens-deserve-access-safe-ai/",
+    "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
+    "https://www.investing.com/news/stock-market-news/asml-tops-q2-estimates-on-ai-chip-demand-4792151"
+  ],
+  "passed": true
+}

@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-18-systems",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Is your AI saving time or just making drafts?",
+      "words": 92,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Could one prompt trigger the wrong action?",
+      "words": 107,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Do you keep disclosure with every AI-made ad?",
+      "words": 99,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Are you budgeting AI as a tool or an operating expense?",
+      "words": 106,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "How to Build an AI Workflow Scorecard for Small Teams",
+    "title_words": 10,
+    "description_words": 40
+  },
+  "warnings": []
+}

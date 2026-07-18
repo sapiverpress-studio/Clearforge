@@ -1,0 +1,324 @@
+{
+  "headline": "Saturday forecast: AI is moving from experiments to operating systems",
+  "dek": "This week’s confirmed moves point to a more practical phase: teams will be asked to prove AI output, document AI edits, and build safety and cost controls into the workflow before scaling further.",
+  "edition_angle": "business_systems",
+  "sources": [
+    {
+      "source_name": "OpenAI",
+      "title": "A scorecard for the AI age",
+      "url": "https://openai.com/index/a-scorecard-for-the-ai-age/",
+      "published_date": "2026-07-17",
+      "confirmed_fact": "OpenAI said AI adoption deepens in stages, and argued companies should measure useful work completed, cost per successful task, dependability, and whether each AI dollar buys more work at scale.",
+      "interpretation": "The company is pushing the market toward workflow metrics and unit economics instead of novelty or raw usage counts."
+    },
+    {
+      "source_name": "OpenAI",
+      "title": "GPT-Red: Unlocking Self-Improvement for Robustness",
+      "url": "https://openai.com/index/unlocking-self-improvement-gpt-red/",
+      "published_date": "2026-07-15",
+      "confirmed_fact": "OpenAI said it trained GPT-Red, an automated internal red-teaming model, and used it to adversarially train GPT-5.6 to improve resistance to prompt injection.",
+      "interpretation": "Safety testing is becoming more automated and more tightly integrated into model development and release processes."
+    },
+    {
+      "source_name": "OpenAI",
+      "title": "Why teens deserve access to safe AI",
+      "url": "https://openai.com/index/why-teens-deserve-access-safe-ai/",
+      "published_date": "2026-07-16",
+      "confirmed_fact": "OpenAI said it had strengthened default teen protections, rolled out age prediction, expanded parental controls, and will keep adding age-appropriate safeguards in the coming months.",
+      "interpretation": "Consumer AI products are increasingly being designed around governance, age-gating and family controls, not just general access."
+    },
+    {
+      "source_name": "Google",
+      "title": "Expanding AI transparency in ads",
+      "url": "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
+      "published_date": "2026-07-09",
+      "confirmed_fact": "Google said it is adding a 'How this ad was made' panel in My Ad Center on Search, YouTube and Discover, and that advertisers must label ads created or edited with generative AI.",
+      "interpretation": "Disclosure is becoming a built-in product feature, which may spread to more ad platforms and creator tools."
+    },
+    {
+      "source_name": "Reuters via Investing.com",
+      "title": "ASML capacity upgrade soothes AI chip bottleneck fears",
+      "url": "https://www.investing.com/news/stock-market-news/asml-tops-q2-estimates-on-ai-chip-demand-4792151",
+      "published_date": "2026-07-15",
+      "confirmed_fact": "Reuters reported that ASML raised its 2026 sales forecast and said it would expand capacity by 30% in each of the next two years because of strong demand linked to AI chips and data-center buildout.",
+      "interpretation": "The AI supply chain is still being pulled forward by demand, and equipment makers are planning for sustained pressure rather than a short spike."
+    }
+  ],
+  "story_summaries": [
+    {
+      "title": "OpenAI’s scorecard is a sign that AI is becoming a process tool",
+      "summary": "OpenAI argued that companies should judge AI by useful work completed, cost per successful task, dependability, and whether a dollar of AI spend produces more work at scale. That is a systems mindset: measure the output of the workflow, not the flashiness of the tool.",
+      "why_it_matters": "For creators and small businesses, the real question is whether AI improves a repeatable process. If it doesn’t reduce rework or increase completed output, it is just extra software.",
+      "practical_angle": "Choose one repeatable task and measure time in, time out, error rate, and cleanup before deciding whether the workflow should stay in place.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "GPT-Red points to a future where safety checks are built into the pipeline",
+      "summary": "OpenAI said it trained GPT-Red and used it to adversarially train GPT-5.6 against prompt injection. The important systems detail is that safety is being folded into model training and release cycles, not treated as a separate afterthought.",
+      "why_it_matters": "Any workflow that connects AI to files, browsers or business tools needs controls that stop one bad prompt from causing the wrong action.",
+      "practical_angle": "Keep a human approval step for anything that sends money, publishes publicly, or exposes private data.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "Google’s ad labels show that disclosure is becoming part of the production process",
+      "summary": "Google said it will add a 'How this ad was made' panel and require labels for ads created or edited with generative AI. That turns AI disclosure into a repeatable part of ad operations instead of a judgment call at the end.",
+      "why_it_matters": "Creators and small brands should expect more platforms to ask for provenance, editing history and clear labeling as part of asset management.",
+      "practical_angle": "Store the prompt, edit history and disclosure line with each ad or image so you can reuse the asset without rebuilding its documentation.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "ASML’s higher outlook suggests the AI budget problem is still infrastructure-led",
+      "summary": "Reuters reported that ASML raised its 2026 sales forecast and plans to expand capacity by 30% in each of the next two years because AI chip and data-center demand remains strong. That is a supply-chain signal, not just a market headline.",
+      "why_it_matters": "If the hardware layer keeps expanding, compute will remain a managed expense, not a one-time setup cost, and access may continue to be shaped by capacity and pricing.",
+      "practical_angle": "Forecast AI usage as recurring operating spend and build it into monthly budgets instead of treating it like a temporary experiment.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "OpenAI’s teen-safety changes hint that consumer AI will need household controls",
+      "summary": "OpenAI said it strengthened teen protections, rolled out age prediction and expanded parental controls. That suggests consumer AI is moving toward family settings, age-based defaults and more visible governance tools.",
+      "why_it_matters": "Products built for families, schools and younger users will likely need clearer safety settings and simpler controls to feel trustworthy.",
+      "practical_angle": "If you build for parents, students or younger users, make safety settings visible before adding more features.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    }
+  ],
+  "main_article": "This week’s clearest AI story is not that the technology got more impressive. It is that the industry is starting to behave like AI is part of the operating system.\n\nThat sounds abstract, but the practical meaning is simple: tools are being judged less by what they can demo and more by how they fit into repeatable work. OpenAI’s new scorecard language is the clearest example. The company said AI should be measured by useful work completed, cost per successful task, dependability, and whether each AI dollar buys more work at scale. That is not a product launch gimmick. It is a management framework. It tells buyers to ask a different question: does this tool improve the workflow, or does it just create more steps around the workflow? That forecast matters because more vendors are likely to adopt the same language once buyers start asking for proof instead of promises. That is a forecast, not a confirmed market outcome.\n\nFor creators and small businesses, the best response is not to chase every new feature. It is to test one process at a time. Drafting a proposal, editing a transcript, turning a meeting into tasks, answering customer email, tagging product photos, or writing ad variants are all examples of repeatable jobs that can be measured. The right scorecard is boring on purpose: time in, time out, error rate, and how much cleanup a human still has to do. If AI does not improve those numbers, it is not really a systems upgrade. It is just another source of drafts.\n\nThe second signal this week is that safety is getting built into the pipeline instead of bolted on after the fact. OpenAI said it trained GPT-Red, an automated internal red-teaming model, and used it to adversarially train GPT-5.6 against prompt injection. The systems takeaway is that safety is becoming part of how models are prepared for release. That is important because the more connected an AI tool becomes — to files, browser actions, calendars, documents or internal apps — the more one bad instruction can spread into a real-world mistake.\n\nSo the forecast here is straightforward: more teams will start treating human approval as a standard control, not an optional extra. If an AI can send a payment, publish content, change a website or expose customer data, it should not do that on its own. The check can be small and fast, but it should exist. In practice, that means a signed-off step before anything irreversible happens.\n\nA third confirmed move points to a similar shift in advertising and content operations. Google said it is adding a “How this ad was made” panel in My Ad Center on Search, YouTube and Discover, and that advertisers must label ads created or edited with generative AI. That is a quiet but meaningful workflow change. It moves AI disclosure from a policy footnote into the asset itself. Once disclosure is built into the platform, the question for creators is no longer only whether AI was used. It is whether the team can track how the asset was made, edited and approved.\n\nThe practical lesson for small businesses is to organize assets like records, not just files. Keep the prompt, the edits, the final disclosure line and the approval trail together. That makes it easier to reuse the asset later, and it reduces the chance that a team member publishes something without the right label. My forecast is that other ad tools, publishing platforms and creator marketplaces may follow this pattern because transparency is turning into a product feature. That is an informed forecast based on Google’s move, not a confirmed rollout elsewhere.\n\nThe fourth signal is farther down the stack, but it affects everyone who uses AI. Reuters reported that ASML raised its 2026 sales forecast and plans to expand capacity by 30% in each of the next two years because demand tied to AI chips and data-center buildout remains strong. That matters because infrastructure still sets the pace. When the chip-making layer keeps expanding, compute does not become infinite. It stays managed, priced, and sometimes constrained.\n\nFor creators and small operators, the forecasting takeaway is practical: budget for AI as a recurring operating expense. Do not assume today’s usage pattern will stay cheap forever, and do not assume access will remain loose just because a model is available today. The most durable planning approach is to tie AI spend to output. If it helps produce more completed work, it earns its place. If it only produces more drafts, it is probably overhead.\n\nThere is also a consumer signal worth watching. OpenAI said it strengthened teen protections, rolled out age prediction and expanded parental controls. That points to a market where household controls matter more than raw access. Products aimed at families, education and younger users will likely need clearer defaults and easier safety settings to compete. The forecast is not that every product will copy the same controls immediately. It is that governance will become a normal feature of consumer AI, not a niche concern.\n\nTaken together, this week’s confirmed developments point to the same direction: AI is moving from novelty toward process design. The companies most likely to follow suit are the ones selling business tools, ads, consumer products and infrastructure, because those are the areas where proof, disclosure and control matter most. For creators and small businesses, the watchword is simple: measure one workflow, document one asset, and keep one approval step where it belongs. That is how the next phase of AI adoption is likely to be managed. That is a forecast, not a fact already settled.",
+  "practical_takeaway": "Pick one repeatable workflow, measure its time and cleanup cost, and add one human approval step wherever AI can trigger an irreversible action.",
+  "what_to_test_next": "Run a single AI-assisted task — such as a client proposal draft or ad variant set — through your normal process, then compare completed output, rework, and approval points against the non-AI version.",
+  "claims_to_verify": [],
+  "social": {
+    "tiktok_script": "Is your AI saving time or just making drafts? OpenAI said companies should measure useful work completed, cost per successful task, dependability, and how much cleanup the human still does. For one repeatable job, track time in, time out, error rate, and revision time. If the cleanup wipes out the savings, the workflow is not helping. The payoff is simple: you can tell whether AI improves a process before you scale it. Comment with one task you’d test first — proposals or email drafts — and I’ll turn it into a scorecard.",
+    "youtube_shorts_script": "Could one prompt trigger the wrong action? OpenAI said it trained GPT-Red and used it to harden GPT-5.6 against prompt injection. The takeaway is practical: once AI can browse files, use tools, or touch business systems, safety has to live inside the workflow. So if AI can send money, publish content, or expose private data, add a human approval step before anything irreversible happens. That one control is boring, but it prevents a lot of cleanup later. Where would you place your first approval step: payments, publishing, or file access? Drop your answer in the comments, and tell me if you want a simple approval checklist next.",
+    "facebook_post": "Do you keep disclosure with every AI-made ad? Google said it will add a 'How this ad was made' panel in My Ad Center on Search, YouTube and Discover, and advertisers must label ads created or edited with generative AI. For small teams, that means the disclosure trail is part of the asset, not an afterthought. Keep the prompt, edit history, and final disclosure together so you can reuse the ad cleanly later. Do you already store that trail, or would you need to build it? Comment with one of those two, or ask for a simple folder system.",
+    "pinterest_title": "How to Build an AI Workflow Scorecard for Small Teams",
+    "pinterest_description": "Measure one repeatable task end to end so you can see time saved, errors introduced, and cleanup needed before you scale AI. Save this checklist for your next workflow test, and comment with the task you want to measure first.",
+    "linkedin_post": "Are you budgeting AI as a tool or an operating expense? Reuters reported ASML raised its 2026 sales forecast and said it will expand capacity by 30% in each of the next two years because demand tied to AI chips and data-center buildout remains strong. That suggests compute is still managed, priced, and planned like recurring spend, not a one-off experiment. For operators, the practical move is to tie AI usage to completed work and fold it into monthly budgets. Does your team budget AI monthly, or still treat it like a test? Reply with one, and I can follow up with a simple planning template.",
+    "quote_card_lines": [
+      "Are you measuring AI by completed work or by prompts used?",
+      "If AI can act on its own, where does your approval step live?",
+      "Can you reuse an AI asset if you cannot prove how it was made?",
+      "Does your AI budget belong in monthly operating spend?",
+      "Which workflow would you test first: drafting, editing, or publishing?"
+    ]
+  },
+  "headline_options": [
+    "AI is moving from experiments to operating systems, and this week showed why",
+    "This week’s AI signal: measure the workflow, control the risk, budget the spend",
+    "The next AI phase is systems, not spectacle",
+    "AI is becoming a process design problem",
+    "What this week’s AI moves mean for workflows, controls and costs"
+  ],
+  "editorial_theme": {
+    "day": "Saturday",
+    "date": "2026-07-18",
+    "slug": "clearforge-forecast",
+    "title": "Clearforge forecast",
+    "focus": "Evidence-based forecast piece using the week’s confirmed developments.",
+    "instruction": "Ask: if this happened this week, what might reasonably follow? Which companies may follow suit? What should creators and small businesses watch? Clearly label forecasts as forecasts. Do not present predictions as facts."
+  },
+  "edition_id": "2026-07-18-systems",
+  "base_date": "2026-07-18",
+  "edition_mode": "alternate_angle",
+  "audience_fit": {
+    "generated_at": "2026-07-18T12:53:40.006Z",
+    "story_assessments": [
+      {
+        "story_index": 0,
+        "story_title": "OpenAI’s scorecard is a sign that AI is becoming a process tool",
+        "target_audience": "Creators, small-business operators, and team leads using AI in repeatable workflows",
+        "audience_problem_or_desire": "They want to know whether AI actually improves a process instead of just producing more drafts and cleanup",
+        "interest_signal": "OpenAI is framing AI with management metrics like useful work completed and cost per successful task",
+        "stop_reason": "It turns AI hype into a practical test that anyone with a workflow can understand quickly",
+        "promised_payoff": "A simple way to tell whether AI belongs in a repeatable task before you scale it",
+        "proof_point": "OpenAI said companies should measure useful work completed, cost per successful task, dependability, and whether each AI dollar buys more work at scale",
+        "search_phrases": [
+          "AI workflow scorecard",
+          "measure AI productivity",
+          "cost per successful task",
+          "AI useful work completed",
+          "how to test AI in a workflow"
+        ],
+        "scores": {
+          "audience_fit": 9,
+          "practical_consequence": 9,
+          "searchability": 8,
+          "stranger_usefulness": 9,
+          "novelty": 7,
+          "visual_potential": 6,
+          "discussion_potential": 7,
+          "short_form_clarity": 9
+        },
+        "overall_score": 8,
+        "score_reason": "Broadly useful to creators and small teams, easy to explain, and strongly tied to a measurable workflow decision."
+      },
+      {
+        "story_index": 1,
+        "story_title": "GPT-Red points to a future where safety checks are built into the pipeline",
+        "target_audience": "Product teams, ops leads, security-conscious AI users, and developers connecting AI to tools",
+        "audience_problem_or_desire": "They want to reduce the risk that an AI system takes the wrong action when it can access files, browsers, or business tools",
+        "interest_signal": "OpenAI said it trained GPT-Red and used it to adversarially train GPT-5.6 against prompt injection",
+        "stop_reason": "The phrase prompt injection plus the idea of a model hardening itself creates an immediate risk/control hook",
+        "promised_payoff": "A clear reminder to add a human approval step before irreversible AI actions",
+        "proof_point": "OpenAI said it trained GPT-Red, an automated internal red-teaming model, and used it to adversarially train GPT-5.6 to improve resistance to prompt injection",
+        "search_phrases": [
+          "prompt injection protection",
+          "AI human approval step",
+          "GPT-Red red teaming",
+          "AI safety in workflow",
+          "adversarial training AI"
+        ],
+        "scores": {
+          "audience_fit": 8,
+          "practical_consequence": 8,
+          "searchability": 7,
+          "stranger_usefulness": 8,
+          "novelty": 8,
+          "visual_potential": 7,
+          "discussion_potential": 8,
+          "short_form_clarity": 8
+        },
+        "overall_score": 8,
+        "score_reason": "Strong operational relevance and a simple safeguard make it easy to understand even for non-specialists."
+      },
+      {
+        "story_index": 2,
+        "story_title": "Google’s ad labels show that disclosure is becoming part of the production process",
+        "target_audience": "Marketers, creators, small brands, and ad operations teams",
+        "audience_problem_or_desire": "They need a repeatable way to label AI-made ads and keep their asset records organized",
+        "interest_signal": "Google is moving AI disclosure into Search, YouTube, and Discover with a built-in panel and mandatory labels",
+        "stop_reason": "It affects a familiar creator and small-business workflow that many people already have to manage",
+        "promised_payoff": "A practical system for keeping prompts, edits, and disclosure together so assets can be reused cleanly",
+        "proof_point": "Google said it is adding a 'How this ad was made' panel in My Ad Center on Search, YouTube and Discover, and that advertisers must label ads created or edited with generative AI",
+        "search_phrases": [
+          "AI ad disclosure",
+          "How this ad was made",
+          "generative AI ad labels",
+          "Google ad transparency",
+          "store prompt and edit history"
+        ],
+        "scores": {
+          "audience_fit": 9,
+          "practical_consequence": 8,
+          "searchability": 8,
+          "stranger_usefulness": 8,
+          "novelty": 7,
+          "visual_potential": 8,
+          "discussion_potential": 8,
+          "short_form_clarity": 9
+        },
+        "overall_score": 8,
+        "score_reason": "Very strong for marketers and creators because the policy change maps directly to a routine asset-management problem."
+      },
+      {
+        "story_index": 3,
+        "story_title": "ASML’s higher outlook suggests the AI budget problem is still infrastructure-led",
+        "target_audience": "Founders, operators, finance leads, and infrastructure watchers",
+        "audience_problem_or_desire": "They want to plan AI spending without treating it like a one-time experiment",
+        "interest_signal": "Reuters reported that ASML raised its 2026 sales forecast and plans to expand capacity by 30% in each of the next two years",
+        "stop_reason": "It connects AI demand to budgets, chips, and capacity planning rather than abstract model chatter",
+        "promised_payoff": "A reason to budget AI as recurring operating spend and tie it to completed work",
+        "proof_point": "Reuters reported that ASML raised its 2026 sales forecast and said it would expand capacity by 30% in each of the next two years because of strong demand linked to AI chips and data-center buildout",
+        "search_phrases": [
+          "ASML AI chip demand",
+          "AI infrastructure spending",
+          "AI compute operating expense",
+          "AI data center demand",
+          "ASML capacity expansion"
+        ],
+        "scores": {
+          "audience_fit": 7,
+          "practical_consequence": 7,
+          "searchability": 6,
+          "stranger_usefulness": 6,
+          "novelty": 7,
+          "visual_potential": 6,
+          "discussion_potential": 6,
+          "short_form_clarity": 7
+        },
+        "overall_score": 7,
+        "score_reason": "Useful for planning and budgeting, but narrower and less immediately actionable than the workflow and disclosure stories."
+      },
+      {
+        "story_index": 4,
+        "story_title": "OpenAI’s teen-safety changes hint that consumer AI will need household controls",
+        "target_audience": "Parents, educators, and consumer AI product teams",
+        "audience_problem_or_desire": "They want AI tools that feel safer and easier to manage for teens and families",
+        "interest_signal": "OpenAI said it strengthened teen protections, rolled out age prediction, and expanded parental controls",
+        "stop_reason": "It speaks directly to household safety, a clear and recognizable concern",
+        "promised_payoff": "A signal that consumer AI is moving toward age-based defaults and visible governance tools",
+        "proof_point": "OpenAI said it had strengthened default teen protections, rolled out age prediction, expanded parental controls, and will keep adding age-appropriate safeguards in the coming months",
+        "search_phrases": [
+          "teen AI safety",
+          "parental controls AI",
+          "age prediction AI",
+          "consumer AI governance",
+          "safe AI for teens"
+        ],
+        "scores": {
+          "audience_fit": 8,
+          "practical_consequence": 8,
+          "searchability": 7,
+          "stranger_usefulness": 8,
+          "novelty": 7,
+          "visual_potential": 6,
+          "discussion_potential": 8,
+          "short_form_clarity": 8
+        },
+        "overall_score": 8,
+        "score_reason": "Clear audience relevance and a concrete governance angle make it easy to discuss without needing technical background."
+      }
+    ],
+    "platform_selections": {
+      "tiktok": {
+        "story_index": 0,
+        "story_title": "OpenAI’s scorecard is a sign that AI is becoming a process tool",
+        "target_audience": "Creators, small-business operators, and team leads using AI in repeatable workflows",
+        "format": "short_video",
+        "opening": "Is your AI saving time or just making drafts?",
+        "payoff": "OpenAI said companies should measure useful work completed, cost per successful task, dependability, and how much cleanup the human still does. For one repeatable job, track time in, time out, error rate, and revision time. If the cleanup wipes out the savings, the workflow is not helping.",
+        "selection_reason": "This is the cleanest quick-hit story for a broad audience because it turns AI hype into a simple before-and-after test.",
+        "platform_fit_score": 9
+      },
+      "youtube": {
+        "story_index": 1,
+        "story_title": "GPT-Red points to a future where safety checks are built into the pipeline",
+        "target_audience": "Product teams, ops leads, security-conscious AI users, and developers connecting AI to tools",
+        "format": "shorts",
+        "opening": "Could one prompt trigger the wrong action?",
+        "payoff": "OpenAI said it trained GPT-Red and used it to harden GPT-5.6 against prompt injection. The practical takeaway is to add human approval before AI sends money, publishes publicly, or exposes private data.",
+        "selection_reason": "The risk-and-control angle is concrete, searchable, and easy to explain in a short format.",
+        "platform_fit_score": 8
+      },
+      "facebook": {
+        "story_index": 2,
+        "story_title": "Google’s ad labels show that disclosure is becoming part of the production process",
+        "target_audience": "Marketers, creators, small brands, and ad operations teams",
+        "format": "post",
+        "opening": "Do you keep disclosure with every AI-made ad?",
+        "payoff": "Google said it will add a 'How this ad was made' panel in My Ad Center on Search, YouTube and Discover, and advertisers must label ads created or edited with generative AI. For small teams, the prompt, edit history, and disclosure line should live with the asset so it can be reused cleanly later.",
+        "selection_reason": "This fits a familiar creator workflow and invites a practical yes/no or process-based reply from people who manage ads and visuals.",
+        "platform_fit_score": 8
+      },
+      "pinterest": {
+        "story_index": 0,
+        "story_title": "OpenAI’s scorecard is a sign that AI is becoming a process tool",
+        "target_audience": "Creators, small-business operators, and team leads using AI in repeatable workflows",
+        "format": "pin",
+        "opening": "How to Build an AI Workflow Scorecard for Small Teams",
+        "payoff": "Measure one repeatable task end to end so you can see time saved, errors introduced, and cleanup needed before you scale AI. Save this checklist for your next workflow test, and comment with the task you want to measure first.",
+        "selection_reason": "Pinterest rewards searchable how-to framing, and this turns a broad AI concept into a practical checklist people can save and reuse.",
+        "platform_fit_score": 9
+      },
+      "linkedin": {
+        "story_index": 3,
+        "story_title": "ASML’s higher outlook suggests the AI budget problem is still infrastructure-led",
+        "target_audience": "Founders, operators, finance leads, and infrastructure watchers",
+        "format": "post",
+        "opening": "Are you budgeting AI as a tool or an operating expense?",
+        "payoff": "Reuters reported ASML raised its 2026 sales forecast and said it will expand capacity by 30% in each of the next two years because demand tied to AI chips and data-center buildout remains strong. That suggests AI should be planned like recurring spend, not a one-off experiment.",
+        "selection_reason": "It frames AI as a budgeting and planning issue, which matches LinkedIn’s operator and leadership audience.",
+        "platform_fit_score": 8
+      }
+    },
+    "overall_reasoning": "Each story was assessed independently for audience fit, practical consequence, searchability, usefulness, novelty, visual potential, discussion potential, and short-form clarity. The strongest platform matches were chosen separately rather than forcing one story everywhere: the workflow scorecard for TikTok and Pinterest, the safety pipeline story for YouTube Shorts, ad disclosure for Facebook, and infrastructure budgeting for LinkedIn. All social assets stay inside the verified research pack and keep the tone practical, calm, and human-led."
+  }
+}

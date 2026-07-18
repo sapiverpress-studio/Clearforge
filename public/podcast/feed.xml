@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>
     <copyright>Clearforge</copyright>
     <generator>Clearforge hosted podcast feed</generator>
-    <lastBuildDate>Sat, 18 Jul 2026 11:12:17 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jul 2026 13:01:31 GMT</lastBuildDate>
     <atom:link href="https://clearforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Clearforge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://clearforge-daily-brief.netlify.app/podcast/cover.png"/>
+    <item>
+      <title>From demos to operating systems</title>
+      <description>This is the biggest story because it points to the core shift underneath the rest of the week: AI is moving from novelty and demos toward workflow management, measurement, and operational controls. That affects creators, small businesses, and product teams alike, even if they never use the same model or vendor.</description>
+      <content:encoded><![CDATA[<p>This is the biggest story because it points to the core shift underneath the rest of the week: AI is moving from novelty and demos toward workflow management, measurement, and operational controls. That affects creators, small businesses, and product teams alike, even if they never use the same model or vendor.</p><p><strong>Read alongside this episode:</strong> <a href="https://clearforge-daily-brief.netlify.app/posts/2026-07-18-systems.html">daily briefing</a> · <a href="https://clearforge-daily-brief.netlify.app/features/2026-07-18-systems.html">feature analysis</a></p><p><a href="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-18-systems.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-18-systems.html</link>
+      <guid isPermaLink="false">clearforge:2026-07-18-systems</guid>
+      <pubDate>Sat, 18 Jul 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-18-systems.mp3" length="6484262" type="audio/mpeg"/>
+      <itunes:author>Clearforge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:07:30</itunes:duration>
+      <podcast:transcript url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-18-systems.txt" type="text/plain"/>
+    </item>
     <item>
       <title>From Demos to Dollars: AI’s New Workflow Scorecard</title>
       <description>This is the broadest practical shift in the edition: it changes how AI is judged, bought, and measured across everyday workflows, which directly affects creators, small businesses, and teams deciding whether AI is actually worth paying for.</description>

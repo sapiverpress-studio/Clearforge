@@ -1,23 +1,23 @@
 {
   "version": 1,
-  "date": "2026-07-18",
+  "date": "2026-07-18-systems",
   "brand": "Clearforge",
   "type": "clearforge_daily_biggest_story_podcast_script",
   "human_review_required": true,
   "narrator": "Irene",
   "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
-  "episode_title": "From Demos to Dollars: AI’s New Workflow Scorecard",
+  "episode_title": "From demos to operating systems",
   "selected_story_index": 0,
-  "selected_story_title": "OpenAI’s new scorecard points AI buyers toward workflow economics",
-  "selection_reason": "This is the broadest practical shift in the edition: it changes how AI is judged, bought, and measured across everyday workflows, which directly affects creators, small businesses, and teams deciding whether AI is actually worth paying for.",
-  "word_count": 1158,
-  "estimated_duration_minutes": 8,
+  "selected_story_title": "OpenAI’s scorecard is a sign that AI is becoming a process tool",
+  "selection_reason": "This is the biggest story because it points to the core shift underneath the rest of the week: AI is moving from novelty and demos toward workflow management, measurement, and operational controls. That affects creators, small businesses, and product teams alike, even if they never use the same model or vendor.",
+  "word_count": 1087,
+  "estimated_duration_minutes": 7.5,
   "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
   "source_notes": "source-notes.md",
-  "first_spoken_line": "Here’s the biggest story for today: OpenAI is trying to change how people judge AI from the inside out. In a new scorecard, the company argues that the right way to evaluate AI is not by flashy demos or raw usage numbers, but by whether it completes useful work, how much each successful task costs, how dependable the system is, and whether each AI dollar buys more work at scale.",
-  "final_spoken_line": "My verdict is: test carefully. This is the right frame for most practical AI use, but the benefits only show up when you measure your own workflow honestly. Start small, compare against your normal process, keep a human approval step, and judge the tool by finished work, not by the first draft alone.",
+  "first_spoken_line": "Here is the big signal this week: the most important conversation around AI is shifting from what it can generate to what it can reliably finish.",
+  "final_spoken_line": "What to watch next is whether more companies start talking in these same terms: completed work, cost per successful task, dependability, and documented approval points. If that becomes normal, AI is no longer a side experiment. It is becoming part of the operating system of work.",
   "validation_warnings": [
-    "Script is shorter than target: 1158 words."
+    "Script is shorter than target: 1087 words."
   ],
   "non_spoken_instruction_candidates": []
 }

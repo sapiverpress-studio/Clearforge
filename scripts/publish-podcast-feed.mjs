@@ -54,6 +54,9 @@ if (fs.existsSync(structuredOutputPath)) {
     console.warn(`Could not read Facebook copy from ${structuredOutputPath}: ${error.message}`);
   }
 }
+if (facebookPost && !/newsletter|weekly digest/i.test(facebookPost)) {
+  facebookPost = `${facebookPost.trim()}\n\nWant one calm weekly roundup of what changed, why it matters and what is worth testing? Sign up to the free Clearforge weekly newsletter: ${BASE}/newsletter/`;
+}
 const sourceNotes = fs.existsSync(sourceNotesPath) ? fs.readFileSync(sourceNotesPath, "utf8").trim() : "";
 const dateSlug = slug.match(/^\d{4}-\d{2}-\d{2}(?:-[a-z0-9-]+)?/i)?.[0] || slug;
 const relatedArticleUrl = `${BASE}/posts/${encodeURIComponent(dateSlug)}.html`;

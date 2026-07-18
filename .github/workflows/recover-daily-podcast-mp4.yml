@@ -55,7 +55,11 @@ jobs:
           audio="$folder/clearforge-daily-podcast-$edition.mp3"
           video="$folder/clearforge-daily-podcast-$edition.mp4"
           [[ -s "$audio" ]] || { echo "Existing Irene MP3 is missing: $audio"; exit 1; }
-          bash scripts/generate-podcast-mp4.sh "$audio" "$video" "media/$edition/story-1.png"
+          if [[ -s "$video" ]]; then
+            echo "Existing MP4 found; reusing it while refreshing the episode page."
+          else
+            bash scripts/generate-podcast-mp4.sh "$audio" "$video" "media/$edition/story-1.png"
+          fi
 
       - name: Add MP4 to podcast episode and downloads
         env:

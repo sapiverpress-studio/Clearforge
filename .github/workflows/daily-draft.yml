@@ -239,9 +239,23 @@ jobs:
           OPENAI_TTS_VOICE: ${{ vars.OPENAI_TTS_VOICE || 'coral' }}
         run: npm run media:ai
 
+      - name: Detect available daily Irene MP3
+        id: podcast_audio
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        shell: bash
+        run: |
+          audio="drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp3"
+          if [[ -s "$audio" ]]; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+            echo "Using existing verified Irene audio: $audio"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "No daily Irene MP3 is available; MP4 generation will be skipped without affecting other outputs."
+          fi
+
       - name: Generate full daily podcast MP4
         id: podcast_video
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.irene == 'true' && steps.irene.outcome == 'success'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.podcast_audio.outputs.available == 'true'
         continue-on-error: true
         shell: bash
         run: |

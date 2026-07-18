@@ -40,6 +40,12 @@ jobs:
           [[ "$edition" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}([a-z0-9-]*)$ ]] || { echo "Invalid edition: $edition"; exit 1; }
           echo "edition=$edition" >> "$GITHUB_OUTPUT"
 
+      - name: Install FFmpeg
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
       - name: Generate MP4 from existing Irene MP3
         shell: bash
         run: |

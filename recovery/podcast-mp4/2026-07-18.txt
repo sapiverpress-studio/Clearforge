@@ -1,1 +1,1 @@
-Recover the 2026-07-18 daily podcast MP4 from the existing verified Irene MP3.
+Retry the 2026-07-18 daily podcast MP4 from the existing verified Irene MP3 after installing FFmpeg.

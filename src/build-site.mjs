@@ -149,6 +149,7 @@ function pageTemplate(title, description, body, options = {}) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>if (location.hash.includes("invite_token=")) location.replace("/publishing/" + location.hash);</script>
   <title>${escapeHtml(title)} | Clearforge</title>
   <meta name="description" content="${escapeHtml(description)}">
   <link rel="canonical" href="${escapeHtml(pageUrl)}">

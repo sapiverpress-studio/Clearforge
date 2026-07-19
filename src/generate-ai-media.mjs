@@ -118,8 +118,37 @@ const speech = await client.audio.speech.create({
 const narrationFile = path.join(outDir, "narration.mp3");
 fs.writeFileSync(narrationFile, Buffer.from(await speech.arrayBuffer()));
 
+const tiktokSelection = data.audience_fit?.platform_selections?.tiktok || {};
+const tiktokStoryIndex = Number.isInteger(tiktokSelection.story_index) && tiktokSelection.story_index >= 0 && tiktokSelection.story_index < stories.length
+  ? tiktokSelection.story_index
+  : 0;
+const tiktokNarrationText = String(data.social?.tiktok_script || "").replace(/\s+/g, " ").trim();
+const tiktokWords = tiktokNarrationText.split(/\s+/).filter(Boolean);
+const tiktokSentences = tiktokNarrationText.match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map((part) => part.trim()).filter(Boolean) || [];
+if (!tiktokNarrationText || !tiktokSentences[0]?.endsWith("?")) {
+  throw new Error("TikTok script must start with a direct question.");
+}
+if (tiktokSentences[0].split(/\s+/).length > 15) {
+  throw new Error("TikTok opening question must be 15 words or fewer.");
+}
+if (tiktokWords.length < 25 || tiktokWords.length > 65) {
+  throw new Error(`TikTok script must stay short enough for the retention format (25–65 words); received ${tiktokWords.length}.`);
+}
+const tiktokHook = tiktokSentences[0];
+const tiktokResponsePrompt = tiktokSentences.at(-1) || "Which would you test first?";
+const tiktokPayoff = tiktokSentences.slice(1, -1).join(" ") || stories[tiktokStoryIndex].practical_angle;
+
+const tiktokSpeech = await client.audio.speech.create({
+  model: process.env.OPENAI_TTS_MODEL || "gpt-4o-mini-tts",
+  voice: process.env.OPENAI_TTS_VOICE || "coral",
+  input: tiktokNarrationText,
+  instructions: "Speak like a sharp, conversational British technology editor. Start immediately with the question. Keep the delivery brisk, natural and human, with a small pause before the final response prompt. Do not sound like a newsreader or advertisement."
+});
+const tiktokNarrationFile = path.join(outDir, "tiktok-narration.mp3");
+fs.writeFileSync(tiktokNarrationFile, Buffer.from(await tiktokSpeech.arrayBuffer()));
+
 const manifest = {
-  version: 4,
+  version: 5,
   date: DATE,
   headline: data.headline,
   dek: data.dek,
@@ -148,6 +177,16 @@ const manifest = {
   stories: images,
   narration: path.relative(ROOT, narrationFile).replaceAll("\\", "/"),
   narration_text: narrationText,
+  tiktok: {
+    story_index: tiktokStoryIndex,
+    hook: tiktokHook,
+    payoff: tiktokPayoff,
+    response_prompt: tiktokResponsePrompt,
+    narration: path.relative(ROOT, tiktokNarrationFile).replaceAll("\\", "/"),
+    narration_text: tiktokNarrationText,
+    target_duration_seconds: [12, 18],
+    format: "question_fact_consequence_response"
+  },
   practical_takeaway: data.practical_takeaway,
   what_to_test_next: data.what_to_test_next
 };

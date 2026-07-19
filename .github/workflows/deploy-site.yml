@@ -1,0 +1,47 @@
+name: Deploy Clearforge Site
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "public/**"
+      - "netlify/functions/**"
+      - "src/build-publishing-dashboard.mjs"
+      - "src/publishing-dashboard-client.mjs"
+      - "package.json"
+      - "netlify.toml"
+      - ".github/workflows/deploy-site.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: clearforge-production-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Install dependencies
+        run: npm install
+      - name: Build site
+        env:
+          BLOG_BASE_URL: https://clearforge-daily-brief.netlify.app
+        run: npm run build:site
+      - name: Deploy production
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: "8e72a4fc-5ad6-4377-8f4a-399d4c936060"
+        run: |
+          if [ -z "${NETLIFY_AUTH_TOKEN:-}" ]; then
+            echo "::error::Missing NETLIFY_AUTH_TOKEN repository secret."
+            exit 1
+          fi
+          npx --yes netlify-cli@latest deploy --prod --dir=public --site="${NETLIFY_SITE_ID}" --auth="${NETLIFY_AUTH_TOKEN}" --message="Clearforge protected publishing dashboard"

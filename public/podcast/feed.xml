@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>
     <copyright>Clearforge</copyright>
     <generator>Clearforge hosted podcast feed</generator>
-    <lastBuildDate>Sun, 19 Jul 2026 05:09:35 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2026 14:24:49 GMT</lastBuildDate>
     <atom:link href="https://clearforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Clearforge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://clearforge-daily-brief.netlify.app/podcast/cover.png"/>
+    <item>
+      <title>When AI gets judged by the job, not the demo</title>
+      <description>This is the strongest story because it changes how people should evaluate AI in practice. The shift from flashy outputs to measured work, cost, and dependability affects almost every team using AI, from solo creators to small businesses to operations teams.</description>
+      <content:encoded><![CDATA[<p>This is the strongest story because it changes how people should evaluate AI in practice. The shift from flashy outputs to measured work, cost, and dependability affects almost every team using AI, from solo creators to small businesses to operations teams.</p><p><strong>Read alongside this episode:</strong> <a href="https://clearforge-daily-brief.netlify.app/posts/2026-07-19-risk.html">daily briefing</a> · <a href="https://clearforge-daily-brief.netlify.app/features/2026-07-19-risk.html">feature analysis</a></p><p><a href="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-19-risk.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-19-risk.html</link>
+      <guid isPermaLink="false">clearforge:2026-07-19-risk</guid>
+      <pubDate>Sun, 19 Jul 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-19-risk.mp3" length="6567854" type="audio/mpeg"/>
+      <itunes:author>Clearforge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:07:36</itunes:duration>
+      <podcast:transcript url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-19-risk.txt" type="text/plain"/>
+    </item>
     <item>
       <title>AI is being judged by work, not demos</title>
       <description>This is the strongest edition-wide signal because it changes how people should evaluate AI tools in practice: not by excitement, but by completed work, cost, reliability, and real workflow impact. That is immediately useful for creators and small businesses.</description>

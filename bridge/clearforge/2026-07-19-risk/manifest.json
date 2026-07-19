@@ -1,0 +1,248 @@
+{
+  "version": 5,
+  "brand": "Clearforge",
+  "date": "2026-07-19-risk",
+  "type": "clearforge_daily_ai_brief",
+  "approved": {
+    "article": true,
+    "facebook": true,
+    "pinterest": true,
+    "youtube": true
+  },
+  "article": {
+    "headline": "Sunday reset: AI is getting more guarded, more measurable, and harder to treat casually",
+    "dek": "This week’s signal is not bigger models. It is tighter control: AI is being measured by outcomes, gated by age and safety checks, and pushed deeper into workflows that now need more review, not less.",
+    "url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-19-risk.html",
+    "markdown": "daily_brief.md"
+  },
+  "calls_to_action": {
+    "spoken": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "screen_lines": [
+      "READ THE FULL BREAKDOWN",
+      "Link in bio",
+      "LISTEN ON THE GO",
+      "Search: Clearforge AI Briefing"
+    ],
+    "caption": "Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+    "direct_links_allowed_in_social_copy": false
+  },
+  "stories": [
+    {
+      "title": "AI is being judged by work, not demos",
+      "summary": "OpenAI’s scorecard shifts the discussion from token prices and flashy outputs to useful work completed, cost per successful task, dependability, and scale effects. In risk-control terms, that matters because a tool that sounds efficient can still create hidden costs if it needs repeat prompting, heavy human cleanup, or multiple retries before it is safe to use.",
+      "why_it_matters": "Teams often automate the easiest part of a job and leave the risky part unmeasured. This framing pushes them to ask whether the AI result is actually reviewable, repeatable, and worth trusting.",
+      "practical_angle": "Pick one task and compare the number of retries, edits, and human checks before deciding the workflow is safe to expand.",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/a-scorecard-for-the-ai-age/"
+    },
+    {
+      "title": "Consumer AI is moving toward age prediction and family controls",
+      "summary": "OpenAI said it is rolling out age prediction on ChatGPT consumer plans so the system can estimate whether an account likely belongs to someone under 18 and apply stronger safeguards. It also pointed to parent controls such as quiet hours, memory settings, and distress notifications.",
+      "why_it_matters": "This is a sign that consumer AI is moving into household governance. The risk question is no longer just what the model can say, but what it should be allowed to do for different users in different settings.",
+      "practical_angle": "If younger users share devices with adults, review the control settings now and decide what should be restricted before a problem appears.",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/our-approach-to-age-prediction/"
+    },
+    {
+      "title": "Google is turning notebook research into a connected workflow",
+      "summary": "Google renamed NotebookLM to Gemini Notebook, added a secure cloud computer for code execution and data analysis, and said the product will sync across Gemini and Search. Google says the tool already serves more than 30 million people and over 600,000 organizations.",
+      "why_it_matters": "More capability means more exposure. Once a research tool can execute code, handle analysis, and pull from connected surfaces, the risk review shifts to permissions, source handling, and data sensitivity.",
+      "practical_angle": "Before moving sensitive notes into a connected AI workspace, decide what information is acceptable to upload and what still needs to stay in a separate, human-controlled process.",
+      "source_name": "Google",
+      "source_url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/"
+    }
+  ],
+  "facebook": {
+    "post": "Would you check your ChatGPT settings today?\nOpenAI said it is rolling out age prediction on consumer ChatGPT so it can estimate whether an account likely belongs to someone under 18 and apply stronger safeguards. It also pointed to parent controls like quiet hours, memory settings, and distress notifications.\nIf your family shares devices, this is a good time to decide what should be automatic and what should stay under adult control.\nFor a shared device, which matters more first: quiet hours or stronger safeguards? Comment with one, or ask for a follow-up on family controls.\n\n#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI"
+  },
+  "pinterest": {
+    "title": "Checklist before you upload notes to Gemini Notebook",
+    "description": "Before moving sensitive notes into Gemini Notebook, decide what data can go in, who can approve uploads, and what must stay human-controlled. The benefit is simpler risk review before a tool that can execute code and sync across Gemini and Search gets your data. Save this checklist, and comment with one rule your team uses.",
+    "destination_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-19-risk.html"
+  },
+  "youtube": {
+    "title": "Sunday reset: AI is getting more guarded, more measurable, and harder to treat casually",
+    "script": "Is your AI workflow actually saving time?\nOpenAI’s new scorecard says AI should be judged by useful work completed, cost per successful task, dependability, and whether value improves at scale. That matters because a tool can look fast and still create hidden work if it needs retries, edits, or careful human cleanup before it’s usable. My simple test this week is to compare one real workflow against your normal process and count every retry and edit. If the cleanup is bigger than the time saved, the workflow is not ready to expand. Which would you measure first: retries or human edits? Drop one in the comments. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "description": "Before expanding any AI workflow, define the finish line, the human review step, and the data you will not upload."
+  },
+  "podcast": {
+    "generated": true,
+    "folder": "podcast/",
+    "copy_paste_script": "podcast/COPY_PASTE_INTO_ELEVENLABS.txt",
+    "full_review_script": "podcast/podcast-script.md",
+    "metadata": "podcast/episode-metadata.json",
+    "source_notes": "podcast/source-notes.md",
+    "episode": {
+      "version": 1,
+      "date": "2026-07-19-risk",
+      "brand": "Clearforge",
+      "type": "clearforge_daily_biggest_story_podcast_script",
+      "human_review_required": true,
+      "narrator": "Irene",
+      "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+      "episode_title": "When AI gets judged by the job, not the demo",
+      "selected_story_index": 0,
+      "selected_story_title": "AI is being judged by work, not demos",
+      "selection_reason": "This is the strongest story because it changes how people should evaluate AI in practice. The shift from flashy outputs to measured work, cost, and dependability affects almost every team using AI, from solo creators to small businesses to operations teams.",
+      "word_count": 1104,
+      "estimated_duration_minutes": 7.6,
+      "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+      "source_notes": "source-notes.md",
+      "first_spoken_line": "This week’s signal is not that AI suddenly got bigger or smarter. It is that the way people are judging it is getting stricter. And that matters, because once you stop evaluating AI by a neat demo and start evaluating it by actual work finished, a lot of hidden problems become visible.",
+      "final_spoken_line": "The big lesson this week is simple. The smartest question is no longer, what can the AI say? It is, what can it finish, how reliably, at what cost, and with how much human checking? That is a much more useful way to think about AI now.",
+      "validation_warnings": [
+        "Script is shorter than target: 1104 words."
+      ],
+      "non_spoken_instruction_candidates": []
+    }
+  },
+  "ai_media": {
+    "manifest": "media/media-manifest.json",
+    "narration": "media/narration.mp3",
+    "story_images": [
+      "media/story-1.png",
+      "media/story-2.png",
+      "media/story-3.png"
+    ],
+    "tiktok_narration": "media/tiktok-narration.mp3",
+    "tiktok": {
+      "story_index": 0,
+      "hook": "Is your AI saving time or creating cleanup?",
+      "payoff": "OpenAI says AI should be judged by useful work completed, cost per successful task, and dependability. If it takes three retries and a human rewrite, it’s not low-risk automation. Would you test one workflow or track retries first?",
+      "response_prompt": "Comment with your pick.",
+      "narration": "media/2026-07-19-risk/tiktok-narration.mp3",
+      "narration_text": "Is your AI saving time or creating cleanup? OpenAI says AI should be judged by useful work completed, cost per successful task, and dependability. If it takes three retries and a human rewrite, it’s not low-risk automation. Would you test one workflow or track retries first? Comment with your pick.",
+      "target_duration_seconds": [
+        12,
+        18
+      ],
+      "format": "question_fact_consequence_response"
+    },
+    "generated": true
+  },
+  "quote_card_lines": [
+    "If you cannot measure the cleanup, you do not know the real cost.",
+    "Is your AI saving time, or just moving the work to someone else?",
+    "What data should never enter a connected AI workspace?",
+    "More power in AI means more need for boundaries.",
+    "A cheap draft is not a safe workflow."
+  ],
+  "headline_options": [
+    "Sunday reset: AI is getting more guarded, more measurable, and harder to treat casually",
+    "This week in AI: control, review and access mattered more than the launch noise",
+    "The clearest AI trend this week was not speed — it was guardrails",
+    "Sunday recap: AI is moving closer to real work, so the risk questions got sharper",
+    "What this week proved about AI: the next battle is control, not capability"
+  ],
+  "sources": [
+    {
+      "source_name": "OpenAI",
+      "title": "A scorecard for the AI age",
+      "url": "https://openai.com/index/a-scorecard-for-the-ai-age/",
+      "published_date": "2026-07-17",
+      "confirmed_fact": "OpenAI argues that AI value should be measured by useful work completed, cost per successful task, dependability, and whether value improves at scale.",
+      "interpretation": "Risk control starts with measurement: if a tool cannot finish work reliably, it should not be treated as low-risk just because it is cheap or fast to prompt."
+    },
+    {
+      "source_name": "OpenAI",
+      "title": "Our approach to age prediction",
+      "url": "https://openai.com/index/our-approach-to-age-prediction/",
+      "published_date": "2026-07-16",
+      "confirmed_fact": "OpenAI said it is rolling out age prediction on ChatGPT consumer plans to estimate whether an account likely belongs to someone under 18, then apply stronger safeguards when needed.",
+      "interpretation": "Consumer AI is moving toward built-in age gating and family controls, which makes safety a product requirement rather than an optional setting."
+    },
+    {
+      "source_name": "Google",
+      "title": "NotebookLM is now Gemini Notebook",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
+      "published_date": "2026-07-16",
+      "confirmed_fact": "Google renamed NotebookLM to Gemini Notebook, added a secure cloud computer for code execution and data analysis, and said the product will sync across Gemini and Search.",
+      "interpretation": "As research tools become more connected and more capable, teams need to think harder about what data goes in, who can see it, and what actions the system can perform."
+    },
+    {
+      "source_name": "Reuters",
+      "title": "Google required to open up to AI, search engine rivals under EU-mandated changes",
+      "url": "https://www.investing.com/news/stock-market-news/google-required-to-open-up-to-ai-search-engine-rivals-under-eumandated-changes-4795675",
+      "published_date": "2026-07-16",
+      "confirmed_fact": "Reuters reported that EU regulators said Google must open certain Android features to AI rivals and share some search-optimisation data with AI chatbots, with implementation starting in January and some user-facing changes from July 2027.",
+      "interpretation": "Distribution is now a governance issue: if platforms change access to devices and search surfaces, AI products may need new compliance and fallback plans."
+    }
+  ],
+  "media_metadata": {
+    "version": 5,
+    "date": "2026-07-19-risk",
+    "headline": "Sunday reset: AI is getting more guarded, more measurable, and harder to treat casually",
+    "dek": "This week’s signal is not bigger models. It is tighter control: AI is being measured by outcomes, gated by age and safety checks, and pushed deeper into workflows that now need more review, not less.",
+    "hook": "Three AI updates that actually matter today",
+    "spoken_cta": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "visual_system": "Clearforge AI briefing podcast studio system",
+    "visual_style_rules": {
+      "include": [
+        "dark navy AI briefing or podcast studio atmosphere",
+        "microphone or audio-briefing cues where appropriate",
+        "subtle circuit traces, waveform motifs, model cards or data-routing lines",
+        "physical source notes, checklists and human-review materials",
+        "premium editorial technology-magazine lighting"
+      ],
+      "avoid": [
+        "robots",
+        "glowing brains",
+        "hologram faces",
+        "generic dashboards",
+        "random floating code",
+        "excessive neon",
+        "fake readable text",
+        "Sapiver or unrelated branding"
+      ]
+    },
+    "stories": [
+      {
+        "file": "media/2026-07-19-risk/story-1.png",
+        "title": "AI is being judged by work, not demos",
+        "source_name": "OpenAI",
+        "source_url": "https://openai.com/index/a-scorecard-for-the-ai-age/",
+        "summary": "OpenAI’s scorecard shifts the discussion from token prices and flashy outputs to useful work completed, cost per successful task, dependability, and scale effects. In risk-control terms, that matters because a tool that sounds efficient can still create hidden costs if it needs repeat prompting, heavy human cleanup, or multiple retries before it is safe to use.",
+        "why_it_matters": "Teams often automate the easiest part of a job and leave the risky part unmeasured. This framing pushes them to ask whether the AI result is actually reviewable, repeatable, and worth trusting.",
+        "practical_angle": "Pick one task and compare the number of retries, edits, and human checks before deciding the workflow is safe to expand.",
+        "visual_prompt": "a high-end technology briefing set with a dark blue wall, subtle circuit traces, a clean desk, paper research packs, audio waveforms and one human-operated control surface. clean editorial technology-magazine composition, practical rather than sci-fi. use restrained blue technology accents to signal AI without making the image look like generic AI stock art. vary camera distance, desk depth and object hierarchy while keeping the same Clearforge identity. Story context: AI is being judged by work, not demos. Practical angle: Pick one task and compare the number of retries, edits, and human checks before deciding the workflow is safe to expand.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      },
+      {
+        "file": "media/2026-07-19-risk/story-2.png",
+        "title": "Consumer AI is moving toward age prediction and family controls",
+        "source_name": "OpenAI",
+        "source_url": "https://openai.com/index/our-approach-to-age-prediction/",
+        "summary": "OpenAI said it is rolling out age prediction on ChatGPT consumer plans so the system can estimate whether an account likely belongs to someone under 18 and apply stronger safeguards. It also pointed to parent controls such as quiet hours, memory settings, and distress notifications.",
+        "why_it_matters": "This is a sign that consumer AI is moving into household governance. The risk question is no longer just what the model can say, but what it should be allowed to do for different users in different settings.",
+        "practical_angle": "If younger users share devices with adults, review the control settings now and decide what should be restricted before a problem appears.",
+        "visual_prompt": "a practical AI systems review scene with a microphone, pinned evidence cards, process arrows, muted blue signal lines and a clear before-to-after analysis structure. vertical social-video still with a strong microphone foreground and clear desk detail. make it instantly understandable as an AI briefing or AI podcast image, but grounded in real studio objects. use a different AI signal motif: waveform, routing lines, model cards, calendar markers or evidence board. Story context: Consumer AI is moving toward age prediction and family controls. Practical angle: If younger users share devices with adults, review the control settings now and decide what should be restricted before a problem appears.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      },
+      {
+        "file": "media/2026-07-19-risk/story-3.png",
+        "title": "Google is turning notebook research into a connected workflow",
+        "source_name": "Google",
+        "source_url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
+        "summary": "Google renamed NotebookLM to Gemini Notebook, added a secure cloud computer for code execution and data analysis, and said the product will sync across Gemini and Search. Google says the tool already serves more than 30 million people and over 600,000 organizations.",
+        "why_it_matters": "More capability means more exposure. Once a research tool can execute code, handle analysis, and pull from connected surfaces, the risk review shifts to permissions, source handling, and data sensitivity.",
+        "practical_angle": "Before moving sensitive notes into a connected AI workspace, decide what information is acceptable to upload and what still needs to stay in a separate, human-controlled process.",
+        "visual_prompt": "an editorial AI news analysis desk with printed source cards, model comparison sheets, a compact microphone arm, blue data-light accents and a calm control-room atmosphere. cinematic three-quarter studio photograph with shallow depth of field. show AI as a system being reviewed by a person through notes, checks, source cards and controlled audio tools. make the story context visible through objects and composition rather than readable text. Story context: Google is turning notebook research into a connected workflow. Practical angle: Before moving sensitive notes into a connected AI workspace, decide what information is acceptable to upload and what still needs to stay in a separate, human-controlled process.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: dark blue studio background, graphite desk, white paper, blue highlights and restrained green accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      }
+    ],
+    "narration": "media/2026-07-19-risk/narration.mp3",
+    "narration_text": "Is your AI workflow actually saving time?\nOpenAI’s new scorecard says AI should be judged by useful work completed, cost per successful task, dependability, and whether value improves at scale. That matters because a tool can look fast and still create hidden work if it needs retries, edits, or careful human cleanup before it’s usable. My simple test this week is to compare one real workflow against your normal process and count every retry and edit. If the cleanup is bigger than the time saved, the workflow is not ready to expand. Which would you measure first: retries or human edits? Drop one in the comments. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "tiktok": {
+      "story_index": 0,
+      "hook": "Is your AI saving time or creating cleanup?",
+      "payoff": "OpenAI says AI should be judged by useful work completed, cost per successful task, and dependability. If it takes three retries and a human rewrite, it’s not low-risk automation. Would you test one workflow or track retries first?",
+      "response_prompt": "Comment with your pick.",
+      "narration": "media/2026-07-19-risk/tiktok-narration.mp3",
+      "narration_text": "Is your AI saving time or creating cleanup? OpenAI says AI should be judged by useful work completed, cost per successful task, and dependability. If it takes three retries and a human rewrite, it’s not low-risk automation. Would you test one workflow or track retries first? Comment with your pick.",
+      "target_duration_seconds": [
+        12,
+        18
+      ],
+      "format": "question_fact_consequence_response"
+    },
+    "practical_takeaway": "Before expanding any AI workflow, define the finish line, the human review step, and the data you will not upload.",
+    "what_to_test_next": "Run one 30-minute test on a real workflow, but add a hard stop: compare the AI result against your normal process, note every human edit, and list any sensitive data you would not allow into the tool."
+  }
+}

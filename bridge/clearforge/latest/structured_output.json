@@ -1,6 +1,7 @@
 {
-  "headline": "Sunday reset: AI is being measured, gated and embedded into real workflows",
-  "dek": "This week’s clearest signal is not a single breakthrough model. It is a shift toward proof: what AI gets done, who can use it safely, and what systems it can plug into next.",
+  "headline": "Sunday reset: AI is getting more guarded, more measurable, and harder to treat casually",
+  "dek": "This week’s signal is not bigger models. It is tighter control: AI is being measured by outcomes, gated by age and safety checks, and pushed deeper into workflows that now need more review, not less.",
+  "edition_angle": "risk_control",
   "sources": [
     {
       "source_name": "OpenAI",
@@ -8,7 +9,7 @@
       "url": "https://openai.com/index/a-scorecard-for-the-ai-age/",
       "published_date": "2026-07-17",
       "confirmed_fact": "OpenAI argues that AI value should be measured by useful work completed, cost per successful task, dependability, and whether value improves at scale.",
-      "interpretation": "The company is pushing buyers to evaluate AI as a workflow system and not just a token-price problem."
+      "interpretation": "Risk control starts with measurement: if a tool cannot finish work reliably, it should not be treated as low-risk just because it is cheap or fast to prompt."
     },
     {
       "source_name": "OpenAI",
@@ -16,7 +17,7 @@
       "url": "https://openai.com/index/our-approach-to-age-prediction/",
       "published_date": "2026-07-16",
       "confirmed_fact": "OpenAI said it is rolling out age prediction on ChatGPT consumer plans to estimate whether an account likely belongs to someone under 18, then apply stronger safeguards when needed.",
-      "interpretation": "Consumer AI is moving toward automated age-gating and family controls as a standard product layer."
+      "interpretation": "Consumer AI is moving toward built-in age gating and family controls, which makes safety a product requirement rather than an optional setting."
     },
     {
       "source_name": "Google",
@@ -24,7 +25,7 @@
       "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
       "published_date": "2026-07-16",
       "confirmed_fact": "Google renamed NotebookLM to Gemini Notebook, added a secure cloud computer for code execution and data analysis, and said the product will sync across Gemini and Search.",
-      "interpretation": "Google is folding research tooling deeper into its core AI ecosystem and making notebook workflows more operational."
+      "interpretation": "As research tools become more connected and more capable, teams need to think harder about what data goes in, who can see it, and what actions the system can perform."
     },
     {
       "source_name": "Reuters",
@@ -32,64 +33,64 @@
       "url": "https://www.investing.com/news/stock-market-news/google-required-to-open-up-to-ai-search-engine-rivals-under-eumandated-changes-4795675",
       "published_date": "2026-07-16",
       "confirmed_fact": "Reuters reported that EU regulators said Google must open certain Android features to AI rivals and share some search-optimisation data with AI chatbots, with implementation starting in January and some user-facing changes from July 2027.",
-      "interpretation": "European regulation is starting to shape how AI assistants can connect to mobile and search infrastructure."
+      "interpretation": "Distribution is now a governance issue: if platforms change access to devices and search surfaces, AI products may need new compliance and fallback plans."
     }
   ],
   "story_summaries": [
     {
       "title": "AI is being judged by work, not demos",
-      "summary": "OpenAI’s new scorecard reframes the value question around useful work completed, cost per successful task, dependability, and scale effects. That matters because it pushes buyers away from comparing model prices alone and toward measuring whether the tool actually closes tasks with less rework.",
-      "why_it_matters": "Creators and small businesses often buy AI for a vague productivity boost. This framing is more useful: it tells them to measure outputs like finished drafts, resolved tickets, reviewed contracts or booked jobs.",
-      "practical_angle": "Track one workflow for a week and compare time saved, retries, and human edits instead of just usage volume.",
+      "summary": "OpenAI’s scorecard shifts the discussion from token prices and flashy outputs to useful work completed, cost per successful task, dependability, and scale effects. In risk-control terms, that matters because a tool that sounds efficient can still create hidden costs if it needs repeat prompting, heavy human cleanup, or multiple retries before it is safe to use.",
+      "why_it_matters": "Teams often automate the easiest part of a job and leave the risky part unmeasured. This framing pushes them to ask whether the AI result is actually reviewable, repeatable, and worth trusting.",
+      "practical_angle": "Pick one task and compare the number of retries, edits, and human checks before deciding the workflow is safe to expand.",
       "claim_to_verify": "NONE — verified from cited sources."
     },
     {
       "title": "Consumer AI is moving toward age prediction and family controls",
-      "summary": "OpenAI said it is rolling out age prediction on ChatGPT consumer plans so the product can estimate whether an account likely belongs to someone under 18 and automatically apply stronger protections. It also said parents can use controls such as quiet hours, memory settings and distress notifications.",
-      "why_it_matters": "This is a sign that mainstream AI products are becoming household software, not just individual tools. Safety features are now part of the product architecture, not an afterthought.",
-      "practical_angle": "If you manage a family device or a youth-focused classroom workflow, review the available controls now rather than waiting for a policy problem later.",
+      "summary": "OpenAI said it is rolling out age prediction on ChatGPT consumer plans so the system can estimate whether an account likely belongs to someone under 18 and apply stronger safeguards. It also pointed to parent controls such as quiet hours, memory settings, and distress notifications.",
+      "why_it_matters": "This is a sign that consumer AI is moving into household governance. The risk question is no longer just what the model can say, but what it should be allowed to do for different users in different settings.",
+      "practical_angle": "If younger users share devices with adults, review the control settings now and decide what should be restricted before a problem appears.",
       "claim_to_verify": "NONE — verified from cited sources."
     },
     {
       "title": "Google is turning notebook research into a connected workflow",
-      "summary": "Google renamed NotebookLM to Gemini Notebook, added a secure cloud computer for code and analysis, and said notebooks will sync across the Gemini app and Google Search. The product already serves more than 30 million people and over 600,000 organizations, according to Google.",
-      "why_it_matters": "For teams that research, summarize, teach or produce client-ready materials, this is a move from ‘ask a chatbot’ toward a more durable research workspace with files, code and cross-app continuity.",
-      "practical_angle": "If you already keep source folders in Drive or Search, test whether Gemini Notebook can replace your current mix of notes, spreadsheets and ad hoc prompts.",
+      "summary": "Google renamed NotebookLM to Gemini Notebook, added a secure cloud computer for code execution and data analysis, and said the product will sync across Gemini and Search. Google says the tool already serves more than 30 million people and over 600,000 organizations.",
+      "why_it_matters": "More capability means more exposure. Once a research tool can execute code, handle analysis, and pull from connected surfaces, the risk review shifts to permissions, source handling, and data sensitivity.",
+      "practical_angle": "Before moving sensitive notes into a connected AI workspace, decide what information is acceptable to upload and what still needs to stay in a separate, human-controlled process.",
       "claim_to_verify": "NONE — verified from cited sources."
     },
     {
       "title": "EU rules are starting to shape the AI distribution layer",
-      "summary": "Reuters reported that the European Commission told Google to open some Android features to AI rivals and to share certain search-optimisation data with AI chatbots, subject to safeguards and pricing rules. The user-facing Android changes are slated for the next Android cycle in July 2027, while the data-sharing measure begins in January.",
-      "why_it_matters": "This is not just antitrust noise. It is about who gets access to the surfaces where people actually use AI assistants: phones, search and default system functions.",
-      "practical_angle": "If you build AI products, pay attention to platform access, device integrations and regional compliance. Distribution may become as important as model quality.",
+      "summary": "Reuters reported that the European Commission wants Google to open some Android features to AI rivals and share certain search-optimisation data with AI chatbots, subject to safeguards and pricing rules. Some changes are scheduled to start in January, while user-facing Android changes are slated for July 2027.",
+      "why_it_matters": "If regulation changes who can reach phones, defaults, and search surfaces, then AI distribution becomes a risk-management issue, not just a growth issue.",
+      "practical_angle": "For any team shipping AI products, build a fallback plan for access, regional compliance, and platform dependency before launch week arrives.",
       "claim_to_verify": "NONE — verified from cited sources."
     }
   ],
-  "main_article": "This week’s most useful AI signal was not a flashy new benchmark or another promise of giant model gains. It was a quieter shift toward proof. AI companies are increasingly talking about what work gets done, how safely it is handled, and where the product actually sits in a user’s workflow. For creators, small businesses and practical AI learners, that is the right lens to watch heading into next week. ([openai.com](https://openai.com/index/a-scorecard-for-the-ai-age/?utm_source=openai))\n\nOpenAI’s “scorecard for the AI age” is the clearest example of that shift. The company says AI should be measured by useful work completed, cost per successful task, dependability and scale effects, not only by seat counts or token prices. That is a more practical way to think about AI spending because a cheap answer is not useful if it takes three retries, a lot of human editing, or an escalation to finish the job. In other words, the real question is not “what does a model cost?” but “what does it cost to finish a task correctly?” ([openai.com](https://openai.com/index/a-scorecard-for-the-ai-age/?utm_source=openai))\n\nThat framing matters for everyday buyers. A freelancer, agency or shop owner does not need a frontier lab’s financial model. They need one workflow that finishes faster or better: customer replies, product descriptions, meeting notes, lesson plans, quotes, invoices or basic analysis. The scorecard suggests a simple discipline: pick one workflow, define what “done” means, then measure whether AI reduces total effort, not just whether it drafts something quickly. That is the kind of economics that survives beyond the hype cycle. ([openai.com](https://openai.com/index/a-scorecard-for-the-ai-age/?utm_source=openai))\n\nThe second big thread is safety, and here the news is more concrete than abstract. OpenAI said it is rolling out age prediction on ChatGPT consumer plans to estimate whether an account likely belongs to someone under 18, then automatically apply extra safeguards. It also said that if the system is unsure, it defaults to a safer experience, and that parents can use controls such as quiet hours, memory settings and distress notifications. That is a notable change because it turns safety into a product layer, not just a policy page. ([openai.com](https://openai.com/index/our-approach-to-age-prediction/))\n\nFor the Sunday reset, the important takeaway is not the politics of teen access. It is that consumer AI is becoming more like a family digital service. That means buyers, schools and parents should expect more identity-adjacent checks, more default guardrails and more settings that can change what the tool is allowed to do. If you run a small team with younger users, interns or students, you should assume the AI product itself will increasingly shape what content is visible and what actions are allowed. ([openai.com](https://openai.com/index/our-approach-to-age-prediction/))\n\nGoogle’s NotebookLM rename to Gemini Notebook points in a different but related direction: AI tools are being tied more tightly to existing ecosystems. Google said the product is still a standalone research tool, but now it will work more broadly across Gemini and Search. It also added a secure cloud computer so notebooks can run code directly and support deeper data analysis. Google says more than 30 million people and over 600,000 organizations are already using it. Whether or not every user needs that scale, the product direction is clear: research, summarisation and light analysis are becoming part of a connected workspace rather than a single chat window. ([blog.google](https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/))\n\nThat is especially relevant for creators and small businesses who live in notes, docs and search results. If your current process is a tangle of tabs, copy-paste and half-finished prompts, tools like Gemini Notebook are pushing toward a more organized workflow: source material in one place, analysis in the same place, and output that can be reused. The practical question is whether the product saves time without creating a new layer of friction. ([blog.google](https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/))\n\nFinally, the Reuters report on EU-mandated changes to Google is a reminder that AI distribution is becoming a regulatory issue, not just a product one. According to the report, the European Commission wants certain Android features opened to AI rivals and wants some search-optimisation data shared with AI chatbots under set safeguards. Some changes would not reach users until the next Android cycle in July 2027, while the data-sharing piece begins earlier. The point for readers is simple: access to phones, defaults and search surfaces may matter as much as model quality. ([investing.com](https://www.investing.com/news/stock-market-news/google-required-to-open-up-to-ai-search-engine-rivals-under-eumandated-changes-4795675))\n\nSo the week ends with a useful pattern. The industry is moving from “look what AI can do” toward “show me the workflow, the safeguards and the access path.” That is a healthier standard. It helps buyers ask better questions and makes it easier to separate real adoption from promotional language. Heading into next week, watch for three things: whether companies show measured outcomes instead of projected ones, whether safety becomes default product plumbing, and whether AI tools keep moving deeper into the apps people already use. Practical takeaway: choose one task you do every week and test an AI tool against a clear finish line, not just a draft result. ([openai.com](https://openai.com/index/a-scorecard-for-the-ai-age/?utm_source=openai))",
-  "practical_takeaway": "Pick one weekly task and measure whether AI finishes it with fewer edits, less time and fewer retries — not just whether it produces a draft.",
-  "what_to_test_next": "Run a 30-minute experiment: put one research-heavy task into Gemini Notebook or a similar tool, then compare the final output against your normal notes-and-docs workflow for time, accuracy and cleanup.",
+  "main_article": "The safest way to read this week’s AI news is not as a story about bigger models. It is a story about control. The strongest signals were about what gets measured, who gets gated, what gets connected, and where access can change. That may sound less dramatic than a new benchmark or a giant product launch, but it is more useful if you are trying to decide what to trust next week.\n\nStart with measurement. OpenAI’s new scorecard says AI value should be judged by useful work completed, cost per successful task, dependability, and whether value improves at scale. That is not just a business frame; it is a risk frame. A tool that produces a clean-looking draft is not low-risk if it takes three retries, a lot of human editing, or a careful rewrite before it can be used. The point is simple: if you cannot measure the cleanup, you do not yet know the real cost of automation.\n\nFor readers who use AI at work, that is the first Sunday reset question to ask: what part of the task is the model actually finishing, and what part still depends on human review? The answer matters because many teams accidentally automate the easiest step and leave the judgment step untouched. That is how “time saved” becomes “time shifted.” The safer practice is to define the finish line first, then decide whether AI is helping or just producing more material for a person to verify.\n\nThe second signal is safety moving into the product itself. OpenAI said it is rolling out age prediction on ChatGPT consumer plans so the system can estimate whether an account likely belongs to someone under 18 and apply stronger safeguards when needed. It also described parent controls such as quiet hours, memory settings, and distress notifications. The key risk-control takeaway is not the policy language. It is that consumer AI is starting to behave like household software, with built-in rules for different users.\n\nThat raises a practical question for families, schools, and shared-device environments: what should be automatic, and what should remain under adult or admin control? Do not wait for a content problem to make that decision for you. If a household or classroom uses consumer AI, the right time to review settings is before the first rough edge shows up. That includes checking who can use the tool, what happens when the system is uncertain, and which features should stay off by default.\n\nGoogle’s Gemini Notebook update points to a different kind of control problem. The product now has a secure cloud computer for code execution and data analysis, and it syncs across Gemini and Search. That makes it more powerful, but also more sensitive. A connected research workspace is useful only if the people using it are clear about permissions, source material, and what kinds of data should never enter the system in the first place.\n\nThis is where risk control becomes operational. If the tool can run code, summarize sources, and move across products, then the old “just try it on anything” habit is no longer good enough. Teams should separate low-risk material from sensitive material, decide who approves uploads, and treat notebook-style AI as part of the workflow rather than a harmless scratch pad. The more connected the tool, the more important the boundary setting.\n\nThe Reuters report on EU-mandated changes to Google adds the final layer: distribution risk. If regulators can shape which AI rivals get access to Android features and search data, then platform access becomes part of the planning problem. For AI builders, that means model quality is only one part of the equation. You also need a plan for device access, regional rules, and what happens if a platform changes the terms of entry.\n\nSo the week ends with a fairly clear pattern. The industry is moving from “look what AI can do” to “show me the controls.” That is a healthier standard. It gives buyers a way to ask better questions and forces vendors to explain what is automated, what is reviewed, and what is still off-limits. The open questions for next week are the ones that matter most: how accurate will age prediction be in practice, how much cleanup will connected workflows still require, and how quickly will platform rules reshape access to AI products? Until those answers are clearer, the safest default is not blind automation. It is measured use, narrow scope, and human review where the risk is real.",
+  "practical_takeaway": "Before expanding any AI workflow, define the finish line, the human review step, and the data you will not upload.",
+  "what_to_test_next": "Run one 30-minute test on a real workflow, but add a hard stop: compare the AI result against your normal process, note every human edit, and list any sensitive data you would not allow into the tool.",
   "claims_to_verify": [],
   "social": {
-    "tiktok_script": "Can your AI finish a task with fewer edits?\nOpenAI says AI should be measured by useful work completed, cost per successful task, dependability, and whether it scales well. That is a better test than chasing flashy outputs. If you use AI for work, pick one weekly task and judge it by the finish line: time saved, retries avoided, and human cleanup reduced. The stop reason is simple — a cheap draft is not a good result if it takes three rounds to finish. What task would you test first: customer replies or research notes?",
-    "youtube_shorts_script": "Does your research workflow live in too many tabs?\nGoogle renamed NotebookLM to Gemini Notebook, added a secure cloud computer for code and analysis, and said it will sync across Gemini and Search. That matters because it turns research into a connected workspace instead of a single chat box. If you already juggle notes, docs, and source folders, this is worth testing against your current process. The real question is whether it saves time without adding cleanup. Which would you test first: source gathering or analysis?",
-    "facebook_post": "Would you want AI to guess a user’s age automatically?\nOpenAI said it is rolling out age prediction on consumer ChatGPT plans so it can estimate whether an account likely belongs to someone under 18 and apply stronger safeguards. It also mentioned parent controls like quiet hours, memory settings, and distress notifications. For families and classrooms, that means consumer AI is starting to behave more like household software, with settings that change what the tool can do. Would you test the age-related controls first, or the parent settings?",
-    "pinterest_title": "How to test whether AI actually saves time",
-    "pinterest_description": "Use one weekly task and compare time saved, retries, and human edits instead of counting prompts. This practical checklist helps creators, freelancers, and small teams judge AI by finished work. Save this for your next workflow test, or comment with the task you would measure first.",
-    "linkedin_post": "Will your AI product still reach users if platform access changes?\nReuters reported that EU regulators want Google to open certain Android features to AI rivals and share some search-optimisation data with chatbots under safeguards. For teams building or distributing AI tools, that is a reminder that access to phones, defaults, and search surfaces can shape adoption as much as model quality. The operational lesson is to watch distribution paths alongside product performance. Is your team planning more around model quality, or around access and integrations?",
+    "tiktok_script": "Is your AI saving time or creating cleanup?\nOpenAI says AI should be judged by useful work completed, cost per successful task, and dependability.\nIf it takes three retries and a human rewrite, it’s not low-risk automation.\nWould you test one workflow or track retries first? Comment with your pick.",
+    "youtube_shorts_script": "Is your AI workflow actually saving time?\nOpenAI’s new scorecard says AI should be judged by useful work completed, cost per successful task, dependability, and whether value improves at scale. That matters because a tool can look fast and still create hidden work if it needs retries, edits, or careful human cleanup before it’s usable. My simple test this week is to compare one real workflow against your normal process and count every retry and edit. If the cleanup is bigger than the time saved, the workflow is not ready to expand. Which would you measure first: retries or human edits? Drop one in the comments.",
+    "facebook_post": "Would you check your ChatGPT settings today?\nOpenAI said it is rolling out age prediction on consumer ChatGPT so it can estimate whether an account likely belongs to someone under 18 and apply stronger safeguards. It also pointed to parent controls like quiet hours, memory settings, and distress notifications.\nIf your family shares devices, this is a good time to decide what should be automatic and what should stay under adult control.\nFor a shared device, which matters more first: quiet hours or stronger safeguards? Comment with one, or ask for a follow-up on family controls.",
+    "pinterest_title": "Checklist before you upload notes to Gemini Notebook",
+    "pinterest_description": "Before moving sensitive notes into Gemini Notebook, decide what data can go in, who can approve uploads, and what must stay human-controlled. The benefit is simpler risk review before a tool that can execute code and sync across Gemini and Search gets your data. Save this checklist, and comment with one rule your team uses.",
+    "linkedin_post": "Would your AI launch survive a platform rule change?\nReuters reported that EU regulators want Google to open certain Android features to AI rivals and share some search-optimisation data with AI chatbots, with changes starting in January and some user-facing changes from July 2027.\nFor teams shipping AI products, that turns distribution into a governance problem: you need fallback plans for access, regional compliance, and platform dependency before launch.\nDoes your team already have that fallback plan, or is it still missing? Comment with access or compliance.",
     "quote_card_lines": [
-      "How do you know AI is actually saving time?",
-      "Would you trust a tool that drafts well but needs three retries?",
-      "What matters more in AI: a cheaper model or a finished task?",
-      "Is your research workflow still spread across too many tabs?",
-      "Will platform access matter more than model quality in AI distribution?"
+      "If you cannot measure the cleanup, you do not know the real cost.",
+      "Is your AI saving time, or just moving the work to someone else?",
+      "What data should never enter a connected AI workspace?",
+      "More power in AI means more need for boundaries.",
+      "A cheap draft is not a safe workflow."
     ]
   },
   "headline_options": [
-    "Sunday reset: AI is being measured, gated and embedded into real workflows",
-    "This week in AI: proof, safety and workflow access mattered more than hype",
-    "AI’s newest shift is boring in the best way: finish the job, keep it safe",
-    "The week AI moved from demos to measured work and guarded access",
-    "Sunday recap: the strongest AI signal was workflow proof, not flashy launches"
+    "Sunday reset: AI is getting more guarded, more measurable, and harder to treat casually",
+    "This week in AI: control, review and access mattered more than the launch noise",
+    "The clearest AI trend this week was not speed — it was guardrails",
+    "Sunday recap: AI is moving closer to real work, so the risk questions got sharper",
+    "What this week proved about AI: the next battle is control, not capability"
   ],
   "editorial_theme": {
     "day": "Sunday",
@@ -99,174 +100,181 @@
     "focus": "Recap the strongest developments of the week, check any recent Clearforge forecasts where evidence exists, and prepare the reader for the following week.",
     "instruction": "Separate confirmed outcomes from still-open questions. Make the piece useful as a Sunday reset before the next week of AI news."
   },
+  "edition_id": "2026-07-19-risk",
+  "base_date": "2026-07-19",
+  "edition_mode": "alternate_angle",
   "audience_fit": {
-    "generated_at": "2026-07-19T04:59:28.852Z",
+    "generated_at": "2026-07-19T14:16:24.192Z",
     "story_assessments": [
       {
         "story_index": 0,
         "story_title": "AI is being judged by work, not demos",
-        "target_audience": "Creators, freelancers, small business owners, and practical AI users who want measurable productivity gains",
-        "audience_problem_or_desire": "They want to know whether AI actually saves time, reduces rework, and finishes real tasks instead of just sounding impressive",
-        "interest_signal": "OpenAI is reframing AI value around useful work completed, cost per successful task, dependability, and scale effects",
-        "stop_reason": "The usual model-price conversation is too abstract; task completion is a concrete business lens",
-        "promised_payoff": "A simple way to measure one AI workflow by finish-line results instead of prompt output",
-        "proof_point": "OpenAI’s scorecard says value should be measured by useful work completed, cost per successful task, dependability, and whether value improves at scale",
+        "target_audience": "Knowledge workers, team leads, and AI adopters who need to decide whether automation is actually worth trusting.",
+        "audience_problem_or_desire": "They want a practical way to tell whether AI is really saving time and reducing risk, instead of just producing fast-looking output.",
+        "interest_signal": "A measurement shift: useful work completed, cost per successful task, dependability, and value at scale.",
+        "stop_reason": "It challenges the common assumption that a quick draft is automatically a good workflow.",
+        "promised_payoff": "A simple way to judge AI by retries, edits, cleanup, and human review before expanding a workflow.",
+        "proof_point": "OpenAI’s scorecard says AI value should be measured by useful work completed, cost per successful task, dependability, and whether value improves at scale.",
         "search_phrases": [
-          "how to measure AI ROI",
-          "AI workflow metrics",
+          "AI scorecard",
+          "measure AI productivity",
           "cost per successful task",
-          "measure AI productivity"
+          "AI workflow cleanup",
+          "dependability AI"
         ],
         "scores": {
-          "audience_fit": 10,
+          "audience_fit": 9,
           "practical_consequence": 10,
-          "searchability": 9,
-          "stranger_usefulness": 10,
+          "searchability": 8,
+          "stranger_usefulness": 9,
           "novelty": 8,
-          "visual_potential": 7,
+          "visual_potential": 6,
           "discussion_potential": 8,
           "short_form_clarity": 10
         },
         "overall_score": 9,
-        "score_reason": "Very broad, immediately useful, and easy to explain in one sentence. It gives a clear test readers can use right away, which makes it strong across search and short-form."
+        "score_reason": "Broad, concrete, and easy to explain fast. It gives a usable test for everyday AI use and fits both workers and managers."
       },
       {
         "story_index": 1,
         "story_title": "Consumer AI is moving toward age prediction and family controls",
-        "target_audience": "Parents, educators, household device managers, and consumer AI users concerned with safety settings",
-        "audience_problem_or_desire": "They want clearer safeguards, family controls, and confidence that consumer AI is being shaped for younger users too",
-        "interest_signal": "OpenAI is rolling out age prediction on consumer ChatGPT plans and stronger safeguards when an account may belong to someone under 18",
-        "stop_reason": "Safety and teen access are emotionally relevant, but the angle is narrower than workflow productivity stories",
-        "promised_payoff": "A plain-language update on how consumer AI is adding age-gating and family controls",
-        "proof_point": "OpenAI said it will estimate whether an account likely belongs to someone under 18 and apply stronger safeguards, with parent controls such as quiet hours, memory settings, and distress notifications",
+        "target_audience": "Parents, families, educators, and anyone using consumer AI on shared devices.",
+        "audience_problem_or_desire": "They want clearer safety settings and a way to manage AI use before a problem appears.",
+        "interest_signal": "Consumer AI is starting to behave like household software with built-in age gating and parent controls.",
+        "stop_reason": "Age prediction and stronger safeguards make safety a product feature, not an optional add-on.",
+        "promised_payoff": "What to review in ChatGPT settings now, especially in shared-device or family environments.",
+        "proof_point": "OpenAI said it is rolling out age prediction on ChatGPT consumer plans and pointed to parent controls such as quiet hours, memory settings, and distress notifications.",
         "search_phrases": [
-          "ChatGPT age prediction",
-          "AI parental controls",
-          "consumer AI safety",
-          "ChatGPT family controls"
+          "ChatGPT parental controls",
+          "AI age prediction",
+          "family controls AI",
+          "shared device AI safety",
+          "consumer AI safeguards"
         ],
         "scores": {
           "audience_fit": 8,
-          "practical_consequence": 8,
-          "searchability": 7,
-          "stranger_usefulness": 7,
-          "novelty": 7,
-          "visual_potential": 6,
-          "discussion_potential": 7,
-          "short_form_clarity": 8
-        },
-        "overall_score": 7,
-        "score_reason": "Relevant to a specific household-and-education audience, with clear consequences, but less universal than workflow measurement or connected research tools."
-      },
-      {
-        "story_index": 2,
-        "story_title": "Google is turning notebook research into a connected workflow",
-        "target_audience": "Researchers, creators, analysts, educators, and small teams that live in notes, docs, and search tabs",
-        "audience_problem_or_desire": "They want a more durable way to gather sources, run analysis, and reuse output without jumping between too many tools",
-        "interest_signal": "Google renamed NotebookLM to Gemini Notebook, added a secure cloud computer for code and analysis, and linked it across Gemini and Search",
-        "stop_reason": "The product change is practical and concrete, with an easy before-and-after comparison for work habits",
-        "promised_payoff": "A clear reason to test whether a connected notebook workflow can replace scattered notes, prompts, and spreadsheets",
-        "proof_point": "Google said the tool will sync across Gemini and Search and includes a secure cloud computer for code execution and data analysis",
-        "search_phrases": [
-          "Gemini Notebook",
-          "NotebookLM rename",
-          "AI research workflow",
-          "AI note taking tools"
-        ],
-        "scores": {
-          "audience_fit": 9,
           "practical_consequence": 9,
-          "searchability": 9,
-          "stranger_usefulness": 9,
-          "novelty": 8,
-          "visual_potential": 8,
+          "searchability": 8,
+          "stranger_usefulness": 8,
+          "novelty": 9,
+          "visual_potential": 6,
           "discussion_potential": 7,
           "short_form_clarity": 9
         },
         "overall_score": 8,
-        "score_reason": "Strong utility for knowledge workers and creators, with clear product changes that are easy to understand and search for. It is especially good for workflow-focused content."
+        "score_reason": "Strong household relevance and clear safety implications, though narrower than the measurement story."
+      },
+      {
+        "story_index": 2,
+        "story_title": "Google is turning notebook research into a connected workflow",
+        "target_audience": "Researchers, analysts, knowledge workers, and security-minded teams using AI workspaces.",
+        "audience_problem_or_desire": "They want to use more capable AI without exposing sensitive data or losing control over permissions.",
+        "interest_signal": "A research tool now includes code execution, data analysis, and syncing across products.",
+        "stop_reason": "The tool is no longer just a scratch pad; it can act on data and connect across surfaces.",
+        "promised_payoff": "A practical boundary-setting check for what data belongs in a connected AI workspace.",
+        "proof_point": "Google renamed NotebookLM to Gemini Notebook, added a secure cloud computer for code execution and data analysis, and said it will sync across Gemini and Search.",
+        "search_phrases": [
+          "Gemini Notebook",
+          "NotebookLM rename",
+          "AI code execution workspace",
+          "connected AI research tool",
+          "secure cloud computer"
+        ],
+        "scores": {
+          "audience_fit": 8,
+          "practical_consequence": 9,
+          "searchability": 8,
+          "stranger_usefulness": 8,
+          "novelty": 8,
+          "visual_potential": 8,
+          "discussion_potential": 7,
+          "short_form_clarity": 8
+        },
+        "overall_score": 8,
+        "score_reason": "Useful for anyone handling notes, analysis, or sensitive material in AI workspaces, with a clear operational takeaway."
       },
       {
         "story_index": 3,
         "story_title": "EU rules are starting to shape the AI distribution layer",
-        "target_audience": "AI product builders, platform strategists, policy watchers, and growth teams",
-        "audience_problem_or_desire": "They want to understand how regulation may affect access to phones, search surfaces, defaults, and rival integrations",
-        "interest_signal": "Reuters reported that EU regulators want Google to open certain Android features to AI rivals and share some search-optimisation data with AI chatbots",
-        "stop_reason": "This is more strategic than everyday consumer news, but it raises a real distribution and access question",
-        "promised_payoff": "A concise view of how platform access and compliance may matter as much as model quality",
-        "proof_point": "The report says implementation starts in January for data-sharing and some user-facing Android changes are slated for July 2027",
+        "target_audience": "AI builders, product leaders, platform strategists, and compliance teams.",
+        "audience_problem_or_desire": "They need a fallback plan for access, regional rules, and platform dependence.",
+        "interest_signal": "Regulation is starting to shape which AI products can reach devices and search surfaces.",
+        "stop_reason": "Distribution and access are becoming governance issues, not just growth issues.",
+        "promised_payoff": "A reminder to plan for platform access, compliance, and fallback options before launch.",
+        "proof_point": "Reuters reported that EU regulators said Google must open certain Android features to AI rivals and share some search-optimisation data with AI chatbots, with changes starting in January and some user-facing changes from July 2027.",
         "search_phrases": [
-          "EU AI regulation Google",
-          "AI distribution layer",
-          "Android AI rivals",
-          "search data sharing AI"
+          "EU AI distribution rules",
+          "Google Android AI rivals",
+          "platform dependency AI compliance",
+          "search data for AI chatbots",
+          "regional AI fallback plan"
         ],
         "scores": {
           "audience_fit": 7,
-          "practical_consequence": 8,
+          "practical_consequence": 9,
           "searchability": 8,
-          "stranger_usefulness": 6,
-          "novelty": 8,
-          "visual_potential": 6,
-          "discussion_potential": 9,
-          "short_form_clarity": 7
+          "stranger_usefulness": 7,
+          "novelty": 9,
+          "visual_potential": 5,
+          "discussion_potential": 8,
+          "short_form_clarity": 8
         },
-        "overall_score": 7,
-        "score_reason": "Best for a more strategic audience. It is timely and discussion-friendly, but less immediately useful to casual readers than the workflow stories."
+        "overall_score": 8,
+        "score_reason": "Niche but important for builders and operators. The compliance and fallback-planning angle is strong and timely."
       }
     ],
     "platform_selections": {
       "tiktok": {
         "story_index": 0,
         "story_title": "AI is being judged by work, not demos",
-        "target_audience": "Creators, freelancers, small business owners, and practical AI users who want measurable productivity gains",
-        "format": "short-form explainer",
-        "opening": "Can your AI finish a task with fewer edits?",
-        "payoff": "OpenAI says AI should be measured by useful work completed, cost per successful task, dependability, and whether it scales well. The practical move is to test one weekly workflow by finish line, not by prompt count.",
-        "selection_reason": "This story has the clearest single-sentence hook, the strongest practical payoff, and the broadest short-form audience. It is easy to say, easy to understand, and naturally invites viewers to compare a real workflow.",
-        "platform_fit_score": 10
+        "target_audience": "Knowledge workers and everyday AI users who want a fast practical way to judge whether automation is working.",
+        "format": "short spoken hook plus one concrete test",
+        "opening": "Is your AI saving time or creating cleanup?",
+        "payoff": "OpenAI says AI should be judged by useful work completed, cost per successful task, and dependability.",
+        "selection_reason": "It is broad, immediate, and easy to compress into one sharp question with a simple either/or comment prompt.",
+        "platform_fit_score": 9
       },
       "youtube": {
-        "story_index": 2,
-        "story_title": "Google is turning notebook research into a connected workflow",
-        "target_audience": "Researchers, creators, analysts, educators, and small teams that live in notes, docs, and search tabs",
-        "format": "short-form explainer",
-        "opening": "Does your research workflow live in too many tabs?",
-        "payoff": "Google renamed NotebookLM to Gemini Notebook, added a secure cloud computer for code and analysis, and said it will sync across Gemini and Search. That makes it more than a chatbot: it is becoming a connected workspace for source material, analysis, and reusable output.",
-        "selection_reason": "YouTube Shorts can handle a slightly richer workflow explanation, and this story gives a clear before-and-after frame with a concrete product update. It is searchable, useful, and easy to summarize without losing meaning.",
+        "story_index": 0,
+        "story_title": "AI is being judged by work, not demos",
+        "target_audience": "Search-driven viewers who want a practical framework for judging AI workflows.",
+        "format": "explainer short with a clear test and takeaway",
+        "opening": "Is your AI workflow actually saving time?",
+        "payoff": "Use OpenAI’s scorecard idea to measure useful work completed, retries, edits, and human cleanup before expanding a workflow.",
+        "selection_reason": "It supports a clearer mini-explanation than the other stories and gives viewers a repeatable test they can try right away.",
         "platform_fit_score": 9
       },
       "facebook": {
         "story_index": 1,
         "story_title": "Consumer AI is moving toward age prediction and family controls",
-        "target_audience": "Parents, educators, household device managers, and consumer AI users concerned with safety settings",
-        "format": "discussion post",
-        "opening": "Would you want AI to guess a user’s age automatically?",
-        "payoff": "OpenAI said it is rolling out age prediction on consumer ChatGPT plans so it can estimate whether an account likely belongs to someone under 18 and apply stronger safeguards. It also mentioned parent controls like quiet hours, memory settings, and distress notifications.",
-        "selection_reason": "Facebook performs well with familiar household situations and practical safety questions. This story is more relatable there than on more search-driven platforms, because parents and family device managers can respond from experience.",
+        "target_audience": "Parents, families, and shared-device users who need a straightforward safety update.",
+        "format": "relatable household update",
+        "opening": "Would you check your ChatGPT settings today?",
+        "payoff": "OpenAI is rolling out age prediction and stronger safeguards, plus controls like quiet hours, memory settings, and distress notifications.",
+        "selection_reason": "This is the most recognizable family and household scenario, so it should invite practical comments instead of abstract debate.",
         "platform_fit_score": 8
       },
       "pinterest": {
-        "story_index": 0,
-        "story_title": "AI is being judged by work, not demos",
-        "target_audience": "Creators, freelancers, small business owners, and practical AI users who want measurable productivity gains",
-        "format": "searchable guide",
-        "opening": "How do you test whether AI actually saves time?",
-        "payoff": "Use one weekly task and compare time saved, retries, and human edits instead of just counting prompts. OpenAI’s new scorecard makes workflow results the right way to judge an AI tool.",
-        "selection_reason": "Pinterest favors evergreen, practical guidance with strong search intent. This story naturally becomes a checklist-style guide that people can save and revisit.",
-        "platform_fit_score": 9
+        "story_index": 2,
+        "story_title": "Google is turning notebook research into a connected workflow",
+        "target_audience": "People saving practical guides on AI workflows, research tools, and data-safety checklists.",
+        "format": "searchable checklist guide",
+        "opening": "Checklist before you upload notes to Gemini Notebook",
+        "payoff": "A simple boundary-setting checklist helps you decide what data can go into a connected AI workspace, who can approve it, and what should stay human-controlled.",
+        "selection_reason": "Pinterest rewards saveable guides, and this story naturally becomes a checklist around connected-workspace safety.",
+        "platform_fit_score": 8
       },
       "linkedin": {
         "story_index": 3,
         "story_title": "EU rules are starting to shape the AI distribution layer",
-        "target_audience": "AI product builders, platform strategists, policy watchers, and growth teams",
-        "format": "professional insight",
-        "opening": "Will your AI product still reach users if platform access changes?",
-        "payoff": "Reuters reported that EU regulators want Google to open certain Android features to AI rivals and share some search-optimisation data with chatbots under safeguards. For teams, that is a reminder that distribution, defaults, and device access may matter as much as model quality.",
-        "selection_reason": "LinkedIn is the best fit for a strategic, professional consequence story. It gives product and growth teams a reason to think about access, regulation, and distribution as operational issues.",
+        "target_audience": "AI product leaders, operators, and compliance-minded professionals.",
+        "format": "workplace strategy note",
+        "opening": "Would your AI launch survive a platform rule change?",
+        "payoff": "EU-driven access changes make distribution a governance issue, so teams need fallback plans for access, regional compliance, and platform dependence.",
+        "selection_reason": "It is the strongest professional and operational angle, with clear implications for launch planning and dependency management.",
         "platform_fit_score": 8
       }
     },
-    "overall_reasoning": "The strongest audience-fit pattern this week is utility over spectacle. Story 0 is the best universal hook because it gives buyers a measurable way to judge AI, making it ideal for TikTok and Pinterest. Story 2 is the best workflow story for YouTube Shorts because it has a clear product change and a concrete before-and-after frame. Story 1 is the most relatable consumer-safety angle for Facebook. Story 3 is the best strategic, professional discussion piece for LinkedIn because it connects regulation to access and distribution. Across all selections, the common thread is practical proof: what gets done, how safely it is handled, and where the tool sits in the workflow."
+    "overall_reasoning": "This week’s strongest audience fit is the shift from capability to control: measurement, safeguards, connected workflows, and distribution risk. Story 0 is the broadest and most reusable across general audiences, story 1 is the clearest household safety angle, story 2 is the best workflow-and-permissions story for professionals, and story 3 is the sharpest strategic/compliance angle. The platform picks separate those interests instead of forcing one story everywhere."
   }
 }

@@ -1,0 +1,174 @@
+{
+  "generated_at": "2026-07-19T14:16:24.192Z",
+  "story_assessments": [
+    {
+      "story_index": 0,
+      "story_title": "AI is being judged by work, not demos",
+      "target_audience": "Knowledge workers, team leads, and AI adopters who need to decide whether automation is actually worth trusting.",
+      "audience_problem_or_desire": "They want a practical way to tell whether AI is really saving time and reducing risk, instead of just producing fast-looking output.",
+      "interest_signal": "A measurement shift: useful work completed, cost per successful task, dependability, and value at scale.",
+      "stop_reason": "It challenges the common assumption that a quick draft is automatically a good workflow.",
+      "promised_payoff": "A simple way to judge AI by retries, edits, cleanup, and human review before expanding a workflow.",
+      "proof_point": "OpenAI’s scorecard says AI value should be measured by useful work completed, cost per successful task, dependability, and whether value improves at scale.",
+      "search_phrases": [
+        "AI scorecard",
+        "measure AI productivity",
+        "cost per successful task",
+        "AI workflow cleanup",
+        "dependability AI"
+      ],
+      "scores": {
+        "audience_fit": 9,
+        "practical_consequence": 10,
+        "searchability": 8,
+        "stranger_usefulness": 9,
+        "novelty": 8,
+        "visual_potential": 6,
+        "discussion_potential": 8,
+        "short_form_clarity": 10
+      },
+      "overall_score": 9,
+      "score_reason": "Broad, concrete, and easy to explain fast. It gives a usable test for everyday AI use and fits both workers and managers."
+    },
+    {
+      "story_index": 1,
+      "story_title": "Consumer AI is moving toward age prediction and family controls",
+      "target_audience": "Parents, families, educators, and anyone using consumer AI on shared devices.",
+      "audience_problem_or_desire": "They want clearer safety settings and a way to manage AI use before a problem appears.",
+      "interest_signal": "Consumer AI is starting to behave like household software with built-in age gating and parent controls.",
+      "stop_reason": "Age prediction and stronger safeguards make safety a product feature, not an optional add-on.",
+      "promised_payoff": "What to review in ChatGPT settings now, especially in shared-device or family environments.",
+      "proof_point": "OpenAI said it is rolling out age prediction on ChatGPT consumer plans and pointed to parent controls such as quiet hours, memory settings, and distress notifications.",
+      "search_phrases": [
+        "ChatGPT parental controls",
+        "AI age prediction",
+        "family controls AI",
+        "shared device AI safety",
+        "consumer AI safeguards"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 9,
+        "searchability": 8,
+        "stranger_usefulness": 8,
+        "novelty": 9,
+        "visual_potential": 6,
+        "discussion_potential": 7,
+        "short_form_clarity": 9
+      },
+      "overall_score": 8,
+      "score_reason": "Strong household relevance and clear safety implications, though narrower than the measurement story."
+    },
+    {
+      "story_index": 2,
+      "story_title": "Google is turning notebook research into a connected workflow",
+      "target_audience": "Researchers, analysts, knowledge workers, and security-minded teams using AI workspaces.",
+      "audience_problem_or_desire": "They want to use more capable AI without exposing sensitive data or losing control over permissions.",
+      "interest_signal": "A research tool now includes code execution, data analysis, and syncing across products.",
+      "stop_reason": "The tool is no longer just a scratch pad; it can act on data and connect across surfaces.",
+      "promised_payoff": "A practical boundary-setting check for what data belongs in a connected AI workspace.",
+      "proof_point": "Google renamed NotebookLM to Gemini Notebook, added a secure cloud computer for code execution and data analysis, and said it will sync across Gemini and Search.",
+      "search_phrases": [
+        "Gemini Notebook",
+        "NotebookLM rename",
+        "AI code execution workspace",
+        "connected AI research tool",
+        "secure cloud computer"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 9,
+        "searchability": 8,
+        "stranger_usefulness": 8,
+        "novelty": 8,
+        "visual_potential": 8,
+        "discussion_potential": 7,
+        "short_form_clarity": 8
+      },
+      "overall_score": 8,
+      "score_reason": "Useful for anyone handling notes, analysis, or sensitive material in AI workspaces, with a clear operational takeaway."
+    },
+    {
+      "story_index": 3,
+      "story_title": "EU rules are starting to shape the AI distribution layer",
+      "target_audience": "AI builders, product leaders, platform strategists, and compliance teams.",
+      "audience_problem_or_desire": "They need a fallback plan for access, regional rules, and platform dependence.",
+      "interest_signal": "Regulation is starting to shape which AI products can reach devices and search surfaces.",
+      "stop_reason": "Distribution and access are becoming governance issues, not just growth issues.",
+      "promised_payoff": "A reminder to plan for platform access, compliance, and fallback options before launch.",
+      "proof_point": "Reuters reported that EU regulators said Google must open certain Android features to AI rivals and share some search-optimisation data with AI chatbots, with changes starting in January and some user-facing changes from July 2027.",
+      "search_phrases": [
+        "EU AI distribution rules",
+        "Google Android AI rivals",
+        "platform dependency AI compliance",
+        "search data for AI chatbots",
+        "regional AI fallback plan"
+      ],
+      "scores": {
+        "audience_fit": 7,
+        "practical_consequence": 9,
+        "searchability": 8,
+        "stranger_usefulness": 7,
+        "novelty": 9,
+        "visual_potential": 5,
+        "discussion_potential": 8,
+        "short_form_clarity": 8
+      },
+      "overall_score": 8,
+      "score_reason": "Niche but important for builders and operators. The compliance and fallback-planning angle is strong and timely."
+    }
+  ],
+  "platform_selections": {
+    "tiktok": {
+      "story_index": 0,
+      "story_title": "AI is being judged by work, not demos",
+      "target_audience": "Knowledge workers and everyday AI users who want a fast practical way to judge whether automation is working.",
+      "format": "short spoken hook plus one concrete test",
+      "opening": "Is your AI saving time or creating cleanup?",
+      "payoff": "OpenAI says AI should be judged by useful work completed, cost per successful task, and dependability.",
+      "selection_reason": "It is broad, immediate, and easy to compress into one sharp question with a simple either/or comment prompt.",
+      "platform_fit_score": 9
+    },
+    "youtube": {
+      "story_index": 0,
+      "story_title": "AI is being judged by work, not demos",
+      "target_audience": "Search-driven viewers who want a practical framework for judging AI workflows.",
+      "format": "explainer short with a clear test and takeaway",
+      "opening": "Is your AI workflow actually saving time?",
+      "payoff": "Use OpenAI’s scorecard idea to measure useful work completed, retries, edits, and human cleanup before expanding a workflow.",
+      "selection_reason": "It supports a clearer mini-explanation than the other stories and gives viewers a repeatable test they can try right away.",
+      "platform_fit_score": 9
+    },
+    "facebook": {
+      "story_index": 1,
+      "story_title": "Consumer AI is moving toward age prediction and family controls",
+      "target_audience": "Parents, families, and shared-device users who need a straightforward safety update.",
+      "format": "relatable household update",
+      "opening": "Would you check your ChatGPT settings today?",
+      "payoff": "OpenAI is rolling out age prediction and stronger safeguards, plus controls like quiet hours, memory settings, and distress notifications.",
+      "selection_reason": "This is the most recognizable family and household scenario, so it should invite practical comments instead of abstract debate.",
+      "platform_fit_score": 8
+    },
+    "pinterest": {
+      "story_index": 2,
+      "story_title": "Google is turning notebook research into a connected workflow",
+      "target_audience": "People saving practical guides on AI workflows, research tools, and data-safety checklists.",
+      "format": "searchable checklist guide",
+      "opening": "Checklist before you upload notes to Gemini Notebook",
+      "payoff": "A simple boundary-setting checklist helps you decide what data can go into a connected AI workspace, who can approve it, and what should stay human-controlled.",
+      "selection_reason": "Pinterest rewards saveable guides, and this story naturally becomes a checklist around connected-workspace safety.",
+      "platform_fit_score": 8
+    },
+    "linkedin": {
+      "story_index": 3,
+      "story_title": "EU rules are starting to shape the AI distribution layer",
+      "target_audience": "AI product leaders, operators, and compliance-minded professionals.",
+      "format": "workplace strategy note",
+      "opening": "Would your AI launch survive a platform rule change?",
+      "payoff": "EU-driven access changes make distribution a governance issue, so teams need fallback plans for access, regional compliance, and platform dependence.",
+      "selection_reason": "It is the strongest professional and operational angle, with clear implications for launch planning and dependency management.",
+      "platform_fit_score": 8
+    }
+  },
+  "overall_reasoning": "This week’s strongest audience fit is the shift from capability to control: measurement, safeguards, connected workflows, and distribution risk. Story 0 is the broadest and most reusable across general audiences, story 1 is the clearest household safety angle, story 2 is the best workflow-and-permissions story for professionals, and story 3 is the sharpest strategic/compliance angle. The platform picks separate those interests instead of forcing one story everywhere."
+}

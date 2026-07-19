@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-19-risk",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Is your AI saving time or creating cleanup?",
+      "words": 50,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Is your AI workflow actually saving time?",
+      "words": 106,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Would you check your ChatGPT settings today?",
+      "words": 96,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Would your AI launch survive a platform rule change?",
+      "words": 87,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "Checklist before you upload notes to Gemini Notebook",
+    "title_words": 8,
+    "description_words": 55
+  },
+  "warnings": []
+}

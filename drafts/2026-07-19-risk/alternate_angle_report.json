@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-19-risk",
+  "base_date": "2026-07-19",
+  "angle": "risk_control",
+  "editorial_theme": {
+    "day": "Sunday",
+    "date": "2026-07-19",
+    "slug": "weekly-recap-prediction-check",
+    "title": "Recap and prediction check",
+    "focus": "Recap the strongest developments of the week, check any recent Clearforge forecasts where evidence exists, and prepare the reader for the following week.",
+    "instruction": "Separate confirmed outcomes from still-open questions. Make the piece useful as a Sunday reset before the next week of AI news."
+  },
+  "reused_base_run": "base-current-2026-07-19",
+  "source_urls_reused": [
+    "https://openai.com/index/a-scorecard-for-the-ai-age/",
+    "https://openai.com/index/our-approach-to-age-prediction/",
+    "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
+    "https://www.investing.com/news/stock-market-news/google-required-to-open-up-to-ai-search-engine-rivals-under-eumandated-changes-4795675"
+  ],
+  "passed": true
+}

@@ -1,21 +1,23 @@
 {
   "version": 1,
-  "date": "2026-07-19",
+  "date": "2026-07-19-risk",
   "brand": "Clearforge",
   "type": "clearforge_daily_biggest_story_podcast_script",
   "human_review_required": true,
   "narrator": "Irene",
   "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
-  "episode_title": "AI is being judged by work, not demos",
+  "episode_title": "When AI gets judged by the job, not the demo",
   "selected_story_index": 0,
   "selected_story_title": "AI is being judged by work, not demos",
-  "selection_reason": "This is the strongest edition-wide signal because it changes how people should evaluate AI tools in practice: not by excitement, but by completed work, cost, reliability, and real workflow impact. That is immediately useful for creators and small businesses.",
-  "word_count": 1483,
-  "estimated_duration_minutes": 10.2,
+  "selection_reason": "This is the strongest story because it changes how people should evaluate AI in practice. The shift from flashy outputs to measured work, cost, and dependability affects almost every team using AI, from solo creators to small businesses to operations teams.",
+  "word_count": 1104,
+  "estimated_duration_minutes": 7.6,
   "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
   "source_notes": "source-notes.md",
-  "first_spoken_line": "A useful shift happened this week, and it is not another flashy model launch. It is a change in how AI is being judged.",
-  "final_spoken_line": "So the headline for today is not that AI got smarter. It is that the bar is moving. The question is no longer only, “Can it do the task?” The question is, “Can it do useful work well enough that a person can trust the result after review?” That is the standard that will shape the next phase of AI adoption.",
-  "validation_warnings": [],
+  "first_spoken_line": "This week’s signal is not that AI suddenly got bigger or smarter. It is that the way people are judging it is getting stricter. And that matters, because once you stop evaluating AI by a neat demo and start evaluating it by actual work finished, a lot of hidden problems become visible.",
+  "final_spoken_line": "The big lesson this week is simple. The smartest question is no longer, what can the AI say? It is, what can it finish, how reliably, at what cost, and with how much human checking? That is a much more useful way to think about AI now.",
+  "validation_warnings": [
+    "Script is shorter than target: 1104 words."
+  ],
   "non_spoken_instruction_candidates": []
 }

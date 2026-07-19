@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-19-risk",
+    "kind": "daily",
+    "title": "When AI gets judged by the job, not the demo",
+    "description": "This is the strongest story because it changes how people should evaluate AI in practice. The shift from flashy outputs to measured work, cost, and dependability affects almost every team using AI, from solo creators to small businesses to operations teams.",
+    "published": "2026-07-19T07:00:00+01:00",
+    "duration": "00:07:36",
+    "size": 6567854,
+    "video_size": 20664559,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-19-risk.mp3",
+    "video_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-19-risk.mp4",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-19-risk.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-19-risk.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-19-risk.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-19-risk.html",
+    "source_dir": "drafts/2026-07-19-risk/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-19",
     "kind": "daily",
     "title": "AI is being judged by work, not demos",

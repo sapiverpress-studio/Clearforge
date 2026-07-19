@@ -7,6 +7,10 @@ on:
       - main
     paths:
       - "src/build-site.mjs"
+      - "src/build-publishing-dashboard.mjs"
+      - "src/publishing-dashboard-client.mjs"
+      - "netlify/functions/publishing-*.mts"
+      - "package.json"
       - ".github/workflows/rebuild-organic-growth.yml"
 
 permissions:
@@ -27,6 +31,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "24"
+
+      - name: Install dependencies
+        run: npm install
 
       - name: Build approved static site
         env:

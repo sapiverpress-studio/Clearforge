@@ -1,130 +1,134 @@
 # How to adopt AI work tools inside the apps your team already uses
 
-Short answer: use embedded AI where it reduces handoffs, but treat it as a draft and review layer, not an autonomous decision-maker. The best results usually come from one repeatable task, clear source material, a human approval step, and a record of what AI changed.
+Short direct answer
+AI work tools are most useful when they live inside the documents, spreadsheets, chat threads, boards and research spaces people already use. The best pattern is simple: let AI handle the first pass, keep the source material visible, and make a human responsible for review, approval and any irreversible action.
 
 ## What it means
+AI adoption is shifting from a separate chat window to a workflow layer. OpenAI’s scorecard says AI should be judged by useful work completed, cost per successful task, dependability and scale. That is a practical way to think about adoption: a tool is only valuable if it closes real tasks with less rework.
 
-AI work tools are features that sit inside the software people already use: documents, spreadsheets, design tools, chat, project boards, notebooks, code review and ad platforms. Instead of moving work into a separate chatbot, they try to help inside the existing workflow.
+That is why vendors are embedding AI into everyday surfaces. OpenAI’s ChatGPT Work can connect to apps and files and keep working on longer projects. Google renamed NotebookLM to Gemini Notebook and added a secure cloud computer for code execution and data analysis, with notebooks syncing across Gemini and Search. Canva AI 2.0 adds connectors, scheduling, web research, brand intelligence, Sheets AI and Canva Code 2.0. Notion 3.6 lets users assign external agents from a shared board. GitHub now shows AI-powered security detections directly in pull requests.
 
-That shift matters because most real work is not a single prompt. It is a chain of steps: gather source material, draft something, check it, edit it, approve it and publish it. Embedded AI is useful when it helps with one of those steps without forcing the team to rebuild the whole process.
+The common idea is not replace the tool. It is move the work closer to where it already lives.
 
-The practical promise is simple: fewer context switches, faster first drafts, less manual copying and a clearer path from input to output. The measured reality is narrower. Vendors often describe the intended workflow and sometimes the size of the user base, but they usually do not publish independent productivity results for ordinary teams.
-
-OpenAI has argued that AI should be judged by useful work completed, cost per successful task, dependability and whether value improves at scale. That is a better lens than counting prompts or seats, because it asks whether the workflow actually finishes more work with less rework.
+The projected benefit is fewer handoffs, less context switching and faster first drafts. The source materials do not provide controlled before-and-after productivity studies, so those gains should be treated as expected benefits, not proved outcomes.
 
 ## How it works in practice
+Start with one repeated workflow, not the whole company.
 
-A good embedded-AI setup usually follows the same pattern:
+A good candidate is something that already has a clear input and a clear output:
+- meeting notes into a summary
+- a request into a first draft
+- source files into a client brief
+- a support inbox into a triage list
+- a pull request into a security review
 
-1. Pick one repeatable task.
-   Good candidates are meeting summaries, weekly reports, ad drafts, support replies, proposal outlines, research briefs or code review notes.
+Then decide what the AI is allowed to do:
+1. read source material
+2. draft or summarise
+3. flag gaps or exceptions
+4. suggest next steps
+5. hand off to a human for approval
 
-2. Feed the tool the source material.
-   Give it the document, thread, spreadsheet, file set or board it needs. The more the AI has to guess, the less reliable the output tends to be.
+That pattern shows up across the source set. ChatGPT Work is meant to use connected tools, local files and desktop apps with permission. Canva is trying to carry a project from research to design to scheduling. Notion’s shared board makes the handoff visible. GitHub’s AI detections appear inside pull requests but do not block merges, which is useful because they add a signal without pretending to be the final decision.
 
-3. Ask for a first pass, not a final answer.
-   Use AI to summarise, organise, compare, rewrite or extract. Keep the human as the editor and approver.
+A practical implementation usually needs three records:
+- the input source
+- the AI output
+- the final human-approved version
 
-4. Keep the source, draft and final version visible.
-   This makes review easier and helps you explain what changed if someone asks later.
-
-5. Add a gate before anything irreversible.
-   Anything that sends money, publishes publicly, changes access, sends external mail or exposes private data should still require a person.
-
-6. Measure the workflow, not the tool.
-   Track time saved, error rate, retries, cleanup time and human edits. Those are more useful than raw usage volume.
-
-In the approved research, several products point in this direction:
-
-- OpenAI says ChatGPT Work can use local files and desktop apps with permission, which makes it closer to a connected task layer than a standalone chat box.
-- Google says NotebookLM has become Gemini Notebook, added a secure cloud computer for code and analysis, and will sync notebooks across Gemini and Search.
-- Canva says Canva AI 2.0 adds connectors, scheduling, web research, brand intelligence, Sheets AI and Canva Code 2.0.
-- Notion says users can assign external agents such as Claude and Cursor from a shared board.
-- GitHub says AI-powered security detections now appear in pull requests, but they are informational rather than merge-blocking.
-
-Those are all signs that AI is moving closer to the place where work is already happening.
+If the tool touches ads, social creative or customer-facing copy, keep the prompt, edits and disclosure text together with the asset. Google says advertisers must label ads created or edited with generative AI, and adds a `How this ad was made` panel. That makes disclosure part of the production process, not a cleanup task.
 
 ## Why organisations are adopting it
+The main reason is not novelty. It is workflow economics.
 
-Organisations are adopting embedded AI for a few practical reasons.
+OpenAI’s scorecard puts the emphasis on work completed and cost per successful task. That matches how teams actually buy software: they want fewer handoffs, fewer retries and less cleanup. Embedded AI can help because it sits inside the systems people already use, so they do not have to copy text between tools or rebuild context from scratch.
 
-First, it reduces friction. If a team already lives in docs, spreadsheets, chat and project boards, it is easier to use AI inside those surfaces than to train everyone on a separate tool.
+There is also a control benefit. When AI work stays inside a document, board or review screen, it is easier to see what happened. That matters for managers, because the real cost of AI is not just the model fee. It is the cost of review, mistakes, logging, permissions and maintenance.
 
-Second, it supports repeatable processes. OpenAI’s scorecard framing suggests that buyers increasingly care about whether AI actually completes useful work, not just whether it can produce a convincing draft.
+The July 16 and July 17 source editions point in the same direction:
+- teams want connected research spaces, not isolated chats
+- teams want AI inside approvals, not outside them
+- teams want visible handoffs, not hidden agent actions
+- teams want labels, logs and review points as part of production
 
-Third, it makes review and control easier to standardise. When AI runs inside a familiar app, the team can build prompts, approvals, disclosures and logs into the same workflow that already handles review.
-
-Fourth, it fits the way many organisations already buy software. A new AI feature inside an existing stack is often easier to pilot than a new standalone platform.
-
-The projected benefits are fairly consistent: faster turnaround, fewer handoffs, better first drafts, and a cleaner audit trail. The measurable outcomes are less certain because most vendors do not publish independent before-and-after results for normal business work. They usually disclose features, rollout plans or user counts instead.
-
-For example, Google said NotebookLM now serves more than 30 million people and over 600,000 organisations, but that is a scale claim, not a measured productivity result. Google also said its ad disclosure tools will add a 'How this ad was made' panel and require labels for ads created or edited with generative AI. That shows how AI is becoming part of production and disclosure, not just content generation.
+That is especially true for small businesses and creators, who often need a tool to finish work rather than simply generate more of it.
 
 ## What changes for people and workflows
+The biggest change is that more people become editors, reviewers and approvers.
 
-Embedded AI changes jobs in small but important ways.
+Instead of spending time on the blank page, staff spend more time on:
+- checking source material
+- correcting assumptions
+- deciding what should be published
+- handling exceptions
+- keeping records of what changed
 
-- Writers and marketers spend less time starting from scratch and more time editing, checking facts and applying brand judgment.
-- Managers spend less time assembling status updates and more time reviewing exceptions.
-- Analysts and operators spend less time copying between tools and more time validating outputs.
-- Developers spend less time on repetitive review and more time on edge cases, especially when AI helps surface security findings or code issues.
+That can be a real productivity gain, but only if the workflow is designed around review. In practice, AI works best when it handles the first pass and humans handle the final pass.
 
-It also changes what needs to be documented. If AI helps make an ad, image, summary or recommendation, the team may need to record what was generated, what was edited and what disclosure is required.
+It also changes where work happens. Research may start in a notebook, then move into a chat, then into a board, then into a doc or presentation. Design may move from idea to asset to schedule without leaving one app. Support and engineering can move from issue to triage to review inside the same workspace.
 
-That is why Google’s ad transparency move matters. It suggests that disclosure is becoming part of the production process, not a last-minute judgement call. It also explains why Notion’s shared board approach is useful: the handoff stays visible instead of disappearing into private chats.
+The upside is fewer context switches. The tradeoff is that mistakes can travel faster too. Once creation and publishing live closer together, organisations need to put approval gates earlier in the process.
 
-For connected workflows, the main shift is accountability. The person using the tool still owns the result. AI can prepare, sort and draft, but someone must approve the final version.
+This is also why records matter. If a team cannot tell what the source was, what the tool changed and who approved the result, it is hard to trust the workflow at scale.
 
 ## Limits, risks and what remains uncertain
+The sources support the direction of travel, but they do not prove universal productivity gains.
 
-The biggest limit is that embedded AI does not remove judgement. It can speed up work, but it can also speed up mistakes.
+A few things remain uncertain:
+- rollout scope and timing are not always fully disclosed
+- some products are in research preview or beta
+- some features are informational rather than blocking
+- controlled before-and-after productivity results are not provided
+- access may vary by plan, region or tenant
+- some platform disclosure details are still not fully specified in the source materials
 
-A few risks show up repeatedly in the approved research:
+There are also real risks:
+- prompt injection or unsafe tool use when AI can fetch or act on data
+- overbroad file access or permission creep
+- accidental publishing of incorrect output
+- privacy issues when multiple people share one account or workspace
+- disclosure failures when AI is used in marketing or media assets
+- vendor dependence if the workflow only works in one platform
 
-- Rollout details are often incomplete. OpenAI, Google and Canva all describe product availability, but plan-by-plan or region-by-region timing is not always fully disclosed.
-- Outcomes are often not measured publicly. Companies may say a product is widely used, but that does not prove it improves productivity for every team.
-- Connected tools can widen security risk. OpenAI’s GPT-Red work and GitHub’s AI security detections show that prompt injection and review control are real concerns when AI can touch files, code or other systems.
-- Family and shared-account use adds new governance problems. OpenAI’s age prediction and parental controls are a reminder that one account may need different settings for different people.
-- Disclosure can lag behind capability. A tool may make it easy to generate or edit content, but the team still has to decide when and how to label it.
+GitHub’s AI security detections are a good example of the right attitude: the detections are helpful, but they are informational and do not block merges. That is a reminder that AI should support judgement, not replace it. Microsoft’s observability work points in the same direction: once AI systems act across tools, logging, telemetry and rollback matter as much as the model itself.
 
-The other uncertainty is business value. A tool can look impressive and still fail to reduce total effort once review, cleanup and rework are included. That is why a narrow pilot matters more than a broad rollout.
+The most important practical limit is this: a smoother workflow is not automatically a safer workflow. The more connected the tools become, the more important it is to define boundaries.
 
 ## Practical questions to ask before using it
+Before you roll out an AI work tool inside an existing app, ask:
 
-Before you roll out an embedded AI feature, ask:
+- What exact task are we improving?
+- What does the AI read, and what does it write back?
+- Who owns the final decision?
+- What is the human review step?
+- What happens if the tool is wrong, slow or unavailable?
+- Where do prompts, edits and approvals get recorded?
+- Do we need to label or disclose AI-generated or AI-edited output?
+- Does the feature run as a preview, beta or general release?
+- Are plan, region or tenant limits disclosed?
+- Is the AI action informational, or can it trigger an irreversible step?
 
-- What exact task are we trying to improve?
-- What is the source material, and who owns it?
-- What does a good result look like?
-- What can AI do on its own, and what still needs human approval?
-- Which permissions does the tool need to read, edit or send anything?
-- Can we see logs, prompts, edits or task history?
-- What happens if the model is wrong?
-- What is the fallback if the feature is unavailable in our plan or region?
-- Do we need disclosure for public-facing or paid content?
-- If this is used in a family, school or shared-account setting, do age or access controls matter?
-
-A useful rule of thumb: if the output changes money, access, customers, legal exposure or public trust, keep a human in the loop.
+If you cannot answer those questions clearly, the workflow is probably too open-ended to scale safely.
 
 ## Current examples
+A few current examples show the pattern:
 
-- ChatGPT Work: OpenAI says it can work with local files and desktop apps with permission, which makes it a practical option for connected drafting and analysis. OpenAI has also said availability by plan and region should be checked.
-- Gemini Notebook: Google renamed NotebookLM, added a secure cloud computer for code execution and analysis, and said notebooks will sync across Gemini and Search.
-- Canva AI 2.0: Canva says it is combining design, connectors, scheduling, web research, brand intelligence and Sheets AI inside one workflow, but it is still in research preview.
-- Notion 3.6: Notion says teams can assign external agents such as Claude and Cursor from a shared board, which helps keep handoffs visible.
-- GitHub code scanning AI detections: GitHub says detections now appear on pull requests and are informational, which is a good example of AI as a review aid rather than an automatic blocker.
-- Google ad transparency: Google says it is adding a 'How this ad was made' panel and requiring labels for ads created or edited with generative AI.
+- OpenAI ChatGPT Work: connected to apps and files, designed for longer projects and first-pass work. The source materials do not give full rollout scope for every plan and region.
+- Google Gemini Notebook: formerly NotebookLM, now tied more closely to Gemini and Search, with a secure cloud computer for code execution and analysis. Google says the product already serves more than 30 million people and 600,000 organisations.
+- Canva AI 2.0: a research-preview workflow that combines connectors, scheduling, web research, brand intelligence, Sheets AI and Canva Code 2.0.
+- Notion 3.6: lets teams assign external agents from a shared board, which makes handoffs easier to see.
+- GitHub AI security detections: appear on pull requests and are informational rather than merge-blocking.
+- Google ad transparency: adds a `How this ad was made` panel and AI labelling for ads created or edited with generative AI.
 
-These examples show the same pattern in different places: AI is most useful when it sits inside a workflow that already has inputs, review and accountability.
+These examples do not mean every team should adopt every tool. They do show a durable pattern: AI is becoming most useful when it sits inside a workflow that already has source material, review and a named owner.
 
 ## Sources and further reading
-
-- OpenAI, A scorecard for the AI age — https://openai.com/index/a-scorecard-for-the-ai-age/
-- OpenAI, ChatGPT is now a partner for your most ambitious work — https://openai.com/index/chatgpt-for-your-most-ambitious-work/
-- OpenAI, Our approach to age prediction — https://openai.com/index/our-approach-to-age-prediction/
-- Google, NotebookLM is now Gemini Notebook — https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/
-- Google, Expanding AI transparency in ads — https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/
-- Canva, Introducing Canva AI 2.0: Reimagining how the world creates — https://www.canva.com/newsroom/news/canva-create-2026-ai/
-- Notion, Notion 3.6: External Agents, HTML blocks, and more — https://www.notion.com/releases/2026-07-01
-- GitHub Changelog, Code scanning shows AI security detections on pull requests — https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests/
-- OpenAI, GPT-Red: Unlocking Self-Improvement for Robustness — https://openai.com/index/unlocking-self-improvement-gpt-red/
+- OpenAI, `A scorecard for the AI age` — https://openai.com/index/a-scorecard-for-the-ai-age/
+- OpenAI, `ChatGPT is now a partner for your most ambitious work` — https://openai.com/index/chatgpt-for-your-most-ambitious-work/
+- OpenAI, `ChatGPT Work, desktop app, and Sites release notes` — https://openai.com/products/release-notes/
+- Google, `NotebookLM is now Gemini Notebook` — https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/
+- GitHub Changelog, `Code scanning shows AI security detections on pull requests` — https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests/
+- Canva, `Introducing Canva AI 2.0: Reimagining how the world creates` — https://www.canva.com/newsroom/news/canva-create-2026-ai/
+- Notion, `Notion 3.6: External Agents, HTML blocks, and more` — https://www.notion.com/releases/2026-07-01
+- Microsoft Blog, `Rethinking cloud operations with agentic observability` — https://blogs.microsoft.com/blog/2026/06/23/rethinking-cloud-operations-with-agentic-observability/
+- Google Blog, `Expanding AI transparency in ads` — https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/

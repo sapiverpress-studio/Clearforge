@@ -4,12 +4,12 @@
     {
       "slug": "ai-work-tools-in-existing-apps",
       "title": "How to adopt AI work tools inside the apps your team already uses",
-      "description": "A practical guide to using AI inside docs, spreadsheets, design tools, chat and project boards. It explains where the workflow gains come from, why review, disclosure and control matter, and what to check before rolling it out.",
-      "search_question": "How should I adopt AI tools inside the apps my team already uses?",
+      "description": "A practical guide to using AI inside docs, spreadsheets, design tools, chat, notebooks and project boards. It explains where the workflow gains come from, why review, disclosure and control matter, and what to check before rolling it out.",
+      "search_question": "How do I adopt AI work tools inside the apps my team already uses?",
       "topic_slugs": [
         "ai-adoption",
         "ai-inside-products",
-        "creators-small-business"
+        "systems-automation"
       ],
       "created": "2026-07-14",
       "last_updated": "2026-07-19",
@@ -23,6 +23,7 @@
         "2026-07-15",
         "2026-07-16",
         "2026-07-16",
+        "2026-07-17",
         "2026-07-17",
         "2026-07-18",
         "2026-07-19"

@@ -136,6 +136,27 @@ function collectHistoricalUsage() {
   return { usedUrls: [...usedUrls], usedStoryTitles, usedHeadlines };
 }
 
+function collectRecentFreshTopicEvidence() {
+  const draftsRoot = path.join(ROOT, "drafts");
+  if (!fs.existsSync(draftsRoot)) return [];
+
+  return fs.readdirSync(draftsRoot)
+    .filter((name) => /^\d{4}-\d{2}-\d{2}$/.test(name) && name < today)
+    .sort()
+    .slice(-7)
+    .map((date) => {
+      const data = safeReadJson(path.join(draftsRoot, date, "structured_output.json"));
+      if (!data) return null;
+      return {
+        date,
+        headline: data.headline || "",
+        story_titles: (data.story_summaries || []).map((story) => story.title).filter(Boolean),
+        story_summaries: (data.story_summaries || []).map((story) => story.summary).filter(Boolean)
+      };
+    })
+    .filter(Boolean);
+}
+
 function validateNovelty(data, history) {
   const failures = [];
   const sameDayHistory = [];
@@ -209,6 +230,7 @@ async function main() {
   ensureDir(outDir);
   archiveCurrentRun();
   const history = collectHistoricalUsage();
+  const recentFreshTopicEvidence = collectRecentFreshTopicEvidence();
   preserveOrCreateApproval();
 
   const config = readJson(configPath);
@@ -235,7 +257,7 @@ async function main() {
       include: ["web_search_call.action.sources"],
       input: [
         { role: "system", content: "You are the Clearforge Daily AI Brief Builder. Research first. Use the broad allowed source pool. Prefer primary sources for facts and reputable journalism for discovery/context. Distinguish confirmed facts from interpretation. Never copy article wording. A rerun must be genuinely new, not a reframing of earlier stories. Follow the supplied weekday editorial theme so the output has a distinct daily purpose. Resolve every material claim against cited evidence. A supplier announcement confirms what was announced, not a customer outcome. Drop any story whose material access, timing, pricing, scale, deployment or outcome claims remain unresolved." },
-        { role: "user", content: `${prompt}\n\nTODAY: ${today}\n\nCLEARFORGE WEEKDAY EDITORIAL THEME:\nDay: ${theme.day}\nTheme: ${theme.title}\nFocus: ${theme.focus}\nInstruction: ${theme.instruction}\n\nFor Saturday forecast editions, label forecasts as forecasts and do not present predictions as confirmed facts. For Sunday recap editions, separate confirmed outcomes from open questions and prepare the reader for the following week.\n\nEXCLUSIONS FROM EARLIER RUNS:\n${JSON.stringify(exclusions)}\n\nPREFERRED DISCOVERY SOURCES (starting points, not a closed allow-list):\n${JSON.stringify(preferredSources)}\n\nResearch the most useful AI developments from roughly the last 48 hours, filtered through today’s editorial theme. You may search outside the preferred pool when needed to reach the adopting organisation, official documentation, regulators, filings, or credible independent corroboration. Select 3 to 5 distinct stories. Do not use any excluded URL. Do not select a story substantially similar to any excluded story title, even from a different publication. Prefer developments not covered in earlier runs. Use a wider mix of companies, research, policy, infrastructure, open-source, creator tools, business use and safety. The main article must be 700 to 1000 words and practical for creators, small businesses, and AI learners. For every story, set claim_to_verify to exactly "NONE — verified from cited sources." only after all material claims used are supported. Otherwise record the unresolved claim and allow validation to block the edition. claims_to_verify must be empty for publication.` }
+        { role: "user", content: `${prompt}\n\nTODAY: ${today}\n\nCLEARFORGE WEEKDAY EDITORIAL THEME:\nDay: ${theme.day}\nTheme: ${theme.title}\nFocus: ${theme.focus}\nInstruction: ${theme.instruction}\n\nFor Saturday forecast editions, label forecasts as forecasts and do not present predictions as confirmed facts. For Sunday recap editions, separate confirmed outcomes from open questions and prepare the reader for the following week.\n\nFRESH-TOPIC ROTATION EVIDENCE — PREVIOUS SEVEN FRESH EDITIONS:\n${JSON.stringify(recentFreshTopicEvidence)}\n\nFRESH-TOPIC ROTATION RULE:\nInfer the dominant recurring subject from these previous seven fresh editions. A subject is dominant when it materially shaped multiple editions or most of one week's coverage; treat close semantic variants as the same subject. Do not choose that dominant subject again for today's fresh edition, even if it is still prominent in the news. For example, price versus performance, model value, inference cost and cheaper-model comparisons are one topic family. Select a materially different subject supported by genuinely fresh reporting. The same dominant fresh topic may run for no more than one week and must then have at least one full week out. This topic exclusion overrides popularity, but it does not override factual quality or the weekday editorial theme. If the evidence is too mixed to identify one dominant subject, avoid the two most repeated subject families.\n\nEXCLUSIONS FROM EARLIER RUNS:\n${JSON.stringify(exclusions)}\n\nPREFERRED DISCOVERY SOURCES (starting points, not a closed allow-list):\n${JSON.stringify(preferredSources)}\n\nResearch the most useful AI developments from roughly the last 48 hours, filtered through today’s editorial theme. You may search outside the preferred pool when needed to reach the adopting organisation, official documentation, regulators, filings, or credible independent corroboration. Select 3 to 5 distinct stories. Do not use any excluded URL. Do not select a story substantially similar to any excluded story title, even from a different publication. Prefer developments not covered in earlier runs. Use a wider mix of companies, research, policy, infrastructure, open-source, creator tools, business use and safety. The main article must be 700 to 1000 words and practical for creators, small businesses, and AI learners. For every story, set claim_to_verify to exactly "NONE — verified from cited sources." only after all material claims used are supported. Otherwise record the unresolved claim and allow validation to block the edition. claims_to_verify must be empty for publication.` }
       ],
       text: { format: { type: "json_schema", name: "clearforge_daily_brief", strict: true, schema } }
     });
@@ -255,7 +277,7 @@ async function main() {
   write(path.join(outDir, "sources.json"), JSON.stringify(enrichedData.sources, null, 2));
   write(path.join(outDir, "structured_output.json"), JSON.stringify(enrichedData, null, 2));
   write(path.join(outDir, "editorial_theme.json"), JSON.stringify(theme, null, 2));
-  write(path.join(outDir, "novelty_report.json"), JSON.stringify({ date: today, editorial_theme: theme, same_day_prior_runs: fs.existsSync(runsDir) ? fs.readdirSync(runsDir).length : 0, excluded_url_count: history.usedUrls.length, excluded_story_title_count: history.usedStoryTitles.length, passed: true }, null, 2));
+  write(path.join(outDir, "novelty_report.json"), JSON.stringify({ date: today, editorial_theme: theme, same_day_prior_runs: fs.existsSync(runsDir) ? fs.readdirSync(runsDir).length : 0, excluded_url_count: history.usedUrls.length, excluded_story_title_count: history.usedStoryTitles.length, topic_rotation_evidence_dates: recentFreshTopicEvidence.map((item) => item.date), consecutive_week_topic_block: true, passed: true }, null, 2));
   write(path.join(outDir, "claims_to_verify.md"), `# Claims To Verify — ${today}\n\nEditorial theme: ${theme.day} — ${theme.title}\n\n${enrichedData.claims_to_verify.length ? enrichedData.claims_to_verify.map((x) => `- [ ] ${x}`).join("\n") : "None — all material claims used in this edition were verified against the cited sources."}\n`);
   write(path.join(outDir, "editor_checklist.md"), `# Clearforge Automatic QA Context — ${today}\n\n- Editorial theme: ${theme.day} — ${theme.title}.\n- Current run passed same-day URL exclusion.\n- Current run passed same-day story-title similarity gate.\n- Previous same-day runs are archived under drafts/${today}/runs/.\n- Automatic validation blocks publication when any material claim remains unresolved.\n- Supplier claims about customer outcomes require customer confirmation or credible independent reporting.\n`);
   console.log(`Clearforge fresh daily pack created in drafts/${today} using ${theme.day} theme: ${theme.title}`);

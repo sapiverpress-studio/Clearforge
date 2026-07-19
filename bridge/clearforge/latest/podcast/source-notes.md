@@ -1,31 +1,26 @@
-# Source notes — 2026-07-18-systems
+# Source notes — 2026-07-19
 
-Podcast focused on: OpenAI’s scorecard is a sign that AI is becoming a process tool
+Podcast focused on: AI is being judged by work, not demos
 
 ## Sources supplied to the script generator
 
 - 1. OpenAI: A scorecard for the AI age
   - URL: https://openai.com/index/a-scorecard-for-the-ai-age/
   - Published/date field: 2026-07-17
-  - Confirmed fact: OpenAI said AI adoption deepens in stages, and argued companies should measure useful work completed, cost per successful task, dependability, and whether each AI dollar buys more work at scale.
-  - Interpretation: The company is pushing the market toward workflow metrics and unit economics instead of novelty or raw usage counts.
-- 2. OpenAI: GPT-Red: Unlocking Self-Improvement for Robustness
-  - URL: https://openai.com/index/unlocking-self-improvement-gpt-red/
-  - Published/date field: 2026-07-15
-  - Confirmed fact: OpenAI said it trained GPT-Red, an automated internal red-teaming model, and used it to adversarially train GPT-5.6 to improve resistance to prompt injection.
-  - Interpretation: Safety testing is becoming more automated and more tightly integrated into model development and release processes.
-- 3. OpenAI: Why teens deserve access to safe AI
-  - URL: https://openai.com/index/why-teens-deserve-access-safe-ai/
+  - Confirmed fact: OpenAI argues that AI value should be measured by useful work completed, cost per successful task, dependability, and whether value improves at scale.
+  - Interpretation: The company is pushing buyers to evaluate AI as a workflow system and not just a token-price problem.
+- 2. OpenAI: Our approach to age prediction
+  - URL: https://openai.com/index/our-approach-to-age-prediction/
   - Published/date field: 2026-07-16
-  - Confirmed fact: OpenAI said it had strengthened default teen protections, rolled out age prediction, expanded parental controls, and will keep adding age-appropriate safeguards in the coming months.
-  - Interpretation: Consumer AI products are increasingly being designed around governance, age-gating and family controls, not just general access.
-- 4. Google: Expanding AI transparency in ads
-  - URL: https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/
-  - Published/date field: 2026-07-09
-  - Confirmed fact: Google said it is adding a 'How this ad was made' panel in My Ad Center on Search, YouTube and Discover, and that advertisers must label ads created or edited with generative AI.
-  - Interpretation: Disclosure is becoming a built-in product feature, which may spread to more ad platforms and creator tools.
-- 5. Reuters via Investing.com: ASML capacity upgrade soothes AI chip bottleneck fears
-  - URL: https://www.investing.com/news/stock-market-news/asml-tops-q2-estimates-on-ai-chip-demand-4792151
-  - Published/date field: 2026-07-15
-  - Confirmed fact: Reuters reported that ASML raised its 2026 sales forecast and said it would expand capacity by 30% in each of the next two years because of strong demand linked to AI chips and data-center buildout.
-  - Interpretation: The AI supply chain is still being pulled forward by demand, and equipment makers are planning for sustained pressure rather than a short spike.
+  - Confirmed fact: OpenAI said it is rolling out age prediction on ChatGPT consumer plans to estimate whether an account likely belongs to someone under 18, then apply stronger safeguards when needed.
+  - Interpretation: Consumer AI is moving toward automated age-gating and family controls as a standard product layer.
+- 3. Google: NotebookLM is now Gemini Notebook
+  - URL: https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/
+  - Published/date field: 2026-07-16
+  - Confirmed fact: Google renamed NotebookLM to Gemini Notebook, added a secure cloud computer for code execution and data analysis, and said the product will sync across Gemini and Search.
+  - Interpretation: Google is folding research tooling deeper into its core AI ecosystem and making notebook workflows more operational.
+- 4. Reuters: Google required to open up to AI, search engine rivals under EU-mandated changes
+  - URL: https://www.investing.com/news/stock-market-news/google-required-to-open-up-to-ai-search-engine-rivals-under-eumandated-changes-4795675
+  - Published/date field: 2026-07-16
+  - Confirmed fact: Reuters reported that EU regulators said Google must open certain Android features to AI rivals and share some search-optimisation data with AI chatbots, with implementation starting in January and some user-facing changes from July 2027.
+  - Interpretation: European regulation is starting to shape how AI assistants can connect to mobile and search infrastructure.

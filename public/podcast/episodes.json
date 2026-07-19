@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-19",
+    "kind": "daily",
+    "title": "AI is being judged by work, not demos",
+    "description": "This is the strongest edition-wide signal because it changes how people should evaluate AI tools in practice: not by excitement, but by completed work, cost, reliability, and real workflow impact. That is immediately useful for creators and small businesses.",
+    "published": "2026-07-19T07:00:00+01:00",
+    "duration": "00:10:12",
+    "size": 8834865,
+    "video_size": 25010112,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-19.mp3",
+    "video_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-19.mp4",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-19.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-19.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-19.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-19.html",
+    "source_dir": "drafts/2026-07-19/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-18-systems",
     "kind": "daily",
     "title": "From demos to operating systems",

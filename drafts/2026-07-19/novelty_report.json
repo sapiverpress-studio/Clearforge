@@ -1,0 +1,15 @@
+{
+  "date": "2026-07-19",
+  "editorial_theme": {
+    "day": "Sunday",
+    "date": "2026-07-19",
+    "slug": "weekly-recap-prediction-check",
+    "title": "Recap and prediction check",
+    "focus": "Recap the strongest developments of the week, check any recent Clearforge forecasts where evidence exists, and prepare the reader for the following week.",
+    "instruction": "Separate confirmed outcomes from still-open questions. Make the piece useful as a Sunday reset before the next week of AI news."
+  },
+  "same_day_prior_runs": 0,
+  "excluded_url_count": 30,
+  "excluded_story_title_count": 32,
+  "passed": true
+}

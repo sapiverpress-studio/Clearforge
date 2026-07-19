@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-19",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Can your AI finish a task with fewer edits?",
+      "words": 95,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Does your research workflow live in too many tabs?",
+      "words": 86,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Would you want AI to guess a user’s age automatically?",
+      "words": 88,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Will your AI product still reach users if platform access changes?",
+      "words": 86,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "How to test whether AI actually saves time",
+    "title_words": 8,
+    "description_words": 46
+  },
+  "warnings": []
+}

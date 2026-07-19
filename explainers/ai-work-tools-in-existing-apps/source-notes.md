@@ -1,6 +1,6 @@
 # Source notes — How to adopt AI work tools inside the apps your team already uses
 
-Last checked: 2026-07-17
+Last checked: 2026-07-19
 
 - https://openai.com/products/release-notes/
 - https://openai.com/index/chatgpt-for-your-most-ambitious-work/
@@ -18,6 +18,9 @@ Last checked: 2026-07-17
 - https://www.anthropic.com/news/ust-claude
 - https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests/
 - https://thinkingmachines.ai/news/introducing-inkling/
+- https://openai.com/index/a-scorecard-for-the-ai-age/
+- https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/
+- https://openai.com/index/unlocking-self-improvement-gpt-red/
 
 ## Revision history
 
@@ -26,3 +29,4 @@ Last checked: 2026-07-17
 - 2026-07-15: Updated the existing work-tools guide to reflect the new shift from standalone AI assistants to embedded, agentic workflows that require logs, approval gates and rollback plans. Added current examples from OpenAI, Microsoft, Google, Anthropic and the White House, and clarified rollout uncertainty, projected benefits versus measured outcomes, and the practical questions teams should ask before enabling AI inside their existing apps.
 - 2026-07-16: Updated the workflow-tools guide to reflect newer evidence that AI is moving into connected app workflows, shared agent boards, creative publishing stacks and disclosure controls. Added current examples from OpenAI, Canva, Notion, Anthropic and Google, and strengthened guidance on review gates, permissions and provenance.
 - 2026-07-17: Updated the existing workflow-adoption guide with newer evidence on AI embedded inside apps, review-gate controls, disclosure requirements, and open-weight/private-control options. Added current examples from ChatGPT Work, Canva AI 2.0, Notion 3.6, GitHub pull-request detections, Google ad transparency, and Thinking Machines Inkling, while keeping the guide focused on durable workflow design rather than transient product hype.
+- 2026-07-19: Updated the existing guide to reflect the newer shift from general AI adoption to in-app workflow control. Added current examples and practical guidance from OpenAI’s scorecard and ChatGPT Work, Google’s Gemini Notebook and ad transparency changes, Notion’s external agents, Canva’s research-preview workflow bundle, and GitHub’s AI security detections. Reframed the guide around measurement, review gates, disclosure, permissions and rollout uncertainty rather than novelty.

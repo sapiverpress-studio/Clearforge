@@ -22,15 +22,10 @@
     "export:approved": "node src/export-approved-bundle.mjs",
     "build:site": "node src/build-site.mjs && node src/build-evergreen-guides.mjs && node scripts/hide-podcast-rss-link.mjs && node scripts/add-control-kit-product.mjs && npm run build:publishing",
     "check": "node src/check-approval.mjs",
-    "build:publishing": "node src/build-publishing-dashboard.mjs && esbuild src/publishing-dashboard-client.mjs --bundle --format=esm --minify --outfile=public/publishing/app.js"
+    "build:publishing": "node src/build-publishing-dashboard.mjs"
   },
   "dependencies": {
-    "openai": "latest",
-    "@netlify/blobs": "latest",
-    "@netlify/functions": "latest",
-    "@netlify/identity": "latest"
+    "openai": "latest"
   },
-  "devDependencies": {
-    "esbuild": "latest"
-  }
+  "devDependencies": {}
 }

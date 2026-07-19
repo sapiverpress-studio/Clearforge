@@ -2,15 +2,15 @@
   "version": 1,
   "slug": "ai-work-tools-in-existing-apps",
   "title": "How to adopt AI work tools inside the apps your team already uses",
-  "description": "A practical guide to using AI inside docs, spreadsheets, design tools, chat and project boards. It explains where the workflow gains come from, why review, disclosure and control matter, and what to check before rolling it out.",
-  "search_question": "How should a team adopt AI tools inside the apps it already uses?",
+  "description": "A practical guide to using AI inside docs, spreadsheets, design tools, chat, research workspaces and project boards. It explains where the workflow gains come from, why review, disclosure and control matter, and what to check before rolling it out.",
+  "search_question": "How do I adopt AI work tools inside the apps my team already uses?",
   "topic_slugs": [
     "ai-adoption",
     "ai-inside-products",
-    "creators-small-business"
+    "systems-automation"
   ],
   "created": "2026-07-14",
-  "last_updated": "2026-07-17",
+  "last_updated": "2026-07-19",
   "source_editions": [
     "2026-07-09",
     "2026-07-10",
@@ -21,7 +21,8 @@
     "2026-07-15",
     "2026-07-16",
     "2026-07-16-risk",
-    "2026-07-17-systems"
+    "2026-07-17-systems",
+    "2026-07-19"
   ],
   "source_urls": [
     "https://openai.com/products/release-notes/",
@@ -39,7 +40,9 @@
     "https://www.notion.com/releases/2026-07-01",
     "https://www.anthropic.com/news/ust-claude",
     "https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests/",
-    "https://thinkingmachines.ai/news/introducing-inkling/"
+    "https://thinkingmachines.ai/news/introducing-inkling/",
+    "https://openai.com/index/a-scorecard-for-the-ai-age/",
+    "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/"
   ],
   "revisions": [
     {
@@ -88,6 +91,17 @@
       "source_editions": [
         "2026-07-16-risk",
         "2026-07-17-systems"
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "summary": "Updated the guide to emphasize workflow-based evaluation, connected research workspaces, in-app review gates, and disclosure controls. Added newer evidence from OpenAI’s scorecard, Google’s Gemini Notebook update, GitHub’s AI security detections, Google’s ad transparency labels, and app-native examples from Canva and Notion.",
+      "source_editions": [
+        "2026-07-19",
+        "2026-07-16",
+        "2026-07-16-risk",
+        "2026-07-14",
+        "2026-07-09"
       ]
     }
   ],

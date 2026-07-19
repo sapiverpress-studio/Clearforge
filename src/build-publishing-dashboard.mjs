@@ -1,0 +1,20 @@
+import fs from "node:fs";
+import path from "node:path";
+
+const out = path.join(process.cwd(), "public", "publishing");
+fs.mkdirSync(out, { recursive: true });
+fs.writeFileSync(path.join(out, "index.html"), `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Publishing Pack | Clearforge</title>
+<link rel="stylesheet" href="/styles.css"><style>
+.pack{max-width:760px;margin:auto}.panel,.asset{background:#0b1d31;border:1px solid #24415f;border-radius:16px;padding:1rem;margin:1rem 0}
+.login input,.login button,select{box-sizing:border-box;width:100%;padding:.85rem;margin:.35rem 0;border-radius:9px}
+.asset video,.asset img{width:100%;max-height:70vh;border-radius:10px;background:#000}.actions{display:flex;gap:.6rem;flex-wrap:wrap}
+.actions button,.actions a{padding:.7rem 1rem;border-radius:9px}.copybox{white-space:pre-wrap;background:#061525;padding:.8rem;border-radius:8px}
+[hidden]{display:none!important}
+</style></head><body><main class="content pack">
+<section><p class="eyebrow">Internal Clearforge workspace</p><h1>Today’s Publishing Pack</h1><p>Sign in to preview, copy and download the finished social assets.</p></section>
+<section id="login" class="panel login"><form id="login-form"><label>Email<input id="email" type="email" autocomplete="username" required></label><label>Password<input id="password" type="password" autocomplete="current-password" required></label><button class="button" type="submit">Sign in</button></form><p id="login-message" role="status"></p></section>
+<section id="dashboard" hidden><div class="panel"><label>Edition<select id="edition"></select></label><div class="actions"><button id="refresh">Refresh</button><button id="logout">Sign out</button></div></div><div id="assets"></div></section>
+</main><script type="module" src="/publishing/app.js"></script></body></html>`, "utf8");
+console.log("Built protected publishing dashboard shell.");

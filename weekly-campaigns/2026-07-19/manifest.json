@@ -1,0 +1,13 @@
+{
+  "week_start": "2026-07-13",
+  "week_end": "2026-07-19",
+  "status": "human_review_required",
+  "route": "free_resource_only",
+  "score": 21,
+  "files": [
+    "opportunity-brief.json",
+    "opportunity-brief.md",
+    "product-brief.json",
+    "content-plan.json"
+  ]
+}

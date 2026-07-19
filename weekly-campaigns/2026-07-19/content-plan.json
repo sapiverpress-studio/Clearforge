@@ -1,0 +1,65 @@
+[
+  {
+    "day": "Monday",
+    "editorial_lane": "weekend roundup",
+    "title": "The week AI moved from drafts to proof",
+    "angle": "OpenAI, Google, GitHub, and ASML all point to the same hidden problem: AI can create output quickly, but the work still needs a finish-line test before it is safe or useful.",
+    "format": "roundup",
+    "product_connection": "Sets up the free scorecard by showing why a finish-line check matters now.",
+    "cta_strength": "soft"
+  },
+  {
+    "day": "Tuesday",
+    "editorial_lane": "AI at work",
+    "title": "Measure the work, not the prompt",
+    "angle": "Use the scorecard on one weekly task — a draft, support reply, or summary — and compare time saved against cleanup and rework.",
+    "format": "utility explainer",
+    "product_connection": "Shows how the scorecard turns AI from a draft generator into a measurable workflow.",
+    "cta_strength": "direct"
+  },
+  {
+    "day": "Wednesday",
+    "editorial_lane": "AI in everyday life",
+    "title": "Why shared AI use still needs boundaries",
+    "angle": "OpenAI’s age prediction and parental controls show that AI is entering family and household settings, which makes approval and guardrails part of everyday use.",
+    "format": "practical life-admin post",
+    "product_connection": "Extends the scorecard logic to home use, student work, and shared devices.",
+    "cta_strength": "soft"
+  },
+  {
+    "day": "Thursday",
+    "editorial_lane": "systems and automation",
+    "title": "Automation needs a log, a gate, and a rollback",
+    "angle": "The White House, Microsoft, and GitHub stories all reinforce the same rule: if AI can act across tools, it needs visible handoffs, approval steps, and a way to undo mistakes.",
+    "format": "systems explainer",
+    "product_connection": "Maps the scorecard’s approval and rollback sections to real automation workflows.",
+    "cta_strength": "direct"
+  },
+  {
+    "day": "Friday",
+    "editorial_lane": "new tools, stacks and workflows",
+    "title": "Introducing the AI Finish-Line Scorecard",
+    "angle": "Release the free resource and show the exact fields readers can use to decide whether AI actually saved time, reduced errors, and deserves to stay in the workflow.",
+    "format": "resource launch",
+    "product_connection": "This is the product day: present the free scorecard as the smallest useful solution.",
+    "cta_strength": "direct"
+  },
+  {
+    "day": "Saturday",
+    "editorial_lane": "prediction and outlook",
+    "title": "Prediction: proof, disclosure, and controls become standard",
+    "angle": "Forecast that more AI products will be judged by completed work, disclosure, and safety controls rather than by flashier demos or model names.",
+    "format": "forecast post",
+    "product_connection": "Explains why the scorecard should keep working as AI products become more embedded.",
+    "cta_strength": "soft"
+  },
+  {
+    "day": "Sunday",
+    "editorial_lane": "recap and preparation",
+    "title": "Pick one workflow and test it next week",
+    "angle": "Wrap the week by asking readers to choose one recurring task and run it through the scorecard before scaling any AI use.",
+    "format": "weekly reset",
+    "product_connection": "Directly points readers to the free scorecard as next week’s test tool.",
+    "cta_strength": "direct"
+  }
+]

@@ -1,0 +1,172 @@
+{
+  "week_start": "2026-07-13",
+  "week_end": "2026-07-19",
+  "recommended_route": "free_resource_only",
+  "problem": {
+    "title": "AI creates drafts faster than teams can finish them",
+    "statement": "Solo creators and small businesses can now use AI to draft, summarize, and analyze quickly, but the recurring bottleneck is the finishing work: checking facts, tracking what the model touched, adding disclosure, and getting a human sign-off before anything customer-facing, public, or money-related goes live.",
+    "affected_audience": "Solo creators, freelancers, small agencies, and small businesses using AI for content, support, research, ads, or internal ops.",
+    "practical_consequence": "The time saved by AI gets eaten by cleanup and uncertainty; weak review can put incorrect, undisclosed, or unsafe output into public workflows; teams need a simple repeatable finish-line check.",
+    "why_now": "Across this week’s approved research, the focus keeps shifting from model capability to proof and controls: OpenAI asks buyers to measure useful work completed, GPT-Red hardens systems against prompt injection, Google adds ad disclosure, GitHub puts AI into pull-request review, OpenAI adds age prediction and family controls, and multiple sources emphasize observability and approval gates.",
+    "evergreen_value": "Any workflow that uses AI will keep needing a way to decide whether the output is ready, who approves it, and what gets logged before it ships.",
+    "confidence": "high"
+  },
+  "evidence": [
+    {
+      "date": "2026-07-13",
+      "headline": "AI is shifting from novelty to operations: faster models, live voice, safer scanning, and more infrastructure",
+      "problem_signal": "The week starts with AI being framed around efficiency, safer use, and operational fit rather than raw capability alone.",
+      "source_basis": "Approved edition 2026-07-13; OpenAI GPT-5.6, GPT-Live, Anthropic redeployment notes, and NVIDIA compute-financing coverage all point toward practical deployment concerns."
+    },
+    {
+      "date": "2026-07-14",
+      "headline": "AI gets more useful for everyday life: work, ads, and family settings",
+      "problem_signal": "OpenAI, Google, and family controls all show AI moving into the places where people draft, publish, and share work, which increases the need for review and disclosure.",
+      "source_basis": "Approved edition 2026-07-14; ChatGPT Work, GPT-5.6 in Microsoft 365 Copilot, Google ad transparency, and OpenAI parental controls."
+    },
+    {
+      "date": "2026-07-15",
+      "headline": "AI is becoming a systems problem: the next gains depend on logs, controls and handoffs",
+      "problem_signal": "The White House, Microsoft observability, and Reuters coverage all point to the same operational issue: automation needs routing, accountability, and a rollback path.",
+      "source_basis": "Approved edition 2026-07-15; GOLD EAGLE, Azure Copilot Observability Agent, policy tightening, and IBM budget pressure."
+    },
+    {
+      "date": "2026-07-16",
+      "headline": "AI tools are turning into workflow layers: design, documents, ads and approvals are moving into one stack",
+      "problem_signal": "ChatGPT Work, Canva AI 2.0, Notion agents, and Google’s ad disclosures all show AI being embedded into handoffs, approvals, and publishing steps.",
+      "source_basis": "Approved edition 2026-07-16; OpenAI, Canva, Notion, Anthropic, and Google releases."
+    },
+    {
+      "date": "2026-07-17",
+      "headline": "Friday watchlist: open weights, AI security checks, and the compute race are showing where the market is headed",
+      "problem_signal": "GitHub’s AI security detections and Thinking Machines’ open-weights model show AI moving into review and customization, while compute deals show the cost of scale remains high.",
+      "source_basis": "Approved edition 2026-07-17; GitHub changelog, Thinking Machines Inkling, Reuters/Nebius deal, and ASML capacity reporting."
+    },
+    {
+      "date": "2026-07-18",
+      "headline": "Saturday forecast: AI is shifting from demos to proof, controls and cost discipline",
+      "problem_signal": "OpenAI’s scorecard, GPT-Red, Google’s disclosure tooling, and ASML’s capacity expansion all reinforce the same expectation: teams will need to prove value and keep controls visible.",
+      "source_basis": "Approved edition 2026-07-18; OpenAI scorecard and safety work, Google transparency, OpenAI teen protections, and Reuters/ASML."
+    },
+    {
+      "date": "2026-07-19",
+      "headline": "Sunday reset: AI is being measured, gated and embedded into real workflows",
+      "problem_signal": "OpenAI’s scorecard, age prediction, Gemini Notebook, and EU access changes suggest AI is now judged by finished work, safe access, and workflow fit.",
+      "source_basis": "Approved edition 2026-07-19; OpenAI scorecard and age prediction, Google Gemini Notebook, and Reuters EU platform-access reporting."
+    }
+  ],
+  "commercial_score": {
+    "total": 21,
+    "multiple_stories": 4,
+    "audience_fit": 4,
+    "repeatable_failure": 4,
+    "pack_solvability": 2,
+    "longevity": 3,
+    "demonstrability": 2,
+    "library_fit": 2,
+    "decision": "Free resource only; the recurring problem is real and repeated across the week, but the smallest useful solve is a reusable checklist/scorecard rather than a paid pack."
+  },
+  "product": {
+    "name": "AI Finish-Line Scorecard",
+    "promise": "Help solo creators and small businesses decide whether AI output is actually ready to ship.",
+    "target_customer": "Solo creators, freelancers, and small businesses using AI for drafts, support replies, research summaries, ads, or internal operations.",
+    "outcome": "A repeatable weekly process for measuring time saved, cleanup required, disclosure needs, and human approval before anything goes live.",
+    "contents": [
+      "1-page finish-line scorecard",
+      "approval-gate checklist",
+      "disclosure and provenance log",
+      "rollback note template",
+      "one-week workflow test sheet"
+    ],
+    "worked_example": "A solo consultant drafts a client recap with AI, then uses the scorecard to record source notes, edit count, disclosure need, and sign-off before sending it.",
+    "suggested_price_gbp": "£0",
+    "main_objection": "People can build this themselves in a note or spreadsheet.",
+    "demonstration": "Show the same workflow twice — once without the scorecard and once with it — so users can compare cleanup time, approval steps, and missing disclosure before the output ships.",
+    "bundle_destination": "Clearforge free library / lead magnet"
+  },
+  "free_resource": {
+    "name": "AI Finish-Line Scorecard",
+    "purpose": "Give readers a simple way to test whether AI is saving time or just creating more cleanup.",
+    "contents": [
+      "time-in/time-out tracker",
+      "cleanup and edit log",
+      "approval gate checklist",
+      "disclosure note field",
+      "rollback reminder"
+    ],
+    "cta": "Download the scorecard and run it on one weekly workflow this week."
+  },
+  "content_plan": [
+    {
+      "day": "Monday",
+      "editorial_lane": "weekend roundup",
+      "title": "The week AI moved from drafts to proof",
+      "angle": "OpenAI, Google, GitHub, and ASML all point to the same hidden problem: AI can create output quickly, but the work still needs a finish-line test before it is safe or useful.",
+      "format": "roundup",
+      "product_connection": "Sets up the free scorecard by showing why a finish-line check matters now.",
+      "cta_strength": "soft"
+    },
+    {
+      "day": "Tuesday",
+      "editorial_lane": "AI at work",
+      "title": "Measure the work, not the prompt",
+      "angle": "Use the scorecard on one weekly task — a draft, support reply, or summary — and compare time saved against cleanup and rework.",
+      "format": "utility explainer",
+      "product_connection": "Shows how the scorecard turns AI from a draft generator into a measurable workflow.",
+      "cta_strength": "direct"
+    },
+    {
+      "day": "Wednesday",
+      "editorial_lane": "AI in everyday life",
+      "title": "Why shared AI use still needs boundaries",
+      "angle": "OpenAI’s age prediction and parental controls show that AI is entering family and household settings, which makes approval and guardrails part of everyday use.",
+      "format": "practical life-admin post",
+      "product_connection": "Extends the scorecard logic to home use, student work, and shared devices.",
+      "cta_strength": "soft"
+    },
+    {
+      "day": "Thursday",
+      "editorial_lane": "systems and automation",
+      "title": "Automation needs a log, a gate, and a rollback",
+      "angle": "The White House, Microsoft, and GitHub stories all reinforce the same rule: if AI can act across tools, it needs visible handoffs, approval steps, and a way to undo mistakes.",
+      "format": "systems explainer",
+      "product_connection": "Maps the scorecard’s approval and rollback sections to real automation workflows.",
+      "cta_strength": "direct"
+    },
+    {
+      "day": "Friday",
+      "editorial_lane": "new tools, stacks and workflows",
+      "title": "Introducing the AI Finish-Line Scorecard",
+      "angle": "Release the free resource and show the exact fields readers can use to decide whether AI actually saved time, reduced errors, and deserves to stay in the workflow.",
+      "format": "resource launch",
+      "product_connection": "This is the product day: present the free scorecard as the smallest useful solution.",
+      "cta_strength": "direct"
+    },
+    {
+      "day": "Saturday",
+      "editorial_lane": "prediction and outlook",
+      "title": "Prediction: proof, disclosure, and controls become standard",
+      "angle": "Forecast that more AI products will be judged by completed work, disclosure, and safety controls rather than by flashier demos or model names.",
+      "format": "forecast post",
+      "product_connection": "Explains why the scorecard should keep working as AI products become more embedded.",
+      "cta_strength": "soft"
+    },
+    {
+      "day": "Sunday",
+      "editorial_lane": "recap and preparation",
+      "title": "Pick one workflow and test it next week",
+      "angle": "Wrap the week by asking readers to choose one recurring task and run it through the scorecard before scaling any AI use.",
+      "format": "weekly reset",
+      "product_connection": "Directly points readers to the free scorecard as next week’s test tool.",
+      "cta_strength": "direct"
+    }
+  ],
+  "guardrails": [
+    "Do not imply the scorecard replaces human judgment; it only helps measure and gate AI output.",
+    "Keep human approval on anything that affects money, customer data, public publishing, or production systems.",
+    "Do not claim the resource will increase income or guarantee faster growth; frame it as a workflow check.",
+    "Treat platform disclosure rules, age controls, and safety features as product-specific and subject to region or plan differences.",
+    "Do not overstate demand for a paid pack; this week’s evidence supports a reusable free resource first.",
+    "Use the tool only for operational review, not legal, medical, or financial advice."
+  ]
+}

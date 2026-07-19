@@ -1,0 +1,18 @@
+{
+  "name": "AI Finish-Line Scorecard",
+  "promise": "Help solo creators and small businesses decide whether AI output is actually ready to ship.",
+  "target_customer": "Solo creators, freelancers, and small businesses using AI for drafts, support replies, research summaries, ads, or internal operations.",
+  "outcome": "A repeatable weekly process for measuring time saved, cleanup required, disclosure needs, and human approval before anything goes live.",
+  "contents": [
+    "1-page finish-line scorecard",
+    "approval-gate checklist",
+    "disclosure and provenance log",
+    "rollback note template",
+    "one-week workflow test sheet"
+  ],
+  "worked_example": "A solo consultant drafts a client recap with AI, then uses the scorecard to record source notes, edit count, disclosure need, and sign-off before sending it.",
+  "suggested_price_gbp": "£0",
+  "main_objection": "People can build this themselves in a note or spreadsheet.",
+  "demonstration": "Show the same workflow twice — once without the scorecard and once with it — so users can compare cleanup time, approval steps, and missing disclosure before the output ships.",
+  "bundle_destination": "Clearforge free library / lead magnet"
+}

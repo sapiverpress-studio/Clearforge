@@ -96,7 +96,7 @@ if (hasMedia) copyDir(mediaDir, path.join(outDir, "media"));
 if (hasPodcast) copyDir(podcastDir, path.join(outDir, "podcast"));
 
 const manifest = {
-  version: 4,
+  version: 5,
   brand: "Clearforge",
   date: DATE,
   type: "clearforge_daily_ai_brief",
@@ -149,6 +149,8 @@ const manifest = {
     manifest: "media/media-manifest.json",
     narration: "media/narration.mp3",
     story_images: ["media/story-1.png", "media/story-2.png", "media/story-3.png"],
+    tiktok_narration: mediaManifest?.tiktok?.narration ? "media/tiktok-narration.mp3" : "",
+    tiktok: mediaManifest?.tiktok || null,
     generated: true
   } : {
     generated: false

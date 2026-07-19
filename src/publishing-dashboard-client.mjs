@@ -1,12 +1,14 @@
-import { getUser, handleAuthCallback, login, logout } from "@netlify/identity";
+import { acceptInvite, getUser, handleAuthCallback, login, logout } from "@netlify/identity";
 
 const loginPanel = document.querySelector("#login");
 const dashboard = document.querySelector("#dashboard");
+const invitePanel = document.querySelector("#invite");
 const message = document.querySelector("#login-message");
 const assetsRoot = document.querySelector("#assets");
 const editionSelect = document.querySelector("#edition");
 
 function showAuth(user) {
+  invitePanel.hidden = true;
   loginPanel.hidden = Boolean(user);
   dashboard.hidden = !user;
 }
@@ -54,6 +56,21 @@ async function loadManifest(edition = "latest") {
   }));
   assetsRoot.replaceChildren(...manifest.assets.map((asset) => renderAsset(asset, manifest)));
 }
+let inviteToken = "";
+document.querySelector("#invite-form").addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const password = document.querySelector("#invite-password").value;
+  const confirmation = document.querySelector("#invite-confirm").value;
+  const inviteMessage = document.querySelector("#invite-message");
+  if (password !== confirmation) { inviteMessage.textContent = "Passwords do not match."; return; }
+  inviteMessage.textContent = "Activating your account…";
+  try {
+    const user = await acceptInvite(inviteToken, password);
+    inviteMessage.textContent = "";
+    showAuth(user);
+    await loadManifest();
+  } catch (error) { inviteMessage.textContent = error.message || "Account activation failed."; }
+});
 document.querySelector("#login-form").addEventListener("submit", async (event) => {
   event.preventDefault(); message.textContent = "Signing in…";
   try { const user = await login(document.querySelector("#email").value, document.querySelector("#password").value); showAuth(user); message.textContent = ""; await loadManifest(); }
@@ -62,6 +79,13 @@ document.querySelector("#login-form").addEventListener("submit", async (event) =
 document.querySelector("#logout").addEventListener("click", async () => { await logout(); showAuth(null); assetsRoot.textContent = ""; });
 document.querySelector("#refresh").addEventListener("click", () => loadManifest(editionSelect.value));
 editionSelect.addEventListener("change", () => loadManifest(editionSelect.value));
-await handleAuthCallback();
-const user = await getUser(); showAuth(user);
-if (user) loadManifest().catch((error) => { assetsRoot.textContent = error.message; });
+const callback = await handleAuthCallback();
+if (callback?.type === "invite") {
+  inviteToken = callback.token;
+  loginPanel.hidden = true;
+  dashboard.hidden = true;
+  invitePanel.hidden = false;
+} else {
+  const user = await getUser(); showAuth(user);
+  if (user) loadManifest().catch((error) => { assetsRoot.textContent = error.message; });
+}

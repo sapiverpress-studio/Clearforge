@@ -1,0 +1,77 @@
+{
+  "version": 5,
+  "date": "2026-07-20-systems",
+  "headline": "AI is becoming workplace plumbing — and the settings matter more than the demo",
+  "dek": "The useful Monday story is not that AI can draft, note or answer. It is that those tasks are now being built into systems small teams already use — accounting, meetings, shared boards and support. The real business question is no longer whether AI works in principle, but where the handoff happens, who can change the defaults, and what still needs review before work leaves the system.",
+  "hook": "Three AI updates that actually matter today",
+  "spoken_cta": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+  "visual_system": "Clearforge AI briefing podcast studio system",
+  "visual_style_rules": {
+    "include": [
+      "dark navy AI briefing or podcast studio atmosphere",
+      "microphone or audio-briefing cues where appropriate",
+      "subtle circuit traces, waveform motifs, model cards or data-routing lines",
+      "physical source notes, checklists and human-review materials",
+      "premium editorial technology-magazine lighting"
+    ],
+    "avoid": [
+      "robots",
+      "glowing brains",
+      "hologram faces",
+      "generic dashboards",
+      "random floating code",
+      "excessive neon",
+      "fake readable text",
+      "Sapiver or unrelated branding"
+    ]
+  },
+  "stories": [
+    {
+      "file": "media/2026-07-20-systems/story-1.png",
+      "title": "Bookkeeping AI is moving into the workflow, not the side window",
+      "source_name": "Xero UK",
+      "source_url": "https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/",
+      "summary": "Xero says JAX is adding document capture and workflow automation for small businesses, accountants and bookkeepers, and says the platform serves 5 million customers worldwide. The important part is not the label on the AI, but the step in the process where it sits: reading source documents, moving data and reducing manual entry.",
+      "why_it_matters": "Finance is a repeatable system. If AI can reliably shorten the path from document to draft, teams save time every week. If it cannot, the extra step just becomes another place to review.",
+      "practical_angle": "The best test is not full automation. It is whether AI can cleanly capture data and leave a human to approve the posting.",
+      "visual_prompt": "a practical creator workflow table showing verified source notes, timeline cards, a muted blue AI signal pattern, a microphone, headphones and a structured review checklist. wide briefing-room still life cropped for vertical short-form video. make the AI element clear through subtle circuit traces, waveform graphics, model cards and data-routing lines, not robots. change the hero object placement so this frame does not resemble the previous edition. Story context: Bookkeeping AI is moving into the workflow, not the side window. Practical angle: The best test is not full automation. It is whether AI can cleanly capture data and leave a human to approve the posting.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-07-20-systems/story-2.png",
+      "title": "AI meeting notes are becoming an admin control",
+      "source_name": "Google Workspace Updates",
+      "source_url": "https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html?m=1",
+      "summary": "Google says admins can configure Meet AI note-taking so it only applies to meetings with three or more people, with plan-specific defaults and rollout details.",
+      "why_it_matters": "That makes AI in meetings a settings problem, not just a feature problem. Admins can define when notes appear and how broadly they are used across the company.",
+      "practical_angle": "Small teams should check the default before it becomes the workflow. If note-taking is on, decide where the review step lives and who owns action items.",
+      "visual_prompt": "a podcast-ready AI learning desk with a microphone in the foreground, tidy source folders, simple model cards, a soft waveform motif and a dark professional newsroom mood. clean editorial technology-magazine composition, practical rather than sci-fi. use restrained blue technology accents to signal AI without making the image look like generic AI stock art. include a different arrangement of source cards, notebook, microphone angle and background signal pattern. Story context: AI meeting notes are becoming an admin control. Practical angle: Small teams should check the default before it becomes the workflow. If note-taking is on, decide where the review step lives and who owns action items.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-07-20-systems/story-3.png",
+      "title": "Notion is turning shared boards into a coordination layer",
+      "source_name": "Notion",
+      "source_url": "https://www.notion.com/releases/2026-07-01",
+      "summary": "Notion 3.6 lets users assign external agents like Claude and Cursor from a shared board, adds speaker labels to AI Meeting Notes and expands file and tool connections.",
+      "why_it_matters": "This points to a workflow model where notes, tasks and files are handled in one place rather than scattered across apps.",
+      "practical_angle": "The useful question is whether one board can carry a task from meeting note to follow-up without duplicate copying or lost context.",
+      "visual_prompt": "a dark navy AI briefing studio desk with a professional podcast microphone, source notes, a small audio waveform display, subtle circuit-board lines in the background and one practical notebook open on the desk. vertical social-video still with a strong microphone foreground and clear desk detail. make it instantly understandable as an AI briefing or AI podcast image, but grounded in real studio objects. vary camera distance, desk depth and object hierarchy while keeping the same Clearforge identity. Story context: Notion is turning shared boards into a coordination layer. Practical angle: The useful question is whether one board can carry a task from meeting note to follow-up without duplicate copying or lost context.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    }
+  ],
+  "narration": "media/2026-07-20-systems/narration.mp3",
+  "narration_text": "Can bookkeeping AI save time without losing review? Xero says its JAX platform is adding AI-powered document capture and workflow automation for small businesses, accountants and bookkeepers, and it says it serves 5 million customers worldwide. The useful question is not whether AI can do bookkeeping in theory. It's whether it can read a source document, draft the data, and leave a human to approve the posting. That is where time gets saved, and where errors can spread if the handoff is unclear. If you're testing AI this week, would you start with document capture or draft review? Put your pick in the comments. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+  "tiktok": {
+    "story_index": 1,
+    "hook": "Can your team control AI notes before they spread?",
+    "payoff": "Google says Meet admins can set AI note-taking so it only applies to meetings with three or more people. That turns notes into a policy choice.",
+    "response_prompt": "Would you keep it on everywhere, or limit it to bigger meetings?",
+    "narration": "media/2026-07-20-systems/tiktok-narration.mp3",
+    "narration_text": "Can your team control AI notes before they spread? Google says Meet admins can set AI note-taking so it only applies to meetings with three or more people. That turns notes into a policy choice. Would you keep it on everywhere, or limit it to bigger meetings?",
+    "target_duration_seconds": [
+      12,
+      18
+    ],
+    "format": "question_fact_consequence_response"
+  },
+  "practical_takeaway": "Choose one workflow this week — bookkeeping intake, meeting notes or support triage — and map the exact handoff point where AI stops and human review begins before you switch anything on.",
+  "what_to_test_next": "Run a one-week pilot on a single workflow and measure three things: time saved, number of human corrections, and whether the output can be traced back to the original input without extra copying."
+}

@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "date": "2026-07-20-systems",
+  "brand": "Clearforge",
+  "type": "clearforge_daily_biggest_story_podcast_script",
+  "human_review_required": true,
+  "narrator": "Irene",
+  "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+  "episode_title": "AI is becoming workplace plumbing — and the settings matter more than the demo",
+  "selected_story_index": 0,
+  "selected_story_title": "Bookkeeping AI is moving into the workflow, not the side window",
+  "selection_reason": "This is the clearest example of the edition’s main pattern: AI is no longer just a chat tool on the side, but something being built into an everyday business system. Bookkeeping is especially useful here because the handoff point is easy to understand, the review step matters, and the practical gain or cost can be measured quickly.",
+  "word_count": 1287,
+  "estimated_duration_minutes": 8.9,
+  "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+  "source_notes": "source-notes.md",
+  "first_spoken_line": "The big story today is not that AI can draft text or answer questions. We already know it can do those things. The more important shift is where AI is being placed inside work that small businesses already do every day.",
+  "final_spoken_line": "If you remember one thing, remember this: before you switch on the automation, define where AI stops and where human review begins. That one decision will matter more than the demo.",
+  "validation_warnings": [],
+  "non_spoken_instruction_candidates": []
+}

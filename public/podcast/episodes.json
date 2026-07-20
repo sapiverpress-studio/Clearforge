@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-20-systems",
+    "kind": "daily",
+    "title": "AI is becoming workplace plumbing — and the settings matter more than the demo",
+    "description": "This is the clearest example of the edition’s main pattern: AI is no longer just a chat tool on the side, but something being built into an everyday business system. Bookkeeping is especially useful here because the handoff point is easy to understand, the review step matters, and the practical gain or cost can be measured quickly.",
+    "published": "2026-07-20T07:00:00+01:00",
+    "duration": "00:08:54",
+    "size": 7517457,
+    "video_size": 23430526,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-20-systems.mp3",
+    "video_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-20-systems.mp4",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-20-systems.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-20-systems.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-20-systems.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-20-systems.html",
+    "source_dir": "drafts/2026-07-20-systems/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-20",
     "kind": "daily",
     "title": "When AI meeting notes become policy, not just convenience",

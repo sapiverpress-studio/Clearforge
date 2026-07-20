@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-20-systems",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Can your team control AI notes before they spread?",
+      "words": 47,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Can bookkeeping AI save time without losing review?",
+      "words": 104,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Would you pay per resolved support case?",
+      "words": 94,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Who owns AI note review in your meetings?",
+      "words": 88,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "How Do You Test AI in Bookkeeping Workflows?",
+    "title_words": 8,
+    "description_words": 35
+  },
+  "warnings": []
+}

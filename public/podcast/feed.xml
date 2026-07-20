@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>
     <copyright>Clearforge</copyright>
     <generator>Clearforge hosted podcast feed</generator>
-    <lastBuildDate>Mon, 20 Jul 2026 06:50:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 15:21:39 GMT</lastBuildDate>
     <atom:link href="https://clearforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Clearforge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://clearforge-daily-brief.netlify.app/podcast/cover.png"/>
+    <item>
+      <title>AI is becoming workplace plumbing — and the settings matter more than the demo</title>
+      <description>This is the clearest example of the edition’s main pattern: AI is no longer just a chat tool on the side, but something being built into an everyday business system. Bookkeeping is especially useful here because the handoff point is easy to understand, the review step matters, and the practical gain or cost can be measured quickly.</description>
+      <content:encoded><![CDATA[<p>This is the clearest example of the edition’s main pattern: AI is no longer just a chat tool on the side, but something being built into an everyday business system. Bookkeeping is especially useful here because the handoff point is easy to understand, the review step matters, and the practical gain or cost can be measured quickly.</p><p><strong>Read alongside this episode:</strong> <a href="https://clearforge-daily-brief.netlify.app/posts/2026-07-20-systems.html">daily briefing</a> · <a href="https://clearforge-daily-brief.netlify.app/features/2026-07-20-systems.html">feature analysis</a></p><p><a href="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-20-systems.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-20-systems.html</link>
+      <guid isPermaLink="false">clearforge:2026-07-20-systems</guid>
+      <pubDate>Mon, 20 Jul 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-20-systems.mp3" length="7517457" type="audio/mpeg"/>
+      <itunes:author>Clearforge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:08:54</itunes:duration>
+      <podcast:transcript url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-20-systems.txt" type="text/plain"/>
+    </item>
     <item>
       <title>When AI meeting notes become policy, not just convenience</title>
       <description>This is the clearest example of the edition’s main theme: AI is moving from isolated demos into everyday work controls. It matters because the question is no longer whether the tool can summarize a meeting, but who can turn it on, for which meetings, and where human review still sits before the output is shared.</description>

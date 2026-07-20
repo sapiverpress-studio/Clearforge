@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-20",
+    "kind": "daily",
+    "title": "When AI meeting notes become policy, not just convenience",
+    "description": "This is the clearest example of the edition’s main theme: AI is moving from isolated demos into everyday work controls. It matters because the question is no longer whether the tool can summarize a meeting, but who can turn it on, for which meetings, and where human review still sits before the output is shared.",
+    "published": "2026-07-20T07:00:00+01:00",
+    "duration": "00:09:00",
+    "size": 7637412,
+    "video_size": 24471448,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-20.mp3",
+    "video_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-20.mp4",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-20.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-20.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-20.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-20.html",
+    "source_dir": "drafts/2026-07-20/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-19-risk",
     "kind": "daily",
     "title": "When AI gets judged by the job, not the demo",

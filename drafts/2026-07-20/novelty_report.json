@@ -1,0 +1,25 @@
+{
+  "date": "2026-07-20",
+  "editorial_theme": {
+    "day": "Monday",
+    "date": "2026-07-20",
+    "slug": "work",
+    "title": "Work",
+    "focus": "AI at work: daily tasks, teams, productivity, research, writing, support, admin, meetings and practical workplace use.",
+    "instruction": "Prioritise stories that help creators, small operators and small businesses test AI in real work. Ask what changes a workday, what still needs human review, and what is ready to try this week."
+  },
+  "same_day_prior_runs": 0,
+  "excluded_url_count": 28,
+  "excluded_story_title_count": 31,
+  "topic_rotation_evidence_dates": [
+    "2026-07-13",
+    "2026-07-14",
+    "2026-07-15",
+    "2026-07-16",
+    "2026-07-17",
+    "2026-07-18",
+    "2026-07-19"
+  ],
+  "consecutive_week_topic_block": true,
+  "passed": true
+}

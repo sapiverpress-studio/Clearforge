@@ -1,0 +1,170 @@
+{
+  "generated_at": "2026-07-20T06:41:03.788Z",
+  "story_assessments": [
+    {
+      "story_index": 0,
+      "story_title": "Small business finance is where AI becomes visibly useful",
+      "target_audience": "Small business owners, bookkeepers, accountants, and finance operators",
+      "audience_problem_or_desire": "Reduce manual bookkeeping, keep cash flow clean, and avoid extra admin.",
+      "interest_signal": "Xero says JAX is adding AI-powered document capture and workflow automation and says it serves 5 million customers worldwide.",
+      "stop_reason": "This is a practical workflow upgrade, not a vague AI demo.",
+      "promised_payoff": "Less manual data entry with human review still in place for finance decisions.",
+      "proof_point": "Xero announced the updates to its JAX agentic platform for small businesses, accountants and bookkeepers.",
+      "search_phrases": [
+        "Xero JAX AI document capture",
+        "AI bookkeeping workflow automation",
+        "Xero 5 million customers AI",
+        "small business accounting AI"
+      ],
+      "scores": {
+        "audience_fit": 9,
+        "practical_consequence": 9,
+        "searchability": 8,
+        "stranger_usefulness": 8,
+        "novelty": 7,
+        "visual_potential": 6,
+        "discussion_potential": 7,
+        "short_form_clarity": 8
+      },
+      "overall_score": 8,
+      "score_reason": "High-value small-business pain point, easy to explain, and clearly verified."
+    },
+    {
+      "story_index": 1,
+      "story_title": "Meeting notes are becoming a policy decision, not just a feature",
+      "target_audience": "Team admins, managers, and Google Workspace users",
+      "audience_problem_or_desire": "Set clear rules for AI meeting notes, privacy, and workflow consistency.",
+      "interest_signal": "Google says admins can configure Meet AI note-taking to apply only to meetings with three or more people, with plan-specific defaults.",
+      "stop_reason": "Policy control and meeting governance are the hook.",
+      "promised_payoff": "Teams can standardize notes without letting defaults run the meeting for them.",
+      "proof_point": "Google Workspace Updates on Meet 'Take notes for me' settings.",
+      "search_phrases": [
+        "Google Meet AI notes admin settings",
+        "Meet take notes for me three or more people",
+        "Google Workspace AI meeting notes",
+        "meeting notes policy Google Meet"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 8,
+        "searchability": 8,
+        "stranger_usefulness": 7,
+        "novelty": 8,
+        "visual_potential": 5,
+        "discussion_potential": 8,
+        "short_form_clarity": 8
+      },
+      "overall_score": 8,
+      "score_reason": "A clear workplace governance story with an easy, everyday consequence."
+    },
+    {
+      "story_index": 2,
+      "story_title": "Notion is turning into a control room for multi-agent work",
+      "target_audience": "Notion users, creators, operations teams, and knowledge workers",
+      "audience_problem_or_desire": "Coordinate tasks across tools without losing the trail.",
+      "interest_signal": "Notion 3.6 lets users assign external agents like Claude and Cursor from shared boards and expands file and tool connections.",
+      "stop_reason": "A multi-agent workflow layer is a fresh and concrete work story.",
+      "promised_payoff": "A note can become a task and then a deliverable with less copying.",
+      "proof_point": "Notion 3.6 release notes.",
+      "search_phrases": [
+        "Notion 3.6 external agents",
+        "Notion AI meeting notes speaker labels",
+        "Notion Outlook integration agents",
+        "Notion shared board Claude Cursor"
+      ],
+      "scores": {
+        "audience_fit": 7,
+        "practical_consequence": 8,
+        "searchability": 7,
+        "stranger_usefulness": 7,
+        "novelty": 9,
+        "visual_potential": 8,
+        "discussion_potential": 8,
+        "short_form_clarity": 7
+      },
+      "overall_score": 8,
+      "score_reason": "Strong novelty and workflow potential, especially for teams already using Notion."
+    },
+    {
+      "story_index": 3,
+      "story_title": "Customer service AI is becoming easier to buy and deploy",
+      "target_audience": "Support leaders, SMB operators, and customer service teams",
+      "audience_problem_or_desire": "Decide whether AI support is cost-effective and operationally manageable.",
+      "interest_signal": "Salesforce says Agentforce Help Agent and Customer Service Portal go generally available in July 2026 with pay-per-resolution pricing.",
+      "stop_reason": "Clear pricing and deployment make this a real business decision.",
+      "promised_payoff": "Support teams can compare AI service costs against human-only queues.",
+      "proof_point": "Salesforce announcement on Agentforce Help Agent and the Fin acquisition.",
+      "search_phrases": [
+        "Salesforce Agentforce Help Agent pricing",
+        "pay per resolution customer service AI",
+        "Salesforce customer service portal July 2026",
+        "Fin acquisition SMB support AI"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 8,
+        "searchability": 7,
+        "stranger_usefulness": 8,
+        "novelty": 7,
+        "visual_potential": 6,
+        "discussion_potential": 7,
+        "short_form_clarity": 8
+      },
+      "overall_score": 8,
+      "score_reason": "Useful for operational readers because the pricing and deployment model are concrete."
+    }
+  ],
+  "platform_selections": {
+    "tiktok": {
+      "story_index": 1,
+      "story_title": "Meeting notes are becoming an admin policy decision, not just a feature",
+      "target_audience": "Team admins, managers, and Google Workspace users",
+      "format": "short_video",
+      "opening": "Will your meetings start getting auto-notes by default?",
+      "payoff": "Google says admins can limit Meet AI note-taking to meetings with three or more people, with plan-specific defaults. That means one setting can change who gets the notes, and when action items get shared.",
+      "selection_reason": "This is the most relatable, visual, and immediately understandable workday change for a fast-scroll audience.",
+      "platform_fit_score": 9
+    },
+    "youtube": {
+      "story_index": 2,
+      "story_title": "Notion is turning into a control room for multi-agent work",
+      "target_audience": "Notion users, creators, operations teams, and knowledge workers",
+      "format": "short_video",
+      "opening": "Can one shared board run your task from note to follow-up?",
+      "payoff": "Notion 3.6 says users can assign external agents like Claude and Cursor from a shared board. It also says AI Meeting Notes now include speaker labels, and agents can read and write more file types and connect to more tools, including Outlook tasks when connected. The practical test is whether one workspace can move a task from meeting note to follow-up without extra copying.",
+      "selection_reason": "It has novelty, workflow depth, and a clear explainer path that works well in a longer short-form video.",
+      "platform_fit_score": 9
+    },
+    "facebook": {
+      "story_index": 0,
+      "story_title": "Small business finance is where AI becomes visibly useful",
+      "target_audience": "Small business owners, bookkeepers, accountants, and finance operators",
+      "format": "social_post",
+      "opening": "Would AI bookkeeping save you time, or add another review step?",
+      "payoff": "Xero says its JAX platform is adding AI-powered document capture and workflow automation for small businesses, accountants and bookkeepers, and it says it serves 5 million customers worldwide. The upside is less manual data entry. The caution is the same as always: human review before money moves or tax work is filed.",
+      "selection_reason": "It speaks to a broad, recognizable small-business pain point and invites an easy, useful comparison.",
+      "platform_fit_score": 8
+    },
+    "pinterest": {
+      "story_index": 0,
+      "story_title": "Small business finance is where AI becomes visibly useful",
+      "target_audience": "Small business owners, bookkeepers, accountants, and finance operators",
+      "format": "pinterest_pin",
+      "opening": "Can AI help with bookkeeping and workflow automation?",
+      "payoff": "A practical checklist for testing AI where it reduces manual entry, while keeping a human review step before anything is posted.",
+      "selection_reason": "This is the most searchable evergreen workflow story and fits a checklist-style Pinterest intent well.",
+      "platform_fit_score": 8
+    },
+    "linkedin": {
+      "story_index": 3,
+      "story_title": "Customer service AI is becoming easier to buy and deploy",
+      "target_audience": "Support leaders, SMB operators, and customer service teams",
+      "format": "professional_post",
+      "opening": "Would you pay per resolution for support AI?",
+      "payoff": "Salesforce says Agentforce Help Agent and the Customer Service Portal will be generally available in July 2026, with pay-per-resolution pricing available then too. It also says it has agreed to acquire Fin, a customer-agent platform for SMBs. For support leaders, that makes the decision less about a demo and more about queue economics: if simple cases resolve cleanly, the model can work; if it only shifts tickets, costs stay visible.",
+      "selection_reason": "The pricing model and deployment packaging create a clear operational and leadership decision, which is ideal for LinkedIn.",
+      "platform_fit_score": 9
+    }
+  },
+  "overall_reasoning": "The strongest social fit is not one universal story. Google Meet is best for fast, relatable short video because it shows AI turning into a policy decision. Notion is best for YouTube Shorts because the multi-agent workflow needs a little more explanation. Xero is the clearest Facebook and Pinterest story because bookkeeping is a familiar small-business problem with an obvious practical test. Salesforce is the best LinkedIn story because pricing, deployment, and queue economics make it a real operational decision for leaders."
+}

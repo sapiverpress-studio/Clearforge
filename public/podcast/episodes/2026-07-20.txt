@@ -1,0 +1,49 @@
+Today’s most important AI work story is not about a flashier model or a bigger benchmark. It is about something much more practical: who gets to decide when AI is allowed into a meeting, and what happens to the notes after that.
+
+Google said it has updated Google Meet so admins can configure the “take notes for me” feature more precisely. In particular, the company said AI note-taking can be set to apply only to meetings with three or more people. Google also said the rollout and the default behavior depend on the plan. That is the key point. This is not just a user-facing button anymore. It is becoming a workspace policy setting.
+
+Why does that matter? Because meeting notes sound harmless until you think about how they actually move through a business. A note-taking tool can capture decisions, action items, attendee names, and sometimes details people did not expect to be recorded in that format. Once those notes exist, they can be shared, copied into task lists, pasted into emails, or used to brief someone who was not in the room. So the real issue is not only, “Can the tool summarize the meeting?” The real issue is, “Who controls when it runs, what it captures, and who checks the result before it spreads?”
+
+This story is useful because it shows where AI is maturing inside work tools. Early on, a lot of AI use was a one-off draft: write an email, summarize a document, brainstorm ideas. Helpful, but not deeply wired into the workflow. Meeting notes are different. They sit in the middle of real operations. They affect follow-up, accountability, and what the rest of the team thinks happened. That makes the control settings matter as much as the model.
+
+Google’s change is also a reminder that workplace AI is increasingly shaped by admin rules, not just individual habits. If you run a small team, you may think of meeting notes as a convenience feature. But once a platform lets admins limit the feature to meetings with three or more people, it becomes a governance choice. You are deciding which conversations deserve AI assistance and which ones should stay human only.
+
+For a small business, that can be sensible. A one-on-one check-in between a manager and an employee may not need automated notes. A client call, a project review, or a weekly team meeting might benefit from them. The point is to match the tool to the workflow instead of turning it on everywhere by default.
+
+Here is a simple example. Imagine a five-person design agency. The team has a weekly stand-up, occasional client calls, and a few private one-on-one conversations. If AI notes are enabled only for meetings with three or more people, then the stand-up and client calls can be summarized automatically, while the private meetings stay outside the system. That reduces noise, and it also creates a clearer boundary. Everyone knows when notes are being generated and when they are not.
+
+That sounds obvious, but in practice, defaults shape behavior. If a feature is available and easy to turn on, teams often use it before they have thought through the consequences. That is why the admin layer matters. It forces a decision.
+
+There are still some unknowns here. Google’s announcement confirms the new control, but the exact rollout timing and default behavior can vary by plan. We do not know from this source how every organization will see the setting, or how quickly it will appear in every account. So if you do not see it yet, that does not mean it is irrelevant. It means the policy is moving through the platform in stages.
+
+The other important unknown is operational, not technical: whether your team’s meeting notes are actually good enough to trust. AI summaries can miss nuance, flatten disagreements, or overstate certainty. A note can look polished and still be wrong. It can also omit context that matters later. That is why the human review step is not optional if the notes will leave the system and be shared with others.
+
+If you are deciding whether to use this kind of feature, ask three questions before you turn it on.
+
+First, who is allowed to enable it? That could be the host, the admin, or both.
+
+Second, which meetings should qualify? Three or more people may be a reasonable rule for some teams, but not all.
+
+Third, who reviews the notes before they are used? If nobody checks them, then the system is not assisting the team. It is publishing on its own.
+
+That brings us to the most practical way to test this. Run a three-meeting pilot this week. Turn on AI notes only for meetings with three or more people. Choose meetings that are similar enough to compare: for example, one team meeting, one client call, and one project check-in. For one normal week, keep the notes process as you usually do. Then compare the AI notes against the human version on two things: note quality and follow-up completion.
+
+By note quality, I mean simple things. Did it capture the main decision? Did it list the action items correctly? Did it assign them to the right people? Did it invent anything, overstate anything, or miss something important?
+
+By follow-up completion, I mean whether the notes actually helped work move forward. Did more tasks get done on time? Did fewer clarifying emails have to be sent after the meeting? Did the team spend less time reconstructing what was said?
+
+That experiment is useful because it does not assume the AI is good just because it sounds polished. It checks whether the tool improves the workflow in a way you can actually see.
+
+There are also risks to keep in mind. One is overconfidence. A tidy summary can make a team feel more organized than it really is. Another is privacy and consent. People may not always realize when AI note-taking is active, especially if settings change under the hood. Another risk is workflow drift. If a team starts trusting the AI notes too much, people may stop writing their own decisions down carefully, which can make errors harder to spot.
+
+So the human-review checks should be simple and explicit. Before the notes go out, confirm that the meeting was the kind you intended to capture. Check the attendee count if that is part of the rule. Review the summary for missing decisions, incorrect action owners, and any sensitive details that should not be shared in that form. If something is off, fix it before the notes are distributed.
+
+And if your team handles confidential or regulated information, pause and think carefully about whether AI notes belong in that meeting at all. That is not a model question. That is a workflow question.
+
+What should you watch next? Three things. First, whether more workplace tools start offering similar admin-level controls. Second, whether the defaults become more conservative or more automatic. Third, whether teams begin using these controls as part of normal operating procedure, the way they already manage access, sharing, and permissions.
+
+That would confirm the bigger trend in this edition: AI is moving from a feature you try to a process you manage.
+
+My verdict is: use now, but test carefully. This is a genuinely useful workplace change, but only if you treat meeting notes as a controlled workflow, not a convenience toggle. If you can name the human review step before the notes leave the system, you are probably using it responsibly. If you cannot, skip it for now.
+
+The bigger lesson is simple. In work AI, the important question is increasingly not whether the tool can do the task. It is who gets to set the rule, what gets logged, and where the human still has the final look.

@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-20",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Will your meetings start getting auto-notes by default?",
+      "words": 48,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Can one shared board run your task from note to follow-up?",
+      "words": 111,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Would AI bookkeeping save you time, or add another review step?",
+      "words": 97,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Would you pay per resolution for support AI?",
+      "words": 96,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "Can AI Help With Bookkeeping and Workflow Automation?",
+    "title_words": 8,
+    "description_words": 35
+  },
+  "warnings": []
+}

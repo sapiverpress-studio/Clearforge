@@ -1,280 +1,272 @@
 {
-  "headline": "Sunday reset: AI is getting more guarded, more measurable, and harder to treat casually",
-  "dek": "This week’s signal is not bigger models. It is tighter control: AI is being measured by outcomes, gated by age and safety checks, and pushed deeper into workflows that now need more review, not less.",
-  "edition_angle": "risk_control",
+  "headline": "AI at work is moving from drafts to delegated tasks — but the control points matter",
+  "dek": "Today’s useful shift is not another chatbot demo. It is AI getting placed into the tools where small teams actually work: bookkeeping, meetings, task routing and customer support. The key question is now less “can it do the task?” and more “who controls it, what gets logged, and where does a human still review the output?”",
   "sources": [
     {
-      "source_name": "OpenAI",
-      "title": "A scorecard for the AI age",
-      "url": "https://openai.com/index/a-scorecard-for-the-ai-age/",
-      "published_date": "2026-07-17",
-      "confirmed_fact": "OpenAI argues that AI value should be measured by useful work completed, cost per successful task, dependability, and whether value improves at scale.",
-      "interpretation": "Risk control starts with measurement: if a tool cannot finish work reliably, it should not be treated as low-risk just because it is cheap or fast to prompt."
+      "source_name": "Xero UK",
+      "title": "Xero Announces New AI Innovations at Xerocon London as it Powers 5 Million Customers Globally",
+      "url": "https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/",
+      "published_date": "2026-07-08",
+      "confirmed_fact": "Xero said its JAX agentic platform is adding AI-powered features for small businesses, accountants and bookkeepers, including document capture and workflow automation, and said it serves 5 million customers worldwide.",
+      "interpretation": "This looks like a practical small-business finance move: AI is being pushed into bookkeeping and cash-flow work, not just chat interfaces."
     },
     {
-      "source_name": "OpenAI",
-      "title": "Our approach to age prediction",
-      "url": "https://openai.com/index/our-approach-to-age-prediction/",
+      "source_name": "Google Workspace Updates",
+      "title": "New Google Meet 'Take notes for me' settings for admins and end users",
+      "url": "https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html?m=1",
       "published_date": "2026-07-16",
-      "confirmed_fact": "OpenAI said it is rolling out age prediction on ChatGPT consumer plans to estimate whether an account likely belongs to someone under 18, then apply stronger safeguards when needed.",
-      "interpretation": "Consumer AI is moving toward built-in age gating and family controls, which makes safety a product requirement rather than an optional setting."
+      "confirmed_fact": "Google said admins can now configure AI note-taking in Meet so it can be enabled only for meetings with three or more people, with rollout and default-setting details by plan.",
+      "interpretation": "This is a sign that AI meeting tools are maturing from optional convenience features into policy-controlled workplace defaults."
     },
     {
-      "source_name": "Google",
-      "title": "NotebookLM is now Gemini Notebook",
-      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
-      "published_date": "2026-07-16",
-      "confirmed_fact": "Google renamed NotebookLM to Gemini Notebook, added a secure cloud computer for code execution and data analysis, and said the product will sync across Gemini and Search.",
-      "interpretation": "As research tools become more connected and more capable, teams need to think harder about what data goes in, who can see it, and what actions the system can perform."
+      "source_name": "Notion",
+      "title": "July 1, 2026 – Notion 3.6: External Agents, HTML blocks, and more",
+      "url": "https://www.notion.com/releases/2026-07-01",
+      "published_date": "2026-07-01",
+      "confirmed_fact": "Notion said users can assign external agents such as Claude and Cursor from a shared board, AI Meeting Notes now include speaker labels, and agents can read and write more file types and connect to more tools.",
+      "interpretation": "Notion is moving toward being a coordination layer for multi-tool workflows, not only a notes app."
     },
     {
-      "source_name": "Reuters",
-      "title": "Google required to open up to AI, search engine rivals under EU-mandated changes",
-      "url": "https://www.investing.com/news/stock-market-news/google-required-to-open-up-to-ai-search-engine-rivals-under-eumandated-changes-4795675",
-      "published_date": "2026-07-16",
-      "confirmed_fact": "Reuters reported that EU regulators said Google must open certain Android features to AI rivals and share some search-optimisation data with AI chatbots, with implementation starting in January and some user-facing changes from July 2027.",
-      "interpretation": "Distribution is now a governance issue: if platforms change access to devices and search surfaces, AI products may need new compliance and fallback plans."
+      "source_name": "Salesforce",
+      "title": "Salesforce Announces Prepackaged Agentforce Help Agent",
+      "url": "https://www.salesforce.com/uk/news/stories/agentforce-help-agent-announcement/?bc=OTH",
+      "published_date": "2026-06-25",
+      "confirmed_fact": "Salesforce said Agentforce Help Agent and Agentforce Customer Service Portal are generally available in July 2026 and that pay-per-resolution pricing will be available then too; it also said it has signed an agreement to acquire Fin, a customer-agent platform for SMBs.",
+      "interpretation": "Customer service AI is being packaged more like an operational product with setup, channels and pricing, which lowers the barrier for smaller teams."
     }
   ],
   "story_summaries": [
     {
-      "title": "AI is being judged by work, not demos",
-      "summary": "OpenAI’s scorecard shifts the discussion from token prices and flashy outputs to useful work completed, cost per successful task, dependability, and scale effects. In risk-control terms, that matters because a tool that sounds efficient can still create hidden costs if it needs repeat prompting, heavy human cleanup, or multiple retries before it is safe to use.",
-      "why_it_matters": "Teams often automate the easiest part of a job and leave the risky part unmeasured. This framing pushes them to ask whether the AI result is actually reviewable, repeatable, and worth trusting.",
-      "practical_angle": "Pick one task and compare the number of retries, edits, and human checks before deciding the workflow is safe to expand.",
+      "title": "Small business finance is where AI becomes visibly useful",
+      "summary": "Xero says JAX is designed to automate routine bookkeeping work, read source documents, and push more of the finance workflow into one system for small businesses and advisors. It also says the platform now serves 5 million customers worldwide.",
+      "why_it_matters": "Bookkeeping, cash flow and compliance are high-friction tasks for small operators. If the workflow really becomes cleaner, this is the kind of AI that saves time every week, not once a quarter.",
+      "practical_angle": "Look for AI that reduces data entry, not just AI that writes summaries. The highest-value use case here is document capture plus review, not fully automatic posting.",
       "claim_to_verify": "NONE — verified from cited sources."
     },
     {
-      "title": "Consumer AI is moving toward age prediction and family controls",
-      "summary": "OpenAI said it is rolling out age prediction on ChatGPT consumer plans so the system can estimate whether an account likely belongs to someone under 18 and apply stronger safeguards. It also pointed to parent controls such as quiet hours, memory settings, and distress notifications.",
-      "why_it_matters": "This is a sign that consumer AI is moving into household governance. The risk question is no longer just what the model can say, but what it should be allowed to do for different users in different settings.",
-      "practical_angle": "If younger users share devices with adults, review the control settings now and decide what should be restricted before a problem appears.",
+      "title": "Meeting notes are becoming an admin policy decision, not just a feature",
+      "summary": "Google Workspace now lets admins set Google Meet AI note-taking to apply only to meetings with three or more people, with plan-specific defaults and a future rollout date.",
+      "why_it_matters": "That means AI in meetings is now a workplace governance issue: who gets recorded, when notes are created, and what the default behavior is across teams.",
+      "practical_angle": "If you run a small team, check whether your meeting-note settings match your real workflow before defaults change under you.",
       "claim_to_verify": "NONE — verified from cited sources."
     },
     {
-      "title": "Google is turning notebook research into a connected workflow",
-      "summary": "Google renamed NotebookLM to Gemini Notebook, added a secure cloud computer for code execution and data analysis, and said the product will sync across Gemini and Search. Google says the tool already serves more than 30 million people and over 600,000 organizations.",
-      "why_it_matters": "More capability means more exposure. Once a research tool can execute code, handle analysis, and pull from connected surfaces, the risk review shifts to permissions, source handling, and data sensitivity.",
-      "practical_angle": "Before moving sensitive notes into a connected AI workspace, decide what information is acceptable to upload and what still needs to stay in a separate, human-controlled process.",
+      "title": "Notion is turning into a control room for multi-agent work",
+      "summary": "Notion 3.6 adds external agents, speaker labels in meeting notes, richer file handling and more integrations, including Outlook and additional MCP connections.",
+      "why_it_matters": "This is a step toward teams orchestrating work across tools from one place, which could reduce the time lost to switching between docs, inboxes and project boards.",
+      "practical_angle": "The most useful test is whether one shared workspace can manage a task from meeting note to follow-up to file creation without extra copying.",
       "claim_to_verify": "NONE — verified from cited sources."
     },
     {
-      "title": "EU rules are starting to shape the AI distribution layer",
-      "summary": "Reuters reported that the European Commission wants Google to open some Android features to AI rivals and share certain search-optimisation data with AI chatbots, subject to safeguards and pricing rules. Some changes are scheduled to start in January, while user-facing Android changes are slated for July 2027.",
-      "why_it_matters": "If regulation changes who can reach phones, defaults, and search surfaces, then AI distribution becomes a risk-management issue, not just a growth issue.",
-      "practical_angle": "For any team shipping AI products, build a fallback plan for access, regional compliance, and platform dependency before launch week arrives.",
+      "title": "Customer service AI is becoming easier to buy and deploy",
+      "summary": "Salesforce said Agentforce Help Agent and the Customer Service Portal will be generally available in July 2026, with pay-per-resolution pricing available then, and it described the product as prepackaged for multiple channels.",
+      "why_it_matters": "For support teams, the shift is from custom AI projects to something closer to a deployable service layer with clearer pricing and channels.",
+      "practical_angle": "If you run support for a small business, this is the moment to compare per-resolution pricing against the cost of a human-only queue.",
       "claim_to_verify": "NONE — verified from cited sources."
     }
   ],
-  "main_article": "The safest way to read this week’s AI news is not as a story about bigger models. It is a story about control. The strongest signals were about what gets measured, who gets gated, what gets connected, and where access can change. That may sound less dramatic than a new benchmark or a giant product launch, but it is more useful if you are trying to decide what to trust next week.\n\nStart with measurement. OpenAI’s new scorecard says AI value should be judged by useful work completed, cost per successful task, dependability, and whether value improves at scale. That is not just a business frame; it is a risk frame. A tool that produces a clean-looking draft is not low-risk if it takes three retries, a lot of human editing, or a careful rewrite before it can be used. The point is simple: if you cannot measure the cleanup, you do not yet know the real cost of automation.\n\nFor readers who use AI at work, that is the first Sunday reset question to ask: what part of the task is the model actually finishing, and what part still depends on human review? The answer matters because many teams accidentally automate the easiest step and leave the judgment step untouched. That is how “time saved” becomes “time shifted.” The safer practice is to define the finish line first, then decide whether AI is helping or just producing more material for a person to verify.\n\nThe second signal is safety moving into the product itself. OpenAI said it is rolling out age prediction on ChatGPT consumer plans so the system can estimate whether an account likely belongs to someone under 18 and apply stronger safeguards when needed. It also described parent controls such as quiet hours, memory settings, and distress notifications. The key risk-control takeaway is not the policy language. It is that consumer AI is starting to behave like household software, with built-in rules for different users.\n\nThat raises a practical question for families, schools, and shared-device environments: what should be automatic, and what should remain under adult or admin control? Do not wait for a content problem to make that decision for you. If a household or classroom uses consumer AI, the right time to review settings is before the first rough edge shows up. That includes checking who can use the tool, what happens when the system is uncertain, and which features should stay off by default.\n\nGoogle’s Gemini Notebook update points to a different kind of control problem. The product now has a secure cloud computer for code execution and data analysis, and it syncs across Gemini and Search. That makes it more powerful, but also more sensitive. A connected research workspace is useful only if the people using it are clear about permissions, source material, and what kinds of data should never enter the system in the first place.\n\nThis is where risk control becomes operational. If the tool can run code, summarize sources, and move across products, then the old “just try it on anything” habit is no longer good enough. Teams should separate low-risk material from sensitive material, decide who approves uploads, and treat notebook-style AI as part of the workflow rather than a harmless scratch pad. The more connected the tool, the more important the boundary setting.\n\nThe Reuters report on EU-mandated changes to Google adds the final layer: distribution risk. If regulators can shape which AI rivals get access to Android features and search data, then platform access becomes part of the planning problem. For AI builders, that means model quality is only one part of the equation. You also need a plan for device access, regional rules, and what happens if a platform changes the terms of entry.\n\nSo the week ends with a fairly clear pattern. The industry is moving from “look what AI can do” to “show me the controls.” That is a healthier standard. It gives buyers a way to ask better questions and forces vendors to explain what is automated, what is reviewed, and what is still off-limits. The open questions for next week are the ones that matter most: how accurate will age prediction be in practice, how much cleanup will connected workflows still require, and how quickly will platform rules reshape access to AI products? Until those answers are clearer, the safest default is not blind automation. It is measured use, narrow scope, and human review where the risk is real.",
-  "practical_takeaway": "Before expanding any AI workflow, define the finish line, the human review step, and the data you will not upload.",
-  "what_to_test_next": "Run one 30-minute test on a real workflow, but add a hard stop: compare the AI result against your normal process, note every human edit, and list any sensitive data you would not allow into the tool.",
+  "main_article": "The most practical AI story this Monday is not that AI is getting smarter. It is that AI is being placed deeper into the tools where work already happens. The latest updates from Xero, Google Workspace, Notion and Salesforce all point in the same direction: AI is moving from a side chat box into bookkeeping, meeting admin, task routing and customer service. That matters because these are the jobs small teams feel every day, and they are also the places where a human still needs to decide what gets approved, what gets logged and what gets sent out.\n\nFor small businesses, Xero’s update is the clearest example of AI becoming a work tool rather than a novelty. The company says its JAX platform is adding AI-powered features to help small businesses, accountants and bookkeepers keep books clean, automate routine financial workflows and stay on top of cash flow. Xero also says it serves 5 million customers worldwide, which tells you this is not a niche lab demo. It is a finance product being pushed at scale. The useful part for readers is not the label “agentic”; it is the workflow: reading source documents, extracting data and moving that data into accounting systems. That is the kind of AI that can save time if it reduces manual entry and catches obvious mistakes, but it still needs human review before money moves or tax work is filed. ([xero.com](https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/))\n\nGoogle’s Meet change shows the same pattern in a different part of the day: meeting notes are becoming a settings and policy question. Google says admins can now configure AI note-taking so it only applies to meetings with three or more people, and it spelled out how defaults differ by plan. It also gave a rollout boundary: there is no impact to the end-user experience before September 21, 2026, and users can later override settings in Meet. In practical terms, that means AI meeting notes are no longer just a nice-to-have. They are becoming something operations teams can standardize, restrict or leave to individual choice. For a small company, that is useful because it reduces the “we forgot who was meant to do what” problem. It also raises a real governance question: if notes are being generated automatically, who is responsible for accuracy, and who checks the action items before they go into the team’s workflow? ([workspaceupdates.googleblog.com](https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html?m=1))\n\nNotion is taking a broader swing at the same workday problem. In Notion 3.6, the company says users can assign external agents such as Claude and Cursor from a shared board, and it added speaker labels to AI Meeting Notes. It also says agents can read and write more file types, connect to more systems, and even run inbox and calendar tasks when connected to Outlook. The practical signal here is coordination: Notion is trying to become the place where a team can hand off a task, watch it progress, and turn a note into a deliverable without bouncing between half a dozen apps. That may be powerful for creators and small teams, but it also makes the audit trail more important. Once multiple agents are touching documents, schedules and files, the question becomes less “can the agent do it?” and more “can we see what happened and undo it if needed?” ([notion.com](https://www.notion.com/releases/2026-07-01))\n\nSalesforce’s Agentforce Help Agent extends that logic into customer service. Salesforce says the Help Agent and Customer Service Portal are generally available in July 2026, with pay-per-resolution pricing available then as well. It also says it has signed an agreement to acquire Fin, a customer-agent platform aimed at SMBs, and that the combined offering is meant to help customers deploy AI across service operations faster. This is a meaningful shift because support tools are often where small businesses feel pressure first: phone calls, chat, messaging and portal questions all arrive together, and response speed matters. A packaged, pay-per-resolution model lowers the barrier to experimentation, but it also forces a clearer business calculation. If the AI resolves simple cases cheaply and reliably, it may be worth it. If it only deflects tickets without solving them, the queue just moves somewhere else. ([salesforce.com](https://www.salesforce.com/uk/news/stories/agentforce-help-agent-announcement/?bc=OTH))\n\nPut together, these updates suggest a new phase of workplace AI. The real story is not “AI everywhere” in the abstract. It is AI getting embedded in concrete work systems with defaults, permissions, pricing and review points. That is good news for creators, consultants and small businesses because it makes adoption more testable. You can try AI in one meeting workflow, one finance workflow or one support queue instead of redesigning the whole company. It also makes the risks easier to see: bad notes, bad data, over-automation and unclear accountability. The winning teams this week will not be the ones that use the most AI. They will be the ones that choose one workflow, define the human checkpoint, and measure whether the tool actually removes work.",
+  "practical_takeaway": "Pick one repetitive workflow this week — meeting notes, invoice capture or support triage — and test an AI feature only if you can name the human review step before output leaves the system.",
+  "what_to_test_next": "Run a 3-meeting pilot: enable AI notes only for meetings with three or more people, then compare the note quality and follow-up completion rate against one normal week.",
   "claims_to_verify": [],
   "social": {
-    "tiktok_script": "Is your AI saving time or creating cleanup?\nOpenAI says AI should be judged by useful work completed, cost per successful task, and dependability.\nIf it takes three retries and a human rewrite, it’s not low-risk automation.\nWould you test one workflow or track retries first? Comment with your pick.",
-    "youtube_shorts_script": "Is your AI workflow actually saving time?\nOpenAI’s new scorecard says AI should be judged by useful work completed, cost per successful task, dependability, and whether value improves at scale. That matters because a tool can look fast and still create hidden work if it needs retries, edits, or careful human cleanup before it’s usable. My simple test this week is to compare one real workflow against your normal process and count every retry and edit. If the cleanup is bigger than the time saved, the workflow is not ready to expand. Which would you measure first: retries or human edits? Drop one in the comments.",
-    "facebook_post": "Would you check your ChatGPT settings today?\nOpenAI said it is rolling out age prediction on consumer ChatGPT so it can estimate whether an account likely belongs to someone under 18 and apply stronger safeguards. It also pointed to parent controls like quiet hours, memory settings, and distress notifications.\nIf your family shares devices, this is a good time to decide what should be automatic and what should stay under adult control.\nFor a shared device, which matters more first: quiet hours or stronger safeguards? Comment with one, or ask for a follow-up on family controls.",
-    "pinterest_title": "Checklist before you upload notes to Gemini Notebook",
-    "pinterest_description": "Before moving sensitive notes into Gemini Notebook, decide what data can go in, who can approve uploads, and what must stay human-controlled. The benefit is simpler risk review before a tool that can execute code and sync across Gemini and Search gets your data. Save this checklist, and comment with one rule your team uses.",
-    "linkedin_post": "Would your AI launch survive a platform rule change?\nReuters reported that EU regulators want Google to open certain Android features to AI rivals and share some search-optimisation data with AI chatbots, with changes starting in January and some user-facing changes from July 2027.\nFor teams shipping AI products, that turns distribution into a governance problem: you need fallback plans for access, regional compliance, and platform dependency before launch.\nDoes your team already have that fallback plan, or is it still missing? Comment with access or compliance.",
+    "tiktok_script": "Will your meetings start getting auto-notes by default? Google says admins can limit Meet AI note-taking to meetings with three or more people. That can change who gets the notes, and when action items get shared. Would you keep it on for larger meetings, or turn it off?",
+    "youtube_shorts_script": "Can one shared board run your task from note to follow-up? Notion 3.6 says users can assign external agents like Claude and Cursor from a shared board. It also says AI Meeting Notes now include speaker labels, and agents can read and write more file types and connect to more tools, including Outlook tasks when connected. The practical question is simple: can one workspace move a task from meeting note to follow-up without extra copying? That is the test for small teams that want less app-switching. If you use Notion, would you try that on a small project first, or keep agents limited to drafts? Leave your answer in the comments.",
+    "facebook_post": "Would AI bookkeeping save you time, or add another review step? Xero says its JAX platform is adding AI-powered document capture and workflow automation for small businesses, accountants and bookkeepers, and it says it serves 5 million customers worldwide. The upside is less manual data entry. The caution is the same as always: human review before money moves or tax work is filed. If you run a small team, would you test invoice capture first or cash-flow tracking first? Comment with one choice, and if you want, share the task that still eats the most admin time.",
+    "pinterest_title": "Can AI Help With Bookkeeping and Workflow Automation?",
+    "pinterest_description": "Use this practical checklist to test AI where it reduces manual entry, while keeping a human review step before anything is posted. Comment with the workflow you'd test first: invoices, cash flow, or meeting notes.",
+    "linkedin_post": "Would you pay per resolution for support AI? Salesforce says Agentforce Help Agent and the Customer Service Portal will be generally available in July 2026, with pay-per-resolution pricing available then too. It also says it has agreed to acquire Fin, a customer-agent platform for SMBs. For support leaders, that turns the decision into queue economics: if simple cases resolve cleanly, the model can work; if it only shifts tickets, the cost is still visible. Would you pilot it in chat or in the customer portal first? Comment with your choice or a question for a follow-up.",
     "quote_card_lines": [
-      "If you cannot measure the cleanup, you do not know the real cost.",
-      "Is your AI saving time, or just moving the work to someone else?",
-      "What data should never enter a connected AI workspace?",
-      "More power in AI means more need for boundaries.",
-      "A cheap draft is not a safe workflow."
+      "Can your team review the output before AI sends it on?",
+      "Would you turn on AI notes only for larger meetings?",
+      "The useful test is not whether AI can draft it, but whether the workflow stays clear.",
+      "Bookkeeping AI matters most when it reduces manual entry.",
+      "Support AI only helps if the resolution is real."
     ]
   },
   "headline_options": [
-    "Sunday reset: AI is getting more guarded, more measurable, and harder to treat casually",
-    "This week in AI: control, review and access mattered more than the launch noise",
-    "The clearest AI trend this week was not speed — it was guardrails",
-    "Sunday recap: AI is moving closer to real work, so the risk questions got sharper",
-    "What this week proved about AI: the next battle is control, not capability"
+    "AI at work is moving from drafts to delegated tasks",
+    "The new workplace AI shift: fewer demos, more delegated work",
+    "Bookkeeping, notes and support are where AI is becoming useful",
+    "Workplace AI is getting practical: workflows, controls and pricing",
+    "Small teams are starting to manage AI like a real work system"
   ],
   "editorial_theme": {
-    "day": "Sunday",
-    "date": "2026-07-19",
-    "slug": "weekly-recap-prediction-check",
-    "title": "Recap and prediction check",
-    "focus": "Recap the strongest developments of the week, check any recent Clearforge forecasts where evidence exists, and prepare the reader for the following week.",
-    "instruction": "Separate confirmed outcomes from still-open questions. Make the piece useful as a Sunday reset before the next week of AI news."
+    "day": "Monday",
+    "date": "2026-07-20",
+    "slug": "work",
+    "title": "Work",
+    "focus": "AI at work: daily tasks, teams, productivity, research, writing, support, admin, meetings and practical workplace use.",
+    "instruction": "Prioritise stories that help creators, small operators and small businesses test AI in real work. Ask what changes a workday, what still needs human review, and what is ready to try this week."
   },
-  "edition_id": "2026-07-19-risk",
-  "base_date": "2026-07-19",
-  "edition_mode": "alternate_angle",
   "audience_fit": {
-    "generated_at": "2026-07-19T14:16:24.192Z",
+    "generated_at": "2026-07-20T06:41:03.788Z",
     "story_assessments": [
       {
         "story_index": 0,
-        "story_title": "AI is being judged by work, not demos",
-        "target_audience": "Knowledge workers, team leads, and AI adopters who need to decide whether automation is actually worth trusting.",
-        "audience_problem_or_desire": "They want a practical way to tell whether AI is really saving time and reducing risk, instead of just producing fast-looking output.",
-        "interest_signal": "A measurement shift: useful work completed, cost per successful task, dependability, and value at scale.",
-        "stop_reason": "It challenges the common assumption that a quick draft is automatically a good workflow.",
-        "promised_payoff": "A simple way to judge AI by retries, edits, cleanup, and human review before expanding a workflow.",
-        "proof_point": "OpenAI’s scorecard says AI value should be measured by useful work completed, cost per successful task, dependability, and whether value improves at scale.",
+        "story_title": "Small business finance is where AI becomes visibly useful",
+        "target_audience": "Small business owners, bookkeepers, accountants, and finance operators",
+        "audience_problem_or_desire": "Reduce manual bookkeeping, keep cash flow clean, and avoid extra admin.",
+        "interest_signal": "Xero says JAX is adding AI-powered document capture and workflow automation and says it serves 5 million customers worldwide.",
+        "stop_reason": "This is a practical workflow upgrade, not a vague AI demo.",
+        "promised_payoff": "Less manual data entry with human review still in place for finance decisions.",
+        "proof_point": "Xero announced the updates to its JAX agentic platform for small businesses, accountants and bookkeepers.",
         "search_phrases": [
-          "AI scorecard",
-          "measure AI productivity",
-          "cost per successful task",
-          "AI workflow cleanup",
-          "dependability AI"
+          "Xero JAX AI document capture",
+          "AI bookkeeping workflow automation",
+          "Xero 5 million customers AI",
+          "small business accounting AI"
         ],
         "scores": {
           "audience_fit": 9,
-          "practical_consequence": 10,
-          "searchability": 8,
-          "stranger_usefulness": 9,
-          "novelty": 8,
-          "visual_potential": 6,
-          "discussion_potential": 8,
-          "short_form_clarity": 10
-        },
-        "overall_score": 9,
-        "score_reason": "Broad, concrete, and easy to explain fast. It gives a usable test for everyday AI use and fits both workers and managers."
-      },
-      {
-        "story_index": 1,
-        "story_title": "Consumer AI is moving toward age prediction and family controls",
-        "target_audience": "Parents, families, educators, and anyone using consumer AI on shared devices.",
-        "audience_problem_or_desire": "They want clearer safety settings and a way to manage AI use before a problem appears.",
-        "interest_signal": "Consumer AI is starting to behave like household software with built-in age gating and parent controls.",
-        "stop_reason": "Age prediction and stronger safeguards make safety a product feature, not an optional add-on.",
-        "promised_payoff": "What to review in ChatGPT settings now, especially in shared-device or family environments.",
-        "proof_point": "OpenAI said it is rolling out age prediction on ChatGPT consumer plans and pointed to parent controls such as quiet hours, memory settings, and distress notifications.",
-        "search_phrases": [
-          "ChatGPT parental controls",
-          "AI age prediction",
-          "family controls AI",
-          "shared device AI safety",
-          "consumer AI safeguards"
-        ],
-        "scores": {
-          "audience_fit": 8,
           "practical_consequence": 9,
           "searchability": 8,
           "stranger_usefulness": 8,
-          "novelty": 9,
+          "novelty": 7,
           "visual_potential": 6,
-          "discussion_potential": 7,
-          "short_form_clarity": 9
-        },
-        "overall_score": 8,
-        "score_reason": "Strong household relevance and clear safety implications, though narrower than the measurement story."
-      },
-      {
-        "story_index": 2,
-        "story_title": "Google is turning notebook research into a connected workflow",
-        "target_audience": "Researchers, analysts, knowledge workers, and security-minded teams using AI workspaces.",
-        "audience_problem_or_desire": "They want to use more capable AI without exposing sensitive data or losing control over permissions.",
-        "interest_signal": "A research tool now includes code execution, data analysis, and syncing across products.",
-        "stop_reason": "The tool is no longer just a scratch pad; it can act on data and connect across surfaces.",
-        "promised_payoff": "A practical boundary-setting check for what data belongs in a connected AI workspace.",
-        "proof_point": "Google renamed NotebookLM to Gemini Notebook, added a secure cloud computer for code execution and data analysis, and said it will sync across Gemini and Search.",
-        "search_phrases": [
-          "Gemini Notebook",
-          "NotebookLM rename",
-          "AI code execution workspace",
-          "connected AI research tool",
-          "secure cloud computer"
-        ],
-        "scores": {
-          "audience_fit": 8,
-          "practical_consequence": 9,
-          "searchability": 8,
-          "stranger_usefulness": 8,
-          "novelty": 8,
-          "visual_potential": 8,
           "discussion_potential": 7,
           "short_form_clarity": 8
         },
         "overall_score": 8,
-        "score_reason": "Useful for anyone handling notes, analysis, or sensitive material in AI workspaces, with a clear operational takeaway."
+        "score_reason": "High-value small-business pain point, easy to explain, and clearly verified."
       },
       {
-        "story_index": 3,
-        "story_title": "EU rules are starting to shape the AI distribution layer",
-        "target_audience": "AI builders, product leaders, platform strategists, and compliance teams.",
-        "audience_problem_or_desire": "They need a fallback plan for access, regional rules, and platform dependence.",
-        "interest_signal": "Regulation is starting to shape which AI products can reach devices and search surfaces.",
-        "stop_reason": "Distribution and access are becoming governance issues, not just growth issues.",
-        "promised_payoff": "A reminder to plan for platform access, compliance, and fallback options before launch.",
-        "proof_point": "Reuters reported that EU regulators said Google must open certain Android features to AI rivals and share some search-optimisation data with AI chatbots, with changes starting in January and some user-facing changes from July 2027.",
+        "story_index": 1,
+        "story_title": "Meeting notes are becoming a policy decision, not just a feature",
+        "target_audience": "Team admins, managers, and Google Workspace users",
+        "audience_problem_or_desire": "Set clear rules for AI meeting notes, privacy, and workflow consistency.",
+        "interest_signal": "Google says admins can configure Meet AI note-taking to apply only to meetings with three or more people, with plan-specific defaults.",
+        "stop_reason": "Policy control and meeting governance are the hook.",
+        "promised_payoff": "Teams can standardize notes without letting defaults run the meeting for them.",
+        "proof_point": "Google Workspace Updates on Meet 'Take notes for me' settings.",
         "search_phrases": [
-          "EU AI distribution rules",
-          "Google Android AI rivals",
-          "platform dependency AI compliance",
-          "search data for AI chatbots",
-          "regional AI fallback plan"
+          "Google Meet AI notes admin settings",
+          "Meet take notes for me three or more people",
+          "Google Workspace AI meeting notes",
+          "meeting notes policy Google Meet"
         ],
         "scores": {
-          "audience_fit": 7,
-          "practical_consequence": 9,
+          "audience_fit": 8,
+          "practical_consequence": 8,
           "searchability": 8,
           "stranger_usefulness": 7,
-          "novelty": 9,
+          "novelty": 8,
           "visual_potential": 5,
           "discussion_potential": 8,
           "short_form_clarity": 8
         },
         "overall_score": 8,
-        "score_reason": "Niche but important for builders and operators. The compliance and fallback-planning angle is strong and timely."
+        "score_reason": "A clear workplace governance story with an easy, everyday consequence."
+      },
+      {
+        "story_index": 2,
+        "story_title": "Notion is turning into a control room for multi-agent work",
+        "target_audience": "Notion users, creators, operations teams, and knowledge workers",
+        "audience_problem_or_desire": "Coordinate tasks across tools without losing the trail.",
+        "interest_signal": "Notion 3.6 lets users assign external agents like Claude and Cursor from shared boards and expands file and tool connections.",
+        "stop_reason": "A multi-agent workflow layer is a fresh and concrete work story.",
+        "promised_payoff": "A note can become a task and then a deliverable with less copying.",
+        "proof_point": "Notion 3.6 release notes.",
+        "search_phrases": [
+          "Notion 3.6 external agents",
+          "Notion AI meeting notes speaker labels",
+          "Notion Outlook integration agents",
+          "Notion shared board Claude Cursor"
+        ],
+        "scores": {
+          "audience_fit": 7,
+          "practical_consequence": 8,
+          "searchability": 7,
+          "stranger_usefulness": 7,
+          "novelty": 9,
+          "visual_potential": 8,
+          "discussion_potential": 8,
+          "short_form_clarity": 7
+        },
+        "overall_score": 8,
+        "score_reason": "Strong novelty and workflow potential, especially for teams already using Notion."
+      },
+      {
+        "story_index": 3,
+        "story_title": "Customer service AI is becoming easier to buy and deploy",
+        "target_audience": "Support leaders, SMB operators, and customer service teams",
+        "audience_problem_or_desire": "Decide whether AI support is cost-effective and operationally manageable.",
+        "interest_signal": "Salesforce says Agentforce Help Agent and Customer Service Portal go generally available in July 2026 with pay-per-resolution pricing.",
+        "stop_reason": "Clear pricing and deployment make this a real business decision.",
+        "promised_payoff": "Support teams can compare AI service costs against human-only queues.",
+        "proof_point": "Salesforce announcement on Agentforce Help Agent and the Fin acquisition.",
+        "search_phrases": [
+          "Salesforce Agentforce Help Agent pricing",
+          "pay per resolution customer service AI",
+          "Salesforce customer service portal July 2026",
+          "Fin acquisition SMB support AI"
+        ],
+        "scores": {
+          "audience_fit": 8,
+          "practical_consequence": 8,
+          "searchability": 7,
+          "stranger_usefulness": 8,
+          "novelty": 7,
+          "visual_potential": 6,
+          "discussion_potential": 7,
+          "short_form_clarity": 8
+        },
+        "overall_score": 8,
+        "score_reason": "Useful for operational readers because the pricing and deployment model are concrete."
       }
     ],
     "platform_selections": {
       "tiktok": {
-        "story_index": 0,
-        "story_title": "AI is being judged by work, not demos",
-        "target_audience": "Knowledge workers and everyday AI users who want a fast practical way to judge whether automation is working.",
-        "format": "short spoken hook plus one concrete test",
-        "opening": "Is your AI saving time or creating cleanup?",
-        "payoff": "OpenAI says AI should be judged by useful work completed, cost per successful task, and dependability.",
-        "selection_reason": "It is broad, immediate, and easy to compress into one sharp question with a simple either/or comment prompt.",
+        "story_index": 1,
+        "story_title": "Meeting notes are becoming an admin policy decision, not just a feature",
+        "target_audience": "Team admins, managers, and Google Workspace users",
+        "format": "short_video",
+        "opening": "Will your meetings start getting auto-notes by default?",
+        "payoff": "Google says admins can limit Meet AI note-taking to meetings with three or more people, with plan-specific defaults. That means one setting can change who gets the notes, and when action items get shared.",
+        "selection_reason": "This is the most relatable, visual, and immediately understandable workday change for a fast-scroll audience.",
         "platform_fit_score": 9
       },
       "youtube": {
-        "story_index": 0,
-        "story_title": "AI is being judged by work, not demos",
-        "target_audience": "Search-driven viewers who want a practical framework for judging AI workflows.",
-        "format": "explainer short with a clear test and takeaway",
-        "opening": "Is your AI workflow actually saving time?",
-        "payoff": "Use OpenAI’s scorecard idea to measure useful work completed, retries, edits, and human cleanup before expanding a workflow.",
-        "selection_reason": "It supports a clearer mini-explanation than the other stories and gives viewers a repeatable test they can try right away.",
+        "story_index": 2,
+        "story_title": "Notion is turning into a control room for multi-agent work",
+        "target_audience": "Notion users, creators, operations teams, and knowledge workers",
+        "format": "short_video",
+        "opening": "Can one shared board run your task from note to follow-up?",
+        "payoff": "Notion 3.6 says users can assign external agents like Claude and Cursor from a shared board. It also says AI Meeting Notes now include speaker labels, and agents can read and write more file types and connect to more tools, including Outlook tasks when connected. The practical test is whether one workspace can move a task from meeting note to follow-up without extra copying.",
+        "selection_reason": "It has novelty, workflow depth, and a clear explainer path that works well in a longer short-form video.",
         "platform_fit_score": 9
       },
       "facebook": {
-        "story_index": 1,
-        "story_title": "Consumer AI is moving toward age prediction and family controls",
-        "target_audience": "Parents, families, and shared-device users who need a straightforward safety update.",
-        "format": "relatable household update",
-        "opening": "Would you check your ChatGPT settings today?",
-        "payoff": "OpenAI is rolling out age prediction and stronger safeguards, plus controls like quiet hours, memory settings, and distress notifications.",
-        "selection_reason": "This is the most recognizable family and household scenario, so it should invite practical comments instead of abstract debate.",
+        "story_index": 0,
+        "story_title": "Small business finance is where AI becomes visibly useful",
+        "target_audience": "Small business owners, bookkeepers, accountants, and finance operators",
+        "format": "social_post",
+        "opening": "Would AI bookkeeping save you time, or add another review step?",
+        "payoff": "Xero says its JAX platform is adding AI-powered document capture and workflow automation for small businesses, accountants and bookkeepers, and it says it serves 5 million customers worldwide. The upside is less manual data entry. The caution is the same as always: human review before money moves or tax work is filed.",
+        "selection_reason": "It speaks to a broad, recognizable small-business pain point and invites an easy, useful comparison.",
         "platform_fit_score": 8
       },
       "pinterest": {
-        "story_index": 2,
-        "story_title": "Google is turning notebook research into a connected workflow",
-        "target_audience": "People saving practical guides on AI workflows, research tools, and data-safety checklists.",
-        "format": "searchable checklist guide",
-        "opening": "Checklist before you upload notes to Gemini Notebook",
-        "payoff": "A simple boundary-setting checklist helps you decide what data can go into a connected AI workspace, who can approve it, and what should stay human-controlled.",
-        "selection_reason": "Pinterest rewards saveable guides, and this story naturally becomes a checklist around connected-workspace safety.",
+        "story_index": 0,
+        "story_title": "Small business finance is where AI becomes visibly useful",
+        "target_audience": "Small business owners, bookkeepers, accountants, and finance operators",
+        "format": "pinterest_pin",
+        "opening": "Can AI help with bookkeeping and workflow automation?",
+        "payoff": "A practical checklist for testing AI where it reduces manual entry, while keeping a human review step before anything is posted.",
+        "selection_reason": "This is the most searchable evergreen workflow story and fits a checklist-style Pinterest intent well.",
         "platform_fit_score": 8
       },
       "linkedin": {
         "story_index": 3,
-        "story_title": "EU rules are starting to shape the AI distribution layer",
-        "target_audience": "AI product leaders, operators, and compliance-minded professionals.",
-        "format": "workplace strategy note",
-        "opening": "Would your AI launch survive a platform rule change?",
-        "payoff": "EU-driven access changes make distribution a governance issue, so teams need fallback plans for access, regional compliance, and platform dependence.",
-        "selection_reason": "It is the strongest professional and operational angle, with clear implications for launch planning and dependency management.",
-        "platform_fit_score": 8
+        "story_title": "Customer service AI is becoming easier to buy and deploy",
+        "target_audience": "Support leaders, SMB operators, and customer service teams",
+        "format": "professional_post",
+        "opening": "Would you pay per resolution for support AI?",
+        "payoff": "Salesforce says Agentforce Help Agent and the Customer Service Portal will be generally available in July 2026, with pay-per-resolution pricing available then too. It also says it has agreed to acquire Fin, a customer-agent platform for SMBs. For support leaders, that makes the decision less about a demo and more about queue economics: if simple cases resolve cleanly, the model can work; if it only shifts tickets, costs stay visible.",
+        "selection_reason": "The pricing model and deployment packaging create a clear operational and leadership decision, which is ideal for LinkedIn.",
+        "platform_fit_score": 9
       }
     },
-    "overall_reasoning": "This week’s strongest audience fit is the shift from capability to control: measurement, safeguards, connected workflows, and distribution risk. Story 0 is the broadest and most reusable across general audiences, story 1 is the clearest household safety angle, story 2 is the best workflow-and-permissions story for professionals, and story 3 is the sharpest strategic/compliance angle. The platform picks separate those interests instead of forcing one story everywhere."
+    "overall_reasoning": "The strongest social fit is not one universal story. Google Meet is best for fast, relatable short video because it shows AI turning into a policy decision. Notion is best for YouTube Shorts because the multi-agent workflow needs a little more explanation. Xero is the clearest Facebook and Pinterest story because bookkeeping is a familiar small-business problem with an obvious practical test. Salesforce is the best LinkedIn story because pricing, deployment, and queue economics make it a real operational decision for leaders."
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 5,
   "brand": "Clearforge",
-  "date": "2026-07-19-risk",
+  "date": "2026-07-20",
   "type": "clearforge_daily_ai_brief",
   "approved": {
     "article": true,
@@ -10,9 +10,9 @@
     "youtube": true
   },
   "article": {
-    "headline": "Sunday reset: AI is getting more guarded, more measurable, and harder to treat casually",
-    "dek": "This week’s signal is not bigger models. It is tighter control: AI is being measured by outcomes, gated by age and safety checks, and pushed deeper into workflows that now need more review, not less.",
-    "url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-19-risk.html",
+    "headline": "AI at work is moving from drafts to delegated tasks — but the control points matter",
+    "dek": "Today’s useful shift is not another chatbot demo. It is AI getting placed into the tools where small teams actually work: bookkeeping, meetings, task routing and customer support. The key question is now less “can it do the task?” and more “who controls it, what gets logged, and where does a human still review the output?”",
+    "url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-20.html",
     "markdown": "daily_brief.md"
   },
   "calls_to_action": {
@@ -28,42 +28,42 @@
   },
   "stories": [
     {
-      "title": "AI is being judged by work, not demos",
-      "summary": "OpenAI’s scorecard shifts the discussion from token prices and flashy outputs to useful work completed, cost per successful task, dependability, and scale effects. In risk-control terms, that matters because a tool that sounds efficient can still create hidden costs if it needs repeat prompting, heavy human cleanup, or multiple retries before it is safe to use.",
-      "why_it_matters": "Teams often automate the easiest part of a job and leave the risky part unmeasured. This framing pushes them to ask whether the AI result is actually reviewable, repeatable, and worth trusting.",
-      "practical_angle": "Pick one task and compare the number of retries, edits, and human checks before deciding the workflow is safe to expand.",
-      "source_name": "OpenAI",
-      "source_url": "https://openai.com/index/a-scorecard-for-the-ai-age/"
+      "title": "Small business finance is where AI becomes visibly useful",
+      "summary": "Xero says JAX is designed to automate routine bookkeeping work, read source documents, and push more of the finance workflow into one system for small businesses and advisors. It also says the platform now serves 5 million customers worldwide.",
+      "why_it_matters": "Bookkeeping, cash flow and compliance are high-friction tasks for small operators. If the workflow really becomes cleaner, this is the kind of AI that saves time every week, not once a quarter.",
+      "practical_angle": "Look for AI that reduces data entry, not just AI that writes summaries. The highest-value use case here is document capture plus review, not fully automatic posting.",
+      "source_name": "Xero UK",
+      "source_url": "https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/"
     },
     {
-      "title": "Consumer AI is moving toward age prediction and family controls",
-      "summary": "OpenAI said it is rolling out age prediction on ChatGPT consumer plans so the system can estimate whether an account likely belongs to someone under 18 and apply stronger safeguards. It also pointed to parent controls such as quiet hours, memory settings, and distress notifications.",
-      "why_it_matters": "This is a sign that consumer AI is moving into household governance. The risk question is no longer just what the model can say, but what it should be allowed to do for different users in different settings.",
-      "practical_angle": "If younger users share devices with adults, review the control settings now and decide what should be restricted before a problem appears.",
-      "source_name": "OpenAI",
-      "source_url": "https://openai.com/index/our-approach-to-age-prediction/"
+      "title": "Meeting notes are becoming an admin policy decision, not just a feature",
+      "summary": "Google Workspace now lets admins set Google Meet AI note-taking to apply only to meetings with three or more people, with plan-specific defaults and a future rollout date.",
+      "why_it_matters": "That means AI in meetings is now a workplace governance issue: who gets recorded, when notes are created, and what the default behavior is across teams.",
+      "practical_angle": "If you run a small team, check whether your meeting-note settings match your real workflow before defaults change under you.",
+      "source_name": "Google Workspace Updates",
+      "source_url": "https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html?m=1"
     },
     {
-      "title": "Google is turning notebook research into a connected workflow",
-      "summary": "Google renamed NotebookLM to Gemini Notebook, added a secure cloud computer for code execution and data analysis, and said the product will sync across Gemini and Search. Google says the tool already serves more than 30 million people and over 600,000 organizations.",
-      "why_it_matters": "More capability means more exposure. Once a research tool can execute code, handle analysis, and pull from connected surfaces, the risk review shifts to permissions, source handling, and data sensitivity.",
-      "practical_angle": "Before moving sensitive notes into a connected AI workspace, decide what information is acceptable to upload and what still needs to stay in a separate, human-controlled process.",
-      "source_name": "Google",
-      "source_url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/"
+      "title": "Notion is turning into a control room for multi-agent work",
+      "summary": "Notion 3.6 adds external agents, speaker labels in meeting notes, richer file handling and more integrations, including Outlook and additional MCP connections.",
+      "why_it_matters": "This is a step toward teams orchestrating work across tools from one place, which could reduce the time lost to switching between docs, inboxes and project boards.",
+      "practical_angle": "The most useful test is whether one shared workspace can manage a task from meeting note to follow-up to file creation without extra copying.",
+      "source_name": "Notion",
+      "source_url": "https://www.notion.com/releases/2026-07-01"
     }
   ],
   "facebook": {
-    "post": "Would you check your ChatGPT settings today?\nOpenAI said it is rolling out age prediction on consumer ChatGPT so it can estimate whether an account likely belongs to someone under 18 and apply stronger safeguards. It also pointed to parent controls like quiet hours, memory settings, and distress notifications.\nIf your family shares devices, this is a good time to decide what should be automatic and what should stay under adult control.\nFor a shared device, which matters more first: quiet hours or stronger safeguards? Comment with one, or ask for a follow-up on family controls.\n\n#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI"
+    "post": "Would AI bookkeeping save you time, or add another review step? Xero says its JAX platform is adding AI-powered document capture and workflow automation for small businesses, accountants and bookkeepers, and it says it serves 5 million customers worldwide. The upside is less manual data entry. The caution is the same as always: human review before money moves or tax work is filed. If you run a small team, would you test invoice capture first or cash-flow tracking first? Comment with one choice, and if you want, share the task that still eats the most admin time.\n\n#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI"
   },
   "pinterest": {
-    "title": "Checklist before you upload notes to Gemini Notebook",
-    "description": "Before moving sensitive notes into Gemini Notebook, decide what data can go in, who can approve uploads, and what must stay human-controlled. The benefit is simpler risk review before a tool that can execute code and sync across Gemini and Search gets your data. Save this checklist, and comment with one rule your team uses.",
-    "destination_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-19-risk.html"
+    "title": "Can AI Help With Bookkeeping and Workflow Automation?",
+    "description": "Use this practical checklist to test AI where it reduces manual entry, while keeping a human review step before anything is posted. Comment with the workflow you'd test first: invoices, cash flow, or meeting notes.",
+    "destination_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-20.html"
   },
   "youtube": {
-    "title": "Sunday reset: AI is getting more guarded, more measurable, and harder to treat casually",
-    "script": "Is your AI workflow actually saving time?\nOpenAI’s new scorecard says AI should be judged by useful work completed, cost per successful task, dependability, and whether value improves at scale. That matters because a tool can look fast and still create hidden work if it needs retries, edits, or careful human cleanup before it’s usable. My simple test this week is to compare one real workflow against your normal process and count every retry and edit. If the cleanup is bigger than the time saved, the workflow is not ready to expand. Which would you measure first: retries or human edits? Drop one in the comments. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
-    "description": "Before expanding any AI workflow, define the finish line, the human review step, and the data you will not upload."
+    "title": "AI at work is moving from drafts to delegated tasks",
+    "script": "Can one shared board run your task from note to follow-up? Notion 3.6 says users can assign external agents like Claude and Cursor from a shared board. It also says AI Meeting Notes now include speaker labels, and agents can read and write more file types and connect to more tools, including Outlook tasks when connected. The practical question is simple: can one workspace move a task from meeting note to follow-up without extra copying? That is the test for small teams that want less app-switching. If you use Notion, would you try that on a small project first, or keep agents limited to drafts? Leave your answer in the comments. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "description": "Pick one repetitive workflow this week — meeting notes, invoice capture or support triage — and test an AI feature only if you can name the human review step before output leaves the system."
   },
   "podcast": {
     "generated": true,
@@ -74,25 +74,23 @@
     "source_notes": "podcast/source-notes.md",
     "episode": {
       "version": 1,
-      "date": "2026-07-19-risk",
+      "date": "2026-07-20",
       "brand": "Clearforge",
       "type": "clearforge_daily_biggest_story_podcast_script",
       "human_review_required": true,
       "narrator": "Irene",
       "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
-      "episode_title": "When AI gets judged by the job, not the demo",
-      "selected_story_index": 0,
-      "selected_story_title": "AI is being judged by work, not demos",
-      "selection_reason": "This is the strongest story because it changes how people should evaluate AI in practice. The shift from flashy outputs to measured work, cost, and dependability affects almost every team using AI, from solo creators to small businesses to operations teams.",
-      "word_count": 1104,
-      "estimated_duration_minutes": 7.6,
+      "episode_title": "When AI meeting notes become policy, not just convenience",
+      "selected_story_index": 1,
+      "selected_story_title": "Meeting notes are becoming an admin policy decision, not just a feature",
+      "selection_reason": "This is the clearest example of the edition’s main theme: AI is moving from isolated demos into everyday work controls. It matters because the question is no longer whether the tool can summarize a meeting, but who can turn it on, for which meetings, and where human review still sits before the output is shared.",
+      "word_count": 1300,
+      "estimated_duration_minutes": 9,
       "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
       "source_notes": "source-notes.md",
-      "first_spoken_line": "This week’s signal is not that AI suddenly got bigger or smarter. It is that the way people are judging it is getting stricter. And that matters, because once you stop evaluating AI by a neat demo and start evaluating it by actual work finished, a lot of hidden problems become visible.",
-      "final_spoken_line": "The big lesson this week is simple. The smartest question is no longer, what can the AI say? It is, what can it finish, how reliably, at what cost, and with how much human checking? That is a much more useful way to think about AI now.",
-      "validation_warnings": [
-        "Script is shorter than target: 1104 words."
-      ],
+      "first_spoken_line": "Today’s most important AI work story is not about a flashier model or a bigger benchmark. It is about something much more practical: who gets to decide when AI is allowed into a meeting, and what happens to the notes after that.",
+      "final_spoken_line": "The bigger lesson is simple. In work AI, the important question is increasingly not whether the tool can do the task. It is who gets to set the rule, what gets logged, and where the human still has the final look.",
+      "validation_warnings": [],
       "non_spoken_instruction_candidates": []
     }
   },
@@ -106,12 +104,12 @@
     ],
     "tiktok_narration": "media/tiktok-narration.mp3",
     "tiktok": {
-      "story_index": 0,
-      "hook": "Is your AI saving time or creating cleanup?",
-      "payoff": "OpenAI says AI should be judged by useful work completed, cost per successful task, and dependability. If it takes three retries and a human rewrite, it’s not low-risk automation. Would you test one workflow or track retries first?",
-      "response_prompt": "Comment with your pick.",
-      "narration": "media/2026-07-19-risk/tiktok-narration.mp3",
-      "narration_text": "Is your AI saving time or creating cleanup? OpenAI says AI should be judged by useful work completed, cost per successful task, and dependability. If it takes three retries and a human rewrite, it’s not low-risk automation. Would you test one workflow or track retries first? Comment with your pick.",
+      "story_index": 1,
+      "hook": "Will your meetings start getting auto-notes by default?",
+      "payoff": "Google says admins can limit Meet AI note-taking to meetings with three or more people. That can change who gets the notes, and when action items get shared.",
+      "response_prompt": "Would you keep it on for larger meetings, or turn it off?",
+      "narration": "media/2026-07-20/tiktok-narration.mp3",
+      "narration_text": "Will your meetings start getting auto-notes by default? Google says admins can limit Meet AI note-taking to meetings with three or more people. That can change who gets the notes, and when action items get shared. Would you keep it on for larger meetings, or turn it off?",
       "target_duration_seconds": [
         12,
         18
@@ -121,58 +119,58 @@
     "generated": true
   },
   "quote_card_lines": [
-    "If you cannot measure the cleanup, you do not know the real cost.",
-    "Is your AI saving time, or just moving the work to someone else?",
-    "What data should never enter a connected AI workspace?",
-    "More power in AI means more need for boundaries.",
-    "A cheap draft is not a safe workflow."
+    "Can your team review the output before AI sends it on?",
+    "Would you turn on AI notes only for larger meetings?",
+    "The useful test is not whether AI can draft it, but whether the workflow stays clear.",
+    "Bookkeeping AI matters most when it reduces manual entry.",
+    "Support AI only helps if the resolution is real."
   ],
   "headline_options": [
-    "Sunday reset: AI is getting more guarded, more measurable, and harder to treat casually",
-    "This week in AI: control, review and access mattered more than the launch noise",
-    "The clearest AI trend this week was not speed — it was guardrails",
-    "Sunday recap: AI is moving closer to real work, so the risk questions got sharper",
-    "What this week proved about AI: the next battle is control, not capability"
+    "AI at work is moving from drafts to delegated tasks",
+    "The new workplace AI shift: fewer demos, more delegated work",
+    "Bookkeeping, notes and support are where AI is becoming useful",
+    "Workplace AI is getting practical: workflows, controls and pricing",
+    "Small teams are starting to manage AI like a real work system"
   ],
   "sources": [
     {
-      "source_name": "OpenAI",
-      "title": "A scorecard for the AI age",
-      "url": "https://openai.com/index/a-scorecard-for-the-ai-age/",
-      "published_date": "2026-07-17",
-      "confirmed_fact": "OpenAI argues that AI value should be measured by useful work completed, cost per successful task, dependability, and whether value improves at scale.",
-      "interpretation": "Risk control starts with measurement: if a tool cannot finish work reliably, it should not be treated as low-risk just because it is cheap or fast to prompt."
+      "source_name": "Xero UK",
+      "title": "Xero Announces New AI Innovations at Xerocon London as it Powers 5 Million Customers Globally",
+      "url": "https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/",
+      "published_date": "2026-07-08",
+      "confirmed_fact": "Xero said its JAX agentic platform is adding AI-powered features for small businesses, accountants and bookkeepers, including document capture and workflow automation, and said it serves 5 million customers worldwide.",
+      "interpretation": "This looks like a practical small-business finance move: AI is being pushed into bookkeeping and cash-flow work, not just chat interfaces."
     },
     {
-      "source_name": "OpenAI",
-      "title": "Our approach to age prediction",
-      "url": "https://openai.com/index/our-approach-to-age-prediction/",
+      "source_name": "Google Workspace Updates",
+      "title": "New Google Meet 'Take notes for me' settings for admins and end users",
+      "url": "https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html?m=1",
       "published_date": "2026-07-16",
-      "confirmed_fact": "OpenAI said it is rolling out age prediction on ChatGPT consumer plans to estimate whether an account likely belongs to someone under 18, then apply stronger safeguards when needed.",
-      "interpretation": "Consumer AI is moving toward built-in age gating and family controls, which makes safety a product requirement rather than an optional setting."
+      "confirmed_fact": "Google said admins can now configure AI note-taking in Meet so it can be enabled only for meetings with three or more people, with rollout and default-setting details by plan.",
+      "interpretation": "This is a sign that AI meeting tools are maturing from optional convenience features into policy-controlled workplace defaults."
     },
     {
-      "source_name": "Google",
-      "title": "NotebookLM is now Gemini Notebook",
-      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
-      "published_date": "2026-07-16",
-      "confirmed_fact": "Google renamed NotebookLM to Gemini Notebook, added a secure cloud computer for code execution and data analysis, and said the product will sync across Gemini and Search.",
-      "interpretation": "As research tools become more connected and more capable, teams need to think harder about what data goes in, who can see it, and what actions the system can perform."
+      "source_name": "Notion",
+      "title": "July 1, 2026 – Notion 3.6: External Agents, HTML blocks, and more",
+      "url": "https://www.notion.com/releases/2026-07-01",
+      "published_date": "2026-07-01",
+      "confirmed_fact": "Notion said users can assign external agents such as Claude and Cursor from a shared board, AI Meeting Notes now include speaker labels, and agents can read and write more file types and connect to more tools.",
+      "interpretation": "Notion is moving toward being a coordination layer for multi-tool workflows, not only a notes app."
     },
     {
-      "source_name": "Reuters",
-      "title": "Google required to open up to AI, search engine rivals under EU-mandated changes",
-      "url": "https://www.investing.com/news/stock-market-news/google-required-to-open-up-to-ai-search-engine-rivals-under-eumandated-changes-4795675",
-      "published_date": "2026-07-16",
-      "confirmed_fact": "Reuters reported that EU regulators said Google must open certain Android features to AI rivals and share some search-optimisation data with AI chatbots, with implementation starting in January and some user-facing changes from July 2027.",
-      "interpretation": "Distribution is now a governance issue: if platforms change access to devices and search surfaces, AI products may need new compliance and fallback plans."
+      "source_name": "Salesforce",
+      "title": "Salesforce Announces Prepackaged Agentforce Help Agent",
+      "url": "https://www.salesforce.com/uk/news/stories/agentforce-help-agent-announcement/?bc=OTH",
+      "published_date": "2026-06-25",
+      "confirmed_fact": "Salesforce said Agentforce Help Agent and Agentforce Customer Service Portal are generally available in July 2026 and that pay-per-resolution pricing will be available then too; it also said it has signed an agreement to acquire Fin, a customer-agent platform for SMBs.",
+      "interpretation": "Customer service AI is being packaged more like an operational product with setup, channels and pricing, which lowers the barrier for smaller teams."
     }
   ],
   "media_metadata": {
     "version": 5,
-    "date": "2026-07-19-risk",
-    "headline": "Sunday reset: AI is getting more guarded, more measurable, and harder to treat casually",
-    "dek": "This week’s signal is not bigger models. It is tighter control: AI is being measured by outcomes, gated by age and safety checks, and pushed deeper into workflows that now need more review, not less.",
+    "date": "2026-07-20",
+    "headline": "AI at work is moving from drafts to delegated tasks — but the control points matter",
+    "dek": "Today’s useful shift is not another chatbot demo. It is AI getting placed into the tools where small teams actually work: bookkeeping, meetings, task routing and customer support. The key question is now less “can it do the task?” and more “who controls it, what gets logged, and where does a human still review the output?”",
     "hook": "Three AI updates that actually matter today",
     "spoken_cta": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
     "visual_system": "Clearforge AI briefing podcast studio system",
@@ -197,52 +195,52 @@
     },
     "stories": [
       {
-        "file": "media/2026-07-19-risk/story-1.png",
-        "title": "AI is being judged by work, not demos",
-        "source_name": "OpenAI",
-        "source_url": "https://openai.com/index/a-scorecard-for-the-ai-age/",
-        "summary": "OpenAI’s scorecard shifts the discussion from token prices and flashy outputs to useful work completed, cost per successful task, dependability, and scale effects. In risk-control terms, that matters because a tool that sounds efficient can still create hidden costs if it needs repeat prompting, heavy human cleanup, or multiple retries before it is safe to use.",
-        "why_it_matters": "Teams often automate the easiest part of a job and leave the risky part unmeasured. This framing pushes them to ask whether the AI result is actually reviewable, repeatable, and worth trusting.",
-        "practical_angle": "Pick one task and compare the number of retries, edits, and human checks before deciding the workflow is safe to expand.",
-        "visual_prompt": "a high-end technology briefing set with a dark blue wall, subtle circuit traces, a clean desk, paper research packs, audio waveforms and one human-operated control surface. clean editorial technology-magazine composition, practical rather than sci-fi. use restrained blue technology accents to signal AI without making the image look like generic AI stock art. vary camera distance, desk depth and object hierarchy while keeping the same Clearforge identity. Story context: AI is being judged by work, not demos. Practical angle: Pick one task and compare the number of retries, edits, and human checks before deciding the workflow is safe to expand.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+        "file": "media/2026-07-20/story-1.png",
+        "title": "Small business finance is where AI becomes visibly useful",
+        "source_name": "Xero UK",
+        "source_url": "https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/",
+        "summary": "Xero says JAX is designed to automate routine bookkeeping work, read source documents, and push more of the finance workflow into one system for small businesses and advisors. It also says the platform now serves 5 million customers worldwide.",
+        "why_it_matters": "Bookkeeping, cash flow and compliance are high-friction tasks for small operators. If the workflow really becomes cleaner, this is the kind of AI that saves time every week, not once a quarter.",
+        "practical_angle": "Look for AI that reduces data entry, not just AI that writes summaries. The highest-value use case here is document capture plus review, not fully automatic posting.",
+        "visual_prompt": "a podcast-ready AI learning desk with a microphone in the foreground, tidy source folders, simple model cards, a soft waveform motif and a dark professional newsroom mood. cinematic three-quarter studio photograph with shallow depth of field. combine physical human-review materials with light digital signal motifs so it feels human-led and AI-empowered. use a different AI signal motif: waveform, routing lines, model cards, calendar markers or evidence board. Story context: Small business finance is where AI becomes visibly useful. Practical angle: Look for AI that reduces data entry, not just AI that writes summaries. The highest-value use case here is document capture plus review, not fully automatic posting.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: dark blue studio background, graphite desk, white paper, blue highlights and restrained green accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
       },
       {
-        "file": "media/2026-07-19-risk/story-2.png",
-        "title": "Consumer AI is moving toward age prediction and family controls",
-        "source_name": "OpenAI",
-        "source_url": "https://openai.com/index/our-approach-to-age-prediction/",
-        "summary": "OpenAI said it is rolling out age prediction on ChatGPT consumer plans so the system can estimate whether an account likely belongs to someone under 18 and apply stronger safeguards. It also pointed to parent controls such as quiet hours, memory settings, and distress notifications.",
-        "why_it_matters": "This is a sign that consumer AI is moving into household governance. The risk question is no longer just what the model can say, but what it should be allowed to do for different users in different settings.",
-        "practical_angle": "If younger users share devices with adults, review the control settings now and decide what should be restricted before a problem appears.",
-        "visual_prompt": "a practical AI systems review scene with a microphone, pinned evidence cards, process arrows, muted blue signal lines and a clear before-to-after analysis structure. vertical social-video still with a strong microphone foreground and clear desk detail. make it instantly understandable as an AI briefing or AI podcast image, but grounded in real studio objects. use a different AI signal motif: waveform, routing lines, model cards, calendar markers or evidence board. Story context: Consumer AI is moving toward age prediction and family controls. Practical angle: If younger users share devices with adults, review the control settings now and decide what should be restricted before a problem appears.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+        "file": "media/2026-07-20/story-2.png",
+        "title": "Meeting notes are becoming an admin policy decision, not just a feature",
+        "source_name": "Google Workspace Updates",
+        "source_url": "https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html?m=1",
+        "summary": "Google Workspace now lets admins set Google Meet AI note-taking to apply only to meetings with three or more people, with plan-specific defaults and a future rollout date.",
+        "why_it_matters": "That means AI in meetings is now a workplace governance issue: who gets recorded, when notes are created, and what the default behavior is across teams.",
+        "practical_angle": "If you run a small team, check whether your meeting-note settings match your real workflow before defaults change under you.",
+        "visual_prompt": "a dark navy AI briefing studio desk with a professional podcast microphone, source notes, a small audio waveform display, subtle circuit-board lines in the background and one practical notebook open on the desk. premium podcast-cover composition with strong negative space for later text overlay. make the AI element clear through subtle circuit traces, waveform graphics, model cards and data-routing lines, not robots. make the story context visible through objects and composition rather than readable text. Story context: Meeting notes are becoming an admin policy decision, not just a feature. Practical angle: If you run a small team, check whether your meeting-note settings match your real workflow before defaults change under you.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
       },
       {
-        "file": "media/2026-07-19-risk/story-3.png",
-        "title": "Google is turning notebook research into a connected workflow",
-        "source_name": "Google",
-        "source_url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
-        "summary": "Google renamed NotebookLM to Gemini Notebook, added a secure cloud computer for code execution and data analysis, and said the product will sync across Gemini and Search. Google says the tool already serves more than 30 million people and over 600,000 organizations.",
-        "why_it_matters": "More capability means more exposure. Once a research tool can execute code, handle analysis, and pull from connected surfaces, the risk review shifts to permissions, source handling, and data sensitivity.",
-        "practical_angle": "Before moving sensitive notes into a connected AI workspace, decide what information is acceptable to upload and what still needs to stay in a separate, human-controlled process.",
-        "visual_prompt": "an editorial AI news analysis desk with printed source cards, model comparison sheets, a compact microphone arm, blue data-light accents and a calm control-room atmosphere. cinematic three-quarter studio photograph with shallow depth of field. show AI as a system being reviewed by a person through notes, checks, source cards and controlled audio tools. make the story context visible through objects and composition rather than readable text. Story context: Google is turning notebook research into a connected workflow. Practical angle: Before moving sensitive notes into a connected AI workspace, decide what information is acceptable to upload and what still needs to stay in a separate, human-controlled process.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: dark blue studio background, graphite desk, white paper, blue highlights and restrained green accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+        "file": "media/2026-07-20/story-3.png",
+        "title": "Notion is turning into a control room for multi-agent work",
+        "source_name": "Notion",
+        "source_url": "https://www.notion.com/releases/2026-07-01",
+        "summary": "Notion 3.6 adds external agents, speaker labels in meeting notes, richer file handling and more integrations, including Outlook and additional MCP connections.",
+        "why_it_matters": "This is a step toward teams orchestrating work across tools from one place, which could reduce the time lost to switching between docs, inboxes and project boards.",
+        "practical_angle": "The most useful test is whether one shared workspace can manage a task from meeting note to follow-up to file creation without extra copying.",
+        "visual_prompt": "a high-end technology briefing set with a dark blue wall, subtle circuit traces, a clean desk, paper research packs, audio waveforms and one human-operated control surface. dark professional podcast artwork composition with source materials visible. use restrained blue technology accents to signal AI without making the image look like generic AI stock art. change the hero object placement so this frame does not resemble the previous edition. Story context: Notion is turning into a control room for multi-agent work. Practical angle: The most useful test is whether one shared workspace can manage a task from meeting note to follow-up to file creation without extra copying.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
       }
     ],
-    "narration": "media/2026-07-19-risk/narration.mp3",
-    "narration_text": "Is your AI workflow actually saving time?\nOpenAI’s new scorecard says AI should be judged by useful work completed, cost per successful task, dependability, and whether value improves at scale. That matters because a tool can look fast and still create hidden work if it needs retries, edits, or careful human cleanup before it’s usable. My simple test this week is to compare one real workflow against your normal process and count every retry and edit. If the cleanup is bigger than the time saved, the workflow is not ready to expand. Which would you measure first: retries or human edits? Drop one in the comments. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "narration": "media/2026-07-20/narration.mp3",
+    "narration_text": "Can one shared board run your task from note to follow-up? Notion 3.6 says users can assign external agents like Claude and Cursor from a shared board. It also says AI Meeting Notes now include speaker labels, and agents can read and write more file types and connect to more tools, including Outlook tasks when connected. The practical question is simple: can one workspace move a task from meeting note to follow-up without extra copying? That is the test for small teams that want less app-switching. If you use Notion, would you try that on a small project first, or keep agents limited to drafts? Leave your answer in the comments. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
     "tiktok": {
-      "story_index": 0,
-      "hook": "Is your AI saving time or creating cleanup?",
-      "payoff": "OpenAI says AI should be judged by useful work completed, cost per successful task, and dependability. If it takes three retries and a human rewrite, it’s not low-risk automation. Would you test one workflow or track retries first?",
-      "response_prompt": "Comment with your pick.",
-      "narration": "media/2026-07-19-risk/tiktok-narration.mp3",
-      "narration_text": "Is your AI saving time or creating cleanup? OpenAI says AI should be judged by useful work completed, cost per successful task, and dependability. If it takes three retries and a human rewrite, it’s not low-risk automation. Would you test one workflow or track retries first? Comment with your pick.",
+      "story_index": 1,
+      "hook": "Will your meetings start getting auto-notes by default?",
+      "payoff": "Google says admins can limit Meet AI note-taking to meetings with three or more people. That can change who gets the notes, and when action items get shared.",
+      "response_prompt": "Would you keep it on for larger meetings, or turn it off?",
+      "narration": "media/2026-07-20/tiktok-narration.mp3",
+      "narration_text": "Will your meetings start getting auto-notes by default? Google says admins can limit Meet AI note-taking to meetings with three or more people. That can change who gets the notes, and when action items get shared. Would you keep it on for larger meetings, or turn it off?",
       "target_duration_seconds": [
         12,
         18
       ],
       "format": "question_fact_consequence_response"
     },
-    "practical_takeaway": "Before expanding any AI workflow, define the finish line, the human review step, and the data you will not upload.",
-    "what_to_test_next": "Run one 30-minute test on a real workflow, but add a hard stop: compare the AI result against your normal process, note every human edit, and list any sensitive data you would not allow into the tool."
+    "practical_takeaway": "Pick one repetitive workflow this week — meeting notes, invoice capture or support triage — and test an AI feature only if you can name the human review step before output leaves the system.",
+    "what_to_test_next": "Run a 3-meeting pilot: enable AI notes only for meetings with three or more people, then compare the note quality and follow-up completion rate against one normal week."
   }
 }

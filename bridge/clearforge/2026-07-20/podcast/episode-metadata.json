@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "date": "2026-07-20",
+  "brand": "Clearforge",
+  "type": "clearforge_daily_biggest_story_podcast_script",
+  "human_review_required": true,
+  "narrator": "Irene",
+  "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+  "episode_title": "When AI meeting notes become policy, not just convenience",
+  "selected_story_index": 1,
+  "selected_story_title": "Meeting notes are becoming an admin policy decision, not just a feature",
+  "selection_reason": "This is the clearest example of the edition’s main theme: AI is moving from isolated demos into everyday work controls. It matters because the question is no longer whether the tool can summarize a meeting, but who can turn it on, for which meetings, and where human review still sits before the output is shared.",
+  "word_count": 1300,
+  "estimated_duration_minutes": 9,
+  "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+  "source_notes": "source-notes.md",
+  "first_spoken_line": "Today’s most important AI work story is not about a flashier model or a bigger benchmark. It is about something much more practical: who gets to decide when AI is allowed into a meeting, and what happens to the notes after that.",
+  "final_spoken_line": "The bigger lesson is simple. In work AI, the important question is increasingly not whether the tool can do the task. It is who gets to set the rule, what gets logged, and where the human still has the final look.",
+  "validation_warnings": [],
+  "non_spoken_instruction_candidates": []
+}

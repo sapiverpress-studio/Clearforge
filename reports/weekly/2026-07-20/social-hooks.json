@@ -1,0 +1,30 @@
+{
+  "Monday": {
+    "hook": "Can your AI workflow prove it saves time?",
+    "teaser": "Token price is not the same as task value. This week’s guide shows how to count retries, review and rework so you can compare tools by accepted outcomes—not impressive first drafts. What would you include in the real cost of an AI task?"
+  },
+  "Tuesday": {
+    "hook": "Can Canva really run your creative workflow?",
+    "teaser": "Canva AI 2.0 connects design, research, scheduling and brand rules in a research preview. The opportunity is large, but so is the permission surface. Which part of your creative workflow would you test first?"
+  },
+  "Wednesday": {
+    "hook": "Would you trust an open-weight model with your workflow?",
+    "teaser": "Inkling brings a very large multimodal model into the customisation conversation. Open weights can increase control, but they also move hosting, evaluation and safety responsibility toward the deployer. Is that extra control worth the operational work for your business?"
+  },
+  "Thursday": {
+    "hook": "Can AI spot a security problem before code is merged?",
+    "teaser": "GitHub’s preview places AI-labelled detections directly inside pull requests. Useful signal, yes—automatic proof of safety, no. Where would an AI warning be most useful in your own approval process?"
+  },
+  "Friday": {
+    "hook": "Can your research notebook check its own calculations?",
+    "teaser": "Gemini Notebook is gaining a secure cloud computer for code-backed analysis. That can turn sources into tables and charts, but running code does not guarantee the interpretation is right. What calculation would you use as your first controlled test? The weekly Clearforge digest follows the practical results."
+  },
+  "Saturday": {
+    "hook": "Could a webpage trick your connected AI?",
+    "teaser": "GPT-Red highlights why prompt injection matters when AI reads browsers, email and files. The practical response is simple: separate research from action and keep approval before anything sensitive. Which action would you never let an AI take without you?"
+  },
+  "Sunday": {
+    "hook": "Which AI task will you measure next week?",
+    "teaser": "The full Clearforge guide turns this week’s releases into one practical checklist. Read it on the Clearforge website, or listen to Clearforge AI Briefing on Spotify and your usual podcast app. Share your questions—or suggest the update you want Clearforge to investigate next."
+  }
+}

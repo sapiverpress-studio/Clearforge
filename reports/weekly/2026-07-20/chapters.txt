@@ -1,0 +1,12 @@
+00:00 — Clearforge introduction
+00:35 — The week’s central shift: AI as a workflow layer
+01:25 — Canva AI 2.0
+03:15 — Inkling and open weights
+04:45 — GitHub AI security review
+05:55 — Gemini Notebook code execution
+07:20 — Measuring cost per successful task
+08:45 — GPT-Red and prompt injection
+10:15 — Teen safeguards and age prediction
+11:05 — EU platform rules and infrastructure
+12:10 — This week’s practical experiment
+13:15 — What to watch next and closing

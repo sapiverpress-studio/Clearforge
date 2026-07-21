@@ -1,7 +1,7 @@
 {
   "version": 5,
   "brand": "Clearforge",
-  "date": "2026-07-20-systems",
+  "date": "2026-07-21",
   "type": "clearforge_daily_ai_brief",
   "approved": {
     "article": true,
@@ -10,9 +10,9 @@
     "youtube": true
   },
   "article": {
-    "headline": "AI is becoming workplace plumbing — and the settings matter more than the demo",
-    "dek": "The useful Monday story is not that AI can draft, note or answer. It is that those tasks are now being built into systems small teams already use — accounting, meetings, shared boards and support. The real business question is no longer whether AI works in principle, but where the handoff happens, who can change the defaults, and what still needs review before work leaves the system.",
-    "url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-20-systems.html",
+    "headline": "AI is becoming a personal organisation layer for learning, notes and everyday admin",
+    "dek": "This Tuesday edition focuses on life-admin: finding old work, turning study materials into structured lessons, and using AI inside the browser without changing how people already work.",
+    "url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-21.html",
     "markdown": "daily_brief.md"
   },
   "calls_to_action": {
@@ -28,42 +28,42 @@
   },
   "stories": [
     {
-      "title": "Bookkeeping AI is moving into the workflow, not the side window",
-      "summary": "Xero says JAX is adding document capture and workflow automation for small businesses, accountants and bookkeepers, and says the platform serves 5 million customers worldwide. The important part is not the label on the AI, but the step in the process where it sits: reading source documents, moving data and reducing manual entry.",
-      "why_it_matters": "Finance is a repeatable system. If AI can reliably shorten the path from document to draft, teams save time every week. If it cannot, the extra step just becomes another place to review.",
-      "practical_angle": "The best test is not full automation. It is whether AI can cleanly capture data and leave a human to approve the posting.",
-      "source_name": "Xero UK",
-      "source_url": "https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/"
+      "title": "ChatGPT is becoming easier to search and easier to reach",
+      "summary": "OpenAI says users can now search across chats, projects, images and documents in ChatGPT on web, iOS and Android, and it has also brought ChatGPT back to WhatsApp in the EEA with image uploads, voice notes and image generation. That combination matters because a lot of real-world AI use is not about starting from scratch; it is about finding the thing you already asked, edited or drafted and then continuing from there. For people who use AI to manage household plans, study notes or small-business drafts, the practical change is less novelty and more retrieval.",
+      "why_it_matters": "The value here is continuity. If AI is going to be useful in daily life, it has to remember where your work lives and meet you in the apps you already use.",
+      "practical_angle": "Use ChatGPT as a searchable working archive for plans, drafts and references, not only as a blank-page assistant.",
+      "source_name": "OpenAI Help Center",
+      "source_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
     },
     {
-      "title": "AI meeting notes are becoming an admin control",
-      "summary": "Google says admins can configure Meet AI note-taking so it only applies to meetings with three or more people, with plan-specific defaults and rollout details.",
-      "why_it_matters": "That makes AI in meetings a settings problem, not just a feature problem. Admins can define when notes appear and how broadly they are used across the company.",
-      "practical_angle": "Small teams should check the default before it becomes the workflow. If note-taking is on, decide where the review step lives and who owns action items.",
-      "source_name": "Google Workspace Updates",
-      "source_url": "https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html?m=1"
+      "title": "Google is turning research notes into a connected study workspace",
+      "summary": "Google says NotebookLM has become Gemini Notebook, with a secure cloud computer, native code execution and syncing across the Gemini app and Google Search. Google also says the product now serves more than 30 million people and over 600,000 organizations. For everyday users, the important part is not the rename; it is the way notes, search and analysis are being pushed closer together so people can move from reading to organising to checking answers in one place.",
+      "why_it_matters": "This is a practical step toward AI tools that help people understand material instead of just generating text about it.",
+      "practical_angle": "If you keep research notes, trip plans, schoolwork or household project docs in different places, a connected notebook tool can cut down on duplicate copying and lost context.",
+      "source_name": "Google Blog",
+      "source_url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/"
     },
     {
-      "title": "Notion is turning shared boards into a coordination layer",
-      "summary": "Notion 3.6 lets users assign external agents like Claude and Cursor from a shared board, adds speaker labels to AI Meeting Notes and expands file and tool connections.",
-      "why_it_matters": "This points to a workflow model where notes, tasks and files are handled in one place rather than scattered across apps.",
-      "practical_angle": "The useful question is whether one board can carry a task from meeting note to follow-up without duplicate copying or lost context.",
-      "source_name": "Notion",
-      "source_url": "https://www.notion.com/releases/2026-07-01"
+      "title": "Study notebooks are a clearer use case than generic chat for learners",
+      "summary": "Google says study notebooks in the Gemini app create diagnostic quizzes, bite-sized lessons, practice quizzes and a progress dashboard that tracks strengths, focus areas and what has not started yet. The feature is rolling out globally for personal accounts and will reach school-issued accounts in the coming weeks. That makes the product feel less like a general chatbot and more like a guided study system that shows people what to do next.",
+      "why_it_matters": "For students, parents and self-learners, the bottleneck is often not access to answers but knowing where to begin and what to revise next.",
+      "practical_angle": "Use AI to turn messy notes or a syllabus into a short study plan, then test whether the tool can point you to the next weakest topic.",
+      "source_name": "Google Blog",
+      "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/"
     }
   ],
   "facebook": {
-    "post": "Would you pay per resolved support case?\nSalesforce says Agentforce Help Agent and the Customer Service Portal will be generally available in July 2026, and pay-per-resolution pricing will be available then too. That matters because support AI stops being just a feature demo and becomes an operating cost decision. If a simple case is resolved cleanly, the model can work; if it only shifts work around, the queue still exists with a different bill attached. Would you test per-resolution pricing on simple cases, or keep support fully human? Share your choice in the comments.\n\n#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI"
+    "post": "Can you still find that note from last week? OpenAI says ChatGPT can now search across chats, projects, images and documents on web, iOS and Android, and it’s back on WhatsApp in the EEA with voice notes, image uploads and image generation. That makes it more like a searchable working archive than a blank-page tool. Would you use it more for old work or household planning? Comment with one, or share a workflow Clearforge should look into next.\n\n#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI"
   },
   "pinterest": {
-    "title": "How Do You Test AI in Bookkeeping Workflows?",
-    "description": "Use Xero's workflow approach to check whether AI can capture documents, draft data, and leave human approval in place. Start with one process and comment with the first step you'd automate: capture, draft, or review.",
-    "destination_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-20-systems.html"
+    "title": "How to Turn Messy Notes into a Clear Study Plan",
+    "description": "Use AI to turn scattered notes into quizzes, bite-sized lessons and a next-step checklist. Best for students, parents and self-learners who want less re-copying and clearer revision. Save this idea, then comment with the kind of notes you’d test first.",
+    "destination_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-21.html"
   },
   "youtube": {
-    "title": "Workplace AI is becoming a systems decision",
-    "script": "Can bookkeeping AI save time without losing review? Xero says its JAX platform is adding AI-powered document capture and workflow automation for small businesses, accountants and bookkeepers, and it says it serves 5 million customers worldwide. The useful question is not whether AI can do bookkeeping in theory. It's whether it can read a source document, draft the data, and leave a human to approve the posting. That is where time gets saved, and where errors can spread if the handoff is unclear. If you're testing AI this week, would you start with document capture or draft review? Put your pick in the comments. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
-    "description": "Choose one workflow this week — bookkeeping intake, meeting notes or support triage — and map the exact handoff point where AI stops and human review begins before you switch anything on."
+    "title": "AI is becoming a personal organisation layer for notes, study and browser admin",
+    "script": "Can your browser do the admin before you switch apps? Google says Gemini in Chrome is rolling out to desktop users in the UK, with iOS next month. It can summarise pages, compare tabs, draft Gmail messages, schedule Calendar events, check Maps details and answer questions about YouTube videos. That matters because the browser is where a lot of planning already happens. If AI can handle the summary and the first draft, the next step gets easier. Would you try it for email drafts or for comparing sources? Leave your answer in the comments, or tell Clearforge what workflow to test next. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "description": "Pick one recurring life-admin task this week and test whether an AI tool can organise the material and show the next step, not just draft text."
   },
   "podcast": {
     "generated": true,
@@ -74,22 +74,22 @@
     "source_notes": "podcast/source-notes.md",
     "episode": {
       "version": 1,
-      "date": "2026-07-20-systems",
+      "date": "2026-07-21",
       "brand": "Clearforge",
       "type": "clearforge_daily_biggest_story_podcast_script",
       "human_review_required": true,
       "narrator": "Irene",
       "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
-      "episode_title": "AI is becoming workplace plumbing — and the settings matter more than the demo",
-      "selected_story_index": 0,
-      "selected_story_title": "Bookkeeping AI is moving into the workflow, not the side window",
-      "selection_reason": "This is the clearest example of the edition’s main pattern: AI is no longer just a chat tool on the side, but something being built into an everyday business system. Bookkeeping is especially useful here because the handoff point is easy to understand, the review step matters, and the practical gain or cost can be measured quickly.",
-      "word_count": 1287,
-      "estimated_duration_minutes": 8.9,
+      "episode_title": "AI is moving into the browser, where everyday admin already happens",
+      "selected_story_index": 3,
+      "selected_story_title": "Chrome is becoming a practical admin assistant in the browser",
+      "selection_reason": "This is the clearest life-admin story in the edition: it brings AI into the place where many people already research, compare, draft, and schedule. The practical change is not a flashy new model, but a workflow shift that could save time on ordinary tasks if it proves reliable in real use.",
+      "word_count": 1359,
+      "estimated_duration_minutes": 9.4,
       "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
       "source_notes": "source-notes.md",
-      "first_spoken_line": "The big story today is not that AI can draft text or answer questions. We already know it can do those things. The more important shift is where AI is being placed inside work that small businesses already do every day.",
-      "final_spoken_line": "If you remember one thing, remember this: before you switch on the automation, define where AI stops and where human review begins. That one decision will matter more than the demo.",
+      "first_spoken_line": "A lot of AI stories talk about bigger models or smarter chatbots. This one is more ordinary, and that is exactly why it matters.",
+      "final_spoken_line": "If you have access, this is worth trying on low-risk admin work right away. If you do not have access yet, keep an eye on it. The important change here is not that AI can chat in a browser. It is that it is being pushed closer to the place where people already read, compare, decide, and act. That is a more practical direction for AI than novelty alone, and for everyday users, that is the part worth paying attention to.",
       "validation_warnings": [],
       "non_spoken_instruction_candidates": []
     }
@@ -104,12 +104,12 @@
     ],
     "tiktok_narration": "media/tiktok-narration.mp3",
     "tiktok": {
-      "story_index": 1,
-      "hook": "Can your team control AI notes before they spread?",
-      "payoff": "Google says Meet admins can set AI note-taking so it only applies to meetings with three or more people. That turns notes into a policy choice.",
-      "response_prompt": "Would you keep it on everywhere, or limit it to bigger meetings?",
-      "narration": "media/2026-07-20-systems/tiktok-narration.mp3",
-      "narration_text": "Can your team control AI notes before they spread? Google says Meet admins can set AI note-taking so it only applies to meetings with three or more people. That turns notes into a policy choice. Would you keep it on everywhere, or limit it to bigger meetings?",
+      "story_index": 0,
+      "hook": "Can ChatGPT find your old drafts?",
+      "payoff": "OpenAI says it can now search chats, projects, images and documents, and it’s back on WhatsApp in the EEA. That means less restarting and more finishing.",
+      "response_prompt": "Would you use it for old notes or new planning?",
+      "narration": "media/2026-07-21/tiktok-narration.mp3",
+      "narration_text": "Can ChatGPT find your old drafts? OpenAI says it can now search chats, projects, images and documents, and it’s back on WhatsApp in the EEA. That means less restarting and more finishing. Would you use it for old notes or new planning?",
       "target_duration_seconds": [
         12,
         18
@@ -119,58 +119,58 @@
     "generated": true
   },
   "quote_card_lines": [
-    "Where does the handoff happen, and who reviews it?",
-    "Who owns the default when AI becomes part of the workflow?",
-    "AI is more useful when it shortens a process, not when it adds another step.",
-    "If there is no review point, there is no control point.",
-    "Which workflow would you test first: notes, bookkeeping, or support?"
+    "Can your AI find the thing you already worked on?",
+    "Would your browser save time if it handled the first draft?",
+    "The best AI tools reduce switching before they increase output.",
+    "Study tools work best when they show the next step.",
+    "A good working archive is more useful than a blank page."
   ],
   "headline_options": [
-    "Workplace AI is becoming a systems decision",
-    "AI is moving into the workflows that actually run the day",
-    "The new AI question: who controls the workflow?",
-    "Small teams are starting to manage AI like infrastructure",
-    "AI at work now comes down to handoffs, defaults and cost"
+    "AI is becoming a personal organisation layer for notes, study and browser admin",
+    "The useful AI shift this week: better search, better study tools, less tab-hopping",
+    "AI is finally helping with life-admin, not just drafting text",
+    "What matters now: AI that organises notes, study and everyday tasks",
+    "Browser-first AI is making everyday admin a little less messy"
   ],
   "sources": [
     {
-      "source_name": "Xero UK",
-      "title": "Xero Announces New AI Innovations at Xerocon London as it Powers 5 Million Customers Globally",
-      "url": "https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/",
-      "published_date": "2026-07-08",
-      "confirmed_fact": "Xero said its JAX agentic platform is adding AI-powered features for small businesses, accountants and bookkeepers, including document capture and workflow automation, and said it serves 5 million customers worldwide.",
-      "interpretation": "This is less about a smarter chatbot and more about finance workflow design: AI is being inserted where documents are captured, checked and moved into accounting processes."
+      "source_name": "OpenAI Help Center",
+      "title": "ChatGPT release notes — July 14, 2026: search across chats, projects, and files; July 13, 2026: ChatGPT returns to WhatsApp in the EEA",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "published_date": "2026-07-14",
+      "confirmed_fact": "OpenAI says ChatGPT can now search across chats, projects, images and documents on web, iOS and Android, and that ChatGPT is available again on WhatsApp in the EEA with voice notes, image uploads and image generation.",
+      "interpretation": "OpenAI is reducing the friction of retrieving past work and meeting people where they already communicate, which makes ChatGPT feel more like an everyday memory and action layer than a separate destination."
     },
     {
-      "source_name": "Google Workspace Updates",
-      "title": "New Google Meet 'Take notes for me' settings for admins and end users",
-      "url": "https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html?m=1",
+      "source_name": "Google Blog",
+      "title": "NotebookLM is now Gemini Notebook",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
       "published_date": "2026-07-16",
-      "confirmed_fact": "Google said admins can now configure AI note-taking in Meet so it can be enabled only for meetings with three or more people, with rollout and default-setting details by plan.",
-      "interpretation": "This turns AI notes into a systems choice: teams can define when automation starts, rather than leaving it to individual habits or hidden defaults."
+      "confirmed_fact": "Google says NotebookLM has been renamed Gemini Notebook, now has a secure cloud computer, can run code natively, and is syncing notebooks across the Gemini app and Google Search. Google also says more than 30 million people and over 600,000 organizations use the product.",
+      "interpretation": "Google is turning a research tool into a more connected study and analysis workspace, with stronger links between notes, search and the rest of the Google ecosystem."
     },
     {
-      "source_name": "Notion",
-      "title": "July 1, 2026 – Notion 3.6: External Agents, HTML blocks, and more",
-      "url": "https://www.notion.com/releases/2026-07-01",
-      "published_date": "2026-07-01",
-      "confirmed_fact": "Notion said users can assign external agents such as Claude and Cursor from a shared board, AI Meeting Notes now include speaker labels, and agents can read and write more file types and connect to more tools.",
-      "interpretation": "Notion is being positioned as an operations layer: one place to coordinate tasks, files and agent actions across tools."
-    },
-    {
-      "source_name": "Salesforce",
-      "title": "Salesforce Announces Prepackaged Agentforce Help Agent",
-      "url": "https://www.salesforce.com/uk/news/stories/agentforce-help-agent-announcement/?bc=OTH",
+      "source_name": "Google Blog",
+      "title": "5 ways to learn with study notebooks in the Gemini app",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/",
       "published_date": "2026-06-25",
-      "confirmed_fact": "Salesforce said Agentforce Help Agent and Agentforce Customer Service Portal are generally available in July 2026 and that pay-per-resolution pricing will be available then too; it also said it has signed an agreement to acquire Fin, a customer-agent platform for SMBs.",
-      "interpretation": "This is a packaging and pricing story as much as a product story: support automation is being sold like an operational service with clearer deployment and cost structures."
+      "confirmed_fact": "Google says study notebooks generate diagnostic quizzes, personalised bite-sized lessons, practice quizzes and a progress dashboard, and that they are rolling out globally for personal accounts and, in coming weeks, for school-issued accounts.",
+      "interpretation": "This is a direct attempt to make AI useful for studying, revision and self-teaching by structuring the next step instead of just answering one-off questions."
+    },
+    {
+      "source_name": "Google Blog",
+      "title": "We’re expanding Gemini in Chrome to users in the U.K.",
+      "url": "https://blog.google/products-and-platforms/products/chrome/were-expanding-gemini-in-chrome-to-users-in-the-uk/",
+      "published_date": "2026-07-14",
+      "confirmed_fact": "Google says many Gemini in Chrome features started rolling out to desktop users in the U.K. on July 14, 2026, with iOS next month, and that the assistant can summarize pages, compare tabs, draft emails in Gmail, schedule meetings in Calendar and ask questions about YouTube videos.",
+      "interpretation": "Google is embedding AI into the browser so users can handle planning and information gathering without moving between apps, which is likely where ordinary life-admin gains show up first."
     }
   ],
   "media_metadata": {
     "version": 5,
-    "date": "2026-07-20-systems",
-    "headline": "AI is becoming workplace plumbing — and the settings matter more than the demo",
-    "dek": "The useful Monday story is not that AI can draft, note or answer. It is that those tasks are now being built into systems small teams already use — accounting, meetings, shared boards and support. The real business question is no longer whether AI works in principle, but where the handoff happens, who can change the defaults, and what still needs review before work leaves the system.",
+    "date": "2026-07-21",
+    "headline": "AI is becoming a personal organisation layer for learning, notes and everyday admin",
+    "dek": "This Tuesday edition focuses on life-admin: finding old work, turning study materials into structured lessons, and using AI inside the browser without changing how people already work.",
     "hook": "Three AI updates that actually matter today",
     "spoken_cta": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
     "visual_system": "Clearforge AI briefing podcast studio system",
@@ -195,52 +195,52 @@
     },
     "stories": [
       {
-        "file": "media/2026-07-20-systems/story-1.png",
-        "title": "Bookkeeping AI is moving into the workflow, not the side window",
-        "source_name": "Xero UK",
-        "source_url": "https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/",
-        "summary": "Xero says JAX is adding document capture and workflow automation for small businesses, accountants and bookkeepers, and says the platform serves 5 million customers worldwide. The important part is not the label on the AI, but the step in the process where it sits: reading source documents, moving data and reducing manual entry.",
-        "why_it_matters": "Finance is a repeatable system. If AI can reliably shorten the path from document to draft, teams save time every week. If it cannot, the extra step just becomes another place to review.",
-        "practical_angle": "The best test is not full automation. It is whether AI can cleanly capture data and leave a human to approve the posting.",
-        "visual_prompt": "a practical creator workflow table showing verified source notes, timeline cards, a muted blue AI signal pattern, a microphone, headphones and a structured review checklist. wide briefing-room still life cropped for vertical short-form video. make the AI element clear through subtle circuit traces, waveform graphics, model cards and data-routing lines, not robots. change the hero object placement so this frame does not resemble the previous edition. Story context: Bookkeeping AI is moving into the workflow, not the side window. Practical angle: The best test is not full automation. It is whether AI can cleanly capture data and leave a human to approve the posting.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+        "file": "media/2026-07-21/story-1.png",
+        "title": "ChatGPT is becoming easier to search and easier to reach",
+        "source_name": "OpenAI Help Center",
+        "source_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+        "summary": "OpenAI says users can now search across chats, projects, images and documents in ChatGPT on web, iOS and Android, and it has also brought ChatGPT back to WhatsApp in the EEA with image uploads, voice notes and image generation. That combination matters because a lot of real-world AI use is not about starting from scratch; it is about finding the thing you already asked, edited or drafted and then continuing from there. For people who use AI to manage household plans, study notes or small-business drafts, the practical change is less novelty and more retrieval.",
+        "why_it_matters": "The value here is continuity. If AI is going to be useful in daily life, it has to remember where your work lives and meet you in the apps you already use.",
+        "practical_angle": "Use ChatGPT as a searchable working archive for plans, drafts and references, not only as a blank-page assistant.",
+        "visual_prompt": "a practical AI systems review scene with a microphone, pinned evidence cards, process arrows, muted blue signal lines and a clear before-to-after analysis structure. vertical social-video still with a strong microphone foreground and clear desk detail. make it instantly understandable as an AI briefing or AI podcast image, but grounded in real studio objects. make the story context visible through objects and composition rather than readable text. Story context: ChatGPT is becoming easier to search and easier to reach. Practical angle: Use ChatGPT as a searchable working archive for plans, drafts and references, not only as a blank-page assistant.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
       },
       {
-        "file": "media/2026-07-20-systems/story-2.png",
-        "title": "AI meeting notes are becoming an admin control",
-        "source_name": "Google Workspace Updates",
-        "source_url": "https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html?m=1",
-        "summary": "Google says admins can configure Meet AI note-taking so it only applies to meetings with three or more people, with plan-specific defaults and rollout details.",
-        "why_it_matters": "That makes AI in meetings a settings problem, not just a feature problem. Admins can define when notes appear and how broadly they are used across the company.",
-        "practical_angle": "Small teams should check the default before it becomes the workflow. If note-taking is on, decide where the review step lives and who owns action items.",
-        "visual_prompt": "a podcast-ready AI learning desk with a microphone in the foreground, tidy source folders, simple model cards, a soft waveform motif and a dark professional newsroom mood. clean editorial technology-magazine composition, practical rather than sci-fi. use restrained blue technology accents to signal AI without making the image look like generic AI stock art. include a different arrangement of source cards, notebook, microphone angle and background signal pattern. Story context: AI meeting notes are becoming an admin control. Practical angle: Small teams should check the default before it becomes the workflow. If note-taking is on, decide where the review step lives and who owns action items.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+        "file": "media/2026-07-21/story-2.png",
+        "title": "Google is turning research notes into a connected study workspace",
+        "source_name": "Google Blog",
+        "source_url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
+        "summary": "Google says NotebookLM has become Gemini Notebook, with a secure cloud computer, native code execution and syncing across the Gemini app and Google Search. Google also says the product now serves more than 30 million people and over 600,000 organizations. For everyday users, the important part is not the rename; it is the way notes, search and analysis are being pushed closer together so people can move from reading to organising to checking answers in one place.",
+        "why_it_matters": "This is a practical step toward AI tools that help people understand material instead of just generating text about it.",
+        "practical_angle": "If you keep research notes, trip plans, schoolwork or household project docs in different places, a connected notebook tool can cut down on duplicate copying and lost context.",
+        "visual_prompt": "an editorial AI news analysis desk with printed source cards, model comparison sheets, a compact microphone arm, blue data-light accents and a calm control-room atmosphere. cinematic three-quarter studio photograph with shallow depth of field. show AI as a system being reviewed by a person through notes, checks, source cards and controlled audio tools. change the hero object placement so this frame does not resemble the previous edition. Story context: Google is turning research notes into a connected study workspace. Practical angle: If you keep research notes, trip plans, schoolwork or household project docs in different places, a connected notebook tool can cut down on duplicate copying and lost context.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
       },
       {
-        "file": "media/2026-07-20-systems/story-3.png",
-        "title": "Notion is turning shared boards into a coordination layer",
-        "source_name": "Notion",
-        "source_url": "https://www.notion.com/releases/2026-07-01",
-        "summary": "Notion 3.6 lets users assign external agents like Claude and Cursor from a shared board, adds speaker labels to AI Meeting Notes and expands file and tool connections.",
-        "why_it_matters": "This points to a workflow model where notes, tasks and files are handled in one place rather than scattered across apps.",
-        "practical_angle": "The useful question is whether one board can carry a task from meeting note to follow-up without duplicate copying or lost context.",
-        "visual_prompt": "a dark navy AI briefing studio desk with a professional podcast microphone, source notes, a small audio waveform display, subtle circuit-board lines in the background and one practical notebook open on the desk. vertical social-video still with a strong microphone foreground and clear desk detail. make it instantly understandable as an AI briefing or AI podcast image, but grounded in real studio objects. vary camera distance, desk depth and object hierarchy while keeping the same Clearforge identity. Story context: Notion is turning shared boards into a coordination layer. Practical angle: The useful question is whether one board can carry a task from meeting note to follow-up without duplicate copying or lost context.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+        "file": "media/2026-07-21/story-3.png",
+        "title": "Study notebooks are a clearer use case than generic chat for learners",
+        "source_name": "Google Blog",
+        "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/",
+        "summary": "Google says study notebooks in the Gemini app create diagnostic quizzes, bite-sized lessons, practice quizzes and a progress dashboard that tracks strengths, focus areas and what has not started yet. The feature is rolling out globally for personal accounts and will reach school-issued accounts in the coming weeks. That makes the product feel less like a general chatbot and more like a guided study system that shows people what to do next.",
+        "why_it_matters": "For students, parents and self-learners, the bottleneck is often not access to answers but knowing where to begin and what to revise next.",
+        "practical_angle": "Use AI to turn messy notes or a syllabus into a short study plan, then test whether the tool can point you to the next weakest topic.",
+        "visual_prompt": "a weekly AI briefing workspace with layered research cards, calendar markers, a studio microphone, restrained blue interface glow and visible human review materials. premium podcast-cover composition with strong negative space for later text overlay. combine physical human-review materials with light digital signal motifs so it feels human-led and AI-empowered. include a different arrangement of source cards, notebook, microphone angle and background signal pattern. Story context: Study notebooks are a clearer use case than generic chat for learners. Practical angle: Use AI to turn messy notes or a syllabus into a short study plan, then test whether the tool can point you to the next weakest topic.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
       }
     ],
-    "narration": "media/2026-07-20-systems/narration.mp3",
-    "narration_text": "Can bookkeeping AI save time without losing review? Xero says its JAX platform is adding AI-powered document capture and workflow automation for small businesses, accountants and bookkeepers, and it says it serves 5 million customers worldwide. The useful question is not whether AI can do bookkeeping in theory. It's whether it can read a source document, draft the data, and leave a human to approve the posting. That is where time gets saved, and where errors can spread if the handoff is unclear. If you're testing AI this week, would you start with document capture or draft review? Put your pick in the comments. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "narration": "media/2026-07-21/narration.mp3",
+    "narration_text": "Can your browser do the admin before you switch apps? Google says Gemini in Chrome is rolling out to desktop users in the UK, with iOS next month. It can summarise pages, compare tabs, draft Gmail messages, schedule Calendar events, check Maps details and answer questions about YouTube videos. That matters because the browser is where a lot of planning already happens. If AI can handle the summary and the first draft, the next step gets easier. Would you try it for email drafts or for comparing sources? Leave your answer in the comments, or tell Clearforge what workflow to test next. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
     "tiktok": {
-      "story_index": 1,
-      "hook": "Can your team control AI notes before they spread?",
-      "payoff": "Google says Meet admins can set AI note-taking so it only applies to meetings with three or more people. That turns notes into a policy choice.",
-      "response_prompt": "Would you keep it on everywhere, or limit it to bigger meetings?",
-      "narration": "media/2026-07-20-systems/tiktok-narration.mp3",
-      "narration_text": "Can your team control AI notes before they spread? Google says Meet admins can set AI note-taking so it only applies to meetings with three or more people. That turns notes into a policy choice. Would you keep it on everywhere, or limit it to bigger meetings?",
+      "story_index": 0,
+      "hook": "Can ChatGPT find your old drafts?",
+      "payoff": "OpenAI says it can now search chats, projects, images and documents, and it’s back on WhatsApp in the EEA. That means less restarting and more finishing.",
+      "response_prompt": "Would you use it for old notes or new planning?",
+      "narration": "media/2026-07-21/tiktok-narration.mp3",
+      "narration_text": "Can ChatGPT find your old drafts? OpenAI says it can now search chats, projects, images and documents, and it’s back on WhatsApp in the EEA. That means less restarting and more finishing. Would you use it for old notes or new planning?",
       "target_duration_seconds": [
         12,
         18
       ],
       "format": "question_fact_consequence_response"
     },
-    "practical_takeaway": "Choose one workflow this week — bookkeeping intake, meeting notes or support triage — and map the exact handoff point where AI stops and human review begins before you switch anything on.",
-    "what_to_test_next": "Run a one-week pilot on a single workflow and measure three things: time saved, number of human corrections, and whether the output can be traced back to the original input without extra copying."
+    "practical_takeaway": "Pick one recurring life-admin task this week and test whether an AI tool can organise the material and show the next step, not just draft text.",
+    "what_to_test_next": "Take a messy folder of notes, screenshots or links and ask one AI tool to turn it into a three-step plan with a checklist, then compare the result to your own manual outline."
   }
 }

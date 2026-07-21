@@ -1,0 +1,166 @@
+{
+  "generated_at": "2026-07-21T06:09:07.032Z",
+  "story_assessments": [
+    {
+      "story_index": 0,
+      "story_title": "ChatGPT is becoming easier to search and easier to reach",
+      "target_audience": "People who use ChatGPT for drafts, notes, plans, small-business work, or study materials and want to find past work faster",
+      "audience_problem_or_desire": "They want less time restarting tasks and more time continuing from the right draft, note, or reference",
+      "interest_signal": "OpenAI says ChatGPT can search across chats, projects, images and documents, and it is back on WhatsApp in the EEA",
+      "stop_reason": "This fixes a familiar pain point: finding old work without hunting through separate places",
+      "promised_payoff": "A searchable working archive that makes it easier to pick up where you left off",
+      "proof_point": "OpenAI says ChatGPT can now search across chats, projects, images and documents on web, iOS and Android, and is available again on WhatsApp in the EEA with voice notes, image uploads and image generation",
+      "search_phrases": [
+        "ChatGPT search across chats and files",
+        "ChatGPT WhatsApp EEA voice notes image upload",
+        "find old ChatGPT chats and drafts"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 8,
+        "searchability": 9,
+        "stranger_usefulness": 8,
+        "novelty": 7,
+        "visual_potential": 6,
+        "discussion_potential": 7,
+        "short_form_clarity": 9
+      },
+      "overall_score": 8,
+      "score_reason": "Very clear everyday use case with strong search interest and immediate practical value; slightly less visually dramatic than browser automation."
+    },
+    {
+      "story_index": 1,
+      "story_title": "Google is turning research notes into a connected study workspace",
+      "target_audience": "Students, self-learners, researchers, and people who keep notes, trip plans, or project docs in multiple places",
+      "audience_problem_or_desire": "They want one place where notes, search, and analysis stay connected instead of copying information around",
+      "interest_signal": "NotebookLM is now Gemini Notebook with a secure cloud computer, native code execution, and syncing across Gemini app and Google Search",
+      "stop_reason": "It turns a research tool into a broader workspace, which is useful but slightly less instantly relatable than study or browser workflows",
+      "promised_payoff": "Less duplicate copying and less lost context when organising information",
+      "proof_point": "Google says NotebookLM has been renamed Gemini Notebook, now has a secure cloud computer, can run code natively, and is syncing notebooks across the Gemini app and Google Search",
+      "search_phrases": [
+        "Gemini Notebook rename NotebookLM",
+        "NotebookLM syncs with Google Search",
+        "connected research notebook AI"
+      ],
+      "scores": {
+        "audience_fit": 7,
+        "practical_consequence": 8,
+        "searchability": 7,
+        "stranger_usefulness": 8,
+        "novelty": 7,
+        "visual_potential": 5,
+        "discussion_potential": 6,
+        "short_form_clarity": 8
+      },
+      "overall_score": 7,
+      "score_reason": "Strong for organisation-minded users and clear within Google's ecosystem, but the value is more workflow-specific than broad."
+    },
+    {
+      "story_index": 2,
+      "story_title": "Study notebooks are a clearer use case than generic chat for learners",
+      "target_audience": "Students, parents, and self-learners who need structure for revision and practice",
+      "audience_problem_or_desire": "They need help knowing where to start, what to revise next, and how to turn messy material into a study plan",
+      "interest_signal": "Google says study notebooks create diagnostic quizzes, bite-sized lessons, practice quizzes, and a progress dashboard",
+      "stop_reason": "The learner payoff is immediately understandable: structure, practice, and progress tracking",
+      "promised_payoff": "A guided study system that shows what to do next instead of only answering questions",
+      "proof_point": "Google says study notebooks generate diagnostic quizzes, personalised bite-sized lessons, practice quizzes and a progress dashboard, and they are rolling out globally for personal accounts and soon for school-issued accounts",
+      "search_phrases": [
+        "Gemini study notebooks quizzes progress dashboard",
+        "AI study plan from notes",
+        "study notebook diagnostic quiz"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 8,
+        "searchability": 7,
+        "stranger_usefulness": 9,
+        "novelty": 6,
+        "visual_potential": 6,
+        "discussion_potential": 6,
+        "short_form_clarity": 9
+      },
+      "overall_score": 8,
+      "score_reason": "Very easy to explain and highly useful for learners, with a concrete structure that translates well into advice content."
+    },
+    {
+      "story_index": 3,
+      "story_title": "Chrome is becoming a practical admin assistant in the browser",
+      "target_audience": "People who do a lot of web research, email coordination, scheduling, or tab-heavy planning at work",
+      "audience_problem_or_desire": "They want fewer tab switches and less manual admin while comparing information and drafting routine work",
+      "interest_signal": "Gemini in Chrome can summarise pages, compare tabs, draft Gmail messages, schedule Calendar events, check Maps details, and answer questions about YouTube videos",
+      "stop_reason": "It speaks to a common work frustration and shows up in a place people already use all day",
+      "promised_payoff": "More admin handled inside the browser, with less switching and less rework",
+      "proof_point": "Google says Gemini in Chrome started rolling out to desktop users in the U.K. on July 14, 2026, with iOS next month, and can summarise pages, compare tabs, draft emails, schedule meetings, and ask questions about YouTube videos",
+      "search_phrases": [
+        "Gemini in Chrome UK rollout",
+        "Chrome AI summarise tabs draft email",
+        "browser assistant for tab switching"
+      ],
+      "scores": {
+        "audience_fit": 9,
+        "practical_consequence": 9,
+        "searchability": 8,
+        "stranger_usefulness": 9,
+        "novelty": 7,
+        "visual_potential": 8,
+        "discussion_potential": 7,
+        "short_form_clarity": 8
+      },
+      "overall_score": 9,
+      "score_reason": "Best mix of everyday utility, workplace relevance, and easy demonstration; strong fit for action-oriented audiences."
+    }
+  ],
+  "platform_selections": {
+    "tiktok": {
+      "story_index": 0,
+      "story_title": "ChatGPT is becoming easier to search and easier to reach",
+      "target_audience": "People who use ChatGPT for drafts, notes, plans, small-business work, or study materials",
+      "format": "short-form spoken takeaway",
+      "opening": "Can ChatGPT find your old drafts?",
+      "payoff": "OpenAI says it can now search chats, projects, images and documents, and it’s back on WhatsApp in the EEA. That means less restarting and more finishing.",
+      "selection_reason": "The retrieval angle is instantly understandable, visually easy to explain, and strong for a quick practical hook.",
+      "platform_fit_score": 9
+    },
+    "youtube": {
+      "story_index": 3,
+      "story_title": "Chrome is becoming a practical admin assistant in the browser",
+      "target_audience": "People who do a lot of web research, email coordination, scheduling, or tab-heavy planning at work",
+      "format": "short-form explainer",
+      "opening": "Can your browser do the admin before you switch apps?",
+      "payoff": "Google says Gemini in Chrome is rolling out to desktop users in the UK, with iOS next month, and it can summarise pages, compare tabs, draft Gmail messages, schedule Calendar events, check Maps details and answer questions about YouTube videos. That matters because the browser is where a lot of planning already happens. If AI can handle the summary and the first draft, the next step gets easier.",
+      "selection_reason": "This has the clearest everyday workflow story for Shorts: a familiar problem, a broad set of verified actions, and an easy before-and-after explanation.",
+      "platform_fit_score": 9
+    },
+    "facebook": {
+      "story_index": 0,
+      "story_title": "ChatGPT is becoming easier to search and easier to reach",
+      "target_audience": "Broad everyday users who keep drafts, notes, links, or messages in different places",
+      "format": "practical discussion post",
+      "opening": "Can you still find that note from last week?",
+      "payoff": "OpenAI says ChatGPT can now search across chats, projects, images and documents on web, iOS and Android, and it’s back on WhatsApp in the EEA. That makes it more like a searchable working archive than a blank-page tool.",
+      "selection_reason": "Facebook rewards recognisable life-admin problems and simple discussion prompts, and this story is broad enough to invite comments from many kinds of users.",
+      "platform_fit_score": 8
+    },
+    "pinterest": {
+      "story_index": 2,
+      "story_title": "Study notebooks are a clearer use case than generic chat for learners",
+      "target_audience": "Students, parents, and self-learners who need structure for revision and practice",
+      "format": "searchable guide",
+      "opening": "How do you turn messy notes into a study plan?",
+      "payoff": "Google says study notebooks can generate diagnostic quizzes, bite-sized lessons, practice quizzes and a progress dashboard, which makes revision feel more organised and less random.",
+      "selection_reason": "Pinterest works well with searchable how-to framing, and this story lends itself to a saved guide about study structure and note organisation.",
+      "platform_fit_score": 8
+    },
+    "linkedin": {
+      "story_index": 3,
+      "story_title": "Chrome is becoming a practical admin assistant in the browser",
+      "target_audience": "Professionals, team leads, and operations-minded users who manage research and coordination in the browser",
+      "format": "workplace insight post",
+      "opening": "Can your browser cut down on handoffs?",
+      "payoff": "Google says Gemini in Chrome can summarise pages, compare tabs, draft Gmail messages and schedule Calendar events. For teams, that matters because less tab-switching and fewer first-draft tasks can reduce rework and free up attention for judgement.",
+      "selection_reason": "LinkedIn benefits from a clear operational lesson, and this story connects browser automation to real workplace friction without overstating the result.",
+      "platform_fit_score": 9
+    }
+  },
+  "overall_reasoning": "The strongest theme across the verified pack is not model hype but practical organisation: retrieval, study structure, and browser-based admin. Story 0 is the most universal quick hit, story 3 is the best workplace utility story, and story 2 is the clearest learning-focused use case. Story 1 is solid for connected research and note workflows, but slightly less immediate than the others. The platform picks separate the most natural fit for each feed rather than forcing one story everywhere."
+}

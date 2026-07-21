@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>
     <copyright>Clearforge</copyright>
     <generator>Clearforge hosted podcast feed</generator>
-    <lastBuildDate>Mon, 20 Jul 2026 15:21:39 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 06:18:28 GMT</lastBuildDate>
     <atom:link href="https://clearforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Clearforge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://clearforge-daily-brief.netlify.app/podcast/cover.png"/>
+    <item>
+      <title>AI is moving into the browser, where everyday admin already happens</title>
+      <description>This is the clearest life-admin story in the edition: it brings AI into the place where many people already research, compare, draft, and schedule. The practical change is not a flashy new model, but a workflow shift that could save time on ordinary tasks if it proves reliable in real use.</description>
+      <content:encoded><![CDATA[<p>This is the clearest life-admin story in the edition: it brings AI into the place where many people already research, compare, draft, and schedule. The practical change is not a flashy new model, but a workflow shift that could save time on ordinary tasks if it proves reliable in real use.</p><p><strong>Read alongside this episode:</strong> <a href="https://clearforge-daily-brief.netlify.app/posts/2026-07-21.html">daily briefing</a> · <a href="https://clearforge-daily-brief.netlify.app/features/2026-07-21.html">feature analysis</a></p><p><a href="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-21.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-21.html</link>
+      <guid isPermaLink="false">clearforge:2026-07-21</guid>
+      <pubDate>Tue, 21 Jul 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-21.mp3" length="8346688" type="audio/mpeg"/>
+      <itunes:author>Clearforge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:09:24</itunes:duration>
+      <podcast:transcript url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-21.txt" type="text/plain"/>
+    </item>
     <item>
       <title>AI is becoming workplace plumbing — and the settings matter more than the demo</title>
       <description>This is the clearest example of the edition’s main pattern: AI is no longer just a chat tool on the side, but something being built into an everyday business system. Bookkeeping is especially useful here because the handoff point is easy to understand, the review step matters, and the practical gain or cost can be measured quickly.</description>

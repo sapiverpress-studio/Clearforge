@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-21",
+    "kind": "daily",
+    "title": "AI is moving into the browser, where everyday admin already happens",
+    "description": "This is the clearest life-admin story in the edition: it brings AI into the place where many people already research, compare, draft, and schedule. The practical change is not a flashy new model, but a workflow shift that could save time on ordinary tasks if it proves reliable in real use.",
+    "published": "2026-07-21T07:00:00+01:00",
+    "duration": "00:09:24",
+    "size": 8346688,
+    "video_size": 26952055,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-21.mp3",
+    "video_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-21.mp4",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-21.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-21.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-21.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-21.html",
+    "source_dir": "drafts/2026-07-21/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-20-systems",
     "kind": "daily",
     "title": "AI is becoming workplace plumbing — and the settings matter more than the demo",

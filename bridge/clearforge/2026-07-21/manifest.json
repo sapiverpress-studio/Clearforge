@@ -1,0 +1,246 @@
+{
+  "version": 5,
+  "brand": "Clearforge",
+  "date": "2026-07-21",
+  "type": "clearforge_daily_ai_brief",
+  "approved": {
+    "article": true,
+    "facebook": true,
+    "pinterest": true,
+    "youtube": true
+  },
+  "article": {
+    "headline": "AI is becoming a personal organisation layer for learning, notes and everyday admin",
+    "dek": "This Tuesday edition focuses on life-admin: finding old work, turning study materials into structured lessons, and using AI inside the browser without changing how people already work.",
+    "url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-21.html",
+    "markdown": "daily_brief.md"
+  },
+  "calls_to_action": {
+    "spoken": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "screen_lines": [
+      "READ THE FULL BREAKDOWN",
+      "Link in bio",
+      "LISTEN ON THE GO",
+      "Search: Clearforge AI Briefing"
+    ],
+    "caption": "Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+    "direct_links_allowed_in_social_copy": false
+  },
+  "stories": [
+    {
+      "title": "ChatGPT is becoming easier to search and easier to reach",
+      "summary": "OpenAI says users can now search across chats, projects, images and documents in ChatGPT on web, iOS and Android, and it has also brought ChatGPT back to WhatsApp in the EEA with image uploads, voice notes and image generation. That combination matters because a lot of real-world AI use is not about starting from scratch; it is about finding the thing you already asked, edited or drafted and then continuing from there. For people who use AI to manage household plans, study notes or small-business drafts, the practical change is less novelty and more retrieval.",
+      "why_it_matters": "The value here is continuity. If AI is going to be useful in daily life, it has to remember where your work lives and meet you in the apps you already use.",
+      "practical_angle": "Use ChatGPT as a searchable working archive for plans, drafts and references, not only as a blank-page assistant.",
+      "source_name": "OpenAI Help Center",
+      "source_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+    },
+    {
+      "title": "Google is turning research notes into a connected study workspace",
+      "summary": "Google says NotebookLM has become Gemini Notebook, with a secure cloud computer, native code execution and syncing across the Gemini app and Google Search. Google also says the product now serves more than 30 million people and over 600,000 organizations. For everyday users, the important part is not the rename; it is the way notes, search and analysis are being pushed closer together so people can move from reading to organising to checking answers in one place.",
+      "why_it_matters": "This is a practical step toward AI tools that help people understand material instead of just generating text about it.",
+      "practical_angle": "If you keep research notes, trip plans, schoolwork or household project docs in different places, a connected notebook tool can cut down on duplicate copying and lost context.",
+      "source_name": "Google Blog",
+      "source_url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/"
+    },
+    {
+      "title": "Study notebooks are a clearer use case than generic chat for learners",
+      "summary": "Google says study notebooks in the Gemini app create diagnostic quizzes, bite-sized lessons, practice quizzes and a progress dashboard that tracks strengths, focus areas and what has not started yet. The feature is rolling out globally for personal accounts and will reach school-issued accounts in the coming weeks. That makes the product feel less like a general chatbot and more like a guided study system that shows people what to do next.",
+      "why_it_matters": "For students, parents and self-learners, the bottleneck is often not access to answers but knowing where to begin and what to revise next.",
+      "practical_angle": "Use AI to turn messy notes or a syllabus into a short study plan, then test whether the tool can point you to the next weakest topic.",
+      "source_name": "Google Blog",
+      "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/"
+    }
+  ],
+  "facebook": {
+    "post": "Can you still find that note from last week? OpenAI says ChatGPT can now search across chats, projects, images and documents on web, iOS and Android, and it’s back on WhatsApp in the EEA with voice notes, image uploads and image generation. That makes it more like a searchable working archive than a blank-page tool. Would you use it more for old work or household planning? Comment with one, or share a workflow Clearforge should look into next.\n\n#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI"
+  },
+  "pinterest": {
+    "title": "How to Turn Messy Notes into a Clear Study Plan",
+    "description": "Use AI to turn scattered notes into quizzes, bite-sized lessons and a next-step checklist. Best for students, parents and self-learners who want less re-copying and clearer revision. Save this idea, then comment with the kind of notes you’d test first.",
+    "destination_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-21.html"
+  },
+  "youtube": {
+    "title": "AI is becoming a personal organisation layer for notes, study and browser admin",
+    "script": "Can your browser do the admin before you switch apps? Google says Gemini in Chrome is rolling out to desktop users in the UK, with iOS next month. It can summarise pages, compare tabs, draft Gmail messages, schedule Calendar events, check Maps details and answer questions about YouTube videos. That matters because the browser is where a lot of planning already happens. If AI can handle the summary and the first draft, the next step gets easier. Would you try it for email drafts or for comparing sources? Leave your answer in the comments, or tell Clearforge what workflow to test next. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "description": "Pick one recurring life-admin task this week and test whether an AI tool can organise the material and show the next step, not just draft text."
+  },
+  "podcast": {
+    "generated": true,
+    "folder": "podcast/",
+    "copy_paste_script": "podcast/COPY_PASTE_INTO_ELEVENLABS.txt",
+    "full_review_script": "podcast/podcast-script.md",
+    "metadata": "podcast/episode-metadata.json",
+    "source_notes": "podcast/source-notes.md",
+    "episode": {
+      "version": 1,
+      "date": "2026-07-21",
+      "brand": "Clearforge",
+      "type": "clearforge_daily_biggest_story_podcast_script",
+      "human_review_required": true,
+      "narrator": "Irene",
+      "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+      "episode_title": "AI is moving into the browser, where everyday admin already happens",
+      "selected_story_index": 3,
+      "selected_story_title": "Chrome is becoming a practical admin assistant in the browser",
+      "selection_reason": "This is the clearest life-admin story in the edition: it brings AI into the place where many people already research, compare, draft, and schedule. The practical change is not a flashy new model, but a workflow shift that could save time on ordinary tasks if it proves reliable in real use.",
+      "word_count": 1359,
+      "estimated_duration_minutes": 9.4,
+      "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+      "source_notes": "source-notes.md",
+      "first_spoken_line": "A lot of AI stories talk about bigger models or smarter chatbots. This one is more ordinary, and that is exactly why it matters.",
+      "final_spoken_line": "If you have access, this is worth trying on low-risk admin work right away. If you do not have access yet, keep an eye on it. The important change here is not that AI can chat in a browser. It is that it is being pushed closer to the place where people already read, compare, decide, and act. That is a more practical direction for AI than novelty alone, and for everyday users, that is the part worth paying attention to.",
+      "validation_warnings": [],
+      "non_spoken_instruction_candidates": []
+    }
+  },
+  "ai_media": {
+    "manifest": "media/media-manifest.json",
+    "narration": "media/narration.mp3",
+    "story_images": [
+      "media/story-1.png",
+      "media/story-2.png",
+      "media/story-3.png"
+    ],
+    "tiktok_narration": "media/tiktok-narration.mp3",
+    "tiktok": {
+      "story_index": 0,
+      "hook": "Can ChatGPT find your old drafts?",
+      "payoff": "OpenAI says it can now search chats, projects, images and documents, and it’s back on WhatsApp in the EEA. That means less restarting and more finishing.",
+      "response_prompt": "Would you use it for old notes or new planning?",
+      "narration": "media/2026-07-21/tiktok-narration.mp3",
+      "narration_text": "Can ChatGPT find your old drafts? OpenAI says it can now search chats, projects, images and documents, and it’s back on WhatsApp in the EEA. That means less restarting and more finishing. Would you use it for old notes or new planning?",
+      "target_duration_seconds": [
+        12,
+        18
+      ],
+      "format": "question_fact_consequence_response"
+    },
+    "generated": true
+  },
+  "quote_card_lines": [
+    "Can your AI find the thing you already worked on?",
+    "Would your browser save time if it handled the first draft?",
+    "The best AI tools reduce switching before they increase output.",
+    "Study tools work best when they show the next step.",
+    "A good working archive is more useful than a blank page."
+  ],
+  "headline_options": [
+    "AI is becoming a personal organisation layer for notes, study and browser admin",
+    "The useful AI shift this week: better search, better study tools, less tab-hopping",
+    "AI is finally helping with life-admin, not just drafting text",
+    "What matters now: AI that organises notes, study and everyday tasks",
+    "Browser-first AI is making everyday admin a little less messy"
+  ],
+  "sources": [
+    {
+      "source_name": "OpenAI Help Center",
+      "title": "ChatGPT release notes — July 14, 2026: search across chats, projects, and files; July 13, 2026: ChatGPT returns to WhatsApp in the EEA",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "published_date": "2026-07-14",
+      "confirmed_fact": "OpenAI says ChatGPT can now search across chats, projects, images and documents on web, iOS and Android, and that ChatGPT is available again on WhatsApp in the EEA with voice notes, image uploads and image generation.",
+      "interpretation": "OpenAI is reducing the friction of retrieving past work and meeting people where they already communicate, which makes ChatGPT feel more like an everyday memory and action layer than a separate destination."
+    },
+    {
+      "source_name": "Google Blog",
+      "title": "NotebookLM is now Gemini Notebook",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
+      "published_date": "2026-07-16",
+      "confirmed_fact": "Google says NotebookLM has been renamed Gemini Notebook, now has a secure cloud computer, can run code natively, and is syncing notebooks across the Gemini app and Google Search. Google also says more than 30 million people and over 600,000 organizations use the product.",
+      "interpretation": "Google is turning a research tool into a more connected study and analysis workspace, with stronger links between notes, search and the rest of the Google ecosystem."
+    },
+    {
+      "source_name": "Google Blog",
+      "title": "5 ways to learn with study notebooks in the Gemini app",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/",
+      "published_date": "2026-06-25",
+      "confirmed_fact": "Google says study notebooks generate diagnostic quizzes, personalised bite-sized lessons, practice quizzes and a progress dashboard, and that they are rolling out globally for personal accounts and, in coming weeks, for school-issued accounts.",
+      "interpretation": "This is a direct attempt to make AI useful for studying, revision and self-teaching by structuring the next step instead of just answering one-off questions."
+    },
+    {
+      "source_name": "Google Blog",
+      "title": "We’re expanding Gemini in Chrome to users in the U.K.",
+      "url": "https://blog.google/products-and-platforms/products/chrome/were-expanding-gemini-in-chrome-to-users-in-the-uk/",
+      "published_date": "2026-07-14",
+      "confirmed_fact": "Google says many Gemini in Chrome features started rolling out to desktop users in the U.K. on July 14, 2026, with iOS next month, and that the assistant can summarize pages, compare tabs, draft emails in Gmail, schedule meetings in Calendar and ask questions about YouTube videos.",
+      "interpretation": "Google is embedding AI into the browser so users can handle planning and information gathering without moving between apps, which is likely where ordinary life-admin gains show up first."
+    }
+  ],
+  "media_metadata": {
+    "version": 5,
+    "date": "2026-07-21",
+    "headline": "AI is becoming a personal organisation layer for learning, notes and everyday admin",
+    "dek": "This Tuesday edition focuses on life-admin: finding old work, turning study materials into structured lessons, and using AI inside the browser without changing how people already work.",
+    "hook": "Three AI updates that actually matter today",
+    "spoken_cta": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "visual_system": "Clearforge AI briefing podcast studio system",
+    "visual_style_rules": {
+      "include": [
+        "dark navy AI briefing or podcast studio atmosphere",
+        "microphone or audio-briefing cues where appropriate",
+        "subtle circuit traces, waveform motifs, model cards or data-routing lines",
+        "physical source notes, checklists and human-review materials",
+        "premium editorial technology-magazine lighting"
+      ],
+      "avoid": [
+        "robots",
+        "glowing brains",
+        "hologram faces",
+        "generic dashboards",
+        "random floating code",
+        "excessive neon",
+        "fake readable text",
+        "Sapiver or unrelated branding"
+      ]
+    },
+    "stories": [
+      {
+        "file": "media/2026-07-21/story-1.png",
+        "title": "ChatGPT is becoming easier to search and easier to reach",
+        "source_name": "OpenAI Help Center",
+        "source_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+        "summary": "OpenAI says users can now search across chats, projects, images and documents in ChatGPT on web, iOS and Android, and it has also brought ChatGPT back to WhatsApp in the EEA with image uploads, voice notes and image generation. That combination matters because a lot of real-world AI use is not about starting from scratch; it is about finding the thing you already asked, edited or drafted and then continuing from there. For people who use AI to manage household plans, study notes or small-business drafts, the practical change is less novelty and more retrieval.",
+        "why_it_matters": "The value here is continuity. If AI is going to be useful in daily life, it has to remember where your work lives and meet you in the apps you already use.",
+        "practical_angle": "Use ChatGPT as a searchable working archive for plans, drafts and references, not only as a blank-page assistant.",
+        "visual_prompt": "a practical AI systems review scene with a microphone, pinned evidence cards, process arrows, muted blue signal lines and a clear before-to-after analysis structure. vertical social-video still with a strong microphone foreground and clear desk detail. make it instantly understandable as an AI briefing or AI podcast image, but grounded in real studio objects. make the story context visible through objects and composition rather than readable text. Story context: ChatGPT is becoming easier to search and easier to reach. Practical angle: Use ChatGPT as a searchable working archive for plans, drafts and references, not only as a blank-page assistant.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      },
+      {
+        "file": "media/2026-07-21/story-2.png",
+        "title": "Google is turning research notes into a connected study workspace",
+        "source_name": "Google Blog",
+        "source_url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
+        "summary": "Google says NotebookLM has become Gemini Notebook, with a secure cloud computer, native code execution and syncing across the Gemini app and Google Search. Google also says the product now serves more than 30 million people and over 600,000 organizations. For everyday users, the important part is not the rename; it is the way notes, search and analysis are being pushed closer together so people can move from reading to organising to checking answers in one place.",
+        "why_it_matters": "This is a practical step toward AI tools that help people understand material instead of just generating text about it.",
+        "practical_angle": "If you keep research notes, trip plans, schoolwork or household project docs in different places, a connected notebook tool can cut down on duplicate copying and lost context.",
+        "visual_prompt": "an editorial AI news analysis desk with printed source cards, model comparison sheets, a compact microphone arm, blue data-light accents and a calm control-room atmosphere. cinematic three-quarter studio photograph with shallow depth of field. show AI as a system being reviewed by a person through notes, checks, source cards and controlled audio tools. change the hero object placement so this frame does not resemble the previous edition. Story context: Google is turning research notes into a connected study workspace. Practical angle: If you keep research notes, trip plans, schoolwork or household project docs in different places, a connected notebook tool can cut down on duplicate copying and lost context.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      },
+      {
+        "file": "media/2026-07-21/story-3.png",
+        "title": "Study notebooks are a clearer use case than generic chat for learners",
+        "source_name": "Google Blog",
+        "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/",
+        "summary": "Google says study notebooks in the Gemini app create diagnostic quizzes, bite-sized lessons, practice quizzes and a progress dashboard that tracks strengths, focus areas and what has not started yet. The feature is rolling out globally for personal accounts and will reach school-issued accounts in the coming weeks. That makes the product feel less like a general chatbot and more like a guided study system that shows people what to do next.",
+        "why_it_matters": "For students, parents and self-learners, the bottleneck is often not access to answers but knowing where to begin and what to revise next.",
+        "practical_angle": "Use AI to turn messy notes or a syllabus into a short study plan, then test whether the tool can point you to the next weakest topic.",
+        "visual_prompt": "a weekly AI briefing workspace with layered research cards, calendar markers, a studio microphone, restrained blue interface glow and visible human review materials. premium podcast-cover composition with strong negative space for later text overlay. combine physical human-review materials with light digital signal motifs so it feels human-led and AI-empowered. include a different arrangement of source cards, notebook, microphone angle and background signal pattern. Story context: Study notebooks are a clearer use case than generic chat for learners. Practical angle: Use AI to turn messy notes or a syllabus into a short study plan, then test whether the tool can point you to the next weakest topic.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      }
+    ],
+    "narration": "media/2026-07-21/narration.mp3",
+    "narration_text": "Can your browser do the admin before you switch apps? Google says Gemini in Chrome is rolling out to desktop users in the UK, with iOS next month. It can summarise pages, compare tabs, draft Gmail messages, schedule Calendar events, check Maps details and answer questions about YouTube videos. That matters because the browser is where a lot of planning already happens. If AI can handle the summary and the first draft, the next step gets easier. Would you try it for email drafts or for comparing sources? Leave your answer in the comments, or tell Clearforge what workflow to test next. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "tiktok": {
+      "story_index": 0,
+      "hook": "Can ChatGPT find your old drafts?",
+      "payoff": "OpenAI says it can now search chats, projects, images and documents, and it’s back on WhatsApp in the EEA. That means less restarting and more finishing.",
+      "response_prompt": "Would you use it for old notes or new planning?",
+      "narration": "media/2026-07-21/tiktok-narration.mp3",
+      "narration_text": "Can ChatGPT find your old drafts? OpenAI says it can now search chats, projects, images and documents, and it’s back on WhatsApp in the EEA. That means less restarting and more finishing. Would you use it for old notes or new planning?",
+      "target_duration_seconds": [
+        12,
+        18
+      ],
+      "format": "question_fact_consequence_response"
+    },
+    "practical_takeaway": "Pick one recurring life-admin task this week and test whether an AI tool can organise the material and show the next step, not just draft text.",
+    "what_to_test_next": "Take a messy folder of notes, screenshots or links and ask one AI tool to turn it into a three-step plan with a checklist, then compare the result to your own manual outline."
+  }
+}

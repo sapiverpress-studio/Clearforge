@@ -1,0 +1,25 @@
+{
+  "date": "2026-07-21",
+  "editorial_theme": {
+    "day": "Tuesday",
+    "date": "2026-07-21",
+    "slug": "life",
+    "title": "Life",
+    "focus": "Life-admin and personal usefulness: learning, household planning, accessibility, personal knowledge management, family logistics, study, note-taking and everyday problem solving.",
+    "instruction": "Keep the angle practical and careful. Avoid medical, legal or financial advice. Focus on how AI can help people understand, organise or learn, not replace judgement."
+  },
+  "same_day_prior_runs": 0,
+  "excluded_url_count": 26,
+  "excluded_story_title_count": 30,
+  "topic_rotation_evidence_dates": [
+    "2026-07-14",
+    "2026-07-15",
+    "2026-07-16",
+    "2026-07-17",
+    "2026-07-18",
+    "2026-07-19",
+    "2026-07-20"
+  ],
+  "consecutive_week_topic_block": true,
+  "passed": true
+}

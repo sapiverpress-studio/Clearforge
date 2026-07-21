@@ -1,0 +1,43 @@
+{
+  "date": "2026-07-21",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Can ChatGPT find your old drafts?",
+      "words": 42,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Can your browser do the admin before you switch apps?",
+      "words": 102,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Can you still find that note from last week?",
+      "words": 78,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Can your browser cut down on handoffs?",
+      "words": 72,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "How to Turn Messy Notes into a Clear Study Plan",
+    "title_words": 10,
+    "description_words": 40
+  },
+  "warnings": [
+    "TikTok content is shorter than preferred (42 words)"
+  ]
+}

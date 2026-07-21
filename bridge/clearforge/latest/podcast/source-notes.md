@@ -1,26 +1,26 @@
-# Source notes — 2026-07-20-systems
+# Source notes — 2026-07-21
 
-Podcast focused on: Bookkeeping AI is moving into the workflow, not the side window
+Podcast focused on: Chrome is becoming a practical admin assistant in the browser
 
 ## Sources supplied to the script generator
 
-- 1. Xero UK: Xero Announces New AI Innovations at Xerocon London as it Powers 5 Million Customers Globally
-  - URL: https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/
-  - Published/date field: 2026-07-08
-  - Confirmed fact: Xero said its JAX agentic platform is adding AI-powered features for small businesses, accountants and bookkeepers, including document capture and workflow automation, and said it serves 5 million customers worldwide.
-  - Interpretation: This is less about a smarter chatbot and more about finance workflow design: AI is being inserted where documents are captured, checked and moved into accounting processes.
-- 2. Google Workspace Updates: New Google Meet 'Take notes for me' settings for admins and end users
-  - URL: https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html?m=1
+- 1. OpenAI Help Center: ChatGPT release notes — July 14, 2026: search across chats, projects, and files; July 13, 2026: ChatGPT returns to WhatsApp in the EEA
+  - URL: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+  - Published/date field: 2026-07-14
+  - Confirmed fact: OpenAI says ChatGPT can now search across chats, projects, images and documents on web, iOS and Android, and that ChatGPT is available again on WhatsApp in the EEA with voice notes, image uploads and image generation.
+  - Interpretation: OpenAI is reducing the friction of retrieving past work and meeting people where they already communicate, which makes ChatGPT feel more like an everyday memory and action layer than a separate destination.
+- 2. Google Blog: NotebookLM is now Gemini Notebook
+  - URL: https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/
   - Published/date field: 2026-07-16
-  - Confirmed fact: Google said admins can now configure AI note-taking in Meet so it can be enabled only for meetings with three or more people, with rollout and default-setting details by plan.
-  - Interpretation: This turns AI notes into a systems choice: teams can define when automation starts, rather than leaving it to individual habits or hidden defaults.
-- 3. Notion: July 1, 2026 – Notion 3.6: External Agents, HTML blocks, and more
-  - URL: https://www.notion.com/releases/2026-07-01
-  - Published/date field: 2026-07-01
-  - Confirmed fact: Notion said users can assign external agents such as Claude and Cursor from a shared board, AI Meeting Notes now include speaker labels, and agents can read and write more file types and connect to more tools.
-  - Interpretation: Notion is being positioned as an operations layer: one place to coordinate tasks, files and agent actions across tools.
-- 4. Salesforce: Salesforce Announces Prepackaged Agentforce Help Agent
-  - URL: https://www.salesforce.com/uk/news/stories/agentforce-help-agent-announcement/?bc=OTH
+  - Confirmed fact: Google says NotebookLM has been renamed Gemini Notebook, now has a secure cloud computer, can run code natively, and is syncing notebooks across the Gemini app and Google Search. Google also says more than 30 million people and over 600,000 organizations use the product.
+  - Interpretation: Google is turning a research tool into a more connected study and analysis workspace, with stronger links between notes, search and the rest of the Google ecosystem.
+- 3. Google Blog: 5 ways to learn with study notebooks in the Gemini app
+  - URL: https://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/
   - Published/date field: 2026-06-25
-  - Confirmed fact: Salesforce said Agentforce Help Agent and Agentforce Customer Service Portal are generally available in July 2026 and that pay-per-resolution pricing will be available then too; it also said it has signed an agreement to acquire Fin, a customer-agent platform for SMBs.
-  - Interpretation: This is a packaging and pricing story as much as a product story: support automation is being sold like an operational service with clearer deployment and cost structures.
+  - Confirmed fact: Google says study notebooks generate diagnostic quizzes, personalised bite-sized lessons, practice quizzes and a progress dashboard, and that they are rolling out globally for personal accounts and, in coming weeks, for school-issued accounts.
+  - Interpretation: This is a direct attempt to make AI useful for studying, revision and self-teaching by structuring the next step instead of just answering one-off questions.
+- 4. Google Blog: We’re expanding Gemini in Chrome to users in the U.K.
+  - URL: https://blog.google/products-and-platforms/products/chrome/were-expanding-gemini-in-chrome-to-users-in-the-uk/
+  - Published/date field: 2026-07-14
+  - Confirmed fact: Google says many Gemini in Chrome features started rolling out to desktop users in the U.K. on July 14, 2026, with iOS next month, and that the assistant can summarize pages, compare tabs, draft emails in Gmail, schedule meetings in Calendar and ask questions about YouTube videos.
+  - Interpretation: Google is embedding AI into the browser so users can handle planning and information gathering without moving between apps, which is likely where ordinary life-admin gains show up first.

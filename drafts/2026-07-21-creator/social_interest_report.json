@@ -1,0 +1,43 @@
+{
+  "date": "2026-07-21-creator",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Can your AI find the draft you already wrote?",
+      "words": 44,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Would your browser handle the admin you keep postponing?",
+      "words": 116,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Can your AI find the draft you already wrote?",
+      "words": 76,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Is your browser already where your workday breaks?",
+      "words": 93,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "How to turn research notes into a repeatable plan",
+    "title_words": 9,
+    "description_words": 35
+  },
+  "warnings": [
+    "TikTok content is shorter than preferred (44 words)"
+  ]
+}

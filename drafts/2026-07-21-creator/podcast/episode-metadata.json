@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "date": "2026-07-21-creator",
+  "brand": "Clearforge",
+  "type": "clearforge_daily_biggest_story_podcast_script",
+  "human_review_required": true,
+  "narrator": "Irene",
+  "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+  "episode_title": "ChatGPT’s new role is less writing partner, more work archive",
+  "selected_story_index": 0,
+  "selected_story_title": "ChatGPT is acting more like a searchable work archive",
+  "selection_reason": "This is the biggest creator workflow shift in the set because it changes where the value sits: not in generating new text, but in recovering old work, source material, and context faster. That is the most immediate productivity gain for creators and small teams.",
+  "word_count": 1296,
+  "estimated_duration_minutes": 8.9,
+  "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+  "source_notes": "source-notes.md",
+  "first_spoken_line": "If you make things for a living, the hardest part is often not writing the next draft. It is finding the draft you already wrote, the screenshot you saved, the brief you half-finished, or the research note you meant to use two weeks ago.",
+  "final_spoken_line": "For this week, the practical lesson is simple: before you ask AI to write, ask it to find.",
+  "validation_warnings": [],
+  "non_spoken_instruction_candidates": []
+}

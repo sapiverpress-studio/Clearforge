@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>
     <copyright>Clearforge</copyright>
     <generator>Clearforge hosted podcast feed</generator>
-    <lastBuildDate>Tue, 21 Jul 2026 06:18:28 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 18:55:07 GMT</lastBuildDate>
     <atom:link href="https://clearforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Clearforge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://clearforge-daily-brief.netlify.app/podcast/cover.png"/>
+    <item>
+      <title>ChatGPT’s new role is less writing partner, more work archive</title>
+      <description>This is the biggest creator workflow shift in the set because it changes where the value sits: not in generating new text, but in recovering old work, source material, and context faster. That is the most immediate productivity gain for creators and small teams.</description>
+      <content:encoded><![CDATA[<p>This is the biggest creator workflow shift in the set because it changes where the value sits: not in generating new text, but in recovering old work, source material, and context faster. That is the most immediate productivity gain for creators and small teams.</p><p><strong>Read alongside this episode:</strong> <a href="https://clearforge-daily-brief.netlify.app/posts/2026-07-21-creator.html">daily briefing</a> · <a href="https://clearforge-daily-brief.netlify.app/features/2026-07-21-creator.html">feature analysis</a></p><p><a href="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-21-creator.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-21-creator.html</link>
+      <guid isPermaLink="false">clearforge:2026-07-21-creator</guid>
+      <pubDate>Tue, 21 Jul 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-21-creator.mp3" length="7887769" type="audio/mpeg"/>
+      <itunes:author>Clearforge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:08:54</itunes:duration>
+      <podcast:transcript url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-21-creator.txt" type="text/plain"/>
+    </item>
     <item>
       <title>AI is moving into the browser, where everyday admin already happens</title>
       <description>This is the clearest life-admin story in the edition: it brings AI into the place where many people already research, compare, draft, and schedule. The practical change is not a flashy new model, but a workflow shift that could save time on ordinary tasks if it proves reliable in real use.</description>

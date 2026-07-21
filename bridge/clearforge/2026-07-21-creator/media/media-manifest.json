@@ -1,0 +1,77 @@
+{
+  "version": 5,
+  "date": "2026-07-21-creator",
+  "headline": "For creators, the real AI win this week is less rewriting and more retrieving",
+  "dek": "This creator-workflow edition looks at practical tests: finding old work faster, turning research into usable notes, and handling browser admin without breaking the flow of a project day.",
+  "hook": "Three AI updates that actually matter today",
+  "spoken_cta": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+  "visual_system": "Clearforge AI briefing podcast studio system",
+  "visual_style_rules": {
+    "include": [
+      "dark navy AI briefing or podcast studio atmosphere",
+      "microphone or audio-briefing cues where appropriate",
+      "subtle circuit traces, waveform motifs, model cards or data-routing lines",
+      "physical source notes, checklists and human-review materials",
+      "premium editorial technology-magazine lighting"
+    ],
+    "avoid": [
+      "robots",
+      "glowing brains",
+      "hologram faces",
+      "generic dashboards",
+      "random floating code",
+      "excessive neon",
+      "fake readable text",
+      "Sapiver or unrelated branding"
+    ]
+  },
+  "stories": [
+    {
+      "file": "media/2026-07-21-creator/story-1.png",
+      "title": "ChatGPT is acting more like a searchable work archive",
+      "source_name": "OpenAI Help Center",
+      "source_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "summary": "OpenAI says ChatGPT can now search across chats, projects, images and documents on web, iOS and Android, and it has returned to WhatsApp in the EEA with voice notes, image uploads and image generation. For creators, that matters because the work you want to reuse is often already buried inside old drafts, half-finished briefs, research screenshots or rough outlines. The practical shift is not better inspiration; it is faster recovery of the thing you already made.",
+      "why_it_matters": "A creator workflow gets easier when old context is easier to find. Less hunting means less restarting.",
+      "practical_angle": "Treat ChatGPT as a searchable archive for briefs, captions, outline drafts and reference notes, then test whether it helps you resume work without retyping the setup.",
+      "visual_prompt": "a high-end technology briefing set with a dark blue wall, subtle circuit traces, a clean desk, paper research packs, audio waveforms and one human-operated control surface. cinematic three-quarter studio photograph with shallow depth of field. show AI as a system being reviewed by a person through notes, checks, source cards and controlled audio tools. include a different arrangement of source cards, notebook, microphone angle and background signal pattern. Story context: ChatGPT is acting more like a searchable work archive. Practical angle: Treat ChatGPT as a searchable archive for briefs, captions, outline drafts and reference notes, then test whether it helps you resume work without retyping the setup.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-07-21-creator/story-2.png",
+      "title": "Gemini Notebook is trying to make research feel like a workspace",
+      "source_name": "Google Blog",
+      "source_url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
+      "summary": "Google says NotebookLM has been renamed Gemini Notebook, now includes a secure cloud computer, can run code natively and syncs notebooks across the Gemini app and Google Search. Google also says the product is used by more than 30 million people and over 600,000 organizations. For anyone who creates content from source material, the interesting part is the connection between notes, search and analysis, not the rename itself.",
+      "why_it_matters": "Creators often lose time copying information between notes, tabs and docs. A connected notebook can reduce that drag.",
+      "practical_angle": "Use a notebook tool to keep research, source links and rough ideas together so you can move from reading to outlining without rebuilding context.",
+      "visual_prompt": "a practical AI systems review scene with a microphone, pinned evidence cards, process arrows, muted blue signal lines and a clear before-to-after analysis structure. premium podcast-cover composition with strong negative space for later text overlay. combine physical human-review materials with light digital signal motifs so it feels human-led and AI-empowered. vary camera distance, desk depth and object hierarchy while keeping the same Clearforge identity. Story context: Gemini Notebook is trying to make research feel like a workspace. Practical angle: Use a notebook tool to keep research, source links and rough ideas together so you can move from reading to outlining without rebuilding context.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-07-21-creator/story-3.png",
+      "title": "Study notebooks show how AI can teach, not just answer",
+      "source_name": "Google Blog",
+      "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/",
+      "summary": "Google says study notebooks in the Gemini app generate diagnostic quizzes, personalised bite-sized lessons, practice quizzes and a progress dashboard. The feature is rolling out globally for personal accounts and will reach school-issued accounts in the coming weeks. For creators who also teach, coach or explain topics online, this is a reminder that AI is most useful when it structures the next step instead of dumping a wall of text.",
+      "why_it_matters": "Good creator content often depends on turning messy information into a sequence people can follow.",
+      "practical_angle": "If you publish explainers, test whether study notebooks can turn source notes into a short quiz, a lesson outline or a progress check you can adapt for your audience.",
+      "visual_prompt": "an editorial AI news analysis desk with printed source cards, model comparison sheets, a compact microphone arm, blue data-light accents and a calm control-room atmosphere. dark professional podcast artwork composition with source materials visible. make the AI element clear through subtle circuit traces, waveform graphics, model cards and data-routing lines, not robots. use a different AI signal motif: waveform, routing lines, model cards, calendar markers or evidence board. Story context: Study notebooks show how AI can teach, not just answer. Practical angle: If you publish explainers, test whether study notebooks can turn source notes into a short quiz, a lesson outline or a progress check you can adapt for your audience.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: dark blue studio background, graphite desk, white paper, blue highlights and restrained green accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    }
+  ],
+  "narration": "media/2026-07-21-creator/narration.mp3",
+  "narration_text": "Would your browser handle the admin you keep postponing? Google says Gemini in Chrome is rolling out to desktop users in the U.K. and can summarize pages, compare tabs, draft emails in Gmail, schedule Calendar events, check Maps details, and ask questions about YouTube videos. It also asks for confirmation before sensitive actions. For creators and solo operators, that means research, planning, and small admin tasks can stay in one window instead of turning into tab-hopping. The practical test is simple: one browser session, one workflow, less context switching. What would you try first: page summaries or email drafts? Tell me in the comments, and ask for a follow-up on browser-first workflows if you want one. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+  "tiktok": {
+    "story_index": 0,
+    "hook": "Can your AI find the draft you already wrote?",
+    "payoff": "OpenAI says ChatGPT can now search chats, projects, images and documents on web, iOS and Android. That means less restarting and fewer lost notes. Would you test old drafts or research screenshots first?",
+    "response_prompt": "Comment one.",
+    "narration": "media/2026-07-21-creator/tiktok-narration.mp3",
+    "narration_text": "Can your AI find the draft you already wrote? OpenAI says ChatGPT can now search chats, projects, images and documents on web, iOS and Android. That means less restarting and fewer lost notes. Would you test old drafts or research screenshots first? Comment one.",
+    "target_duration_seconds": [
+      12,
+      18
+    ],
+    "format": "question_fact_consequence_response"
+  },
+  "practical_takeaway": "Pick one recurring creator task this week and test whether an AI tool can organize the source material and point to the next step before it writes anything.",
+  "what_to_test_next": "Take a folder of old drafts, screenshots or links and ask one AI tool to turn it into a three-step production plan, then compare that plan with your own manual outline."
+}

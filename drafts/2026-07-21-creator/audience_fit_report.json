@@ -1,0 +1,170 @@
+{
+  "generated_at": "2026-07-21T18:45:51.090Z",
+  "story_assessments": [
+    {
+      "story_index": 0,
+      "story_title": "ChatGPT is acting more like a searchable work archive",
+      "target_audience": "Creators, freelancers, and small operators who keep drafts, briefs, notes, and reference material inside ChatGPT",
+      "audience_problem_or_desire": "They want to find past work quickly so they can continue instead of rebuilding context from scratch",
+      "interest_signal": "OpenAI says ChatGPT can search across chats, projects, images, and documents on web, iOS, and Android, and is available again on WhatsApp in the EEA",
+      "stop_reason": "The hook is a concrete workflow problem most creators recognize immediately: lost drafts and scattered context",
+      "promised_payoff": "Faster recovery of old work and less restarting",
+      "proof_point": "OpenAI says ChatGPT can search across chats, projects, images and documents",
+      "search_phrases": [
+        "ChatGPT search across chats projects images documents",
+        "ChatGPT searchable archive for creators",
+        "recover old drafts in ChatGPT",
+        "WhatsApp ChatGPT EEA voice notes image uploads"
+      ],
+      "scores": {
+        "audience_fit": 9,
+        "practical_consequence": 9,
+        "searchability": 9,
+        "stranger_usefulness": 9,
+        "novelty": 7,
+        "visual_potential": 7,
+        "discussion_potential": 8,
+        "short_form_clarity": 9
+      },
+      "overall_score": 9,
+      "score_reason": "Broad creator relevance, immediate practical value, and very easy to explain in a short social post."
+    },
+    {
+      "story_index": 1,
+      "story_title": "Gemini Notebook is trying to make research feel like a workspace",
+      "target_audience": "Creators, researchers, and knowledge workers who build from source material and notes",
+      "audience_problem_or_desire": "They want research, source links, and rough ideas to stay connected so outlining is faster",
+      "interest_signal": "Google says NotebookLM is now Gemini Notebook with a secure cloud computer, native code execution, and syncing across Gemini app and Google Search",
+      "stop_reason": "Useful but slightly more niche and the rename may dilute instant recognition",
+      "promised_payoff": "Less copying between tabs and a smoother move from reading to outlining",
+      "proof_point": "Google says more than 30 million people and over 600,000 organizations use the product",
+      "search_phrases": [
+        "Gemini Notebook research workspace",
+        "NotebookLM renamed Gemini Notebook",
+        "secure cloud computer native code notebook",
+        "sync notebooks across Gemini app and Google Search"
+      ],
+      "scores": {
+        "audience_fit": 7,
+        "practical_consequence": 7,
+        "searchability": 6,
+        "stranger_usefulness": 7,
+        "novelty": 7,
+        "visual_potential": 6,
+        "discussion_potential": 6,
+        "short_form_clarity": 7
+      },
+      "overall_score": 7,
+      "score_reason": "Strong creator workflow angle, but it is less instantly legible than the archive or browser stories."
+    },
+    {
+      "story_index": 2,
+      "story_title": "Study notebooks show how AI can teach, not just answer",
+      "target_audience": "Creators who teach, coach, explain topics, or publish educational content",
+      "audience_problem_or_desire": "They want a way to turn messy source material into a structured learning path",
+      "interest_signal": "Google says study notebooks generate diagnostic quizzes, personalised bite-sized lessons, practice quizzes, and a progress dashboard",
+      "stop_reason": "The audience is useful but narrower, and the study framing is less broadly relevant to general creator workflows",
+      "promised_payoff": "A better way to convert source notes into lessons, quizzes, or a clear next step",
+      "proof_point": "Google says the feature is rolling out globally for personal accounts and soon for school-issued accounts",
+      "search_phrases": [
+        "Gemini study notebooks quizzes lessons dashboard",
+        "AI for teaching and explainers",
+        "turn source notes into a lesson outline",
+        "diagnostic quizzes personalized bite-sized lessons"
+      ],
+      "scores": {
+        "audience_fit": 6,
+        "practical_consequence": 6,
+        "searchability": 6,
+        "stranger_usefulness": 6,
+        "novelty": 7,
+        "visual_potential": 6,
+        "discussion_potential": 6,
+        "short_form_clarity": 7
+      },
+      "overall_score": 6,
+      "score_reason": "Clear educational utility, but the fit is narrower than the other workflow stories."
+    },
+    {
+      "story_index": 3,
+      "story_title": "Chrome is becoming a browser-side admin helper",
+      "target_audience": "Creators, freelancers, and solo operators who do research and admin in the browser",
+      "audience_problem_or_desire": "They want to handle planning, email, scheduling, and research without constant app switching",
+      "interest_signal": "Google says Gemini in Chrome is rolling out to desktop users in the U.K. and can summarize pages, compare tabs, draft emails in Gmail, schedule Calendar events, check Maps details, and ask questions about YouTube videos",
+      "stop_reason": "Highly relatable browser workflow pain with clear day-to-day consequences",
+      "promised_payoff": "Less tab-hopping and a more continuous work session inside one window",
+      "proof_point": "Google says it includes prompt-injection safeguards and asks for confirmation before sensitive actions",
+      "search_phrases": [
+        "Gemini in Chrome summarize pages compare tabs",
+        "Chrome browser AI admin helper",
+        "draft emails in Gmail from Chrome",
+        "browser side assistant for creators"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 9,
+        "searchability": 8,
+        "stranger_usefulness": 8,
+        "novelty": 7,
+        "visual_potential": 8,
+        "discussion_potential": 8,
+        "short_form_clarity": 8
+      },
+      "overall_score": 8,
+      "score_reason": "Very practical and easy to picture, with strong value for creators who live in the browser."
+    }
+  ],
+  "platform_selections": {
+    "tiktok": {
+      "story_index": 0,
+      "story_title": "ChatGPT is acting more like a searchable work archive",
+      "target_audience": "Creators, freelancers, and small operators who keep drafts, briefs, notes, and reference material inside ChatGPT",
+      "format": "short_form",
+      "opening": "Can your AI find the draft you already wrote?",
+      "payoff": "OpenAI says ChatGPT can search across chats, projects, images and documents on web, iOS and Android, which means less restarting and fewer lost notes.",
+      "selection_reason": "This is the most instantly relatable creator problem and it lands fast in a 35 to 55 word format.",
+      "platform_fit_score": 9
+    },
+    "youtube": {
+      "story_index": 3,
+      "story_title": "Chrome is becoming a browser-side admin helper",
+      "target_audience": "Creators, freelancers, and solo operators who do research and admin in the browser",
+      "format": "short_form",
+      "opening": "Would your browser handle the admin you keep postponing?",
+      "payoff": "Google says Gemini in Chrome can summarize pages, compare tabs, draft emails in Gmail, schedule Calendar events, check Maps details, and ask questions about YouTube videos, with confirmation before sensitive actions.",
+      "selection_reason": "YouTube Shorts can carry the fuller workflow explanation and show the day-to-day impact of browser-side AI.",
+      "platform_fit_score": 9
+    },
+    "facebook": {
+      "story_index": 0,
+      "story_title": "ChatGPT is acting more like a searchable work archive",
+      "target_audience": "Creators, freelancers, and small operators who keep drafts, briefs, notes, and reference material inside ChatGPT",
+      "format": "post",
+      "opening": "Can your AI find the draft you already wrote?",
+      "payoff": "OpenAI says ChatGPT can search across chats, projects, images and documents on web, iOS and Android, and it is available again on WhatsApp in the EEA, so old briefs and references are easier to recover.",
+      "selection_reason": "Facebook rewards familiar creator situations and a practical, conversational payoff.",
+      "platform_fit_score": 8
+    },
+    "pinterest": {
+      "story_index": 1,
+      "story_title": "Gemini Notebook is trying to make research feel like a workspace",
+      "target_audience": "Creators, researchers, and knowledge workers who build from source material and notes",
+      "format": "evergreen_guide",
+      "opening": "How do you keep research notes from scattering?",
+      "payoff": "Use Gemini Notebook to keep research, source links and rough ideas together so you can move from reading to outlining without rebuilding context.",
+      "selection_reason": "This story works well as a searchable, evergreen guide about keeping source material organized.",
+      "platform_fit_score": 8
+    },
+    "linkedin": {
+      "story_index": 3,
+      "story_title": "Chrome is becoming a browser-side admin helper",
+      "target_audience": "Creators, freelancers, and solo operators who do research and admin in the browser",
+      "format": "professional_post",
+      "opening": "Is your browser already where your workday breaks?",
+      "payoff": "Google says Gemini in Chrome can summarize pages, compare tabs, draft emails in Gmail, schedule Calendar events, and check Maps details, with confirmation before sensitive actions, which can reduce context switching for research and admin.",
+      "selection_reason": "LinkedIn is the best fit for the operational lesson: workflow design, review discipline, and fewer context switches.",
+      "platform_fit_score": 9
+    }
+  },
+  "overall_reasoning": "Story 0 and story 3 are the strongest audience-fit pieces because they solve immediate creator workflow problems: recovering old work and reducing browser-side admin. Story 1 is the best evergreen Pinterest fit because it reads like a reusable research guide. Story 2 is useful, but it is narrower and better suited to a teaching sub-audience than to the broadest social hooks. The selected platform mix keeps each post specific to how that feed tends to reward practical, searchable, human-led utility."
+}

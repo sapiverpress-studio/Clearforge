@@ -1,6 +1,6 @@
-# Source notes — 2026-07-21
+# Source notes — 2026-07-21-creator
 
-Podcast focused on: Chrome is becoming a practical admin assistant in the browser
+Podcast focused on: ChatGPT is acting more like a searchable work archive
 
 ## Sources supplied to the script generator
 

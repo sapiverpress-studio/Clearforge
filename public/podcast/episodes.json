@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-21-creator",
+    "kind": "daily",
+    "title": "ChatGPT’s new role is less writing partner, more work archive",
+    "description": "This is the biggest creator workflow shift in the set because it changes where the value sits: not in generating new text, but in recovering old work, source material, and context faster. That is the most immediate productivity gain for creators and small teams.",
+    "published": "2026-07-21T07:00:00+01:00",
+    "duration": "00:08:54",
+    "size": 7887769,
+    "video_size": 26093566,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-21-creator.mp3",
+    "video_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-21-creator.mp4",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-21-creator.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-21-creator.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-21-creator.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-21-creator.html",
+    "source_dir": "drafts/2026-07-21-creator/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-21",
     "kind": "daily",
     "title": "AI is moving into the browser, where everyday admin already happens",

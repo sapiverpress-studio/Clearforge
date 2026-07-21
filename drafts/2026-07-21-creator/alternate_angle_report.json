@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-21-creator",
+  "base_date": "2026-07-21",
+  "angle": "creator_workflow",
+  "editorial_theme": {
+    "day": "Tuesday",
+    "date": "2026-07-21",
+    "slug": "life",
+    "title": "Life",
+    "focus": "Life-admin and personal usefulness: learning, household planning, accessibility, personal knowledge management, family logistics, study, note-taking and everyday problem solving.",
+    "instruction": "Keep the angle practical and careful. Avoid medical, legal or financial advice. Focus on how AI can help people understand, organise or learn, not replace judgement."
+  },
+  "reused_base_run": "base-current-2026-07-21",
+  "source_urls_reused": [
+    "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+    "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
+    "https://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/",
+    "https://blog.google/products-and-platforms/products/chrome/were-expanding-gemini-in-chrome-to-users-in-the-uk/"
+  ],
+  "passed": true
+}

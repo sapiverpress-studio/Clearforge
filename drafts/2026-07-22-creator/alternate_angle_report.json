@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-22-creator",
+  "base_date": "2026-07-22",
+  "angle": "creator_workflow",
+  "editorial_theme": {
+    "day": "Wednesday",
+    "date": "2026-07-22",
+    "slug": "systems-automation",
+    "title": "Systems and automation",
+    "focus": "Systems, automation, agents, reliability, review loops, handoffs, repeatable processes, governance, failure points and human accountability.",
+    "instruction": "Emphasise what should and should not be automated. Explain where human checks, logs, approvals and fallbacks belong."
+  },
+  "reused_base_run": "base-current-2026-07-22",
+  "source_urls_reused": [
+    "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+    "https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-introduces-aurastack-ai-super-agent-the-worlds-first.html",
+    "https://www.scaleway.com/en/news/scaleway-secures-european-trusted-cloud-services-contract-with-airbus/",
+    "https://blogs.microsoft.com/blog/2026/07/20/microsoft-expands-azure-ai-and-hpc-infrastructure-with-amd/"
+  ],
+  "passed": true
+}

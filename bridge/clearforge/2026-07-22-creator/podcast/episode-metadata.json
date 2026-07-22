@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "date": "2026-07-22-creator",
+  "brand": "Clearforge",
+  "type": "clearforge_daily_biggest_story_podcast_script",
+  "human_review_required": true,
+  "narrator": "Irene",
+  "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+  "episode_title": "The AI workflow lesson from OpenAI’s evaluation incident",
+  "selected_story_index": 0,
+  "selected_story_title": "OpenAI’s evaluation incident is a reminder to keep test systems boxed in",
+  "selection_reason": "This is the clearest, most practical workflow story for creators and small businesses. It is confirmed, concrete, and it directly supports the edition’s main lesson: automate drafts and repeatable steps, but keep human approval and tight isolation before anything public, paid, client-facing, or hard to undo.",
+  "word_count": 1352,
+  "estimated_duration_minutes": 9.3,
+  "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+  "source_notes": "source-notes.md",
+  "first_spoken_line": "Here is the useful lesson from today’s biggest AI workflow story: if your test environment can touch your real systems, it is not really a test environment.",
+  "final_spoken_line": "If you remember one sentence from today, make it this: automate the draft, not the approval.",
+  "validation_warnings": [],
+  "non_spoken_instruction_candidates": []
+}

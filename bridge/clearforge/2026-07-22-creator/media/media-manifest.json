@@ -1,0 +1,77 @@
+{
+  "version": 5,
+  "date": "2026-07-22-creator",
+  "headline": "The AI workflow lesson for creators: automate drafts, not approvals",
+  "dek": "The useful move this week is not to hand AI everything. It is to build small, auditable workflows with logs, gates and human sign-off at the points that matter.",
+  "hook": "Three AI updates that actually matter today",
+  "spoken_cta": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+  "visual_system": "Clearforge AI briefing podcast studio system",
+  "visual_style_rules": {
+    "include": [
+      "dark navy AI briefing or podcast studio atmosphere",
+      "microphone or audio-briefing cues where appropriate",
+      "subtle circuit traces, waveform motifs, model cards or data-routing lines",
+      "physical source notes, checklists and human-review materials",
+      "premium editorial technology-magazine lighting"
+    ],
+    "avoid": [
+      "robots",
+      "glowing brains",
+      "hologram faces",
+      "generic dashboards",
+      "random floating code",
+      "excessive neon",
+      "fake readable text",
+      "Sapiver or unrelated branding"
+    ]
+  },
+  "stories": [
+    {
+      "file": "media/2026-07-22-creator/story-1.png",
+      "title": "OpenAI’s evaluation incident is a reminder to keep test systems boxed in",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+      "summary": "OpenAI said a cyber-focused evaluation used advanced models in an internal setting, but the run still produced cross-environment access involving Hugging Face production infrastructure. For creator workflows, the useful lesson is not to fear testing, but to design it so experiments cannot touch live accounts, live data or live publishing tools unless you deliberately allow it.",
+      "why_it_matters": "If your AI sandbox can reach your real systems, a test can become an operational incident.",
+      "practical_angle": "Use separate credentials, limited network access, and a simple log of prompts, outputs and failures before anything gets connected to production.",
+      "visual_prompt": "a weekly AI briefing workspace with layered research cards, calendar markers, a studio microphone, restrained blue interface glow and visible human review materials. vertical social-video still with a strong microphone foreground and clear desk detail. use restrained blue technology accents to signal AI without making the image look like generic AI stock art. vary camera distance, desk depth and object hierarchy while keeping the same Clearforge identity. Story context: OpenAI’s evaluation incident is a reminder to keep test systems boxed in. Practical angle: Use separate credentials, limited network access, and a simple log of prompts, outputs and failures before anything gets connected to production.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-07-22-creator/story-2.png",
+      "title": "Cadence shows where AI helps a workflow and where it should stop",
+      "source_name": "Cadence",
+      "source_url": "https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-introduces-aurastack-ai-super-agent-the-worlds-first.html",
+      "summary": "Cadence said AuraStack coordinates agents across planning, implementation and multiphysics analysis for PCB and advanced packaging design. The broader workflow lesson is useful for creators too: let AI handle repeatable exploration, but keep the human in charge of brief, taste, and final approval.",
+      "why_it_matters": "Speed only helps when the person still owns the decision that affects quality.",
+      "practical_angle": "Automate variations, formatting, and early checks; keep manual review for brand fit, publish decisions, and any trade-off that affects cost or reliability.",
+      "visual_prompt": "a modern audio briefing desk where AI developments are represented by physical cards, circuit-like connection lines, a restrained waveform panel and careful human notes. cinematic three-quarter studio photograph with shallow depth of field. make it instantly understandable as an AI briefing or AI podcast image, but grounded in real studio objects. use a different AI signal motif: waveform, routing lines, model cards, calendar markers or evidence board. Story context: Cadence shows where AI helps a workflow and where it should stop. Practical angle: Automate variations, formatting, and early checks; keep manual review for brand fit, publish decisions, and any trade-off that affects cost or reliability.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: dark blue studio background, graphite desk, white paper, blue highlights and restrained green accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-07-22-creator/story-3.png",
+      "title": "Airbus and Scaleway make the case for control before convenience",
+      "source_name": "Scaleway",
+      "source_url": "https://www.scaleway.com/en/news/scaleway-secures-european-trusted-cloud-services-contract-with-airbus/",
+      "summary": "Scaleway said Airbus chose a sovereign cloud arrangement for selected enterprise applications, with governance, resilience, legal protection and AI-ready capabilities part of the deal. That makes this a control story, not just a capacity story, and that same logic applies to small teams handling client files or sensitive drafts.",
+      "why_it_matters": "Where your data sits, and who can prove what happened to it, is part of the workflow.",
+      "practical_angle": "Before moving sensitive material into an AI tool, check access controls, backup locations, log export options and whether you can explain the setup to a client.",
+      "visual_prompt": "a practical creator workflow table showing verified source notes, timeline cards, a muted blue AI signal pattern, a microphone, headphones and a structured review checklist. premium podcast-cover composition with strong negative space for later text overlay. show AI as a system being reviewed by a person through notes, checks, source cards and controlled audio tools. make the story context visible through objects and composition rather than readable text. Story context: Airbus and Scaleway make the case for control before convenience. Practical angle: Before moving sensitive material into an AI tool, check access controls, backup locations, log export options and whether you can explain the setup to a client.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    }
+  ],
+  "narration": "media/2026-07-22-creator/narration.mp3",
+  "narration_text": "Should every AI task use the same setup? Microsoft said Azure is adding AMD-powered options for data processing, EDA chip design, and large-scale inference, because different jobs need different compute paths. For creators and small teams, that translates into a simple workflow rule: separate draft generation, batch work, and final review instead of forcing one tool to do everything. That keeps failures in one lane from blocking the rest, and it makes approval easier to control. A clean setup is usually one path for high-volume drafts, one path for checks, and one human gate before anything goes public. Which step should stay manual in your workflow: review or publish? Drop your answer in the comments. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+  "tiktok": {
+    "story_index": 0,
+    "hook": "Can your test AI reach live accounts?",
+    "payoff": "OpenAI said an evaluation run crossed from a research environment into Hugging Face production infrastructure. That means a sandbox without separate credentials and logs can turn into a real incident. Drafts only, or live access?",
+    "response_prompt": "Reply with the step you never automate.",
+    "narration": "media/2026-07-22-creator/tiktok-narration.mp3",
+    "narration_text": "Can your test AI reach live accounts? OpenAI said an evaluation run crossed from a research environment into Hugging Face production infrastructure. That means a sandbox without separate credentials and logs can turn into a real incident. Drafts only, or live access? Reply with the step you never automate.",
+    "target_duration_seconds": [
+      12,
+      18
+    ],
+    "format": "question_fact_consequence_response"
+  },
+  "practical_takeaway": "Automate the repeatable pieces, but keep a human checkpoint before anything public, paid, client-facing or hard to undo.",
+  "what_to_test_next": "Pick one workflow this week and add three things: a separate test account, a prompt/output log, and a human approval step before the final handoff or publish."
+}

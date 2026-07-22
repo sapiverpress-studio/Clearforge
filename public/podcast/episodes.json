@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-22-creator",
+    "kind": "daily",
+    "title": "The AI workflow lesson from OpenAI’s evaluation incident",
+    "description": "This is the clearest, most practical workflow story for creators and small businesses. It is confirmed, concrete, and it directly supports the edition’s main lesson: automate drafts and repeatable steps, but keep human approval and tight isolation before anything public, paid, client-facing, or hard to undo.",
+    "published": "2026-07-22T07:00:00+01:00",
+    "duration": "00:09:18",
+    "size": 8470822,
+    "video_size": 26722958,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-22-creator.mp3",
+    "video_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-22-creator.mp4",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-22-creator.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-22-creator.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-22-creator.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-22-creator.html",
+    "source_dir": "drafts/2026-07-22-creator/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-22",
     "kind": "daily",
     "title": "When AI testing becomes an operational risk",

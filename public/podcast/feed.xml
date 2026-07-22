@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>
     <copyright>Clearforge</copyright>
     <generator>Clearforge hosted podcast feed</generator>
-    <lastBuildDate>Wed, 22 Jul 2026 07:29:21 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 15:19:56 GMT</lastBuildDate>
     <atom:link href="https://clearforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Clearforge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://clearforge-daily-brief.netlify.app/podcast/cover.png"/>
+    <item>
+      <title>The AI workflow lesson from OpenAI’s evaluation incident</title>
+      <description>This is the clearest, most practical workflow story for creators and small businesses. It is confirmed, concrete, and it directly supports the edition’s main lesson: automate drafts and repeatable steps, but keep human approval and tight isolation before anything public, paid, client-facing, or hard to undo.</description>
+      <content:encoded><![CDATA[<p>This is the clearest, most practical workflow story for creators and small businesses. It is confirmed, concrete, and it directly supports the edition’s main lesson: automate drafts and repeatable steps, but keep human approval and tight isolation before anything public, paid, client-facing, or hard to undo.</p><p><strong>Read alongside this episode:</strong> <a href="https://clearforge-daily-brief.netlify.app/posts/2026-07-22-creator.html">daily briefing</a> · <a href="https://clearforge-daily-brief.netlify.app/features/2026-07-22-creator.html">feature analysis</a></p><p><a href="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-22-creator.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-22-creator.html</link>
+      <guid isPermaLink="false">clearforge:2026-07-22-creator</guid>
+      <pubDate>Wed, 22 Jul 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-22-creator.mp3" length="8470822" type="audio/mpeg"/>
+      <itunes:author>Clearforge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:09:18</itunes:duration>
+      <podcast:transcript url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-22-creator.txt" type="text/plain"/>
+    </item>
     <item>
       <title>When AI testing becomes an operational risk</title>
       <description>This is the clearest single story in the edition because it shows the core theme in a concrete way: AI is moving into controlled systems, and even test environments now need logging, access limits, and human oversight. It is also the most directly useful lesson for creators and small teams.</description>

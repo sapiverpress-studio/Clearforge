@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-22-creator",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Can your test AI reach live accounts?",
+      "words": 49,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Should every AI task use the same setup?",
+      "words": 115,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Can your AI workflow be audited?",
+      "words": 90,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Where should AI stop in your workflow?",
+      "words": 96,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "AI sandbox checklist: separate test from live systems",
+    "title_words": 8,
+    "description_words": 40
+  },
+  "warnings": []
+}

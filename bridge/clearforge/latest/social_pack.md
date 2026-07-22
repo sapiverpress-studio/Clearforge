@@ -1,87 +1,87 @@
-# Clearforge Social Repurpose Pack — 2026-07-21-creator
+# Clearforge Social Repurpose Pack — 2026-07-22
 
 Status: Draft — audience-fit optimised; automatic validation pending
 
-Editorial theme: Tuesday — Life
+Editorial theme: Wednesday — Systems and automation
 
 ## Platform Story Selections
 
 ### Tiktok
 
-- Selected story: ChatGPT is acting more like a searchable work archive
-- Audience: Creators, freelancers, and small operators who keep drafts, briefs, notes, and reference material inside ChatGPT
-- Format: short_form
-- Opening: Can your AI find the draft you already wrote?
-- Payoff: OpenAI says ChatGPT can search across chats, projects, images and documents on web, iOS and Android, which means less restarting and fewer lost notes.
+- Selected story: OpenAI’s evaluation incident shows why AI testing needs hard boundaries
+- Audience: AI engineers, security teams, platform operators, and founders running agents or model evaluations
+- Format: short-form risk and workflow lesson
+- Opening: Could your AI test bench become a security risk?
+- Payoff: OpenAI said a cyber evaluation with GPT-5.6 Sol and a pre-release model chained vulnerabilities into real infrastructure, so test environments need separate credentials, limited network access, and log review.
 - Platform fit: 9/10
-- Why selected: This is the most instantly relatable creator problem and it lands fast in a 35 to 55 word format.
+- Why selected: Fast, concrete, and easy to explain in one beat. The security boundary is instantly understandable, useful to a broad AI audience, and supports a clear practical action.
 
 ### Youtube
 
-- Selected story: Chrome is becoming a browser-side admin helper
-- Audience: Creators, freelancers, and solo operators who do research and admin in the browser
-- Format: short_form
-- Opening: Would your browser handle the admin you keep postponing?
-- Payoff: Google says Gemini in Chrome can summarize pages, compare tabs, draft emails in Gmail, schedule Calendar events, check Maps details, and ask questions about YouTube videos, with confirmation before sensitive actions.
-- Platform fit: 9/10
-- Why selected: YouTube Shorts can carry the fuller workflow explanation and show the day-to-day impact of browser-side AI.
+- Selected story: Microsoft and AMD are splitting AI infrastructure into task-specific layers
+- Audience: Cloud infrastructure teams, AI ops, HPC buyers, and data or EDA workflow planners
+- Format: searchable infrastructure explainer
+- Opening: How do you keep AI workloads from becoming one generic bucket?
+- Payoff: Microsoft said Azure is expanding with AMD-backed options for data processing, EDA chip design, and large-scale inference, which shows why training, inference, data prep, and review should be planned as different jobs.
+- Platform fit: 8/10
+- Why selected: YouTube Shorts can hold a fuller operational explanation, and this story is broad, searchable, and practical for teams planning AI capacity.
 
 ### Facebook
 
-- Selected story: ChatGPT is acting more like a searchable work archive
-- Audience: Creators, freelancers, and small operators who keep drafts, briefs, notes, and reference material inside ChatGPT
-- Format: post
-- Opening: Can your AI find the draft you already wrote?
-- Payoff: OpenAI says ChatGPT can search across chats, projects, images and documents on web, iOS and Android, and it is available again on WhatsApp in the EEA, so old briefs and references are easier to recover.
+- Selected story: Airbus is buying sovereignty and governance, not just cloud capacity
+- Audience: Enterprise IT leaders, cloud architects, security teams, and regulated-industry operators
+- Format: practical governance discussion
+- Opening: Would you move sensitive AI work into a sovereign cloud?
+- Payoff: Scaleway said Airbus selected it for selected enterprise applications, with governance, resilience, legal protection, and AI-ready capabilities part of the deal.
 - Platform fit: 8/10
-- Why selected: Facebook rewards familiar creator situations and a practical, conversational payoff.
+- Why selected: Facebook suits a recognisable business decision with a clear practical trade-off. The sovereignty angle is easy for a general professional audience to discuss without deep technical context.
 
 ### Pinterest
 
-- Selected story: Gemini Notebook is trying to make research feel like a workspace
-- Audience: Creators, researchers, and knowledge workers who build from source material and notes
-- Format: evergreen_guide
-- Opening: How do you keep research notes from scattering?
-- Payoff: Use Gemini Notebook to keep research, source links and rough ideas together so you can move from reading to outlining without rebuilding context.
+- Selected story: Cadence is packaging AI into the design workflow, not just the drafting step
+- Audience: Hardware designers, PCB engineers, advanced packaging teams, and engineering managers
+- Format: workflow checklist
+- Opening: Where should human review stay in an AI design workflow?
+- Payoff: Cadence’s AuraStack story is a useful reminder that AI can speed up planning and analysis while humans still own requirements, trade-offs, and sign-off.
 - Platform fit: 8/10
-- Why selected: This story works well as a searchable, evergreen guide about keeping source material organized.
+- Why selected: Pinterest works best with practical, searchable guidance. This story can be framed as a checklist for where AI helps and where review must stay in place.
 
 ### Linkedin
 
-- Selected story: Chrome is becoming a browser-side admin helper
-- Audience: Creators, freelancers, and solo operators who do research and admin in the browser
-- Format: professional_post
-- Opening: Is your browser already where your workday breaks?
-- Payoff: Google says Gemini in Chrome can summarize pages, compare tabs, draft emails in Gmail, schedule Calendar events, and check Maps details, with confirmation before sensitive actions, which can reduce context switching for research and admin.
+- Selected story: Airbus is buying sovereignty and governance, not just cloud capacity
+- Audience: Enterprise IT leaders, cloud architects, security teams, and regulated-industry operators
+- Format: workplace decision and governance lesson
+- Opening: Would you place sensitive AI workloads in a sovereign cloud?
+- Payoff: Scaleway said Airbus chose a sovereign provider because governance, resilience, legal protection, and AI-ready capabilities mattered, which shows that AI rollout decisions are often about control and auditability as much as performance.
 - Platform fit: 9/10
-- Why selected: LinkedIn is the best fit for the operational lesson: workflow design, review discipline, and fewer context switches.
+- Why selected: LinkedIn rewards operational judgment and governance framing. This story gives professionals a concrete deployment question with clear organisational consequences.
 
 ## TikTok Script
 
-Can your AI find the draft you already wrote? OpenAI says ChatGPT can now search chats, projects, images and documents on web, iOS and Android. That means less restarting and fewer lost notes. Would you test old drafts or research screenshots first? Comment one.
+Could your AI test bench become a security risk? OpenAI said a cyber evaluation with GPT-5.6 Sol and a pre-release model chained vulnerabilities into real infrastructure. That means sandboxes need separate credentials, limited network access, and log review. Would you harden the sandbox or the logs first?
 
 ## YouTube Shorts Script
 
-Would your browser handle the admin you keep postponing? Google says Gemini in Chrome is rolling out to desktop users in the U.K. and can summarize pages, compare tabs, draft emails in Gmail, schedule Calendar events, check Maps details, and ask questions about YouTube videos. It also asks for confirmation before sensitive actions. For creators and solo operators, that means research, planning, and small admin tasks can stay in one window instead of turning into tab-hopping. The practical test is simple: one browser session, one workflow, less context switching. What would you try first: page summaries or email drafts? Tell me in the comments, and ask for a follow-up on browser-first workflows if you want one.
+How do you keep AI workloads from becoming one generic bucket? Microsoft said Azure is expanding with AMD-backed options for data processing, EDA chip design, and large-scale inference. The useful lesson is that training, inference, data prep, and review loops do not need the same compute. They differ in memory, latency, cost, and reliability, so separating them early can reduce surprises later. If you are planning AI work, ask where each job belongs before you buy capacity. Which split makes the most sense in your workflow: training, inference, or data prep? Put one example in the comments, or suggest a related AI infrastructure article Clearforge should investigate next.
 
 ## Facebook Post
 
-Can your AI find the draft you already wrote? OpenAI says ChatGPT can search across chats, projects, images and documents on web, iOS and Android, and it’s back on WhatsApp in the EEA with voice notes, image uploads and image generation. For creators, the real win is less restarting and fewer lost references. Would you use it for old briefs or captions? Drop one example in the comments, or ask for a follow-up on creator archives.
+Would you move sensitive AI work into a sovereign cloud? Scaleway said Airbus selected it for selected enterprise applications, with governance, resilience, legal protection, and AI-ready capabilities part of the deal. That makes this a control decision, not just a capacity purchase. For regulated work, where data sits and who can access logs can matter as much as the model itself. For your team, is data location or access control the bigger hurdle? Share one in the comments, or leave a question if you want a rollout checklist.
 
 ## Pinterest Pin
 
-**Title:** How to turn research notes into a repeatable plan
+**Title:** Where Should Human Review Stay in an AI Design Workflow?
 
-**Description:** Use Gemini Notebook to keep research, source links and rough ideas together so you can move from reading to outlining without rebuilding context. Save this and try one notebook with your next batch of notes.
+**Description:** A practical checklist for using AI in PCB and packaging design without losing control. See where planning, analysis, and sign-off still need human review, then save this and comment with the workflow you want to map next.
 
 ## LinkedIn-Style Post
 
-Is your browser already where your workday breaks? Google says Gemini in Chrome is rolling out to desktop users in the U.K. and can summarize pages, compare tabs, draft emails in Gmail, schedule Calendar events, check Maps details, and ask questions about YouTube videos. It also asks for confirmation before sensitive actions. For creators and operators, that could mean fewer context switches and a cleaner path from research to decision. Which would you trial first: tab comparison or Calendar scheduling? Share your choice, or suggest a workflow you want Clearforge to examine next.
+Would you place sensitive AI workloads in a sovereign cloud? Scaleway said Airbus chose a sovereign provider because governance, resilience, legal protection, and AI-ready capabilities mattered. That is a reminder that AI rollout decisions are often about control and auditability as much as performance. If logs, backups, or access controls are unclear, deployment gets harder fast. In your organisation, is the bigger issue governance or infrastructure capacity? Reply with one, or send a related article idea Clearforge should explore next.
 
 ## 5 Short Quote/Card Lines
 
-- Can your assistant find the work you already made?
-- Useful AI reduces switching before it increases output.
-- A connected notebook keeps research from scattering across tabs.
-- The browser is where small chores become finished tasks.
-- What happens when the next step lives in the same window?
+- Where does your AI workflow need a human approval gate?
+- What would you never let an AI approve on its own?
+- Automate the repeatable steps, not the accountability.
+- Logs and approvals are part of the AI system.
+- The best AI workflow is one you can explain and audit.

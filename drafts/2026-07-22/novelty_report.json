@@ -1,0 +1,25 @@
+{
+  "date": "2026-07-22",
+  "editorial_theme": {
+    "day": "Wednesday",
+    "date": "2026-07-22",
+    "slug": "systems-automation",
+    "title": "Systems and automation",
+    "focus": "Systems, automation, agents, reliability, review loops, handoffs, repeatable processes, governance, failure points and human accountability.",
+    "instruction": "Emphasise what should and should not be automated. Explain where human checks, logs, approvals and fallbacks belong."
+  },
+  "same_day_prior_runs": 0,
+  "excluded_url_count": 26,
+  "excluded_story_title_count": 30,
+  "topic_rotation_evidence_dates": [
+    "2026-07-15",
+    "2026-07-16",
+    "2026-07-17",
+    "2026-07-18",
+    "2026-07-19",
+    "2026-07-20",
+    "2026-07-21"
+  ],
+  "consecutive_week_topic_block": true,
+  "passed": true
+}

@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-22",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Could your AI test bench become a security risk?",
+      "words": 47,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "How do you keep AI workloads from becoming one generic bucket?",
+      "words": 108,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Would you move sensitive AI work into a sovereign cloud?",
+      "words": 88,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Would you place sensitive AI workloads in a sovereign cloud?",
+      "words": 80,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "Where Should Human Review Stay in an AI Design Workflow?",
+    "title_words": 10,
+    "description_words": 37
+  },
+  "warnings": []
+}

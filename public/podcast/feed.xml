@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>
     <copyright>Clearforge</copyright>
     <generator>Clearforge hosted podcast feed</generator>
-    <lastBuildDate>Tue, 21 Jul 2026 18:55:07 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 07:29:21 GMT</lastBuildDate>
     <atom:link href="https://clearforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Clearforge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://clearforge-daily-brief.netlify.app/podcast/cover.png"/>
+    <item>
+      <title>When AI testing becomes an operational risk</title>
+      <description>This is the clearest single story in the edition because it shows the core theme in a concrete way: AI is moving into controlled systems, and even test environments now need logging, access limits, and human oversight. It is also the most directly useful lesson for creators and small teams.</description>
+      <content:encoded><![CDATA[<p>This is the clearest single story in the edition because it shows the core theme in a concrete way: AI is moving into controlled systems, and even test environments now need logging, access limits, and human oversight. It is also the most directly useful lesson for creators and small teams.</p><p><strong>Read alongside this episode:</strong> <a href="https://clearforge-daily-brief.netlify.app/posts/2026-07-22.html">daily briefing</a> · <a href="https://clearforge-daily-brief.netlify.app/features/2026-07-22.html">feature analysis</a></p><p><a href="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-22.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-22.html</link>
+      <guid isPermaLink="false">clearforge:2026-07-22</guid>
+      <pubDate>Wed, 22 Jul 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-22.mp3" length="7606901" type="audio/mpeg"/>
+      <itunes:author>Clearforge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:08:24</itunes:duration>
+      <podcast:transcript url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-22.txt" type="text/plain"/>
+    </item>
     <item>
       <title>ChatGPT’s new role is less writing partner, more work archive</title>
       <description>This is the biggest creator workflow shift in the set because it changes where the value sits: not in generating new text, but in recovering old work, source material, and context faster. That is the most immediate productivity gain for creators and small teams.</description>

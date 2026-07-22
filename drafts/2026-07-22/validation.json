@@ -1,0 +1,17 @@
+{
+  "date": "2026-07-22",
+  "passed": true,
+  "policy": "Only factual, sourcing, safety and minimum-content failures block publication. Editorial and formatting issues are warnings.",
+  "failures": [],
+  "warnings": [],
+  "stats": {
+    "source_count": 4,
+    "story_count": 4,
+    "article_words": 729,
+    "feature_words": 2019,
+    "unique_source_domains": 4,
+    "unresolved_claim_count": 0,
+    "social_channels_present": 4,
+    "social_channels_total": 4
+  }
+}

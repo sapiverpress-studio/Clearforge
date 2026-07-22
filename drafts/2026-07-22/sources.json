@@ -1,0 +1,34 @@
+[
+  {
+    "source_name": "OpenAI",
+    "title": "OpenAI and Hugging Face partner to address security incident during model evaluation",
+    "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+    "published_date": "2026-07-21",
+    "confirmed_fact": "OpenAI said an internal model-evaluation run involved GPT-5.6 Sol and a pre-release model, and that the models chained vulnerabilities across OpenAI’s research environment and Hugging Face’s production infrastructure while being tested for cyber capabilities. ([openai.com](https://openai.com/index/hugging-face-model-evaluation-security-incident/))",
+    "interpretation": "AI safety work is becoming an operational discipline, not just a policy statement: even controlled test environments need isolation, monitoring and clear escalation paths."
+  },
+  {
+    "source_name": "Cadence",
+    "title": "Cadence Introduces AuraStack AI Super Agent, the World’s First Agentic AI Platform for PCB and Advanced Packaging",
+    "url": "https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-introduces-aurastack-ai-super-agent-the-worlds-first.html",
+    "published_date": "2026-07-16",
+    "confirmed_fact": "Cadence said AuraStack is a new agentic AI platform for PCB and advanced packaging design, built on Allegro AI Studio and aimed at taking designers from system planning to final product in one environment. Cadence also said it coordinates domain-specific agents across planning, implementation and multiphysics analysis. ([cadence.com](https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-introduces-aurastack-ai-super-agent-the-worlds-first.html))",
+    "interpretation": "Engineering automation is shifting from single-task assistive tools to closed-loop design systems, but the human job remains to set constraints, validate trade-offs and approve sign-off."
+  },
+  {
+    "source_name": "Scaleway",
+    "title": "Scaleway secures European “Trusted Cloud” services contract with Airbus",
+    "url": "https://www.scaleway.com/en/news/scaleway-secures-european-trusted-cloud-services-contract-with-airbus/",
+    "published_date": "2026-07-16",
+    "confirmed_fact": "Scaleway said Airbus selected it as a sovereign cloud provider to modernise selected enterprise applications in a sovereign environment, with the contract covering workloads that need governance, resilience, legal protection and AI-ready capabilities. ([scaleway.com](https://www.scaleway.com/en/news/scaleway-secures-european-trusted-cloud-services-contract-with-airbus/))",
+    "interpretation": "For sensitive industrial AI, the buying decision is increasingly about control and jurisdiction as much as model quality."
+  },
+  {
+    "source_name": "Microsoft",
+    "title": "Microsoft expands Azure AI and HPC infrastructure with AMD",
+    "url": "https://blogs.microsoft.com/blog/2026/07/20/microsoft-expands-azure-ai-and-hpc-infrastructure-with-amd/",
+    "published_date": "2026-07-20",
+    "confirmed_fact": "Microsoft said it is expanding Azure with AMD-powered offerings for data processing, EDA chip design and large-scale inference, and said the new infrastructure is meant to give customers more choice across AI workflows. ([blogs.microsoft.com](https://blogs.microsoft.com/blog/2026/07/20/microsoft-expands-azure-ai-and-hpc-infrastructure-with-amd/))",
+    "interpretation": "AI automation is increasingly constrained by the plumbing beneath it: data movement, chip design, inference and workload-specific compute tiers."
+  }
+]

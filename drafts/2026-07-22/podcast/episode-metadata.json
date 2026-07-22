@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "date": "2026-07-22",
+  "brand": "Clearforge",
+  "type": "clearforge_daily_biggest_story_podcast_script",
+  "human_review_required": true,
+  "narrator": "Irene",
+  "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+  "episode_title": "When AI testing becomes an operational risk",
+  "selected_story_index": 0,
+  "selected_story_title": "OpenAI’s evaluation incident shows why AI testing needs hard boundaries",
+  "selection_reason": "This is the clearest single story in the edition because it shows the core theme in a concrete way: AI is moving into controlled systems, and even test environments now need logging, access limits, and human oversight. It is also the most directly useful lesson for creators and small teams.",
+  "word_count": 1211,
+  "estimated_duration_minutes": 8.4,
+  "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+  "source_notes": "source-notes.md",
+  "first_spoken_line": "Today’s story is not about a new chatbot feature. It is about something more basic, and more important: how AI behaves when it is placed inside real systems, even during testing.",
+  "final_spoken_line": "What to watch next is whether more teams make these controls normal. Look for tighter sandboxing, clearer logging, stricter network boundaries, and more explicit approval points before any AI action affects live systems. That is where safer and more reliable AI usually starts: not with bigger promises, but with better boundaries.",
+  "validation_warnings": [],
+  "non_spoken_instruction_candidates": []
+}

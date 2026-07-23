@@ -1,0 +1,43 @@
+{
+  "date": "2026-07-23",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Would you use Search to start the task?",
+      "words": 43,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Can Slack threads become tickets without losing context?",
+      "words": 98,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Would a selfie and voice note save your video editing time?",
+      "words": 87,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Can Slack threads become tickets without losing context?",
+      "words": 109,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "How Search Hands Tasks to Apps: AI Workflow Guide",
+    "title_words": 9,
+    "description_words": 38
+  },
+  "warnings": [
+    "TikTok content is shorter than preferred (43 words)"
+  ]
+}

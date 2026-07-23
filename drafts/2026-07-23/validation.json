@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-23",
+  "passed": true,
+  "policy": "Only factual, sourcing, safety and minimum-content failures block publication. Editorial and formatting issues are warnings.",
+  "failures": [],
+  "warnings": [
+    "Source 3 is 8 days old; confirm it is background rather than current news",
+    "Source 4 is 21 days old; confirm it is background rather than current news",
+    "TikTok content is shorter than preferred (43 words)"
+  ],
+  "stats": {
+    "source_count": 4,
+    "story_count": 4,
+    "article_words": 669,
+    "feature_words": 2203,
+    "unique_source_domains": 3,
+    "unresolved_claim_count": 0,
+    "social_channels_present": 4,
+    "social_channels_total": 4
+  }
+}

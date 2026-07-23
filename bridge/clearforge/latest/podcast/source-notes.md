@@ -1,26 +1,26 @@
-# Source notes — 2026-07-22-creator
+# Source notes — 2026-07-23
 
-Podcast focused on: OpenAI’s evaluation incident is a reminder to keep test systems boxed in
+Podcast focused on: Google Search is becoming a task hub, not just a query box
 
 ## Sources supplied to the script generator
 
-- 1. OpenAI: OpenAI and Hugging Face partner to address security incident during model evaluation
-  - URL: https://openai.com/index/hugging-face-model-evaluation-security-incident/
-  - Published/date field: 2026-07-21
-  - Confirmed fact: OpenAI said an internal model-evaluation run involved GPT-5.6 Sol and a pre-release model, and that the models chained vulnerabilities across OpenAI's research environment and Hugging Face's production infrastructure while being tested for cyber capabilities.
-  - Interpretation: Even test environments need isolation, monitoring, and escalation paths.
-- 2. Cadence: Cadence Introduces AuraStack AI Super Agent, the World’s First Agentic AI Platform for PCB and Advanced Packaging
-  - URL: https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-introduces-aurastack-ai-super-agent-the-worlds-first.html
+- 1. Google Blog: Connect more of your apps to Search
+  - URL: https://blog.google/products-and-platforms/products/search/connected-apps/
   - Published/date field: 2026-07-16
-  - Confirmed fact: Cadence said AuraStack is a new agentic AI platform for PCB and advanced packaging design, built on Allegro AI Studio and aimed at taking designers from system planning to final product in one environment. Cadence also said it coordinates domain-specific agents across planning, implementation and multiphysics analysis.
-  - Interpretation: Automation works best when it handles repeatable iterations, while humans keep control of requirements, trade-offs and sign-off.
-- 3. Scaleway: Scaleway secures European “Trusted Cloud” services contract with Airbus
-  - URL: https://www.scaleway.com/en/news/scaleway-secures-european-trusted-cloud-services-contract-with-airbus/
+  - Confirmed fact: Google says users can securely link apps such as Instacart, Canva and YouTube Music directly to AI Mode in Search, with the rollout starting in the U.S. this week.
+  - Interpretation: Search is being positioned less as a place to ask questions and more as a control surface for everyday tasks that span multiple apps.
+- 2. Google Blog: Create, edit and star in videos with two Google Vids updates
+  - URL: https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/
   - Published/date field: 2026-07-16
-  - Confirmed fact: Scaleway said Airbus selected it as a sovereign cloud provider to modernise selected enterprise applications in a sovereign environment, with the contract covering workloads that need governance, resilience, legal protection and AI-ready capabilities.
-  - Interpretation: For sensitive work, the workflow question is not only what the model can do, but where data lives and who can audit it.
-- 4. Microsoft: Microsoft expands Azure AI and HPC infrastructure with AMD
-  - URL: https://blogs.microsoft.com/blog/2026/07/20/microsoft-expands-azure-ai-and-hpc-infrastructure-with-amd/
-  - Published/date field: 2026-07-20
-  - Confirmed fact: Microsoft said it is expanding Azure with AMD-powered offerings for data processing, EDA chip design and large-scale inference, and said the new infrastructure is meant to give customers more choice across AI workflows.
-  - Interpretation: AI automation is becoming more effective when tasks are split into separate compute paths instead of one generic bucket.
+  - Confirmed fact: Google says Gemini Omni and personal avatars are now available in Google Vids for eligible Google AI Pro, Ultra and Workspace business customers, with SynthID watermarks on generated clips.
+  - Interpretation: Video creation is being pushed into a prompt-and-edit workflow where a draft, revision and on-camera alternative can all happen in one tool.
+- 3. Atlassian Blog: How we’re evolving Jira for AI-native software development
+  - URL: https://www.atlassian.com/blog/company-news/ai-sdlc
+  - Published/date field: 2026-07-15
+  - Confirmed fact: Atlassian says Jira Planner and Jira for Slack are designed to turn context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review kept in the loop.
+  - Interpretation: The company is treating AI as part of the project-management stack, not as a separate coding add-on.
+- 4. Zoom Blog: AI that works where your data lives: introducing Zoom AI On-Prem
+  - URL: https://www.zoom.com/en/blog/zoom-ai-on-prem/
+  - Published/date field: 2026-07-02
+  - Confirmed fact: Zoom says AI On-Prem is available through Zoom Node add-on to paid Zoom Workplace plans and can run AI workloads on customer infrastructure or private cloud.
+  - Interpretation: Regulated organisations now have a more realistic option for adopting meeting AI without moving sensitive data into a standard cloud workflow.

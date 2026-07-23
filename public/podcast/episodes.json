@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-23",
+    "kind": "daily",
+    "title": "Search is turning into a task hub",
+    "description": "This is the biggest signal in today’s edition because it shows AI moving into the place where many daily workflows begin: search. The change is practical, widely relevant, and it points to a broader shift from isolated AI features to connected handoffs between apps.",
+    "published": "2026-07-23T07:00:00+01:00",
+    "duration": "00:09:18",
+    "size": 7768651,
+    "video_size": 24703566,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-23.mp3",
+    "video_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-23.mp4",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-23.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-23.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-23.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-23.html",
+    "source_dir": "drafts/2026-07-23/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-22-creator",
     "kind": "daily",
     "title": "The AI workflow lesson from OpenAI’s evaluation incident",

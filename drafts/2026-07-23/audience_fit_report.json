@@ -1,0 +1,170 @@
+{
+  "generated_at": "2026-07-23T11:27:51.382Z",
+  "story_assessments": [
+    {
+      "story_index": 0,
+      "story_title": "Google Search is becoming a task hub, not just a query box",
+      "target_audience": "Creators, solo operators, and small businesses that want fewer app hops in everyday planning and publishing",
+      "audience_problem_or_desire": "They want to move from a question to a completed task without switching between multiple apps",
+      "interest_signal": "Search is starting to hand work into other apps instead of only pointing to information",
+      "stop_reason": "App-switching friction is familiar and easy to recognise",
+      "promised_payoff": "One prompt can start a task and pass it into the right app",
+      "proof_point": "Google says users can securely link apps such as Instacart, Canva and YouTube Music directly to AI Mode in Search, with rollout starting in the U.S. this week",
+      "search_phrases": [
+        "Google connected apps AI Mode",
+        "Search hands off tasks to apps",
+        "AI Mode Instacart Canva YouTube Music",
+        "reduce app hopping with AI Search"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 8,
+        "searchability": 8,
+        "stranger_usefulness": 8,
+        "novelty": 7,
+        "visual_potential": 8,
+        "discussion_potential": 7,
+        "short_form_clarity": 9
+      },
+      "overall_score": 8,
+      "score_reason": "Clear everyday value, easy to explain fast, and strongly searchable because it ties AI Search to familiar apps and task switching."
+    },
+    {
+      "story_index": 1,
+      "story_title": "Google Vids now covers more of the video pipeline",
+      "target_audience": "Creators, marketers, trainers, and small teams that need quick video output with a visible AI workflow",
+      "audience_problem_or_desire": "They want faster short-form video creation without losing a review or disclosure trail",
+      "interest_signal": "Video creation is moving into a single prompt-and-edit workflow with avatars and watermarks",
+      "stop_reason": "The workflow is visually intuitive and easy to picture in one screen",
+      "promised_payoff": "Draft, revise and deliver short video content inside one tool",
+      "proof_point": "Google says Gemini Omni and personal avatars are now available in Google Vids for eligible Google AI Pro, Ultra and Workspace business customers, with SynthID watermarks on generated clips",
+      "search_phrases": [
+        "Google Vids Gemini Omni avatar SynthID",
+        "AI video editing avatars Google Vids",
+        "prompt to avatar video workflow",
+        "Google Vids personal avatars"
+      ],
+      "scores": {
+        "audience_fit": 7,
+        "practical_consequence": 7,
+        "searchability": 7,
+        "stranger_usefulness": 7,
+        "novelty": 8,
+        "visual_potential": 9,
+        "discussion_potential": 6,
+        "short_form_clarity": 8
+      },
+      "overall_score": 7,
+      "score_reason": "Strong visual story with practical usefulness for small teams, though slightly narrower and less discussion-heavy than the workflow stories."
+    },
+    {
+      "story_index": 2,
+      "story_title": "Jira is being redesigned around agent handoffs",
+      "target_audience": "Product, engineering and project teams that already rely on Slack, Jira, Confluence and GitHub",
+      "audience_problem_or_desire": "They want to stop losing context when chat turns into tickets, specs and assigned work",
+      "interest_signal": "Atlassian is treating AI as part of the governed workflow stack, not a separate coding add-on",
+      "stop_reason": "The pain point is operational and common in team environments",
+      "promised_payoff": "Conversation can become structured work while human review stays in the loop",
+      "proof_point": "Atlassian says Jira Planner and Jira for Slack are designed to turn context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review kept in the loop",
+      "search_phrases": [
+        "Jira for Slack AI workflow",
+        "Atlassian agent handoffs",
+        "Jira Planner structured specs",
+        "Slack to Jira work items"
+      ],
+      "scores": {
+        "audience_fit": 9,
+        "practical_consequence": 9,
+        "searchability": 8,
+        "stranger_usefulness": 8,
+        "novelty": 8,
+        "visual_potential": 6,
+        "discussion_potential": 8,
+        "short_form_clarity": 8
+      },
+      "overall_score": 8,
+      "score_reason": "Best mix of real operational consequence, clear workflow language and strong appeal to teams already using the tools named in the source."
+    },
+    {
+      "story_index": 3,
+      "story_title": "Zoom is targeting regulated workflows with on-prem AI",
+      "target_audience": "IT, security, compliance and operations teams in regulated organisations and sensitive workplaces",
+      "audience_problem_or_desire": "They need meeting AI without moving sensitive data into a standard cloud workflow",
+      "interest_signal": "Zoom is offering AI that can run on customer infrastructure or private cloud",
+      "stop_reason": "Data residency and governance are high-stakes, easy-to-understand concerns",
+      "promised_payoff": "Meeting AI can stay inside existing control boundaries",
+      "proof_point": "Zoom says AI On-Prem is available through Zoom Node add-on to paid Zoom Workplace plans and can run AI workloads on customer infrastructure or private cloud",
+      "search_phrases": [
+        "Zoom AI On-Prem",
+        "Zoom Node private cloud AI",
+        "meeting AI on-prem",
+        "Zoom regulated workflow AI"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 9,
+        "searchability": 7,
+        "stranger_usefulness": 8,
+        "novelty": 7,
+        "visual_potential": 5,
+        "discussion_potential": 7,
+        "short_form_clarity": 8
+      },
+      "overall_score": 8,
+      "score_reason": "High-consequence story for regulated teams, with a clear decision angle around deployment and data handling rather than model quality."
+    }
+  ],
+  "platform_selections": {
+    "tiktok": {
+      "story_index": 0,
+      "story_title": "Google Search is becoming a task hub, not just a query box",
+      "target_audience": "Creators, solo operators, and small businesses that want fewer app hops in everyday planning and publishing",
+      "format": "short-form spoken hook",
+      "opening": "Would you use Search to start the task?",
+      "payoff": "Google says AI Mode can connect apps like Instacart, Canva and YouTube Music, so one prompt can move from planning to action without app-hopping.",
+      "selection_reason": "This is the quickest, clearest workflow win for a broad audience and works well as a fast, practical question with a visible everyday payoff.",
+      "platform_fit_score": 9
+    },
+    "youtube": {
+      "story_index": 2,
+      "story_title": "Jira is being redesigned around agent handoffs",
+      "target_audience": "Product, engineering and project teams that already rely on Slack, Jira, Confluence and GitHub",
+      "format": "short explainer",
+      "opening": "Can Slack threads become tickets without losing context?",
+      "payoff": "Atlassian says Jira for Slack can turn conversations into work items, while Jira Planner pulls context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review still in the loop.",
+      "selection_reason": "YouTube Shorts can handle a fuller workflow explanation, and this story has the clearest stack logic: conversation to ticket to structured work to review.",
+      "platform_fit_score": 9
+    },
+    "facebook": {
+      "story_index": 1,
+      "story_title": "Google Vids now covers more of the video pipeline",
+      "target_audience": "Creators, marketers, trainers, and small teams that need quick video output with a visible AI workflow",
+      "format": "practical discussion post",
+      "opening": "Would a selfie and voice note save your video editing time?",
+      "payoff": "Google says eligible users can now use Gemini Omni and personal avatars in Google Vids, and generated clips include SynthID watermarks. That means a short update, training clip or explainer can move from prompt to draft to edited output in one workspace.",
+      "selection_reason": "Facebook works well for recognisable creator and small-business situations, and this story gives a concrete everyday use case without needing technical jargon.",
+      "platform_fit_score": 8
+    },
+    "pinterest": {
+      "story_index": 0,
+      "story_title": "Google Search is becoming a task hub, not just a query box",
+      "target_audience": "Creators, solo operators, and small businesses that want fewer app hops in everyday planning and publishing",
+      "format": "searchable guide pin",
+      "opening": "How can Search reduce app hopping?",
+      "payoff": "Google says AI Mode can connect apps like Instacart, Canva and YouTube Music, so one prompt can move from planning to action without extra app hops.",
+      "selection_reason": "Pinterest rewards evergreen, searchable workflow guidance, and this story is easy to frame as a practical guide people may save for later.",
+      "platform_fit_score": 8
+    },
+    "linkedin": {
+      "story_index": 2,
+      "story_title": "Jira is being redesigned around agent handoffs",
+      "target_audience": "Product, engineering and project teams that already rely on Slack, Jira, Confluence and GitHub",
+      "format": "workplace analysis post",
+      "opening": "Can Slack threads become tickets without losing context?",
+      "payoff": "Atlassian says Jira for Slack can turn discussions into work items, and Jira Planner can pull context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review kept in the loop.",
+      "selection_reason": "LinkedIn is the best fit for operational workflow change, team coordination and the management lesson that AI value often comes from better handoffs rather than more generation.",
+      "platform_fit_score": 9
+    }
+  },
+  "overall_reasoning": "The strongest overall pattern is workflow integration rather than standalone model capability. Story 0 is the broadest and easiest to explain for consumers and creators, story 2 is the best operational story for teams, story 1 is the clearest visual creator story, and story 3 is the most important for regulated environments. Each platform selection is matched to the kind of question that audience is most likely to answer."
+}

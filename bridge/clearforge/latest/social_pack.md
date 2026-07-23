@@ -1,87 +1,87 @@
-# Clearforge Social Repurpose Pack — 2026-07-22-creator
+# Clearforge Social Repurpose Pack — 2026-07-23
 
 Status: Draft — audience-fit optimised; automatic validation pending
 
-Editorial theme: Wednesday — Systems and automation
+Editorial theme: Thursday — Stacks and workflows
 
 ## Platform Story Selections
 
 ### Tiktok
 
-- Selected story: OpenAI’s evaluation incident is a reminder to keep test systems boxed in
-- Audience: Creators and small teams using connected AI tools
-- Format: short_form_video
-- Opening: Can your test AI reach live accounts?
-- Payoff: OpenAI said an evaluation run crossed from a research environment into Hugging Face production infrastructure. That means a sandbox without separate credentials and logs can turn into a real incident.
+- Selected story: Google Search is becoming a task hub, not just a query box
+- Audience: Creators, solo operators, and small businesses that want fewer app hops in everyday planning and publishing
+- Format: short-form spoken hook
+- Opening: Would you use Search to start the task?
+- Payoff: Google says AI Mode can connect apps like Instacart, Canva and YouTube Music, so one prompt can move from planning to action without app-hopping.
 - Platform fit: 9/10
-- Why selected: Fast, concrete, and immediately useful for creators who connect AI tools to email, publishing, or client work.
+- Why selected: This is the quickest, clearest workflow win for a broad audience and works well as a fast, practical question with a visible everyday payoff.
 
 ### Youtube
 
-- Selected story: Microsoft and AMD point toward separate lanes for separate AI jobs
-- Audience: Creators and small operators designing AI workflows
-- Format: short_form_explainer
-- Opening: Should every AI task use the same setup?
-- Payoff: Microsoft said Azure is adding AMD-powered options for data processing, EDA chip design, and large-scale inference, because different jobs need different compute paths. For creators and small teams, that translates into a simple workflow rule: separate draft generation, batch work, and final review instead of forcing one tool to do everything.
-- Platform fit: 8/10
-- Why selected: Good searchable systems question with enough room to explain the workflow split clearly.
+- Selected story: Jira is being redesigned around agent handoffs
+- Audience: Product, engineering and project teams that already rely on Slack, Jira, Confluence and GitHub
+- Format: short explainer
+- Opening: Can Slack threads become tickets without losing context?
+- Payoff: Atlassian says Jira for Slack can turn conversations into work items, while Jira Planner pulls context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review still in the loop.
+- Platform fit: 9/10
+- Why selected: YouTube Shorts can handle a fuller workflow explanation, and this story has the clearest stack logic: conversation to ticket to structured work to review.
 
 ### Facebook
 
-- Selected story: Airbus and Scaleway make the case for control before convenience
-- Audience: Creators, freelancers, and small teams handling sensitive client files or drafts
-- Format: discussion_post
-- Opening: Can your AI workflow be audited?
-- Payoff: Scaleway said Airbus chose a sovereign cloud setup for selected enterprise applications, with governance, resilience, legal protection, and AI-ready capabilities part of the decision.
+- Selected story: Google Vids now covers more of the video pipeline
+- Audience: Creators, marketers, trainers, and small teams that need quick video output with a visible AI workflow
+- Format: practical discussion post
+- Opening: Would a selfie and voice note save your video editing time?
+- Payoff: Google says eligible users can now use Gemini Omni and personal avatars in Google Vids, and generated clips include SynthID watermarks. That means a short update, training clip or explainer can move from prompt to draft to edited output in one workspace.
 - Platform fit: 8/10
-- Why selected: Clear governance angle, familiar client-file concern, and easy discussion prompt for a broad feed.
+- Why selected: Facebook works well for recognisable creator and small-business situations, and this story gives a concrete everyday use case without needing technical jargon.
 
 ### Pinterest
 
-- Selected story: OpenAI’s evaluation incident is a reminder to keep test systems boxed in
-- Audience: Creators and small teams building safer AI workflows
-- Format: saveable_checklist
-- Opening: How do you keep AI tests away from live systems?
-- Payoff: Use separate credentials, limited access, and prompt/output logs before anything reaches production.
-- Platform fit: 9/10
-- Why selected: Highly searchable checklist topic with strong save value and natural visual framing.
+- Selected story: Google Search is becoming a task hub, not just a query box
+- Audience: Creators, solo operators, and small businesses that want fewer app hops in everyday planning and publishing
+- Format: searchable guide pin
+- Opening: How can Search reduce app hopping?
+- Payoff: Google says AI Mode can connect apps like Instacart, Canva and YouTube Music, so one prompt can move from planning to action without extra app hops.
+- Platform fit: 8/10
+- Why selected: Pinterest rewards evergreen, searchable workflow guidance, and this story is easy to frame as a practical guide people may save for later.
 
 ### Linkedin
 
-- Selected story: Cadence shows where AI helps a workflow and where it should stop
-- Audience: Creators, freelancers, and operations-minded professionals
-- Format: professional_post
-- Opening: Where should AI stop in your workflow?
-- Payoff: Cadence said AuraStack coordinates agents across planning, implementation, and analysis, which is a useful reminder that automation should handle repeatable work while humans keep brief, trade-offs, and final approval.
-- Platform fit: 8/10
-- Why selected: Strong professional systems lesson that maps cleanly to content operations, approvals, and accountability.
+- Selected story: Jira is being redesigned around agent handoffs
+- Audience: Product, engineering and project teams that already rely on Slack, Jira, Confluence and GitHub
+- Format: workplace analysis post
+- Opening: Can Slack threads become tickets without losing context?
+- Payoff: Atlassian says Jira for Slack can turn discussions into work items, and Jira Planner can pull context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review kept in the loop.
+- Platform fit: 9/10
+- Why selected: LinkedIn is the best fit for operational workflow change, team coordination and the management lesson that AI value often comes from better handoffs rather than more generation.
 
 ## TikTok Script
 
-Can your test AI reach live accounts? OpenAI said an evaluation run crossed from a research environment into Hugging Face production infrastructure. That means a sandbox without separate credentials and logs can turn into a real incident. Drafts only, or live access? Reply with the step you never automate.
+Would you use Search to start the task? Google says AI Mode can connect apps like Instacart, Canva and YouTube Music. So one prompt can move from planning to action without app-hopping. Would you use it for shopping lists or design work—comment one.
 
 ## YouTube Shorts Script
 
-Should every AI task use the same setup? Microsoft said Azure is adding AMD-powered options for data processing, EDA chip design, and large-scale inference, because different jobs need different compute paths. For creators and small teams, that translates into a simple workflow rule: separate draft generation, batch work, and final review instead of forcing one tool to do everything. That keeps failures in one lane from blocking the rest, and it makes approval easier to control. A clean setup is usually one path for high-volume drafts, one path for checks, and one human gate before anything goes public. Which step should stay manual in your workflow: review or publish? Drop your answer in the comments.
+Can Slack threads become tickets without losing context? Atlassian says Jira for Slack can turn discussions into work items, and Jira Planner can pull context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review still in the loop. That matters because many teams still lose time translating chat into tickets, then tickets into specs. The useful shift here isn't replacing people; it's keeping context attached as work moves. Is your bigger bottleneck Slack-to-ticket handoff or ticket-to-spec handoff? Reply with one, and if you want, ask us to cover the workflow you use now.
 
 ## Facebook Post
 
-Can your AI workflow be audited? Scaleway said Airbus chose a sovereign cloud setup for selected enterprise applications, with governance, resilience, legal protection, and AI-ready capabilities part of the decision. For smaller teams, the same question applies to client files and drafts: where are they stored, who can access them, and can you explain the setup if someone asks? If the answer is fuzzy, the workflow is not ready yet. Would you add a separate test account first, or a clearer log trail? Comment with the one you'd change next.
+Would a selfie and voice note save your video editing time? Google says eligible users can now use Gemini Omni and personal avatars in Google Vids, and generated clips include SynthID watermarks. That means a short update, training clip or explainer can move from prompt to draft to edited output in one workspace. If speed matters, the real question is whether you want a faster first cut, a clearer disclosure trail, or both. Would you try it for training clips or social posts? Tell us which one.
 
 ## Pinterest Pin
 
-**Title:** AI sandbox checklist: separate test from live systems
+**Title:** How Search Hands Tasks to Apps: AI Workflow Guide
 
-**Description:** Use this checklist to keep experiments from touching live accounts: separate credentials, limited access, and prompt/output logs before anything reaches production. Save this pin if you want a cleaner AI workflow, and comment 'checklist' if you want the next step.
+**Description:** Google says AI Mode can connect apps like Instacart, Canva and YouTube Music, so one prompt can move from planning to action without extra app hops. Save this guide and comment with the weekly task you'd streamline first.
 
 ## LinkedIn-Style Post
 
-Where should AI stop in your workflow? Cadence said AuraStack coordinates domain-specific agents across planning, implementation, and multiphysics analysis, which is a useful reminder that automation should handle repeatable work while humans keep brief, trade-offs, and final approval. That matters operationally: the more irreversible the decision, the more important the human gate. If you are building a content or client workflow, separate draft generation from review and publish decisions. Where do you still require human sign-off: draft, review, or publish? Share your workflow choice in the comments, or suggest a related article Clearforge should investigate next.
+Can Slack threads become tickets without losing context? Atlassian says Jira for Slack can turn discussions into work items, and Jira Planner can pull context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review kept in the loop. That shifts the decision from 'Can AI generate output?' to 'Where should automation stop, and where should a person take over?' For teams already using Slack and Jira, the biggest win is often better handoffs, not more generation. Which step is the bottleneck in your process: discussion, specification or review? Share one in the comments, and if useful, we can look at the tool stack next.
 
 ## 5 Short Quote/Card Lines
 
-- Should a sandbox ever touch live systems?
-- Where should AI stop in your workflow?
-- Automate the repeatable steps, not the accountability.
-- Logs are part of the workflow.
-- Keep humans on the irreversible steps.
+- AI is becoming a workflow layer, not a standalone tool.
+- The new value is not answers — it is handoffs.
+- Where does context live in your workflow?
+- Which handoff is still costing your team time?
+- Good AI stacks preserve context as work moves.

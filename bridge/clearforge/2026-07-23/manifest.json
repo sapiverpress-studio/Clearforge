@@ -1,0 +1,246 @@
+{
+  "version": 5,
+  "brand": "Clearforge",
+  "date": "2026-07-23",
+  "type": "clearforge_daily_ai_brief",
+  "approved": {
+    "article": true,
+    "facebook": true,
+    "pinterest": true,
+    "youtube": true
+  },
+  "article": {
+    "headline": "AI is becoming a connected workflow layer: search, video, law enforcement and enterprise systems are getting tighter control points",
+    "dek": "Today’s useful signal is not another model launch. It’s the way AI is being wired into the tools people already use, with clearer handoffs, permissions, labels and review steps.",
+    "url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-23.html",
+    "markdown": "daily_brief.md"
+  },
+  "calls_to_action": {
+    "spoken": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "screen_lines": [
+      "READ THE FULL BREAKDOWN",
+      "Link in bio",
+      "LISTEN ON THE GO",
+      "Search: Clearforge AI Briefing"
+    ],
+    "caption": "Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+    "direct_links_allowed_in_social_copy": false
+  },
+  "stories": [
+    {
+      "title": "Google Search is becoming a task hub, not just a query box",
+      "summary": "Google says AI Mode can connect directly to apps like Instacart, Canva and YouTube Music so people can build lists, design projects or queue playlists without leaving Search. That is a meaningful stack change because the search layer is starting to pass work into other apps instead of simply pointing to them.",
+      "why_it_matters": "For creators and small businesses, this can reduce the number of places you have to jump between when planning content, making shopping lists, or assembling a quick project brief.",
+      "practical_angle": "Think in terms of one prompt, one action, one app handoff.",
+      "source_name": "Google Blog",
+      "source_url": "https://blog.google/products-and-platforms/products/search/connected-apps/"
+    },
+    {
+      "title": "Google Vids now covers more of the video pipeline",
+      "summary": "Google says Vids now lets eligible users generate and edit clips with Gemini Omni and create personal avatars from a selfie and voice recording. The generated clips include SynthID watermarks, which gives the workflow a built-in transparency layer.",
+      "why_it_matters": "This is useful for short updates, training clips and social media explainers where people want speed, but still need a clear AI disclosure trail.",
+      "practical_angle": "A one-person video stack can now move from script to rough cut to avatar-led delivery in a single workspace.",
+      "source_name": "Google Blog",
+      "source_url": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/"
+    },
+    {
+      "title": "Jira is being redesigned around agent handoffs",
+      "summary": "Atlassian says Jira Planner will pull from codebases and project context to produce structured specs, while Jira for Slack turns discussion threads into work items and assigns them into the same system. The key shift is that the agent is not working alone; it is working inside a governed workflow with context and review.",
+      "why_it_matters": "This matters to teams that already lose time translating Slack chatter into tickets and then tickets into implementation.",
+      "practical_angle": "The stack is becoming: conversation → ticket → spec → agent work → human review.",
+      "source_name": "Atlassian Blog",
+      "source_url": "https://www.atlassian.com/blog/company-news/ai-sdlc"
+    }
+  ],
+  "facebook": {
+    "post": "Would a selfie and voice note save your video editing time? Google says eligible users can now use Gemini Omni and personal avatars in Google Vids, and generated clips include SynthID watermarks. That means a short update, training clip or explainer can move from prompt to draft to edited output in one workspace. If speed matters, the real question is whether you want a faster first cut, a clearer disclosure trail, or both. Would you try it for training clips or social posts? Tell us which one.\n\n#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI"
+  },
+  "pinterest": {
+    "title": "How Search Hands Tasks to Apps: AI Workflow Guide",
+    "description": "Google says AI Mode can connect apps like Instacart, Canva and YouTube Music, so one prompt can move from planning to action without extra app hops. Save this guide and comment with the weekly task you'd streamline first.",
+    "destination_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-23.html"
+  },
+  "youtube": {
+    "title": "AI is becoming a connected workflow layer: search, video, law enforcement and enterprise system",
+    "script": "Can Slack threads become tickets without losing context? Atlassian says Jira for Slack can turn discussions into work items, and Jira Planner can pull context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review still in the loop. That matters because many teams still lose time translating chat into tickets, then tickets into specs. The useful shift here isn't replacing people; it's keeping context attached as work moves. Is your bigger bottleneck Slack-to-ticket handoff or ticket-to-spec handoff? Reply with one, and if you want, ask us to cover the workflow you use now. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "description": "Map one task you repeat every week, then test where AI can hand work from one tool to the next without losing context or control."
+  },
+  "podcast": {
+    "generated": true,
+    "folder": "podcast/",
+    "copy_paste_script": "podcast/COPY_PASTE_INTO_ELEVENLABS.txt",
+    "full_review_script": "podcast/podcast-script.md",
+    "metadata": "podcast/episode-metadata.json",
+    "source_notes": "podcast/source-notes.md",
+    "episode": {
+      "version": 1,
+      "date": "2026-07-23",
+      "brand": "Clearforge",
+      "type": "clearforge_daily_biggest_story_podcast_script",
+      "human_review_required": true,
+      "narrator": "Irene",
+      "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+      "episode_title": "Search is turning into a task hub",
+      "selected_story_index": 0,
+      "selected_story_title": "Google Search is becoming a task hub, not just a query box",
+      "selection_reason": "This is the biggest signal in today’s edition because it shows AI moving into the place where many daily workflows begin: search. The change is practical, widely relevant, and it points to a broader shift from isolated AI features to connected handoffs between apps.",
+      "word_count": 1351,
+      "estimated_duration_minutes": 9.3,
+      "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+      "source_notes": "source-notes.md",
+      "first_spoken_line": "Today’s most important AI shift is not a bigger model or a flashy demo. It is a quieter change in where the work happens.",
+      "final_spoken_line": "The big lesson is not that search is becoming smarter. It is that the boundary between search and action is getting thinner. For everyday users, that can feel like convenience. For teams, it can feel like a new operating layer. Either way, the useful question is the same: where does the work start, where does it move next, and who is checking the result before it goes live?",
+      "validation_warnings": [],
+      "non_spoken_instruction_candidates": []
+    }
+  },
+  "ai_media": {
+    "manifest": "media/media-manifest.json",
+    "narration": "media/narration.mp3",
+    "story_images": [
+      "media/story-1.png",
+      "media/story-2.png",
+      "media/story-3.png"
+    ],
+    "tiktok_narration": "media/tiktok-narration.mp3",
+    "tiktok": {
+      "story_index": 0,
+      "hook": "Would you use Search to start the task?",
+      "payoff": "Google says AI Mode can connect apps like Instacart, Canva and YouTube Music. So one prompt can move from planning to action without app-hopping.",
+      "response_prompt": "Would you use it for shopping lists or design work—comment one.",
+      "narration": "media/2026-07-23/tiktok-narration.mp3",
+      "narration_text": "Would you use Search to start the task? Google says AI Mode can connect apps like Instacart, Canva and YouTube Music. So one prompt can move from planning to action without app-hopping. Would you use it for shopping lists or design work—comment one.",
+      "target_duration_seconds": [
+        12,
+        18
+      ],
+      "format": "question_fact_consequence_response"
+    },
+    "generated": true
+  },
+  "quote_card_lines": [
+    "AI is becoming a workflow layer, not a standalone tool.",
+    "The new value is not answers — it is handoffs.",
+    "Where does context live in your workflow?",
+    "Which handoff is still costing your team time?",
+    "Good AI stacks preserve context as work moves."
+  ],
+  "headline_options": [
+    "AI is becoming a connected workflow layer: search, video, law enforcement and enterprise systems are getting tighter control points",
+    "The real AI shift this week is about handoffs: apps, tickets, videos and meetings are starting to connect",
+    "AI tools are moving into workflow stacks, with search, video and Jira doing more of the handoff work",
+    "The useful AI story today is integration: search links, video pipelines, Jira context and on-prem meeting AI",
+    "AI is less about isolated features now and more about how tools pass work to each other"
+  ],
+  "sources": [
+    {
+      "source_name": "Google Blog",
+      "title": "Connect more of your apps to Search",
+      "url": "https://blog.google/products-and-platforms/products/search/connected-apps/",
+      "published_date": "2026-07-16",
+      "confirmed_fact": "Google says users can securely link apps such as Instacart, Canva and YouTube Music directly to AI Mode in Search, with the rollout starting in the U.S. this week.",
+      "interpretation": "Search is being positioned less as a place to ask questions and more as a control surface for everyday tasks that span multiple apps."
+    },
+    {
+      "source_name": "Google Blog",
+      "title": "Create, edit and star in videos with two Google Vids updates",
+      "url": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/",
+      "published_date": "2026-07-16",
+      "confirmed_fact": "Google says Gemini Omni and personal avatars are now available in Google Vids for eligible Google AI Pro, Ultra and Workspace business customers, with SynthID watermarks on generated clips.",
+      "interpretation": "Video creation is being pushed into a prompt-and-edit workflow where a draft, revision and on-camera alternative can all happen in one tool."
+    },
+    {
+      "source_name": "Atlassian Blog",
+      "title": "How we’re evolving Jira for AI-native software development",
+      "url": "https://www.atlassian.com/blog/company-news/ai-sdlc",
+      "published_date": "2026-07-15",
+      "confirmed_fact": "Atlassian says Jira Planner and Jira for Slack are designed to turn context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review kept in the loop.",
+      "interpretation": "The company is treating AI as part of the project-management stack, not as a separate coding add-on."
+    },
+    {
+      "source_name": "Zoom Blog",
+      "title": "AI that works where your data lives: introducing Zoom AI On-Prem",
+      "url": "https://www.zoom.com/en/blog/zoom-ai-on-prem/",
+      "published_date": "2026-07-02",
+      "confirmed_fact": "Zoom says AI On-Prem is available through Zoom Node add-on to paid Zoom Workplace plans and can run AI workloads on customer infrastructure or private cloud.",
+      "interpretation": "Regulated organisations now have a more realistic option for adopting meeting AI without moving sensitive data into a standard cloud workflow."
+    }
+  ],
+  "media_metadata": {
+    "version": 5,
+    "date": "2026-07-23",
+    "headline": "AI is becoming a connected workflow layer: search, video, law enforcement and enterprise systems are getting tighter control points",
+    "dek": "Today’s useful signal is not another model launch. It’s the way AI is being wired into the tools people already use, with clearer handoffs, permissions, labels and review steps.",
+    "hook": "Three AI updates that actually matter today",
+    "spoken_cta": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "visual_system": "Clearforge AI briefing podcast studio system",
+    "visual_style_rules": {
+      "include": [
+        "dark navy AI briefing or podcast studio atmosphere",
+        "microphone or audio-briefing cues where appropriate",
+        "subtle circuit traces, waveform motifs, model cards or data-routing lines",
+        "physical source notes, checklists and human-review materials",
+        "premium editorial technology-magazine lighting"
+      ],
+      "avoid": [
+        "robots",
+        "glowing brains",
+        "hologram faces",
+        "generic dashboards",
+        "random floating code",
+        "excessive neon",
+        "fake readable text",
+        "Sapiver or unrelated branding"
+      ]
+    },
+    "stories": [
+      {
+        "file": "media/2026-07-23/story-1.png",
+        "title": "Google Search is becoming a task hub, not just a query box",
+        "source_name": "Google Blog",
+        "source_url": "https://blog.google/products-and-platforms/products/search/connected-apps/",
+        "summary": "Google says AI Mode can connect directly to apps like Instacart, Canva and YouTube Music so people can build lists, design projects or queue playlists without leaving Search. That is a meaningful stack change because the search layer is starting to pass work into other apps instead of simply pointing to them.",
+        "why_it_matters": "For creators and small businesses, this can reduce the number of places you have to jump between when planning content, making shopping lists, or assembling a quick project brief.",
+        "practical_angle": "Think in terms of one prompt, one action, one app handoff.",
+        "visual_prompt": "a dark navy AI briefing studio desk with a professional podcast microphone, source notes, a small audio waveform display, subtle circuit-board lines in the background and one practical notebook open on the desk. wide briefing-room still life cropped for vertical short-form video. show AI as a system being reviewed by a person through notes, checks, source cards and controlled audio tools. include a different arrangement of source cards, notebook, microphone angle and background signal pattern. Story context: Google Search is becoming a task hub, not just a query box. Practical angle: Think in terms of one prompt, one action, one app handoff.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      },
+      {
+        "file": "media/2026-07-23/story-2.png",
+        "title": "Google Vids now covers more of the video pipeline",
+        "source_name": "Google Blog",
+        "source_url": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/",
+        "summary": "Google says Vids now lets eligible users generate and edit clips with Gemini Omni and create personal avatars from a selfie and voice recording. The generated clips include SynthID watermarks, which gives the workflow a built-in transparency layer.",
+        "why_it_matters": "This is useful for short updates, training clips and social media explainers where people want speed, but still need a clear AI disclosure trail.",
+        "practical_angle": "A one-person video stack can now move from script to rough cut to avatar-led delivery in a single workspace.",
+        "visual_prompt": "a high-end technology briefing set with a dark blue wall, subtle circuit traces, a clean desk, paper research packs, audio waveforms and one human-operated control surface. clean editorial technology-magazine composition, practical rather than sci-fi. combine physical human-review materials with light digital signal motifs so it feels human-led and AI-empowered. vary camera distance, desk depth and object hierarchy while keeping the same Clearforge identity. Story context: Google Vids now covers more of the video pipeline. Practical angle: A one-person video stack can now move from script to rough cut to avatar-led delivery in a single workspace.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: dark blue studio background, graphite desk, white paper, blue highlights and restrained green accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      },
+      {
+        "file": "media/2026-07-23/story-3.png",
+        "title": "Jira is being redesigned around agent handoffs",
+        "source_name": "Atlassian Blog",
+        "source_url": "https://www.atlassian.com/blog/company-news/ai-sdlc",
+        "summary": "Atlassian says Jira Planner will pull from codebases and project context to produce structured specs, while Jira for Slack turns discussion threads into work items and assigns them into the same system. The key shift is that the agent is not working alone; it is working inside a governed workflow with context and review.",
+        "why_it_matters": "This matters to teams that already lose time translating Slack chatter into tickets and then tickets into implementation.",
+        "practical_angle": "The stack is becoming: conversation → ticket → spec → agent work → human review.",
+        "visual_prompt": "a practical AI systems review scene with a microphone, pinned evidence cards, process arrows, muted blue signal lines and a clear before-to-after analysis structure. vertical social-video still with a strong microphone foreground and clear desk detail. make the AI element clear through subtle circuit traces, waveform graphics, model cards and data-routing lines, not robots. use a different AI signal motif: waveform, routing lines, model cards, calendar markers or evidence board. Story context: Jira is being redesigned around agent handoffs. Practical angle: The stack is becoming: conversation → ticket → spec → agent work → human review.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      }
+    ],
+    "narration": "media/2026-07-23/narration.mp3",
+    "narration_text": "Can Slack threads become tickets without losing context? Atlassian says Jira for Slack can turn discussions into work items, and Jira Planner can pull context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review still in the loop. That matters because many teams still lose time translating chat into tickets, then tickets into specs. The useful shift here isn't replacing people; it's keeping context attached as work moves. Is your bigger bottleneck Slack-to-ticket handoff or ticket-to-spec handoff? Reply with one, and if you want, ask us to cover the workflow you use now. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "tiktok": {
+      "story_index": 0,
+      "hook": "Would you use Search to start the task?",
+      "payoff": "Google says AI Mode can connect apps like Instacart, Canva and YouTube Music. So one prompt can move from planning to action without app-hopping.",
+      "response_prompt": "Would you use it for shopping lists or design work—comment one.",
+      "narration": "media/2026-07-23/tiktok-narration.mp3",
+      "narration_text": "Would you use Search to start the task? Google says AI Mode can connect apps like Instacart, Canva and YouTube Music. So one prompt can move from planning to action without app-hopping. Would you use it for shopping lists or design work—comment one.",
+      "target_duration_seconds": [
+        12,
+        18
+      ],
+      "format": "question_fact_consequence_response"
+    },
+    "practical_takeaway": "Map one task you repeat every week, then test where AI can hand work from one tool to the next without losing context or control.",
+    "what_to_test_next": "Take one recurring task — for example, turning a meeting note into a project ticket and a short video update — and prototype a three-step stack: capture in the meeting tool, convert into a structured task, and draft the follow-up asset in one creative or publishing app."
+  }
+}

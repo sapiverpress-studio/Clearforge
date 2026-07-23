@@ -2,7 +2,7 @@ const repoRoot = "https://raw.githubusercontent.com/sapiverpress-studio/SapiverP
 const status = document.querySelector("#status");
 const assetsRoot = document.querySelector("#assets");
 
-function raw(path) { return repoRoot + String(path || "").replace(/^\/+/, ""); }
+function raw(path) { return repoRoot + String(path || "").replace(/^\/+/, ""); }\nfunction fresh(path) { return raw(path) + `?v=${Date.now()}`; }
 async function copyText(text, button) {
   await navigator.clipboard.writeText(text);
   const old = button.textContent; button.textContent = "Copied";
@@ -12,15 +12,15 @@ async function renderVersion(label, entry) {
   const caption = entry?.caption ? await fetch(raw(entry.caption)).then((response) => response.ok ? response.text() : "") : "";
   const card = document.createElement("article"); card.className = "asset";
   const title = document.createElement("h2"); title.textContent = label; card.append(title);
-  const video = document.createElement("video"); video.controls = true; video.preload = "metadata"; video.src = raw(entry.video); card.append(video);
+  const video = document.createElement("video"); video.controls = true; video.preload = "metadata"; video.src = fresh(entry.video); card.append(video);
   const box = document.createElement("div"); box.className = "copybox"; box.textContent = caption.trim() || "No caption supplied."; card.append(box);
   const actions = document.createElement("div"); actions.className = "actions";
   const copy = document.createElement("button"); copy.textContent = "Copy caption"; copy.addEventListener("click", () => copyText(caption.trim(), copy)); actions.append(copy);
-  const download = document.createElement("a"); download.className = "button"; download.textContent = "Open/download video"; download.href = raw(entry.video); download.target = "_blank"; download.rel = "noopener"; actions.append(download);
+  const download = document.createElement("a"); download.className = "button"; download.textContent = "Open/download video"; download.href = fresh(entry.video); download.target = "_blank"; download.rel = "noopener"; actions.append(download);
   card.append(actions); return card;
 }
 try {
-  const response = await fetch(raw("social/clearforge/latest.json"), { cache: "no-store" });
+  const response = await fetch(fresh("social/clearforge/latest.json"), { cache: "no-store" });
   if (!response.ok) throw new Error("The first public publishing pack has not been generated yet.");
   const manifest = await response.json();
   const cards = [];

@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-23-creator",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Would your search start the whole task?",
+      "words": 55,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Need a video draft faster?",
+      "words": 96,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Can your meeting AI stay inside your environment?",
+      "words": 85,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Does chat keep losing your work context?",
+      "words": 103,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "Google Vids Workflow for Faster Video Drafts",
+    "title_words": 7,
+    "description_words": 47
+  },
+  "warnings": []
+}

@@ -1,0 +1,170 @@
+{
+  "generated_at": "2026-07-23T16:34:46.762Z",
+  "story_assessments": [
+    {
+      "story_index": 0,
+      "story_title": "Search is becoming a start point for creator tasks",
+      "target_audience": "Creators, solo operators, and small-business owners",
+      "audience_problem_or_desire": "Starting a task in Search without retyping context into the next app",
+      "interest_signal": "Google says AI Mode can connect apps like Instacart, Canva and YouTube Music directly to Search",
+      "stop_reason": "Most people immediately understand the benefit of fewer copy-paste steps",
+      "promised_payoff": "A cleaner search-to-app handoff for planning lists, visuals, or playlists",
+      "proof_point": "Google Blog confirmed connected apps in AI Mode, with rollout starting in the U.S. this week",
+      "search_phrases": [
+        "Google AI Mode connected apps",
+        "Search to app workflow",
+        "Canva in Google Search AI Mode",
+        "creator workflow handoff"
+      ],
+      "scores": {
+        "audience_fit": 9,
+        "practical_consequence": 8,
+        "searchability": 8,
+        "stranger_usefulness": 9,
+        "novelty": 7,
+        "visual_potential": 6,
+        "discussion_potential": 7,
+        "short_form_clarity": 9
+      },
+      "overall_score": 8,
+      "score_reason": "Broad creator and small-business relevance, easy to explain quickly, and useful even to strangers who just want fewer steps between idea and execution."
+    },
+    {
+      "story_index": 1,
+      "story_title": "Google Vids now covers more of the video handoff chain",
+      "target_audience": "Creators, video marketers, and small teams making short clips",
+      "audience_problem_or_desire": "Drafting and disclosing video content faster without jumping tools",
+      "interest_signal": "Gemini Omni and personal avatars are now available in Google Vids for eligible users",
+      "stop_reason": "The combination of faster drafting and SynthID disclosure is concrete and easy to visualize",
+      "promised_payoff": "A one-workspace draft-to-edit workflow with built-in watermarks",
+      "proof_point": "Google Blog confirmed Gemini Omni, personal avatars, and SynthID watermarks in Google Vids",
+      "search_phrases": [
+        "Google Vids Gemini Omni",
+        "personal avatars in Google Vids",
+        "SynthID watermarks video",
+        "AI video workflow"
+      ],
+      "scores": {
+        "audience_fit": 9,
+        "practical_consequence": 9,
+        "searchability": 8,
+        "stranger_usefulness": 8,
+        "novelty": 8,
+        "visual_potential": 9,
+        "discussion_potential": 7,
+        "short_form_clarity": 9
+      },
+      "overall_score": 9,
+      "score_reason": "Very visual, practical, and easy to summarize in short-form video, with a clear workflow benefit and a built-in disclosure angle."
+    },
+    {
+      "story_index": 2,
+      "story_title": "Jira is turning chat into structured work",
+      "target_audience": "Product teams, software teams, and knowledge workers",
+      "audience_problem_or_desire": "Reconstructing decisions and tasks after they move through chat, docs, and code",
+      "interest_signal": "Jira Planner and Jira for Slack turn context from Jira, Confluence, Slack and GitHub into structured work",
+      "stop_reason": "The conversation-to-ticket-to-review chain is easy to explain and relevant to many teams",
+      "promised_payoff": "Keep the original thread alive as work moves across tools",
+      "proof_point": "Atlassian says human review stays in the loop",
+      "search_phrases": [
+        "Jira Planner Slack GitHub",
+        "AI native workflow Jira",
+        "context to structured work",
+        "human review in the loop"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 9,
+        "searchability": 7,
+        "stranger_usefulness": 8,
+        "novelty": 7,
+        "visual_potential": 5,
+        "discussion_potential": 8,
+        "short_form_clarity": 8
+      },
+      "overall_score": 8,
+      "score_reason": "Strong operational value for teams that lose context between chat and tickets, with clear language and a recognizable workflow problem."
+    },
+    {
+      "story_index": 3,
+      "story_title": "Zoom is giving sensitive workflows a different deployment path",
+      "target_audience": "Creators, client-facing teams, and internal ops handling sensitive data",
+      "audience_problem_or_desire": "Using AI when data must stay on customer infrastructure or private cloud",
+      "interest_signal": "Zoom says AI On-Prem can run through Zoom Node on customer infrastructure or private cloud",
+      "stop_reason": "Deployment model is a concrete differentiator that many people overlook",
+      "promised_payoff": "A private AI path for summarization and search inside existing rules",
+      "proof_point": "Zoom says it is available through Zoom Node add-on to paid Zoom Workplace plans",
+      "search_phrases": [
+        "Zoom AI On-Prem",
+        "Zoom Node private cloud AI",
+        "customer infrastructure AI",
+        "private deployment AI meetings"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 8,
+        "searchability": 6,
+        "stranger_usefulness": 8,
+        "novelty": 7,
+        "visual_potential": 5,
+        "discussion_potential": 7,
+        "short_form_clarity": 8
+      },
+      "overall_score": 8,
+      "score_reason": "Useful for sensitive workflows and governance-minded teams, with a clear deployment question even if it is less visually obvious than video."
+    }
+  ],
+  "platform_selections": {
+    "tiktok": {
+      "story_index": 0,
+      "story_title": "Search is becoming a start point for creator tasks",
+      "target_audience": "Creators, solo operators, and small-business owners",
+      "format": "TikTok short",
+      "opening": "Would your search start the whole task?",
+      "payoff": "Google says AI Mode can connect apps like Instacart, Canva and YouTube Music directly to Search, so the first step can happen in one place and the next step can happen in the right app.",
+      "selection_reason": "Fast, relatable, and easy to explain in one breath. The handoff idea lands quickly for a broad creator audience and works well as a simple either/or prompt.",
+      "platform_fit_score": 9
+    },
+    "youtube": {
+      "story_index": 1,
+      "story_title": "Google Vids now covers more of the video handoff chain",
+      "target_audience": "Creators, video marketers, and small teams making short clips",
+      "format": "YouTube Shorts",
+      "opening": "Need a video draft faster?",
+      "payoff": "Google says Gemini Omni and personal avatars are now available in Google Vids for eligible users, and generated clips include SynthID watermarks. That means a quicker draft-and-edit flow with disclosure built in.",
+      "selection_reason": "Highly visual and easy to narrate for Shorts. The workflow and disclosure angle give viewers a concrete reason to keep watching and a clear question to answer.",
+      "platform_fit_score": 9
+    },
+    "facebook": {
+      "story_index": 3,
+      "story_title": "Zoom is giving sensitive workflows a different deployment path",
+      "target_audience": "Creators, client-facing teams, and internal ops handling sensitive data",
+      "format": "Facebook post",
+      "opening": "Can your meeting AI stay inside your environment?",
+      "payoff": "Zoom says AI On-Prem can run through Zoom Node on customer infrastructure or private cloud for paid Zoom Workplace plans. For sensitive calls, internal training, or client material, the question is where the data lives as much as what the AI can do.",
+      "selection_reason": "Facebook suits practical privacy and workflow discussions. This story invites experience-sharing from people who care about deployment rules and controlled environments.",
+      "platform_fit_score": 8
+    },
+    "pinterest": {
+      "story_index": 1,
+      "story_title": "Google Vids now covers more of the video handoff chain",
+      "target_audience": "Creators, video marketers, and small teams making short clips",
+      "format": "Pinterest pin",
+      "opening": "Google Vids Workflow for Faster Video Drafts",
+      "payoff": "Use Google Vids to draft and edit clips in one place, with Gemini Omni and personal avatars for eligible users and SynthID watermarks on generated clips. Save this if you make short updates, explainers, or training videos.",
+      "selection_reason": "This story has the strongest visual and searchable workflow angle for Pinterest, where practical guides and creator checklists perform well.",
+      "platform_fit_score": 8
+    },
+    "linkedin": {
+      "story_index": 2,
+      "story_title": "Jira is turning chat into structured work",
+      "target_audience": "Product teams, software teams, and knowledge workers",
+      "format": "LinkedIn post",
+      "opening": "Does chat keep losing your work context?",
+      "payoff": "Atlassian says Jira Planner and Jira for Slack turn context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review still in the loop. The operational value is keeping the original thread attached as work moves into tickets and specs.",
+      "selection_reason": "Best fit for LinkedIn because it speaks to team process, operational consequences, and cross-tool handoffs in a professional setting.",
+      "platform_fit_score": 9
+    }
+  },
+  "overall_reasoning": "The strongest pattern across the pack is workflow handoff, not isolated tool launches. I assigned each platform to the story that best matches its format: search-to-app for TikTok, video drafting and disclosure for Shorts and Pinterest, governed privacy for Facebook, and structured cross-tool work for LinkedIn. Every social asset stays within verified facts and opens with a direct, low-friction question."
+}

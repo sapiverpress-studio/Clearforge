@@ -1,4 +1,4 @@
-# Clearforge Social Repurpose Pack — 2026-07-23
+# Clearforge Social Repurpose Pack — 2026-07-23-creator
 
 Status: Draft — audience-fit optimised; automatic validation pending
 
@@ -8,80 +8,80 @@ Editorial theme: Thursday — Stacks and workflows
 
 ### Tiktok
 
-- Selected story: Google Search is becoming a task hub, not just a query box
-- Audience: Creators, solo operators, and small businesses that want fewer app hops in everyday planning and publishing
-- Format: short-form spoken hook
-- Opening: Would you use Search to start the task?
-- Payoff: Google says AI Mode can connect apps like Instacart, Canva and YouTube Music, so one prompt can move from planning to action without app-hopping.
+- Selected story: Search is becoming a start point for creator tasks
+- Audience: Creators, solo operators, and small-business owners
+- Format: TikTok short
+- Opening: Would your search start the whole task?
+- Payoff: Google says AI Mode can connect apps like Instacart, Canva and YouTube Music directly to Search, so the first step can happen in one place and the next step can happen in the right app.
 - Platform fit: 9/10
-- Why selected: This is the quickest, clearest workflow win for a broad audience and works well as a fast, practical question with a visible everyday payoff.
+- Why selected: Fast, relatable, and easy to explain in one breath. The handoff idea lands quickly for a broad creator audience and works well as a simple either/or prompt.
 
 ### Youtube
 
-- Selected story: Jira is being redesigned around agent handoffs
-- Audience: Product, engineering and project teams that already rely on Slack, Jira, Confluence and GitHub
-- Format: short explainer
-- Opening: Can Slack threads become tickets without losing context?
-- Payoff: Atlassian says Jira for Slack can turn conversations into work items, while Jira Planner pulls context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review still in the loop.
+- Selected story: Google Vids now covers more of the video handoff chain
+- Audience: Creators, video marketers, and small teams making short clips
+- Format: YouTube Shorts
+- Opening: Need a video draft faster?
+- Payoff: Google says Gemini Omni and personal avatars are now available in Google Vids for eligible users, and generated clips include SynthID watermarks. That means a quicker draft-and-edit flow with disclosure built in.
 - Platform fit: 9/10
-- Why selected: YouTube Shorts can handle a fuller workflow explanation, and this story has the clearest stack logic: conversation to ticket to structured work to review.
+- Why selected: Highly visual and easy to narrate for Shorts. The workflow and disclosure angle give viewers a concrete reason to keep watching and a clear question to answer.
 
 ### Facebook
 
-- Selected story: Google Vids now covers more of the video pipeline
-- Audience: Creators, marketers, trainers, and small teams that need quick video output with a visible AI workflow
-- Format: practical discussion post
-- Opening: Would a selfie and voice note save your video editing time?
-- Payoff: Google says eligible users can now use Gemini Omni and personal avatars in Google Vids, and generated clips include SynthID watermarks. That means a short update, training clip or explainer can move from prompt to draft to edited output in one workspace.
+- Selected story: Zoom is giving sensitive workflows a different deployment path
+- Audience: Creators, client-facing teams, and internal ops handling sensitive data
+- Format: Facebook post
+- Opening: Can your meeting AI stay inside your environment?
+- Payoff: Zoom says AI On-Prem can run through Zoom Node on customer infrastructure or private cloud for paid Zoom Workplace plans. For sensitive calls, internal training, or client material, the question is where the data lives as much as what the AI can do.
 - Platform fit: 8/10
-- Why selected: Facebook works well for recognisable creator and small-business situations, and this story gives a concrete everyday use case without needing technical jargon.
+- Why selected: Facebook suits practical privacy and workflow discussions. This story invites experience-sharing from people who care about deployment rules and controlled environments.
 
 ### Pinterest
 
-- Selected story: Google Search is becoming a task hub, not just a query box
-- Audience: Creators, solo operators, and small businesses that want fewer app hops in everyday planning and publishing
-- Format: searchable guide pin
-- Opening: How can Search reduce app hopping?
-- Payoff: Google says AI Mode can connect apps like Instacart, Canva and YouTube Music, so one prompt can move from planning to action without extra app hops.
+- Selected story: Google Vids now covers more of the video handoff chain
+- Audience: Creators, video marketers, and small teams making short clips
+- Format: Pinterest pin
+- Opening: Google Vids Workflow for Faster Video Drafts
+- Payoff: Use Google Vids to draft and edit clips in one place, with Gemini Omni and personal avatars for eligible users and SynthID watermarks on generated clips. Save this if you make short updates, explainers, or training videos.
 - Platform fit: 8/10
-- Why selected: Pinterest rewards evergreen, searchable workflow guidance, and this story is easy to frame as a practical guide people may save for later.
+- Why selected: This story has the strongest visual and searchable workflow angle for Pinterest, where practical guides and creator checklists perform well.
 
 ### Linkedin
 
-- Selected story: Jira is being redesigned around agent handoffs
-- Audience: Product, engineering and project teams that already rely on Slack, Jira, Confluence and GitHub
-- Format: workplace analysis post
-- Opening: Can Slack threads become tickets without losing context?
-- Payoff: Atlassian says Jira for Slack can turn discussions into work items, and Jira Planner can pull context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review kept in the loop.
+- Selected story: Jira is turning chat into structured work
+- Audience: Product teams, software teams, and knowledge workers
+- Format: LinkedIn post
+- Opening: Does chat keep losing your work context?
+- Payoff: Atlassian says Jira Planner and Jira for Slack turn context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review still in the loop. The operational value is keeping the original thread attached as work moves into tickets and specs.
 - Platform fit: 9/10
-- Why selected: LinkedIn is the best fit for operational workflow change, team coordination and the management lesson that AI value often comes from better handoffs rather than more generation.
+- Why selected: Best fit for LinkedIn because it speaks to team process, operational consequences, and cross-tool handoffs in a professional setting.
 
 ## TikTok Script
 
-Would you use Search to start the task? Google says AI Mode can connect apps like Instacart, Canva and YouTube Music. So one prompt can move from planning to action without app-hopping. Would you use it for shopping lists or design work—comment one.
+Would your search start the whole task? Google says AI Mode can connect apps like Instacart, Canva and YouTube Music directly to Search, so the first step can happen in one place and the next step in the right app. Would you use it for a shopping list or a design brief? Comment with one.
 
 ## YouTube Shorts Script
 
-Can Slack threads become tickets without losing context? Atlassian says Jira for Slack can turn discussions into work items, and Jira Planner can pull context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review still in the loop. That matters because many teams still lose time translating chat into tickets, then tickets into specs. The useful shift here isn't replacing people; it's keeping context attached as work moves. Is your bigger bottleneck Slack-to-ticket handoff or ticket-to-spec handoff? Reply with one, and if you want, ask us to cover the workflow you use now.
+Need a video draft faster? Google says Gemini Omni and personal avatars are now available in Google Vids for eligible users, and generated clips include SynthID watermarks. That means you can move from draft to edit in one workspace, while the disclosure stays attached to the clip. For creators, that is useful for short updates, explainers, and training videos where speed matters but traceability still matters too. Which would save you more time: a selfie avatar or a manual recording? Drop one in the comments, and if you want, I can break down the workflow next.
 
 ## Facebook Post
 
-Would a selfie and voice note save your video editing time? Google says eligible users can now use Gemini Omni and personal avatars in Google Vids, and generated clips include SynthID watermarks. That means a short update, training clip or explainer can move from prompt to draft to edited output in one workspace. If speed matters, the real question is whether you want a faster first cut, a clearer disclosure trail, or both. Would you try it for training clips or social posts? Tell us which one.
+Can your meeting AI stay inside your environment? Zoom says AI On-Prem can run through Zoom Node on customer infrastructure or private cloud for paid Zoom Workplace plans. That makes the useful question less about the model and more about where the data lives when you are dealing with sensitive calls, internal training, or client material. For teams with tighter rules, that deployment choice can matter as much as the feature list. Is your bigger need private deployment or better summaries? Comment with one example.
 
 ## Pinterest Pin
 
-**Title:** How Search Hands Tasks to Apps: AI Workflow Guide
+**Title:** Google Vids Workflow for Faster Video Drafts
 
-**Description:** Google says AI Mode can connect apps like Instacart, Canva and YouTube Music, so one prompt can move from planning to action without extra app hops. Save this guide and comment with the weekly task you'd streamline first.
+**Description:** Use Google Vids to draft and edit clips in one place, with Gemini Omni and personal avatars for eligible users and SynthID watermarks on generated clips. Save this if you make short updates, explainers, or training videos, and comment with the step that slows you down most.
 
 ## LinkedIn-Style Post
 
-Can Slack threads become tickets without losing context? Atlassian says Jira for Slack can turn discussions into work items, and Jira Planner can pull context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review kept in the loop. That shifts the decision from 'Can AI generate output?' to 'Where should automation stop, and where should a person take over?' For teams already using Slack and Jira, the biggest win is often better handoffs, not more generation. Which step is the bottleneck in your process: discussion, specification or review? Share one in the comments, and if useful, we can look at the tool stack next.
+Does chat keep losing your work context? Atlassian says Jira Planner and Jira for Slack are built to turn context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review still in the loop. The operational lesson is simple: if a team starts in conversation, it should preserve the thread as work moves into tickets and specs. That matters when one idea has to survive handoffs across writer, editor, designer, and reviewer. Where do you lose the thread most: Slack, specs, or review? Share one example in the comments, or suggest a related workflow article Clearforge should investigate next.
 
 ## 5 Short Quote/Card Lines
 
-- AI is becoming a workflow layer, not a standalone tool.
-- The new value is not answers — it is handoffs.
-- Where does context live in your workflow?
-- Which handoff is still costing your team time?
-- Good AI stacks preserve context as work moves.
+- The useful AI story is the handoff, not the headline.
+- Where does your workflow lose context first?
+- Search can start the task. The next tool should finish it.
+- Would one fewer copy-paste step change your week?
+- Good workflows keep context attached as work moves.

@@ -1,0 +1,246 @@
+{
+  "version": 5,
+  "brand": "Clearforge",
+  "date": "2026-07-23-creator",
+  "type": "clearforge_daily_ai_brief",
+  "approved": {
+    "article": true,
+    "facebook": true,
+    "pinterest": true,
+    "youtube": true
+  },
+  "article": {
+    "headline": "The practical AI stack for creators is getting clearer: start in search, finish in video, keep the handoffs visible",
+    "dek": "This is not a model race. It is a workflow race: which tools can hand context from one step to the next without losing control, time or traceability.",
+    "url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-23-creator.html",
+    "markdown": "daily_brief.md"
+  },
+  "calls_to_action": {
+    "spoken": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "screen_lines": [
+      "READ THE FULL BREAKDOWN",
+      "Link in bio",
+      "LISTEN ON THE GO",
+      "Search: Clearforge AI Briefing"
+    ],
+    "caption": "Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+    "direct_links_allowed_in_social_copy": false
+  },
+  "stories": [
+    {
+      "title": "Search is becoming a start point for creator tasks",
+      "summary": "Google says AI Mode can connect directly to apps like Instacart, Canva and YouTube Music. For creators and small operators, the practical change is that the first step of a task can happen in search, while the next step happens in the right app.",
+      "why_it_matters": "Less app-hopping usually means less lost momentum, especially when you are planning content, assembling a shopping list or pulling together a quick visual.",
+      "practical_angle": "Use Search as the front door, not the final stop.",
+      "source_name": "Google Blog",
+      "source_url": "https://blog.google/products-and-platforms/products/search/connected-apps/"
+    },
+    {
+      "title": "Google Vids now covers more of the video handoff chain",
+      "summary": "Google says eligible users can generate and edit clips with Gemini Omni and create personal avatars from a selfie and voice recording. Generated clips include SynthID watermarks, which builds a disclosure layer into the workflow.",
+      "why_it_matters": "That is useful for short updates, explainers and training clips where a creator needs a quick draft and a clear provenance trail.",
+      "practical_angle": "Draft, revise and publish can all happen inside one workspace.",
+      "source_name": "Google Blog",
+      "source_url": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/"
+    },
+    {
+      "title": "Jira is turning chat into structured work",
+      "summary": "Atlassian says Jira Planner and Jira for Slack are built to turn context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review still in place. The key move is not replacing people; it is preserving context as tasks move across tools.",
+      "why_it_matters": "This matters for any team that starts in chat and later has to reconstruct what was decided, assigned and reviewed.",
+      "practical_angle": "Conversation → ticket → spec → work → review.",
+      "source_name": "Atlassian Blog",
+      "source_url": "https://www.atlassian.com/blog/company-news/ai-sdlc"
+    }
+  ],
+  "facebook": {
+    "post": "Can your meeting AI stay inside your environment? Zoom says AI On-Prem can run through Zoom Node on customer infrastructure or private cloud for paid Zoom Workplace plans. That makes the useful question less about the model and more about where the data lives when you are dealing with sensitive calls, internal training, or client material. For teams with tighter rules, that deployment choice can matter as much as the feature list. Is your bigger need private deployment or better summaries? Comment with one example.\n\n#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI"
+  },
+  "pinterest": {
+    "title": "Google Vids Workflow for Faster Video Drafts",
+    "description": "Use Google Vids to draft and edit clips in one place, with Gemini Omni and personal avatars for eligible users and SynthID watermarks on generated clips. Save this if you make short updates, explainers, or training videos, and comment with the step that slows you down most.",
+    "destination_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-23-creator.html"
+  },
+  "youtube": {
+    "title": "The practical AI stack for creators is getting clearer: start in search, finish in video, keep ",
+    "script": "Need a video draft faster? Google says Gemini Omni and personal avatars are now available in Google Vids for eligible users, and generated clips include SynthID watermarks. That means you can move from draft to edit in one workspace, while the disclosure stays attached to the clip. For creators, that is useful for short updates, explainers, and training videos where speed matters but traceability still matters too. Which would save you more time: a selfie avatar or a manual recording? Drop one in the comments, and if you want, I can break down the workflow next. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "description": "Pick one weekly workflow and test a three-step handoff: start in Search, move into the tool that creates the asset, and keep a visible review step before publishing."
+  },
+  "podcast": {
+    "generated": true,
+    "folder": "podcast/",
+    "copy_paste_script": "podcast/COPY_PASTE_INTO_ELEVENLABS.txt",
+    "full_review_script": "podcast/podcast-script.md",
+    "metadata": "podcast/episode-metadata.json",
+    "source_notes": "podcast/source-notes.md",
+    "episode": {
+      "version": 1,
+      "date": "2026-07-23-creator",
+      "brand": "Clearforge",
+      "type": "clearforge_daily_biggest_story_podcast_script",
+      "human_review_required": true,
+      "narrator": "Irene",
+      "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+      "episode_title": "Creator workflows are getting more connected, with video now pulling the pieces together",
+      "selected_story_index": 1,
+      "selected_story_title": "Google Vids now covers more of the video handoff chain",
+      "selection_reason": "This is the strongest story for the edition because it shows the clearest end-to-end creator workflow change: draft, edit, identity, and disclosure are all moving into one place, which matches the edition’s practical theme about visible handoffs.",
+      "word_count": 1252,
+      "estimated_duration_minutes": 8.6,
+      "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+      "source_notes": "source-notes.md",
+      "first_spoken_line": "Today’s biggest story is not really about a single model update. It is about a workflow becoming easier to keep inside one place.",
+      "final_spoken_line": "What to watch next is whether Google expands access, how creators use the avatar and clip-generation features in practice, and whether the review and watermarking pieces become standard expectations in AI video tools. If that happens, the story will not just be about making video faster. It will be about making video workflows more traceable from the first draft to the final publish.",
+      "validation_warnings": [],
+      "non_spoken_instruction_candidates": []
+    }
+  },
+  "ai_media": {
+    "manifest": "media/media-manifest.json",
+    "narration": "media/narration.mp3",
+    "story_images": [
+      "media/story-1.png",
+      "media/story-2.png",
+      "media/story-3.png"
+    ],
+    "tiktok_narration": "media/tiktok-narration.mp3",
+    "tiktok": {
+      "story_index": 0,
+      "hook": "Would your search start the whole task?",
+      "payoff": "Google says AI Mode can connect apps like Instacart, Canva and YouTube Music directly to Search, so the first step can happen in one place and the next step in the right app. Would you use it for a shopping list or a design brief?",
+      "response_prompt": "Comment with one.",
+      "narration": "media/2026-07-23-creator/tiktok-narration.mp3",
+      "narration_text": "Would your search start the whole task? Google says AI Mode can connect apps like Instacart, Canva and YouTube Music directly to Search, so the first step can happen in one place and the next step in the right app. Would you use it for a shopping list or a design brief? Comment with one.",
+      "target_duration_seconds": [
+        12,
+        18
+      ],
+      "format": "question_fact_consequence_response"
+    },
+    "generated": true
+  },
+  "quote_card_lines": [
+    "The useful AI story is the handoff, not the headline.",
+    "Where does your workflow lose context first?",
+    "Search can start the task. The next tool should finish it.",
+    "Would one fewer copy-paste step change your week?",
+    "Good workflows keep context attached as work moves."
+  ],
+  "headline_options": [
+    "The practical AI stack for creators is getting clearer: start in search, finish in video, keep the handoffs visible",
+    "AI is moving into creator workflows, with search, video, Jira and Zoom connecting the steps",
+    "What creators should test next: search-to-app handoffs, video drafts, structured tickets and private AI",
+    "The useful AI change this week is workflow design, not model hype",
+    "AI tools are starting to fit together, and that matters for creators and small teams"
+  ],
+  "sources": [
+    {
+      "source_name": "Google Blog",
+      "title": "Connect more of your apps to Search",
+      "url": "https://blog.google/products-and-platforms/products/search/connected-apps/",
+      "published_date": "2026-07-16",
+      "confirmed_fact": "Google says users can securely link apps such as Instacart, Canva and YouTube Music directly to AI Mode in Search, with the rollout starting in the U.S. this week.",
+      "interpretation": "Search is becoming a place to begin a task and hand it off to another app, which is useful for creators and small operators who want fewer context switches."
+    },
+    {
+      "source_name": "Google Blog",
+      "title": "Create, edit and star in videos with two Google Vids updates",
+      "url": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/",
+      "published_date": "2026-07-16",
+      "confirmed_fact": "Google says Gemini Omni and personal avatars are now available in Google Vids for eligible Google AI Pro, Ultra and Workspace business customers, with SynthID watermarks on generated clips.",
+      "interpretation": "Video production is being folded into a single draft-and-edit workflow where speed and disclosure can live in the same place."
+    },
+    {
+      "source_name": "Atlassian Blog",
+      "title": "How we’re evolving Jira for AI-native software development",
+      "url": "https://www.atlassian.com/blog/company-news/ai-sdlc",
+      "published_date": "2026-07-15",
+      "confirmed_fact": "Atlassian says Jira Planner and Jira for Slack are designed to turn context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review kept in the loop.",
+      "interpretation": "The useful pattern is not isolated automation; it is moving context through a governed workflow without dropping the thread."
+    },
+    {
+      "source_name": "Zoom Blog",
+      "title": "AI that works where your data lives: introducing Zoom AI On-Prem",
+      "url": "https://www.zoom.com/en/blog/zoom-ai-on-prem/",
+      "published_date": "2026-07-02",
+      "confirmed_fact": "Zoom says AI On-Prem is available through Zoom Node add-on to paid Zoom Workplace plans and can run AI workloads on customer infrastructure or private cloud.",
+      "interpretation": "For sensitive creator-client or internal workflows, the deployment model can matter as much as the feature set."
+    }
+  ],
+  "media_metadata": {
+    "version": 5,
+    "date": "2026-07-23-creator",
+    "headline": "The practical AI stack for creators is getting clearer: start in search, finish in video, keep the handoffs visible",
+    "dek": "This is not a model race. It is a workflow race: which tools can hand context from one step to the next without losing control, time or traceability.",
+    "hook": "Three AI updates that actually matter today",
+    "spoken_cta": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "visual_system": "Clearforge AI briefing podcast studio system",
+    "visual_style_rules": {
+      "include": [
+        "dark navy AI briefing or podcast studio atmosphere",
+        "microphone or audio-briefing cues where appropriate",
+        "subtle circuit traces, waveform motifs, model cards or data-routing lines",
+        "physical source notes, checklists and human-review materials",
+        "premium editorial technology-magazine lighting"
+      ],
+      "avoid": [
+        "robots",
+        "glowing brains",
+        "hologram faces",
+        "generic dashboards",
+        "random floating code",
+        "excessive neon",
+        "fake readable text",
+        "Sapiver or unrelated branding"
+      ]
+    },
+    "stories": [
+      {
+        "file": "media/2026-07-23-creator/story-1.png",
+        "title": "Search is becoming a start point for creator tasks",
+        "source_name": "Google Blog",
+        "source_url": "https://blog.google/products-and-platforms/products/search/connected-apps/",
+        "summary": "Google says AI Mode can connect directly to apps like Instacart, Canva and YouTube Music. For creators and small operators, the practical change is that the first step of a task can happen in search, while the next step happens in the right app.",
+        "why_it_matters": "Less app-hopping usually means less lost momentum, especially when you are planning content, assembling a shopping list or pulling together a quick visual.",
+        "practical_angle": "Use Search as the front door, not the final stop.",
+        "visual_prompt": "a podcast-ready AI learning desk with a microphone in the foreground, tidy source folders, simple model cards, a soft waveform motif and a dark professional newsroom mood. clean editorial technology-magazine composition, practical rather than sci-fi. combine physical human-review materials with light digital signal motifs so it feels human-led and AI-empowered. use a different AI signal motif: waveform, routing lines, model cards, calendar markers or evidence board. Story context: Search is becoming a start point for creator tasks. Practical angle: Use Search as the front door, not the final stop.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: dark blue studio background, graphite desk, white paper, blue highlights and restrained green accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      },
+      {
+        "file": "media/2026-07-23-creator/story-2.png",
+        "title": "Google Vids now covers more of the video handoff chain",
+        "source_name": "Google Blog",
+        "source_url": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/",
+        "summary": "Google says eligible users can generate and edit clips with Gemini Omni and create personal avatars from a selfie and voice recording. Generated clips include SynthID watermarks, which builds a disclosure layer into the workflow.",
+        "why_it_matters": "That is useful for short updates, explainers and training clips where a creator needs a quick draft and a clear provenance trail.",
+        "practical_angle": "Draft, revise and publish can all happen inside one workspace.",
+        "visual_prompt": "a dark navy AI briefing studio desk with a professional podcast microphone, source notes, a small audio waveform display, subtle circuit-board lines in the background and one practical notebook open on the desk. vertical social-video still with a strong microphone foreground and clear desk detail. make the AI element clear through subtle circuit traces, waveform graphics, model cards and data-routing lines, not robots. make the story context visible through objects and composition rather than readable text. Story context: Google Vids now covers more of the video handoff chain. Practical angle: Draft, revise and publish can all happen inside one workspace.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      },
+      {
+        "file": "media/2026-07-23-creator/story-3.png",
+        "title": "Jira is turning chat into structured work",
+        "source_name": "Atlassian Blog",
+        "source_url": "https://www.atlassian.com/blog/company-news/ai-sdlc",
+        "summary": "Atlassian says Jira Planner and Jira for Slack are built to turn context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review still in place. The key move is not replacing people; it is preserving context as tasks move across tools.",
+        "why_it_matters": "This matters for any team that starts in chat and later has to reconstruct what was decided, assigned and reviewed.",
+        "practical_angle": "Conversation → ticket → spec → work → review.",
+        "visual_prompt": "a high-end technology briefing set with a dark blue wall, subtle circuit traces, a clean desk, paper research packs, audio waveforms and one human-operated control surface. cinematic three-quarter studio photograph with shallow depth of field. use restrained blue technology accents to signal AI without making the image look like generic AI stock art. change the hero object placement so this frame does not resemble the previous edition. Story context: Jira is turning chat into structured work. Practical angle: Conversation → ticket → spec → work → review.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      }
+    ],
+    "narration": "media/2026-07-23-creator/narration.mp3",
+    "narration_text": "Need a video draft faster? Google says Gemini Omni and personal avatars are now available in Google Vids for eligible users, and generated clips include SynthID watermarks. That means you can move from draft to edit in one workspace, while the disclosure stays attached to the clip. For creators, that is useful for short updates, explainers, and training videos where speed matters but traceability still matters too. Which would save you more time: a selfie avatar or a manual recording? Drop one in the comments, and if you want, I can break down the workflow next. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "tiktok": {
+      "story_index": 0,
+      "hook": "Would your search start the whole task?",
+      "payoff": "Google says AI Mode can connect apps like Instacart, Canva and YouTube Music directly to Search, so the first step can happen in one place and the next step in the right app. Would you use it for a shopping list or a design brief?",
+      "response_prompt": "Comment with one.",
+      "narration": "media/2026-07-23-creator/tiktok-narration.mp3",
+      "narration_text": "Would your search start the whole task? Google says AI Mode can connect apps like Instacart, Canva and YouTube Music directly to Search, so the first step can happen in one place and the next step in the right app. Would you use it for a shopping list or a design brief? Comment with one.",
+      "target_duration_seconds": [
+        12,
+        18
+      ],
+      "format": "question_fact_consequence_response"
+    },
+    "practical_takeaway": "Pick one weekly workflow and test a three-step handoff: start in Search, move into the tool that creates the asset, and keep a visible review step before publishing.",
+    "what_to_test_next": "Try a small creator pipeline with three parts: use Search to gather the inputs, use a creative app like Google Vids to draft the output, and use a work tracker or review step to preserve context before you publish or share it."
+  }
+}

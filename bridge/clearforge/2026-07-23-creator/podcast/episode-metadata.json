@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "date": "2026-07-23-creator",
+  "brand": "Clearforge",
+  "type": "clearforge_daily_biggest_story_podcast_script",
+  "human_review_required": true,
+  "narrator": "Irene",
+  "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+  "episode_title": "Creator workflows are getting more connected, with video now pulling the pieces together",
+  "selected_story_index": 1,
+  "selected_story_title": "Google Vids now covers more of the video handoff chain",
+  "selection_reason": "This is the strongest story for the edition because it shows the clearest end-to-end creator workflow change: draft, edit, identity, and disclosure are all moving into one place, which matches the edition’s practical theme about visible handoffs.",
+  "word_count": 1252,
+  "estimated_duration_minutes": 8.6,
+  "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+  "source_notes": "source-notes.md",
+  "first_spoken_line": "Today’s biggest story is not really about a single model update. It is about a workflow becoming easier to keep inside one place.",
+  "final_spoken_line": "What to watch next is whether Google expands access, how creators use the avatar and clip-generation features in practice, and whether the review and watermarking pieces become standard expectations in AI video tools. If that happens, the story will not just be about making video faster. It will be about making video workflows more traceable from the first draft to the final publish.",
+  "validation_warnings": [],
+  "non_spoken_instruction_candidates": []
+}

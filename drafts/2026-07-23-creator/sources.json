@@ -1,0 +1,34 @@
+[
+  {
+    "source_name": "Google Blog",
+    "title": "Connect more of your apps to Search",
+    "url": "https://blog.google/products-and-platforms/products/search/connected-apps/",
+    "published_date": "2026-07-16",
+    "confirmed_fact": "Google says users can securely link apps such as Instacart, Canva and YouTube Music directly to AI Mode in Search, with the rollout starting in the U.S. this week.",
+    "interpretation": "Search is becoming a place to begin a task and hand it off to another app, which is useful for creators and small operators who want fewer context switches."
+  },
+  {
+    "source_name": "Google Blog",
+    "title": "Create, edit and star in videos with two Google Vids updates",
+    "url": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/",
+    "published_date": "2026-07-16",
+    "confirmed_fact": "Google says Gemini Omni and personal avatars are now available in Google Vids for eligible Google AI Pro, Ultra and Workspace business customers, with SynthID watermarks on generated clips.",
+    "interpretation": "Video production is being folded into a single draft-and-edit workflow where speed and disclosure can live in the same place."
+  },
+  {
+    "source_name": "Atlassian Blog",
+    "title": "How we’re evolving Jira for AI-native software development",
+    "url": "https://www.atlassian.com/blog/company-news/ai-sdlc",
+    "published_date": "2026-07-15",
+    "confirmed_fact": "Atlassian says Jira Planner and Jira for Slack are designed to turn context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review kept in the loop.",
+    "interpretation": "The useful pattern is not isolated automation; it is moving context through a governed workflow without dropping the thread."
+  },
+  {
+    "source_name": "Zoom Blog",
+    "title": "AI that works where your data lives: introducing Zoom AI On-Prem",
+    "url": "https://www.zoom.com/en/blog/zoom-ai-on-prem/",
+    "published_date": "2026-07-02",
+    "confirmed_fact": "Zoom says AI On-Prem is available through Zoom Node add-on to paid Zoom Workplace plans and can run AI workloads on customer infrastructure or private cloud.",
+    "interpretation": "For sensitive creator-client or internal workflows, the deployment model can matter as much as the feature set."
+  }
+]

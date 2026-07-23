@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-23-creator",
+    "kind": "daily",
+    "title": "Creator workflows are getting more connected, with video now pulling the pieces together",
+    "description": "This is the strongest story for the edition because it shows the clearest end-to-end creator workflow change: draft, edit, identity, and disclosure are all moving into one place, which matches the edition’s practical theme about visible handoffs.",
+    "published": "2026-07-23T07:00:00+01:00",
+    "duration": "00:08:36",
+    "size": 7296357,
+    "video_size": 23699964,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-23-creator.mp3",
+    "video_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-23-creator.mp4",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-23-creator.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-23-creator.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-23-creator.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-23-creator.html",
+    "source_dir": "drafts/2026-07-23-creator/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-23",
     "kind": "daily",
     "title": "Search is turning into a task hub",

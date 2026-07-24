@@ -21,6 +21,7 @@ on:
           - risk_control
           - beginner_learning
           - business_systems
+          - considered_question
       generate_irene:
         description: "Generate the paid full Irene podcast MP3 for this manual run"
         required: true
@@ -83,7 +84,7 @@ jobs:
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "retry=false" >> "$GITHUB_OUTPUT"
             echo "edition=alternate" >> "$GITHUB_OUTPUT"
-            echo "angle=creator_workflow" >> "$GITHUB_OUTPUT"
+            echo "angle=considered_question" >> "$GITHUB_OUTPUT"
             echo "irene=false" >> "$GITHUB_OUTPUT"
           else
             echo "run=false" >> "$GITHUB_OUTPUT"
@@ -108,6 +109,7 @@ jobs:
             risk_control) ANGLE_SLUG="risk" ;;
             beginner_learning) ANGLE_SLUG="beginner" ;;
             business_systems) ANGLE_SLUG="systems" ;;
+            considered_question) ANGLE_SLUG="considered" ;;
             *) ANGLE_SLUG="$(printf '%s' "${ANGLE}" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g')" ;;
           esac
           if [ -z "${ANGLE_SLUG}" ]; then

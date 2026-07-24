@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-24",
+    "kind": "daily",
+    "title": "Friday watchlist: Canva AI 2.0 points to AI becoming part of the whole content workflow",
+    "description": "This is the strongest practical story in the set for creators and small businesses because it moves AI beyond one-off generation and into editing, organization, and publishing workflows that people can actually test this week. It is also explicitly a preview, which fits the edition’s theme of useful features with clear limits.",
+    "published": "2026-07-24T07:00:00+01:00",
+    "duration": "00:09:00",
+    "size": 7499067,
+    "video_size": 22255889,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-24.mp3",
+    "video_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-24.mp4",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-24.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-24.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-24.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-24.html",
+    "source_dir": "drafts/2026-07-24/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-23-creator",
     "kind": "daily",
     "title": "Creator workflows are getting more connected, with video now pulling the pieces together",

@@ -1,87 +1,91 @@
-# Clearforge Social Repurpose Pack — 2026-07-23-creator
+# Clearforge Social Repurpose Pack — 2026-07-24
 
 Status: Draft — audience-fit optimised; automatic validation pending
 
-Editorial theme: Thursday — Stacks and workflows
+Editorial theme: Friday — New to the scene / what to watch
 
 ## Platform Story Selections
 
 ### Tiktok
 
-- Selected story: Search is becoming a start point for creator tasks
-- Audience: Creators, solo operators, and small-business owners
-- Format: TikTok short
-- Opening: Would your search start the whole task?
-- Payoff: Google says AI Mode can connect apps like Instacart, Canva and YouTube Music directly to Search, so the first step can happen in one place and the next step can happen in the right app.
+- Selected story: Canva AI 2.0 is in research preview
+- Audience: Creators, social media managers, and small businesses making graphics or simple pages
+- Format: short-form video
+- Opening: Would Canva AI save you time?
+- Payoff: Canva says AI 2.0 is a research preview with conversational design, iterative editing, layered object intelligence, and brand memory. If you make social graphics or simple landing pages, it could cut tool switching.
 - Platform fit: 9/10
-- Why selected: Fast, relatable, and easy to explain in one breath. The handoff idea lands quickly for a broad creator audience and works well as a simple either/or prompt.
+- Why selected: Most visual and easiest to understand in a fast, practical demo; the preview status and creator workflow angle are instantly usable in a short clip.
 
 ### Youtube
 
-- Selected story: Google Vids now covers more of the video handoff chain
-- Audience: Creators, video marketers, and small teams making short clips
-- Format: YouTube Shorts
-- Opening: Need a video draft faster?
-- Payoff: Google says Gemini Omni and personal avatars are now available in Google Vids for eligible users, and generated clips include SynthID watermarks. That means a quicker draft-and-edit flow with disclosure built in.
+- Selected story: Canva AI 2.0 is in research preview
+- Audience: Creators and small teams who want a clear workflow test
+- Format: short-form video
+- Opening: Can Canva AI replace your design shuffle?
+- Payoff: Canva says AI 2.0 is available today as a research preview, and it goes beyond one-shot image generation with conversational design, iterative editing, layered object intelligence, living memory, connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0.
 - Platform fit: 9/10
-- Why selected: Highly visual and easy to narrate for Shorts. The workflow and disclosure angle give viewers a concrete reason to keep watching and a clear question to answer.
+- Why selected: The platform gives enough room to explain the workflow change and the preview status without losing momentum, making it a strong searchable utility clip.
 
 ### Facebook
 
-- Selected story: Zoom is giving sensitive workflows a different deployment path
-- Audience: Creators, client-facing teams, and internal ops handling sensitive data
-- Format: Facebook post
-- Opening: Can your meeting AI stay inside your environment?
-- Payoff: Zoom says AI On-Prem can run through Zoom Node on customer infrastructure or private cloud for paid Zoom Workplace plans. For sensitive calls, internal training, or client material, the question is where the data lives as much as what the AI can do.
+- Selected story: Anthropic’s Claude gets a reflection dashboard
+- Audience: Broad Facebook audiences using AI every day and wanting better habits around it
+- Format: social post
+- Opening: Would a quiet-hours reminder help you use AI better?
+- Payoff: Anthropic says Reflect is in beta for Claude users with memory turned on. It shows usage patterns over 1, 3, 6, or 12 months and lets users set quiet hours or break reminders.
 - Platform fit: 8/10
-- Why selected: Facebook suits practical privacy and workflow discussions. This story invites experience-sharing from people who care about deployment rules and controlled environments.
+- Why selected: This is relatable to everyday users, invites a personal comparison, and works well as a discussion starter without requiring technical background.
 
 ### Pinterest
 
-- Selected story: Google Vids now covers more of the video handoff chain
-- Audience: Creators, video marketers, and small teams making short clips
-- Format: Pinterest pin
-- Opening: Google Vids Workflow for Faster Video Drafts
-- Payoff: Use Google Vids to draft and edit clips in one place, with Gemini Omni and personal avatars for eligible users and SynthID watermarks on generated clips. Save this if you make short updates, explainers, or training videos.
-- Platform fit: 8/10
-- Why selected: This story has the strongest visual and searchable workflow angle for Pinterest, where practical guides and creator checklists perform well.
+- Selected story: Canva AI 2.0 is in research preview
+- Audience: People searching for practical design and content workflow help
+- Format: pin
+- Opening: Can Canva AI 2.0 Speed Up Your Workflow?
+- Payoff: A searchable guide to Canva’s research preview with conversational design, iterative edits, brand memory, and publishing workflows for social graphics or simple landing pages.
+- Platform fit: 10/10
+- Why selected: Pinterest favors searchable, practical how-to discovery with visual utility; Canva’s workflow angle is the clearest fit.
 
 ### Linkedin
 
-- Selected story: Jira is turning chat into structured work
-- Audience: Product teams, software teams, and knowledge workers
-- Format: LinkedIn post
-- Opening: Does chat keep losing your work context?
-- Payoff: Atlassian says Jira Planner and Jira for Slack turn context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review still in the loop. The operational value is keeping the original thread attached as work moves into tickets and specs.
+- Selected story: Google adds AI disclosure labels to ads
+- Audience: Marketers, agencies, freelancers, ecommerce sellers, and anyone responsible for ad review
+- Format: professional post
+- Opening: Could your ad review handle AI disclosure?
+- Payoff: Google says My Ad Center now includes a 'How this ad was made' panel across Search, YouTube, and Discover, and ads made with Google’s own generative AI tools are automatically disclosed.
 - Platform fit: 9/10
-- Why selected: Best fit for LinkedIn because it speaks to team process, operational consequences, and cross-tool handoffs in a professional setting.
+- Why selected: It has direct operational consequences for teams, touches trust and process, and gives professionals a concrete workflow change to discuss.
 
 ## TikTok Script
 
-Would your search start the whole task? Google says AI Mode can connect apps like Instacart, Canva and YouTube Music directly to Search, so the first step can happen in one place and the next step in the right app. Would you use it for a shopping list or a design brief? Comment with one.
+Would Canva AI save you time? Canva says AI 2.0 is a research preview with conversational design, iterative editing, layered object intelligence, and brand memory. If you make social graphics or simple landing pages, it could cut tool switching. Would you test it on a post or a page?
 
 ## YouTube Shorts Script
 
-Need a video draft faster? Google says Gemini Omni and personal avatars are now available in Google Vids for eligible users, and generated clips include SynthID watermarks. That means you can move from draft to edit in one workspace, while the disclosure stays attached to the clip. For creators, that is useful for short updates, explainers, and training videos where speed matters but traceability still matters too. Which would save you more time: a selfie avatar or a manual recording? Drop one in the comments, and if you want, I can break down the workflow next.
+Can Canva AI replace your design shuffle? Canva says AI 2.0 is available today as a research preview, and it goes beyond one-shot image generation. The update adds conversational design, iterative editing, layered object intelligence, living memory, connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0. For creators and small teams, that matters because it could move work from prompt to edit to publish without jumping between tools. It is still a preview, so expect rough edges and rollout changes. Would you start with a social graphic or a simple landing page? Comment with the one test you'd run first.
 
 ## Facebook Post
 
-Can your meeting AI stay inside your environment? Zoom says AI On-Prem can run through Zoom Node on customer infrastructure or private cloud for paid Zoom Workplace plans. That makes the useful question less about the model and more about where the data lives when you are dealing with sensitive calls, internal training, or client material. For teams with tighter rules, that deployment choice can matter as much as the feature list. Is your bigger need private deployment or better summaries? Comment with one example.
+Would a quiet-hours reminder help you use AI better?
+Anthropic says Reflect is in beta for Claude users with memory turned on. It shows usage patterns over 1, 3, 6, or 12 months and lets you set quiet hours or break reminders. For people using AI every day, that makes the tool feel more like self-management than another output feature.
+Would you use the dashboard, or skip it? Tell us which and why.
 
 ## Pinterest Pin
 
-**Title:** Google Vids Workflow for Faster Video Drafts
+**Title:** Can Canva AI 2.0 Speed Up Your Workflow?
 
-**Description:** Use Google Vids to draft and edit clips in one place, with Gemini Omni and personal avatars for eligible users and SynthID watermarks on generated clips. Save this if you make short updates, explainers, or training videos, and comment with the step that slows you down most.
+**Description:** Save this if you make social graphics or simple landing pages. Canva AI 2.0 is a research preview with conversational design, iterative edits, brand memory, and publishing workflows. Comment with the one project you'd test first.
 
 ## LinkedIn-Style Post
 
-Does chat keep losing your work context? Atlassian says Jira Planner and Jira for Slack are built to turn context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review still in the loop. The operational lesson is simple: if a team starts in conversation, it should preserve the thread as work moves into tickets and specs. That matters when one idea has to survive handoffs across writer, editor, designer, and reviewer. Where do you lose the thread most: Slack, specs, or review? Share one example in the comments, or suggest a related workflow article Clearforge should investigate next.
+Could your ad review handle AI disclosure?
+Google says My Ad Center now includes a 'How this ad was made' panel across Search, YouTube, and Discover, and ads made with Google’s own generative AI tools are automatically disclosed. Advertisers can also disclose when they used other AI tools. That means disclosure is becoming part of launch workflow, not an afterthought.
+Would you change your review checklist or your creative intake first? Put your answer in the comments, or tell us what part of the process you think will change next.
 
 ## 5 Short Quote/Card Lines
 
-- The useful AI story is the handoff, not the headline.
-- Where does your workflow lose context first?
-- Search can start the task. The next tool should finish it.
-- Would one fewer copy-paste step change your week?
-- Good workflows keep context attached as work moves.
+- Which AI tool would actually fit one real workflow this week?
+- Would you test a preview if it keeps your brand context intact?
+- Disclosure is becoming part of the creative process, not a side note.
+- A useful AI tool should reduce switching, not add it.
+- What job should AI do for you: draft, edit, organize, or review?

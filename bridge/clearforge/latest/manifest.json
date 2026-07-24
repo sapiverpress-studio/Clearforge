@@ -1,7 +1,7 @@
 {
   "version": 5,
   "brand": "Clearforge",
-  "date": "2026-07-23-creator",
+  "date": "2026-07-24",
   "type": "clearforge_daily_ai_brief",
   "approved": {
     "article": true,
@@ -10,9 +10,9 @@
     "youtube": true
   },
   "article": {
-    "headline": "The practical AI stack for creators is getting clearer: start in search, finish in video, keep the handoffs visible",
-    "dek": "This is not a model race. It is a workflow race: which tools can hand context from one step to the next without losing control, time or traceability.",
-    "url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-23-creator.html",
+    "headline": "Friday watchlist: AI is moving into narrower, safer, more practical features you can actually test now",
+    "dek": "Today’s useful signal is not another giant model race. It is the quieter shift into scoped tools: health context in ChatGPT, disclosure in ads, a broader Canva AI preview, and a usage-reflection layer in Claude. The theme for creators and small businesses is simple: the products that matter this week are the ones with clear limits, clear rollout states, and clear rules for what they can and cannot do.",
+    "url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-24.html",
     "markdown": "daily_brief.md"
   },
   "calls_to_action": {
@@ -28,42 +28,42 @@
   },
   "stories": [
     {
-      "title": "Search is becoming a start point for creator tasks",
-      "summary": "Google says AI Mode can connect directly to apps like Instacart, Canva and YouTube Music. For creators and small operators, the practical change is that the first step of a task can happen in search, while the next step happens in the right app.",
-      "why_it_matters": "Less app-hopping usually means less lost momentum, especially when you are planning content, assembling a shopping list or pulling together a quick visual.",
-      "practical_angle": "Use Search as the front door, not the final stop.",
-      "source_name": "Google Blog",
-      "source_url": "https://blog.google/products-and-platforms/products/search/connected-apps/"
+      "title": "OpenAI launches Health in ChatGPT",
+      "summary": "OpenAI has started rolling out a health-focused ChatGPT experience in the U.S. for logged-in users 18 and older on web and iOS. The feature lets people connect supported health records and Apple Health data so they can compare results, summarize changes and ask questions grounded in their own health context.",
+      "why_it_matters": "This is one of the clearest signs yet that consumer AI is being packaged for a narrow, high-trust use case rather than general chat.",
+      "practical_angle": "If you are a creator or small business owner, the useful lesson is to watch for AI products that do one job well with clear permissions and clear boundaries, instead of trying to be everything.",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/health-in-chatgpt/"
     },
     {
-      "title": "Google Vids now covers more of the video handoff chain",
-      "summary": "Google says eligible users can generate and edit clips with Gemini Omni and create personal avatars from a selfie and voice recording. Generated clips include SynthID watermarks, which builds a disclosure layer into the workflow.",
-      "why_it_matters": "That is useful for short updates, explainers and training clips where a creator needs a quick draft and a clear provenance trail.",
-      "practical_angle": "Draft, revise and publish can all happen inside one workspace.",
+      "title": "Google adds AI disclosure labels to ads",
+      "summary": "Google says users will now be able to open a 'How this ad was made' panel in My Ad Center across Search, YouTube and Discover. Ads made with Google’s own generative AI tools will be automatically labeled, and advertisers can also disclose when they used other AI tools.",
+      "why_it_matters": "This moves AI disclosure from policy language into the user interface, where it is more likely to affect trust and buying decisions.",
+      "practical_angle": "For small advertisers, this is a reminder to build a simple disclosure process now so campaigns are not slowed down later by platform or regulatory requirements.",
       "source_name": "Google Blog",
-      "source_url": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/"
+      "source_url": "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/"
     },
     {
-      "title": "Jira is turning chat into structured work",
-      "summary": "Atlassian says Jira Planner and Jira for Slack are built to turn context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review still in place. The key move is not replacing people; it is preserving context as tasks move across tools.",
-      "why_it_matters": "This matters for any team that starts in chat and later has to reconstruct what was decided, assigned and reviewed.",
-      "practical_angle": "Conversation → ticket → spec → work → review.",
-      "source_name": "Atlassian Blog",
-      "source_url": "https://www.atlassian.com/blog/company-news/ai-sdlc"
+      "title": "Canva AI 2.0 is in research preview",
+      "summary": "Canva says its new AI 2.0 release is available today as a research preview and introduces more than just image generation. The company says the update includes conversational design, iterative agentic editing, layered object intelligence, memory, and workflows for connectors, scheduling, web research, brand intelligence, Sheets AI and code.",
+      "why_it_matters": "Creators should watch this closely because it points to AI becoming part of the full content workflow: plan, draft, edit, organize and publish.",
+      "practical_angle": "If you make marketing assets, social graphics or simple landing pages, Canva AI 2.0 is a test candidate—but it is still a preview, so expect rough edges and rollout changes.",
+      "source_name": "Canva Newsroom",
+      "source_url": "https://www.canva.com/newsroom/news/canva-create-2026-ai/"
     }
   ],
   "facebook": {
-    "post": "Can your meeting AI stay inside your environment? Zoom says AI On-Prem can run through Zoom Node on customer infrastructure or private cloud for paid Zoom Workplace plans. That makes the useful question less about the model and more about where the data lives when you are dealing with sensitive calls, internal training, or client material. For teams with tighter rules, that deployment choice can matter as much as the feature list. Is your bigger need private deployment or better summaries? Comment with one example.\n\n#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI"
+    "post": "Would a quiet-hours reminder help you use AI better?\nAnthropic says Reflect is in beta for Claude users with memory turned on. It shows usage patterns over 1, 3, 6, or 12 months and lets you set quiet hours or break reminders. For people using AI every day, that makes the tool feel more like self-management than another output feature.\nWould you use the dashboard, or skip it? Tell us which and why.\n\n#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI"
   },
   "pinterest": {
-    "title": "Google Vids Workflow for Faster Video Drafts",
-    "description": "Use Google Vids to draft and edit clips in one place, with Gemini Omni and personal avatars for eligible users and SynthID watermarks on generated clips. Save this if you make short updates, explainers, or training videos, and comment with the step that slows you down most.",
-    "destination_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-23-creator.html"
+    "title": "Can Canva AI 2.0 Speed Up Your Workflow?",
+    "description": "Save this if you make social graphics or simple landing pages. Canva AI 2.0 is a research preview with conversational design, iterative edits, brand memory, and publishing workflows. Comment with the one project you'd test first.",
+    "destination_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-24.html"
   },
   "youtube": {
-    "title": "The practical AI stack for creators is getting clearer: start in search, finish in video, keep ",
-    "script": "Need a video draft faster? Google says Gemini Omni and personal avatars are now available in Google Vids for eligible users, and generated clips include SynthID watermarks. That means you can move from draft to edit in one workspace, while the disclosure stays attached to the clip. For creators, that is useful for short updates, explainers, and training videos where speed matters but traceability still matters too. Which would save you more time: a selfie avatar or a manual recording? Drop one in the comments, and if you want, I can break down the workflow next. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
-    "description": "Pick one weekly workflow and test a three-step handoff: start in Search, move into the tool that creates the asset, and keep a visible review step before publishing."
+    "title": "Friday watchlist: AI is getting narrower, safer and more usable",
+    "script": "Can Canva AI replace your design shuffle? Canva says AI 2.0 is available today as a research preview, and it goes beyond one-shot image generation. The update adds conversational design, iterative editing, layered object intelligence, living memory, connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0. For creators and small teams, that matters because it could move work from prompt to edit to publish without jumping between tools. It is still a preview, so expect rough edges and rollout changes. Would you start with a social graphic or a simple landing page? Comment with the one test you'd run first. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "description": "Test one scoped AI feature on a real workflow this week: a Canva asset, an ad disclosure check, or an AI usage review. Judge it by whether it saves time without adding confusion."
   },
   "podcast": {
     "generated": true,
@@ -74,22 +74,22 @@
     "source_notes": "podcast/source-notes.md",
     "episode": {
       "version": 1,
-      "date": "2026-07-23-creator",
+      "date": "2026-07-24",
       "brand": "Clearforge",
       "type": "clearforge_daily_biggest_story_podcast_script",
       "human_review_required": true,
       "narrator": "Irene",
       "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
-      "episode_title": "Creator workflows are getting more connected, with video now pulling the pieces together",
-      "selected_story_index": 1,
-      "selected_story_title": "Google Vids now covers more of the video handoff chain",
-      "selection_reason": "This is the strongest story for the edition because it shows the clearest end-to-end creator workflow change: draft, edit, identity, and disclosure are all moving into one place, which matches the edition’s practical theme about visible handoffs.",
-      "word_count": 1252,
-      "estimated_duration_minutes": 8.6,
+      "episode_title": "Friday watchlist: Canva AI 2.0 points to AI becoming part of the whole content workflow",
+      "selected_story_index": 2,
+      "selected_story_title": "Canva AI 2.0 is in research preview",
+      "selection_reason": "This is the strongest practical story in the set for creators and small businesses because it moves AI beyond one-off generation and into editing, organization, and publishing workflows that people can actually test this week. It is also explicitly a preview, which fits the edition’s theme of useful features with clear limits.",
+      "word_count": 1312,
+      "estimated_duration_minutes": 9,
       "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
       "source_notes": "source-notes.md",
-      "first_spoken_line": "Today’s biggest story is not really about a single model update. It is about a workflow becoming easier to keep inside one place.",
-      "final_spoken_line": "What to watch next is whether Google expands access, how creators use the avatar and clip-generation features in practice, and whether the review and watermarking pieces become standard expectations in AI video tools. If that happens, the story will not just be about making video faster. It will be about making video workflows more traceable from the first draft to the final publish.",
+      "first_spoken_line": "If you have been waiting for an AI story that is less about giant model hype and more about actual day-to-day work, this is the one to watch.",
+      "final_spoken_line": "Either way, the signal is clear: AI is becoming more useful when it gets narrower, more editable, and easier to review. That is the version to pay attention to this week.",
       "validation_warnings": [],
       "non_spoken_instruction_candidates": []
     }
@@ -104,12 +104,12 @@
     ],
     "tiktok_narration": "media/tiktok-narration.mp3",
     "tiktok": {
-      "story_index": 0,
-      "hook": "Would your search start the whole task?",
-      "payoff": "Google says AI Mode can connect apps like Instacart, Canva and YouTube Music directly to Search, so the first step can happen in one place and the next step in the right app. Would you use it for a shopping list or a design brief?",
-      "response_prompt": "Comment with one.",
-      "narration": "media/2026-07-23-creator/tiktok-narration.mp3",
-      "narration_text": "Would your search start the whole task? Google says AI Mode can connect apps like Instacart, Canva and YouTube Music directly to Search, so the first step can happen in one place and the next step in the right app. Would you use it for a shopping list or a design brief? Comment with one.",
+      "story_index": 2,
+      "hook": "Would Canva AI save you time?",
+      "payoff": "Canva says AI 2. 0 is a research preview with conversational design, iterative editing, layered object intelligence, and brand memory. If you make social graphics or simple landing pages, it could cut tool switching.",
+      "response_prompt": "Would you test it on a post or a page?",
+      "narration": "media/2026-07-24/tiktok-narration.mp3",
+      "narration_text": "Would Canva AI save you time? Canva says AI 2.0 is a research preview with conversational design, iterative editing, layered object intelligence, and brand memory. If you make social graphics or simple landing pages, it could cut tool switching. Would you test it on a post or a page?",
       "target_duration_seconds": [
         12,
         18
@@ -119,58 +119,58 @@
     "generated": true
   },
   "quote_card_lines": [
-    "The useful AI story is the handoff, not the headline.",
-    "Where does your workflow lose context first?",
-    "Search can start the task. The next tool should finish it.",
-    "Would one fewer copy-paste step change your week?",
-    "Good workflows keep context attached as work moves."
+    "Which AI tool would actually fit one real workflow this week?",
+    "Would you test a preview if it keeps your brand context intact?",
+    "Disclosure is becoming part of the creative process, not a side note.",
+    "A useful AI tool should reduce switching, not add it.",
+    "What job should AI do for you: draft, edit, organize, or review?"
   ],
   "headline_options": [
-    "The practical AI stack for creators is getting clearer: start in search, finish in video, keep the handoffs visible",
-    "AI is moving into creator workflows, with search, video, Jira and Zoom connecting the steps",
-    "What creators should test next: search-to-app handoffs, video drafts, structured tickets and private AI",
-    "The useful AI change this week is workflow design, not model hype",
-    "AI tools are starting to fit together, and that matters for creators and small teams"
+    "Friday watchlist: AI is getting narrower, safer and more usable",
+    "What to test now: the latest AI tools are all about control and workflow",
+    "New AI releases worth watching today: health, ads, design and reflection",
+    "The week’s most practical AI launches are not the loudest ones",
+    "AI is moving into real tasks, but only where the boundaries are clear"
   ],
   "sources": [
     {
-      "source_name": "Google Blog",
-      "title": "Connect more of your apps to Search",
-      "url": "https://blog.google/products-and-platforms/products/search/connected-apps/",
-      "published_date": "2026-07-16",
-      "confirmed_fact": "Google says users can securely link apps such as Instacart, Canva and YouTube Music directly to AI Mode in Search, with the rollout starting in the U.S. this week.",
-      "interpretation": "Search is becoming a place to begin a task and hand it off to another app, which is useful for creators and small operators who want fewer context switches."
+      "source_name": "OpenAI",
+      "title": "Launching Health in ChatGPT",
+      "url": "https://openai.com/index/health-in-chatgpt/",
+      "published_date": "2026-07-23",
+      "confirmed_fact": "OpenAI says Health in ChatGPT is rolling out to logged-in Free, Go, Plus, and Pro users in the United States who are 18 or older, on web and iOS, and can connect supported health records and Apple Health data.",
+      "interpretation": "This is a concrete sign that ChatGPT is being used for bounded, higher-stakes personal workflows rather than only open-ended chat."
     },
     {
       "source_name": "Google Blog",
-      "title": "Create, edit and star in videos with two Google Vids updates",
-      "url": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/",
-      "published_date": "2026-07-16",
-      "confirmed_fact": "Google says Gemini Omni and personal avatars are now available in Google Vids for eligible Google AI Pro, Ultra and Workspace business customers, with SynthID watermarks on generated clips.",
-      "interpretation": "Video production is being folded into a single draft-and-edit workflow where speed and disclosure can live in the same place."
+      "title": "Google introduces new AI labels for Ads",
+      "url": "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
+      "published_date": "2026-07-09",
+      "confirmed_fact": "Google says it is adding a 'How this ad was made' panel in My Ad Center across Search, YouTube, and Discover, and that ads made with Google’s own generative AI tools will be automatically disclosed.",
+      "interpretation": "AI transparency is becoming a normal product requirement, not an afterthought, and ad buyers should expect disclosure rules to keep tightening."
     },
     {
-      "source_name": "Atlassian Blog",
-      "title": "How we’re evolving Jira for AI-native software development",
-      "url": "https://www.atlassian.com/blog/company-news/ai-sdlc",
-      "published_date": "2026-07-15",
-      "confirmed_fact": "Atlassian says Jira Planner and Jira for Slack are designed to turn context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review kept in the loop.",
-      "interpretation": "The useful pattern is not isolated automation; it is moving context through a governed workflow without dropping the thread."
+      "source_name": "Canva Newsroom",
+      "title": "Introducing Canva AI 2.0: Reimagining how the world creates",
+      "url": "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
+      "published_date": "2026-07-23",
+      "confirmed_fact": "Canva says Canva AI 2.0 is available today as a research preview and adds conversational design, iterative editing, layered object intelligence, living memory, and new workflows including connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0.",
+      "interpretation": "Canva is pushing beyond one-shot generation and toward a broader creation workspace that may matter more to teams than a standalone image tool."
     },
     {
-      "source_name": "Zoom Blog",
-      "title": "AI that works where your data lives: introducing Zoom AI On-Prem",
-      "url": "https://www.zoom.com/en/blog/zoom-ai-on-prem/",
-      "published_date": "2026-07-02",
-      "confirmed_fact": "Zoom says AI On-Prem is available through Zoom Node add-on to paid Zoom Workplace plans and can run AI workloads on customer infrastructure or private cloud.",
-      "interpretation": "For sensitive creator-client or internal workflows, the deployment model can matter as much as the feature set."
+      "source_name": "Anthropic",
+      "title": "Introducing a way to reflect on how you use Claude",
+      "url": "https://www.anthropic.com/news/reflect-with-claude",
+      "published_date": "2026-07-09",
+      "confirmed_fact": "Anthropic says the Reflect feature is in beta for Free, Pro, and Max users with memory turned on, and it lets users review past usage patterns, set quiet hours, and see prompts about how they want to use AI.",
+      "interpretation": "The product is moving from pure generation toward self-management, which is useful for people trying to control AI habits and spending time more deliberately."
     }
   ],
   "media_metadata": {
     "version": 5,
-    "date": "2026-07-23-creator",
-    "headline": "The practical AI stack for creators is getting clearer: start in search, finish in video, keep the handoffs visible",
-    "dek": "This is not a model race. It is a workflow race: which tools can hand context from one step to the next without losing control, time or traceability.",
+    "date": "2026-07-24",
+    "headline": "Friday watchlist: AI is moving into narrower, safer, more practical features you can actually test now",
+    "dek": "Today’s useful signal is not another giant model race. It is the quieter shift into scoped tools: health context in ChatGPT, disclosure in ads, a broader Canva AI preview, and a usage-reflection layer in Claude. The theme for creators and small businesses is simple: the products that matter this week are the ones with clear limits, clear rollout states, and clear rules for what they can and cannot do.",
     "hook": "Three AI updates that actually matter today",
     "spoken_cta": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
     "visual_system": "Clearforge AI briefing podcast studio system",
@@ -195,52 +195,52 @@
     },
     "stories": [
       {
-        "file": "media/2026-07-23-creator/story-1.png",
-        "title": "Search is becoming a start point for creator tasks",
-        "source_name": "Google Blog",
-        "source_url": "https://blog.google/products-and-platforms/products/search/connected-apps/",
-        "summary": "Google says AI Mode can connect directly to apps like Instacart, Canva and YouTube Music. For creators and small operators, the practical change is that the first step of a task can happen in search, while the next step happens in the right app.",
-        "why_it_matters": "Less app-hopping usually means less lost momentum, especially when you are planning content, assembling a shopping list or pulling together a quick visual.",
-        "practical_angle": "Use Search as the front door, not the final stop.",
-        "visual_prompt": "a podcast-ready AI learning desk with a microphone in the foreground, tidy source folders, simple model cards, a soft waveform motif and a dark professional newsroom mood. clean editorial technology-magazine composition, practical rather than sci-fi. combine physical human-review materials with light digital signal motifs so it feels human-led and AI-empowered. use a different AI signal motif: waveform, routing lines, model cards, calendar markers or evidence board. Story context: Search is becoming a start point for creator tasks. Practical angle: Use Search as the front door, not the final stop.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: dark blue studio background, graphite desk, white paper, blue highlights and restrained green accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+        "file": "media/2026-07-24/story-1.png",
+        "title": "OpenAI launches Health in ChatGPT",
+        "source_name": "OpenAI",
+        "source_url": "https://openai.com/index/health-in-chatgpt/",
+        "summary": "OpenAI has started rolling out a health-focused ChatGPT experience in the U.S. for logged-in users 18 and older on web and iOS. The feature lets people connect supported health records and Apple Health data so they can compare results, summarize changes and ask questions grounded in their own health context.",
+        "why_it_matters": "This is one of the clearest signs yet that consumer AI is being packaged for a narrow, high-trust use case rather than general chat.",
+        "practical_angle": "If you are a creator or small business owner, the useful lesson is to watch for AI products that do one job well with clear permissions and clear boundaries, instead of trying to be everything.",
+        "visual_prompt": "an editorial AI news analysis desk with printed source cards, model comparison sheets, a compact microphone arm, blue data-light accents and a calm control-room atmosphere. dark professional podcast artwork composition with source materials visible. use restrained blue technology accents to signal AI without making the image look like generic AI stock art. vary camera distance, desk depth and object hierarchy while keeping the same Clearforge identity. Story context: OpenAI launches Health in ChatGPT. Practical angle: If you are a creator or small business owner, the useful lesson is to watch for AI products that do one job well with clear permissions and clear boundaries, instead of trying to be everything.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: dark blue studio background, graphite desk, white paper, blue highlights and restrained green accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
       },
       {
-        "file": "media/2026-07-23-creator/story-2.png",
-        "title": "Google Vids now covers more of the video handoff chain",
+        "file": "media/2026-07-24/story-2.png",
+        "title": "Google adds AI disclosure labels to ads",
         "source_name": "Google Blog",
-        "source_url": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/",
-        "summary": "Google says eligible users can generate and edit clips with Gemini Omni and create personal avatars from a selfie and voice recording. Generated clips include SynthID watermarks, which builds a disclosure layer into the workflow.",
-        "why_it_matters": "That is useful for short updates, explainers and training clips where a creator needs a quick draft and a clear provenance trail.",
-        "practical_angle": "Draft, revise and publish can all happen inside one workspace.",
-        "visual_prompt": "a dark navy AI briefing studio desk with a professional podcast microphone, source notes, a small audio waveform display, subtle circuit-board lines in the background and one practical notebook open on the desk. vertical social-video still with a strong microphone foreground and clear desk detail. make the AI element clear through subtle circuit traces, waveform graphics, model cards and data-routing lines, not robots. make the story context visible through objects and composition rather than readable text. Story context: Google Vids now covers more of the video handoff chain. Practical angle: Draft, revise and publish can all happen inside one workspace.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+        "source_url": "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
+        "summary": "Google says users will now be able to open a 'How this ad was made' panel in My Ad Center across Search, YouTube and Discover. Ads made with Google’s own generative AI tools will be automatically labeled, and advertisers can also disclose when they used other AI tools.",
+        "why_it_matters": "This moves AI disclosure from policy language into the user interface, where it is more likely to affect trust and buying decisions.",
+        "practical_angle": "For small advertisers, this is a reminder to build a simple disclosure process now so campaigns are not slowed down later by platform or regulatory requirements.",
+        "visual_prompt": "a weekly AI briefing workspace with layered research cards, calendar markers, a studio microphone, restrained blue interface glow and visible human review materials. wide briefing-room still life cropped for vertical short-form video. make it instantly understandable as an AI briefing or AI podcast image, but grounded in real studio objects. use a different AI signal motif: waveform, routing lines, model cards, calendar markers or evidence board. Story context: Google adds AI disclosure labels to ads. Practical angle: For small advertisers, this is a reminder to build a simple disclosure process now so campaigns are not slowed down later by platform or regulatory requirements.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
       },
       {
-        "file": "media/2026-07-23-creator/story-3.png",
-        "title": "Jira is turning chat into structured work",
-        "source_name": "Atlassian Blog",
-        "source_url": "https://www.atlassian.com/blog/company-news/ai-sdlc",
-        "summary": "Atlassian says Jira Planner and Jira for Slack are built to turn context from Jira, Confluence, Slack and GitHub into structured work for agents, with human review still in place. The key move is not replacing people; it is preserving context as tasks move across tools.",
-        "why_it_matters": "This matters for any team that starts in chat and later has to reconstruct what was decided, assigned and reviewed.",
-        "practical_angle": "Conversation → ticket → spec → work → review.",
-        "visual_prompt": "a high-end technology briefing set with a dark blue wall, subtle circuit traces, a clean desk, paper research packs, audio waveforms and one human-operated control surface. cinematic three-quarter studio photograph with shallow depth of field. use restrained blue technology accents to signal AI without making the image look like generic AI stock art. change the hero object placement so this frame does not resemble the previous edition. Story context: Jira is turning chat into structured work. Practical angle: Conversation → ticket → spec → work → review.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+        "file": "media/2026-07-24/story-3.png",
+        "title": "Canva AI 2.0 is in research preview",
+        "source_name": "Canva Newsroom",
+        "source_url": "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
+        "summary": "Canva says its new AI 2.0 release is available today as a research preview and introduces more than just image generation. The company says the update includes conversational design, iterative agentic editing, layered object intelligence, memory, and workflows for connectors, scheduling, web research, brand intelligence, Sheets AI and code.",
+        "why_it_matters": "Creators should watch this closely because it points to AI becoming part of the full content workflow: plan, draft, edit, organize and publish.",
+        "practical_angle": "If you make marketing assets, social graphics or simple landing pages, Canva AI 2.0 is a test candidate—but it is still a preview, so expect rough edges and rollout changes.",
+        "visual_prompt": "a modern audio briefing desk where AI developments are represented by physical cards, circuit-like connection lines, a restrained waveform panel and careful human notes. clean editorial technology-magazine composition, practical rather than sci-fi. show AI as a system being reviewed by a person through notes, checks, source cards and controlled audio tools. make the story context visible through objects and composition rather than readable text. Story context: Canva AI 2.0 is in research preview. Practical angle: If you make marketing assets, social graphics or simple landing pages, Canva AI 2.0 is a test candidate—but it is still a preview, so expect rough edges and rollout changes.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
       }
     ],
-    "narration": "media/2026-07-23-creator/narration.mp3",
-    "narration_text": "Need a video draft faster? Google says Gemini Omni and personal avatars are now available in Google Vids for eligible users, and generated clips include SynthID watermarks. That means you can move from draft to edit in one workspace, while the disclosure stays attached to the clip. For creators, that is useful for short updates, explainers, and training videos where speed matters but traceability still matters too. Which would save you more time: a selfie avatar or a manual recording? Drop one in the comments, and if you want, I can break down the workflow next. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "narration": "media/2026-07-24/narration.mp3",
+    "narration_text": "Can Canva AI replace your design shuffle? Canva says AI 2.0 is available today as a research preview, and it goes beyond one-shot image generation. The update adds conversational design, iterative editing, layered object intelligence, living memory, connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0. For creators and small teams, that matters because it could move work from prompt to edit to publish without jumping between tools. It is still a preview, so expect rough edges and rollout changes. Would you start with a social graphic or a simple landing page? Comment with the one test you'd run first. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
     "tiktok": {
-      "story_index": 0,
-      "hook": "Would your search start the whole task?",
-      "payoff": "Google says AI Mode can connect apps like Instacart, Canva and YouTube Music directly to Search, so the first step can happen in one place and the next step in the right app. Would you use it for a shopping list or a design brief?",
-      "response_prompt": "Comment with one.",
-      "narration": "media/2026-07-23-creator/tiktok-narration.mp3",
-      "narration_text": "Would your search start the whole task? Google says AI Mode can connect apps like Instacart, Canva and YouTube Music directly to Search, so the first step can happen in one place and the next step in the right app. Would you use it for a shopping list or a design brief? Comment with one.",
+      "story_index": 2,
+      "hook": "Would Canva AI save you time?",
+      "payoff": "Canva says AI 2. 0 is a research preview with conversational design, iterative editing, layered object intelligence, and brand memory. If you make social graphics or simple landing pages, it could cut tool switching.",
+      "response_prompt": "Would you test it on a post or a page?",
+      "narration": "media/2026-07-24/tiktok-narration.mp3",
+      "narration_text": "Would Canva AI save you time? Canva says AI 2.0 is a research preview with conversational design, iterative editing, layered object intelligence, and brand memory. If you make social graphics or simple landing pages, it could cut tool switching. Would you test it on a post or a page?",
       "target_duration_seconds": [
         12,
         18
       ],
       "format": "question_fact_consequence_response"
     },
-    "practical_takeaway": "Pick one weekly workflow and test a three-step handoff: start in Search, move into the tool that creates the asset, and keep a visible review step before publishing.",
-    "what_to_test_next": "Try a small creator pipeline with three parts: use Search to gather the inputs, use a creative app like Google Vids to draft the output, and use a work tracker or review step to preserve context before you publish or share it."
+    "practical_takeaway": "Test one scoped AI feature on a real workflow this week: a Canva asset, an ad disclosure check, or an AI usage review. Judge it by whether it saves time without adding confusion.",
+    "what_to_test_next": "Run a 20-minute Canva AI 2.0 test by taking one unfinished social post or simple landing-page graphic and seeing whether the preview can turn it into something editable without forcing you to rebuild it from scratch."
   }
 }

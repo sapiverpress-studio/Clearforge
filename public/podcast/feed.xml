@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>
     <copyright>Clearforge</copyright>
     <generator>Clearforge hosted podcast feed</generator>
-    <lastBuildDate>Thu, 23 Jul 2026 16:43:13 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2026 06:01:05 GMT</lastBuildDate>
     <atom:link href="https://clearforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Clearforge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://clearforge-daily-brief.netlify.app/podcast/cover.png"/>
+    <item>
+      <title>Friday watchlist: Canva AI 2.0 points to AI becoming part of the whole content workflow</title>
+      <description>This is the strongest practical story in the set for creators and small businesses because it moves AI beyond one-off generation and into editing, organization, and publishing workflows that people can actually test this week. It is also explicitly a preview, which fits the edition’s theme of useful features with clear limits.</description>
+      <content:encoded><![CDATA[<p>This is the strongest practical story in the set for creators and small businesses because it moves AI beyond one-off generation and into editing, organization, and publishing workflows that people can actually test this week. It is also explicitly a preview, which fits the edition’s theme of useful features with clear limits.</p><p><strong>Read alongside this episode:</strong> <a href="https://clearforge-daily-brief.netlify.app/posts/2026-07-24.html">daily briefing</a> · <a href="https://clearforge-daily-brief.netlify.app/features/2026-07-24.html">feature analysis</a></p><p><a href="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-24.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-24.html</link>
+      <guid isPermaLink="false">clearforge:2026-07-24</guid>
+      <pubDate>Fri, 24 Jul 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-24.mp3" length="7499067" type="audio/mpeg"/>
+      <itunes:author>Clearforge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:09:00</itunes:duration>
+      <podcast:transcript url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-24.txt" type="text/plain"/>
+    </item>
     <item>
       <title>Creator workflows are getting more connected, with video now pulling the pieces together</title>
       <description>This is the strongest story for the edition because it shows the clearest end-to-end creator workflow change: draft, edit, identity, and disclosure are all moving into one place, which matches the edition’s practical theme about visible handoffs.</description>

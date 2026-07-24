@@ -1,0 +1,77 @@
+{
+  "version": 5,
+  "date": "2026-07-24",
+  "headline": "Friday watchlist: AI is moving into narrower, safer, more practical features you can actually test now",
+  "dek": "Today’s useful signal is not another giant model race. It is the quieter shift into scoped tools: health context in ChatGPT, disclosure in ads, a broader Canva AI preview, and a usage-reflection layer in Claude. The theme for creators and small businesses is simple: the products that matter this week are the ones with clear limits, clear rollout states, and clear rules for what they can and cannot do.",
+  "hook": "Three AI updates that actually matter today",
+  "spoken_cta": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+  "visual_system": "Clearforge AI briefing podcast studio system",
+  "visual_style_rules": {
+    "include": [
+      "dark navy AI briefing or podcast studio atmosphere",
+      "microphone or audio-briefing cues where appropriate",
+      "subtle circuit traces, waveform motifs, model cards or data-routing lines",
+      "physical source notes, checklists and human-review materials",
+      "premium editorial technology-magazine lighting"
+    ],
+    "avoid": [
+      "robots",
+      "glowing brains",
+      "hologram faces",
+      "generic dashboards",
+      "random floating code",
+      "excessive neon",
+      "fake readable text",
+      "Sapiver or unrelated branding"
+    ]
+  },
+  "stories": [
+    {
+      "file": "media/2026-07-24/story-1.png",
+      "title": "OpenAI launches Health in ChatGPT",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/health-in-chatgpt/",
+      "summary": "OpenAI has started rolling out a health-focused ChatGPT experience in the U.S. for logged-in users 18 and older on web and iOS. The feature lets people connect supported health records and Apple Health data so they can compare results, summarize changes and ask questions grounded in their own health context.",
+      "why_it_matters": "This is one of the clearest signs yet that consumer AI is being packaged for a narrow, high-trust use case rather than general chat.",
+      "practical_angle": "If you are a creator or small business owner, the useful lesson is to watch for AI products that do one job well with clear permissions and clear boundaries, instead of trying to be everything.",
+      "visual_prompt": "an editorial AI news analysis desk with printed source cards, model comparison sheets, a compact microphone arm, blue data-light accents and a calm control-room atmosphere. dark professional podcast artwork composition with source materials visible. use restrained blue technology accents to signal AI without making the image look like generic AI stock art. vary camera distance, desk depth and object hierarchy while keeping the same Clearforge identity. Story context: OpenAI launches Health in ChatGPT. Practical angle: If you are a creator or small business owner, the useful lesson is to watch for AI products that do one job well with clear permissions and clear boundaries, instead of trying to be everything.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: dark blue studio background, graphite desk, white paper, blue highlights and restrained green accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-07-24/story-2.png",
+      "title": "Google adds AI disclosure labels to ads",
+      "source_name": "Google Blog",
+      "source_url": "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
+      "summary": "Google says users will now be able to open a 'How this ad was made' panel in My Ad Center across Search, YouTube and Discover. Ads made with Google’s own generative AI tools will be automatically labeled, and advertisers can also disclose when they used other AI tools.",
+      "why_it_matters": "This moves AI disclosure from policy language into the user interface, where it is more likely to affect trust and buying decisions.",
+      "practical_angle": "For small advertisers, this is a reminder to build a simple disclosure process now so campaigns are not slowed down later by platform or regulatory requirements.",
+      "visual_prompt": "a weekly AI briefing workspace with layered research cards, calendar markers, a studio microphone, restrained blue interface glow and visible human review materials. wide briefing-room still life cropped for vertical short-form video. make it instantly understandable as an AI briefing or AI podcast image, but grounded in real studio objects. use a different AI signal motif: waveform, routing lines, model cards, calendar markers or evidence board. Story context: Google adds AI disclosure labels to ads. Practical angle: For small advertisers, this is a reminder to build a simple disclosure process now so campaigns are not slowed down later by platform or regulatory requirements.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-07-24/story-3.png",
+      "title": "Canva AI 2.0 is in research preview",
+      "source_name": "Canva Newsroom",
+      "source_url": "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
+      "summary": "Canva says its new AI 2.0 release is available today as a research preview and introduces more than just image generation. The company says the update includes conversational design, iterative agentic editing, layered object intelligence, memory, and workflows for connectors, scheduling, web research, brand intelligence, Sheets AI and code.",
+      "why_it_matters": "Creators should watch this closely because it points to AI becoming part of the full content workflow: plan, draft, edit, organize and publish.",
+      "practical_angle": "If you make marketing assets, social graphics or simple landing pages, Canva AI 2.0 is a test candidate—but it is still a preview, so expect rough edges and rollout changes.",
+      "visual_prompt": "a modern audio briefing desk where AI developments are represented by physical cards, circuit-like connection lines, a restrained waveform panel and careful human notes. clean editorial technology-magazine composition, practical rather than sci-fi. show AI as a system being reviewed by a person through notes, checks, source cards and controlled audio tools. make the story context visible through objects and composition rather than readable text. Story context: Canva AI 2.0 is in research preview. Practical angle: If you make marketing assets, social graphics or simple landing pages, Canva AI 2.0 is a test candidate—but it is still a preview, so expect rough edges and rollout changes.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    }
+  ],
+  "narration": "media/2026-07-24/narration.mp3",
+  "narration_text": "Can Canva AI replace your design shuffle? Canva says AI 2.0 is available today as a research preview, and it goes beyond one-shot image generation. The update adds conversational design, iterative editing, layered object intelligence, living memory, connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0. For creators and small teams, that matters because it could move work from prompt to edit to publish without jumping between tools. It is still a preview, so expect rough edges and rollout changes. Would you start with a social graphic or a simple landing page? Comment with the one test you'd run first. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+  "tiktok": {
+    "story_index": 2,
+    "hook": "Would Canva AI save you time?",
+    "payoff": "Canva says AI 2. 0 is a research preview with conversational design, iterative editing, layered object intelligence, and brand memory. If you make social graphics or simple landing pages, it could cut tool switching.",
+    "response_prompt": "Would you test it on a post or a page?",
+    "narration": "media/2026-07-24/tiktok-narration.mp3",
+    "narration_text": "Would Canva AI save you time? Canva says AI 2.0 is a research preview with conversational design, iterative editing, layered object intelligence, and brand memory. If you make social graphics or simple landing pages, it could cut tool switching. Would you test it on a post or a page?",
+    "target_duration_seconds": [
+      12,
+      18
+    ],
+    "format": "question_fact_consequence_response"
+  },
+  "practical_takeaway": "Test one scoped AI feature on a real workflow this week: a Canva asset, an ad disclosure check, or an AI usage review. Judge it by whether it saves time without adding confusion.",
+  "what_to_test_next": "Run a 20-minute Canva AI 2.0 test by taking one unfinished social post or simple landing-page graphic and seeing whether the preview can turn it into something editable without forcing you to rebuild it from scratch."
+}

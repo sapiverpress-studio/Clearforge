@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-24",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Would Canva AI save you time?",
+      "words": 49,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Can Canva AI replace your design shuffle?",
+      "words": 103,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Would a quiet-hours reminder help you use AI better?",
+      "words": 73,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Could your ad review handle AI disclosure?",
+      "words": 90,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "Can Canva AI 2.0 Speed Up Your Workflow?",
+    "title_words": 8,
+    "description_words": 36
+  },
+  "warnings": []
+}

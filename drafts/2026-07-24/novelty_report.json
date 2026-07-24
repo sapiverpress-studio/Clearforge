@@ -1,0 +1,25 @@
+{
+  "date": "2026-07-24",
+  "editorial_theme": {
+    "day": "Friday",
+    "date": "2026-07-24",
+    "slug": "new-to-scene-watchlist",
+    "title": "New to the scene / what to watch",
+    "focus": "Emerging tools, early releases, previews, newly visible trends and practical watchlist items.",
+    "instruction": "Make clear what is actually available now, what is staged, and what remains uncertain. Help readers decide what to test, watch or ignore."
+  },
+  "same_day_prior_runs": 0,
+  "excluded_url_count": 27,
+  "excluded_story_title_count": 29,
+  "topic_rotation_evidence_dates": [
+    "2026-07-17",
+    "2026-07-18",
+    "2026-07-19",
+    "2026-07-20",
+    "2026-07-21",
+    "2026-07-22",
+    "2026-07-23"
+  ],
+  "consecutive_week_topic_block": true,
+  "passed": true
+}

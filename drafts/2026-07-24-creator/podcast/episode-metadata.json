@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "date": "2026-07-24-creator",
+  "brand": "Clearforge",
+  "type": "clearforge_daily_biggest_story_podcast_script",
+  "human_review_required": true,
+  "narrator": "Irene",
+  "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+  "episode_title": "Friday watchlist: Canva AI 2.0 is the workflow test worth trying first",
+  "selected_story_index": 2,
+  "selected_story_title": "Canva AI 2.0 is in research preview",
+  "selection_reason": "This is the most immediately useful release for creators and small businesses because it is aimed at getting from idea to editable asset inside a real workflow. Unlike a broad model upgrade, it targets everyday production tasks and is available now as a preview for people who can test it on real work.",
+  "word_count": 1397,
+  "estimated_duration_minutes": 9.6,
+  "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+  "source_notes": "source-notes.md",
+  "first_spoken_line": "Today’s biggest story is not a bigger model headline. It is a workflow story.",
+  "final_spoken_line": "If it did, keep going. If it did not, wait. But this is the kind of release worth putting in front of a real workflow, not just a demo.",
+  "validation_warnings": [],
+  "non_spoken_instruction_candidates": []
+}

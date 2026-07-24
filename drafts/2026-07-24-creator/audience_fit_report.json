@@ -1,0 +1,166 @@
+{
+  "generated_at": "2026-07-24T19:35:18.413Z",
+  "story_assessments": [
+    {
+      "story_index": 0,
+      "story_title": "OpenAI launches Health in ChatGPT",
+      "target_audience": "Creators, AI watchers, and small operators who want a read on where consumer AI is heading",
+      "audience_problem_or_desire": "They want to know whether a new AI release has a practical, controlled use rather than more hype",
+      "interest_signal": "ChatGPT is moving into a narrow, permissioned workflow tied to real user data",
+      "stop_reason": "It is specific and bounded, but it is not a broad creator workflow and only matters directly to a niche audience",
+      "promised_payoff": "A clearer read on where consumer AI is heading: narrower jobs, tighter permissions, and structured inputs",
+      "proof_point": "OpenAI says Health in ChatGPT is rolling out to logged-in Free, Go, Plus, and Pro users in the United States who are 18 or older, on web and iOS, and can connect supported health records and Apple Health data.",
+      "search_phrases": [
+        "Health in ChatGPT",
+        "OpenAI Health ChatGPT",
+        "Apple Health ChatGPT"
+      ],
+      "scores": {
+        "audience_fit": 4,
+        "practical_consequence": 4,
+        "searchability": 7,
+        "stranger_usefulness": 4,
+        "novelty": 6,
+        "visual_potential": 4,
+        "discussion_potential": 4,
+        "short_form_clarity": 8
+      },
+      "overall_score": 5,
+      "score_reason": "Interesting as a signal about bounded AI, but the direct utility is limited for most creators and small operators."
+    },
+    {
+      "story_index": 1,
+      "story_title": "Google adds AI disclosure labels to ads",
+      "target_audience": "Creators, freelancers, marketers, and anyone running ads with AI",
+      "audience_problem_or_desire": "They want to know how AI disclosure changes the ad publishing workflow",
+      "interest_signal": "New disclosure labels surface in Search, YouTube, and Discover, with AI-made ads auto-labeled",
+      "stop_reason": "Useful and actionable, but narrower to ad operators than to the broader creator audience",
+      "promised_payoff": "A simple review step that keeps disclosure manageable",
+      "proof_point": "Google says it is adding a 'How this ad was made' panel in My Ad Center across Search, YouTube, and Discover, and ads made with Google’s own generative AI tools will be automatically disclosed.",
+      "search_phrases": [
+        "Google AI labels ads",
+        "How this ad was made panel",
+        "Google My Ad Center AI disclosure"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 8,
+        "searchability": 8,
+        "stranger_usefulness": 7,
+        "novelty": 5,
+        "visual_potential": 6,
+        "discussion_potential": 7,
+        "short_form_clarity": 9
+      },
+      "overall_score": 7,
+      "score_reason": "Clear operational value for anyone publishing AI-assisted ads, especially marketers and small teams."
+    },
+    {
+      "story_index": 2,
+      "story_title": "Canva AI 2.0 is in research preview",
+      "target_audience": "Creators, designers, solo operators, and small teams that make visual content or simple web assets",
+      "audience_problem_or_desire": "They want to move from rough idea to editable asset faster with fewer tool switches",
+      "interest_signal": "A broad research preview adds conversational design, iterative editing, memory, and workflow tools",
+      "stop_reason": "Preview status means it is not final, but it is still highly testable and visually demonstrable",
+      "promised_payoff": "A practical test lane for real assets like social graphics, one-pagers, and landing-page mockups",
+      "proof_point": "Canva says AI 2.0 is available today as a research preview and adds conversational design, iterative editing, layered object intelligence, living memory, connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0.",
+      "search_phrases": [
+        "Canva AI 2.0",
+        "Canva research preview",
+        "Canva iterative editing"
+      ],
+      "scores": {
+        "audience_fit": 10,
+        "practical_consequence": 10,
+        "searchability": 9,
+        "stranger_usefulness": 9,
+        "novelty": 9,
+        "visual_potential": 9,
+        "discussion_potential": 7,
+        "short_form_clarity": 9
+      },
+      "overall_score": 9,
+      "score_reason": "This is the strongest creator workflow story because it is broad, visual, testable, and easy to explain fast."
+    },
+    {
+      "story_index": 3,
+      "story_title": "Anthropic’s Claude gets a reflection dashboard",
+      "target_audience": "AI-heavy knowledge workers, creators, and solo operators who want more control over their usage habits",
+      "audience_problem_or_desire": "They want to understand and control how often they rely on AI",
+      "interest_signal": "A reflection dashboard shows usage patterns, quiet hours, and prompts about AI habits",
+      "stop_reason": "Useful for habit control, but less visual and less immediately shareable than workflow or publishing changes",
+      "promised_payoff": "A way to audit reliance on AI, not just the outputs it produces",
+      "proof_point": "Anthropic says Reflect is in beta for Free, Pro, and Max users with memory on, and it lets users review past usage patterns, set quiet hours, and see prompts about how they want to use AI.",
+      "search_phrases": [
+        "Claude Reflect",
+        "Anthropic usage patterns",
+        "Claude quiet hours"
+      ],
+      "scores": {
+        "audience_fit": 7,
+        "practical_consequence": 7,
+        "searchability": 6,
+        "stranger_usefulness": 8,
+        "novelty": 5,
+        "visual_potential": 4,
+        "discussion_potential": 6,
+        "short_form_clarity": 8
+      },
+      "overall_score": 6,
+      "score_reason": "A useful habit-management story, but it is less immediate and less visual than the creator workflow releases."
+    }
+  ],
+  "platform_selections": {
+    "tiktok": {
+      "story_index": 2,
+      "story_title": "Canva AI 2.0 is in research preview",
+      "target_audience": "Creators making social posts, graphics, and simple landing assets",
+      "format": "short-form video",
+      "opening": "Could one preview save your content workflow?",
+      "payoff": "Canva says AI 2.0 is available today as a research preview, with conversational design, iterative editing, and brand memory. The real test is whether one rough graphic gets closer to done faster.",
+      "selection_reason": "This has the clearest visual before-and-after test for a short video and can be explained in one quick workflow example.",
+      "platform_fit_score": 9
+    },
+    "youtube": {
+      "story_index": 2,
+      "story_title": "Canva AI 2.0 is in research preview",
+      "target_audience": "Creators and small operators who want a practical AI workflow test",
+      "format": "YouTube Shorts",
+      "opening": "Could a preview replace three tool switches?",
+      "payoff": "Canva says AI 2.0 is available today as a research preview, with conversational design, iterative editing, layered object intelligence, living memory, and workflow tools like connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0. The useful question is whether one unfinished asset can move farther with fewer handoffs and less cleanup.",
+      "selection_reason": "YouTube Shorts can hold the broader feature list and still land the workflow takeaway clearly.",
+      "platform_fit_score": 9
+    },
+    "facebook": {
+      "story_index": 1,
+      "story_title": "Google adds AI disclosure labels to ads",
+      "target_audience": "Creators, freelancers, and small teams that run ads",
+      "format": "Facebook post",
+      "opening": "Would your ad review catch this on launch day?",
+      "payoff": "Google says ads made with its own generative AI tools will be automatically disclosed, and My Ad Center will show a 'How this ad was made' panel across Search, YouTube, and Discover. That makes AI disclosure part of the publishing workflow.",
+      "selection_reason": "Facebook performs well with recognizable operational changes and practical discussion about ads, checks, and client workflows.",
+      "platform_fit_score": 8
+    },
+    "pinterest": {
+      "story_index": 2,
+      "story_title": "Canva AI 2.0 is in research preview",
+      "target_audience": "People searching for Canva workflow tests, social graphics, and lightweight design tools",
+      "format": "Pinterest pin",
+      "opening": "What should you test first in Canva AI 2.0?",
+      "payoff": "It is a searchable, practical checklist topic that points readers to one real project test instead of a vague tool demo.",
+      "selection_reason": "Pinterest favors searchable how-to framing, and Canva AI 2.0 is the most pin-friendly visual workflow topic in the pack.",
+      "platform_fit_score": 10
+    },
+    "linkedin": {
+      "story_index": 1,
+      "story_title": "Google adds AI disclosure labels to ads",
+      "target_audience": "Marketers, campaign managers, and small business operators",
+      "format": "LinkedIn post",
+      "opening": "Would your review process catch AI disclosure before launch?",
+      "payoff": "Google is moving disclosure into My Ad Center and automatically labeling ads made with its own generative AI tools. For teams, that means disclosure needs to live in the approval workflow, not in a separate policy file.",
+      "selection_reason": "LinkedIn rewards operational consequences, process design, and professional decision-making, which this story supplies cleanly.",
+      "platform_fit_score": 9
+    }
+  },
+  "overall_reasoning": "Canva AI 2.0 is the strongest broad creator workflow story, so it anchors TikTok, YouTube Shorts, and Pinterest. Google’s ad disclosure update is the best fit for Facebook and LinkedIn because it creates a concrete process and compliance question that people can answer from experience. Claude Reflect is useful but less visual, and Health in ChatGPT is a narrower signal about product direction rather than a strong standalone creator workflow story."
+}

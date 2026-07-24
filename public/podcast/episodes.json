@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-24-creator",
+    "kind": "daily",
+    "title": "Friday watchlist: Canva AI 2.0 is the workflow test worth trying first",
+    "description": "This is the most immediately useful release for creators and small businesses because it is aimed at getting from idea to editable asset inside a real workflow. Unlike a broad model upgrade, it targets everyday production tasks and is available now as a preview for people who can test it on real work.",
+    "published": "2026-07-24T07:00:00+01:00",
+    "duration": "00:09:36",
+    "size": 8354212,
+    "video_size": 26798126,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-24-creator.mp3",
+    "video_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-24-creator.mp4",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-24-creator.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-24-creator.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-24-creator.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-24-creator.html",
+    "source_dir": "drafts/2026-07-24-creator/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-24",
     "kind": "daily",
     "title": "Friday watchlist: Canva AI 2.0 points to AI becoming part of the whole content workflow",

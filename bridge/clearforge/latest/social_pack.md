@@ -1,4 +1,4 @@
-# Clearforge Social Repurpose Pack — 2026-07-24
+# Clearforge Social Repurpose Pack — 2026-07-24-creator
 
 Status: Draft — audience-fit optimised; automatic validation pending
 
@@ -9,83 +9,81 @@ Editorial theme: Friday — New to the scene / what to watch
 ### Tiktok
 
 - Selected story: Canva AI 2.0 is in research preview
-- Audience: Creators, social media managers, and small businesses making graphics or simple pages
+- Audience: Creators making social posts, graphics, and simple landing assets
 - Format: short-form video
-- Opening: Would Canva AI save you time?
-- Payoff: Canva says AI 2.0 is a research preview with conversational design, iterative editing, layered object intelligence, and brand memory. If you make social graphics or simple landing pages, it could cut tool switching.
+- Opening: Could one preview save your content workflow?
+- Payoff: Canva says AI 2.0 is available today as a research preview, with conversational design, iterative editing, and brand memory. The real test is whether one rough graphic gets closer to done faster.
 - Platform fit: 9/10
-- Why selected: Most visual and easiest to understand in a fast, practical demo; the preview status and creator workflow angle are instantly usable in a short clip.
+- Why selected: This has the clearest visual before-and-after test for a short video and can be explained in one quick workflow example.
 
 ### Youtube
 
 - Selected story: Canva AI 2.0 is in research preview
-- Audience: Creators and small teams who want a clear workflow test
-- Format: short-form video
-- Opening: Can Canva AI replace your design shuffle?
-- Payoff: Canva says AI 2.0 is available today as a research preview, and it goes beyond one-shot image generation with conversational design, iterative editing, layered object intelligence, living memory, connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0.
+- Audience: Creators and small operators who want a practical AI workflow test
+- Format: YouTube Shorts
+- Opening: Could a preview replace three tool switches?
+- Payoff: Canva says AI 2.0 is available today as a research preview, with conversational design, iterative editing, layered object intelligence, living memory, and workflow tools like connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0. The useful question is whether one unfinished asset can move farther with fewer handoffs and less cleanup.
 - Platform fit: 9/10
-- Why selected: The platform gives enough room to explain the workflow change and the preview status without losing momentum, making it a strong searchable utility clip.
+- Why selected: YouTube Shorts can hold the broader feature list and still land the workflow takeaway clearly.
 
 ### Facebook
 
-- Selected story: Anthropic’s Claude gets a reflection dashboard
-- Audience: Broad Facebook audiences using AI every day and wanting better habits around it
-- Format: social post
-- Opening: Would a quiet-hours reminder help you use AI better?
-- Payoff: Anthropic says Reflect is in beta for Claude users with memory turned on. It shows usage patterns over 1, 3, 6, or 12 months and lets users set quiet hours or break reminders.
+- Selected story: Google adds AI disclosure labels to ads
+- Audience: Creators, freelancers, and small teams that run ads
+- Format: Facebook post
+- Opening: Would your ad review catch this on launch day?
+- Payoff: Google says ads made with its own generative AI tools will be automatically disclosed, and My Ad Center will show a 'How this ad was made' panel across Search, YouTube, and Discover. That makes AI disclosure part of the publishing workflow.
 - Platform fit: 8/10
-- Why selected: This is relatable to everyday users, invites a personal comparison, and works well as a discussion starter without requiring technical background.
+- Why selected: Facebook performs well with recognizable operational changes and practical discussion about ads, checks, and client workflows.
 
 ### Pinterest
 
 - Selected story: Canva AI 2.0 is in research preview
-- Audience: People searching for practical design and content workflow help
-- Format: pin
-- Opening: Can Canva AI 2.0 Speed Up Your Workflow?
-- Payoff: A searchable guide to Canva’s research preview with conversational design, iterative edits, brand memory, and publishing workflows for social graphics or simple landing pages.
+- Audience: People searching for Canva workflow tests, social graphics, and lightweight design tools
+- Format: Pinterest pin
+- Opening: What should you test first in Canva AI 2.0?
+- Payoff: It is a searchable, practical checklist topic that points readers to one real project test instead of a vague tool demo.
 - Platform fit: 10/10
-- Why selected: Pinterest favors searchable, practical how-to discovery with visual utility; Canva’s workflow angle is the clearest fit.
+- Why selected: Pinterest favors searchable how-to framing, and Canva AI 2.0 is the most pin-friendly visual workflow topic in the pack.
 
 ### Linkedin
 
 - Selected story: Google adds AI disclosure labels to ads
-- Audience: Marketers, agencies, freelancers, ecommerce sellers, and anyone responsible for ad review
-- Format: professional post
-- Opening: Could your ad review handle AI disclosure?
-- Payoff: Google says My Ad Center now includes a 'How this ad was made' panel across Search, YouTube, and Discover, and ads made with Google’s own generative AI tools are automatically disclosed.
+- Audience: Marketers, campaign managers, and small business operators
+- Format: LinkedIn post
+- Opening: Would your review process catch AI disclosure before launch?
+- Payoff: Google is moving disclosure into My Ad Center and automatically labeling ads made with its own generative AI tools. For teams, that means disclosure needs to live in the approval workflow, not in a separate policy file.
 - Platform fit: 9/10
-- Why selected: It has direct operational consequences for teams, touches trust and process, and gives professionals a concrete workflow change to discuss.
+- Why selected: LinkedIn rewards operational consequences, process design, and professional decision-making, which this story supplies cleanly.
 
 ## TikTok Script
 
-Would Canva AI save you time? Canva says AI 2.0 is a research preview with conversational design, iterative editing, layered object intelligence, and brand memory. If you make social graphics or simple landing pages, it could cut tool switching. Would you test it on a post or a page?
+Could one preview save your content workflow? Canva says AI 2.0 is available today as a research preview, with conversational design, iterative editing, and brand memory. That could help one rough graphic get closer to done faster. Social graphic or client one-pager—what would you test?
 
 ## YouTube Shorts Script
 
-Can Canva AI replace your design shuffle? Canva says AI 2.0 is available today as a research preview, and it goes beyond one-shot image generation. The update adds conversational design, iterative editing, layered object intelligence, living memory, connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0. For creators and small teams, that matters because it could move work from prompt to edit to publish without jumping between tools. It is still a preview, so expect rough edges and rollout changes. Would you start with a social graphic or a simple landing page? Comment with the one test you'd run first.
+Could a preview replace three tool switches? Canva says AI 2.0 is available today as a research preview, and it adds conversational design, iterative editing, layered object intelligence, living memory, plus workflows like connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0. The point is not to rebuild your whole process. It is to see whether one unfinished social post, banner, or landing-page mockup can move farther with fewer handoffs and less cleanup. Because it is still a preview, treat it as a workflow experiment, not a final system. Would you test it on a social graphic or a client one-pager? Comment with your pick.
 
 ## Facebook Post
 
-Would a quiet-hours reminder help you use AI better?
-Anthropic says Reflect is in beta for Claude users with memory turned on. It shows usage patterns over 1, 3, 6, or 12 months and lets you set quiet hours or break reminders. For people using AI every day, that makes the tool feel more like self-management than another output feature.
-Would you use the dashboard, or skip it? Tell us which and why.
+Would your ad review catch this on launch day?
+Google says it is adding a “How this ad was made” panel in My Ad Center across Search, YouTube, and Discover, and ads made with Google’s own generative AI tools will be automatically disclosed. For creators and small teams, that means AI disclosure is now part of the publishing workflow, not a separate policy file. The practical move is to add one pre-launch check for who used AI, where the disclosure lives, and what happens when tools are mixed. Do you run AI-made ads, or are you building a client checklist? Comment with your setup.
 
 ## Pinterest Pin
 
-**Title:** Can Canva AI 2.0 Speed Up Your Workflow?
+**Title:** What to Test First in Canva AI 2.0
 
-**Description:** Save this if you make social graphics or simple landing pages. Canva AI 2.0 is a research preview with conversational design, iterative edits, brand memory, and publishing workflows. Comment with the one project you'd test first.
+**Description:** Save this if you make social posts, client graphics, or landing pages. Canva says AI 2.0 is a research preview with conversational design, iterative editing, and workflow tools. Try it on one real project, then tell us which asset you would test first: a social graphic, client one-pager, or landing-page mockup.
 
 ## LinkedIn-Style Post
 
-Could your ad review handle AI disclosure?
-Google says My Ad Center now includes a 'How this ad was made' panel across Search, YouTube, and Discover, and ads made with Google’s own generative AI tools are automatically disclosed. Advertisers can also disclose when they used other AI tools. That means disclosure is becoming part of launch workflow, not an afterthought.
-Would you change your review checklist or your creative intake first? Put your answer in the comments, or tell us what part of the process you think will change next.
+Would your review process catch AI disclosure before launch?
+Google says it is adding a “How this ad was made” panel in My Ad Center across Search, YouTube, and Discover, and ads made with Google’s own generative AI tools will be automatically disclosed. For teams that use AI in campaign creative, this moves disclosure into the publishing workflow itself. The practical response is to add one pre-launch check for who used AI, where the disclosure lives, and how mixed-tool campaigns are handled. If you manage campaigns, would you build that check into approval or assign it to compliance? Comment with your setup or next question.
 
 ## 5 Short Quote/Card Lines
 
-- Which AI tool would actually fit one real workflow this week?
-- Would you test a preview if it keeps your brand context intact?
-- Disclosure is becoming part of the creative process, not a side note.
-- A useful AI tool should reduce switching, not add it.
-- What job should AI do for you: draft, edit, organize, or review?
+- Could one preview save your workflow without adding cleanup?
+- The best AI test is a real workflow, not a demo.
+- Could your review step catch AI disclosure before launch?
+- Preview tools should reduce switching, not add it.
+- The most useful AI products know their boundaries.

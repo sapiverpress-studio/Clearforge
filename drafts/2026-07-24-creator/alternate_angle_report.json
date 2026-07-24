@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-24-creator",
+  "base_date": "2026-07-24",
+  "angle": "creator_workflow",
+  "editorial_theme": {
+    "day": "Friday",
+    "date": "2026-07-24",
+    "slug": "new-to-scene-watchlist",
+    "title": "New to the scene / what to watch",
+    "focus": "Emerging tools, early releases, previews, newly visible trends and practical watchlist items.",
+    "instruction": "Make clear what is actually available now, what is staged, and what remains uncertain. Help readers decide what to test, watch or ignore."
+  },
+  "reused_base_run": "base-current-2026-07-24",
+  "source_urls_reused": [
+    "https://openai.com/index/health-in-chatgpt/",
+    "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
+    "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
+    "https://www.anthropic.com/news/reflect-with-claude"
+  ],
+  "passed": true
+}

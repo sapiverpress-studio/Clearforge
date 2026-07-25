@@ -1,5 +1,5 @@
 {
-  "notes": "Curated Clearforge source pool. Prefer primary sources for facts, use reputable reporting for discovery and wider context, and never copy source wording. Include product release notes, customer stories and company newsrooms to find embedded AI and real-world adoption.",
+  "notes": "Curated Clearforge source pool. Every morning must actively sweep creator tools and media, coding and building, workplace and business, models and infrastructure, research and science, policy/safety/security, and education/employment/society. Select stories from at least three distinct categories, including 2–3 confirmed AI developments and at least one evidence-based human-impact story. Emerging practices such as vibe editing, vibe directing, creator workflows and new forms of app-building belong in scope even when they are not major-vendor announcements. Prefer original product documentation, demonstrations, speeches, transcripts, surveys, methodology, research and organisation publications; use reputable reporting for discovery and context. TikTok and other short-form posts may reveal leads but must never be cited as evidence. Never copy source wording.",
   "sources": [
     { "name": "OpenAI", "type": "official", "url": "https://openai.com/news/", "use_for": "OpenAI announcements, products, research and policy" },
     { "name": "Google DeepMind", "type": "official", "url": "https://deepmind.google/discover/blog/", "use_for": "AI research and model announcements" },
@@ -27,6 +27,11 @@
     { "name": "Zoom Blog", "type": "official", "url": "https://www.zoom.com/en/blog/", "use_for": "AI inside meetings, communications and workplace services" },
     { "name": "Dropbox Blog", "type": "official", "url": "https://blog.dropbox.com/", "use_for": "AI inside file, search, knowledge and collaboration products" },
     { "name": "Intuit Blog", "type": "official", "url": "https://www.intuit.com/blog/", "use_for": "AI adoption in small-business, accounting and administrative products" },
+    { "name": "OECD Artificial Intelligence", "type": "research", "url": "https://www.oecd.org/en/topics/artificial-intelligence.html", "use_for": "AI employment, skills, workplace adoption, education and policy evidence" },
+    { "name": "ILO Artificial Intelligence and Work", "type": "research", "url": "https://www.ilo.org/topics-and-sectors/artificial-intelligence-and-work", "use_for": "original research and evidence on AI, jobs, occupations and working conditions" },
+    { "name": "Stanford HAI AI Index", "type": "research", "url": "https://hai.stanford.edu/ai-index", "use_for": "documented AI adoption, public opinion, education, labour and industry trends" },
+    { "name": "Pew Research Internet and Technology", "type": "research", "url": "https://www.pewresearch.org/internet/", "use_for": "survey evidence about public attitudes, work, education and AI use" },
+    { "name": "Gallup Workplace", "type": "research", "url": "https://www.gallup.com/workplace/", "use_for": "survey evidence about employees, managers, skills and workplace technology adoption" },
     { "name": "Reuters Technology", "type": "journalism", "url": "https://www.reuters.com/technology/", "use_for": "breaking AI business, contracts, policy and infrastructure reporting" },
     { "name": "AP Technology", "type": "journalism", "url": "https://apnews.com/technology", "use_for": "broad technology and policy reporting" },
     { "name": "BBC Innovation", "type": "journalism", "url": "https://www.bbc.com/innovation", "use_for": "accessible technology context and societal impact" },

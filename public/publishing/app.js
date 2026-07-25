@@ -2,7 +2,8 @@ const repoRoot = "https://raw.githubusercontent.com/sapiverpress-studio/SapiverP
 const status = document.querySelector("#status");
 const assetsRoot = document.querySelector("#assets");
 
-function raw(path) { return repoRoot + String(path || "").replace(/^\/+/, ""); }\nfunction fresh(path) { return raw(path) + `?v=${Date.now()}`; }
+function raw(path) { return repoRoot + String(path || "").replace(/^\/+/, ""); }
+function fresh(path) { return raw(path) + `?v=${Date.now()}`; }
 async function copyText(text, button) {
   await navigator.clipboard.writeText(text);
   const old = button.textContent; button.textContent = "Copied";
@@ -16,7 +17,7 @@ async function renderVersion(label, entry) {
   const box = document.createElement("div"); box.className = "copybox"; box.textContent = caption.trim() || "No caption supplied."; card.append(box);
   const actions = document.createElement("div"); actions.className = "actions";
   const copy = document.createElement("button"); copy.textContent = "Copy caption"; copy.addEventListener("click", () => copyText(caption.trim(), copy)); actions.append(copy);
-  const download = document.createElement("a"); download.className = "button"; download.textContent = "Open/download video"; download.href = fresh(entry.video); download.target = "_blank"; download.rel = "noopener"; actions.append(download);
+  const download = document.createElement("a"); download.className = "button"; download.textContent = label.startsWith("UPLOAD THIS") ? "Download TikTok video" : "Download longer video"; download.href = fresh(entry.video); download.target = "_blank"; download.rel = "noopener"; actions.append(download);
   card.append(actions); return card;
 }
 try {
@@ -24,8 +25,8 @@ try {
   if (!response.ok) throw new Error("The first public publishing pack has not been generated yet.");
   const manifest = await response.json();
   const cards = [];
-  if (manifest.tiktok?.video) cards.push(await renderVersion("TikTok — short question-first version", manifest.tiktok));
-  if (manifest.youtube?.video) cards.push(await renderVersion("YouTube — longer briefing version", manifest.youtube));
+  if (manifest.tiktok?.video) cards.push(await renderVersion("UPLOAD THIS TO TIKTOK — 8–12 second test", manifest.tiktok));
+  if (manifest.youtube?.video) cards.push(await renderVersion("LONGER YOUTUBE/FACEBOOK VERSION — DO NOT UPLOAD TO TIKTOK", manifest.youtube));
   if (!cards.length) throw new Error("The latest run did not contain finished videos.");
   assetsRoot.replaceChildren(...cards);
   status.textContent = `Edition ${manifest.date}. These temporary publishing files are public while the sales test is running.`;

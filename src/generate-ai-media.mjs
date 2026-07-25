@@ -125,18 +125,18 @@ const tiktokStoryIndex = Number.isInteger(tiktokSelection.story_index) && tiktok
 const tiktokNarrationText = String(data.social?.tiktok_script || "").replace(/\s+/g, " ").trim();
 const tiktokWords = tiktokNarrationText.split(/\s+/).filter(Boolean);
 const tiktokSentences = tiktokNarrationText.match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map((part) => part.trim()).filter(Boolean) || [];
-if (!tiktokNarrationText || !tiktokSentences[0]?.endsWith("?")) {
-  throw new Error("TikTok script must start with a direct question.");
+if (!tiktokNarrationText) {
+  throw new Error("TikTok script is required.");
 }
-if (tiktokSentences[0].split(/\s+/).length > 15) {
-  throw new Error("TikTok opening question must be 15 words or fewer.");
+if (tiktokWords.length < 18 || tiktokWords.length > 30) {
+  throw new Error(`TikTok script must match the measured micro-explainer test (18–30 words); received ${tiktokWords.length}.`);
 }
-if (tiktokWords.length < 25 || tiktokWords.length > 65) {
-  throw new Error(`TikTok script must stay short enough for the retention format (25–65 words); received ${tiktokWords.length}.`);
+if (/three ai updates|today in ai|latest ai news|clearforge/i.test(tiktokSentences[0] || "")) {
+  throw new Error("TikTok opening repeats the failed generic briefing format.");
 }
 const tiktokHook = tiktokSentences[0];
-const tiktokResponsePrompt = tiktokSentences.at(-1) || "Which would you test first?";
-const tiktokPayoff = tiktokSentences.slice(1, -1).join(" ") || stories[tiktokStoryIndex].practical_angle;
+const tiktokResponsePrompt = String(data.social?.tiktok_caption_prompt || "Where would this make the biggest difference for you?").trim();
+const tiktokPayoff = tiktokSentences.slice(1).join(" ") || stories[tiktokStoryIndex].practical_angle;
 
 const tiktokSpeech = await client.audio.speech.create({
   model: process.env.OPENAI_TTS_MODEL || "gpt-4o-mini-tts",
@@ -184,8 +184,8 @@ const manifest = {
     response_prompt: tiktokResponsePrompt,
     narration: path.relative(ROOT, tiktokNarrationFile).replaceAll("\\", "/"),
     narration_text: tiktokNarrationText,
-    target_duration_seconds: [12, 18],
-    format: "question_fact_consequence_response"
+    target_duration_seconds: [8, 12],
+    format: "single_discovery_micro_explainer"
   },
   practical_takeaway: data.practical_takeaway,
   what_to_test_next: data.what_to_test_next

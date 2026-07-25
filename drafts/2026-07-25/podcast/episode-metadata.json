@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "date": "2026-07-25",
+  "brand": "Clearforge",
+  "type": "clearforge_daily_biggest_story_podcast_script",
+  "human_review_required": true,
+  "narrator": "Irene",
+  "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+  "episode_title": "Saturday forecast: open models, production agents and AI measurement are the next things to watch",
+  "selected_story_index": 0,
+  "selected_story_title": "Open models are becoming a policy and procurement issue",
+  "selection_reason": "This is the broadest signal in the edition. It affects policy, buying decisions, deployment control and how organizations think about AI infrastructure, so it has the widest practical impact for creators, small businesses and enterprise buyers.",
+  "word_count": 1170,
+  "estimated_duration_minutes": 8.1,
+  "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+  "source_notes": "source-notes.md",
+  "first_spoken_line": "This week’s clearest AI signal is not that one model suddenly won. It is that buyers are starting to ask a different set of questions: Can we inspect it? Can we run it where we want? Can we trust the deployment model? That shift is why the open-model debate matters.",
+  "final_spoken_line": "And if you want one simple action item from today, make it this: pick one repeated task, test one tool on that exact workflow for a week, and see whether it saves time without creating extra cleanup. That is the kind of measurement that will matter more and more as the AI market matures.",
+  "validation_warnings": [
+    "Script is shorter than target: 1170 words."
+  ],
+  "non_spoken_instruction_candidates": []
+}

@@ -1,0 +1,77 @@
+{
+  "version": 5,
+  "date": "2026-07-25",
+  "headline": "Saturday forecast: open models, production agents and AI measurement are the next things to watch",
+  "dek": "This week’s confirmed moves suggest a practical shift: companies are arguing for open models, product teams are packaging agents for real workflows, and researchers are trying to measure how AI is actually used. The forecast is not that one winner takes over, but that buyers will ask for more control, more proof and clearer operating models.",
+  "hook": "Three AI updates that actually matter today",
+  "spoken_cta": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+  "visual_system": "Clearforge AI briefing podcast studio system",
+  "visual_style_rules": {
+    "include": [
+      "dark navy AI briefing or podcast studio atmosphere",
+      "microphone or audio-briefing cues where appropriate",
+      "subtle circuit traces, waveform motifs, model cards or data-routing lines",
+      "physical source notes, checklists and human-review materials",
+      "premium editorial technology-magazine lighting"
+    ],
+    "avoid": [
+      "robots",
+      "glowing brains",
+      "hologram faces",
+      "generic dashboards",
+      "random floating code",
+      "excessive neon",
+      "fake readable text",
+      "Sapiver or unrelated branding"
+    ]
+  },
+  "stories": [
+    {
+      "file": "media/2026-07-25/story-1.png",
+      "title": "Open models are becoming a policy and procurement issue",
+      "source_name": "Reuters",
+      "source_url": "https://www.reuters.com/technology/nvidia-microsoft-other-tech-giants-back-open-source-ai-models-2026-07-24/",
+      "summary": "Reuters reported that Nvidia, Microsoft and other large tech firms backed open-source / open-weight AI models in a letter to lawmakers, arguing against premature restrictions. That is a clear sign that the debate is now about where AI can be deployed, who can inspect it and how much control customers want over it.",
+      "why_it_matters": "If this view gains ground, more buyers may ask for models they can run in-house or audit more easily, especially in regulated or cost-sensitive settings.",
+      "practical_angle": "Creators and small businesses should expect more tools to market themselves as open, local or self-hosted — and should check what that actually means before switching.",
+      "visual_prompt": "a practical creator workflow table showing verified source notes, timeline cards, a muted blue AI signal pattern, a microphone, headphones and a structured review checklist. premium podcast-cover composition with strong negative space for later text overlay. combine physical human-review materials with light digital signal motifs so it feels human-led and AI-empowered. use a different AI signal motif: waveform, routing lines, model cards, calendar markers or evidence board. Story context: Open models are becoming a policy and procurement issue. Practical angle: Creators and small businesses should expect more tools to market themselves as open, local or self-hosted — and should check what that actually means before switching.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-07-25/story-2.png",
+      "title": "Google is starting to measure AI use like an economy, not a demo",
+      "source_name": "Google Blog",
+      "source_url": "https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/",
+      "summary": "Google launched ATLAS as a large-scale study of how people use AI at work and in daily life. The dataset spans 15 million aggregated and de-identified interactions, across more than 150 countries, 140 languages, 800 occupations and 4,000 tasks.",
+      "why_it_matters": "The more AI usage gets measured this way, the more product teams and buyers will be pushed to talk about task mix, adoption patterns and actual work done — not just feature launches.",
+      "practical_angle": "If you sell services or content, the next buyer question may be: does this AI save time on a specific task, or only feel impressive in a demo?",
+      "visual_prompt": "a podcast-ready AI learning desk with a microphone in the foreground, tidy source folders, simple model cards, a soft waveform motif and a dark professional newsroom mood. dark professional podcast artwork composition with source materials visible. make the AI element clear through subtle circuit traces, waveform graphics, model cards and data-routing lines, not robots. make the story context visible through objects and composition rather than readable text. Story context: Google is starting to measure AI use like an economy, not a demo. Practical angle: If you sell services or content, the next buyer question may be: does this AI save time on a specific task, or only feel impressive in a demo?. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-07-25/story-3.png",
+      "title": "Agent products are moving from beta into managed enterprise deployments",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/introducing-openai-presence/",
+      "summary": "OpenAI said Presence is available today for voice and chat agents to eligible enterprise customers through a limited general availability program, with deployments led by OpenAI engineers and select systems integrators. OpenAI also said the product is built around policies, guardrails, simulations and approved actions.",
+      "why_it_matters": "That suggests the market is moving beyond generic chat and toward managed, controlled agent rollouts where the hard part is implementation, escalation and governance.",
+      "practical_angle": "Small businesses can expect more vendor help for automating support and internal admin, but they should also ask who owns failures, handoffs and audit logs.",
+      "visual_prompt": "a dark navy AI briefing studio desk with a professional podcast microphone, source notes, a small audio waveform display, subtle circuit-board lines in the background and one practical notebook open on the desk. wide briefing-room still life cropped for vertical short-form video. use restrained blue technology accents to signal AI without making the image look like generic AI stock art. change the hero object placement so this frame does not resemble the previous edition. Story context: Agent products are moving from beta into managed enterprise deployments. Practical angle: Small businesses can expect more vendor help for automating support and internal admin, but they should also ask who owns failures, handoffs and audit logs.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    }
+  ],
+  "narration": "media/2026-07-25/narration.mp3",
+  "narration_text": "Can agents handle real work safely? OpenAI said Presence is available today for voice and chat agents in a limited general availability program for eligible enterprise customers. It is not self-serve, and deployments are led by OpenAI engineers and select systems integrators. OpenAI says the system is built around policies, simulations, guardrails and approved actions. That matters because the market is moving from demo mode to managed production. For small businesses, that could make support or internal admin automation easier to start, but it also raises practical questions about handoffs, audit logs and who owns failures. Would you want vendor-led setup or self-serve control? Drop your answer and the first workflow you'd automate. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+  "tiktok": {
+    "story_index": 0,
+    "hook": "Would you rather control your AI or rent it?",
+    "payoff": "Reuters said Nvidia, Microsoft, Meta, IBM and Palantir backed open-source and open-weight models in a letter to lawmakers. For client data and cost control, that could push more buyers toward tools they can inspect or run locally.",
+    "response_prompt": "Open-weight or closed tools?",
+    "narration": "media/2026-07-25/tiktok-narration.mp3",
+    "narration_text": "Would you rather control your AI or rent it? Reuters said Nvidia, Microsoft, Meta, IBM and Palantir backed open-source and open-weight models in a letter to lawmakers. For client data and cost control, that could push more buyers toward tools they can inspect or run locally. Open-weight or closed tools?",
+    "target_duration_seconds": [
+      12,
+      18
+    ],
+    "format": "question_fact_consequence_response"
+  },
+  "practical_takeaway": "Pick one repeated task — inbox triage, customer replies, research notes or quote drafting — and test the tool on that exact workflow, with a human review step and a clear time-saving target.",
+  "what_to_test_next": "Run a one-week pilot on a single task and measure two numbers: minutes saved per task and how often the AI output needs correction before you can use it."
+}

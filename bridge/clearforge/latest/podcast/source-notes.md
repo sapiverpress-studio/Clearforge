@@ -1,26 +1,26 @@
-# Source notes — 2026-07-24-creator
+# Source notes — 2026-07-25
 
-Podcast focused on: Canva AI 2.0 is in research preview
+Podcast focused on: Open models are becoming a policy and procurement issue
 
 ## Sources supplied to the script generator
 
-- 1. OpenAI: Launching Health in ChatGPT
-  - URL: https://openai.com/index/health-in-chatgpt/
+- 1. Reuters: Nvidia, Microsoft and other tech giants back open-source AI models
+  - URL: https://www.reuters.com/technology/nvidia-microsoft-other-tech-giants-back-open-source-ai-models-2026-07-24/
+  - Published/date field: 2026-07-24
+  - Confirmed fact: Reuters reported that Nvidia, Microsoft, Meta, IBM, Palantir and other groups backed open-source / open-weight AI models in a letter to lawmakers on July 24, 2026.
+  - Interpretation: The letter signals that the policy fight is moving beyond model quality into control, deployment freedom and where AI infrastructure should live.
+- 2. Google Blog: Understanding the AI economy
+  - URL: https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/
   - Published/date field: 2026-07-23
-  - Confirmed fact: OpenAI says Health in ChatGPT is rolling out to logged-in Free, Go, Plus, and Pro users in the United States who are 18 or older, on web and iOS, and can connect supported health records and Apple Health data.
-  - Interpretation: This is a narrow, controlled AI workflow that turns ChatGPT into a context manager for one specific kind of personal information.
-- 2. Google Blog: Google introduces new AI labels for Ads
-  - URL: https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/
-  - Published/date field: 2026-07-09
-  - Confirmed fact: Google says it is adding a 'How this ad was made' panel in My Ad Center across Search, YouTube, and Discover, and that ads made with Google’s own generative AI tools will be automatically disclosed.
-  - Interpretation: For working creators and marketers, disclosure is becoming part of the publishing process, not a separate policy document.
-- 3. Canva Newsroom: Introducing Canva AI 2.0: Reimagining how the world creates
-  - URL: https://www.canva.com/newsroom/news/canva-create-2026-ai/
-  - Published/date field: 2026-07-23
-  - Confirmed fact: Canva says Canva AI 2.0 is available today as a research preview and adds conversational design, iterative editing, layered object intelligence, living memory, and new workflows including connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0.
-  - Interpretation: This points to Canva becoming a broader production environment, not just a place to generate a first draft.
-- 4. Anthropic: Introducing a way to reflect on how you use Claude
-  - URL: https://www.anthropic.com/news/reflect-with-claude
-  - Published/date field: 2026-07-09
-  - Confirmed fact: Anthropic says the Reflect feature is in beta for Free, Pro, and Max users with memory turned on, and it lets users review past usage patterns, set quiet hours, and see prompts about how they want to use AI.
-  - Interpretation: The product is shifting toward usage management, which matters for people trying to build steadier habits around AI-assisted work.
+  - Confirmed fact: Google said its ATLAS study is built from 15 million aggregated and de-identified human-AI interactions and covers more than 150 countries, 140 languages, 800 occupations and 4,000 tasks.
+  - Interpretation: Google is trying to define how AI use should be measured, which could shape how buyers, policymakers and creators judge real adoption versus hype.
+- 3. OpenAI: Introducing OpenAI Presence
+  - URL: https://openai.com/index/introducing-openai-presence/
+  - Published/date field: 2026-07-22
+  - Confirmed fact: OpenAI said Presence is available today for voice and chat agents in a limited general availability program for eligible enterprise customers, and that it is not self-serve.
+  - Interpretation: OpenAI is packaging agent deployment as a managed production service, not just a model API, which suggests the market is shifting toward implementation help and guardrailed workflows.
+- 4. Microsoft Blog: Powering America's Genesis Mission: Microsoft's commitment to scientific discovery
+  - URL: https://blogs.microsoft.com/blog/2026/07/22/powering-americas-genesis-mission-microsofts-commitment-to-scientific-discovery/
+  - Published/date field: 2026-07-22
+  - Confirmed fact: Microsoft said it is backing the U.S. Department of Energy’s Genesis Mission with a $60 million investment package that includes $40 million in Azure compute and AI credits and $20 million in engineering and enablement services.
+  - Interpretation: The announcement shows how AI infrastructure deals are increasingly being tied to specific missions and governed workflows, not just generic cloud capacity.

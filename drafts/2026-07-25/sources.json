@@ -1,0 +1,34 @@
+[
+  {
+    "source_name": "Reuters",
+    "title": "Nvidia, Microsoft and other tech giants back open-source AI models",
+    "url": "https://www.reuters.com/technology/nvidia-microsoft-other-tech-giants-back-open-source-ai-models-2026-07-24/",
+    "published_date": "2026-07-24",
+    "confirmed_fact": "Reuters reported that Nvidia, Microsoft, Meta, IBM, Palantir and other groups backed open-source / open-weight AI models in a letter to lawmakers on July 24, 2026.",
+    "interpretation": "The letter signals that the policy fight is moving beyond model quality into control, deployment freedom and where AI infrastructure should live."
+  },
+  {
+    "source_name": "Google Blog",
+    "title": "Understanding the AI economy",
+    "url": "https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/",
+    "published_date": "2026-07-23",
+    "confirmed_fact": "Google said its ATLAS study is built from 15 million aggregated and de-identified human-AI interactions and covers more than 150 countries, 140 languages, 800 occupations and 4,000 tasks.",
+    "interpretation": "Google is trying to define how AI use should be measured, which could shape how buyers, policymakers and creators judge real adoption versus hype."
+  },
+  {
+    "source_name": "OpenAI",
+    "title": "Introducing OpenAI Presence",
+    "url": "https://openai.com/index/introducing-openai-presence/",
+    "published_date": "2026-07-22",
+    "confirmed_fact": "OpenAI said Presence is available today for voice and chat agents in a limited general availability program for eligible enterprise customers, and that it is not self-serve.",
+    "interpretation": "OpenAI is packaging agent deployment as a managed production service, not just a model API, which suggests the market is shifting toward implementation help and guardrailed workflows."
+  },
+  {
+    "source_name": "Microsoft Blog",
+    "title": "Powering America's Genesis Mission: Microsoft's commitment to scientific discovery",
+    "url": "https://blogs.microsoft.com/blog/2026/07/22/powering-americas-genesis-mission-microsofts-commitment-to-scientific-discovery/",
+    "published_date": "2026-07-22",
+    "confirmed_fact": "Microsoft said it is backing the U.S. Department of Energy’s Genesis Mission with a $60 million investment package that includes $40 million in Azure compute and AI credits and $20 million in engineering and enablement services.",
+    "interpretation": "The announcement shows how AI infrastructure deals are increasingly being tied to specific missions and governed workflows, not just generic cloud capacity."
+  }
+]

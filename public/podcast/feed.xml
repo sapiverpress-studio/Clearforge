@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>
     <copyright>Clearforge</copyright>
     <generator>Clearforge hosted podcast feed</generator>
-    <lastBuildDate>Fri, 24 Jul 2026 19:45:10 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2026 05:44:07 GMT</lastBuildDate>
     <atom:link href="https://clearforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Clearforge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://clearforge-daily-brief.netlify.app/podcast/cover.png"/>
+    <item>
+      <title>Saturday forecast: open models, production agents and AI measurement are the next things to watch</title>
+      <description>This is the broadest signal in the edition. It affects policy, buying decisions, deployment control and how organizations think about AI infrastructure, so it has the widest practical impact for creators, small businesses and enterprise buyers.</description>
+      <content:encoded><![CDATA[<p>This is the broadest signal in the edition. It affects policy, buying decisions, deployment control and how organizations think about AI infrastructure, so it has the widest practical impact for creators, small businesses and enterprise buyers.</p><p><strong>Read alongside this episode:</strong> <a href="https://clearforge-daily-brief.netlify.app/posts/2026-07-25.html">daily briefing</a> · <a href="https://clearforge-daily-brief.netlify.app/features/2026-07-25.html">feature analysis</a></p><p><a href="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-25.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-25.html</link>
+      <guid isPermaLink="false">clearforge:2026-07-25</guid>
+      <pubDate>Sat, 25 Jul 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-25.mp3" length="7076928" type="audio/mpeg"/>
+      <itunes:author>Clearforge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:08:06</itunes:duration>
+      <podcast:transcript url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-25.txt" type="text/plain"/>
+    </item>
     <item>
       <title>Friday watchlist: Canva AI 2.0 is the workflow test worth trying first</title>
       <description>This is the most immediately useful release for creators and small businesses because it is aimed at getting from idea to editable asset inside a real workflow. Unlike a broad model upgrade, it targets everyday production tasks and is available now as a preview for people who can test it on real work.</description>

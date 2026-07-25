@@ -1,0 +1,174 @@
+{
+  "generated_at": "2026-07-25T05:35:15.142Z",
+  "story_assessments": [
+    {
+      "story_index": 0,
+      "story_title": "Open models are becoming a policy and procurement issue",
+      "target_audience": "Creators, small businesses, IT buyers and teams that handle client or sensitive data",
+      "audience_problem_or_desire": "They want more control over AI tools, easier auditing and the option to run models in environments they trust",
+      "interest_signal": "A Reuters report says major tech firms backed open-source / open-weight models in a letter to lawmakers",
+      "stop_reason": "The story quickly connects policy debate to buying decisions that affect workflow, control and deployment",
+      "promised_payoff": "A clearer way to think about when open or local deployment may matter more than raw model hype",
+      "proof_point": "Reuters reported that Nvidia, Microsoft, Meta, IBM, Palantir and other groups backed open-source / open-weight AI models on July 24, 2026",
+      "search_phrases": [
+        "open-source AI models",
+        "open-weight AI models",
+        "Nvidia Microsoft Meta IBM Palantir letter",
+        "AI procurement control",
+        "self-hosted AI models"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 8,
+        "searchability": 8,
+        "stranger_usefulness": 8,
+        "novelty": 7,
+        "visual_potential": 7,
+        "discussion_potential": 8,
+        "short_form_clarity": 8
+      },
+      "overall_score": 8,
+      "score_reason": "Strong audience pull because it turns a policy signal into a practical buying question about control, deployment freedom and data handling."
+    },
+    {
+      "story_index": 1,
+      "story_title": "Google is starting to measure AI use like an economy, not a demo",
+      "target_audience": "Product teams, operators, small business owners, creators and managers who need proof of value from AI tools",
+      "audience_problem_or_desire": "They want to know whether AI actually changes work, saves time and improves output instead of just looking impressive",
+      "interest_signal": "Google said ATLAS uses 15 million aggregated and de-identified human-AI interactions across 150+ countries, 140 languages, 800 occupations and 4,000 tasks",
+      "stop_reason": "The story is easy to grasp because it reframes AI adoption around task-level measurement and business proof",
+      "promised_payoff": "A practical way to judge AI tools by the work they change, not just by feature lists",
+      "proof_point": "Google said ATLAS is built from 15 million aggregated and de-identified human-AI interactions and covers more than 150 countries, 140 languages, 800 occupations and 4,000 tasks",
+      "search_phrases": [
+        "Google ATLAS AI economy",
+        "measuring AI use",
+        "AI task adoption",
+        "human-AI interactions study",
+        "AI productivity measurement"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 9,
+        "searchability": 7,
+        "stranger_usefulness": 9,
+        "novelty": 8,
+        "visual_potential": 6,
+        "discussion_potential": 8,
+        "short_form_clarity": 9
+      },
+      "overall_score": 8,
+      "score_reason": "Very useful because it gives buyers and operators a simple frame for judging AI by task impact, not demo polish."
+    },
+    {
+      "story_index": 2,
+      "story_title": "Agent products are moving from beta into managed enterprise deployments",
+      "target_audience": "Small business operators, enterprise buyers, support leaders and workflow owners who want automation without losing control",
+      "audience_problem_or_desire": "They want AI agents that can run real work safely, with guardrails, handoffs and clear ownership of failures",
+      "interest_signal": "OpenAI said Presence is available to eligible enterprise customers in a limited general availability program and is not self-serve",
+      "stop_reason": "The story is concrete, operational and easy to visualize because it changes how teams would buy and deploy agents",
+      "promised_payoff": "A clearer expectation that agent products will come with setup help, policies and governed workflows",
+      "proof_point": "OpenAI said Presence is available today for voice and chat agents in a limited general availability program for eligible enterprise customers, and that it is not self-serve",
+      "search_phrases": [
+        "OpenAI Presence",
+        "enterprise AI agents",
+        "managed agent deployment",
+        "AI guardrails and workflows",
+        "OpenAI limited general availability"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 9,
+        "searchability": 8,
+        "stranger_usefulness": 8,
+        "novelty": 9,
+        "visual_potential": 8,
+        "discussion_potential": 8,
+        "short_form_clarity": 9
+      },
+      "overall_score": 9,
+      "score_reason": "The clearest production story in the pack because it shows agents shifting from concept to managed rollout with obvious operational implications."
+    },
+    {
+      "story_index": 3,
+      "story_title": "AI infrastructure is being tied to mission-specific work",
+      "target_audience": "Public sector readers, policy watchers, infrastructure teams and AI buyers who care about governed deployment",
+      "audience_problem_or_desire": "They want to understand how AI spending is being structured around specific missions rather than generic capacity",
+      "interest_signal": "Microsoft said it is backing the U.S. Department of Energy’s Genesis Mission with a $60 million package",
+      "stop_reason": "The lesson is important but narrower than the other stories and less immediate for most general creators or small businesses",
+      "promised_payoff": "A forecast that AI infrastructure deals may keep moving toward named workflows and governed systems",
+      "proof_point": "Microsoft said its commitment includes $40 million in Azure compute and AI credits and $20 million in engineering and enablement services",
+      "search_phrases": [
+        "Microsoft Genesis Mission",
+        "AI for science funding",
+        "Azure compute credits",
+        "governed AI infrastructure",
+        "mission-specific AI"
+      ],
+      "scores": {
+        "audience_fit": 6,
+        "practical_consequence": 6,
+        "searchability": 6,
+        "stranger_usefulness": 6,
+        "novelty": 7,
+        "visual_potential": 7,
+        "discussion_potential": 6,
+        "short_form_clarity": 7
+      },
+      "overall_score": 6,
+      "score_reason": "Relevant but narrower, with less immediate utility for a broad social audience than the open-model, measurement or agent-deployment stories."
+    }
+  ],
+  "platform_selections": {
+    "tiktok": {
+      "story_index": 0,
+      "story_title": "Open models are becoming a policy and procurement issue",
+      "target_audience": "Creators, small businesses and teams that care about control over AI tools",
+      "format": "",
+      "opening": "Would you rather control your AI or rent it?",
+      "payoff": "Reuters said Nvidia, Microsoft, Meta, IBM, Palantir and others backed open-source or open-weight models in a letter to lawmakers. For client data and cost control, that could push more buyers toward tools they can inspect or run locally.",
+      "selection_reason": "Short, visual and easy to answer in one breath, with a clear control-versus-convenience tradeoff that works well in under 15 seconds.",
+      "platform_fit_score": 8
+    },
+    "youtube": {
+      "story_index": 2,
+      "story_title": "Agent products are moving from beta into managed enterprise deployments",
+      "target_audience": "Small business operators, enterprise buyers and workflow owners",
+      "format": "",
+      "opening": "Can agents handle real work safely?",
+      "payoff": "OpenAI said Presence is available today to eligible enterprise customers in a limited general availability program, not self-serve, with deployments led by OpenAI engineers and select systems integrators. It is built around policies, simulations, guardrails and approved actions. That matters because the market is moving from demo mode to managed production.",
+      "selection_reason": "Best fit for a longer explainer because the details reward viewers who want the deployment model, not just the headline.",
+      "platform_fit_score": 9
+    },
+    "facebook": {
+      "story_index": 0,
+      "story_title": "Open models are becoming a policy and procurement issue",
+      "target_audience": "Broad business audiences, creators and practical AI buyers",
+      "format": "",
+      "opening": "Would you trust AI more if you could run it yourself?",
+      "payoff": "Reuters reported that Nvidia, Microsoft, Meta, IBM, Palantir and other groups backed open-source / open-weight AI models in a letter to lawmakers. That points to a bigger buying question: control, deployment freedom and where sensitive work should live.",
+      "selection_reason": "Facebook can support a broader discussion about trust, control and practical buying choices without needing deep technical context.",
+      "platform_fit_score": 8
+    },
+    "pinterest": {
+      "story_index": 1,
+      "story_title": "Google is starting to measure AI use like an economy, not a demo",
+      "target_audience": "People looking for a practical way to judge AI tools and workflows",
+      "format": "",
+      "opening": "How do you tell if AI actually saves time?",
+      "payoff": "Google says ATLAS is built from 15 million aggregated and de-identified human-AI interactions across more than 150 countries, 140 languages, 800 occupations and 4,000 tasks. Use that as a simple checklist: tie one AI tool to one repeated task, then test whether it reduces time or rework.",
+      "selection_reason": "Pinterest favors searchable, utility-first framing, and this story converts cleanly into a checklist-style saveable asset.",
+      "platform_fit_score": 8
+    },
+    "linkedin": {
+      "story_index": 1,
+      "story_title": "Google is starting to measure AI use like an economy, not a demo",
+      "target_audience": "Managers, operators, product teams and workplace decision-makers",
+      "format": "",
+      "opening": "Are you measuring AI by features or by tasks?",
+      "payoff": "Google says ATLAS uses 15 million aggregated and de-identified human-AI interactions across more than 150 countries, 140 languages, 800 occupations and 4,000 tasks. That pushes the conversation toward task-level proof: which workflow changes, by how much, and who can show it?",
+      "selection_reason": "This is the strongest workplace lesson in the pack and fits LinkedIn’s preference for operational framing and measurable business outcomes.",
+      "platform_fit_score": 9
+    }
+  },
+  "overall_reasoning": "The strongest social hooks are the control question on open models, the production question on agents, and the task-measurement frame for workplace audiences. Open models translate cleanly into a choice-based conversation for TikTok and Facebook. Managed agents are best for YouTube Shorts because the deployment details reward a slightly longer explanation. Google's measurement story is the most useful saveable framework for Pinterest and the most operational fit for LinkedIn. Microsoft's mission-specific infrastructure note is accurate but narrower, so it is not the best lead on these platforms."
+}

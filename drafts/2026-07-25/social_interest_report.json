@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-25",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Would you rather control your AI or rent it?",
+      "words": 50,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Can agents handle real work safely?",
+      "words": 113,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Would you trust AI more if you could run it yourself?",
+      "words": 94,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Are you measuring AI by features or by tasks?",
+      "words": 87,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "How do you tell if AI actually saves time?",
+    "title_words": 9,
+    "description_words": 69
+  },
+  "warnings": []
+}

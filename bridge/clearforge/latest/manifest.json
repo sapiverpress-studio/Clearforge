@@ -1,7 +1,7 @@
 {
   "version": 5,
   "brand": "Clearforge",
-  "date": "2026-07-24-creator",
+  "date": "2026-07-25",
   "type": "clearforge_daily_ai_brief",
   "approved": {
     "article": true,
@@ -10,9 +10,9 @@
     "youtube": true
   },
   "article": {
-    "headline": "Friday watchlist: the AI tools worth testing are the ones that fit into a real workflow",
-    "dek": "Today’s signal is not a bigger model race. It is a set of smaller, more usable releases that creators and small operators can actually try: a health context layer in ChatGPT, clearer AI disclosure in Google ads, Canva’s broader AI 2.0 preview, and Claude’s usage-reflection feature. The practical question this Friday is not which tool is most impressive. It is which one can save time without creating more cleanup.",
-    "url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-24-creator.html",
+    "headline": "Saturday forecast: open models, production agents and AI measurement are the next things to watch",
+    "dek": "This week’s confirmed moves suggest a practical shift: companies are arguing for open models, product teams are packaging agents for real workflows, and researchers are trying to measure how AI is actually used. The forecast is not that one winner takes over, but that buyers will ask for more control, more proof and clearer operating models.",
+    "url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-25.html",
     "markdown": "daily_brief.md"
   },
   "calls_to_action": {
@@ -28,42 +28,42 @@
   },
   "stories": [
     {
-      "title": "OpenAI launches Health in ChatGPT",
-      "summary": "OpenAI says Health in ChatGPT is rolling out to logged-in U.S. users age 18 and up on web and iOS, with support for connected health records and Apple Health data. The feature is meant to help users compare information, summarize changes, and ask questions grounded in their own data.",
-      "why_it_matters": "Even though it is not a creator tool in the usual sense, it shows where AI products are heading: narrower jobs, tighter permissions, and more structured inputs.",
-      "practical_angle": "For creators and solo operators, the lesson is to look for AI tools that organize existing information well instead of trying to automate everything at once.",
-      "source_name": "OpenAI",
-      "source_url": "https://openai.com/index/health-in-chatgpt/"
+      "title": "Open models are becoming a policy and procurement issue",
+      "summary": "Reuters reported that Nvidia, Microsoft and other large tech firms backed open-source / open-weight AI models in a letter to lawmakers, arguing against premature restrictions. That is a clear sign that the debate is now about where AI can be deployed, who can inspect it and how much control customers want over it.",
+      "why_it_matters": "If this view gains ground, more buyers may ask for models they can run in-house or audit more easily, especially in regulated or cost-sensitive settings.",
+      "practical_angle": "Creators and small businesses should expect more tools to market themselves as open, local or self-hosted — and should check what that actually means before switching.",
+      "source_name": "Reuters",
+      "source_url": "https://www.reuters.com/technology/nvidia-microsoft-other-tech-giants-back-open-source-ai-models-2026-07-24/"
     },
     {
-      "title": "Google adds AI disclosure labels to ads",
-      "summary": "Google says users will see a 'How this ad was made' panel in My Ad Center across Search, YouTube, and Discover. Ads made with Google’s own generative AI tools will be automatically labeled, and advertisers can also disclose other AI use.",
-      "why_it_matters": "This changes the daily workflow for anyone running paid content. If AI is part of the creative process, disclosure now sits closer to the publishing step.",
-      "practical_angle": "Creators who run ads should build a simple review checklist now so they are not improvising disclosure later.",
+      "title": "Google is starting to measure AI use like an economy, not a demo",
+      "summary": "Google launched ATLAS as a large-scale study of how people use AI at work and in daily life. The dataset spans 15 million aggregated and de-identified interactions, across more than 150 countries, 140 languages, 800 occupations and 4,000 tasks.",
+      "why_it_matters": "The more AI usage gets measured this way, the more product teams and buyers will be pushed to talk about task mix, adoption patterns and actual work done — not just feature launches.",
+      "practical_angle": "If you sell services or content, the next buyer question may be: does this AI save time on a specific task, or only feel impressive in a demo?",
       "source_name": "Google Blog",
-      "source_url": "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/"
+      "source_url": "https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/"
     },
     {
-      "title": "Canva AI 2.0 is in research preview",
-      "summary": "Canva says AI 2.0 is available today as a research preview and adds conversational design, iterative editing, layered object intelligence, memory, and workflow tools that reach into research, connectors, scheduling, brand intelligence, spreadsheets, and code.",
-      "why_it_matters": "This is the release most likely to affect day-to-day creator workflows because it is aimed at moving from idea to editable asset inside one place.",
-      "practical_angle": "If you make social posts, client graphics, one-pagers, or simple landing pages, this is the test release to try first—but it is still a preview, so treat it as a workflow experiment, not a final system.",
-      "source_name": "Canva Newsroom",
-      "source_url": "https://www.canva.com/newsroom/news/canva-create-2026-ai/"
+      "title": "Agent products are moving from beta into managed enterprise deployments",
+      "summary": "OpenAI said Presence is available today for voice and chat agents to eligible enterprise customers through a limited general availability program, with deployments led by OpenAI engineers and select systems integrators. OpenAI also said the product is built around policies, guardrails, simulations and approved actions.",
+      "why_it_matters": "That suggests the market is moving beyond generic chat and toward managed, controlled agent rollouts where the hard part is implementation, escalation and governance.",
+      "practical_angle": "Small businesses can expect more vendor help for automating support and internal admin, but they should also ask who owns failures, handoffs and audit logs.",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/introducing-openai-presence/"
     }
   ],
   "facebook": {
-    "post": "Would your ad review catch this on launch day?\nGoogle says it is adding a “How this ad was made” panel in My Ad Center across Search, YouTube, and Discover, and ads made with Google’s own generative AI tools will be automatically disclosed. For creators and small teams, that means AI disclosure is now part of the publishing workflow, not a separate policy file. The practical move is to add one pre-launch check for who used AI, where the disclosure lives, and what happens when tools are mixed. Do you run AI-made ads, or are you building a client checklist? Comment with your setup.\n\n#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI"
+    "post": "Would you trust AI more if you could run it yourself?\nReuters reported that Nvidia, Microsoft, Meta, IBM, Palantir and other groups backed open-source / open-weight AI models in a letter to lawmakers. The practical takeaway is that the next buying question is not only which tool is strongest, but which one gives you enough control for sensitive data, client work or in-house workflows.\nIf that were your team, would you pick open-weight or closed tools? Share the workflow you'd use it for, or ask Clearforge to investigate what \"open\" usually means in practice.\n\n#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI"
   },
   "pinterest": {
-    "title": "What to Test First in Canva AI 2.0",
-    "description": "Save this if you make social posts, client graphics, or landing pages. Canva says AI 2.0 is a research preview with conversational design, iterative editing, and workflow tools. Try it on one real project, then tell us which asset you would test first: a social graphic, client one-pager, or landing-page mockup.",
-    "destination_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-24-creator.html"
+    "title": "How do you tell if AI actually saves time?",
+    "description": "Google says ATLAS is built from 15 million aggregated and de-identified human-AI interactions across more than 150 countries, 140 languages, 800 occupations and 4,000 tasks. Use that as a simple checklist: tie one AI tool to one repeated task, then test whether it reduces time or rework. Save this if you want a practical way to judge your next AI tool, and comment with the task you'd measure first.",
+    "destination_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-25.html"
   },
   "youtube": {
-    "title": "Friday watchlist: the AI tools worth testing are the ones that fit a workflow",
-    "script": "Could a preview replace three tool switches? Canva says AI 2.0 is available today as a research preview, and it adds conversational design, iterative editing, layered object intelligence, living memory, plus workflows like connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0. The point is not to rebuild your whole process. It is to see whether one unfinished social post, banner, or landing-page mockup can move farther with fewer handoffs and less cleanup. Because it is still a preview, treat it as a workflow experiment, not a final system. Would you test it on a social graphic or a client one-pager? Comment with your pick. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
-    "description": "Choose one tool this week that fits into a real workflow, not a demo. Test Canva for creation, Google’s ad panel for review, or Claude Reflect for self-audit, and keep the scope small enough that you can tell whether it actually saved time."
+    "title": "Saturday forecast: open models, production agents and AI measurement are the next things to wat",
+    "script": "Can agents handle real work safely? OpenAI said Presence is available today for voice and chat agents in a limited general availability program for eligible enterprise customers. It is not self-serve, and deployments are led by OpenAI engineers and select systems integrators. OpenAI says the system is built around policies, simulations, guardrails and approved actions. That matters because the market is moving from demo mode to managed production. For small businesses, that could make support or internal admin automation easier to start, but it also raises practical questions about handoffs, audit logs and who owns failures. Would you want vendor-led setup or self-serve control? Drop your answer and the first workflow you'd automate. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "description": "Pick one repeated task — inbox triage, customer replies, research notes or quote drafting — and test the tool on that exact workflow, with a human review step and a clear time-saving target."
   },
   "podcast": {
     "generated": true,
@@ -74,23 +74,25 @@
     "source_notes": "podcast/source-notes.md",
     "episode": {
       "version": 1,
-      "date": "2026-07-24-creator",
+      "date": "2026-07-25",
       "brand": "Clearforge",
       "type": "clearforge_daily_biggest_story_podcast_script",
       "human_review_required": true,
       "narrator": "Irene",
       "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
-      "episode_title": "Friday watchlist: Canva AI 2.0 is the workflow test worth trying first",
-      "selected_story_index": 2,
-      "selected_story_title": "Canva AI 2.0 is in research preview",
-      "selection_reason": "This is the most immediately useful release for creators and small businesses because it is aimed at getting from idea to editable asset inside a real workflow. Unlike a broad model upgrade, it targets everyday production tasks and is available now as a preview for people who can test it on real work.",
-      "word_count": 1397,
-      "estimated_duration_minutes": 9.6,
+      "episode_title": "Saturday forecast: open models, production agents and AI measurement are the next things to watch",
+      "selected_story_index": 0,
+      "selected_story_title": "Open models are becoming a policy and procurement issue",
+      "selection_reason": "This is the broadest signal in the edition. It affects policy, buying decisions, deployment control and how organizations think about AI infrastructure, so it has the widest practical impact for creators, small businesses and enterprise buyers.",
+      "word_count": 1170,
+      "estimated_duration_minutes": 8.1,
       "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
       "source_notes": "source-notes.md",
-      "first_spoken_line": "Today’s biggest story is not a bigger model headline. It is a workflow story.",
-      "final_spoken_line": "If it did, keep going. If it did not, wait. But this is the kind of release worth putting in front of a real workflow, not just a demo.",
-      "validation_warnings": [],
+      "first_spoken_line": "This week’s clearest AI signal is not that one model suddenly won. It is that buyers are starting to ask a different set of questions: Can we inspect it? Can we run it where we want? Can we trust the deployment model? That shift is why the open-model debate matters.",
+      "final_spoken_line": "And if you want one simple action item from today, make it this: pick one repeated task, test one tool on that exact workflow for a week, and see whether it saves time without creating extra cleanup. That is the kind of measurement that will matter more and more as the AI market matures.",
+      "validation_warnings": [
+        "Script is shorter than target: 1170 words."
+      ],
       "non_spoken_instruction_candidates": []
     }
   },
@@ -104,12 +106,12 @@
     ],
     "tiktok_narration": "media/tiktok-narration.mp3",
     "tiktok": {
-      "story_index": 2,
-      "hook": "Could one preview save your content workflow?",
-      "payoff": "Canva says AI 2. 0 is available today as a research preview, with conversational design, iterative editing, and brand memory. That could help one rough graphic get closer to done faster.",
-      "response_prompt": "Social graphic or client one-pager—what would you test?",
-      "narration": "media/2026-07-24-creator/tiktok-narration.mp3",
-      "narration_text": "Could one preview save your content workflow? Canva says AI 2.0 is available today as a research preview, with conversational design, iterative editing, and brand memory. That could help one rough graphic get closer to done faster. Social graphic or client one-pager—what would you test?",
+      "story_index": 0,
+      "hook": "Would you rather control your AI or rent it?",
+      "payoff": "Reuters said Nvidia, Microsoft, Meta, IBM and Palantir backed open-source and open-weight models in a letter to lawmakers. For client data and cost control, that could push more buyers toward tools they can inspect or run locally.",
+      "response_prompt": "Open-weight or closed tools?",
+      "narration": "media/2026-07-25/tiktok-narration.mp3",
+      "narration_text": "Would you rather control your AI or rent it? Reuters said Nvidia, Microsoft, Meta, IBM and Palantir backed open-source and open-weight models in a letter to lawmakers. For client data and cost control, that could push more buyers toward tools they can inspect or run locally. Open-weight or closed tools?",
       "target_duration_seconds": [
         12,
         18
@@ -119,58 +121,58 @@
     "generated": true
   },
   "quote_card_lines": [
-    "Could one preview save your workflow without adding cleanup?",
-    "The best AI test is a real workflow, not a demo.",
-    "Could your review step catch AI disclosure before launch?",
-    "Preview tools should reduce switching, not add it.",
-    "The most useful AI products know their boundaries."
+    "Would you rather control your AI, or rent it?",
+    "Are you measuring AI by features, or by tasks?",
+    "Managed agents are moving from demo to production.",
+    "If AI cannot prove time saved, it is harder to justify.",
+    "Open models are becoming a procurement issue."
   ],
   "headline_options": [
-    "Friday watchlist: the AI tools worth testing are the ones that fit a workflow",
-    "Creators should test these AI releases before they chase the next big demo",
-    "What to try this week: Canva preview, ad disclosure, health context and Claude reflection",
-    "The practical AI releases this Friday are built for real work, not hype",
-    "AI is getting more useful where the workflow is narrow and the rules are clear"
+    "Saturday forecast: open models, production agents and AI measurement are the next things to watch",
+    "AI’s next phase looks less like a model race and more like a control race",
+    "This week’s AI signal: control, deployment and proof are becoming the real differentiators",
+    "Open models and managed agents are setting up the next AI buying cycle",
+    "The practical AI forecast: more control, more rollout help, more measurement"
   ],
   "sources": [
     {
-      "source_name": "OpenAI",
-      "title": "Launching Health in ChatGPT",
-      "url": "https://openai.com/index/health-in-chatgpt/",
-      "published_date": "2026-07-23",
-      "confirmed_fact": "OpenAI says Health in ChatGPT is rolling out to logged-in Free, Go, Plus, and Pro users in the United States who are 18 or older, on web and iOS, and can connect supported health records and Apple Health data.",
-      "interpretation": "This is a narrow, controlled AI workflow that turns ChatGPT into a context manager for one specific kind of personal information."
+      "source_name": "Reuters",
+      "title": "Nvidia, Microsoft and other tech giants back open-source AI models",
+      "url": "https://www.reuters.com/technology/nvidia-microsoft-other-tech-giants-back-open-source-ai-models-2026-07-24/",
+      "published_date": "2026-07-24",
+      "confirmed_fact": "Reuters reported that Nvidia, Microsoft, Meta, IBM, Palantir and other groups backed open-source / open-weight AI models in a letter to lawmakers on July 24, 2026.",
+      "interpretation": "The letter signals that the policy fight is moving beyond model quality into control, deployment freedom and where AI infrastructure should live."
     },
     {
       "source_name": "Google Blog",
-      "title": "Google introduces new AI labels for Ads",
-      "url": "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
-      "published_date": "2026-07-09",
-      "confirmed_fact": "Google says it is adding a 'How this ad was made' panel in My Ad Center across Search, YouTube, and Discover, and that ads made with Google’s own generative AI tools will be automatically disclosed.",
-      "interpretation": "For working creators and marketers, disclosure is becoming part of the publishing process, not a separate policy document."
-    },
-    {
-      "source_name": "Canva Newsroom",
-      "title": "Introducing Canva AI 2.0: Reimagining how the world creates",
-      "url": "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
+      "title": "Understanding the AI economy",
+      "url": "https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/",
       "published_date": "2026-07-23",
-      "confirmed_fact": "Canva says Canva AI 2.0 is available today as a research preview and adds conversational design, iterative editing, layered object intelligence, living memory, and new workflows including connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0.",
-      "interpretation": "This points to Canva becoming a broader production environment, not just a place to generate a first draft."
+      "confirmed_fact": "Google said its ATLAS study is built from 15 million aggregated and de-identified human-AI interactions and covers more than 150 countries, 140 languages, 800 occupations and 4,000 tasks.",
+      "interpretation": "Google is trying to define how AI use should be measured, which could shape how buyers, policymakers and creators judge real adoption versus hype."
     },
     {
-      "source_name": "Anthropic",
-      "title": "Introducing a way to reflect on how you use Claude",
-      "url": "https://www.anthropic.com/news/reflect-with-claude",
-      "published_date": "2026-07-09",
-      "confirmed_fact": "Anthropic says the Reflect feature is in beta for Free, Pro, and Max users with memory turned on, and it lets users review past usage patterns, set quiet hours, and see prompts about how they want to use AI.",
-      "interpretation": "The product is shifting toward usage management, which matters for people trying to build steadier habits around AI-assisted work."
+      "source_name": "OpenAI",
+      "title": "Introducing OpenAI Presence",
+      "url": "https://openai.com/index/introducing-openai-presence/",
+      "published_date": "2026-07-22",
+      "confirmed_fact": "OpenAI said Presence is available today for voice and chat agents in a limited general availability program for eligible enterprise customers, and that it is not self-serve.",
+      "interpretation": "OpenAI is packaging agent deployment as a managed production service, not just a model API, which suggests the market is shifting toward implementation help and guardrailed workflows."
+    },
+    {
+      "source_name": "Microsoft Blog",
+      "title": "Powering America's Genesis Mission: Microsoft's commitment to scientific discovery",
+      "url": "https://blogs.microsoft.com/blog/2026/07/22/powering-americas-genesis-mission-microsofts-commitment-to-scientific-discovery/",
+      "published_date": "2026-07-22",
+      "confirmed_fact": "Microsoft said it is backing the U.S. Department of Energy’s Genesis Mission with a $60 million investment package that includes $40 million in Azure compute and AI credits and $20 million in engineering and enablement services.",
+      "interpretation": "The announcement shows how AI infrastructure deals are increasingly being tied to specific missions and governed workflows, not just generic cloud capacity."
     }
   ],
   "media_metadata": {
     "version": 5,
-    "date": "2026-07-24-creator",
-    "headline": "Friday watchlist: the AI tools worth testing are the ones that fit into a real workflow",
-    "dek": "Today’s signal is not a bigger model race. It is a set of smaller, more usable releases that creators and small operators can actually try: a health context layer in ChatGPT, clearer AI disclosure in Google ads, Canva’s broader AI 2.0 preview, and Claude’s usage-reflection feature. The practical question this Friday is not which tool is most impressive. It is which one can save time without creating more cleanup.",
+    "date": "2026-07-25",
+    "headline": "Saturday forecast: open models, production agents and AI measurement are the next things to watch",
+    "dek": "This week’s confirmed moves suggest a practical shift: companies are arguing for open models, product teams are packaging agents for real workflows, and researchers are trying to measure how AI is actually used. The forecast is not that one winner takes over, but that buyers will ask for more control, more proof and clearer operating models.",
     "hook": "Three AI updates that actually matter today",
     "spoken_cta": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
     "visual_system": "Clearforge AI briefing podcast studio system",
@@ -195,52 +197,52 @@
     },
     "stories": [
       {
-        "file": "media/2026-07-24-creator/story-1.png",
-        "title": "OpenAI launches Health in ChatGPT",
-        "source_name": "OpenAI",
-        "source_url": "https://openai.com/index/health-in-chatgpt/",
-        "summary": "OpenAI says Health in ChatGPT is rolling out to logged-in U.S. users age 18 and up on web and iOS, with support for connected health records and Apple Health data. The feature is meant to help users compare information, summarize changes, and ask questions grounded in their own data.",
-        "why_it_matters": "Even though it is not a creator tool in the usual sense, it shows where AI products are heading: narrower jobs, tighter permissions, and more structured inputs.",
-        "practical_angle": "For creators and solo operators, the lesson is to look for AI tools that organize existing information well instead of trying to automate everything at once.",
-        "visual_prompt": "a practical AI systems review scene with a microphone, pinned evidence cards, process arrows, muted blue signal lines and a clear before-to-after analysis structure. wide briefing-room still life cropped for vertical short-form video. make it instantly understandable as an AI briefing or AI podcast image, but grounded in real studio objects. make the story context visible through objects and composition rather than readable text. Story context: OpenAI launches Health in ChatGPT. Practical angle: For creators and solo operators, the lesson is to look for AI tools that organize existing information well instead of trying to automate everything at once.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+        "file": "media/2026-07-25/story-1.png",
+        "title": "Open models are becoming a policy and procurement issue",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/technology/nvidia-microsoft-other-tech-giants-back-open-source-ai-models-2026-07-24/",
+        "summary": "Reuters reported that Nvidia, Microsoft and other large tech firms backed open-source / open-weight AI models in a letter to lawmakers, arguing against premature restrictions. That is a clear sign that the debate is now about where AI can be deployed, who can inspect it and how much control customers want over it.",
+        "why_it_matters": "If this view gains ground, more buyers may ask for models they can run in-house or audit more easily, especially in regulated or cost-sensitive settings.",
+        "practical_angle": "Creators and small businesses should expect more tools to market themselves as open, local or self-hosted — and should check what that actually means before switching.",
+        "visual_prompt": "a practical creator workflow table showing verified source notes, timeline cards, a muted blue AI signal pattern, a microphone, headphones and a structured review checklist. premium podcast-cover composition with strong negative space for later text overlay. combine physical human-review materials with light digital signal motifs so it feels human-led and AI-empowered. use a different AI signal motif: waveform, routing lines, model cards, calendar markers or evidence board. Story context: Open models are becoming a policy and procurement issue. Practical angle: Creators and small businesses should expect more tools to market themselves as open, local or self-hosted — and should check what that actually means before switching.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
       },
       {
-        "file": "media/2026-07-24-creator/story-2.png",
-        "title": "Google adds AI disclosure labels to ads",
+        "file": "media/2026-07-25/story-2.png",
+        "title": "Google is starting to measure AI use like an economy, not a demo",
         "source_name": "Google Blog",
-        "source_url": "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
-        "summary": "Google says users will see a 'How this ad was made' panel in My Ad Center across Search, YouTube, and Discover. Ads made with Google’s own generative AI tools will be automatically labeled, and advertisers can also disclose other AI use.",
-        "why_it_matters": "This changes the daily workflow for anyone running paid content. If AI is part of the creative process, disclosure now sits closer to the publishing step.",
-        "practical_angle": "Creators who run ads should build a simple review checklist now so they are not improvising disclosure later.",
-        "visual_prompt": "an editorial AI news analysis desk with printed source cards, model comparison sheets, a compact microphone arm, blue data-light accents and a calm control-room atmosphere. clean editorial technology-magazine composition, practical rather than sci-fi. show AI as a system being reviewed by a person through notes, checks, source cards and controlled audio tools. change the hero object placement so this frame does not resemble the previous edition. Story context: Google adds AI disclosure labels to ads. Practical angle: Creators who run ads should build a simple review checklist now so they are not improvising disclosure later.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+        "source_url": "https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/",
+        "summary": "Google launched ATLAS as a large-scale study of how people use AI at work and in daily life. The dataset spans 15 million aggregated and de-identified interactions, across more than 150 countries, 140 languages, 800 occupations and 4,000 tasks.",
+        "why_it_matters": "The more AI usage gets measured this way, the more product teams and buyers will be pushed to talk about task mix, adoption patterns and actual work done — not just feature launches.",
+        "practical_angle": "If you sell services or content, the next buyer question may be: does this AI save time on a specific task, or only feel impressive in a demo?",
+        "visual_prompt": "a podcast-ready AI learning desk with a microphone in the foreground, tidy source folders, simple model cards, a soft waveform motif and a dark professional newsroom mood. dark professional podcast artwork composition with source materials visible. make the AI element clear through subtle circuit traces, waveform graphics, model cards and data-routing lines, not robots. make the story context visible through objects and composition rather than readable text. Story context: Google is starting to measure AI use like an economy, not a demo. Practical angle: If you sell services or content, the next buyer question may be: does this AI save time on a specific task, or only feel impressive in a demo?. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
       },
       {
-        "file": "media/2026-07-24-creator/story-3.png",
-        "title": "Canva AI 2.0 is in research preview",
-        "source_name": "Canva Newsroom",
-        "source_url": "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
-        "summary": "Canva says AI 2.0 is available today as a research preview and adds conversational design, iterative editing, layered object intelligence, memory, and workflow tools that reach into research, connectors, scheduling, brand intelligence, spreadsheets, and code.",
-        "why_it_matters": "This is the release most likely to affect day-to-day creator workflows because it is aimed at moving from idea to editable asset inside one place.",
-        "practical_angle": "If you make social posts, client graphics, one-pagers, or simple landing pages, this is the test release to try first—but it is still a preview, so treat it as a workflow experiment, not a final system.",
-        "visual_prompt": "a weekly AI briefing workspace with layered research cards, calendar markers, a studio microphone, restrained blue interface glow and visible human review materials. vertical social-video still with a strong microphone foreground and clear desk detail. combine physical human-review materials with light digital signal motifs so it feels human-led and AI-empowered. include a different arrangement of source cards, notebook, microphone angle and background signal pattern. Story context: Canva AI 2.0 is in research preview. Practical angle: If you make social posts, client graphics, one-pagers, or simple landing pages, this is the test release to try first—but it is still a preview, so treat it as a workflow experiment, not a final system.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+        "file": "media/2026-07-25/story-3.png",
+        "title": "Agent products are moving from beta into managed enterprise deployments",
+        "source_name": "OpenAI",
+        "source_url": "https://openai.com/index/introducing-openai-presence/",
+        "summary": "OpenAI said Presence is available today for voice and chat agents to eligible enterprise customers through a limited general availability program, with deployments led by OpenAI engineers and select systems integrators. OpenAI also said the product is built around policies, guardrails, simulations and approved actions.",
+        "why_it_matters": "That suggests the market is moving beyond generic chat and toward managed, controlled agent rollouts where the hard part is implementation, escalation and governance.",
+        "practical_angle": "Small businesses can expect more vendor help for automating support and internal admin, but they should also ask who owns failures, handoffs and audit logs.",
+        "visual_prompt": "a dark navy AI briefing studio desk with a professional podcast microphone, source notes, a small audio waveform display, subtle circuit-board lines in the background and one practical notebook open on the desk. wide briefing-room still life cropped for vertical short-form video. use restrained blue technology accents to signal AI without making the image look like generic AI stock art. change the hero object placement so this frame does not resemble the previous edition. Story context: Agent products are moving from beta into managed enterprise deployments. Practical angle: Small businesses can expect more vendor help for automating support and internal admin, but they should also ask who owns failures, handoffs and audit logs.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
       }
     ],
-    "narration": "media/2026-07-24-creator/narration.mp3",
-    "narration_text": "Could a preview replace three tool switches? Canva says AI 2.0 is available today as a research preview, and it adds conversational design, iterative editing, layered object intelligence, living memory, plus workflows like connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0. The point is not to rebuild your whole process. It is to see whether one unfinished social post, banner, or landing-page mockup can move farther with fewer handoffs and less cleanup. Because it is still a preview, treat it as a workflow experiment, not a final system. Would you test it on a social graphic or a client one-pager? Comment with your pick. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "narration": "media/2026-07-25/narration.mp3",
+    "narration_text": "Can agents handle real work safely? OpenAI said Presence is available today for voice and chat agents in a limited general availability program for eligible enterprise customers. It is not self-serve, and deployments are led by OpenAI engineers and select systems integrators. OpenAI says the system is built around policies, simulations, guardrails and approved actions. That matters because the market is moving from demo mode to managed production. For small businesses, that could make support or internal admin automation easier to start, but it also raises practical questions about handoffs, audit logs and who owns failures. Would you want vendor-led setup or self-serve control? Drop your answer and the first workflow you'd automate. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
     "tiktok": {
-      "story_index": 2,
-      "hook": "Could one preview save your content workflow?",
-      "payoff": "Canva says AI 2. 0 is available today as a research preview, with conversational design, iterative editing, and brand memory. That could help one rough graphic get closer to done faster.",
-      "response_prompt": "Social graphic or client one-pager—what would you test?",
-      "narration": "media/2026-07-24-creator/tiktok-narration.mp3",
-      "narration_text": "Could one preview save your content workflow? Canva says AI 2.0 is available today as a research preview, with conversational design, iterative editing, and brand memory. That could help one rough graphic get closer to done faster. Social graphic or client one-pager—what would you test?",
+      "story_index": 0,
+      "hook": "Would you rather control your AI or rent it?",
+      "payoff": "Reuters said Nvidia, Microsoft, Meta, IBM and Palantir backed open-source and open-weight models in a letter to lawmakers. For client data and cost control, that could push more buyers toward tools they can inspect or run locally.",
+      "response_prompt": "Open-weight or closed tools?",
+      "narration": "media/2026-07-25/tiktok-narration.mp3",
+      "narration_text": "Would you rather control your AI or rent it? Reuters said Nvidia, Microsoft, Meta, IBM and Palantir backed open-source and open-weight models in a letter to lawmakers. For client data and cost control, that could push more buyers toward tools they can inspect or run locally. Open-weight or closed tools?",
       "target_duration_seconds": [
         12,
         18
       ],
       "format": "question_fact_consequence_response"
     },
-    "practical_takeaway": "Choose one tool this week that fits into a real workflow, not a demo. Test Canva for creation, Google’s ad panel for review, or Claude Reflect for self-audit, and keep the scope small enough that you can tell whether it actually saved time.",
-    "what_to_test_next": "Run one real-world test with Canva AI 2.0: take a half-finished social post or simple landing-page visual and see whether the preview can help you iterate, preserve brand context, and export something usable without rebuilding it from scratch."
+    "practical_takeaway": "Pick one repeated task — inbox triage, customer replies, research notes or quote drafting — and test the tool on that exact workflow, with a human review step and a clear time-saving target.",
+    "what_to_test_next": "Run a one-week pilot on a single task and measure two numbers: minutes saved per task and how often the AI output needs correction before you can use it."
   }
 }

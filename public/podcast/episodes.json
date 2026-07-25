@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-25",
+    "kind": "daily",
+    "title": "Saturday forecast: open models, production agents and AI measurement are the next things to watch",
+    "description": "This is the broadest signal in the edition. It affects policy, buying decisions, deployment control and how organizations think about AI infrastructure, so it has the widest practical impact for creators, small businesses and enterprise buyers.",
+    "published": "2026-07-25T07:00:00+01:00",
+    "duration": "00:08:06",
+    "size": 7076928,
+    "video_size": 22131009,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-25.mp3",
+    "video_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-25.mp4",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-25.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-25.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-25.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-25.html",
+    "source_dir": "drafts/2026-07-25/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-24-creator",
     "kind": "daily",
     "title": "Friday watchlist: Canva AI 2.0 is the workflow test worth trying first",

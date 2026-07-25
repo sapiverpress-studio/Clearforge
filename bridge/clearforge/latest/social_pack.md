@@ -1,89 +1,92 @@
-# Clearforge Social Repurpose Pack — 2026-07-24-creator
+# Clearforge Social Repurpose Pack — 2026-07-25
 
 Status: Draft — audience-fit optimised; automatic validation pending
 
-Editorial theme: Friday — New to the scene / what to watch
+Editorial theme: Saturday — Clearforge forecast
 
 ## Platform Story Selections
 
 ### Tiktok
 
-- Selected story: Canva AI 2.0 is in research preview
-- Audience: Creators making social posts, graphics, and simple landing assets
-- Format: short-form video
-- Opening: Could one preview save your content workflow?
-- Payoff: Canva says AI 2.0 is available today as a research preview, with conversational design, iterative editing, and brand memory. The real test is whether one rough graphic gets closer to done faster.
-- Platform fit: 9/10
-- Why selected: This has the clearest visual before-and-after test for a short video and can be explained in one quick workflow example.
+- Selected story: Open models are becoming a policy and procurement issue
+- Audience: Creators, small businesses and teams that care about control over AI tools
+- Format: 
+- Opening: Would you rather control your AI or rent it?
+- Payoff: Reuters said Nvidia, Microsoft, Meta, IBM, Palantir and others backed open-source or open-weight models in a letter to lawmakers. For client data and cost control, that could push more buyers toward tools they can inspect or run locally.
+- Platform fit: 8/10
+- Why selected: Short, visual and easy to answer in one breath, with a clear control-versus-convenience tradeoff that works well in under 15 seconds.
 
 ### Youtube
 
-- Selected story: Canva AI 2.0 is in research preview
-- Audience: Creators and small operators who want a practical AI workflow test
-- Format: YouTube Shorts
-- Opening: Could a preview replace three tool switches?
-- Payoff: Canva says AI 2.0 is available today as a research preview, with conversational design, iterative editing, layered object intelligence, living memory, and workflow tools like connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0. The useful question is whether one unfinished asset can move farther with fewer handoffs and less cleanup.
+- Selected story: Agent products are moving from beta into managed enterprise deployments
+- Audience: Small business operators, enterprise buyers and workflow owners
+- Format: 
+- Opening: Can agents handle real work safely?
+- Payoff: OpenAI said Presence is available today to eligible enterprise customers in a limited general availability program, not self-serve, with deployments led by OpenAI engineers and select systems integrators. It is built around policies, simulations, guardrails and approved actions. That matters because the market is moving from demo mode to managed production.
 - Platform fit: 9/10
-- Why selected: YouTube Shorts can hold the broader feature list and still land the workflow takeaway clearly.
+- Why selected: Best fit for a longer explainer because the details reward viewers who want the deployment model, not just the headline.
 
 ### Facebook
 
-- Selected story: Google adds AI disclosure labels to ads
-- Audience: Creators, freelancers, and small teams that run ads
-- Format: Facebook post
-- Opening: Would your ad review catch this on launch day?
-- Payoff: Google says ads made with its own generative AI tools will be automatically disclosed, and My Ad Center will show a 'How this ad was made' panel across Search, YouTube, and Discover. That makes AI disclosure part of the publishing workflow.
+- Selected story: Open models are becoming a policy and procurement issue
+- Audience: Broad business audiences, creators and practical AI buyers
+- Format: 
+- Opening: Would you trust AI more if you could run it yourself?
+- Payoff: Reuters reported that Nvidia, Microsoft, Meta, IBM, Palantir and other groups backed open-source / open-weight AI models in a letter to lawmakers. That points to a bigger buying question: control, deployment freedom and where sensitive work should live.
 - Platform fit: 8/10
-- Why selected: Facebook performs well with recognizable operational changes and practical discussion about ads, checks, and client workflows.
+- Why selected: Facebook can support a broader discussion about trust, control and practical buying choices without needing deep technical context.
 
 ### Pinterest
 
-- Selected story: Canva AI 2.0 is in research preview
-- Audience: People searching for Canva workflow tests, social graphics, and lightweight design tools
-- Format: Pinterest pin
-- Opening: What should you test first in Canva AI 2.0?
-- Payoff: It is a searchable, practical checklist topic that points readers to one real project test instead of a vague tool demo.
-- Platform fit: 10/10
-- Why selected: Pinterest favors searchable how-to framing, and Canva AI 2.0 is the most pin-friendly visual workflow topic in the pack.
+- Selected story: Google is starting to measure AI use like an economy, not a demo
+- Audience: People looking for a practical way to judge AI tools and workflows
+- Format: 
+- Opening: How do you tell if AI actually saves time?
+- Payoff: Google says ATLAS is built from 15 million aggregated and de-identified human-AI interactions across more than 150 countries, 140 languages, 800 occupations and 4,000 tasks. Use that as a simple checklist: tie one AI tool to one repeated task, then test whether it reduces time or rework.
+- Platform fit: 8/10
+- Why selected: Pinterest favors searchable, utility-first framing, and this story converts cleanly into a checklist-style saveable asset.
 
 ### Linkedin
 
-- Selected story: Google adds AI disclosure labels to ads
-- Audience: Marketers, campaign managers, and small business operators
-- Format: LinkedIn post
-- Opening: Would your review process catch AI disclosure before launch?
-- Payoff: Google is moving disclosure into My Ad Center and automatically labeling ads made with its own generative AI tools. For teams, that means disclosure needs to live in the approval workflow, not in a separate policy file.
+- Selected story: Google is starting to measure AI use like an economy, not a demo
+- Audience: Managers, operators, product teams and workplace decision-makers
+- Format: 
+- Opening: Are you measuring AI by features or by tasks?
+- Payoff: Google says ATLAS uses 15 million aggregated and de-identified human-AI interactions across more than 150 countries, 140 languages, 800 occupations and 4,000 tasks. That pushes the conversation toward task-level proof: which workflow changes, by how much, and who can show it?
 - Platform fit: 9/10
-- Why selected: LinkedIn rewards operational consequences, process design, and professional decision-making, which this story supplies cleanly.
+- Why selected: This is the strongest workplace lesson in the pack and fits LinkedIn’s preference for operational framing and measurable business outcomes.
 
 ## TikTok Script
 
-Could one preview save your content workflow? Canva says AI 2.0 is available today as a research preview, with conversational design, iterative editing, and brand memory. That could help one rough graphic get closer to done faster. Social graphic or client one-pager—what would you test?
+Would you rather control your AI or rent it? Reuters said Nvidia, Microsoft, Meta, IBM and Palantir backed open-source and open-weight models in a letter to lawmakers. For client data and cost control, that could push more buyers toward tools they can inspect or run locally. Open-weight or closed tools?
 
 ## YouTube Shorts Script
 
-Could a preview replace three tool switches? Canva says AI 2.0 is available today as a research preview, and it adds conversational design, iterative editing, layered object intelligence, living memory, plus workflows like connectors, scheduling, web research, brand intelligence, Sheets AI, and Canva Code 2.0. The point is not to rebuild your whole process. It is to see whether one unfinished social post, banner, or landing-page mockup can move farther with fewer handoffs and less cleanup. Because it is still a preview, treat it as a workflow experiment, not a final system. Would you test it on a social graphic or a client one-pager? Comment with your pick.
+Can agents handle real work safely? OpenAI said Presence is available today for voice and chat agents in a limited general availability program for eligible enterprise customers. It is not self-serve, and deployments are led by OpenAI engineers and select systems integrators. OpenAI says the system is built around policies, simulations, guardrails and approved actions. That matters because the market is moving from demo mode to managed production. For small businesses, that could make support or internal admin automation easier to start, but it also raises practical questions about handoffs, audit logs and who owns failures. Would you want vendor-led setup or self-serve control? Drop your answer and the first workflow you'd automate.
 
 ## Facebook Post
 
-Would your ad review catch this on launch day?
-Google says it is adding a “How this ad was made” panel in My Ad Center across Search, YouTube, and Discover, and ads made with Google’s own generative AI tools will be automatically disclosed. For creators and small teams, that means AI disclosure is now part of the publishing workflow, not a separate policy file. The practical move is to add one pre-launch check for who used AI, where the disclosure lives, and what happens when tools are mixed. Do you run AI-made ads, or are you building a client checklist? Comment with your setup.
+Would you trust AI more if you could run it yourself?
+Reuters reported that Nvidia, Microsoft, Meta, IBM, Palantir and other groups backed open-source / open-weight AI models in a letter to lawmakers. The practical takeaway is that the next buying question is not only which tool is strongest, but which one gives you enough control for sensitive data, client work or in-house workflows.
+If that were your team, would you pick open-weight or closed tools? Share the workflow you'd use it for, or ask Clearforge to investigate what "open" usually means in practice.
 
 ## Pinterest Pin
 
-**Title:** What to Test First in Canva AI 2.0
+**Title:** How do you tell if AI actually saves time?
 
-**Description:** Save this if you make social posts, client graphics, or landing pages. Canva says AI 2.0 is a research preview with conversational design, iterative editing, and workflow tools. Try it on one real project, then tell us which asset you would test first: a social graphic, client one-pager, or landing-page mockup.
+**Description:** Google says ATLAS is built from 15 million aggregated and de-identified human-AI interactions across more than 150 countries, 140 languages, 800 occupations and 4,000 tasks. Use that as a simple checklist: tie one AI tool to one repeated task, then test whether it reduces time or rework. Save this if you want a practical way to judge your next AI tool, and comment with the task you'd measure first.
 
 ## LinkedIn-Style Post
 
-Would your review process catch AI disclosure before launch?
-Google says it is adding a “How this ad was made” panel in My Ad Center across Search, YouTube, and Discover, and ads made with Google’s own generative AI tools will be automatically disclosed. For teams that use AI in campaign creative, this moves disclosure into the publishing workflow itself. The practical response is to add one pre-launch check for who used AI, where the disclosure lives, and how mixed-tool campaigns are handled. If you manage campaigns, would you build that check into approval or assign it to compliance? Comment with your setup or next question.
+Are you measuring AI by features or by tasks?
+Google says ATLAS is built from 15 million aggregated and de-identified human-AI interactions across more than 150 countries, 140 languages, 800 occupations and 4,000 tasks. That pushes the conversation toward task-level proof: which workflow changes, by how much, and who can show it?
+For teams, the buying question becomes: which metric are you tracking first — minutes saved, rework reduced, or adoption by team?
+Share one you already use, or suggest a related article Clearforge should investigate next.
 
 ## 5 Short Quote/Card Lines
 
-- Could one preview save your workflow without adding cleanup?
-- The best AI test is a real workflow, not a demo.
-- Could your review step catch AI disclosure before launch?
-- Preview tools should reduce switching, not add it.
-- The most useful AI products know their boundaries.
+- Would you rather control your AI, or rent it?
+- Are you measuring AI by features, or by tasks?
+- Managed agents are moving from demo to production.
+- If AI cannot prove time saved, it is harder to justify.
+- Open models are becoming a procurement issue.

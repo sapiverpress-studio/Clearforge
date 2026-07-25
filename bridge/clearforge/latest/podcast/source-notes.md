@@ -1,6 +1,6 @@
-# Source notes — 2026-07-25
+# Source notes — 2026-07-25-creator
 
-Podcast focused on: Open models are becoming a policy and procurement issue
+Podcast focused on: Managed agents are becoming a service, not just a prompt box
 
 ## Sources supplied to the script generator
 

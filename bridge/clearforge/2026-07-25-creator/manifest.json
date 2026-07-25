@@ -1,0 +1,258 @@
+{
+  "version": 5,
+  "brand": "Clearforge",
+  "date": "2026-07-25-creator",
+  "type": "clearforge_daily_ai_brief",
+  "approved": {
+    "article": true,
+    "facebook": true,
+    "pinterest": true,
+    "youtube": true
+  },
+  "article": {
+    "headline": "Saturday forecast: creators will judge AI by control, setup help and proof",
+    "dek": "This week’s confirmed moves point to a simpler buying standard for creators and small operators: can you control the tool, can you actually deploy it, and can it prove it saves time? The forecast is not that one platform wins outright. It is that more vendors will sell AI as a workflow with guardrails, reporting and implementation help, and buyers will start asking for those details up front.",
+    "url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-25-creator.html",
+    "markdown": "daily_brief.md"
+  },
+  "calls_to_action": {
+    "spoken": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "screen_lines": [
+      "READ THE FULL BREAKDOWN",
+      "Link in bio",
+      "LISTEN ON THE GO",
+      "Search: Clearforge AI Briefing"
+    ],
+    "caption": "Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+    "direct_links_allowed_in_social_copy": false
+  },
+  "stories": [
+    {
+      "title": "Open models are turning into a workflow-control question",
+      "summary": "Reuters reported that Nvidia, Microsoft, Meta, IBM, Palantir and other large tech firms backed open-source / open-weight AI models in a letter to lawmakers. For buyers, the practical point is not ideology. It is that more vendors may now compete on whether a model can be inspected, run in a private environment or kept closer to your own data.",
+      "why_it_matters": "Creators and small businesses that handle client work, drafts or sensitive notes will likely see more pressure to ask what open actually means before they switch tools.",
+      "practical_angle": "If you are comparing tools this month, test whether the product lets you export data, review logs or keep control of the deployment path.",
+      "source_name": "Reuters",
+      "source_url": "https://www.reuters.com/technology/nvidia-microsoft-other-tech-giants-back-open-source-ai-models-2026-07-24/"
+    },
+    {
+      "title": "Google is measuring AI like a work system, not a demo",
+      "summary": "Google said ATLAS is based on 15 million aggregated and de-identified human-AI interactions across more than 150 countries, 140 languages, 800 occupations and 4,000 tasks. That shifts the conversation from feature lists to task-level evidence about how people actually use AI.",
+      "why_it_matters": "Once buyers start thinking in terms of tasks, AI tools will be judged on minutes saved, rework reduced and work completed, not just how impressive they look in a product video.",
+      "practical_angle": "A creator or small operator can use the same frame by testing one repeat task, measuring the time before and after, and checking how often the output needs cleanup.",
+      "source_name": "Google Blog",
+      "source_url": "https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/"
+    },
+    {
+      "title": "Managed agents are becoming a service, not just a prompt box",
+      "summary": "OpenAI said Presence is available to eligible enterprise customers in a limited general availability program and is not self-serve. The product is positioned around policies, simulations, guardrails and approved actions, which makes deployment look more like a managed rollout than a simple download.",
+      "why_it_matters": "That suggests the next wave of agents may be sold with setup help and operating rules, which matters for small teams that want automation but do not have in-house AI staff.",
+      "practical_angle": "If you are considering an agent for support, admin or intake work, ask what the setup includes, who monitors failures and how handoffs to a human are handled.",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/introducing-openai-presence/"
+    }
+  ],
+  "facebook": {
+    "post": "Would you trade control for an easier AI setup? Reuters reported that Nvidia, Microsoft, Meta, IBM, Palantir and other companies backed open-source and open-weight AI models in a letter to lawmakers. For creators and small businesses, the useful question is practical: can you inspect the tool, move your data, or keep the work closer to your own environment? If you had to test one workflow this week, would you go open, local, or fully hosted? Comment with the task you would try, and if you want, I can pull together a simple comparison checklist next.\n\n#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI"
+  },
+  "pinterest": {
+    "title": "How to test whether an AI tool actually saves you time",
+    "description": "Use this simple checklist to judge any tool by the work it removes, not the hype around it. Google said ATLAS is based on 15 million aggregated, de-identified human-AI interactions, so try one repeat task, time it, and note how much cleanup is left. Save this guide and comment with the task you would test first.",
+    "destination_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-25-creator.html"
+  },
+  "youtube": {
+    "title": "Saturday forecast: creators will judge AI by control, setup help and proof",
+    "script": "Would you let a vendor set up your AI agent? OpenAI said Presence is available today for voice and chat agents in a limited general availability program for eligible enterprise customers, and it is not self-serve. It is built around policies, simulations, guardrails and approved actions. That means the real question is not just what the agent can do, but what the rollout includes. If you run a small team, ask who monitors failures, what human handoff looks like, and which actions stay approved only. Which workflow would you trust first: support or intake? Tell me in the comments, and send another workflow Clearforge should investigate next. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "description": "Pick one repeat task you already do every week and compare three options: a closed tool, an open or self-hostable tool, and a managed setup. Measure time saved, correction rate and how much control you keep over the data."
+  },
+  "podcast": {
+    "generated": true,
+    "folder": "podcast/",
+    "copy_paste_script": "podcast/COPY_PASTE_INTO_ELEVENLABS.txt",
+    "full_review_script": "podcast/podcast-script.md",
+    "metadata": "podcast/episode-metadata.json",
+    "source_notes": "podcast/source-notes.md",
+    "episode": {
+      "version": 1,
+      "date": "2026-07-25-creator",
+      "brand": "Clearforge",
+      "type": "clearforge_daily_biggest_story_podcast_script",
+      "human_review_required": true,
+      "narrator": "Irene",
+      "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+      "episode_title": "Managed agents are becoming the product, not just the prompt",
+      "selected_story_index": 2,
+      "selected_story_title": "Managed agents are becoming a service, not just a prompt box",
+      "selection_reason": "This is the clearest signal in the edition that AI buying criteria are shifting from ‘which model is smartest’ to ‘which system is controllable, deployable, and supportable.’ OpenAI’s limited, enterprise-only rollout turns agents into a managed workflow product, which is directly relevant to creators and small businesses deciding whether to self-serve, buy a closed tool, or pay for setup help.",
+      "word_count": 1349,
+      "estimated_duration_minutes": 9.3,
+      "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+      "source_notes": "source-notes.md",
+      "first_spoken_line": "Today’s biggest story is OpenAI’s Presence, and the key detail is not just that it exists. It is how it is being sold.",
+      "final_spoken_line": "That is the real story here. The market is moving from, ‘Can this AI answer my question?’ to, ‘Can this AI fit my workflow without taking control away from me?’ For creators and small businesses, that is the question worth asking first.",
+      "validation_warnings": [],
+      "non_spoken_instruction_candidates": []
+    }
+  },
+  "ai_media": {
+    "manifest": "media/media-manifest.json",
+    "narration": "media/narration.mp3",
+    "story_images": [
+      "media/story-1.png",
+      "media/story-2.png",
+      "media/story-3.png"
+    ],
+    "tiktok_narration": "media/tiktok-narration.mp3",
+    "tiktok": {
+      "story_index": 1,
+      "hook": "Can your AI prove it saves you time?",
+      "payoff": "Google said ATLAS is built from 15 million aggregated, de-identified human-AI interactions across 150 countries, 140 languages, 800 occupations and 4,000 tasks. Pick one repeat job, track minutes saved and cleanup.",
+      "response_prompt": "Would you test inbox replies or captions first?",
+      "narration": "media/2026-07-25-creator/tiktok-narration.mp3",
+      "narration_text": "Can your AI prove it saves you time? Google said ATLAS is built from 15 million aggregated, de-identified human-AI interactions across 150 countries, 140 languages, 800 occupations and 4,000 tasks. Pick one repeat job, track minutes saved and cleanup. Would you test inbox replies or captions first?",
+      "target_duration_seconds": [
+        12,
+        18
+      ],
+      "format": "question_fact_consequence_response"
+    },
+    "generated": true
+  },
+  "quote_card_lines": [
+    "What exactly is open, and what control do you keep?",
+    "Can this tool prove it saves time on one repeated task?",
+    "Managed agents may need more setup than a prompt box.",
+    "Measure minutes saved before you buy a bigger promise.",
+    "If the service layer is weak, the model alone is not enough."
+  ],
+  "headline_options": [
+    "Saturday forecast: creators will judge AI by control, setup help and proof",
+    "The next AI tools for creators will be sold as workflows, not features",
+    "This week’s AI signal: control, deployment and task proof are becoming the real buying tests",
+    "Creators should watch for AI tools that can show their work",
+    "The practical AI forecast: more control, more managed rollout, more measurable value"
+  ],
+  "sources": [
+    {
+      "source_name": "Reuters",
+      "title": "Nvidia, Microsoft and other tech giants back open-source AI models",
+      "url": "https://www.reuters.com/technology/nvidia-microsoft-other-tech-giants-back-open-source-ai-models-2026-07-24/",
+      "published_date": "2026-07-24",
+      "coverage_lane": "confirmed_development",
+      "topic_category": "models_and_infrastructure",
+      "evidence_basis": "Reuters report",
+      "confirmed_fact": "Reuters reported that Nvidia, Microsoft, Meta, IBM, Palantir and other groups backed open-source / open-weight AI models in a letter to lawmakers on July 24, 2026.",
+      "interpretation": "The letter signals that the policy fight is moving beyond model quality into control, deployment freedom and where AI infrastructure should live."
+    },
+    {
+      "source_name": "Google Blog",
+      "title": "Understanding the AI economy",
+      "url": "https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/",
+      "published_date": "2026-07-23",
+      "coverage_lane": "confirmed_development",
+      "topic_category": "models_and_infrastructure",
+      "evidence_basis": "Google official blog post",
+      "confirmed_fact": "Google said its ATLAS study is built from 15 million aggregated and de-identified human-AI interactions and covers more than 150 countries, 140 languages, 800 occupations and 4,000 tasks.",
+      "interpretation": "Google is trying to define how AI use should be measured, which could shape how buyers, policymakers and creators judge real adoption versus hype."
+    },
+    {
+      "source_name": "OpenAI",
+      "title": "Introducing OpenAI Presence",
+      "url": "https://openai.com/index/introducing-openai-presence/",
+      "published_date": "2026-07-22",
+      "coverage_lane": "confirmed_development",
+      "topic_category": "models_and_infrastructure",
+      "evidence_basis": "OpenAI official blog post",
+      "confirmed_fact": "OpenAI said Presence is available today for voice and chat agents in a limited general availability program for eligible enterprise customers, and that it is not self-serve.",
+      "interpretation": "OpenAI is packaging agent deployment as a managed production service, not just a model API, which suggests the market is shifting toward implementation help and guardrailed workflows."
+    },
+    {
+      "source_name": "Microsoft Blog",
+      "title": "Powering America's Genesis Mission: Microsoft's commitment to scientific discovery",
+      "url": "https://blogs.microsoft.com/blog/2026/07/22/powering-americas-genesis-mission-microsofts-commitment-to-scientific-discovery/",
+      "published_date": "2026-07-22",
+      "coverage_lane": "confirmed_development",
+      "topic_category": "models_and_infrastructure",
+      "evidence_basis": "Microsoft official blog post",
+      "confirmed_fact": "Microsoft said it is backing the U.S. Department of Energy’s Genesis Mission with a $60 million investment package that includes $40 million in Azure compute and AI credits and $20 million in engineering and enablement services.",
+      "interpretation": "The announcement shows how AI infrastructure deals are increasingly being tied to specific missions and governed workflows, not just generic cloud capacity."
+    }
+  ],
+  "media_metadata": {
+    "version": 5,
+    "date": "2026-07-25-creator",
+    "headline": "Saturday forecast: creators will judge AI by control, setup help and proof",
+    "dek": "This week’s confirmed moves point to a simpler buying standard for creators and small operators: can you control the tool, can you actually deploy it, and can it prove it saves time? The forecast is not that one platform wins outright. It is that more vendors will sell AI as a workflow with guardrails, reporting and implementation help, and buyers will start asking for those details up front.",
+    "hook": "Three AI updates that actually matter today",
+    "spoken_cta": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "visual_system": "Clearforge AI briefing podcast studio system",
+    "visual_style_rules": {
+      "include": [
+        "dark navy AI briefing or podcast studio atmosphere",
+        "microphone or audio-briefing cues where appropriate",
+        "subtle circuit traces, waveform motifs, model cards or data-routing lines",
+        "physical source notes, checklists and human-review materials",
+        "premium editorial technology-magazine lighting"
+      ],
+      "avoid": [
+        "robots",
+        "glowing brains",
+        "hologram faces",
+        "generic dashboards",
+        "random floating code",
+        "excessive neon",
+        "fake readable text",
+        "Sapiver or unrelated branding"
+      ]
+    },
+    "stories": [
+      {
+        "file": "media/2026-07-25-creator/story-1.png",
+        "title": "Open models are turning into a workflow-control question",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/technology/nvidia-microsoft-other-tech-giants-back-open-source-ai-models-2026-07-24/",
+        "summary": "Reuters reported that Nvidia, Microsoft, Meta, IBM, Palantir and other large tech firms backed open-source / open-weight AI models in a letter to lawmakers. For buyers, the practical point is not ideology. It is that more vendors may now compete on whether a model can be inspected, run in a private environment or kept closer to your own data.",
+        "why_it_matters": "Creators and small businesses that handle client work, drafts or sensitive notes will likely see more pressure to ask what open actually means before they switch tools.",
+        "practical_angle": "If you are comparing tools this month, test whether the product lets you export data, review logs or keep control of the deployment path.",
+        "visual_prompt": "a modern audio briefing desk where AI developments are represented by physical cards, circuit-like connection lines, a restrained waveform panel and careful human notes. dark professional podcast artwork composition with source materials visible. make the AI element clear through subtle circuit traces, waveform graphics, model cards and data-routing lines, not robots. change the hero object placement so this frame does not resemble the previous edition. Story context: Open models are turning into a workflow-control question. Practical angle: If you are comparing tools this month, test whether the product lets you export data, review logs or keep control of the deployment path.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      },
+      {
+        "file": "media/2026-07-25-creator/story-2.png",
+        "title": "Google is measuring AI like a work system, not a demo",
+        "source_name": "Google Blog",
+        "source_url": "https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/",
+        "summary": "Google said ATLAS is based on 15 million aggregated and de-identified human-AI interactions across more than 150 countries, 140 languages, 800 occupations and 4,000 tasks. That shifts the conversation from feature lists to task-level evidence about how people actually use AI.",
+        "why_it_matters": "Once buyers start thinking in terms of tasks, AI tools will be judged on minutes saved, rework reduced and work completed, not just how impressive they look in a product video.",
+        "practical_angle": "A creator or small operator can use the same frame by testing one repeat task, measuring the time before and after, and checking how often the output needs cleanup.",
+        "visual_prompt": "a practical creator workflow table showing verified source notes, timeline cards, a muted blue AI signal pattern, a microphone, headphones and a structured review checklist. wide briefing-room still life cropped for vertical short-form video. use restrained blue technology accents to signal AI without making the image look like generic AI stock art. include a different arrangement of source cards, notebook, microphone angle and background signal pattern. Story context: Google is measuring AI like a work system, not a demo. Practical angle: A creator or small operator can use the same frame by testing one repeat task, measuring the time before and after, and checking how often the output needs cleanup.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      },
+      {
+        "file": "media/2026-07-25-creator/story-3.png",
+        "title": "Managed agents are becoming a service, not just a prompt box",
+        "source_name": "OpenAI",
+        "source_url": "https://openai.com/index/introducing-openai-presence/",
+        "summary": "OpenAI said Presence is available to eligible enterprise customers in a limited general availability program and is not self-serve. The product is positioned around policies, simulations, guardrails and approved actions, which makes deployment look more like a managed rollout than a simple download.",
+        "why_it_matters": "That suggests the next wave of agents may be sold with setup help and operating rules, which matters for small teams that want automation but do not have in-house AI staff.",
+        "practical_angle": "If you are considering an agent for support, admin or intake work, ask what the setup includes, who monitors failures and how handoffs to a human are handled.",
+        "visual_prompt": "a podcast-ready AI learning desk with a microphone in the foreground, tidy source folders, simple model cards, a soft waveform motif and a dark professional newsroom mood. clean editorial technology-magazine composition, practical rather than sci-fi. make it instantly understandable as an AI briefing or AI podcast image, but grounded in real studio objects. vary camera distance, desk depth and object hierarchy while keeping the same Clearforge identity. Story context: Managed agents are becoming a service, not just a prompt box. Practical angle: If you are considering an agent for support, admin or intake work, ask what the setup includes, who monitors failures and how handoffs to a human are handled.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: dark blue studio background, graphite desk, white paper, blue highlights and restrained green accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      }
+    ],
+    "narration": "media/2026-07-25-creator/narration.mp3",
+    "narration_text": "Would you let a vendor set up your AI agent? OpenAI said Presence is available today for voice and chat agents in a limited general availability program for eligible enterprise customers, and it is not self-serve. It is built around policies, simulations, guardrails and approved actions. That means the real question is not just what the agent can do, but what the rollout includes. If you run a small team, ask who monitors failures, what human handoff looks like, and which actions stay approved only. Which workflow would you trust first: support or intake? Tell me in the comments, and send another workflow Clearforge should investigate next. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "tiktok": {
+      "story_index": 1,
+      "hook": "Can your AI prove it saves you time?",
+      "payoff": "Google said ATLAS is built from 15 million aggregated, de-identified human-AI interactions across 150 countries, 140 languages, 800 occupations and 4,000 tasks. Pick one repeat job, track minutes saved and cleanup.",
+      "response_prompt": "Would you test inbox replies or captions first?",
+      "narration": "media/2026-07-25-creator/tiktok-narration.mp3",
+      "narration_text": "Can your AI prove it saves you time? Google said ATLAS is built from 15 million aggregated, de-identified human-AI interactions across 150 countries, 140 languages, 800 occupations and 4,000 tasks. Pick one repeat job, track minutes saved and cleanup. Would you test inbox replies or captions first?",
+      "target_duration_seconds": [
+        12,
+        18
+      ],
+      "format": "question_fact_consequence_response"
+    },
+    "practical_takeaway": "Pick one repeat task you already do every week and compare three options: a closed tool, an open or self-hostable tool, and a managed setup. Measure time saved, correction rate and how much control you keep over the data.",
+    "what_to_test_next": "Run a one-week pilot on a single workflow and log two numbers every day: minutes saved per task and the number of edits needed before you can publish or send the output."
+  }
+}

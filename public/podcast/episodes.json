@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-25-creator",
+    "kind": "daily",
+    "title": "Managed agents are becoming the product, not just the prompt",
+    "description": "This is the clearest signal in the edition that AI buying criteria are shifting from ‘which model is smartest’ to ‘which system is controllable, deployable, and supportable.’ OpenAI’s limited, enterprise-only rollout turns agents into a managed workflow product, which is directly relevant to creators and small businesses deciding whether to self-serve, buy a closed tool, or pay for setup help.",
+    "published": "2026-07-25T07:00:00+01:00",
+    "duration": "00:09:18",
+    "size": 7984318,
+    "video_size": 26433759,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-25-creator.mp3",
+    "video_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-25-creator.mp4",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-25-creator.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-25-creator.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-25-creator.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-25-creator.html",
+    "source_dir": "drafts/2026-07-25-creator/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-25",
     "kind": "daily",
     "title": "Saturday forecast: open models, production agents and AI measurement are the next things to watch",

@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-25-creator",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Can your AI prove it saves you time?",
+      "words": 47,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Would you let a vendor set up your AI agent?",
+      "words": 107,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Would you trade control for an easier AI setup?",
+      "words": 95,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Would you buy an AI agent without setup help?",
+      "words": 92,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "How to test whether an AI tool actually saves you time",
+    "title_words": 11,
+    "description_words": 56
+  },
+  "warnings": []
+}

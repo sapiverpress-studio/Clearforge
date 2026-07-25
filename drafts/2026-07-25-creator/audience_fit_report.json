@@ -1,0 +1,170 @@
+{
+  "generated_at": "2026-07-25T19:18:55.510Z",
+  "story_assessments": [
+    {
+      "story_index": 0,
+      "story_title": "Open models are turning into a workflow-control question",
+      "target_audience": "Creators and small business operators who handle client work, drafts, notes or other sensitive workflows",
+      "audience_problem_or_desire": "They want AI tools that are inspectable, movable and controllable without locking work into a setup they do not trust",
+      "interest_signal": "Big tech companies backing open-source and open-weight models makes control and deployment feel like a buying issue, not just a technical one",
+      "stop_reason": "The promise of openness sounds useful, but many tools still hide the real limits of export, logs and deployment freedom",
+      "promised_payoff": "A simple way to test whether an AI product actually gives you control over your workflow and data",
+      "proof_point": "Reuters reported that Nvidia, Microsoft, Meta, IBM, Palantir and other groups backed open-source / open-weight AI models in a letter to lawmakers on July 24, 2026",
+      "search_phrases": [
+        "open source AI models creators",
+        "open weight AI control",
+        "AI tool export logs",
+        "self-hostable AI workflow"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 8,
+        "searchability": 8,
+        "stranger_usefulness": 8,
+        "novelty": 7,
+        "visual_potential": 6,
+        "discussion_potential": 8,
+        "short_form_clarity": 8
+      },
+      "overall_score": 8,
+      "score_reason": "Strong fit for creators who want practical control questions, and easy to explain as a workflow test rather than a technical debate."
+    },
+    {
+      "story_index": 1,
+      "story_title": "Google is measuring AI like a work system, not a demo",
+      "target_audience": "Creators, freelancers and small operators who want to know whether AI actually saves time",
+      "audience_problem_or_desire": "They want a clear way to judge AI by output quality, time saved and cleanup required instead of by product polish",
+      "interest_signal": "Google’s ATLAS scale makes the idea of task-level evidence feel concrete and searchable",
+      "stop_reason": "The data is large, but the real hook is the simple question of whether a tool improves one repeat task",
+      "promised_payoff": "A repeatable way to test one workflow and see whether AI is worth keeping",
+      "proof_point": "Google said ATLAS is built from 15 million aggregated and de-identified human-AI interactions across more than 150 countries, 140 languages, 800 occupations and 4,000 tasks",
+      "search_phrases": [
+        "how to measure AI time saved",
+        "AI task proof",
+        "ATLAS human AI interactions",
+        "AI workflow test"
+      ],
+      "scores": {
+        "audience_fit": 9,
+        "practical_consequence": 9,
+        "searchability": 9,
+        "stranger_usefulness": 9,
+        "novelty": 7,
+        "visual_potential": 7,
+        "discussion_potential": 8,
+        "short_form_clarity": 9
+      },
+      "overall_score": 9,
+      "score_reason": "The clearest utility story in the pack: it gives a simple test any reader can try immediately, which helps search, short form and save-worthy formats."
+    },
+    {
+      "story_index": 2,
+      "story_title": "Managed agents are becoming a service, not just a prompt box",
+      "target_audience": "Small teams, creators with support or intake workflows, and professionals comparing automation options",
+      "audience_problem_or_desire": "They want automation but do not want to build governance, monitoring and human handoffs from scratch",
+      "interest_signal": "OpenAI positioning Presence as limited GA and not self-serve makes deployment itself part of the product story",
+      "stop_reason": "The phrase ‘agent’ can sound simple, but the real friction is setup, monitoring and approval rules",
+      "promised_payoff": "A way to ask the right rollout questions before trusting a managed AI agent with work",
+      "proof_point": "OpenAI said Presence is available today for voice and chat agents in a limited general availability program for eligible enterprise customers, and that it is not self-serve",
+      "search_phrases": [
+        "managed AI agents",
+        "OpenAI Presence",
+        "AI agent setup help",
+        "guardrailed AI workflow"
+      ],
+      "scores": {
+        "audience_fit": 9,
+        "practical_consequence": 8,
+        "searchability": 8,
+        "stranger_usefulness": 8,
+        "novelty": 8,
+        "visual_potential": 7,
+        "discussion_potential": 8,
+        "short_form_clarity": 8
+      },
+      "overall_score": 8,
+      "score_reason": "Very relevant to the operational side of AI buying, especially for teams that need deployment help and clear handoffs."
+    },
+    {
+      "story_index": 3,
+      "story_title": "Mission-specific infrastructure points to bundled AI offers",
+      "target_audience": "Creators and small businesses watching how AI is packaged and sold",
+      "audience_problem_or_desire": "They want to compare AI offers beyond raw model power and understand whether support, governance and reporting are bundled in",
+      "interest_signal": "Microsoft tying compute credits to engineering and enablement services suggests AI is being sold as a package, not just capacity",
+      "stop_reason": "The example is more enterprise and policy-heavy than the others, so it takes a little more framing to feel relevant",
+      "promised_payoff": "A forecast lens for judging the service layer of future AI offers",
+      "proof_point": "Microsoft said it is backing the U.S. Department of Energy’s Genesis Mission with a $60 million package that includes Azure compute credits and engineering and enablement services",
+      "search_phrases": [
+        "AI infrastructure bundled services",
+        "compute credits engineering support",
+        "workflow AI package",
+        "mission specific AI offers"
+      ],
+      "scores": {
+        "audience_fit": 7,
+        "practical_consequence": 7,
+        "searchability": 7,
+        "stranger_usefulness": 6,
+        "novelty": 6,
+        "visual_potential": 5,
+        "discussion_potential": 6,
+        "short_form_clarity": 6
+      },
+      "overall_score": 7,
+      "score_reason": "Useful as a forecast signal, but less immediately relatable than the workflow-control, measurement and deployment stories."
+    }
+  ],
+  "platform_selections": {
+    "tiktok": {
+      "story_index": 1,
+      "story_title": "Google is measuring AI like a work system, not a demo",
+      "target_audience": "Creators, freelancers and small operators who want to know whether AI actually saves time",
+      "format": "short spoken hook and practical test",
+      "opening": "Can your AI prove it saves you time?",
+      "payoff": "Pick one repeat job this week, track minutes saved and cleanup, then compare the result before you keep the tool.",
+      "selection_reason": "The measurement angle is immediately relatable, easy to say in a few seconds, and strong for save-worthy short form.",
+      "platform_fit_score": 9
+    },
+    "youtube": {
+      "story_index": 2,
+      "story_title": "Managed agents are becoming a service, not just a prompt box",
+      "target_audience": "Small teams, creators with support or intake workflows, and professionals comparing automation options",
+      "format": "searchable explainer with a clear rollout question",
+      "opening": "Would you let a vendor set up your AI agent?",
+      "payoff": "Ask what setup is included, who monitors failures, and how human handoffs work before you trust the agent with real work.",
+      "selection_reason": "YouTube Shorts can hold the extra context needed to explain managed rollout, guardrails and operational consequences.",
+      "platform_fit_score": 9
+    },
+    "facebook": {
+      "story_index": 0,
+      "story_title": "Open models are turning into a workflow-control question",
+      "target_audience": "Creators and small business operators who handle client work, drafts, notes or other sensitive workflows",
+      "format": "discussion starter about control and choice",
+      "opening": "Would you trade control for an easier AI setup?",
+      "payoff": "Test whether the tool lets you inspect it, move your data, or keep the work closer to your own environment.",
+      "selection_reason": "This version invites practical discussion from people who care about control, trust and how work is handled.",
+      "platform_fit_score": 8
+    },
+    "pinterest": {
+      "story_index": 1,
+      "story_title": "Google is measuring AI like a work system, not a demo",
+      "target_audience": "Creators, freelancers and small operators who want a simple way to judge AI tools",
+      "format": "searchable checklist-style idea",
+      "opening": "How to test whether AI actually saves you time",
+      "payoff": "Use one repeat-task test to measure minutes saved and cleanup needed before you keep a tool.",
+      "selection_reason": "The measurement story is highly searchable, useful as a checklist, and easy to save for later.",
+      "platform_fit_score": 9
+    },
+    "linkedin": {
+      "story_index": 2,
+      "story_title": "Managed agents are becoming a service, not just a prompt box",
+      "target_audience": "Teams and professionals making workflow and automation decisions",
+      "format": "workplace decision and operational lesson",
+      "opening": "Would you buy an AI agent without setup help?",
+      "payoff": "Treat deployment as a managed rollout and ask who monitors failures, what the guardrails are, and how human handoffs work.",
+      "selection_reason": "LinkedIn favors operational judgment and professional tradeoffs, which this story handles clearly.",
+      "platform_fit_score": 9
+    }
+  },
+  "overall_reasoning": "The strongest creator-focused signal this week is that AI buying is shifting from novelty to proof, control and deployment. Story 1 is the clearest short-form and search story because anyone can test one repeated task. Story 2 is the best professional and explanatory story because it turns agent rollout into a practical management question. Story 0 works well for discussion about control and data, while story 3 is a useful but less immediate forecast about bundled services. Each platform gets the story that best matches how people actually use that feed."
+}

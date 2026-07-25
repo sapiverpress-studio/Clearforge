@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-25-creator",
+  "base_date": "2026-07-25",
+  "angle": "creator_workflow",
+  "editorial_theme": {
+    "day": "Saturday",
+    "date": "2026-07-25",
+    "slug": "clearforge-forecast",
+    "title": "Clearforge forecast",
+    "focus": "Evidence-based forecast piece using the week’s confirmed developments.",
+    "instruction": "Ask: if this happened this week, what might reasonably follow? Which companies may follow suit? What should creators and small businesses watch? Clearly label forecasts as forecasts. Do not present predictions as facts."
+  },
+  "reused_base_run": "base-current-2026-07-25",
+  "source_urls_reused": [
+    "https://www.reuters.com/technology/nvidia-microsoft-other-tech-giants-back-open-source-ai-models-2026-07-24/",
+    "https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/",
+    "https://openai.com/index/introducing-openai-presence/",
+    "https://blogs.microsoft.com/blog/2026/07/22/powering-americas-genesis-mission-microsofts-commitment-to-scientific-discovery/"
+  ],
+  "passed": true
+}

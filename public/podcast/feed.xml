@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>
     <copyright>Clearforge</copyright>
     <generator>Clearforge hosted podcast feed</generator>
-    <lastBuildDate>Sat, 25 Jul 2026 05:44:07 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2026 19:28:02 GMT</lastBuildDate>
     <atom:link href="https://clearforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Clearforge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://clearforge-daily-brief.netlify.app/podcast/cover.png"/>
+    <item>
+      <title>Managed agents are becoming the product, not just the prompt</title>
+      <description>This is the clearest signal in the edition that AI buying criteria are shifting from ‘which model is smartest’ to ‘which system is controllable, deployable, and supportable.’ OpenAI’s limited, enterprise-only rollout turns agents into a managed workflow product, which is directly relevant to creators and small businesses deciding whether to self-serve, buy a closed tool, or pay for setup help.</description>
+      <content:encoded><![CDATA[<p>This is the clearest signal in the edition that AI buying criteria are shifting from ‘which model is smartest’ to ‘which system is controllable, deployable, and supportable.’ OpenAI’s limited, enterprise-only rollout turns agents into a managed workflow product, which is directly relevant to creators and small businesses deciding whether to self-serve, buy a closed tool, or pay for setup help.</p><p><strong>Read alongside this episode:</strong> <a href="https://clearforge-daily-brief.netlify.app/posts/2026-07-25-creator.html">daily briefing</a> · <a href="https://clearforge-daily-brief.netlify.app/features/2026-07-25-creator.html">feature analysis</a></p><p><a href="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-25-creator.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-25-creator.html</link>
+      <guid isPermaLink="false">clearforge:2026-07-25-creator</guid>
+      <pubDate>Sat, 25 Jul 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-25-creator.mp3" length="7984318" type="audio/mpeg"/>
+      <itunes:author>Clearforge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:09:18</itunes:duration>
+      <podcast:transcript url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-25-creator.txt" type="text/plain"/>
+    </item>
     <item>
       <title>Saturday forecast: open models, production agents and AI measurement are the next things to watch</title>
       <description>This is the broadest signal in the edition. It affects policy, buying decisions, deployment control and how organizations think about AI infrastructure, so it has the widest practical impact for creators, small businesses and enterprise buyers.</description>

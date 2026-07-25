@@ -1,23 +1,21 @@
 {
   "version": 1,
-  "date": "2026-07-25",
+  "date": "2026-07-25-creator",
   "brand": "Clearforge",
   "type": "clearforge_daily_biggest_story_podcast_script",
   "human_review_required": true,
   "narrator": "Irene",
   "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
-  "episode_title": "Saturday forecast: open models, production agents and AI measurement are the next things to watch",
-  "selected_story_index": 0,
-  "selected_story_title": "Open models are becoming a policy and procurement issue",
-  "selection_reason": "This is the broadest signal in the edition. It affects policy, buying decisions, deployment control and how organizations think about AI infrastructure, so it has the widest practical impact for creators, small businesses and enterprise buyers.",
-  "word_count": 1170,
-  "estimated_duration_minutes": 8.1,
+  "episode_title": "Managed agents are becoming the product, not just the prompt",
+  "selected_story_index": 2,
+  "selected_story_title": "Managed agents are becoming a service, not just a prompt box",
+  "selection_reason": "This is the clearest signal in the edition that AI buying criteria are shifting from ‘which model is smartest’ to ‘which system is controllable, deployable, and supportable.’ OpenAI’s limited, enterprise-only rollout turns agents into a managed workflow product, which is directly relevant to creators and small businesses deciding whether to self-serve, buy a closed tool, or pay for setup help.",
+  "word_count": 1349,
+  "estimated_duration_minutes": 9.3,
   "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
   "source_notes": "source-notes.md",
-  "first_spoken_line": "This week’s clearest AI signal is not that one model suddenly won. It is that buyers are starting to ask a different set of questions: Can we inspect it? Can we run it where we want? Can we trust the deployment model? That shift is why the open-model debate matters.",
-  "final_spoken_line": "And if you want one simple action item from today, make it this: pick one repeated task, test one tool on that exact workflow for a week, and see whether it saves time without creating extra cleanup. That is the kind of measurement that will matter more and more as the AI market matures.",
-  "validation_warnings": [
-    "Script is shorter than target: 1170 words."
-  ],
+  "first_spoken_line": "Today’s biggest story is OpenAI’s Presence, and the key detail is not just that it exists. It is how it is being sold.",
+  "final_spoken_line": "That is the real story here. The market is moving from, ‘Can this AI answer my question?’ to, ‘Can this AI fit my workflow without taking control away from me?’ For creators and small businesses, that is the question worth asking first.",
+  "validation_warnings": [],
   "non_spoken_instruction_candidates": []
 }

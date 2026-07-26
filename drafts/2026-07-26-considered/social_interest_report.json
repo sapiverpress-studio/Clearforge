@@ -1,0 +1,43 @@
+{
+  "date": "2026-07-26-considered",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Could disclosure become a workflow step?",
+      "words": 26,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Could disclosure become part of the workflow?",
+      "words": 110,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Could disclosure become part of the workflow?",
+      "words": 79,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Could disclosure become a workflow step?",
+      "words": 79,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "Where should AI disclosure live in your workflow?",
+    "title_words": 8,
+    "description_words": 25
+  },
+  "warnings": [
+    "TikTok content is shorter than preferred (26 words)"
+  ]
+}

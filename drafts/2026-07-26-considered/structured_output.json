@@ -1,0 +1,297 @@
+{
+  "headline": "Could AI disclosure become the next product bottleneck?",
+  "dek": "This week’s clearest confirmed shift is that AI is shipping into creator tools, enterprise systems and public rules at once — which raises one practical question for next week: where does disclosure actually live in the workflow?",
+  "edition_angle": "considered_question",
+  "sources": [
+    {
+      "source_name": "Meta AI",
+      "title": "Introducing Muse Image and Muse Video",
+      "url": "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/",
+      "published_date": "2026-07-07",
+      "coverage_lane": "confirmed_development",
+      "topic_category": "creator_tools_and_media",
+      "evidence_basis": "Official product/research announcement describing Muse Image availability, Muse Video preview status, supported surfaces, watermarking and creator availability.",
+      "confirmed_fact": "Meta said Muse Image is available now in the Meta AI app, on meta.ai, in Instagram Stories in the U.S. and in WhatsApp in limited countries, while Muse Video is coming soon to creators and Meta AI.",
+      "interpretation": "Meta is pushing creator-facing image and video generation deeper into its own products, while adding provenance controls at the same time."
+    },
+    {
+      "source_name": "Intel Newsroom",
+      "title": "Intel and Google Cloud Announce Collaboration to Accelerate Intel’s AI-Enabled Enterprise Transformation",
+      "url": "https://newsroom.intel.com/artificial-intelligence/intel-google-cloud-announce-collaboration-to-accelerate-intel-ai-enabled-enterprise-transformation",
+      "published_date": "2026-07-16",
+      "coverage_lane": "confirmed_development",
+      "topic_category": "workplace_and_business",
+      "evidence_basis": "Official joint announcement of deployment and collaboration terms, including the use of Gemini Enterprise, Google Cloud infrastructure and Intel workflow changes.",
+      "confirmed_fact": "Intel said it will deploy Gemini Enterprise and Google Cloud to expand AI capabilities across engineering, supply chain and corporate operations, and to support chip-development workflows.",
+      "interpretation": "The deal is a good example of enterprise AI moving from pilots into broader operational and engineering work."
+    },
+    {
+      "source_name": "European Commission",
+      "title": "Commission publishes guidelines on transparency obligations for providers and deployers of certain AI systems",
+      "url": "https://digital-strategy.ec.europa.eu/en/news/commission-publishes-guidelines-transparency-obligations-providers-and-deployers-certain-ai-systems",
+      "published_date": "2026-07-20",
+      "coverage_lane": "confirmed_development",
+      "topic_category": "policy_safety_and_security",
+      "evidence_basis": "Official Commission guidance explaining Article 50 transparency obligations and their start date.",
+      "confirmed_fact": "The Commission published guidance for AI Act transparency duties that begin applying on 2 August 2026, including requirements around user disclosure, deepfakes and machine-readable marking of AI-generated or manipulated content.",
+      "interpretation": "Europe is moving from broad AI rules toward operational requirements that will affect product design, labeling and disclosure practices."
+    },
+    {
+      "source_name": "Office for National Statistics",
+      "title": "Artificial intelligence in UK businesses: 2023 to 2026",
+      "url": "https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/articles/artificialintelligenceinukbusinesses/2023to2026",
+      "published_date": "2026-07-20",
+      "coverage_lane": "human_impact",
+      "topic_category": "education_employment_and_society",
+      "evidence_basis": "Official ONS analysis based on the Business Insights and Conditions Survey and Opinions and Lifestyle Survey, with methodology and wave dates stated in the release.",
+      "confirmed_fact": "ONS said self-reported AI use in UK businesses with 10 or more employees rose from around 12% in late 2023 to around 35% by June 2026, while over half of employees reported using AI for work or education.",
+      "interpretation": "The UK picture suggests AI has become normal enough to be measurable in business and worker surveys, but still shallow in depth for most firms."
+    }
+  ],
+  "story_summaries": [
+    {
+      "title": "Could disclosure become part of the creator workflow?",
+      "coverage_lane": "confirmed_development",
+      "topic_category": "policy_safety_and_security",
+      "summary": "The European Commission published guidance on AI Act transparency duties that begin on 2 August 2026, including user disclosure, deepfake handling and machine-readable marking. For teams publishing AI-assisted images, video or copy, the practical issue is no longer whether disclosure exists in theory. It is where it sits in the process.",
+      "why_it_matters": "If disclosure sits too late, it becomes a rework problem. If it sits too early, teams need a clean rule for public-facing content.",
+      "practical_angle": "Map one output path — draft, review, label, publish — and see where transparency is handled today.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "Meta is building provenance into creator-facing tools",
+      "coverage_lane": "confirmed_development",
+      "topic_category": "creator_tools_and_media",
+      "summary": "Meta said Muse Image is available now across Meta AI surfaces, and Muse Video is coming soon. The company also said generated images carry a hidden Content Seal watermark and that it is previewing a detection tool. That makes provenance part of the product conversation, not just a policy one.",
+      "why_it_matters": "Creators need to know whether the platform helps them trace AI media, not just create it.",
+      "practical_angle": "Test how much control you keep over disclosure and reuse when generation happens inside the platform.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "Enterprise AI is moving closer to operational rules",
+      "coverage_lane": "confirmed_development",
+      "topic_category": "workplace_and_business",
+      "summary": "Intel said it will deploy Gemini Enterprise and Google Cloud across engineering, supply chain and corporate operations. That signals a shift from pilot projects toward workflow systems with owners, deadlines and accountability.",
+      "why_it_matters": "The question is not whether AI can produce a draft. It is whether it can be fitted into real processes without breaking controls.",
+      "practical_angle": "Ask which step in a high-value process would need logging, review or approval before AI could touch it.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "Broad AI use in UK firms is no longer hypothetical",
+      "coverage_lane": "human_impact",
+      "topic_category": "education_employment_and_society",
+      "summary": "ONS said self-reported AI use in UK businesses with 10 or more employees rose to around 35% by June 2026, and over half of employees reported using AI for work or education. The adoption signal is broad, but the average depth still looks modest.",
+      "why_it_matters": "More firms are now close enough to transparency and governance questions that they can’t treat AI as an edge case.",
+      "practical_angle": "If your team has started using AI informally, one simple policy or checklist can prevent confusion later.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    }
+  ],
+  "main_article": "Could AI disclosure become the next workflow bottleneck? That is the most useful question left by this week’s evidence. The clearest confirmed development was not a bigger benchmark or a louder demo. It was a set of changes that push AI deeper into products, operations and public-facing content at the same time. The European Commission published transparency guidance for AI Act duties that begin on 2 August. Meta said Muse Image is already live on its own surfaces, with Muse Video on the way. Intel said it will deploy Gemini Enterprise and Google Cloud across engineering, supply chain and corporate operations. And the ONS said UK business adoption has moved far enough to show up in official numbers. Taken together, the signal is simple: AI is no longer only a model story. It is becoming a workflow and governance story.\n\nThe confirmed policy piece matters because it turns a vague principle into a concrete product decision. The Commission’s guidance covers user disclosure, deepfakes and machine-readable marking of AI-generated or manipulated content. That means the question for product teams is not just whether they use AI, but where the disclosure lives. Does it appear before a user interacts with a system, inside the content itself, or in a review step before publication? Those are workflow questions, not abstract legal ones. For teams shipping content tools, customer-facing assistants or marketing systems, transparency is no longer something to tack on after the model works. It has to be built into the path from generation to publication.\n\nMeta’s Muse release shows why that matters. Meta said Muse Image is available now in the Meta AI app, on meta.ai, in Instagram Stories in the U.S. and in limited WhatsApp markets, while Muse Video is coming soon to creators and Meta AI. That is not just a model launch; it is a distribution choice. The company is putting generation inside the surfaces people already use, and it is pairing that with a hidden Content Seal watermark and a detection tool. The practical consequence is easy to miss: the easier it becomes to create media, the more important it becomes to trace where it came from. For creators, that means provenance is no longer a separate policy discussion. It is part of the tool itself.\n\nIntel’s collaboration with Google Cloud points in the same direction from the business side. Intel said it will deploy Gemini Enterprise and Google Cloud to expand AI capabilities across engineering, supply chain and corporate operations, and to support chip-development workflows. The value here is not a flashy chatbot. It is the move from isolated tests to company systems with owners, deadlines and accountability. If AI is touching engineering, supply chain and corporate operations, then review, logging and exception handling stop being optional extras. The obvious next question is not whether AI can save time on a draft. It is whether the company can use it without making the process harder to audit.\n\nThe UK adoption data gives that a wider social frame. ONS said self-reported AI use in UK businesses with 10 or more employees rose from around 12% in late 2023 to around 35% by June 2026, and over half of employees reported using AI for work or education. That is enough spread to make governance ordinary. The open question is depth. If most firms are still using only a few tools in a few places, then the next week of AI news may not be about a dramatic leap in capability. It may be about whether those shallow uses become repeatable work habits with rules attached.\n\nThat is the prediction check for Sunday. The evidence does not say every company will suddenly redesign its stack next week. It does say the pressure points are becoming visible: disclosure for public content, provenance for creator tools, integration for enterprise workflows, and basic policy for everyday use. The smartest response is not to try everything at once. It is to choose one output and ask where the AI label, watermark or human review would live before it ships.\n\nSo the open question for next week is narrow but important: when AI is embedded in a product or process, who is responsible for proving what touched the content? If the answer is unclear, the risk is not just compliance trouble. It is confusion at the exact point where AI is supposed to make work simpler.",
+  "practical_takeaway": "Treat AI disclosure as a workflow step, not a last-minute label.",
+  "what_to_test_next": "Pick one public-facing AI output and map exactly where the label, watermark or human review would happen before publish.",
+  "claims_to_verify": [],
+  "social": {
+    "tiktok_script": "Could disclosure become a workflow step? The Commission says AI Act transparency duties start 2 August. If you publish AI content, map where the label lives.",
+    "tiktok_caption_prompt": "Would you map image, video, or chat first?",
+    "youtube_shorts_script": "Could disclosure become part of the workflow? The European Commission says AI Act transparency duties start on 2 August, including user disclosure, deepfake notices, and machine-readable marking for AI-generated or manipulated content. For teams publishing AI images, video, copy, or chat outputs, that turns disclosure into a process choice, not a last-minute fix. The practical question is where the label lives: before generation, in review, or at publish. Meta’s Muse release shows the same pressure on the creator side, where generation and provenance are being built into the product itself. If you manage one public-facing output, map the label path now. Which would you test first: image, video, or chat?",
+    "facebook_post": "Could disclosure become part of the workflow? The European Commission says AI Act transparency duties start on 2 August, including user disclosure, deepfake handling, and machine-readable marking for AI-generated or manipulated content. That means the practical issue is not whether a label exists, but where it sits before publication. If you manage AI images, video, or copy, map one output path and see where the label or review step belongs. Which would you map first: image, video, or chat?",
+    "pinterest_title": "Where should AI disclosure live in your workflow?",
+    "pinterest_description": "Use this checklist to map where AI labels, deepfake notices, or human review belong before publish. Save it, then reply with image, video, or chat.",
+    "linkedin_post": "Could disclosure become a workflow step? The European Commission says AI Act transparency duties start on 2 August, including user disclosure, deepfake handling, and machine-readable marking for AI-generated or manipulated content. For product, marketing, and compliance teams, that shifts disclosure from a policy note to an operational decision: where does the label, watermark, or review step live before publish? If your team already uses AI in one public-facing process, which step would you map first: draft, review, or approval?",
+    "quote_card_lines": [
+      "Could disclosure become a workflow step?",
+      "Where should the label live before publish?",
+      "Labeling works better when it is built into the process.",
+      "Who is responsible for the label before content ships?",
+      "AI transparency is now a workflow design question."
+    ]
+  },
+  "headline_options": [
+    "Could AI disclosure become the next product bottleneck?",
+    "Sunday reset: the new AI question is where disclosure lives",
+    "AI is moving into workflows — and so is the label",
+    "What happens when AI output needs to be traceable?",
+    "The Sunday AI reset: provenance, process and the next compliance step"
+  ],
+  "editorial_theme": {
+    "day": "Sunday",
+    "date": "2026-07-26",
+    "slug": "weekly-recap-prediction-check",
+    "title": "Recap and prediction check",
+    "focus": "Recap the strongest developments of the week, check any recent Clearforge forecasts where evidence exists, and prepare the reader for the following week.",
+    "instruction": "Separate confirmed outcomes from still-open questions. Make the piece useful as a Sunday reset before the next week of AI news."
+  },
+  "edition_id": "2026-07-26-considered",
+  "base_date": "2026-07-26",
+  "edition_mode": "alternate_angle",
+  "audience_fit": {
+    "generated_at": "2026-07-26T19:21:11.234Z",
+    "story_assessments": [
+      {
+        "story_index": 0,
+        "story_title": "Could disclosure become part of the creator workflow?",
+        "target_audience": "Creators, product teams, compliance leads and marketing ops teams shipping AI-assisted content",
+        "audience_problem_or_desire": "They need to know where AI disclosure, deepfake handling and marking belong in a real publishing process",
+        "interest_signal": "A concrete policy date plus an operational question that affects any public-facing AI output",
+        "stop_reason": "The question is immediately legible: teams have to place disclosure somewhere in the workflow before content ships",
+        "promised_payoff": "A simple way to map one output path and decide where the label or review step lives",
+        "proof_point": "European Commission guidance on AI Act transparency duties beginning 2 August 2026, including user disclosure and machine-readable marking",
+        "search_phrases": [
+          "AI disclosure workflow",
+          "AI Act transparency duties",
+          "machine-readable marking AI content",
+          "where should AI labels live"
+        ],
+        "scores": {
+          "audience_fit": 10,
+          "practical_consequence": 10,
+          "searchability": 9,
+          "stranger_usefulness": 10,
+          "novelty": 8,
+          "visual_potential": 7,
+          "discussion_potential": 9,
+          "short_form_clarity": 10
+        },
+        "overall_score": 9,
+        "score_reason": "Strongest mix of confirmed policy change, clear operational consequence and easy 30-second explanation."
+      },
+      {
+        "story_index": 1,
+        "story_title": "Meta is building provenance into creator-facing tools",
+        "target_audience": "Creators, social platform managers, media policy watchers and product teams using generative tools",
+        "audience_problem_or_desire": "They want to know whether provenance and tracing are built into the tool, not added after the fact",
+        "interest_signal": "Meta is pairing generation surfaces with watermarking and a detection tool",
+        "stop_reason": "It creates a clear trade-off between convenience and traceability for creator workflows",
+        "promised_payoff": "A way to think about provenance as part of the product, not a separate policy file",
+        "proof_point": "Meta said Muse Image is available across Meta AI surfaces and Muse Video is coming soon, with hidden Content Seal watermarking and a detection tool in preview",
+        "search_phrases": [
+          "Meta Muse Image watermarking",
+          "creator provenance tools",
+          "AI content watermarking",
+          "Meta AI generated media"
+        ],
+        "scores": {
+          "audience_fit": 9,
+          "practical_consequence": 8,
+          "searchability": 8,
+          "stranger_usefulness": 8,
+          "novelty": 8,
+          "visual_potential": 9,
+          "discussion_potential": 8,
+          "short_form_clarity": 8
+        },
+        "overall_score": 8,
+        "score_reason": "Good creator-side angle with strong visual hooks, but the consequence is narrower than the disclosure workflow question."
+      },
+      {
+        "story_index": 2,
+        "story_title": "Enterprise AI is moving closer to operational rules",
+        "target_audience": "Operations leaders, IT leads, engineering managers and compliance teams in larger businesses",
+        "audience_problem_or_desire": "They need to know how AI fits into accountable workflows without breaking logging, review or approval controls",
+        "interest_signal": "Intel’s deployment spans engineering, supply chain and corporate operations",
+        "stop_reason": "The practical tension is between AI speed and auditability in real business processes",
+        "promised_payoff": "A clean way to ask which process step would need review before AI touches it",
+        "proof_point": "Intel said it will deploy Gemini Enterprise and Google Cloud across engineering, supply chain and corporate operations",
+        "search_phrases": [
+          "enterprise AI workflow controls",
+          "Gemini Enterprise Intel",
+          "AI governance operations",
+          "AI logging review approval"
+        ],
+        "scores": {
+          "audience_fit": 8,
+          "practical_consequence": 8,
+          "searchability": 7,
+          "stranger_usefulness": 8,
+          "novelty": 7,
+          "visual_potential": 6,
+          "discussion_potential": 8,
+          "short_form_clarity": 8
+        },
+        "overall_score": 8,
+        "score_reason": "Useful enterprise signal, though less immediate and less universal than the disclosure workflow question."
+      },
+      {
+        "story_index": 3,
+        "story_title": "Broad AI use in UK firms is no longer hypothetical",
+        "target_audience": "Business leaders, managers, HR teams and policy-minded readers tracking workplace AI adoption",
+        "audience_problem_or_desire": "They want to know whether AI use is now common enough that basic policy and checklist questions matter",
+        "interest_signal": "Official survey numbers show AI use rising across UK businesses and workers",
+        "stop_reason": "The story is broad and credible, but the consequence is more gradual and less specific",
+        "promised_payoff": "A simple prompt to start a first AI policy or checklist",
+        "proof_point": "ONS said self-reported AI use in UK businesses with 10 or more employees rose to around 35% by June 2026, and over half of employees reported using AI for work or education",
+        "search_phrases": [
+          "UK business AI adoption ONS",
+          "employee AI use survey",
+          "AI policy checklist workplace",
+          "AI use in UK firms"
+        ],
+        "scores": {
+          "audience_fit": 7,
+          "practical_consequence": 6,
+          "searchability": 7,
+          "stranger_usefulness": 7,
+          "novelty": 6,
+          "visual_potential": 5,
+          "discussion_potential": 6,
+          "short_form_clarity": 7
+        },
+        "overall_score": 7,
+        "score_reason": "Solid context story, but it is less actionable than the confirmed disclosure workflow question."
+      }
+    ],
+    "platform_selections": {
+      "tiktok": {
+        "story_index": 0,
+        "story_title": "Could disclosure become part of the creator workflow?",
+        "target_audience": "Creators, product teams and compliance leads shipping AI content",
+        "format": "single-discovery micro-explainer",
+        "opening": "Could disclosure become a workflow step?",
+        "payoff": "The Commission says AI Act transparency duties start on 2 August, so teams need to map where the label lives before content ships.",
+        "selection_reason": "This is the clearest one-step consequence from the week and fits the evening micro-explainer rule: one confirmed fact, one workflow question, one immediate payoff.",
+        "platform_fit_score": 10
+      },
+      "youtube": {
+        "story_index": 0,
+        "story_title": "Could disclosure become part of the creator workflow?",
+        "target_audience": "Creators, product teams, compliance leads and marketers",
+        "format": "short explainer",
+        "opening": "Could disclosure become part of the workflow?",
+        "payoff": "AI Act transparency duties begin on 2 August, which makes label placement a process decision for teams shipping images, video, copy or chat outputs.",
+        "selection_reason": "YouTube Shorts can carry the same single question but has room to explain the operational trade-off clearly and searchably.",
+        "platform_fit_score": 9
+      },
+      "facebook": {
+        "story_index": 0,
+        "story_title": "Could disclosure become part of the creator workflow?",
+        "target_audience": "Creators, marketers, product teams and business managers",
+        "format": "discussion post",
+        "opening": "Could disclosure become part of the workflow?",
+        "payoff": "The Commission’s transparency duties begin on 2 August, so teams publishing AI content need a clear place for the label or review step before they hit publish.",
+        "selection_reason": "Facebook works well with practical process questions that feel familiar to teams handling images, video or copy.",
+        "platform_fit_score": 8
+      },
+      "pinterest": {
+        "story_index": 0,
+        "story_title": "Could disclosure become part of the creator workflow?",
+        "target_audience": "People saving checklists for AI content, compliance and publishing workflows",
+        "format": "checklist pin",
+        "opening": "Where should AI disclosure live in your workflow?",
+        "payoff": "A simple map of where labels, review or marking belong before publish helps teams turn transparency into a repeatable step.",
+        "selection_reason": "Pinterest favors searchable checklist language, and this story translates cleanly into a saveable workflow guide.",
+        "platform_fit_score": 8
+      },
+      "linkedin": {
+        "story_index": 0,
+        "story_title": "Could disclosure become part of the creator workflow?",
+        "target_audience": "Product, marketing, operations and compliance professionals",
+        "format": "workplace analysis post",
+        "opening": "Could disclosure become a workflow step?",
+        "payoff": "With AI Act transparency duties beginning on 2 August, the operational decision is where disclosure, marking or review happens before publish.",
+        "selection_reason": "LinkedIn is the best place to frame this as an operational decision with accountability, not just a policy note.",
+        "platform_fit_score": 9
+      }
+    },
+    "overall_reasoning": "Story 0 is the strongest evening considered-question because it combines a verified policy start date with a second-order operational consequence that can be explained quickly: disclosure has to live somewhere in the workflow. The other stories are useful, but they are narrower, less universal, or less immediate for a short social question."
+  }
+}

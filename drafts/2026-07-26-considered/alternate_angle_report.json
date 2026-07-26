@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-26-considered",
+  "base_date": "2026-07-26",
+  "angle": "considered_question",
+  "editorial_theme": {
+    "day": "Sunday",
+    "date": "2026-07-26",
+    "slug": "weekly-recap-prediction-check",
+    "title": "Recap and prediction check",
+    "focus": "Recap the strongest developments of the week, check any recent Clearforge forecasts where evidence exists, and prepare the reader for the following week.",
+    "instruction": "Separate confirmed outcomes from still-open questions. Make the piece useful as a Sunday reset before the next week of AI news."
+  },
+  "reused_base_run": "base-current-2026-07-26",
+  "source_urls_reused": [
+    "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/",
+    "https://newsroom.intel.com/artificial-intelligence/intel-google-cloud-announce-collaboration-to-accelerate-intel-ai-enabled-enterprise-transformation",
+    "https://digital-strategy.ec.europa.eu/en/news/commission-publishes-guidelines-transparency-obligations-providers-and-deployers-certain-ai-systems",
+    "https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/articles/artificialintelligenceinukbusinesses/2023to2026"
+  ],
+  "passed": true
+}

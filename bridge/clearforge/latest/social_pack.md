@@ -1,4 +1,4 @@
-# Clearforge Social Repurpose Pack — 2026-07-26
+# Clearforge Social Repurpose Pack — 2026-07-26-considered
 
 Status: Draft — audience-fit optimised; automatic validation pending
 
@@ -8,80 +8,80 @@ Editorial theme: Sunday — Recap and prediction check
 
 ### Tiktok
 
-- Selected story: UK business adoption is up, but the depth is still thin
-- Audience: Small business owners and practical AI learners
-- Format: micro-explainer
-- Opening: Can a 35% adoption rate still mean shallow AI use?
-- Payoff: ONS says UK business AI use reached about 35%, so the first win is one repeatable task.
-- Platform fit: 9/10
-- Why selected: This story has the cleanest single-discovery tension for a fast TikTok: adoption is up, depth is still thin, and the consequence is immediately practical.
+- Selected story: Could disclosure become part of the creator workflow?
+- Audience: Creators, product teams and compliance leads shipping AI content
+- Format: single-discovery micro-explainer
+- Opening: Could disclosure become a workflow step?
+- Payoff: The Commission says AI Act transparency duties start on 2 August, so teams need to map where the label lives before content ships.
+- Platform fit: 10/10
+- Why selected: This is the clearest one-step consequence from the week and fits the evening micro-explainer rule: one confirmed fact, one workflow question, one immediate payoff.
 
 ### Youtube
 
-- Selected story: Intel and Google Cloud show enterprise AI moving into core operations
-- Audience: Enterprise leaders, operators, and workplace watchers
+- Selected story: Could disclosure become part of the creator workflow?
+- Audience: Creators, product teams, compliance leads and marketers
 - Format: short explainer
-- Opening: Can enterprise AI actually change how a company runs?
-- Payoff: Intel said it will deploy Gemini Enterprise and Google Cloud across engineering, supply chain, and corporate operations.
+- Opening: Could disclosure become part of the workflow?
+- Payoff: AI Act transparency duties begin on 2 August, which makes label placement a process decision for teams shipping images, video, copy or chat outputs.
 - Platform fit: 9/10
-- Why selected: This is the strongest searchable workplace story and gives Shorts a concrete example of AI moving into real operations.
+- Why selected: YouTube Shorts can carry the same single question but has room to explain the operational trade-off clearly and searchably.
 
 ### Facebook
 
-- Selected story: UK business adoption is up, but the depth is still thin
-- Audience: Small business owners and everyday business readers
+- Selected story: Could disclosure become part of the creator workflow?
+- Audience: Creators, marketers, product teams and business managers
 - Format: discussion post
-- Opening: Would you test AI on one weekly task first?
-- Payoff: ONS says UK business AI use rose from around 12% in late 2023 to around 35% by June 2026, but most firms still use only a few tools.
+- Opening: Could disclosure become part of the workflow?
+- Payoff: The Commission’s transparency duties begin on 2 August, so teams publishing AI content need a clear place for the label or review step before they hit publish.
 - Platform fit: 8/10
-- Why selected: Relatable, low-friction, and easy to discuss with familiar choices like drafts, admin, replies, or design work.
+- Why selected: Facebook works well with practical process questions that feel familiar to teams handling images, video or copy.
 
 ### Pinterest
 
-- Selected story: EU transparency rules are becoming a product design issue
-- Audience: Product teams, compliance leads, marketers, and creators
-- Format: searchable guide pin
-- Opening: EU AI transparency rules checklist for product teams
-- Payoff: Use the Commission guidance to check disclosure, deepfakes, and machine-readable marking before the 2 August 2026 start date.
+- Selected story: Could disclosure become part of the creator workflow?
+- Audience: People saving checklists for AI content, compliance and publishing workflows
+- Format: checklist pin
+- Opening: Where should AI disclosure live in your workflow?
+- Payoff: A simple map of where labels, review or marking belong before publish helps teams turn transparency into a repeatable step.
 - Platform fit: 8/10
-- Why selected: Pinterest rewards practical, searchable guidance; this story naturally fits a checklist or saveable reference for teams shipping AI products.
+- Why selected: Pinterest favors searchable checklist language, and this story translates cleanly into a saveable workflow guide.
 
 ### Linkedin
 
-- Selected story: Intel and Google Cloud show enterprise AI moving into core operations
-- Audience: Enterprise decision-makers, operators, and IT leaders
-- Format: professional insight post
-- Opening: Can AI move from pilots into core operations?
-- Payoff: Intel will deploy Gemini Enterprise and Google Cloud across engineering, supply chain, and corporate operations.
+- Selected story: Could disclosure become part of the creator workflow?
+- Audience: Product, marketing, operations and compliance professionals
+- Format: workplace analysis post
+- Opening: Could disclosure become a workflow step?
+- Payoff: With AI Act transparency duties beginning on 2 August, the operational decision is where disclosure, marking or review happens before publish.
 - Platform fit: 9/10
-- Why selected: Best fit for a workplace decision post because it ties AI to ownership, process design, and measurable operational change.
+- Why selected: LinkedIn is the best place to frame this as an operational decision with accountability, not just a policy note.
 
 ## TikTok Script
 
-Can a 35% adoption rate still mean shallow AI use? ONS says UK business AI use reached about 35%, so the first win is one repeatable task.
+Could disclosure become a workflow step? The Commission says AI Act transparency duties start 2 August. If you publish AI content, map where the label lives.
 
 ## YouTube Shorts Script
 
-Can enterprise AI actually change how a company runs? Intel said it will deploy Gemini Enterprise and Google Cloud across engineering, supply chain, and corporate operations, and use the setup to support chip-development workflows. That matters because this is not a side experiment or a chatbot demo. It is AI being wired into jobs that already have owners, deadlines, and accountability. The practical shift is from one-off prompts to integrated workflows tied to real work. If you lead a team, the question is simple: where would AI save time without breaking the process? Share engineering or supply chain, and tell me which one would be harder to integrate.
+Could disclosure become part of the workflow? The European Commission says AI Act transparency duties start on 2 August, including user disclosure, deepfake notices, and machine-readable marking for AI-generated or manipulated content. For teams publishing AI images, video, copy, or chat outputs, that turns disclosure into a process choice, not a last-minute fix. The practical question is where the label lives: before generation, in review, or at publish. Meta’s Muse release shows the same pressure on the creator side, where generation and provenance are being built into the product itself. If you manage one public-facing output, map the label path now. Which would you test first: image, video, or chat?
 
 ## Facebook Post
 
-Would you test AI on one weekly task first? ONS says UK business AI use rose from around 12% in late 2023 to around 35% by June 2026, but most firms still use only a few tools. Over half of employees also report using AI for work or education. If you were starting now, would you use it for drafts, admin, customer replies, or design work? Comment with one choice.
+Could disclosure become part of the workflow? The European Commission says AI Act transparency duties start on 2 August, including user disclosure, deepfake handling, and machine-readable marking for AI-generated or manipulated content. That means the practical issue is not whether a label exists, but where it sits before publication. If you manage AI images, video, or copy, map one output path and see where the label or review step belongs. Which would you map first: image, video, or chat?
 
 ## Pinterest Pin
 
-**Title:** EU AI transparency rules checklist for product teams
+**Title:** Where should AI disclosure live in your workflow?
 
-**Description:** Use this to check disclosure, deepfake handling, and machine-readable marking before 2 August 2026. Save it if your team ships consumer or marketing-facing AI, and comment with the workflow you need to review first.
+**Description:** Use this checklist to map where AI labels, deepfake notices, or human review belong before publish. Save it, then reply with image, video, or chat.
 
 ## LinkedIn-Style Post
 
-Can AI move from pilots into core operations? Intel said it will deploy Gemini Enterprise and Google Cloud across engineering, supply chain, and corporate operations, including chip-development workflows. That matters because enterprise AI is shifting from standalone prompts to systems with owners, deadlines, and process design. The practical question is not whether a model can draft text. It is whether it can sit inside a workflow and save time without adding risk. Which part of your operation would be hardest to integrate first—engineering, supply chain, or corporate ops? Share one example in the comments, and if you'd like, I can look for more real deployment cases next.
+Could disclosure become a workflow step? The European Commission says AI Act transparency duties start on 2 August, including user disclosure, deepfake handling, and machine-readable marking for AI-generated or manipulated content. For product, marketing, and compliance teams, that shifts disclosure from a policy note to an operational decision: where does the label, watermark, or review step live before publish? If your team already uses AI in one public-facing process, which step would you map first: draft, review, or approval?
 
 ## 5 Short Quote/Card Lines
 
-- AI is moving from demos into workflows.
-- Can adoption rise faster than depth?
-- When rules change, disclosure becomes part of the product.
-- One repeatable task is often the smartest first AI test.
-- What workflow needs provenance or labeling built in first?
+- Could disclosure become a workflow step?
+- Where should the label live before publish?
+- Labeling works better when it is built into the process.
+- Who is responsible for the label before content ships?
+- AI transparency is now a workflow design question.

@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-26-considered",
+    "kind": "daily",
+    "title": "Could AI disclosure become the next product bottleneck?",
+    "description": "This is the strongest story because it turns AI disclosure from a general policy idea into a concrete operating requirement with a fixed start date. It affects creators, product teams and small businesses that publish AI-assisted content, so it has the widest immediate practical impact.",
+    "published": "2026-07-26T07:00:00+01:00",
+    "duration": "00:07:42",
+    "size": 6967005,
+    "video_size": 22021397,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-26-considered.mp3",
+    "video_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-26-considered.mp4",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-26-considered.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-26-considered.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-26-considered.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-26-considered.html",
+    "source_dir": "drafts/2026-07-26-considered/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-26",
     "kind": "daily",
     "title": "When AI transparency becomes product design",

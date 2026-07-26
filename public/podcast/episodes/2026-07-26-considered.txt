@@ -1,0 +1,47 @@
+The biggest story this week is not about a new model. It is about where disclosure lives in the workflow.
+
+The European Commission has published guidance on transparency duties under the AI Act, and those duties begin applying on 2 August 2026. The guidance covers user disclosure, deepfakes, and machine-readable marking of AI-generated or AI-manipulated content. In plain English, Europe is moving from broad AI rules to operational requirements that touch product design and publishing steps.
+
+That matters because disclosure is no longer just a policy statement sitting in a footer or a help page. For teams that use AI to draft copy, make images, edit video, or generate marketing assets, the real question is practical: at what point does the system or the team identify the content as AI-related, and who is responsible for making sure that happens?
+
+If that sounds small, it is not. Disclosure is one of those things that can fail quietly. If it happens too late, someone has to redo work. If it happens too early, the content may be labeled before it is even final. If it happens inconsistently, one post gets labeled and another does not. That is how a simple rule turns into a production bottleneck.
+
+So what changed this week? The change is not that transparency suddenly became important. It is that the Commission has now published guidance for duties with a start date. That gives product teams and creators a concrete timeline, and it makes the operational question harder to ignore.
+
+This story is especially relevant for creators, small businesses, agencies, and any team that publishes public-facing AI output. If you are generating an image for social media, a short video for a campaign, a product description, a support article, or a translated announcement, disclosure may no longer be an afterthought. It may need to be part of the path from draft to review to publish.
+
+The useful concept here is workflow disclosure. That means asking a simple question at each step: where does the label happen, where does the watermark happen, and where does human review happen? Those are not the same thing, and they should not be treated as the same thing.
+
+Here is a practical example.
+
+Say a small business uses AI to draft a promotional post and generate a matching image. The draft comes out of the tool. Someone edits it. Someone else approves it. Then it gets posted on a public channel. Under a workflow approach, the team would decide in advance whether the AI label is added at the draft stage, at the approval stage, or right before publishing. If the image needs a machine-readable mark, that has to be handled before export or upload, not after the post is already live. If a human needs to review whether the content could be mistaken for a real person, event, or product demo, that review has to happen before the final button press.
+
+The point is not that every team will run the same process. The point is that every team should know its process.
+
+There are also some important limits to what we know from the guidance itself, at least from this reporting. We know the Commission published guidance and that the transparency duties begin on 2 August 2026. We know the guidance includes user disclosure, deepfake handling, and machine-readable marking. What we do not know from this release alone is exactly how every company should implement every edge case, because that will depend on the content, the product, and the workflow.
+
+That is why the safest response is not panic. It is mapping.
+
+If you want one useful experiment this week, pick one public-facing AI output and trace it from start to finish. Write down the steps: draft, edit, review, label, publish. Then ask three questions. First, where is the disclosure created? Second, where is it checked? Third, where could it be accidentally removed or missed? If you cannot answer those three questions in under a minute, the workflow is probably too vague.
+
+For teams that already have approval gates, this may be easy to slot in. For teams that publish quickly, it may expose a hidden risk: the person who knows the most about the content may not be the person who presses publish. That gap is where confusion usually lives.
+
+There are a few risks to keep in mind.
+
+One is over-labeling. If everything gets tagged in a way that confuses users, the label can lose meaning. Another is under-labeling. If AI-assisted content looks fully human-made when the rules expect disclosure, the team may be out of step with the workflow it thought it had. A third risk is technical mismatch: a visible disclosure in the caption, for example, is not the same thing as a machine-readable mark or watermark if the rule or platform expects both.
+
+And there is a human risk too. People often assume compliance is someone else’s job. But in practice, disclosure usually lives across several roles: the person creating, the person approving, and the person publishing. If those roles are not clear, the process breaks down.
+
+If you are a creator, this affects how you package AI-assisted work before it goes public. If you are a small business, it affects how your marketing or comms team handles posts, ads, and product material. If you are building a product, it affects how disclosure is built into the interface, not just the policy page. And if you are an enterprise team, it affects how AI is threaded into existing controls without creating a new blind spot.
+
+There is a bigger lesson here too. AI adoption is no longer just about what the tool can produce. It is about what the surrounding process can safely handle. That is why disclosure is becoming a product question, not only a policy question.
+
+So here is the Clearforge verdict: use now, but test carefully.
+
+Use it now in the sense that every team can start mapping disclosure into the workflow immediately. Test carefully because the exact implementation will vary by content type, platform, and jurisdiction, and because the line between a helpful label and a broken process is easy to miss.
+
+What should you watch next? Watch for platform-specific guidance, because the general rule is one thing and the in-product implementation is another. Watch for how creators’ tools handle hidden marks, visible notices, and export settings. And watch for whether teams begin treating disclosure like version control: something that gets built in early, checked before release, and logged clearly.
+
+For this week, the most practical move is simple. Don’t ask, do we have a disclosure policy? Ask, where does disclosure actually happen?
+
+That one question may save a lot of rework later.

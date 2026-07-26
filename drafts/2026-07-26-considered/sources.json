@@ -1,0 +1,46 @@
+[
+  {
+    "source_name": "Meta AI",
+    "title": "Introducing Muse Image and Muse Video",
+    "url": "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/",
+    "published_date": "2026-07-07",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "creator_tools_and_media",
+    "evidence_basis": "Official product/research announcement describing Muse Image availability, Muse Video preview status, supported surfaces, watermarking and creator availability.",
+    "confirmed_fact": "Meta said Muse Image is available now in the Meta AI app, on meta.ai, in Instagram Stories in the U.S. and in WhatsApp in limited countries, while Muse Video is coming soon to creators and Meta AI.",
+    "interpretation": "Meta is pushing creator-facing image and video generation deeper into its own products, while adding provenance controls at the same time."
+  },
+  {
+    "source_name": "Intel Newsroom",
+    "title": "Intel and Google Cloud Announce Collaboration to Accelerate Intel’s AI-Enabled Enterprise Transformation",
+    "url": "https://newsroom.intel.com/artificial-intelligence/intel-google-cloud-announce-collaboration-to-accelerate-intel-ai-enabled-enterprise-transformation",
+    "published_date": "2026-07-16",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "workplace_and_business",
+    "evidence_basis": "Official joint announcement of deployment and collaboration terms, including the use of Gemini Enterprise, Google Cloud infrastructure and Intel workflow changes.",
+    "confirmed_fact": "Intel said it will deploy Gemini Enterprise and Google Cloud to expand AI capabilities across engineering, supply chain and corporate operations, and to support chip-development workflows.",
+    "interpretation": "The deal is a good example of enterprise AI moving from pilots into broader operational and engineering work."
+  },
+  {
+    "source_name": "European Commission",
+    "title": "Commission publishes guidelines on transparency obligations for providers and deployers of certain AI systems",
+    "url": "https://digital-strategy.ec.europa.eu/en/news/commission-publishes-guidelines-transparency-obligations-providers-and-deployers-certain-ai-systems",
+    "published_date": "2026-07-20",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "policy_safety_and_security",
+    "evidence_basis": "Official Commission guidance explaining Article 50 transparency obligations and their start date.",
+    "confirmed_fact": "The Commission published guidance for AI Act transparency duties that begin applying on 2 August 2026, including requirements around user disclosure, deepfakes and machine-readable marking of AI-generated or manipulated content.",
+    "interpretation": "Europe is moving from broad AI rules toward operational requirements that will affect product design, labeling and disclosure practices."
+  },
+  {
+    "source_name": "Office for National Statistics",
+    "title": "Artificial intelligence in UK businesses: 2023 to 2026",
+    "url": "https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/articles/artificialintelligenceinukbusinesses/2023to2026",
+    "published_date": "2026-07-20",
+    "coverage_lane": "human_impact",
+    "topic_category": "education_employment_and_society",
+    "evidence_basis": "Official ONS analysis based on the Business Insights and Conditions Survey and Opinions and Lifestyle Survey, with methodology and wave dates stated in the release.",
+    "confirmed_fact": "ONS said self-reported AI use in UK businesses with 10 or more employees rose from around 12% in late 2023 to around 35% by June 2026, while over half of employees reported using AI for work or education.",
+    "interpretation": "The UK picture suggests AI has become normal enough to be measurable in business and worker surveys, but still shallow in depth for most firms."
+  }
+]

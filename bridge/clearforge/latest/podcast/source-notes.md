@@ -1,6 +1,6 @@
-# Source notes — 2026-07-26
+# Source notes — 2026-07-26-considered
 
-Podcast focused on: EU transparency rules are becoming a product design issue
+Podcast focused on: Could disclosure become part of the creator workflow?
 
 ## Sources supplied to the script generator
 

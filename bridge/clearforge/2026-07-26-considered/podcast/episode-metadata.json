@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "date": "2026-07-26-considered",
+  "brand": "Clearforge",
+  "type": "clearforge_daily_biggest_story_podcast_script",
+  "human_review_required": true,
+  "narrator": "Irene",
+  "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+  "episode_title": "Could AI disclosure become the next product bottleneck?",
+  "selected_story_index": 0,
+  "selected_story_title": "Could disclosure become part of the creator workflow?",
+  "selection_reason": "This is the strongest story because it turns AI disclosure from a general policy idea into a concrete operating requirement with a fixed start date. It affects creators, product teams and small businesses that publish AI-assisted content, so it has the widest immediate practical impact.",
+  "word_count": 1120,
+  "estimated_duration_minutes": 7.7,
+  "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+  "source_notes": "source-notes.md",
+  "first_spoken_line": "The biggest story this week is not about a new model. It is about where disclosure lives in the workflow.",
+  "final_spoken_line": "That one question may save a lot of rework later.",
+  "validation_warnings": [
+    "Script is shorter than target: 1120 words."
+  ],
+  "non_spoken_instruction_candidates": []
+}

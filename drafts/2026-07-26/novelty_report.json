@@ -1,0 +1,34 @@
+{
+  "date": "2026-07-26",
+  "editorial_theme": {
+    "day": "Sunday",
+    "date": "2026-07-26",
+    "slug": "weekly-recap-prediction-check",
+    "title": "Recap and prediction check",
+    "focus": "Recap the strongest developments of the week, check any recent Clearforge forecasts where evidence exists, and prepare the reader for the following week.",
+    "instruction": "Separate confirmed outcomes from still-open questions. Make the piece useful as a Sunday reset before the next week of AI news."
+  },
+  "same_day_prior_runs": 0,
+  "excluded_url_count": 27,
+  "excluded_story_title_count": 28,
+  "topic_rotation_evidence_dates": [
+    "2026-07-19",
+    "2026-07-20",
+    "2026-07-21",
+    "2026-07-22",
+    "2026-07-23",
+    "2026-07-24",
+    "2026-07-25"
+  ],
+  "consecutive_week_topic_block": true,
+  "confirmed_development_count": 3,
+  "human_impact_count": 1,
+  "topic_categories": [
+    "creator_tools_and_media",
+    "workplace_and_business",
+    "policy_safety_and_security",
+    "education_employment_and_society"
+  ],
+  "tiktok_used_as_evidence": false,
+  "passed": true
+}

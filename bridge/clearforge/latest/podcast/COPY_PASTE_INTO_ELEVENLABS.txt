@@ -1,61 +1,27 @@
-Today’s biggest story is OpenAI’s Presence, and the key detail is not just that it exists. It is how it is being sold.
+This week’s clearest signal was not a flashy demo. It was a rule change that pushes AI deeper into everyday product design.
 
-OpenAI says Presence is available for voice and chat agents in a limited general-availability program for eligible enterprise customers, and it is not self-serve. That means this is not a tool you simply click into and start experimenting with on your own. It is a managed rollout, with access limited to certain customers.
+The European Commission published guidance on transparency obligations under the AI Act. Those obligations start applying on 2 August 2026. In plain English, the message is that if people interact with AI, if content is a deepfake, or if content is AI-generated or altered in certain ways, the system has to disclose that fact or mark that content in a way users can understand.
 
-That may sound like a narrow product update, but it points to a much bigger shift in how AI is being packaged. For a while, many people thought about AI as a model, or a chat box, or a clever prompt. The user opens it, types something, gets an answer, and maybe builds a little workflow around it. Presence points in a different direction. It suggests that the next wave of AI agents may be sold less like toys for individual experimentation and more like production systems, with policies, simulations, guardrails, and approved actions built in.
+That sounds bureaucratic, but it is actually a practical shift. It means transparency is no longer just a policy document sitting in a drawer. It becomes part of the product itself. If you build or deploy AI tools, you may need to think about labels, notices, watermarking, and how the final output makes clear what was made by a machine and what was reviewed or created by a person.
 
-Let’s unpack that.
+There are two words worth translating here. A provider is the company that makes or supplies the AI system. A deployer is the company or organization that uses it in the real world. That distinction matters, because the obligation is not only about the model in the background. It is about how the system is used, what users see, and how the output is presented.
 
-An AI agent, in plain English, is software that can do more than generate text. It can carry out steps on behalf of a user or a team. That might mean routing a support request, collecting intake details, helping with admin tasks, or following a process that has some rules attached to it. In other words, it is trying to behave more like a workflow than a chat window.
+What is confirmed in the Commission’s guidance is the broad set of duties and the start date. What is not fully answered by this release alone is every edge case. For example, the guidance does not magically resolve every workflow in every sector. How a label should appear, how a deepfake should be handled in a particular product, or how a mixed human-and-AI workflow should be documented will still depend on the use case.
 
-The important change here is that OpenAI is not presenting this as a simple self-serve download. It is positioning it as a managed service for enterprise customers. That matters because it changes the buying question. The question is no longer just, ‘Is the model impressive?’ It becomes, ‘Can I control what it does, who can use it, what data it touches, how it fails, and how much setup help I get?’
+Why does this matter now? Because AI has already moved out of the lab and into customer support, marketing, internal productivity and media production. Once AI is part of those workflows, transparency stops being an abstract compliance question and starts becoming an operations question. Who adds the label? Where does it appear? Does it stay visible when the content is reposted or cropped? Is there a machine-readable mark behind the scenes? Those are product decisions, not just legal ones.
 
-For creators and small businesses, that is a very practical shift. Many teams want automation, but they do not want a black box that makes decisions with no oversight. They want something that can help with repetitive work while still fitting their process. They want guardrails. They want logs. They want clear handoffs when the system is unsure. And they want to know whether they can actually deploy it without hiring a whole internal AI team.
+If you are a creator, this could affect how you publish images, short clips or promotional assets. If you run a small business, it could affect customer replies, ads, product visuals and support messages. If you manage software that reaches European users, this is a reminder to put disclosure and review into the launch checklist before the feature ships, not after someone asks where the AI came from.
 
-That is why this story matters now. It fits a broader pattern across the week: AI vendors are increasingly selling not just capability, but implementation. The tool is no longer just the model. It is the model plus the rules, plus the rollout, plus the support.
+Here is a simple example. Imagine a small business uses an AI tool to generate a product image for social media, then edits it a bit before posting. Under a transparency-first workflow, the team should have a rule for whether that image needs a label, who signs off on the final version, and whether the edit changed the original enough to require a different disclosure. The point is not to guess in the moment. The point is to make the process repeatable.
 
-OpenAI’s announcement gives us a few confirmed facts and a few open questions. Confirmed: Presence is for voice and chat agents. Confirmed: it is in a limited general-availability program. Confirmed: access is for eligible enterprise customers, and it is not self-serve. Confirmed: the product is framed around policies, simulations, guardrails, and approved actions.
+You can test that approach this week without building a whole compliance program from scratch. Pick one workflow that already uses AI, maybe a customer reply template, a blog draft, or a marketing visual. Add two checks: a disclosure check and a human review check. Then measure three things. How long does the full process take? How often does the label need to be rewritten? And does the review step catch errors or awkward claims before the content goes out?
 
-What is not known from the supplied material is just as important. We do not know the pricing. We do not know how broad the rollout will be. We do not know which kinds of businesses will be deemed eligible. We do not know how much configuration a customer will need to do after approval. And we do not know how well it handles the edge cases that matter in real work.
+That kind of trial will tell you something useful. It will show whether AI is actually saving time, or whether it is creating extra cleanup at the end. It will also show whether your current process is ready for a world where transparency is part of the output, not an afterthought.
 
-That uncertainty is exactly why buyers should be careful.
+The main risks are fairly clear. One is assuming that good-looking output is automatically ready to publish. It is not. Another is inconsistent labeling, where one person tags content and another forgets. A third is waiting until the deadline and then trying to retrofit disclosure into a workflow that was never designed for it.
 
-If you are a creator, think about one repeat job you do every week. Maybe it is handling routine audience questions. Maybe it is first-pass lead intake. Maybe it is turning messy notes into a publishable draft. Maybe it is organizing sponsorship inquiries, client messages, or customer support responses.
+For human review, the checks are straightforward. Someone should confirm whether the content is AI-generated, altered, or potentially deepfake material before it is labeled. Someone should approve the final disclosure text and placement. And someone should check that the label still makes sense if the content is shared, resized or reused in another format. That is the kind of discipline that turns a rule into a working process.
 
-Now imagine an agent that can help with that work. The promise is appealing: fewer repetitive steps, quicker responses, and less time spent on low-value admin. But the practical questions are the real ones. What actions can it take without approval? Can it read from and write to your systems? Can you review every step it took? If it makes a mistake, how does the process recover? And if you leave later, can you take your data and logs with you?
+What should you watch next? First, whether consumer tools start surfacing AI labels more visibly in the interface. Second, whether watermarking or machine-readable marking becomes a more common feature in creator and marketing software. Third, whether the same transparency logic starts showing up across more business tools, not just the biggest platforms. And finally, whether users start expecting an AI label the same way they expect a source name or an edit note.
 
-That last question matters more than people think. A lot of AI adoption is won or lost on control. If a tool saves time but traps your data, makes auditing hard, or turns every change into a vendor request, the hidden cost can outweigh the convenience.
-
-Here is a simple way to evaluate a product like this.
-
-Pick one workflow that already happens every week. Keep it narrow. Do not start with your most complex process. Then compare three options: a closed tool, an open or self-hostable tool, and a managed setup if one is available. Measure three things: time saved, correction rate, and how much control you keep over the data.
-
-That means you are not asking whether the AI is clever. You are asking whether it helps you finish the job.
-
-For example, suppose you run a small creative business and you spend time each day sorting incoming requests. A managed agent could potentially gather the basic details, route obvious cases, and flag the ones that need a human. That sounds useful. But you would want the system to be very clear about what it is allowed to do. Maybe it can collect information. Maybe it can suggest a reply. Maybe it can create a draft. But maybe it should not send anything final without review. That difference is the line between help and risk.
-
-The risk is not only bad output. It is also bad process. An agent can create the illusion that work has been handled when, in fact, it has only been partially handled or handled in the wrong way. So human review is not optional in the early stage. It is part of the design.
-
-Here are the checks I would want before using a managed agent in a real business workflow.
-
-First, check the allowed actions. Know exactly what the agent can do on its own and what requires approval.
-
-Second, check the handoff. When the system is uncertain, where does the task go, and who sees it?
-
-Third, check the logs. If something goes wrong, can you see what happened?
-
-Fourth, check the data path. What information is stored, where it lives, and whether you can export it.
-
-Fifth, check the failure mode. If the agent misses a step or misclassifies a request, how quickly can a human catch it?
-
-And sixth, check the setup burden. If the product needs a lot of specialized tuning, that is part of the cost.
-
-That leads to the clearest verdict for this story: test carefully.
-
-I would not treat this as a reason to rush into a new AI platform just because the category sounds advanced. But I also would not dismiss it. Presence is a useful signal. It shows that the market is moving toward AI as a managed workflow, not just a prompt box. For teams that want automation with boundaries, that could be exactly the direction they need.
-
-For now, the smartest move is to stay practical. Run a one-week pilot on one task. Log two numbers every day: minutes saved per task and the number of edits needed before you can publish or send the output. If the system saves time but creates too much cleanup, the value may not be there. If it saves time and stays controllable, then you have something real.
-
-What should you watch next? Watch whether more vendors copy this packaging and sell AI with setup help, policies, reporting, and human oversight built in. Watch whether buyers start demanding proof of time saved instead of polished demos. And watch whether the ability to control deployment becomes as important as the model itself.
-
-That is the real story here. The market is moving from, ‘Can this AI answer my question?’ to, ‘Can this AI fit my workflow without taking control away from me?’ For creators and small businesses, that is the question worth asking first.
+My verdict is test carefully. If you build or publish AI-generated content that can reach Europe, start checking your disclosure workflow now. If you do not, still watch this closely, because transparency rules have a way of spreading from regulation into normal business practice. This week’s lesson is simple: AI is no longer only about what it can make. It is also about what it has to say about itself.

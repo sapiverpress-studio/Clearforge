@@ -1,0 +1,43 @@
+{
+  "date": "2026-07-26",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Can a 35% adoption rate still mean shallow AI use?",
+      "words": 27,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Can enterprise AI actually change how a company runs?",
+      "words": 108,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Would you test AI on one weekly task first?",
+      "words": 70,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Can AI move from pilots into core operations?",
+      "words": 107,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "EU AI transparency rules checklist for product teams",
+    "title_words": 8,
+    "description_words": 34
+  },
+  "warnings": [
+    "TikTok content is shorter than preferred (27 words)"
+  ]
+}

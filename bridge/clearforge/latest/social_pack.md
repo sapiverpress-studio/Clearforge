@@ -1,87 +1,87 @@
-# Clearforge Social Repurpose Pack — 2026-07-25-creator
+# Clearforge Social Repurpose Pack — 2026-07-26
 
 Status: Draft — audience-fit optimised; automatic validation pending
 
-Editorial theme: Saturday — Clearforge forecast
+Editorial theme: Sunday — Recap and prediction check
 
 ## Platform Story Selections
 
 ### Tiktok
 
-- Selected story: Google is measuring AI like a work system, not a demo
-- Audience: Creators, freelancers and small operators who want to know whether AI actually saves time
-- Format: short spoken hook and practical test
-- Opening: Can your AI prove it saves you time?
-- Payoff: Pick one repeat job this week, track minutes saved and cleanup, then compare the result before you keep the tool.
+- Selected story: UK business adoption is up, but the depth is still thin
+- Audience: Small business owners and practical AI learners
+- Format: micro-explainer
+- Opening: Can a 35% adoption rate still mean shallow AI use?
+- Payoff: ONS says UK business AI use reached about 35%, so the first win is one repeatable task.
 - Platform fit: 9/10
-- Why selected: The measurement angle is immediately relatable, easy to say in a few seconds, and strong for save-worthy short form.
+- Why selected: This story has the cleanest single-discovery tension for a fast TikTok: adoption is up, depth is still thin, and the consequence is immediately practical.
 
 ### Youtube
 
-- Selected story: Managed agents are becoming a service, not just a prompt box
-- Audience: Small teams, creators with support or intake workflows, and professionals comparing automation options
-- Format: searchable explainer with a clear rollout question
-- Opening: Would you let a vendor set up your AI agent?
-- Payoff: Ask what setup is included, who monitors failures, and how human handoffs work before you trust the agent with real work.
+- Selected story: Intel and Google Cloud show enterprise AI moving into core operations
+- Audience: Enterprise leaders, operators, and workplace watchers
+- Format: short explainer
+- Opening: Can enterprise AI actually change how a company runs?
+- Payoff: Intel said it will deploy Gemini Enterprise and Google Cloud across engineering, supply chain, and corporate operations.
 - Platform fit: 9/10
-- Why selected: YouTube Shorts can hold the extra context needed to explain managed rollout, guardrails and operational consequences.
+- Why selected: This is the strongest searchable workplace story and gives Shorts a concrete example of AI moving into real operations.
 
 ### Facebook
 
-- Selected story: Open models are turning into a workflow-control question
-- Audience: Creators and small business operators who handle client work, drafts, notes or other sensitive workflows
-- Format: discussion starter about control and choice
-- Opening: Would you trade control for an easier AI setup?
-- Payoff: Test whether the tool lets you inspect it, move your data, or keep the work closer to your own environment.
+- Selected story: UK business adoption is up, but the depth is still thin
+- Audience: Small business owners and everyday business readers
+- Format: discussion post
+- Opening: Would you test AI on one weekly task first?
+- Payoff: ONS says UK business AI use rose from around 12% in late 2023 to around 35% by June 2026, but most firms still use only a few tools.
 - Platform fit: 8/10
-- Why selected: This version invites practical discussion from people who care about control, trust and how work is handled.
+- Why selected: Relatable, low-friction, and easy to discuss with familiar choices like drafts, admin, replies, or design work.
 
 ### Pinterest
 
-- Selected story: Google is measuring AI like a work system, not a demo
-- Audience: Creators, freelancers and small operators who want a simple way to judge AI tools
-- Format: searchable checklist-style idea
-- Opening: How to test whether AI actually saves you time
-- Payoff: Use one repeat-task test to measure minutes saved and cleanup needed before you keep a tool.
-- Platform fit: 9/10
-- Why selected: The measurement story is highly searchable, useful as a checklist, and easy to save for later.
+- Selected story: EU transparency rules are becoming a product design issue
+- Audience: Product teams, compliance leads, marketers, and creators
+- Format: searchable guide pin
+- Opening: EU AI transparency rules checklist for product teams
+- Payoff: Use the Commission guidance to check disclosure, deepfakes, and machine-readable marking before the 2 August 2026 start date.
+- Platform fit: 8/10
+- Why selected: Pinterest rewards practical, searchable guidance; this story naturally fits a checklist or saveable reference for teams shipping AI products.
 
 ### Linkedin
 
-- Selected story: Managed agents are becoming a service, not just a prompt box
-- Audience: Teams and professionals making workflow and automation decisions
-- Format: workplace decision and operational lesson
-- Opening: Would you buy an AI agent without setup help?
-- Payoff: Treat deployment as a managed rollout and ask who monitors failures, what the guardrails are, and how human handoffs work.
+- Selected story: Intel and Google Cloud show enterprise AI moving into core operations
+- Audience: Enterprise decision-makers, operators, and IT leaders
+- Format: professional insight post
+- Opening: Can AI move from pilots into core operations?
+- Payoff: Intel will deploy Gemini Enterprise and Google Cloud across engineering, supply chain, and corporate operations.
 - Platform fit: 9/10
-- Why selected: LinkedIn favors operational judgment and professional tradeoffs, which this story handles clearly.
+- Why selected: Best fit for a workplace decision post because it ties AI to ownership, process design, and measurable operational change.
 
 ## TikTok Script
 
-Can your AI prove it saves you time? Google said ATLAS is built from 15 million aggregated, de-identified human-AI interactions across 150 countries, 140 languages, 800 occupations and 4,000 tasks. Pick one repeat job, track minutes saved and cleanup. Would you test inbox replies or captions first?
+Can a 35% adoption rate still mean shallow AI use? ONS says UK business AI use reached about 35%, so the first win is one repeatable task.
 
 ## YouTube Shorts Script
 
-Would you let a vendor set up your AI agent? OpenAI said Presence is available today for voice and chat agents in a limited general availability program for eligible enterprise customers, and it is not self-serve. It is built around policies, simulations, guardrails and approved actions. That means the real question is not just what the agent can do, but what the rollout includes. If you run a small team, ask who monitors failures, what human handoff looks like, and which actions stay approved only. Which workflow would you trust first: support or intake? Tell me in the comments, and send another workflow Clearforge should investigate next.
+Can enterprise AI actually change how a company runs? Intel said it will deploy Gemini Enterprise and Google Cloud across engineering, supply chain, and corporate operations, and use the setup to support chip-development workflows. That matters because this is not a side experiment or a chatbot demo. It is AI being wired into jobs that already have owners, deadlines, and accountability. The practical shift is from one-off prompts to integrated workflows tied to real work. If you lead a team, the question is simple: where would AI save time without breaking the process? Share engineering or supply chain, and tell me which one would be harder to integrate.
 
 ## Facebook Post
 
-Would you trade control for an easier AI setup? Reuters reported that Nvidia, Microsoft, Meta, IBM, Palantir and other companies backed open-source and open-weight AI models in a letter to lawmakers. For creators and small businesses, the useful question is practical: can you inspect the tool, move your data, or keep the work closer to your own environment? If you had to test one workflow this week, would you go open, local, or fully hosted? Comment with the task you would try, and if you want, I can pull together a simple comparison checklist next.
+Would you test AI on one weekly task first? ONS says UK business AI use rose from around 12% in late 2023 to around 35% by June 2026, but most firms still use only a few tools. Over half of employees also report using AI for work or education. If you were starting now, would you use it for drafts, admin, customer replies, or design work? Comment with one choice.
 
 ## Pinterest Pin
 
-**Title:** How to test whether an AI tool actually saves you time
+**Title:** EU AI transparency rules checklist for product teams
 
-**Description:** Use this simple checklist to judge any tool by the work it removes, not the hype around it. Google said ATLAS is based on 15 million aggregated, de-identified human-AI interactions, so try one repeat task, time it, and note how much cleanup is left. Save this guide and comment with the task you would test first.
+**Description:** Use this to check disclosure, deepfake handling, and machine-readable marking before 2 August 2026. Save it if your team ships consumer or marketing-facing AI, and comment with the workflow you need to review first.
 
 ## LinkedIn-Style Post
 
-Would you buy an AI agent without setup help? OpenAI said Presence is available today for eligible enterprise customers in a limited general availability program, and it is not self-serve. It is built around policies, simulations, guardrails and approved actions, which makes deployment look more like a managed rollout than a simple download. For teams, that means the buying question now includes who monitors failures and how human handoffs work. Which workflow would you pilot first, support or intake? Share your choice, or tell me the one control you would not skip.
+Can AI move from pilots into core operations? Intel said it will deploy Gemini Enterprise and Google Cloud across engineering, supply chain, and corporate operations, including chip-development workflows. That matters because enterprise AI is shifting from standalone prompts to systems with owners, deadlines, and process design. The practical question is not whether a model can draft text. It is whether it can sit inside a workflow and save time without adding risk. Which part of your operation would be hardest to integrate first—engineering, supply chain, or corporate ops? Share one example in the comments, and if you'd like, I can look for more real deployment cases next.
 
 ## 5 Short Quote/Card Lines
 
-- What exactly is open, and what control do you keep?
-- Can this tool prove it saves time on one repeated task?
-- Managed agents may need more setup than a prompt box.
-- Measure minutes saved before you buy a bigger promise.
-- If the service layer is weak, the model alone is not enough.
+- AI is moving from demos into workflows.
+- Can adoption rise faster than depth?
+- When rules change, disclosure becomes part of the product.
+- One repeatable task is often the smartest first AI test.
+- What workflow needs provenance or labeling built in first?

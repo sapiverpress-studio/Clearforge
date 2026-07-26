@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "date": "2026-07-26",
+  "brand": "Clearforge",
+  "type": "clearforge_daily_biggest_story_podcast_script",
+  "human_review_required": true,
+  "narrator": "Irene",
+  "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+  "episode_title": "When AI transparency becomes product design",
+  "selected_story_index": 2,
+  "selected_story_title": "EU transparency rules are becoming a product design issue",
+  "selection_reason": "This is the broadest story in the edition because it affects how AI products, content tools and business workflows are built and shipped, not just one company or one model.",
+  "word_count": 919,
+  "estimated_duration_minutes": 6.3,
+  "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+  "source_notes": "source-notes.md",
+  "first_spoken_line": "This week’s clearest signal was not a flashy demo. It was a rule change that pushes AI deeper into everyday product design.",
+  "final_spoken_line": "My verdict is test carefully. If you build or publish AI-generated content that can reach Europe, start checking your disclosure workflow now. If you do not, still watch this closely, because transparency rules have a way of spreading from regulation into normal business practice. This week’s lesson is simple: AI is no longer only about what it can make. It is also about what it has to say about itself.",
+  "validation_warnings": [
+    "Script is shorter than target: 919 words."
+  ],
+  "non_spoken_instruction_candidates": []
+}

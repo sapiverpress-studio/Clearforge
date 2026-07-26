@@ -1,0 +1,170 @@
+{
+  "generated_at": "2026-07-26T06:03:52.285Z",
+  "story_assessments": [
+    {
+      "story_index": 0,
+      "story_title": "Meta’s creator models are now shipping with provenance built in",
+      "target_audience": "Creators, social media managers, and visual-first small teams",
+      "audience_problem_or_desire": "They want faster image and video creation without losing control over authenticity, reuse, or platform rules.",
+      "interest_signal": "Meta said Muse Image is live across Meta AI surfaces and Muse Video is coming soon, alongside invisible watermarking and a detection tool.",
+      "stop_reason": "The useful angle is the release status plus provenance controls, not the model branding.",
+      "promised_payoff": "Where the tools work now, what is still coming, and why tracing AI-made media matters.",
+      "proof_point": "Meta said Muse Image is available in the Meta AI app, on meta.ai, in Instagram Stories in the U.S., and in limited WhatsApp markets; Muse Video is coming soon.",
+      "search_phrases": [
+        "Meta Muse Image available now",
+        "Muse Video coming soon",
+        "Content Seal watermark Meta",
+        "Instagram Stories AI image generator"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 7,
+        "searchability": 7,
+        "stranger_usefulness": 7,
+        "novelty": 8,
+        "visual_potential": 9,
+        "discussion_potential": 7,
+        "short_form_clarity": 8
+      },
+      "overall_score": 8,
+      "score_reason": "Strong visual story with immediate creator relevance and a clear authenticity hook, though it is narrower than the business and policy lanes."
+    },
+    {
+      "story_index": 1,
+      "story_title": "Intel and Google Cloud show enterprise AI moving into core operations",
+      "target_audience": "Enterprise leaders, operations teams, IT buyers, and workplace watchers",
+      "audience_problem_or_desire": "They need proof that AI is moving into operational systems, not just pilots.",
+      "interest_signal": "Intel said it will deploy Gemini Enterprise and Google Cloud across engineering, supply chain, and corporate operations.",
+      "stop_reason": "It is a real deployment story with workflow implications rather than a vague AI announcement.",
+      "promised_payoff": "How enterprise AI is being integrated into core jobs and where the value is shifting.",
+      "proof_point": "Intel said the collaboration will expand AI capabilities across engineering, supply chain, corporate operations, and chip-development workflows.",
+      "search_phrases": [
+        "Intel Google Cloud Gemini Enterprise",
+        "enterprise AI workflow deployment",
+        "AI in supply chain engineering",
+        "Intel AI-enabled enterprise transformation"
+      ],
+      "scores": {
+        "audience_fit": 9,
+        "practical_consequence": 9,
+        "searchability": 8,
+        "stranger_usefulness": 8,
+        "novelty": 7,
+        "visual_potential": 6,
+        "discussion_potential": 7,
+        "short_form_clarity": 8
+      },
+      "overall_score": 8,
+      "score_reason": "High practical value and strong professional relevance; the story is clear, searchable, and easy to translate into workflow language."
+    },
+    {
+      "story_index": 2,
+      "story_title": "EU transparency rules are becoming a product design issue",
+      "target_audience": "Product teams, compliance leads, marketers, and creators",
+      "audience_problem_or_desire": "They need to know how to label, mark, and disclose AI-generated or altered content before the new duties begin.",
+      "interest_signal": "The European Commission published guidance on AI Act transparency obligations, including deepfakes and machine-readable marking.",
+      "stop_reason": "This moves from policy abstraction to product workflow decisions.",
+      "promised_payoff": "Exactly which product behaviors are affected by transparency rules.",
+      "proof_point": "The guidance explains Article 50 obligations that begin on 2 August 2026, including user disclosure and machine-readable marking.",
+      "search_phrases": [
+        "EU AI Act transparency guidance",
+        "machine-readable marking AI content",
+        "deepfake disclosure rules August 2026",
+        "AI transparency obligations providers deployers"
+      ],
+      "scores": {
+        "audience_fit": 9,
+        "practical_consequence": 9,
+        "searchability": 8,
+        "stranger_usefulness": 8,
+        "novelty": 7,
+        "visual_potential": 5,
+        "discussion_potential": 8,
+        "short_form_clarity": 7
+      },
+      "overall_score": 8,
+      "score_reason": "Very useful for teams shipping AI products, with strong policy-to-workflow relevance and solid search intent."
+    },
+    {
+      "story_index": 3,
+      "story_title": "UK business adoption is up, but the depth is still thin",
+      "target_audience": "Small business owners, managers, workers, and practical AI learners",
+      "audience_problem_or_desire": "They want to know whether AI is actually normal now and what a sensible first step looks like.",
+      "interest_signal": "ONS said business use rose from around 12% to around 35%, and over half of employees report using AI.",
+      "stop_reason": "Broad adoption is only interesting if it changes what one person should do next.",
+      "promised_payoff": "A simple benchmark for where AI adoption really stands.",
+      "proof_point": "ONS reports AI use in UK businesses with 10 or more employees at about 35% by June 2026, up from around 12% in late 2023.",
+      "search_phrases": [
+        "ONS artificial intelligence in UK businesses 2026",
+        "UK business AI adoption 35%",
+        "employee AI use work education",
+        "AI in UK businesses survey"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 8,
+        "searchability": 9,
+        "stranger_usefulness": 9,
+        "novelty": 6,
+        "visual_potential": 5,
+        "discussion_potential": 7,
+        "short_form_clarity": 9
+      },
+      "overall_score": 8,
+      "score_reason": "The clearest everyday benchmark in the pack: measurable, relatable, and easy to turn into a practical decision for small teams."
+    }
+  ],
+  "platform_selections": {
+    "tiktok": {
+      "story_index": 3,
+      "story_title": "UK business adoption is up, but the depth is still thin",
+      "target_audience": "Small business owners and practical AI learners",
+      "format": "micro-explainer",
+      "opening": "Can a 35% adoption rate still mean shallow AI use?",
+      "payoff": "ONS says UK business AI use reached about 35%, so the first win is one repeatable task.",
+      "selection_reason": "This story has the cleanest single-discovery tension for a fast TikTok: adoption is up, depth is still thin, and the consequence is immediately practical.",
+      "platform_fit_score": 9
+    },
+    "youtube": {
+      "story_index": 1,
+      "story_title": "Intel and Google Cloud show enterprise AI moving into core operations",
+      "target_audience": "Enterprise leaders, operators, and workplace watchers",
+      "format": "short explainer",
+      "opening": "Can enterprise AI actually change how a company runs?",
+      "payoff": "Intel said it will deploy Gemini Enterprise and Google Cloud across engineering, supply chain, and corporate operations.",
+      "selection_reason": "This is the strongest searchable workplace story and gives Shorts a concrete example of AI moving into real operations.",
+      "platform_fit_score": 9
+    },
+    "facebook": {
+      "story_index": 3,
+      "story_title": "UK business adoption is up, but the depth is still thin",
+      "target_audience": "Small business owners and everyday business readers",
+      "format": "discussion post",
+      "opening": "Would you test AI on one weekly task first?",
+      "payoff": "ONS says UK business AI use rose from around 12% in late 2023 to around 35% by June 2026, but most firms still use only a few tools.",
+      "selection_reason": "Relatable, low-friction, and easy to discuss with familiar choices like drafts, admin, replies, or design work.",
+      "platform_fit_score": 8
+    },
+    "pinterest": {
+      "story_index": 2,
+      "story_title": "EU transparency rules are becoming a product design issue",
+      "target_audience": "Product teams, compliance leads, marketers, and creators",
+      "format": "searchable guide pin",
+      "opening": "EU AI transparency rules checklist for product teams",
+      "payoff": "Use the Commission guidance to check disclosure, deepfakes, and machine-readable marking before the 2 August 2026 start date.",
+      "selection_reason": "Pinterest rewards practical, searchable guidance; this story naturally fits a checklist or saveable reference for teams shipping AI products.",
+      "platform_fit_score": 8
+    },
+    "linkedin": {
+      "story_index": 1,
+      "story_title": "Intel and Google Cloud show enterprise AI moving into core operations",
+      "target_audience": "Enterprise decision-makers, operators, and IT leaders",
+      "format": "professional insight post",
+      "opening": "Can AI move from pilots into core operations?",
+      "payoff": "Intel will deploy Gemini Enterprise and Google Cloud across engineering, supply chain, and corporate operations.",
+      "selection_reason": "Best fit for a workplace decision post because it ties AI to ownership, process design, and measurable operational change.",
+      "platform_fit_score": 9
+    }
+  },
+  "overall_reasoning": "This edition is best framed as a Sunday reset around one verified shift: AI is moving from visible demos into workflows, rules, and measured usage. The strongest TikTok micro-discovery is the UK adoption gap because it is concrete, personal, and easy to explain in one beat. For YouTube Shorts and LinkedIn, Intel and Google Cloud provide the clearest workplace example of AI entering core operations. Pinterest fits the EU transparency guidance because it is searchable and saveable. Facebook works best with the UK adoption story as a practical discussion starter for everyday business readers."
+}

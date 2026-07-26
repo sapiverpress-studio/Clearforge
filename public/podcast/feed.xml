@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>
     <copyright>Clearforge</copyright>
     <generator>Clearforge hosted podcast feed</generator>
-    <lastBuildDate>Sat, 25 Jul 2026 19:28:02 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2026 06:10:59 GMT</lastBuildDate>
     <atom:link href="https://clearforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Clearforge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://clearforge-daily-brief.netlify.app/podcast/cover.png"/>
+    <item>
+      <title>When AI transparency becomes product design</title>
+      <description>This is the broadest story in the edition because it affects how AI products, content tools and business workflows are built and shipped, not just one company or one model.</description>
+      <content:encoded><![CDATA[<p>This is the broadest story in the edition because it affects how AI products, content tools and business workflows are built and shipped, not just one company or one model.</p><p><strong>Read alongside this episode:</strong> <a href="https://clearforge-daily-brief.netlify.app/posts/2026-07-26.html">daily briefing</a> · <a href="https://clearforge-daily-brief.netlify.app/features/2026-07-26.html">feature analysis</a></p><p><a href="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-26.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-26.html</link>
+      <guid isPermaLink="false">clearforge:2026-07-26</guid>
+      <pubDate>Sun, 26 Jul 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-26.mp3" length="5478653" type="audio/mpeg"/>
+      <itunes:author>Clearforge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:06:18</itunes:duration>
+      <podcast:transcript url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-26.txt" type="text/plain"/>
+    </item>
     <item>
       <title>Managed agents are becoming the product, not just the prompt</title>
       <description>This is the clearest signal in the edition that AI buying criteria are shifting from ‘which model is smartest’ to ‘which system is controllable, deployable, and supportable.’ OpenAI’s limited, enterprise-only rollout turns agents into a managed workflow product, which is directly relevant to creators and small businesses deciding whether to self-serve, buy a closed tool, or pay for setup help.</description>

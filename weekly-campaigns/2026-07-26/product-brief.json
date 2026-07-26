@@ -1,0 +1,18 @@
+{
+  "name": "AI Workflow Handoff Kit",
+  "promise": "Turn an AI-assisted task into a reviewable workflow with a clear handoff, a human checkpoint, and a simple log before anything is sent, published, or acted on.",
+  "target_customer": "Solo creators and small businesses that use AI for content, admin, support, research, or lightweight operations.",
+  "outcome": "Fewer AI drafts that stall, fewer accidental sends, clearer provenance, and a repeatable way to test whether AI actually saves time.",
+  "contents": [
+    "Workflow map template: input, output, owner, handoff, and stop point",
+    "Human review gate checklist for publish, send, and approve moments",
+    "Prompt/output log sheet to capture what the AI produced and what changed",
+    "Disclosure and provenance checklist for public-facing or client-facing work",
+    "One-week pilot scorecard to measure time saved versus cleanup time"
+  ],
+  "worked_example": "A creator uses Canva AI 2.0 to draft a social graphic. The kit forces them to define the brief, note the brand rules, mark the human review step, log the changes made after the AI draft, and decide whether the asset is ready to publish or needs another pass.",
+  "suggested_price_gbp": "£29",
+  "main_objection": "A checklist will not improve the model itself, and some workflows still need product-specific controls or legal review.",
+  "demonstration": "Walk through one real task in five minutes: capture the brief, generate the first draft, apply the review gate, record the changes, and show the final release decision.",
+  "bundle_destination": "Clearforge AI at Work bundle"
+}

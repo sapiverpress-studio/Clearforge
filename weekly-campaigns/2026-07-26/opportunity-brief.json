@@ -1,0 +1,170 @@
+{
+  "week_start": "2026-07-20",
+  "week_end": "2026-07-26",
+  "recommended_route": "new_pack",
+  "problem": {
+    "title": "AI outputs are easy to generate, but hard to ship safely",
+    "statement": "Solo creators and small businesses are increasingly using AI for notes, drafts, support replies, design, and admin, but they often lack a simple system for review, provenance, and handoff before the output is shared or acted on.",
+    "affected_audience": "Solo creators, freelancers, small business owners, and small teams using AI for content, coordination, support, and lightweight operations.",
+    "practical_consequence": "AI saves time on the first draft, then creates rework, uncertainty, or risk when nobody has defined the human checkpoint, logging step, or disclosure rule.",
+    "why_now": "This week’s approved research shows AI moving deeper into meetings, bookkeeping, workflow boards, search, video creation, ad disclosure, and enterprise deployment, while transparency and control features are becoming more visible.",
+    "evergreen_value": "Every AI workflow still needs a point where a human checks the output, decides what happens next, and knows how the work was generated.",
+    "confidence": "high"
+  },
+  "evidence": [
+    {
+      "date": "2026-07-20",
+      "headline": "AI at work is moving from drafts to delegated tasks — but the control points matter",
+      "problem_signal": "AI is being embedded into bookkeeping, meetings, task routing, and customer support, which makes human review and permissions part of the workflow rather than an afterthought.",
+      "source_basis": "Approved Monday edition summarising Xero, Google Meet, Notion, and Salesforce announcements."
+    },
+    {
+      "date": "2026-07-21",
+      "headline": "AI is becoming a personal organisation layer for learning, notes and everyday admin",
+      "problem_signal": "Search across old work, study notebooks, and browser assistants are trying to reduce rework by helping people find context and the next step, not just create new text.",
+      "source_basis": "Approved Tuesday edition summarising OpenAI ChatGPT search, Gemini Notebook, Gemini study notebooks, and Gemini in Chrome."
+    },
+    {
+      "date": "2026-07-22",
+      "headline": "AI is moving into controlled systems: design, cloud and security teams are adding logs, gates and specialised compute",
+      "problem_signal": "The week’s systems stories show that test environments, cloud deployments, and design automation all need boundaries, logs, and human approval points.",
+      "source_basis": "Approved Wednesday edition summarising OpenAI evaluation, Cadence AuraStack, Scaleway-Airbus, and Microsoft Azure AMD updates."
+    },
+    {
+      "date": "2026-07-23",
+      "headline": "AI is becoming a connected workflow layer: search, video, and project systems are getting tighter control points",
+      "problem_signal": "Search handoffs, Jira workflow context, video watermarks, and on-prem meeting AI all point to the same operational issue: work needs a visible trail as it moves between tools.",
+      "source_basis": "Approved Thursday edition summarising Google connected apps, Google Vids, Atlassian Jira AI, and Zoom AI On-Prem."
+    },
+    {
+      "date": "2026-07-24",
+      "headline": "Friday watchlist: AI is moving into narrower, safer, more practical features you can actually test now",
+      "problem_signal": "The strongest new releases are scoped features with clear limits, including Canva AI 2.0, ad disclosure labels, health context, and usage reflection, which reinforces the value of bounded workflows.",
+      "source_basis": "Approved Friday edition summarising OpenAI Health in ChatGPT, Google AI ad labels, Canva AI 2.0, and Anthropic Reflect."
+    },
+    {
+      "date": "2026-07-25",
+      "headline": "Saturday forecast: open models, production agents and AI measurement are the next things to watch",
+      "problem_signal": "The market is shifting toward control, deployment help, and proof of value, which suggests buyers will want clearer operating models rather than bigger demos.",
+      "source_basis": "Approved Saturday forecast edition summarising Reuters open-model support, Google ATLAS, OpenAI Presence, and Microsoft Genesis Mission."
+    },
+    {
+      "date": "2026-07-26",
+      "headline": "Sunday reset: AI moved further into production, provenance and everyday business use this week",
+      "problem_signal": "Creator tools, enterprise deployments, transparency rules, and UK adoption data all show AI becoming normal enough to require repeatable process, labeling, and measurable usefulness.",
+      "source_basis": "Approved Sunday recap edition summarising Meta Muse, Intel-Google Cloud, EU transparency guidance, and ONS adoption data."
+    }
+  ],
+  "commercial_score": {
+    "total": 32,
+    "multiple_stories": 5,
+    "audience_fit": 5,
+    "repeatable_failure": 5,
+    "pack_solvability": 4,
+    "longevity": 5,
+    "demonstrability": 4,
+    "library_fit": 4,
+    "decision": "build"
+  },
+  "product": {
+    "name": "AI Workflow Handoff Kit",
+    "promise": "Turn an AI-assisted task into a reviewable workflow with a clear handoff, a human checkpoint, and a simple log before anything is sent, published, or acted on.",
+    "target_customer": "Solo creators and small businesses that use AI for content, admin, support, research, or lightweight operations.",
+    "outcome": "Fewer AI drafts that stall, fewer accidental sends, clearer provenance, and a repeatable way to test whether AI actually saves time.",
+    "contents": [
+      "Workflow map template: input, output, owner, handoff, and stop point",
+      "Human review gate checklist for publish, send, and approve moments",
+      "Prompt/output log sheet to capture what the AI produced and what changed",
+      "Disclosure and provenance checklist for public-facing or client-facing work",
+      "One-week pilot scorecard to measure time saved versus cleanup time"
+    ],
+    "worked_example": "A creator uses Canva AI 2.0 to draft a social graphic. The kit forces them to define the brief, note the brand rules, mark the human review step, log the changes made after the AI draft, and decide whether the asset is ready to publish or needs another pass.",
+    "suggested_price_gbp": "£29",
+    "main_objection": "A checklist will not improve the model itself, and some workflows still need product-specific controls or legal review.",
+    "demonstration": "Walk through one real task in five minutes: capture the brief, generate the first draft, apply the review gate, record the changes, and show the final release decision.",
+    "bundle_destination": "Clearforge AI at Work bundle"
+  },
+  "free_resource": {
+    "name": "One-Page AI Review Gate",
+    "purpose": "A free lead-in sheet that helps readers test one AI workflow before buying the full pack.",
+    "contents": [
+      "One workflow canvas",
+      "Five review questions before output leaves the system",
+      "Prompt/output capture box",
+      "Stop/go decision box"
+    ],
+    "cta": "Use the free sheet on one task this week; if it helps, upgrade to the full kit for logs, disclosure, and the pilot scorecard."
+  },
+  "content_plan": [
+    {
+      "day": "Monday",
+      "editorial_lane": "Monday weekend roundup",
+      "title": "The real AI issue this week: can the output leave the system safely?",
+      "angle": "Round up the week’s workplace AI, meeting, bookkeeping, and support stories as one problem: AI is entering real workflows faster than teams are defining review points.",
+      "format": "roundup",
+      "product_connection": "Introduce the AI Workflow Handoff Kit as the smallest way to turn this week’s AI signals into one repeatable process.",
+      "cta_strength": "soft"
+    },
+    {
+      "day": "Tuesday",
+      "editorial_lane": "Tuesday AI at work",
+      "title": "AI at work only helps when the handoff is clear",
+      "angle": "Bookkeeping, meeting notes, and customer support all need a human checkpoint before output becomes money, a task, or a customer reply.",
+      "format": "explainer",
+      "product_connection": "Show how the review gate checklist maps onto the Xero, Google Meet, Notion, and Salesforce pattern.",
+      "cta_strength": "soft"
+    },
+    {
+      "day": "Wednesday",
+      "editorial_lane": "Wednesday AI in everyday life",
+      "title": "In everyday life, AI fails when the next step is unclear",
+      "angle": "Searchable memory, study notebooks, and browser assistants are useful only if the user knows where the material goes next.",
+      "format": "how-to",
+      "product_connection": "Use the workflow map template to turn scattered notes or drafts into one visible next step.",
+      "cta_strength": "soft"
+    },
+    {
+      "day": "Thursday",
+      "editorial_lane": "Thursday systems and automation",
+      "title": "Automation needs logs, approvals, and fallback paths",
+      "angle": "The week’s systems coverage shows why sandboxes, production, and regulated workflows need different controls.",
+      "format": "systems piece",
+      "product_connection": "Position the prompt/output log and stop-go checklist as the core of the kit.",
+      "cta_strength": "soft"
+    },
+    {
+      "day": "Friday",
+      "editorial_lane": "Friday new tools, stacks and workflows",
+      "title": "Friday’s tools prove the point: the best AI is scoped",
+      "angle": "Canva AI 2.0, ad disclosure labels, and Claude reflection all reward narrower jobs, visible labels, and better user control.",
+      "format": "tool test",
+      "product_connection": "Demonstrate the kit on a Canva AI 2.0 test: draft, review, label, and publish only if it passes the gate.",
+      "cta_strength": "direct"
+    },
+    {
+      "day": "Saturday",
+      "editorial_lane": "Saturday prediction and outlook",
+      "title": "The forecast: buyers will ask for control and proof",
+      "angle": "Open models, managed agents, and AI measurement all point to the same buying question: does this tool give me control, deployment help, and evidence it saves time?",
+      "format": "forecast",
+      "product_connection": "Frame the kit as the easiest way to measure whether a tool is worth keeping after a one-week pilot.",
+      "cta_strength": "soft"
+    },
+    {
+      "day": "Sunday",
+      "editorial_lane": "Sunday recap and preparation",
+      "title": "Reset one workflow before next week",
+      "angle": "Close the week by picking one recurring task, applying the kit, and deciding whether the tool stays, changes, or goes.",
+      "format": "reset and prep",
+      "product_connection": "Use the free resource as the first step, then offer the full kit for the log, disclosure, and pilot scorecard.",
+      "cta_strength": "direct"
+    }
+  ],
+  "guardrails": [
+    "Do not claim the kit makes AI safer by itself; it only creates a safer process around the tool.",
+    "Do not promise time savings without a pilot, a baseline, and a cleanup check.",
+    "Do not position the pack as legal, medical, or compliance advice.",
+    "Keep the product tied to one workflow at a time; avoid suggesting broad AI transformation.",
+    "Use clear disclosure language for any public-facing or client-facing AI output."
+  ]
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "day": "Monday",
+    "editorial_lane": "Monday weekend roundup",
+    "title": "The real AI issue this week: can the output leave the system safely?",
+    "angle": "Round up the week’s workplace AI, meeting, bookkeeping, and support stories as one problem: AI is entering real workflows faster than teams are defining review points.",
+    "format": "roundup",
+    "product_connection": "Introduce the AI Workflow Handoff Kit as the smallest way to turn this week’s AI signals into one repeatable process.",
+    "cta_strength": "soft"
+  },
+  {
+    "day": "Tuesday",
+    "editorial_lane": "Tuesday AI at work",
+    "title": "AI at work only helps when the handoff is clear",
+    "angle": "Bookkeeping, meeting notes, and customer support all need a human checkpoint before output becomes money, a task, or a customer reply.",
+    "format": "explainer",
+    "product_connection": "Show how the review gate checklist maps onto the Xero, Google Meet, Notion, and Salesforce pattern.",
+    "cta_strength": "soft"
+  },
+  {
+    "day": "Wednesday",
+    "editorial_lane": "Wednesday AI in everyday life",
+    "title": "In everyday life, AI fails when the next step is unclear",
+    "angle": "Searchable memory, study notebooks, and browser assistants are useful only if the user knows where the material goes next.",
+    "format": "how-to",
+    "product_connection": "Use the workflow map template to turn scattered notes or drafts into one visible next step.",
+    "cta_strength": "soft"
+  },
+  {
+    "day": "Thursday",
+    "editorial_lane": "Thursday systems and automation",
+    "title": "Automation needs logs, approvals, and fallback paths",
+    "angle": "The week’s systems coverage shows why sandboxes, production, and regulated workflows need different controls.",
+    "format": "systems piece",
+    "product_connection": "Position the prompt/output log and stop-go checklist as the core of the kit.",
+    "cta_strength": "soft"
+  },
+  {
+    "day": "Friday",
+    "editorial_lane": "Friday new tools, stacks and workflows",
+    "title": "Friday’s tools prove the point: the best AI is scoped",
+    "angle": "Canva AI 2.0, ad disclosure labels, and Claude reflection all reward narrower jobs, visible labels, and better user control.",
+    "format": "tool test",
+    "product_connection": "Demonstrate the kit on a Canva AI 2.0 test: draft, review, label, and publish only if it passes the gate.",
+    "cta_strength": "direct"
+  },
+  {
+    "day": "Saturday",
+    "editorial_lane": "Saturday prediction and outlook",
+    "title": "The forecast: buyers will ask for control and proof",
+    "angle": "Open models, managed agents, and AI measurement all point to the same buying question: does this tool give me control, deployment help, and evidence it saves time?",
+    "format": "forecast",
+    "product_connection": "Frame the kit as the easiest way to measure whether a tool is worth keeping after a one-week pilot.",
+    "cta_strength": "soft"
+  },
+  {
+    "day": "Sunday",
+    "editorial_lane": "Sunday recap and preparation",
+    "title": "Reset one workflow before next week",
+    "angle": "Close the week by picking one recurring task, applying the kit, and deciding whether the tool stays, changes, or goes.",
+    "format": "reset and prep",
+    "product_connection": "Use the free resource as the first step, then offer the full kit for the log, disclosure, and pilot scorecard.",
+    "cta_strength": "direct"
+  }
+]

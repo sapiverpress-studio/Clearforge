@@ -10,6 +10,7 @@ const edition = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", 
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
 const runUrl = process.env.CLEARFORGE_RUN_URL || "";
+const dryRun = String(process.env.CLEARFORGE_EMAIL_DRY_RUN || "false").toLowerCase() === "true";
 const draftDir = path.join(ROOT, "drafts", edition);
 const summaryPath = path.join(draftDir, "release-summary.md");
 const reportPath = path.join(draftDir, "release-desk.json");
@@ -81,6 +82,17 @@ if (hasReleaseDesk) {
     name: path.basename(htmlPath),
     content: attachment.toString("base64")
   }];
+}
+
+if (dryRun) {
+  console.log(JSON.stringify({
+    subject,
+    decision,
+    has_release_desk: Boolean(hasReleaseDesk),
+    attachment_count: Array.isArray(payload.attachment) ? payload.attachment.length : 0,
+    run_link_present: Boolean(runUrl)
+  }));
+  process.exit(0);
 }
 
 const response = await fetch("https://api.brevo.com/v3/smtp/email", {

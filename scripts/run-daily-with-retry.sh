@@ -6,8 +6,14 @@ set -uo pipefail
 max_attempts=2
 attempt=1
 total_timeout_seconds="${CLEARFORGE_RESEARCH_TIMEOUT_SECONDS:-360}"
-standard_timeout_seconds=$(( total_timeout_seconds / 2 ))
-fallback_timeout_seconds=$(( total_timeout_seconds - standard_timeout_seconds ))
+kill_grace_seconds=10
+usable_timeout_seconds=$(( total_timeout_seconds - (kill_grace_seconds * max_attempts) ))
+if [ "$usable_timeout_seconds" -le 0 ]; then
+  echo "Research timeout must exceed the combined termination grace."
+  exit 2
+fi
+standard_timeout_seconds=$(( usable_timeout_seconds / 2 ))
+fallback_timeout_seconds=$(( usable_timeout_seconds - standard_timeout_seconds ))
 
 while [ "$attempt" -le "$max_attempts" ]; do
   if [ "$attempt" -eq 1 ]; then
@@ -23,7 +29,7 @@ while [ "$attempt" -le "$max_attempts" ]; do
 
   set +e
   CLEARFORGE_RESEARCH_MODE="$research_mode" \
-    timeout --signal=TERM --kill-after=30s "${attempt_timeout_seconds}s" \
+    timeout --signal=TERM --kill-after="${kill_grace_seconds}s" "${attempt_timeout_seconds}s" \
     node src/run-daily.mjs 2>&1 | tee "$log_file"
   status=${PIPESTATUS[0]}
   set -e

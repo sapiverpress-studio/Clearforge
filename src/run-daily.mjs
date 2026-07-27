@@ -225,8 +225,11 @@ const schema = {
   }
 };
 
-function validateCoverageMix(candidate) {
+function validateCoverageMix(candidate, options = {}) {
   const failures = [];
+  const minimumTopicCategories = Number.isInteger(options.minimumTopicCategories)
+    ? options.minimumTopicCategories
+    : 3;
   const sources = Array.isArray(candidate?.sources) ? candidate.sources : [];
   const stories = Array.isArray(candidate?.story_summaries) ? candidate.story_summaries : [];
   const count = (items, lane) => items.filter((item) => item.coverage_lane === lane).length;
@@ -236,8 +239,9 @@ function validateCoverageMix(candidate) {
   if (count(sources, "human_impact") < 1 || count(stories, "human_impact") < 1) {
     failures.push("Research mix requires at least one evidence-based human-impact story.");
   }
-  if (new Set(stories.map((item) => item.topic_category)).size < 3) {
-    failures.push("Research mix requires at least three distinct topic categories.");
+  const topicCategoryCount = new Set(stories.map((item) => item.topic_category)).size;
+  if (topicCategoryCount < minimumTopicCategories) {
+    failures.push(`Research mix requires at least ${minimumTopicCategories} distinct topic categor${minimumTopicCategories === 1 ? "y" : "ies"}.`);
   }
   for (const source of sources) {
     let host = "";
@@ -270,7 +274,7 @@ async function main() {
   const broadFallback = researchMode === "broad_fallback";
   const modelAttempts = broadFallback ? 1 : 4;
   const discoveryInstruction = broadFallback
-    ? "FINAL BROAD FALLBACK: Use a different, simpler search strategy. Search a seven-day window across official AI organisations, regulators, government and statistical sources, established reporting, original surveys and named case studies. Select exactly three well-supported stories from three distinct categories: at least two confirmed developments and one evidence-based human-impact story. Prefer clear, quickly verifiable evidence over novelty or exhaustive coverage. Do not sweep every discovery category and do not repeat the failed narrow search path."
+    ? "FINAL BROAD FALLBACK: Use a different, simpler search strategy. Search a seven-day window across official AI organisations, regulators, government and statistical sources, established reporting, original surveys and named case studies. Select exactly three well-supported evidence items around one coherent problem territory that naturally relates to checking AI-assisted work before it is sent, published or acted upon: at least two confirmed developments and one evidence-based human-impact story. Do not force a product connection when the evidence does not support it. Prefer clear, quickly verifiable evidence over novelty or exhaustive coverage. Do not sweep every discovery category and do not repeat the failed narrow search path."
     : "Before selecting stories, actively sweep all seven discovery categories: creator tools and media (including image, video, audio, design, editing, publishing, vibe editing and vibe directing); coding and building (agents, app creation, no-code, vibe coding and automation); workplace and business; models and infrastructure; research and science; policy, safety and security; and education, employment and society. Do not stop after finding major-company announcements. Select 3–5 stories spanning at least three genuinely distinct topic categories; several companies discussing the same underlying subject do not constitute breadth. Set topic_category on every source and matching story summary.";
   const fallbackInstruction = broadFallback
     ? "\\n\\nFINAL-ATTEMPT SEARCH MODE:\\n- This is the last attempt inside the existing time budget.\\n- Search the previous seven days across broad reliable source types instead of repeating the standard narrow sweep.\\n- Return exactly three stories and three to five sources.\\n- Use three distinct topic categories.\\n- Include two confirmed developments and one evidence-based human-impact story.\\n- Prefer claims that can be resolved directly and quickly. Drop anything needing extensive corroboration.\\n- Keep all normal source, factual, novelty and human-approval safeguards."
@@ -305,7 +309,7 @@ async function main() {
     const candidate = JSON.parse(response.output_text);
     lastNoveltyFailures = [
       ...validateNovelty(candidate, history),
-      ...validateCoverageMix(candidate)
+      ...validateCoverageMix(candidate, { minimumTopicCategories: broadFallback ? 1 : 3 })
     ];
     if (!lastNoveltyFailures.length) { data = candidate; break; }
     console.warn(`Novelty attempt ${attempt} rejected: ${lastNoveltyFailures.join(" | ")}`);

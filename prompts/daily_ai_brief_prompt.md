@@ -73,16 +73,23 @@ Use 3 to 5 strong sources. For each source include:
 - title;
 - URL;
 - publication date;
+- actual event or announcement date;
+- freshness status: `current` only when the event date is within seven days of the edition date, otherwise `background`;
+- freshness basis explaining where the actual date came from;
 - confirmed fact;
 - interpretation.
 
 Label vendor claims as vendor claims. Do not present Clearforge interpretation as an externally confirmed fact.
+
+The event date is the date the announcement, incident, speech, survey release or other development actually happened. It is not today's date, an access date or a date inferred from the briefing request. Keep it separate from the source publication date. An event date cannot be later than the publication date of the source used to prove it. Older evidence may be used only as clearly dated background and must never be described as a current launch or new announcement.
 
 ## Story Summaries
 
 Create 3 to 5 distinct story summaries. For each include:
 
 - title;
+- actual event date;
+- matching freshness status;
 - summary;
 - why it matters;
 - practical angle;

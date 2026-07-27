@@ -193,9 +193,34 @@ ${report.hard_stops.length ? report.hard_stops.map((item) => `- ${item}`).join("
 ## Advisory flags
 ${report.advisory_flags.length ? report.advisory_flags.map((item) => `- ${item}`).join("\n") : "- None detected"}
 
+## Main story
+**${clean(structured.headline || "No headline")}**
+
+${clean(structured.dek || "No summary")}
+
+## Evidence map
+${sources.length ? sources.map((source, index) => `${index + 1}. [${clean(source.source_name || source.title || "Source")}](${clean(source.url)})
+   - Confirmed: ${clean(source.confirmed_fact || "Not recorded")}
+   - Interpretation: ${clean(source.interpretation || "Not recorded")}`).join("\n") : "- No sources found"}
+
+## Social copy
+### TikTok
+${clean(social.tiktok_script || "Not generated")}
+
+### YouTube
+${clean(social.youtube_shorts_script || "Not generated")}
+
+### Facebook
+${clean(social.facebook_post || "Not generated")}
+
+### Pinterest
+**${clean(social.pinterest_title || "Not generated")}**
+
+${clean(social.pinterest_description || "Not generated")}
+
 ## What Jim must do
-1. Download and open \`clearforge-release-desk-${DATE}.html\`.
-2. Check the claims table, flags and every social opening.
+1. Check the claims, source links, flags and social copy above.
+2. Download and open \`clearforge-release-desk-${DATE}.html\` only when you need the fuller report.
 3. Open full outputs only where flagged or questionable.
 4. If satisfied, run **Clearforge Approve and Publish** for \`${DATE}\`.
 

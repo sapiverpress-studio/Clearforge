@@ -190,7 +190,7 @@ jobs:
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
         run: npm run podcast:daily
 
-      - name: Validate and auto approve only when checks pass
+      - name: Validate automated checks; human approval still required
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
@@ -221,7 +221,7 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Publish Irene episode to Clearforge RSS feed
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.irene == 'true' && steps.irene.outcome == 'success'
+        if: ${{ false }} # Publication happens only in Clearforge Approve and Publish
         env:
           PODCAST_KIND: daily
           EPISODE_SLUG: ${{ env.CLEARFORGE_DATE }}
@@ -273,8 +273,31 @@ jobs:
             "drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp4" \
             "media/${CLEARFORGE_DATE}/story-1.png"
 
+      - name: Build Daily Release Desk
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        env:
+          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+        run: npm run release:desk
+
+      - name: Show Daily Release Desk summary
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && always()
+        shell: bash
+        run: cat "drafts/${CLEARFORGE_DATE}/release-summary.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload Daily Release Desk
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: clearforge-release-desk-${{ env.CLEARFORGE_DATE }}
+          path: |
+            drafts/${{ env.CLEARFORGE_DATE }}/clearforge-release-desk-*.html
+            drafts/${{ env.CLEARFORGE_DATE }}/release-desk.json
+            drafts/${{ env.CLEARFORGE_DATE }}/release-summary.md
+          if-no-files-found: error
+          retention-days: 30
+
       - name: Add MP4 download to the podcast episode
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.podcast_video.outcome == 'success'
+        if: ${{ false }} # Publication happens only in Clearforge Approve and Publish
         env:
           PODCAST_KIND: daily
           EPISODE_SLUG: ${{ env.CLEARFORGE_DATE }}
@@ -296,11 +319,11 @@ jobs:
           retention-days: 90
 
       - name: Build approved static site
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: ${{ false }} # Publication happens only in Clearforge Approve and Publish
         run: npm run build:site
 
       - name: Deploy Clearforge production site to Netlify
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: ${{ false }} # Publication happens only in Clearforge Approve and Publish
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         shell: bash
@@ -318,26 +341,26 @@ jobs:
             --message="Clearforge autopilot ${CLEARFORGE_DATE}"
 
       - name: Export approved distribution bundle
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: ${{ false }} # Publication happens only in Clearforge Approve and Publish
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
         run: npm run export:approved
 
       - name: Syndicate full feature to DEV
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: ${{ false }} # Publication happens only in Clearforge Approve and Publish
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
         run: npm run syndicate:dev
 
-      - name: Commit daily article feature media bridge site and syndication state
+      - name: Commit generated edition and Release Desk for human review
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898242+github-actions[bot]@users.noreply.github.com"
-          git add -- drafts media bridge public
+          git add -- drafts media
           if git diff --cached --quiet; then
             echo "No Clearforge changes to commit."
             exit 0
@@ -355,7 +378,7 @@ jobs:
           exit 1
 
       - name: Trigger full video render and live social distribution
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: ${{ false }} # Publication happens only in Clearforge Approve and Publish
         env:
           GH_TOKEN: ${{ secrets.CROSS_REPO_GITHUB_TOKEN }}
         shell: bash

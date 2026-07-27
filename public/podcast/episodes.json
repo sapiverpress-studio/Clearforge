@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-27",
+    "kind": "daily",
+    "title": "AI at work shifts from personal use to managed systems",
+    "description": "This is the biggest story because it shows AI moving beyond individual chat use and into managed workplace deployment, with approvals, escalation paths, and implementation support. That is the clearest sign that the next phase of adoption is operational, not experimental.",
+    "published": "2026-07-27T07:00:00+01:00",
+    "duration": "00:09:24",
+    "size": 8707805,
+    "video_size": 27821670,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-27.mp3",
+    "video_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-27.mp4",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-27.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-27.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-27.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-27.html",
+    "source_dir": "drafts/2026-07-27/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-26-considered",
     "kind": "daily",
     "title": "Could AI disclosure become the next product bottleneck?",

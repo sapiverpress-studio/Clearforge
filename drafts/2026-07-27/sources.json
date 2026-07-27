@@ -1,0 +1,46 @@
+[
+  {
+    "source_name": "OpenAI",
+    "title": "Introducing OpenAI Presence",
+    "url": "https://openai.com/index/introducing-openai-presence/",
+    "published_date": "2026-07-22",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "workplace_and_business",
+    "evidence_basis": "Primary company announcement with rollout status, product scope, deployment model and examples of enterprise use.",
+    "confirmed_fact": "OpenAI says Presence is available today for voice and chat agents to eligible enterprise customers through a limited general availability program, and that deployments are led by OpenAI Forward Deployed Engineers and select systems integrators.",
+    "interpretation": "This is a clear sign that AI agents are being packaged as managed production systems, not just model access."
+  },
+  {
+    "source_name": "Google Blog",
+    "title": "The first ATLAS report on AI",
+    "url": "https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/",
+    "published_date": "2026-07-23",
+    "coverage_lane": "human_impact",
+    "topic_category": "research_and_science",
+    "evidence_basis": "Primary research blog post describing dataset size, methodology and headline findings from Google’s AI & Economy ATLAS.",
+    "confirmed_fact": "Google says ATLAS v1.0 is built from 15 million aggregated and de-identified human-AI interactions across Gemini App, AI Mode and the Gemini API, and that the data spans more than 150 countries, 140 languages, 800 occupations and 4,000 tasks.",
+    "interpretation": "The report suggests AI use at work is broad but still selective, with collaboration and information work leading the way."
+  },
+  {
+    "source_name": "Gallup",
+    "title": "Organizational AI Adoption Jumps Six Points",
+    "url": "https://www.gallup.com/workplace/712736/organizational-adoption-jumps-six-points.aspx",
+    "published_date": "2026-07-20",
+    "coverage_lane": "human_impact",
+    "topic_category": "workplace_and_business",
+    "evidence_basis": "Gallup workplace survey report with usage rates, task categories and productivity responses from employees.",
+    "confirmed_fact": "Gallup says more than half of U.S. workers now use AI in their role, and that writing/editing, search/research and problem-solving are the most common uses.",
+    "interpretation": "The data points to a practical pattern: people start with writing and research, but bigger productivity gains show up when AI is used for more task-specific work."
+  },
+  {
+    "source_name": "Department for Work and Pensions / Skills England",
+    "title": "Skills for AI: What works for AI upskilling in the UK",
+    "url": "https://www.gov.uk/government/publications/skills-for-ai-what-works-for-ai-upskilling-in-the-uk",
+    "published_date": "2026-06-10",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "education_employment_and_society",
+    "evidence_basis": "Official UK government research and guidance page linking the employer guide, methodology and case studies.",
+    "confirmed_fact": "The UK government says the SKAI programme shows AI is becoming embedded in everyday working life across the UK and proposes PRIMES, a framework for inclusive, safe and sustainable AI workforce training.",
+    "interpretation": "This is a policy signal that the next bottleneck is not access to AI, but whether employers can train people to use it well and safely."
+  }
+]

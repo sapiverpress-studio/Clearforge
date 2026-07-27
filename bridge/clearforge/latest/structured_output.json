@@ -1,297 +1,289 @@
 {
-  "headline": "Could AI disclosure become the next product bottleneck?",
-  "dek": "This week’s clearest confirmed shift is that AI is shipping into creator tools, enterprise systems and public rules at once — which raises one practical question for next week: where does disclosure actually live in the workflow?",
-  "edition_angle": "considered_question",
+  "headline": "AI at work is shifting from personal use to managed systems, training and measurement",
+  "dek": "This Monday brief looks at the part of AI adoption that matters most for work: which tasks are getting delegated, how organisations are putting guardrails around them, and what employers now need to teach before the tools pay off.",
   "sources": [
     {
-      "source_name": "Meta AI",
-      "title": "Introducing Muse Image and Muse Video",
-      "url": "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/",
-      "published_date": "2026-07-07",
-      "coverage_lane": "confirmed_development",
-      "topic_category": "creator_tools_and_media",
-      "evidence_basis": "Official product/research announcement describing Muse Image availability, Muse Video preview status, supported surfaces, watermarking and creator availability.",
-      "confirmed_fact": "Meta said Muse Image is available now in the Meta AI app, on meta.ai, in Instagram Stories in the U.S. and in WhatsApp in limited countries, while Muse Video is coming soon to creators and Meta AI.",
-      "interpretation": "Meta is pushing creator-facing image and video generation deeper into its own products, while adding provenance controls at the same time."
-    },
-    {
-      "source_name": "Intel Newsroom",
-      "title": "Intel and Google Cloud Announce Collaboration to Accelerate Intel’s AI-Enabled Enterprise Transformation",
-      "url": "https://newsroom.intel.com/artificial-intelligence/intel-google-cloud-announce-collaboration-to-accelerate-intel-ai-enabled-enterprise-transformation",
-      "published_date": "2026-07-16",
+      "source_name": "OpenAI",
+      "title": "Introducing OpenAI Presence",
+      "url": "https://openai.com/index/introducing-openai-presence/",
+      "published_date": "2026-07-22",
       "coverage_lane": "confirmed_development",
       "topic_category": "workplace_and_business",
-      "evidence_basis": "Official joint announcement of deployment and collaboration terms, including the use of Gemini Enterprise, Google Cloud infrastructure and Intel workflow changes.",
-      "confirmed_fact": "Intel said it will deploy Gemini Enterprise and Google Cloud to expand AI capabilities across engineering, supply chain and corporate operations, and to support chip-development workflows.",
-      "interpretation": "The deal is a good example of enterprise AI moving from pilots into broader operational and engineering work."
+      "evidence_basis": "Primary company announcement with rollout status, product scope, deployment model and examples of enterprise use.",
+      "confirmed_fact": "OpenAI says Presence is available today for voice and chat agents to eligible enterprise customers through a limited general availability program, and that deployments are led by OpenAI Forward Deployed Engineers and select systems integrators.",
+      "interpretation": "This is a clear sign that AI agents are being packaged as managed production systems, not just model access."
     },
     {
-      "source_name": "European Commission",
-      "title": "Commission publishes guidelines on transparency obligations for providers and deployers of certain AI systems",
-      "url": "https://digital-strategy.ec.europa.eu/en/news/commission-publishes-guidelines-transparency-obligations-providers-and-deployers-certain-ai-systems",
-      "published_date": "2026-07-20",
-      "coverage_lane": "confirmed_development",
-      "topic_category": "policy_safety_and_security",
-      "evidence_basis": "Official Commission guidance explaining Article 50 transparency obligations and their start date.",
-      "confirmed_fact": "The Commission published guidance for AI Act transparency duties that begin applying on 2 August 2026, including requirements around user disclosure, deepfakes and machine-readable marking of AI-generated or manipulated content.",
-      "interpretation": "Europe is moving from broad AI rules toward operational requirements that will affect product design, labeling and disclosure practices."
+      "source_name": "Google Blog",
+      "title": "The first ATLAS report on AI",
+      "url": "https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/",
+      "published_date": "2026-07-23",
+      "coverage_lane": "human_impact",
+      "topic_category": "research_and_science",
+      "evidence_basis": "Primary research blog post describing dataset size, methodology and headline findings from Google’s AI & Economy ATLAS.",
+      "confirmed_fact": "Google says ATLAS v1.0 is built from 15 million aggregated and de-identified human-AI interactions across Gemini App, AI Mode and the Gemini API, and that the data spans more than 150 countries, 140 languages, 800 occupations and 4,000 tasks.",
+      "interpretation": "The report suggests AI use at work is broad but still selective, with collaboration and information work leading the way."
     },
     {
-      "source_name": "Office for National Statistics",
-      "title": "Artificial intelligence in UK businesses: 2023 to 2026",
-      "url": "https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/articles/artificialintelligenceinukbusinesses/2023to2026",
+      "source_name": "Gallup",
+      "title": "Organizational AI Adoption Jumps Six Points",
+      "url": "https://www.gallup.com/workplace/712736/organizational-adoption-jumps-six-points.aspx",
       "published_date": "2026-07-20",
       "coverage_lane": "human_impact",
+      "topic_category": "workplace_and_business",
+      "evidence_basis": "Gallup workplace survey report with usage rates, task categories and productivity responses from employees.",
+      "confirmed_fact": "Gallup says more than half of U.S. workers now use AI in their role, and that writing/editing, search/research and problem-solving are the most common uses.",
+      "interpretation": "The data points to a practical pattern: people start with writing and research, but bigger productivity gains show up when AI is used for more task-specific work."
+    },
+    {
+      "source_name": "Department for Work and Pensions / Skills England",
+      "title": "Skills for AI: What works for AI upskilling in the UK",
+      "url": "https://www.gov.uk/government/publications/skills-for-ai-what-works-for-ai-upskilling-in-the-uk",
+      "published_date": "2026-06-10",
+      "coverage_lane": "confirmed_development",
       "topic_category": "education_employment_and_society",
-      "evidence_basis": "Official ONS analysis based on the Business Insights and Conditions Survey and Opinions and Lifestyle Survey, with methodology and wave dates stated in the release.",
-      "confirmed_fact": "ONS said self-reported AI use in UK businesses with 10 or more employees rose from around 12% in late 2023 to around 35% by June 2026, while over half of employees reported using AI for work or education.",
-      "interpretation": "The UK picture suggests AI has become normal enough to be measurable in business and worker surveys, but still shallow in depth for most firms."
+      "evidence_basis": "Official UK government research and guidance page linking the employer guide, methodology and case studies.",
+      "confirmed_fact": "The UK government says the SKAI programme shows AI is becoming embedded in everyday working life across the UK and proposes PRIMES, a framework for inclusive, safe and sustainable AI workforce training.",
+      "interpretation": "This is a policy signal that the next bottleneck is not access to AI, but whether employers can train people to use it well and safely."
     }
   ],
   "story_summaries": [
     {
-      "title": "Could disclosure become part of the creator workflow?",
-      "coverage_lane": "confirmed_development",
-      "topic_category": "policy_safety_and_security",
-      "summary": "The European Commission published guidance on AI Act transparency duties that begin on 2 August 2026, including user disclosure, deepfake handling and machine-readable marking. For teams publishing AI-assisted images, video or copy, the practical issue is no longer whether disclosure exists in theory. It is where it sits in the process.",
-      "why_it_matters": "If disclosure sits too late, it becomes a rework problem. If it sits too early, teams need a clean rule for public-facing content.",
-      "practical_angle": "Map one output path — draft, review, label, publish — and see where transparency is handled today.",
-      "claim_to_verify": "NONE — verified from cited sources."
-    },
-    {
-      "title": "Meta is building provenance into creator-facing tools",
-      "coverage_lane": "confirmed_development",
-      "topic_category": "creator_tools_and_media",
-      "summary": "Meta said Muse Image is available now across Meta AI surfaces, and Muse Video is coming soon. The company also said generated images carry a hidden Content Seal watermark and that it is previewing a detection tool. That makes provenance part of the product conversation, not just a policy one.",
-      "why_it_matters": "Creators need to know whether the platform helps them trace AI media, not just create it.",
-      "practical_angle": "Test how much control you keep over disclosure and reuse when generation happens inside the platform.",
-      "claim_to_verify": "NONE — verified from cited sources."
-    },
-    {
-      "title": "Enterprise AI is moving closer to operational rules",
+      "title": "OpenAI Presence turns agents into a managed workplace product",
       "coverage_lane": "confirmed_development",
       "topic_category": "workplace_and_business",
-      "summary": "Intel said it will deploy Gemini Enterprise and Google Cloud across engineering, supply chain and corporate operations. That signals a shift from pilot projects toward workflow systems with owners, deadlines and accountability.",
-      "why_it_matters": "The question is not whether AI can produce a draft. It is whether it can be fitted into real processes without breaking controls.",
-      "practical_angle": "Ask which step in a high-value process would need logging, review or approval before AI could touch it.",
+      "summary": "OpenAI’s Presence launch moves the conversation from model capability to operational deployment. The company says the product is already available in a limited general availability program for eligible enterprise customers, with OpenAI engineers and systems integrators leading deployments. OpenAI also says Presence is designed for jobs such as customer support, internal IT requests and other workflows where companies want agents to answer questions, take approved actions and escalate to humans when needed.",
+      "why_it_matters": "That makes AI adoption feel less like experimenting with chat and more like buying a managed work system with rules, approvals and support.",
+      "practical_angle": "Small teams can treat this as a reminder to define one repeatable workflow, one approval point and one escalation path before trying to automate anything important.",
       "claim_to_verify": "NONE — verified from cited sources."
     },
     {
-      "title": "Broad AI use in UK firms is no longer hypothetical",
+      "title": "Google’s ATLAS report shows where AI is actually being used at work",
       "coverage_lane": "human_impact",
+      "topic_category": "research_and_science",
+      "summary": "Google’s first ATLAS report is one of the clearest recent snapshots of real AI use. Google says the dataset covers 15 million de-identified interactions across Gemini products and spans 150+ countries, 140 languages, 800 occupations and 4,000 tasks. Its early findings say workplace use is broad but shallow, with most activity clustered around collaboration, ideation, information retrieval and learning rather than full automation.",
+      "why_it_matters": "The practical message is that AI is already a work tool, but mostly as a helper. That is useful for creators and small businesses because the best first use cases are likely drafting, research, planning and triage.",
+      "practical_angle": "If you are choosing one workflow to test this week, pick a repetitive knowledge task rather than a full end-to-end process.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "Gallup’s latest workplace data says adoption is widening, but use is still uneven",
+      "coverage_lane": "human_impact",
+      "topic_category": "workplace_and_business",
+      "summary": "Gallup says more than half of U.S. workers now use AI in their role, with 15% using it daily. The most common uses are writing/editing, search/research and general problem-solving. Gallup also says the strongest productivity gains are linked to more task-specific uses such as coding, automation, analytics and slide creation.",
+      "why_it_matters": "This is a useful reminder that broad AI access is not the same as broad business value. The strongest gains come when AI is tied to a specific job function.",
+      "practical_angle": "Managers should look for one team task that is frequent, boring and easy to review, then train around that use case instead of telling everyone to “use AI more.”",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "The UK is starting to treat AI training as a workplace capability issue",
+      "coverage_lane": "confirmed_development",
       "topic_category": "education_employment_and_society",
-      "summary": "ONS said self-reported AI use in UK businesses with 10 or more employees rose to around 35% by June 2026, and over half of employees reported using AI for work or education. The adoption signal is broad, but the average depth still looks modest.",
-      "why_it_matters": "More firms are now close enough to transparency and governance questions that they can’t treat AI as an edge case.",
-      "practical_angle": "If your team has started using AI informally, one simple policy or checklist can prevent confusion later.",
+      "summary": "The UK government’s SKAI programme says AI is now embedded in everyday working life and that organisations still struggle to train staff well enough to capture the benefits. Its employer guide and related materials propose the PRIMES framework for inclusive, safe and sustainable AI upskilling.",
+      "why_it_matters": "For employers, this shifts AI from a software purchase to a capability-building problem. The bottleneck becomes training, supervision and role design, not just tool access.",
+      "practical_angle": "A small business can use this as a cue to write a simple internal AI policy, identify approved tools and run a short training session on one real workflow.",
       "claim_to_verify": "NONE — verified from cited sources."
     }
   ],
-  "main_article": "Could AI disclosure become the next workflow bottleneck? That is the most useful question left by this week’s evidence. The clearest confirmed development was not a bigger benchmark or a louder demo. It was a set of changes that push AI deeper into products, operations and public-facing content at the same time. The European Commission published transparency guidance for AI Act duties that begin on 2 August. Meta said Muse Image is already live on its own surfaces, with Muse Video on the way. Intel said it will deploy Gemini Enterprise and Google Cloud across engineering, supply chain and corporate operations. And the ONS said UK business adoption has moved far enough to show up in official numbers. Taken together, the signal is simple: AI is no longer only a model story. It is becoming a workflow and governance story.\n\nThe confirmed policy piece matters because it turns a vague principle into a concrete product decision. The Commission’s guidance covers user disclosure, deepfakes and machine-readable marking of AI-generated or manipulated content. That means the question for product teams is not just whether they use AI, but where the disclosure lives. Does it appear before a user interacts with a system, inside the content itself, or in a review step before publication? Those are workflow questions, not abstract legal ones. For teams shipping content tools, customer-facing assistants or marketing systems, transparency is no longer something to tack on after the model works. It has to be built into the path from generation to publication.\n\nMeta’s Muse release shows why that matters. Meta said Muse Image is available now in the Meta AI app, on meta.ai, in Instagram Stories in the U.S. and in limited WhatsApp markets, while Muse Video is coming soon to creators and Meta AI. That is not just a model launch; it is a distribution choice. The company is putting generation inside the surfaces people already use, and it is pairing that with a hidden Content Seal watermark and a detection tool. The practical consequence is easy to miss: the easier it becomes to create media, the more important it becomes to trace where it came from. For creators, that means provenance is no longer a separate policy discussion. It is part of the tool itself.\n\nIntel’s collaboration with Google Cloud points in the same direction from the business side. Intel said it will deploy Gemini Enterprise and Google Cloud to expand AI capabilities across engineering, supply chain and corporate operations, and to support chip-development workflows. The value here is not a flashy chatbot. It is the move from isolated tests to company systems with owners, deadlines and accountability. If AI is touching engineering, supply chain and corporate operations, then review, logging and exception handling stop being optional extras. The obvious next question is not whether AI can save time on a draft. It is whether the company can use it without making the process harder to audit.\n\nThe UK adoption data gives that a wider social frame. ONS said self-reported AI use in UK businesses with 10 or more employees rose from around 12% in late 2023 to around 35% by June 2026, and over half of employees reported using AI for work or education. That is enough spread to make governance ordinary. The open question is depth. If most firms are still using only a few tools in a few places, then the next week of AI news may not be about a dramatic leap in capability. It may be about whether those shallow uses become repeatable work habits with rules attached.\n\nThat is the prediction check for Sunday. The evidence does not say every company will suddenly redesign its stack next week. It does say the pressure points are becoming visible: disclosure for public content, provenance for creator tools, integration for enterprise workflows, and basic policy for everyday use. The smartest response is not to try everything at once. It is to choose one output and ask where the AI label, watermark or human review would live before it ships.\n\nSo the open question for next week is narrow but important: when AI is embedded in a product or process, who is responsible for proving what touched the content? If the answer is unclear, the risk is not just compliance trouble. It is confusion at the exact point where AI is supposed to make work simpler.",
-  "practical_takeaway": "Treat AI disclosure as a workflow step, not a last-minute label.",
-  "what_to_test_next": "Pick one public-facing AI output and map exactly where the label, watermark or human review would happen before publish.",
+  "main_article": "The most useful thing to say about AI at work right now is that it is changing shape. We are past the stage where the main question was simply whether employees would use chat tools. The newer question is whether organisations can turn those tools into governed workflows, measurable productivity and trainable habits.\n\nThat shift shows up clearly in OpenAI’s Presence launch. OpenAI says the product is available today to eligible enterprise customers through a limited general availability program, and that deployments are led by Forward Deployed Engineers and select systems integrators. The company also describes a deployment model built around permissions, guardrails, approved actions and escalation rules. In plain English, this is not “here’s a chatbot, good luck.” It is “here is a system to run a specific job.” OpenAI says those jobs can include customer support, IT requests and other internal or customer-facing workflows. That matters because it tells smaller operators what the market now values: not novelty, but control, reviewability and a path from pilot to production. ([openai.com](https://openai.com/index/introducing-openai-presence/))\n\nAt the same time, the evidence on real-world use says most organisations are still at the beginning of that journey. Google’s first ATLAS report is a useful reality check because it is based on a large de-identified dataset, not a demo or a vendor anecdote. Google says the first version includes 15 million human-AI interactions and spans more than 150 countries, 140 languages, 800 occupations and 4,000 tasks. Its early findings say AI use at work is broad but shallow. In practice, people are mostly using AI for collaboration, ideation, information retrieval and learning, while task automation remains uncommon. Google also says AI use reaches across occupations, including some manual and technical roles, which is a reminder that this is not only a white-collar story. ([blog.google](https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/))\n\nThat is the important practical point for creators and small businesses: the biggest near-term wins are likely to come from AI acting like a faster first pass, not a replacement worker. If the task is writing a brief, summarising research, drafting an email sequence, turning a meeting into action items or helping a technician interpret a problem, AI can already save time. But if the job needs judgment, accountability or a customer-specific decision, the human step still matters. Google’s own framing supports that idea: collaboration and assistance are the main use cases, not full automation. ([blog.google](https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/))\n\nGallup’s latest workplace report reinforces that pattern from a different angle. Gallup says more than half of U.S. workers now use AI in their role, with writing and editing, search and research, and general problem-solving as the most common uses. It also says the biggest reported productivity gains come from more task-specific uses such as coding, automation, analytics and presentations. That is a useful distinction. It suggests that organisations do not get much extra value from saying “use AI more.” They get value from helping people use AI in one specific part of the workday where there is a clear before-and-after. ([gallup.com](https://www.gallup.com/workplace/712736/organizational-adoption-jumps-six-points.aspx))\n\nThe UK’s SKAI programme points to the same conclusion from the policy side. The Department for Work and Pensions and Skills England say AI is already embedded in everyday working life and that employers still need better training to make the most of it safely and responsibly. Their PRIMES framework is basically an argument for structured upskilling rather than ad hoc enthusiasm. That matters for small firms because the risk is not only using AI badly; it is failing to set expectations, approval rules and review habits before the tool becomes part of daily work. ([gov.uk](https://www.gov.uk/government/publications/skills-for-ai-what-works-for-ai-upskilling-in-the-uk))\n\nPut together, these stories show a more mature phase of AI adoption. The market is moving from “Can it do this?” to “Who owns the workflow, what gets reviewed, and how do we train people to use it well?” That is good news for practical users because it means the field is getting less abstract. It is also a warning: the winners are likely to be the teams that pick one real job, define what can be automated, keep a human in the loop for the risky part, and measure whether the change actually saves time.\n\nFor a creator, freelancer or small business, the best takeaway is simple: do not start by asking where AI is smartest. Start by asking where your team is slowest, most repetitive and most able to check the output quickly. That is where today’s AI tools are most likely to help this week. ([openai.com](https://openai.com/index/introducing-openai-presence/))",
+  "practical_takeaway": "Pick one repeatable work task that already has a clear human reviewer, then test AI on just that step for one week.",
+  "what_to_test_next": "Run a 7-day experiment where AI drafts first-pass summaries or replies for one workflow, and a human only edits and approves the final version.",
   "claims_to_verify": [],
   "social": {
-    "tiktok_script": "Could disclosure become a workflow step? The Commission says AI Act transparency duties start 2 August. If you publish AI content, map where the label lives.",
-    "tiktok_caption_prompt": "Would you map image, video, or chat first?",
-    "youtube_shorts_script": "Could disclosure become part of the workflow? The European Commission says AI Act transparency duties start on 2 August, including user disclosure, deepfake notices, and machine-readable marking for AI-generated or manipulated content. For teams publishing AI images, video, copy, or chat outputs, that turns disclosure into a process choice, not a last-minute fix. The practical question is where the label lives: before generation, in review, or at publish. Meta’s Muse release shows the same pressure on the creator side, where generation and provenance are being built into the product itself. If you manage one public-facing output, map the label path now. Which would you test first: image, video, or chat?",
-    "facebook_post": "Could disclosure become part of the workflow? The European Commission says AI Act transparency duties start on 2 August, including user disclosure, deepfake handling, and machine-readable marking for AI-generated or manipulated content. That means the practical issue is not whether a label exists, but where it sits before publication. If you manage AI images, video, or copy, map one output path and see where the label or review step belongs. Which would you map first: image, video, or chat?",
-    "pinterest_title": "Where should AI disclosure live in your workflow?",
-    "pinterest_description": "Use this checklist to map where AI labels, deepfake notices, or human review belong before publish. Save it, then reply with image, video, or chat.",
-    "linkedin_post": "Could disclosure become a workflow step? The European Commission says AI Act transparency duties start on 2 August, including user disclosure, deepfake handling, and machine-readable marking for AI-generated or manipulated content. For product, marketing, and compliance teams, that shifts disclosure from a policy note to an operational decision: where does the label, watermark, or review step live before publish? If your team already uses AI in one public-facing process, which step would you map first: draft, review, or approval?",
+    "tiktok_script": "Can AI agents run a work task? OpenAI says Presence is available to eligible enterprise customers, with guardrails and human escalation built in, so teams can pilot one workflow safely.",
+    "tiktok_caption_prompt": "Would you test this on support, IT, or another repeatable task?",
+    "youtube_shorts_script": "Which AI task saves time for your team? Gallup says more than half of U.S. workers now use AI in their role, and the most common uses are writing, editing, search, research and problem-solving. But the strongest productivity gains show up when AI is tied to something specific, like coding, automation, analytics or slide creation. So if you are testing AI this week, do not ask people to use it everywhere. Pick one frequent, boring task with an easy human review step and try it there first. Which would you test first: writing, research, or slides? Put your choice in the comments.",
+    "facebook_post": "How do you use AI at work today? Google says ATLAS v1.0 is built from 15 million de-identified human-AI interactions across Gemini products, and its early findings show workplace AI is mostly used for collaboration, ideation, information retrieval and learning. That means the common pattern is still a helper, not full automation. For small teams, the useful takeaway is simple: start with one repetitive knowledge task and keep a human reviewer. Would you rather test AI on drafting or research? Share the one workflow you would try first.",
+    "pinterest_title": "AI Upkilling at Work: A Simple Training Checklist for Employers",
+    "pinterest_description": "Use the UK SKAI direction to build a simple internal AI policy, choose approved tools, and run a short training session around one real workflow. Save this guide if you are setting workplace AI rules, and comment with the workflow you would train first.",
+    "linkedin_post": "Can your team approve AI actions before they happen? OpenAI says Presence is deployed with permissions, guardrails and human escalation, so the operational question is who reviews the workflow before automation starts. Have you set review rules or escalation paths yet? Share the workflow you would pilot next.",
     "quote_card_lines": [
-      "Could disclosure become a workflow step?",
-      "Where should the label live before publish?",
-      "Labeling works better when it is built into the process.",
-      "Who is responsible for the label before content ships?",
-      "AI transparency is now a workflow design question."
+      "AI at work is becoming a workflow design problem.",
+      "Which single task in your day is repetitive, slow, and easy to review?",
+      "The biggest gains come from one specific task, not general enthusiasm.",
+      "Do you need better access to AI, or better training around one workflow?",
+      "Human review is still the control point that matters most."
     ]
   },
   "headline_options": [
-    "Could AI disclosure become the next product bottleneck?",
-    "Sunday reset: the new AI question is where disclosure lives",
-    "AI is moving into workflows — and so is the label",
-    "What happens when AI output needs to be traceable?",
-    "The Sunday AI reset: provenance, process and the next compliance step"
+    "AI at work is shifting from chat to governed workflows",
+    "The real AI workday change is happening in approvals and training",
+    "AI is moving from drafts to managed jobs",
+    "Workplace AI is maturing: less novelty, more process",
+    "The next AI advantage is not access — it is workflow design"
   ],
   "editorial_theme": {
-    "day": "Sunday",
-    "date": "2026-07-26",
-    "slug": "weekly-recap-prediction-check",
-    "title": "Recap and prediction check",
-    "focus": "Recap the strongest developments of the week, check any recent Clearforge forecasts where evidence exists, and prepare the reader for the following week.",
-    "instruction": "Separate confirmed outcomes from still-open questions. Make the piece useful as a Sunday reset before the next week of AI news."
+    "day": "Monday",
+    "date": "2026-07-27",
+    "slug": "work",
+    "title": "Work",
+    "focus": "AI at work: daily tasks, teams, productivity, research, writing, support, admin, meetings and practical workplace use.",
+    "instruction": "Prioritise stories that help creators, small operators and small businesses test AI in real work. Ask what changes a workday, what still needs human review, and what is ready to try this week."
   },
-  "edition_id": "2026-07-26-considered",
-  "base_date": "2026-07-26",
-  "edition_mode": "alternate_angle",
   "audience_fit": {
-    "generated_at": "2026-07-26T19:21:11.234Z",
+    "generated_at": "2026-07-27T04:13:07.726Z",
     "story_assessments": [
       {
         "story_index": 0,
-        "story_title": "Could disclosure become part of the creator workflow?",
-        "target_audience": "Creators, product teams, compliance leads and marketing ops teams shipping AI-assisted content",
-        "audience_problem_or_desire": "They need to know where AI disclosure, deepfake handling and marking belong in a real publishing process",
-        "interest_signal": "A concrete policy date plus an operational question that affects any public-facing AI output",
-        "stop_reason": "The question is immediately legible: teams have to place disclosure somewhere in the workflow before content ships",
-        "promised_payoff": "A simple way to map one output path and decide where the label or review step lives",
-        "proof_point": "European Commission guidance on AI Act transparency duties beginning 2 August 2026, including user disclosure and machine-readable marking",
+        "story_title": "OpenAI Presence turns agents into a managed workplace product",
+        "target_audience": "Small business owners, team leads, operations managers, and creators who want AI to save time without losing control.",
+        "audience_problem_or_desire": "They want a practical way to use AI inside real work without creating approval, security, or escalation problems.",
+        "interest_signal": "OpenAI says Presence is available to eligible enterprise customers, and deployments are led by engineers and systems integrators.",
+        "stop_reason": "It answers the concrete question of how AI moves from chat to a governed workflow.",
+        "promised_payoff": "See what a managed AI agent looks like and what to define before automating a real task.",
+        "proof_point": "OpenAI says Presence is available today to eligible enterprise customers through a limited general availability program, with approvals, guardrails, and human escalation built into deployment.",
         "search_phrases": [
-          "AI disclosure workflow",
-          "AI Act transparency duties",
-          "machine-readable marking AI content",
-          "where should AI labels live"
-        ],
-        "scores": {
-          "audience_fit": 10,
-          "practical_consequence": 10,
-          "searchability": 9,
-          "stranger_usefulness": 10,
-          "novelty": 8,
-          "visual_potential": 7,
-          "discussion_potential": 9,
-          "short_form_clarity": 10
-        },
-        "overall_score": 9,
-        "score_reason": "Strongest mix of confirmed policy change, clear operational consequence and easy 30-second explanation."
-      },
-      {
-        "story_index": 1,
-        "story_title": "Meta is building provenance into creator-facing tools",
-        "target_audience": "Creators, social platform managers, media policy watchers and product teams using generative tools",
-        "audience_problem_or_desire": "They want to know whether provenance and tracing are built into the tool, not added after the fact",
-        "interest_signal": "Meta is pairing generation surfaces with watermarking and a detection tool",
-        "stop_reason": "It creates a clear trade-off between convenience and traceability for creator workflows",
-        "promised_payoff": "A way to think about provenance as part of the product, not a separate policy file",
-        "proof_point": "Meta said Muse Image is available across Meta AI surfaces and Muse Video is coming soon, with hidden Content Seal watermarking and a detection tool in preview",
-        "search_phrases": [
-          "Meta Muse Image watermarking",
-          "creator provenance tools",
-          "AI content watermarking",
-          "Meta AI generated media"
+          "OpenAI Presence enterprise",
+          "managed AI agents workplace",
+          "AI approvals guardrails escalation"
         ],
         "scores": {
           "audience_fit": 9,
-          "practical_consequence": 8,
+          "practical_consequence": 9,
           "searchability": 8,
           "stranger_usefulness": 8,
           "novelty": 8,
-          "visual_potential": 9,
+          "visual_potential": 7,
           "discussion_potential": 8,
           "short_form_clarity": 8
         },
         "overall_score": 8,
-        "score_reason": "Good creator-side angle with strong visual hooks, but the consequence is narrower than the disclosure workflow question."
+        "score_reason": "Strongest mix of concrete workplace consequence, clear verified detail, and easy-to-explain shift from chat tools to managed systems."
+      },
+      {
+        "story_index": 1,
+        "story_title": "Google’s ATLAS report shows where AI is actually being used at work",
+        "target_audience": "Workers, creators, analysts, and managers who want a data-backed view of current AI use.",
+        "audience_problem_or_desire": "They want to know what people really do with AI at work, beyond hype or demos.",
+        "interest_signal": "Google says ATLAS v1.0 is built from 15 million aggregated and de-identified interactions across Gemini products.",
+        "stop_reason": "It gives a broad snapshot of workplace AI use across countries, languages, occupations, and tasks.",
+        "promised_payoff": "See which tasks dominate current AI use and where first-use cases cluster.",
+        "proof_point": "Google says the dataset spans more than 150 countries, 140 languages, 800 occupations, and 4,000 tasks.",
+        "search_phrases": [
+          "Google ATLAS report AI",
+          "AI at work interactions dataset",
+          "workplace AI use cases"
+        ],
+        "scores": {
+          "audience_fit": 8,
+          "practical_consequence": 7,
+          "searchability": 8,
+          "stranger_usefulness": 8,
+          "novelty": 7,
+          "visual_potential": 6,
+          "discussion_potential": 7,
+          "short_form_clarity": 7
+        },
+        "overall_score": 8,
+        "score_reason": "Useful and credible, but less immediately punchy than the managed-workflow or productivity-gain stories."
       },
       {
         "story_index": 2,
-        "story_title": "Enterprise AI is moving closer to operational rules",
-        "target_audience": "Operations leaders, IT leads, engineering managers and compliance teams in larger businesses",
-        "audience_problem_or_desire": "They need to know how AI fits into accountable workflows without breaking logging, review or approval controls",
-        "interest_signal": "Intel’s deployment spans engineering, supply chain and corporate operations",
-        "stop_reason": "The practical tension is between AI speed and auditability in real business processes",
-        "promised_payoff": "A clean way to ask which process step would need review before AI touches it",
-        "proof_point": "Intel said it will deploy Gemini Enterprise and Google Cloud across engineering, supply chain and corporate operations",
+        "story_title": "Gallup’s latest workplace data says adoption is widening, but use is still uneven",
+        "target_audience": "Managers, small business owners, and employees choosing which AI task to test first.",
+        "audience_problem_or_desire": "They want AI to produce real productivity gains, not just more tool usage.",
+        "interest_signal": "Gallup says more than half of U.S. workers now use AI in their role, with writing, research, and problem-solving leading usage.",
+        "stop_reason": "It ties adoption to specific job functions and measurable payoff.",
+        "promised_payoff": "Identify a task that is frequent, boring, and easy to review, then pilot AI there first.",
+        "proof_point": "Gallup says the strongest productivity gains are linked to more task-specific uses such as coding, automation, analytics, and slide creation.",
         "search_phrases": [
-          "enterprise AI workflow controls",
-          "Gemini Enterprise Intel",
-          "AI governance operations",
-          "AI logging review approval"
+          "Gallup AI workplace adoption",
+          "AI productivity gains task specific",
+          "writing research problem solving AI"
+        ],
+        "scores": {
+          "audience_fit": 9,
+          "practical_consequence": 9,
+          "searchability": 9,
+          "stranger_usefulness": 9,
+          "novelty": 6,
+          "visual_potential": 6,
+          "discussion_potential": 8,
+          "short_form_clarity": 8
+        },
+        "overall_score": 9,
+        "score_reason": "Most directly actionable for a broad work audience because it links adoption to a simple pilot choice and measurable outcomes."
+      },
+      {
+        "story_index": 3,
+        "story_title": "The UK is starting to treat AI training as a workplace capability issue",
+        "target_audience": "Employers, HR leads, operations managers, and small business owners who need a simple AI training plan.",
+        "audience_problem_or_desire": "They need to train staff safely and effectively instead of leaving AI use to ad hoc experimentation.",
+        "interest_signal": "The UK government says AI is becoming embedded in everyday working life and proposes PRIMES for workforce training.",
+        "stop_reason": "It turns AI from a software purchase into a training and role-design problem.",
+        "promised_payoff": "Set a simple internal policy, choose approved tools, and run a short training session around one workflow.",
+        "proof_point": "The UK government says the SKAI programme proposes PRIMES as a framework for inclusive, safe, and sustainable AI workforce training.",
+        "search_phrases": [
+          "SKAI programme AI training",
+          "PRIMES framework AI upskilling",
+          "UK workplace AI policy"
         ],
         "scores": {
           "audience_fit": 8,
           "practical_consequence": 8,
           "searchability": 7,
           "stranger_usefulness": 8,
-          "novelty": 7,
-          "visual_potential": 6,
-          "discussion_potential": 8,
-          "short_form_clarity": 8
-        },
-        "overall_score": 8,
-        "score_reason": "Useful enterprise signal, though less immediate and less universal than the disclosure workflow question."
-      },
-      {
-        "story_index": 3,
-        "story_title": "Broad AI use in UK firms is no longer hypothetical",
-        "target_audience": "Business leaders, managers, HR teams and policy-minded readers tracking workplace AI adoption",
-        "audience_problem_or_desire": "They want to know whether AI use is now common enough that basic policy and checklist questions matter",
-        "interest_signal": "Official survey numbers show AI use rising across UK businesses and workers",
-        "stop_reason": "The story is broad and credible, but the consequence is more gradual and less specific",
-        "promised_payoff": "A simple prompt to start a first AI policy or checklist",
-        "proof_point": "ONS said self-reported AI use in UK businesses with 10 or more employees rose to around 35% by June 2026, and over half of employees reported using AI for work or education",
-        "search_phrases": [
-          "UK business AI adoption ONS",
-          "employee AI use survey",
-          "AI policy checklist workplace",
-          "AI use in UK firms"
-        ],
-        "scores": {
-          "audience_fit": 7,
-          "practical_consequence": 6,
-          "searchability": 7,
-          "stranger_usefulness": 7,
           "novelty": 6,
           "visual_potential": 5,
-          "discussion_potential": 6,
+          "discussion_potential": 7,
           "short_form_clarity": 7
         },
-        "overall_score": 7,
-        "score_reason": "Solid context story, but it is less actionable than the confirmed disclosure workflow question."
+        "overall_score": 8,
+        "score_reason": "Practical and credible, with strong employer relevance, though it is narrower and less visually immediate than the top two stories."
       }
     ],
     "platform_selections": {
       "tiktok": {
         "story_index": 0,
-        "story_title": "Could disclosure become part of the creator workflow?",
-        "target_audience": "Creators, product teams and compliance leads shipping AI content",
-        "format": "single-discovery micro-explainer",
-        "opening": "Could disclosure become a workflow step?",
-        "payoff": "The Commission says AI Act transparency duties start on 2 August, so teams need to map where the label lives before content ships.",
-        "selection_reason": "This is the clearest one-step consequence from the week and fits the evening micro-explainer rule: one confirmed fact, one workflow question, one immediate payoff.",
-        "platform_fit_score": 10
+        "story_title": "OpenAI Presence turns agents into a managed workplace product",
+        "target_audience": "Small business owners, team leads, operations managers, and creators who want AI to save time without losing control.",
+        "format": "micro_explainer",
+        "opening": "Can AI agents run a work task?",
+        "payoff": "OpenAI says Presence is available to eligible enterprise customers, with guardrails and human escalation built in, so teams can pilot one workflow safely.",
+        "selection_reason": "Best controlled TikTok story: it introduces an unfamiliar capability, a real workplace consequence, and a clear before/after in one beat.",
+        "platform_fit_score": 9
       },
       "youtube": {
-        "story_index": 0,
-        "story_title": "Could disclosure become part of the creator workflow?",
-        "target_audience": "Creators, product teams, compliance leads and marketers",
-        "format": "short explainer",
-        "opening": "Could disclosure become part of the workflow?",
-        "payoff": "AI Act transparency duties begin on 2 August, which makes label placement a process decision for teams shipping images, video, copy or chat outputs.",
-        "selection_reason": "YouTube Shorts can carry the same single question but has room to explain the operational trade-off clearly and searchably.",
+        "story_index": 2,
+        "story_title": "Gallup’s latest workplace data says adoption is widening, but use is still uneven",
+        "target_audience": "Managers, small business owners, and employees choosing which AI task to test first.",
+        "format": "shorts_explainer",
+        "opening": "Which AI task saves time for your team?",
+        "payoff": "Gallup says more than half of U.S. workers use AI, and the biggest gains come from task-specific uses like coding, automation, analytics and slides.",
+        "selection_reason": "Strong search-friendly Shorts topic with a simple operational takeaway and an easy comparison viewers can answer quickly.",
         "platform_fit_score": 9
       },
       "facebook": {
-        "story_index": 0,
-        "story_title": "Could disclosure become part of the creator workflow?",
-        "target_audience": "Creators, marketers, product teams and business managers",
-        "format": "discussion post",
-        "opening": "Could disclosure become part of the workflow?",
-        "payoff": "The Commission’s transparency duties begin on 2 August, so teams publishing AI content need a clear place for the label or review step before they hit publish.",
-        "selection_reason": "Facebook works well with practical process questions that feel familiar to teams handling images, video or copy.",
+        "story_index": 1,
+        "story_title": "Google’s ATLAS report shows where AI is actually being used at work",
+        "target_audience": "Workers, creators, analysts, and managers who want a data-backed view of current AI use.",
+        "format": "discussion_post",
+        "opening": "How do you use AI at work today?",
+        "payoff": "Google’s ATLAS report is built from 15 million de-identified interactions, and its early findings suggest workplace AI is mostly being used for collaboration, ideation, information retrieval and learning.",
+        "selection_reason": "Good Facebook fit because it feels familiar, data-backed, and easy to answer from personal experience without requiring niche context.",
         "platform_fit_score": 8
       },
       "pinterest": {
-        "story_index": 0,
-        "story_title": "Could disclosure become part of the creator workflow?",
-        "target_audience": "People saving checklists for AI content, compliance and publishing workflows",
-        "format": "checklist pin",
-        "opening": "Where should AI disclosure live in your workflow?",
-        "payoff": "A simple map of where labels, review or marking belong before publish helps teams turn transparency into a repeatable step.",
-        "selection_reason": "Pinterest favors searchable checklist language, and this story translates cleanly into a saveable workflow guide.",
+        "story_index": 3,
+        "story_title": "The UK is starting to treat AI training as a workplace capability issue",
+        "target_audience": "Employers, HR leads, operations managers, and small business owners who need a simple AI training plan.",
+        "format": "practical_guide",
+        "opening": "AI Upkilling at Work: A Simple Training Checklist for Employers",
+        "payoff": "Use the SKAI direction to build a simple internal AI policy, choose approved tools, and run a short training session around one real workflow.",
+        "selection_reason": "Pinterest works best as a searchable guide, and this story naturally becomes a checklist or policy template for workplace AI training.",
         "platform_fit_score": 8
       },
       "linkedin": {
         "story_index": 0,
-        "story_title": "Could disclosure become part of the creator workflow?",
-        "target_audience": "Product, marketing, operations and compliance professionals",
-        "format": "workplace analysis post",
-        "opening": "Could disclosure become a workflow step?",
-        "payoff": "With AI Act transparency duties beginning on 2 August, the operational decision is where disclosure, marking or review happens before publish.",
-        "selection_reason": "LinkedIn is the best place to frame this as an operational decision with accountability, not just a policy note.",
+        "story_title": "OpenAI Presence turns agents into a managed workplace product",
+        "target_audience": "Small business leaders, operations managers, and workplace decision-makers who need governed AI deployment.",
+        "format": "professional_insight",
+        "opening": "Can your team approve AI actions before they happen?",
+        "payoff": "OpenAI says Presence is deployed with permissions, guardrails and human escalation, which makes the operational lesson clear: define review rules before you automate a real workflow.",
+        "selection_reason": "Best LinkedIn story because it turns AI into a management decision about accountability, deployment and workflow control.",
         "platform_fit_score": 9
       }
     },
-    "overall_reasoning": "Story 0 is the strongest evening considered-question because it combines a verified policy start date with a second-order operational consequence that can be explained quickly: disclosure has to live somewhere in the workflow. The other stories are useful, but they are narrower, less universal, or less immediate for a short social question."
+    "overall_reasoning": "The evidence points to one clear theme: AI at work is moving from experimentation to managed, reviewable workflows. For short-form attention, the strongest hook is the shift from chat to governed agents; for broader platforms, the best response is practical and task-specific. The selections favor stories that let a stranger answer with a real workflow, a real team decision, or a real training need without needing extra context."
   }
 }

@@ -1,0 +1,43 @@
+{
+  "date": "2026-07-27",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Can AI agents run a work task?",
+      "words": 30,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Which AI task saves time for your team?",
+      "words": 102,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "How do you use AI at work today?",
+      "words": 88,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Can your team approve AI actions before they happen?",
+      "words": 48,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "AI Upkilling at Work: A Simple Training Checklist for Employers",
+    "title_words": 10,
+    "description_words": 44
+  },
+  "warnings": [
+    "TikTok content is shorter than preferred (30 words)"
+  ]
+}

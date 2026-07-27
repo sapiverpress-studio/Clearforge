@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "date": "2026-07-27",
+  "brand": "Clearforge",
+  "type": "clearforge_daily_biggest_story_podcast_script",
+  "human_review_required": true,
+  "narrator": "Irene",
+  "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
+  "episode_title": "AI at work shifts from personal use to managed systems",
+  "selected_story_index": 0,
+  "selected_story_title": "OpenAI Presence turns agents into a managed workplace product",
+  "selection_reason": "This is the biggest story because it shows AI moving beyond individual chat use and into managed workplace deployment, with approvals, escalation paths, and implementation support. That is the clearest sign that the next phase of adoption is operational, not experimental.",
+  "word_count": 1363,
+  "estimated_duration_minutes": 9.4,
+  "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
+  "source_notes": "source-notes.md",
+  "first_spoken_line": "Today’s big AI-at-work story is not about a new model benchmark or a flashy demo. It is about how AI is being packaged for actual use inside organizations.",
+  "final_spoken_line": "For now, watch how these workplace products are deployed, what safeguards they use, and which tasks prove reliable enough to standardize. The winners will not be the teams that use AI everywhere. They will be the teams that use it in one place, well, with clear rules.",
+  "validation_warnings": [],
+  "non_spoken_instruction_candidates": []
+}

@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>
     <copyright>Clearforge</copyright>
     <generator>Clearforge hosted podcast feed</generator>
-    <lastBuildDate>Sun, 26 Jul 2026 19:29:16 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 04:22:39 GMT</lastBuildDate>
     <atom:link href="https://clearforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Clearforge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://clearforge-daily-brief.netlify.app/podcast/cover.png"/>
+    <item>
+      <title>AI at work shifts from personal use to managed systems</title>
+      <description>This is the biggest story because it shows AI moving beyond individual chat use and into managed workplace deployment, with approvals, escalation paths, and implementation support. That is the clearest sign that the next phase of adoption is operational, not experimental.</description>
+      <content:encoded><![CDATA[<p>This is the biggest story because it shows AI moving beyond individual chat use and into managed workplace deployment, with approvals, escalation paths, and implementation support. That is the clearest sign that the next phase of adoption is operational, not experimental.</p><p><strong>Read alongside this episode:</strong> <a href="https://clearforge-daily-brief.netlify.app/posts/2026-07-27.html">daily briefing</a> · <a href="https://clearforge-daily-brief.netlify.app/features/2026-07-27.html">feature analysis</a></p><p><a href="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-27.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-27.html</link>
+      <guid isPermaLink="false">clearforge:2026-07-27</guid>
+      <pubDate>Mon, 27 Jul 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-27.mp3" length="8707805" type="audio/mpeg"/>
+      <itunes:author>Clearforge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:09:24</itunes:duration>
+      <podcast:transcript url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-27.txt" type="text/plain"/>
+    </item>
     <item>
       <title>Could AI disclosure become the next product bottleneck?</title>
       <description>This is the strongest story because it turns AI disclosure from a general policy idea into a concrete operating requirement with a fixed start date. It affects creators, product teams and small businesses that publish AI-assisted content, so it has the widest immediate practical impact.</description>

@@ -1,0 +1,166 @@
+{
+  "generated_at": "2026-07-27T04:13:07.726Z",
+  "story_assessments": [
+    {
+      "story_index": 0,
+      "story_title": "OpenAI Presence turns agents into a managed workplace product",
+      "target_audience": "Small business owners, team leads, operations managers, and creators who want AI to save time without losing control.",
+      "audience_problem_or_desire": "They want a practical way to use AI inside real work without creating approval, security, or escalation problems.",
+      "interest_signal": "OpenAI says Presence is available to eligible enterprise customers, and deployments are led by engineers and systems integrators.",
+      "stop_reason": "It answers the concrete question of how AI moves from chat to a governed workflow.",
+      "promised_payoff": "See what a managed AI agent looks like and what to define before automating a real task.",
+      "proof_point": "OpenAI says Presence is available today to eligible enterprise customers through a limited general availability program, with approvals, guardrails, and human escalation built into deployment.",
+      "search_phrases": [
+        "OpenAI Presence enterprise",
+        "managed AI agents workplace",
+        "AI approvals guardrails escalation"
+      ],
+      "scores": {
+        "audience_fit": 9,
+        "practical_consequence": 9,
+        "searchability": 8,
+        "stranger_usefulness": 8,
+        "novelty": 8,
+        "visual_potential": 7,
+        "discussion_potential": 8,
+        "short_form_clarity": 8
+      },
+      "overall_score": 8,
+      "score_reason": "Strongest mix of concrete workplace consequence, clear verified detail, and easy-to-explain shift from chat tools to managed systems."
+    },
+    {
+      "story_index": 1,
+      "story_title": "Google’s ATLAS report shows where AI is actually being used at work",
+      "target_audience": "Workers, creators, analysts, and managers who want a data-backed view of current AI use.",
+      "audience_problem_or_desire": "They want to know what people really do with AI at work, beyond hype or demos.",
+      "interest_signal": "Google says ATLAS v1.0 is built from 15 million aggregated and de-identified interactions across Gemini products.",
+      "stop_reason": "It gives a broad snapshot of workplace AI use across countries, languages, occupations, and tasks.",
+      "promised_payoff": "See which tasks dominate current AI use and where first-use cases cluster.",
+      "proof_point": "Google says the dataset spans more than 150 countries, 140 languages, 800 occupations, and 4,000 tasks.",
+      "search_phrases": [
+        "Google ATLAS report AI",
+        "AI at work interactions dataset",
+        "workplace AI use cases"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 7,
+        "searchability": 8,
+        "stranger_usefulness": 8,
+        "novelty": 7,
+        "visual_potential": 6,
+        "discussion_potential": 7,
+        "short_form_clarity": 7
+      },
+      "overall_score": 8,
+      "score_reason": "Useful and credible, but less immediately punchy than the managed-workflow or productivity-gain stories."
+    },
+    {
+      "story_index": 2,
+      "story_title": "Gallup’s latest workplace data says adoption is widening, but use is still uneven",
+      "target_audience": "Managers, small business owners, and employees choosing which AI task to test first.",
+      "audience_problem_or_desire": "They want AI to produce real productivity gains, not just more tool usage.",
+      "interest_signal": "Gallup says more than half of U.S. workers now use AI in their role, with writing, research, and problem-solving leading usage.",
+      "stop_reason": "It ties adoption to specific job functions and measurable payoff.",
+      "promised_payoff": "Identify a task that is frequent, boring, and easy to review, then pilot AI there first.",
+      "proof_point": "Gallup says the strongest productivity gains are linked to more task-specific uses such as coding, automation, analytics, and slide creation.",
+      "search_phrases": [
+        "Gallup AI workplace adoption",
+        "AI productivity gains task specific",
+        "writing research problem solving AI"
+      ],
+      "scores": {
+        "audience_fit": 9,
+        "practical_consequence": 9,
+        "searchability": 9,
+        "stranger_usefulness": 9,
+        "novelty": 6,
+        "visual_potential": 6,
+        "discussion_potential": 8,
+        "short_form_clarity": 8
+      },
+      "overall_score": 9,
+      "score_reason": "Most directly actionable for a broad work audience because it links adoption to a simple pilot choice and measurable outcomes."
+    },
+    {
+      "story_index": 3,
+      "story_title": "The UK is starting to treat AI training as a workplace capability issue",
+      "target_audience": "Employers, HR leads, operations managers, and small business owners who need a simple AI training plan.",
+      "audience_problem_or_desire": "They need to train staff safely and effectively instead of leaving AI use to ad hoc experimentation.",
+      "interest_signal": "The UK government says AI is becoming embedded in everyday working life and proposes PRIMES for workforce training.",
+      "stop_reason": "It turns AI from a software purchase into a training and role-design problem.",
+      "promised_payoff": "Set a simple internal policy, choose approved tools, and run a short training session around one workflow.",
+      "proof_point": "The UK government says the SKAI programme proposes PRIMES as a framework for inclusive, safe, and sustainable AI workforce training.",
+      "search_phrases": [
+        "SKAI programme AI training",
+        "PRIMES framework AI upskilling",
+        "UK workplace AI policy"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 8,
+        "searchability": 7,
+        "stranger_usefulness": 8,
+        "novelty": 6,
+        "visual_potential": 5,
+        "discussion_potential": 7,
+        "short_form_clarity": 7
+      },
+      "overall_score": 8,
+      "score_reason": "Practical and credible, with strong employer relevance, though it is narrower and less visually immediate than the top two stories."
+    }
+  ],
+  "platform_selections": {
+    "tiktok": {
+      "story_index": 0,
+      "story_title": "OpenAI Presence turns agents into a managed workplace product",
+      "target_audience": "Small business owners, team leads, operations managers, and creators who want AI to save time without losing control.",
+      "format": "micro_explainer",
+      "opening": "Can AI agents run a work task?",
+      "payoff": "OpenAI says Presence is available to eligible enterprise customers, with guardrails and human escalation built in, so teams can pilot one workflow safely.",
+      "selection_reason": "Best controlled TikTok story: it introduces an unfamiliar capability, a real workplace consequence, and a clear before/after in one beat.",
+      "platform_fit_score": 9
+    },
+    "youtube": {
+      "story_index": 2,
+      "story_title": "Gallup’s latest workplace data says adoption is widening, but use is still uneven",
+      "target_audience": "Managers, small business owners, and employees choosing which AI task to test first.",
+      "format": "shorts_explainer",
+      "opening": "Which AI task saves time for your team?",
+      "payoff": "Gallup says more than half of U.S. workers use AI, and the biggest gains come from task-specific uses like coding, automation, analytics and slides.",
+      "selection_reason": "Strong search-friendly Shorts topic with a simple operational takeaway and an easy comparison viewers can answer quickly.",
+      "platform_fit_score": 9
+    },
+    "facebook": {
+      "story_index": 1,
+      "story_title": "Google’s ATLAS report shows where AI is actually being used at work",
+      "target_audience": "Workers, creators, analysts, and managers who want a data-backed view of current AI use.",
+      "format": "discussion_post",
+      "opening": "How do you use AI at work today?",
+      "payoff": "Google’s ATLAS report is built from 15 million de-identified interactions, and its early findings suggest workplace AI is mostly being used for collaboration, ideation, information retrieval and learning.",
+      "selection_reason": "Good Facebook fit because it feels familiar, data-backed, and easy to answer from personal experience without requiring niche context.",
+      "platform_fit_score": 8
+    },
+    "pinterest": {
+      "story_index": 3,
+      "story_title": "The UK is starting to treat AI training as a workplace capability issue",
+      "target_audience": "Employers, HR leads, operations managers, and small business owners who need a simple AI training plan.",
+      "format": "practical_guide",
+      "opening": "AI Upkilling at Work: A Simple Training Checklist for Employers",
+      "payoff": "Use the SKAI direction to build a simple internal AI policy, choose approved tools, and run a short training session around one real workflow.",
+      "selection_reason": "Pinterest works best as a searchable guide, and this story naturally becomes a checklist or policy template for workplace AI training.",
+      "platform_fit_score": 8
+    },
+    "linkedin": {
+      "story_index": 0,
+      "story_title": "OpenAI Presence turns agents into a managed workplace product",
+      "target_audience": "Small business leaders, operations managers, and workplace decision-makers who need governed AI deployment.",
+      "format": "professional_insight",
+      "opening": "Can your team approve AI actions before they happen?",
+      "payoff": "OpenAI says Presence is deployed with permissions, guardrails and human escalation, which makes the operational lesson clear: define review rules before you automate a real workflow.",
+      "selection_reason": "Best LinkedIn story because it turns AI into a management decision about accountability, deployment and workflow control.",
+      "platform_fit_score": 9
+    }
+  },
+  "overall_reasoning": "The evidence points to one clear theme: AI at work is moving from experimentation to managed, reviewable workflows. For short-form attention, the strongest hook is the shift from chat to governed agents; for broader platforms, the best response is practical and task-specific. The selections favor stories that let a stranger answer with a real workflow, a real team decision, or a real training need without needing extra context."
+}

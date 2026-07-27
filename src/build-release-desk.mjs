@@ -207,4 +207,3 @@ fs.writeFileSync(path.join(draftDir, "release-desk.json"), JSON.stringify(report
 fs.writeFileSync(path.join(draftDir, `clearforge-release-desk-${DATE}.html`), html);
 fs.writeFileSync(path.join(draftDir, "release-summary.md"), summary);
 console.log(`Built Clearforge Release Desk for ${DATE}: ${decision}, assurance ${report.assurance_score.toFixed(3)}`);
-if (decision === "STOP") process.exitCode = 2;

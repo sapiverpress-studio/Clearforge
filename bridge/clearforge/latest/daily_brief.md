@@ -1,124 +1,122 @@
-# AI at work is shifting from personal use to managed systems, training and measurement
+# Weekend roundup: AI is moving from chat to action, while Europe loosens the compliance clock
 
 Status: Draft — automatic validation pending
 
-Editorial theme: Monday — Work
+Editorial theme: Monday — Weekend roundup
 
-This Monday brief looks at the part of AI adoption that matters most for work: which tasks are getting delegated, how organisations are putting guardrails around them, and what employers now need to teach before the tools pay off.
+This weekend’s clearest shift was not another model race. It was control: Europe put the AI Omnibus into force, Google backed the EU transparency code, Meta pushed AI further into task completion, and employers kept arguing that the real change is task redesign, not mass replacement.
 
 ## Source List
 
-1. [Introducing OpenAI Presence](https://openai.com/index/introducing-openai-presence/) — OpenAI (2026-07-22)
+1. [AI Omnibus enters into force](https://digital-strategy.ec.europa.eu/en/news/ai-omnibus-enters-force) — European Commission (2026-07-27)
    - Coverage lane: confirmed_development
-   - Topic category: workplace_and_business
-   - Evidence basis: Primary company announcement with rollout status, product scope, deployment model and examples of enterprise use.
-   - Confirmed: OpenAI says Presence is available today for voice and chat agents to eligible enterprise customers through a limited general availability program, and that deployments are led by OpenAI Forward Deployed Engineers and select systems integrators.
-   - Interpretation: This is a clear sign that AI agents are being packaged as managed production systems, not just model access.
+   - Topic category: policy_safety_and_security
+   - Evidence basis: Official EU news release published today; primary source for the legal timing and the scope of the simplification package.
+   - Confirmed: The AI Omnibus entered into force across the EU on 27 July 2026 and extends timelines, expands testing opportunities and reduces some administrative burdens.
+   - Interpretation: For smaller businesses and product teams, this lowers near-term compliance pressure while keeping the direction of travel toward formal AI oversight.
 
-2. [The first ATLAS report on AI](https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/) — Google Blog (2026-07-23)
-   - Coverage lane: human_impact
-   - Topic category: research_and_science
-   - Evidence basis: Primary research blog post describing dataset size, methodology and headline findings from Google’s AI & Economy ATLAS.
-   - Confirmed: Google says ATLAS v1.0 is built from 15 million aggregated and de-identified human-AI interactions across Gemini App, AI Mode and the Gemini API, and that the data spans more than 150 countries, 140 languages, 800 occupations and 4,000 tasks.
-   - Interpretation: The report suggests AI use at work is broad but still selective, with collaboration and information work leading the way.
-
-3. [Organizational AI Adoption Jumps Six Points](https://www.gallup.com/workplace/712736/organizational-adoption-jumps-six-points.aspx) — Gallup (2026-07-20)
-   - Coverage lane: human_impact
-   - Topic category: workplace_and_business
-   - Evidence basis: Gallup workplace survey report with usage rates, task categories and productivity responses from employees.
-   - Confirmed: Gallup says more than half of U.S. workers now use AI in their role, and that writing/editing, search/research and problem-solving are the most common uses.
-   - Interpretation: The data points to a practical pattern: people start with writing and research, but bigger productivity gains show up when AI is used for more task-specific work.
-
-4. [Skills for AI: What works for AI upskilling in the UK](https://www.gov.uk/government/publications/skills-for-ai-what-works-for-ai-upskilling-in-the-uk) — Department for Work and Pensions / Skills England (2026-06-10)
+2. [Google is signing the EU AI Act Code of Practice on Transparency of AI-Generated Content](https://blog.google/company-news/outreach-and-initiatives/public-policy/eu-ai-act-transparency-code-of-practice/) — Google (2026-07-24)
    - Coverage lane: confirmed_development
-   - Topic category: education_employment_and_society
-   - Evidence basis: Official UK government research and guidance page linking the employer guide, methodology and case studies.
-   - Confirmed: The UK government says the SKAI programme shows AI is becoming embedded in everyday working life across the UK and proposes PRIMES, a framework for inclusive, safe and sustainable AI workforce training.
-   - Interpretation: This is a policy signal that the next bottleneck is not access to AI, but whether employers can train people to use it well and safely.
+   - Topic category: policy_safety_and_security
+   - Evidence basis: Official company statement on the signing and on Google’s transparency tools and position on the EU code.
+   - Confirmed: Google said on 24 July 2026 that it is signing the EU AI Act transparency code and tying that to SynthID and C2PA work.
+   - Interpretation: This is a signal that content provenance is becoming a product requirement, not just a policy talking point.
+
+3. [Meta AI Doesn’t Just Think, It Acts](https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/) — Meta (2026-07-24)
+   - Coverage lane: confirmed_development
+   - Topic category: creator_tools_and_media
+   - Evidence basis: Official Meta newsroom post describing the feature set, rollout timing and supported actions.
+   - Confirmed: Meta said Meta AI can now make plans, connect to email and calendar apps, create slides and handle tasks on a user’s behalf, with rollout starting in select markets on 24 July 2026.
+   - Interpretation: The practical shift is from prompting to delegation, which raises the value of review before anything leaves the app or reaches other people.
+
+4. [Future of Professionals Report 2026](https://insight.thomsonreuters.com/mena/business/resources/resource/future-of-professionals-report-2026-thomson-reuters) — Thomson Reuters (2026-07-02)
+   - Coverage lane: human_impact
+   - Topic category: workplace_and_business
+   - Evidence basis: Company report based on a global survey of 1,816 professionals across 62 countries, published with methodology context on the report page.
+   - Confirmed: Thomson Reuters said 35% of professionals see their organisation’s AI strategy affecting daily roles, one in three are using AI that was not officially approved, and one in four are considering leaving.
+   - Interpretation: The risk is not just adoption speed; it is unapproved use slipping into real client or compliance work without a clear handoff.
 
 ## Story Summaries
 
-### OpenAI Presence turns agents into a managed workplace product
+### Europe has stretched the AI compliance clock
 
 **Coverage lane:** confirmed_development
 
-**Topic category:** workplace_and_business
+**Topic category:** policy_safety_and_security
 
-OpenAI’s Presence launch moves the conversation from model capability to operational deployment. The company says the product is already available in a limited general availability program for eligible enterprise customers, with OpenAI engineers and systems integrators leading deployments. OpenAI also says Presence is designed for jobs such as customer support, internal IT requests and other workflows where companies want agents to answer questions, take approved actions and escalate to humans when needed.
+The EU’s AI Omnibus took effect today and pushes back some deadlines while also expanding sandbox-style testing and reducing paperwork for smaller firms. That makes the near-term burden lighter for many deployers, but it does not remove the underlying compliance direction.
 
-**Why it matters:** That makes AI adoption feel less like experimenting with chat and more like buying a managed work system with rules, approvals and support.
+**Why it matters:** Small businesses and product teams now have more time to experiment without the same immediate pressure, but they should not read that as a free pass.
 
-**Practical angle:** Small teams can treat this as a reminder to define one repeatable workflow, one approval point and one escalation path before trying to automate anything important.
-
-**Claim to verify:** NONE — verified from cited sources.
-
-### Google’s ATLAS report shows where AI is actually being used at work
-
-**Coverage lane:** human_impact
-
-**Topic category:** research_and_science
-
-Google’s first ATLAS report is one of the clearest recent snapshots of real AI use. Google says the dataset covers 15 million de-identified interactions across Gemini products and spans 150+ countries, 140 languages, 800 occupations and 4,000 tasks. Its early findings say workplace use is broad but shallow, with most activity clustered around collaboration, ideation, information retrieval and learning rather than full automation.
-
-**Why it matters:** The practical message is that AI is already a work tool, but mostly as a helper. That is useful for creators and small businesses because the best first use cases are likely drafting, research, planning and triage.
-
-**Practical angle:** If you are choosing one workflow to test this week, pick a repetitive knowledge task rather than a full end-to-end process.
+**Practical angle:** If you build or buy AI tools in Europe, check whether your team’s next release still needs disclosure, logging or review even if the deadline moved.
 
 **Claim to verify:** NONE — verified from cited sources.
 
-### Gallup’s latest workplace data says adoption is widening, but use is still uneven
-
-**Coverage lane:** human_impact
-
-**Topic category:** workplace_and_business
-
-Gallup says more than half of U.S. workers now use AI in their role, with 15% using it daily. The most common uses are writing/editing, search/research and general problem-solving. Gallup also says the strongest productivity gains are linked to more task-specific uses such as coding, automation, analytics and slide creation.
-
-**Why it matters:** This is a useful reminder that broad AI access is not the same as broad business value. The strongest gains come when AI is tied to a specific job function.
-
-**Practical angle:** Managers should look for one team task that is frequent, boring and easy to review, then train around that use case instead of telling everyone to “use AI more.”
-
-**Claim to verify:** NONE — verified from cited sources.
-
-### The UK is starting to treat AI training as a workplace capability issue
+### Google is treating AI transparency as a distribution problem
 
 **Coverage lane:** confirmed_development
 
-**Topic category:** education_employment_and_society
+**Topic category:** policy_safety_and_security
 
-The UK government’s SKAI programme says AI is now embedded in everyday working life and that organisations still struggle to train staff well enough to capture the benefits. Its employer guide and related materials propose the PRIMES framework for inclusive, safe and sustainable AI upskilling.
+Google said it will sign the EU AI Act transparency code and continue pushing watermarking and content provenance through SynthID and C2PA. The key point is that disclosure is moving from a policy promise to a design choice across platforms and labs.
 
-**Why it matters:** For employers, this shifts AI from a software purchase to a capability-building problem. The bottleneck becomes training, supervision and role design, not just tool access.
+**Why it matters:** Creators and marketers may soon need to think not only about what they made, but about how they can prove where it came from.
 
-**Practical angle:** A small business can use this as a cue to write a simple internal AI policy, identify approved tools and run a short training session on one real workflow.
+**Practical angle:** If you publish client work, ask your tool vendor how it labels AI-made or AI-edited content and whether that label survives export.
+
+**Claim to verify:** NONE — verified from cited sources.
+
+### Meta is pushing AI from drafting into doing
+
+**Coverage lane:** confirmed_development
+
+**Topic category:** creator_tools_and_media
+
+Meta AI now goes beyond chat by making plans, pulling in calendar and email context, creating slides and following through on tasks. Meta said the rollout started in select markets on 24 July and will expand later.
+
+**Why it matters:** This is a practical shift for solo operators: the tool is no longer just helping you write; it is trying to take the next step for you.
+
+**Practical angle:** Before you let a tool send, schedule or assemble something on your behalf, check what the app can actually do without a fresh approval step.
+
+**Claim to verify:** NONE — verified from cited sources.
+
+### The workplace story is not mass replacement; it is unapproved use and role redesign
+
+**Coverage lane:** human_impact
+
+**Topic category:** workplace_and_business
+
+Thomson Reuters’ survey found a gap between AI ambition and day-to-day reality, with many professionals using AI tools that were not officially approved. Separately, Adecco told Reuters that AI is changing tasks and roles more than eliminating jobs outright.
+
+**Why it matters:** The biggest operational problem is less ‘will AI exist?’ and more ‘who approved this, who checked it, and what happens if it is wrong?’
+
+**Practical angle:** If your team uses AI for client-facing work, create one simple rule: no outside send until a human has checked the source, the claim and the output.
 
 **Claim to verify:** NONE — verified from cited sources.
 
 ## Main Article
 
-The most useful thing to say about AI at work right now is that it is changing shape. We are past the stage where the main question was simply whether employees would use chat tools. The newer question is whether organisations can turn those tools into governed workflows, measurable productivity and trainable habits.
+This weekend’s AI story was not mainly about another model launch. It was about control points. Europe moved to simplify and delay parts of its AI rulebook, Google chose to sign up to the EU’s transparency code, Meta pushed its assistant closer to actual task completion, and workplace research kept pointing to the same practical risk: AI is spreading faster than the approvals, reviews and records around it.
 
-That shift shows up clearly in OpenAI’s Presence launch. OpenAI says the product is available today to eligible enterprise customers through a limited general availability program, and that deployments are led by Forward Deployed Engineers and select systems integrators. The company also describes a deployment model built around permissions, guardrails, approved actions and escalation rules. In plain English, this is not “here’s a chatbot, good luck.” It is “here is a system to run a specific job.” OpenAI says those jobs can include customer support, IT requests and other internal or customer-facing workflows. That matters because it tells smaller operators what the market now values: not novelty, but control, reviewability and a path from pilot to production. ([openai.com](https://openai.com/index/introducing-openai-presence/))
+The clearest policy change is the EU AI Omnibus entering into force on 27 July 2026. The Commission says the package extends some timelines, expands testing and experimentation opportunities and reduces some administrative burdens, especially for smaller businesses. For a lot of teams, that matters immediately. If you are a startup, a small agency or a business trying to ship a feature without a large compliance department, extra time can mean a cleaner rollout and less rush. But the important word is extra time, not no rules. The direction of travel is still toward stronger AI oversight, clearer disclosure and more structured testing.
 
-At the same time, the evidence on real-world use says most organisations are still at the beginning of that journey. Google’s first ATLAS report is a useful reality check because it is based on a large de-identified dataset, not a demo or a vendor anecdote. Google says the first version includes 15 million human-AI interactions and spans more than 150 countries, 140 languages, 800 occupations and 4,000 tasks. Its early findings say AI use at work is broad but shallow. In practice, people are mostly using AI for collaboration, ideation, information retrieval and learning, while task automation remains uncommon. Google also says AI use reaches across occupations, including some manual and technical roles, which is a reminder that this is not only a white-collar story. ([blog.google](https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/))
+That same logic shows up in Google’s decision to sign the EU AI Act Code of Practice on Transparency of AI-Generated Content. Google says it will keep building on its watermarking and provenance work through SynthID and C2PA. That is not just a policy gesture. It is a reminder that content origin is becoming part of the product itself. For creators, marketers and small businesses, this is the practical problem: if AI helped make the thing you are publishing, can you prove where it came from, whether it was edited, and whether the label survives when the file leaves your tool? The answer will matter more in client work, advertising and platform distribution than it does in casual experimentation.
 
-That is the important practical point for creators and small businesses: the biggest near-term wins are likely to come from AI acting like a faster first pass, not a replacement worker. If the task is writing a brief, summarising research, drafting an email sequence, turning a meeting into action items or helping a technician interpret a problem, AI can already save time. But if the job needs judgment, accountability or a customer-specific decision, the human step still matters. Google’s own framing supports that idea: collaboration and assistance are the main use cases, not full automation. ([blog.google](https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/))
+Meta’s update is the most obvious example of AI moving from drafting to doing. The company says Meta AI can now make plans, connect to email and calendar apps, create slides and handle tasks on a user’s behalf. It also says the rollout began on 24 July in select markets. That is a meaningful shift because the product is no longer framed only as a conversational helper. It is being positioned as an assistant that can follow through. For a freelancer or solo operator, that sounds convenient: ask for a plan, a deck or a summary and get something closer to a finished package. But the same feature set raises the stakes. Once an assistant can work across apps, the user needs a clear handoff point. What gets checked by a human? What can be sent automatically? What should stay as a draft until someone confirms it?
 
-Gallup’s latest workplace report reinforces that pattern from a different angle. Gallup says more than half of U.S. workers now use AI in their role, with writing and editing, search and research, and general problem-solving as the most common uses. It also says the biggest reported productivity gains come from more task-specific uses such as coding, automation, analytics and presentations. That is a useful distinction. It suggests that organisations do not get much extra value from saying “use AI more.” They get value from helping people use AI in one specific part of the workday where there is a clear before-and-after. ([gallup.com](https://www.gallup.com/workplace/712736/organizational-adoption-jumps-six-points.aspx))
+The human side of that question came through in the Thomson Reuters Future of Professionals Report 2026. The survey, based on 1,816 professionals across 62 countries, found that only 35% say their organisation’s AI strategy is affecting their daily role, while one in three are already using AI tools that were not officially approved. That is the gap that matters. The tool may be in the company, but the process around it often is not. Some people are moving faster than their employers. Others are using AI quietly because the approved options feel slow, limited or absent. Either way, the risk is the same: sensitive work can move through an untracked path.
 
-The UK’s SKAI programme points to the same conclusion from the policy side. The Department for Work and Pensions and Skills England say AI is already embedded in everyday working life and that employers still need better training to make the most of it safely and responsibly. Their PRIMES framework is basically an argument for structured upskilling rather than ad hoc enthusiasm. That matters for small firms because the risk is not only using AI badly; it is failing to set expectations, approval rules and review habits before the tool becomes part of daily work. ([gov.uk](https://www.gov.uk/government/publications/skills-for-ai-what-works-for-ai-upskilling-in-the-uk))
+Adecco’s comments to Reuters reinforce that point from a labour-market angle. The staffing company said AI is more likely to change roles and tasks than trigger a collapse in employment, and its CEO argued that upskilling and reskilling matter more than simple headcount cuts. That is a useful counterweight to the most dramatic claims. It does not mean AI is harmless. It means the more immediate effect is usually workflow redesign: junior work changes first, review work expands, and approval becomes more important, not less.
 
-Put together, these stories show a more mature phase of AI adoption. The market is moving from “Can it do this?” to “Who owns the workflow, what gets reviewed, and how do we train people to use it well?” That is good news for practical users because it means the field is getting less abstract. It is also a warning: the winners are likely to be the teams that pick one real job, define what can be automated, keep a human in the loop for the risky part, and measure whether the change actually saves time.
-
-For a creator, freelancer or small business, the best takeaway is simple: do not start by asking where AI is smartest. Start by asking where your team is slowest, most repetitive and most able to check the output quickly. That is where today’s AI tools are most likely to help this week. ([openai.com](https://openai.com/index/introducing-openai-presence/))
+Put together, the weekend points in one direction. AI is becoming more capable, but the real bottleneck is trust. The winners this week are not just the teams shipping new features. They are the teams that can prove what the system did, who checked it, and whether the final output was safe to send. For creators and small businesses, that is the practical lesson: the more your AI tool can act for you, the more you need a simple rule for review before anything leaves your hands.
 
 ## Practical Takeaway
 
-Pick one repeatable work task that already has a clear human reviewer, then test AI on just that step for one week.
+Before you use any AI feature that can send, publish or schedule work, require one human check for source, claim and final wording.
 
 ## What To Test Next
 
-Run a 7-day experiment where AI drafts first-pass summaries or replies for one workflow, and a human only edits and approves the final version.
+Pick one recurring task, such as a client update or weekly briefing, and run it through AI only as a draft. Then compare the draft against the final approved version to see exactly where review still saves you from errors.
 
 ## Claims To Verify Before Publishing
 

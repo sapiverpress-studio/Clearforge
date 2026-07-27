@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "edition": "2026-07-27",
+  "generated_at": "2026-07-27T13:37:46.897Z",
+  "decision": "HUMAN REVIEW",
+  "assurance_score": 0.75,
+  "automatic_publication": false,
+  "human_approval_required": true,
+  "disclosure_after_approval": "Produced with AI assistance and released with human approval by Clearforge.",
+  "component_scores": {
+    "evidence": 1,
+    "automated_validation": 1,
+    "output_consistency": 1,
+    "specifics": 1,
+    "privacy_rights": 1,
+    "technical_readiness": 0.75
+  },
+  "hard_stops": [],
+  "advisory_flags": [
+    "Source 4 is 25 days old; confirm it is background rather than current news",
+    "TikTok content is shorter than preferred (29 words)",
+    "Facebook post has no meaningful audience question",
+    "Three story images were not confirmed.",
+    "Potentially high-consequence wording was detected; inspect the relevant passage."
+  ],
+  "review_depth": "Closer review: inspect every flagged section and open the linked source or full output where indicated.",
+  "counts": {
+    "sources": 4,
+    "stories": 4,
+    "article_words": 1755,
+    "feature_words": 2301,
+    "podcast_words": 1325
+  }
+}

@@ -4,14 +4,15 @@
   "policy": "Only factual, sourcing, safety and minimum-content failures block publication. Editorial and formatting issues are warnings.",
   "failures": [],
   "warnings": [
-    "Source 4 is 47 days old; confirm it is background rather than current news",
-    "TikTok content is shorter than preferred (30 words)"
+    "Source 4 is 25 days old; confirm it is background rather than current news",
+    "TikTok content is shorter than preferred (29 words)",
+    "Facebook post has no meaningful audience question"
   ],
   "stats": {
     "source_count": 4,
     "story_count": 4,
-    "article_words": 740,
-    "feature_words": 2008,
+    "article_words": 721,
+    "feature_words": 2301,
     "unique_source_domains": 4,
     "unresolved_claim_count": 0,
     "social_channels_present": 4,

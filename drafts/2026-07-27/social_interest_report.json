@@ -5,39 +5,40 @@
   "checks": [
     {
       "platform": "TikTok",
-      "opening": "Can AI agents run a work task?",
-      "words": 30,
+      "opening": "Meta says its assistant can work with email and calendar.",
+      "words": 29,
       "generic_opening": false,
       "passed": true
     },
     {
       "platform": "YouTube Shorts",
-      "opening": "Which AI task saves time for your team?",
-      "words": 102,
+      "opening": "Meta says its assistant can now work with email, calendar and slides, so this is no longer just a writing tool.",
+      "words": 48,
       "generic_opening": false,
       "passed": true
     },
     {
       "platform": "Facebook",
-      "opening": "How do you use AI at work today?",
-      "words": 88,
+      "opening": "One useful number from Thomson Reuters: one in three professionals say they’re using AI tools their workplace never officially approved.",
+      "words": 48,
       "generic_opening": false,
       "passed": true
     },
     {
       "platform": "LinkedIn",
-      "opening": "Can your team approve AI actions before they happen?",
-      "words": 48,
+      "opening": "A third of professionals are already using AI tools their workplace never approved, according to Thomson Reuters.",
+      "words": 63,
       "generic_opening": false,
       "passed": true
     }
   ],
   "pinterest": {
-    "title": "AI Upkilling at Work: A Simple Training Checklist for Employers",
-    "title_words": 10,
-    "description_words": 44
+    "title": "How to check if an AI label stays on after export",
+    "title_words": 11,
+    "description_words": 36
   },
   "warnings": [
-    "TikTok content is shorter than preferred (30 words)"
+    "TikTok content is shorter than preferred (29 words)",
+    "Facebook post has no meaningful audience question"
   ]
 }

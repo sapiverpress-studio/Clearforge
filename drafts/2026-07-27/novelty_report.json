@@ -3,14 +3,14 @@
   "editorial_theme": {
     "day": "Monday",
     "date": "2026-07-27",
-    "slug": "work",
-    "title": "Work",
-    "focus": "AI at work: daily tasks, teams, productivity, research, writing, support, admin, meetings and practical workplace use.",
-    "instruction": "Prioritise stories that help creators, small operators and small businesses test AI in real work. Ask what changes a workday, what still needs human review, and what is ready to try this week."
+    "slug": "weekend-roundup",
+    "title": "Weekend roundup",
+    "focus": "The most important confirmed AI developments from the weekend and their practical consequences.",
+    "instruction": "Select only the strongest developments. Explain what changed, who it affects and what deserves attention this week."
   },
-  "same_day_prior_runs": 0,
-  "excluded_url_count": 28,
-  "excluded_story_title_count": 28,
+  "same_day_prior_runs": 1,
+  "excluded_url_count": 30,
+  "excluded_story_title_count": 32,
   "topic_rotation_evidence_dates": [
     "2026-07-20",
     "2026-07-21",
@@ -21,12 +21,12 @@
     "2026-07-26"
   ],
   "consecutive_week_topic_block": true,
-  "confirmed_development_count": 2,
-  "human_impact_count": 2,
+  "confirmed_development_count": 3,
+  "human_impact_count": 1,
   "topic_categories": [
-    "workplace_and_business",
-    "research_and_science",
-    "education_employment_and_society"
+    "policy_safety_and_security",
+    "creator_tools_and_media",
+    "workplace_and_business"
   ],
   "tiktok_used_as_evidence": false,
   "passed": true

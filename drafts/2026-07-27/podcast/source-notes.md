@@ -1,26 +1,26 @@
 # Source notes — 2026-07-27
 
-Podcast focused on: OpenAI Presence turns agents into a managed workplace product
+Podcast focused on: Meta is pushing AI from drafting into doing
 
 ## Sources supplied to the script generator
 
-- 1. OpenAI: Introducing OpenAI Presence
-  - URL: https://openai.com/index/introducing-openai-presence/
-  - Published/date field: 2026-07-22
-  - Confirmed fact: OpenAI says Presence is available today for voice and chat agents to eligible enterprise customers through a limited general availability program, and that deployments are led by OpenAI Forward Deployed Engineers and select systems integrators.
-  - Interpretation: This is a clear sign that AI agents are being packaged as managed production systems, not just model access.
-- 2. Google Blog: The first ATLAS report on AI
-  - URL: https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/
-  - Published/date field: 2026-07-23
-  - Confirmed fact: Google says ATLAS v1.0 is built from 15 million aggregated and de-identified human-AI interactions across Gemini App, AI Mode and the Gemini API, and that the data spans more than 150 countries, 140 languages, 800 occupations and 4,000 tasks.
-  - Interpretation: The report suggests AI use at work is broad but still selective, with collaboration and information work leading the way.
-- 3. Gallup: Organizational AI Adoption Jumps Six Points
-  - URL: https://www.gallup.com/workplace/712736/organizational-adoption-jumps-six-points.aspx
-  - Published/date field: 2026-07-20
-  - Confirmed fact: Gallup says more than half of U.S. workers now use AI in their role, and that writing/editing, search/research and problem-solving are the most common uses.
-  - Interpretation: The data points to a practical pattern: people start with writing and research, but bigger productivity gains show up when AI is used for more task-specific work.
-- 4. Department for Work and Pensions / Skills England: Skills for AI: What works for AI upskilling in the UK
-  - URL: https://www.gov.uk/government/publications/skills-for-ai-what-works-for-ai-upskilling-in-the-uk
-  - Published/date field: 2026-06-10
-  - Confirmed fact: The UK government says the SKAI programme shows AI is becoming embedded in everyday working life across the UK and proposes PRIMES, a framework for inclusive, safe and sustainable AI workforce training.
-  - Interpretation: This is a policy signal that the next bottleneck is not access to AI, but whether employers can train people to use it well and safely.
+- 1. European Commission: AI Omnibus enters into force
+  - URL: https://digital-strategy.ec.europa.eu/en/news/ai-omnibus-enters-force
+  - Published/date field: 2026-07-27
+  - Confirmed fact: The AI Omnibus entered into force across the EU on 27 July 2026 and extends timelines, expands testing opportunities and reduces some administrative burdens.
+  - Interpretation: For smaller businesses and product teams, this lowers near-term compliance pressure while keeping the direction of travel toward formal AI oversight.
+- 2. Google: Google is signing the EU AI Act Code of Practice on Transparency of AI-Generated Content
+  - URL: https://blog.google/company-news/outreach-and-initiatives/public-policy/eu-ai-act-transparency-code-of-practice/
+  - Published/date field: 2026-07-24
+  - Confirmed fact: Google said on 24 July 2026 that it is signing the EU AI Act transparency code and tying that to SynthID and C2PA work.
+  - Interpretation: This is a signal that content provenance is becoming a product requirement, not just a policy talking point.
+- 3. Meta: Meta AI Doesn’t Just Think, It Acts
+  - URL: https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/
+  - Published/date field: 2026-07-24
+  - Confirmed fact: Meta said Meta AI can now make plans, connect to email and calendar apps, create slides and handle tasks on a user’s behalf, with rollout starting in select markets on 24 July 2026.
+  - Interpretation: The practical shift is from prompting to delegation, which raises the value of review before anything leaves the app or reaches other people.
+- 4. Thomson Reuters: Future of Professionals Report 2026
+  - URL: https://insight.thomsonreuters.com/mena/business/resources/resource/future-of-professionals-report-2026-thomson-reuters
+  - Published/date field: 2026-07-02
+  - Confirmed fact: Thomson Reuters said 35% of professionals see their organisation’s AI strategy affecting daily roles, one in three are using AI that was not officially approved, and one in four are considering leaving.
+  - Interpretation: The risk is not just adoption speed; it is unapproved use slipping into real client or compliance work without a clear handoff.

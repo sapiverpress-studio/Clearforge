@@ -1,46 +1,46 @@
 [
   {
-    "source_name": "OpenAI",
-    "title": "Introducing OpenAI Presence",
-    "url": "https://openai.com/index/introducing-openai-presence/",
-    "published_date": "2026-07-22",
+    "source_name": "European Commission",
+    "title": "AI Omnibus enters into force",
+    "url": "https://digital-strategy.ec.europa.eu/en/news/ai-omnibus-enters-force",
+    "published_date": "2026-07-27",
     "coverage_lane": "confirmed_development",
-    "topic_category": "workplace_and_business",
-    "evidence_basis": "Primary company announcement with rollout status, product scope, deployment model and examples of enterprise use.",
-    "confirmed_fact": "OpenAI says Presence is available today for voice and chat agents to eligible enterprise customers through a limited general availability program, and that deployments are led by OpenAI Forward Deployed Engineers and select systems integrators.",
-    "interpretation": "This is a clear sign that AI agents are being packaged as managed production systems, not just model access."
+    "topic_category": "policy_safety_and_security",
+    "evidence_basis": "Official EU news release published today; primary source for the legal timing and the scope of the simplification package.",
+    "confirmed_fact": "The AI Omnibus entered into force across the EU on 27 July 2026 and extends timelines, expands testing opportunities and reduces some administrative burdens.",
+    "interpretation": "For smaller businesses and product teams, this lowers near-term compliance pressure while keeping the direction of travel toward formal AI oversight."
   },
   {
-    "source_name": "Google Blog",
-    "title": "The first ATLAS report on AI",
-    "url": "https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/",
-    "published_date": "2026-07-23",
-    "coverage_lane": "human_impact",
-    "topic_category": "research_and_science",
-    "evidence_basis": "Primary research blog post describing dataset size, methodology and headline findings from Google’s AI & Economy ATLAS.",
-    "confirmed_fact": "Google says ATLAS v1.0 is built from 15 million aggregated and de-identified human-AI interactions across Gemini App, AI Mode and the Gemini API, and that the data spans more than 150 countries, 140 languages, 800 occupations and 4,000 tasks.",
-    "interpretation": "The report suggests AI use at work is broad but still selective, with collaboration and information work leading the way."
-  },
-  {
-    "source_name": "Gallup",
-    "title": "Organizational AI Adoption Jumps Six Points",
-    "url": "https://www.gallup.com/workplace/712736/organizational-adoption-jumps-six-points.aspx",
-    "published_date": "2026-07-20",
-    "coverage_lane": "human_impact",
-    "topic_category": "workplace_and_business",
-    "evidence_basis": "Gallup workplace survey report with usage rates, task categories and productivity responses from employees.",
-    "confirmed_fact": "Gallup says more than half of U.S. workers now use AI in their role, and that writing/editing, search/research and problem-solving are the most common uses.",
-    "interpretation": "The data points to a practical pattern: people start with writing and research, but bigger productivity gains show up when AI is used for more task-specific work."
-  },
-  {
-    "source_name": "Department for Work and Pensions / Skills England",
-    "title": "Skills for AI: What works for AI upskilling in the UK",
-    "url": "https://www.gov.uk/government/publications/skills-for-ai-what-works-for-ai-upskilling-in-the-uk",
-    "published_date": "2026-06-10",
+    "source_name": "Google",
+    "title": "Google is signing the EU AI Act Code of Practice on Transparency of AI-Generated Content",
+    "url": "https://blog.google/company-news/outreach-and-initiatives/public-policy/eu-ai-act-transparency-code-of-practice/",
+    "published_date": "2026-07-24",
     "coverage_lane": "confirmed_development",
-    "topic_category": "education_employment_and_society",
-    "evidence_basis": "Official UK government research and guidance page linking the employer guide, methodology and case studies.",
-    "confirmed_fact": "The UK government says the SKAI programme shows AI is becoming embedded in everyday working life across the UK and proposes PRIMES, a framework for inclusive, safe and sustainable AI workforce training.",
-    "interpretation": "This is a policy signal that the next bottleneck is not access to AI, but whether employers can train people to use it well and safely."
+    "topic_category": "policy_safety_and_security",
+    "evidence_basis": "Official company statement on the signing and on Google’s transparency tools and position on the EU code.",
+    "confirmed_fact": "Google said on 24 July 2026 that it is signing the EU AI Act transparency code and tying that to SynthID and C2PA work.",
+    "interpretation": "This is a signal that content provenance is becoming a product requirement, not just a policy talking point."
+  },
+  {
+    "source_name": "Meta",
+    "title": "Meta AI Doesn’t Just Think, It Acts",
+    "url": "https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/",
+    "published_date": "2026-07-24",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "creator_tools_and_media",
+    "evidence_basis": "Official Meta newsroom post describing the feature set, rollout timing and supported actions.",
+    "confirmed_fact": "Meta said Meta AI can now make plans, connect to email and calendar apps, create slides and handle tasks on a user’s behalf, with rollout starting in select markets on 24 July 2026.",
+    "interpretation": "The practical shift is from prompting to delegation, which raises the value of review before anything leaves the app or reaches other people."
+  },
+  {
+    "source_name": "Thomson Reuters",
+    "title": "Future of Professionals Report 2026",
+    "url": "https://insight.thomsonreuters.com/mena/business/resources/resource/future-of-professionals-report-2026-thomson-reuters",
+    "published_date": "2026-07-02",
+    "coverage_lane": "human_impact",
+    "topic_category": "workplace_and_business",
+    "evidence_basis": "Company report based on a global survey of 1,816 professionals across 62 countries, published with methodology context on the report page.",
+    "confirmed_fact": "Thomson Reuters said 35% of professionals see their organisation’s AI strategy affecting daily roles, one in three are using AI that was not officially approved, and one in four are considering leaving.",
+    "interpretation": "The risk is not just adoption speed; it is unapproved use slipping into real client or compliance work without a clear handoff."
   }
 ]

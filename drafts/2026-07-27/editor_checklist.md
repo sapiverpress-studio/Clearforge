@@ -1,6 +1,6 @@
 # Clearforge Automatic QA Context — 2026-07-27
 
-- Editorial theme: Monday — Work.
+- Editorial theme: Monday — Weekend roundup.
 - Current run passed same-day URL exclusion.
 - Current run passed same-day story-title similarity gate.
 - Previous same-day runs are archived under drafts/2026-07-27/runs/.

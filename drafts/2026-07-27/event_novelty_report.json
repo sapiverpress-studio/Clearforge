@@ -1,7 +1,122 @@
 {
   "date": "2026-07-27",
   "passed": true,
-  "prior_run_count": 0,
+  "prior_run_count": 1,
+  "current_story_count": 4,
+  "prior_story_count": 4,
   "duplicate_events": [],
-  "note": "No earlier same-day run exists."
+  "comparisons": [
+    {
+      "current_story_index": 0,
+      "prior_story_title": "OpenAI Presence turns agents into a managed workplace product",
+      "same_underlying_event": false,
+      "confidence": 0.97,
+      "reason": "EU AI Omnibus compliance deadlines and sandbox changes are a policy/regulatory event; OpenAI Presence is a product launch for enterprise agents."
+    },
+    {
+      "current_story_index": 0,
+      "prior_story_title": "Google’s ATLAS report shows where AI is actually being used at work",
+      "same_underlying_event": false,
+      "confidence": 0.96,
+      "reason": "The new story is about EU AI regulation timing and compliance burden, while ATLAS is a Google workplace usage research report."
+    },
+    {
+      "current_story_index": 0,
+      "prior_story_title": "Gallup’s latest workplace data says adoption is widening, but use is still uneven",
+      "same_underlying_event": false,
+      "confidence": 0.95,
+      "reason": "One is a regulatory deadline shift in Europe; the other is a labor-market survey about AI use at work."
+    },
+    {
+      "current_story_index": 0,
+      "prior_story_title": "The UK is starting to treat AI training as a workplace capability issue",
+      "same_underlying_event": false,
+      "confidence": 0.95,
+      "reason": "EU regulatory compliance changes are a different event from the UK’s AI upskilling/training guidance."
+    },
+    {
+      "current_story_index": 1,
+      "prior_story_title": "OpenAI Presence turns agents into a managed workplace product",
+      "same_underlying_event": false,
+      "confidence": 0.96,
+      "reason": "Google signing the EU transparency code is a separate company-policy commitment from OpenAI’s Presence launch."
+    },
+    {
+      "current_story_index": 1,
+      "prior_story_title": "Google’s ATLAS report shows where AI is actually being used at work",
+      "same_underlying_event": false,
+      "confidence": 0.99,
+      "reason": "Both involve Google, but one is a transparency/code-of-practice announcement and the other is a workplace AI research report; these are different events."
+    },
+    {
+      "current_story_index": 1,
+      "prior_story_title": "Gallup’s latest workplace data says adoption is widening, but use is still uneven",
+      "same_underlying_event": false,
+      "confidence": 0.95,
+      "reason": "The Google transparency code story concerns disclosure/provenance policy, not adoption metrics or workplace usage data."
+    },
+    {
+      "current_story_index": 1,
+      "prior_story_title": "The UK is starting to treat AI training as a workplace capability issue",
+      "same_underlying_event": false,
+      "confidence": 0.94,
+      "reason": "Google’s content provenance and transparency commitments are not the same event as UK workforce training policy."
+    },
+    {
+      "current_story_index": 2,
+      "prior_story_title": "OpenAI Presence turns agents into a managed workplace product",
+      "same_underlying_event": false,
+      "confidence": 0.98,
+      "reason": "Meta AI’s task-execution rollout is a different product launch from OpenAI Presence."
+    },
+    {
+      "current_story_index": 2,
+      "prior_story_title": "Google’s ATLAS report shows where AI is actually being used at work",
+      "same_underlying_event": false,
+      "confidence": 0.95,
+      "reason": "Meta’s rollout of agentic features is a launch/feature update, not a Google research report on workplace AI use."
+    },
+    {
+      "current_story_index": 2,
+      "prior_story_title": "Gallup’s latest workplace data says adoption is widening, but use is still uneven",
+      "same_underlying_event": false,
+      "confidence": 0.95,
+      "reason": "This is about Meta product capabilities; Gallup is a survey of adoption and usage patterns."
+    },
+    {
+      "current_story_index": 2,
+      "prior_story_title": "The UK is starting to treat AI training as a workplace capability issue",
+      "same_underlying_event": false,
+      "confidence": 0.94,
+      "reason": "Meta’s rollout of calendar/email-aware action features is not the same as UK AI training guidance."
+    },
+    {
+      "current_story_index": 3,
+      "prior_story_title": "OpenAI Presence turns agents into a managed workplace product",
+      "same_underlying_event": false,
+      "confidence": 0.95,
+      "reason": "Thomson Reuters’ report and Adecco comments are workplace survey/analysis items, not OpenAI’s enterprise agent product launch."
+    },
+    {
+      "current_story_index": 3,
+      "prior_story_title": "Google’s ATLAS report shows where AI is actually being used at work",
+      "same_underlying_event": false,
+      "confidence": 0.96,
+      "reason": "Both are about workplace AI, but this story is Thomson Reuters survey data and staffing commentary, not Google’s ATLAS dataset report."
+    },
+    {
+      "current_story_index": 3,
+      "prior_story_title": "Gallup’s latest workplace data says adoption is widening, but use is still uneven",
+      "same_underlying_event": false,
+      "confidence": 0.97,
+      "reason": "The new story concerns unapproved AI use and role redesign; Gallup is about adoption rates and task-specific productivity gains."
+    },
+    {
+      "current_story_index": 3,
+      "prior_story_title": "The UK is starting to treat AI training as a workplace capability issue",
+      "same_underlying_event": false,
+      "confidence": 0.96,
+      "reason": "Thomson Reuters’ survey on unauthorized use is distinct from the UK government’s AI upskilling initiative."
+    }
+  ]
 }

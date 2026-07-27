@@ -1,8 +1,8 @@
 {
   "day": "Monday",
   "date": "2026-07-27",
-  "slug": "work",
-  "title": "Work",
-  "focus": "AI at work: daily tasks, teams, productivity, research, writing, support, admin, meetings and practical workplace use.",
-  "instruction": "Prioritise stories that help creators, small operators and small businesses test AI in real work. Ask what changes a workday, what still needs human review, and what is ready to try this week."
+  "slug": "weekend-roundup",
+  "title": "Weekend roundup",
+  "focus": "The most important confirmed AI developments from the weekend and their practical consequences.",
+  "instruction": "Select only the strongest developments. Explain what changed, who it affects and what deserves attention this week."
 }

@@ -200,10 +200,10 @@ function preserveOrCreateApproval() {
 
 function renderBrief(data, theme) {
   const sourceLines = data.sources.map((s, i) =>
-    `${i + 1}. [${s.title}](${s.url}) — ${s.source_name} (${s.published_date})\n   - Coverage lane: ${s.coverage_lane}\n   - Topic category: ${s.topic_category}\n   - Evidence basis: ${s.evidence_basis}\n   - Confirmed: ${s.confirmed_fact}\n   - Interpretation: ${s.interpretation}`
+    `${i + 1}. [${s.title}](${s.url}) — ${s.source_name} (${s.published_date})\n   - Event date: ${s.event_date}\n   - Freshness: ${s.freshness_status}\n   - Freshness basis: ${s.freshness_basis}\n   - Coverage lane: ${s.coverage_lane}\n   - Topic category: ${s.topic_category}\n   - Evidence basis: ${s.evidence_basis}\n   - Confirmed: ${s.confirmed_fact}\n   - Interpretation: ${s.interpretation}`
   ).join("\n\n");
   const summaries = data.story_summaries.map((s) =>
-    `### ${s.title}\n\n**Coverage lane:** ${s.coverage_lane}\n\n**Topic category:** ${s.topic_category}\n\n${s.summary}\n\n**Why it matters:** ${s.why_it_matters}\n\n**Practical angle:** ${s.practical_angle}\n\n**Claim to verify:** ${s.claim_to_verify}`
+    `### ${s.title}\n\n**Event date:** ${s.event_date}\n\n**Freshness:** ${s.freshness_status}\n\n**Coverage lane:** ${s.coverage_lane}\n\n**Topic category:** ${s.topic_category}\n\n${s.summary}\n\n**Why it matters:** ${s.why_it_matters}\n\n**Practical angle:** ${s.practical_angle}\n\n**Claim to verify:** ${s.claim_to_verify}`
   ).join("\n\n");
   return `# ${data.headline}\n\nStatus: Draft — automatic validation pending\n\nEditorial theme: ${theme.day} — ${theme.title}\n\n${data.dek}\n\n## Source List\n\n${sourceLines}\n\n## Story Summaries\n\n${summaries}\n\n## Main Article\n\n${data.main_article}\n\n## Practical Takeaway\n\n${data.practical_takeaway}\n\n## What To Test Next\n\n${data.what_to_test_next}\n\n## Claims To Verify Before Publishing\n\n${data.claims_to_verify.length ? data.claims_to_verify.map((x) => `- ${x}`).join("\n") : "None — all material claims used in this edition were verified against the cited sources."}\n`;
 }
@@ -217,8 +217,8 @@ const schema = {
   required: ["headline", "dek", "sources", "story_summaries", "main_article", "practical_takeaway", "what_to_test_next", "claims_to_verify", "social", "headline_options"],
   properties: {
     headline: { type: "string" }, dek: { type: "string" },
-    sources: { type: "array", minItems: 3, maxItems: 5, items: { type: "object", additionalProperties: false, required: ["source_name", "title", "url", "published_date", "coverage_lane", "topic_category", "evidence_basis", "confirmed_fact", "interpretation"], properties: { source_name: { type: "string" }, title: { type: "string" }, url: { type: "string" }, published_date: { type: "string" }, coverage_lane: { type: "string", enum: ["confirmed_development", "human_impact"] }, topic_category: { type: "string", enum: ["creator_tools_and_media", "coding_and_building", "workplace_and_business", "models_and_infrastructure", "research_and_science", "policy_safety_and_security", "education_employment_and_society"] }, evidence_basis: { type: "string" }, confirmed_fact: { type: "string" }, interpretation: { type: "string" } } } },
-    story_summaries: { type: "array", minItems: 3, maxItems: 5, items: { type: "object", additionalProperties: false, required: ["title", "coverage_lane", "topic_category", "summary", "why_it_matters", "practical_angle", "claim_to_verify"], properties: { title: { type: "string" }, coverage_lane: { type: "string", enum: ["confirmed_development", "human_impact"] }, topic_category: { type: "string", enum: ["creator_tools_and_media", "coding_and_building", "workplace_and_business", "models_and_infrastructure", "research_and_science", "policy_safety_and_security", "education_employment_and_society"] }, summary: { type: "string" }, why_it_matters: { type: "string" }, practical_angle: { type: "string" }, claim_to_verify: { type: "string" } } } },
+    sources: { type: "array", minItems: 3, maxItems: 5, items: { type: "object", additionalProperties: false, required: ["source_name", "title", "url", "published_date", "event_date", "freshness_status", "freshness_basis", "coverage_lane", "topic_category", "evidence_basis", "confirmed_fact", "interpretation"], properties: { source_name: { type: "string" }, title: { type: "string" }, url: { type: "string" }, published_date: { type: "string" }, event_date: { type: "string" }, freshness_status: { type: "string", enum: ["current", "background"] }, freshness_basis: { type: "string" }, coverage_lane: { type: "string", enum: ["confirmed_development", "human_impact"] }, topic_category: { type: "string", enum: ["creator_tools_and_media", "coding_and_building", "workplace_and_business", "models_and_infrastructure", "research_and_science", "policy_safety_and_security", "education_employment_and_society"] }, evidence_basis: { type: "string" }, confirmed_fact: { type: "string" }, interpretation: { type: "string" } } } },
+    story_summaries: { type: "array", minItems: 3, maxItems: 5, items: { type: "object", additionalProperties: false, required: ["title", "event_date", "freshness_status", "coverage_lane", "topic_category", "summary", "why_it_matters", "practical_angle", "claim_to_verify"], properties: { title: { type: "string" }, event_date: { type: "string" }, freshness_status: { type: "string", enum: ["current", "background"] }, coverage_lane: { type: "string", enum: ["confirmed_development", "human_impact"] }, topic_category: { type: "string", enum: ["creator_tools_and_media", "coding_and_building", "workplace_and_business", "models_and_infrastructure", "research_and_science", "policy_safety_and_security", "education_employment_and_society"] }, summary: { type: "string" }, why_it_matters: { type: "string" }, practical_angle: { type: "string" }, claim_to_verify: { type: "string" } } } },
     main_article: { type: "string" }, practical_takeaway: { type: "string" }, what_to_test_next: { type: "string" }, claims_to_verify: { type: "array", items: { type: "string" } },
     social: { type: "object", additionalProperties: false, required: ["tiktok_script", "youtube_shorts_script", "facebook_post", "pinterest_title", "pinterest_description", "linkedin_post", "quote_card_lines"], properties: { tiktok_script: { type: "string" }, youtube_shorts_script: { type: "string" }, facebook_post: { type: "string" }, pinterest_title: { type: "string" }, pinterest_description: { type: "string" }, linkedin_post: { type: "string" }, quote_card_lines: { type: "array", minItems: 5, maxItems: 5, items: { type: "string" } } } },
     headline_options: { type: "array", minItems: 5, maxItems: 5, items: { type: "string" } }
@@ -232,7 +232,7 @@ function validateCoverageMix(candidate, options = {}) {
     : 3;
   const sources = Array.isArray(candidate?.sources) ? candidate.sources : [];
   const stories = Array.isArray(candidate?.story_summaries) ? candidate.story_summaries : [];
-  const count = (items, lane) => items.filter((item) => item.coverage_lane === lane).length;
+  const count = (items, lane) => items.filter((item) => item.coverage_lane === lane && item.freshness_status === "current").length;
   if (count(sources, "confirmed_development") < 2 || count(stories, "confirmed_development") < 2) {
     failures.push("Research mix requires at least two confirmed AI developments.");
   }
@@ -252,6 +252,39 @@ function validateCoverageMix(candidate, options = {}) {
     if (source.coverage_lane === "human_impact" && String(source.evidence_basis || "").trim().length < 20) {
       failures.push(`Human-impact evidence basis is too weak for: ${source.title}`);
     }
+  }
+  const editionDate = new Date(`${today}T23:59:59Z`);
+  const validateFreshness = (item, label) => {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(String(item.event_date || ""))) {
+      failures.push(`${label} has an invalid event date: ${item.event_date || "missing"}`);
+      return;
+    }
+    const eventDate = new Date(`${item.event_date}T00:00:00Z`);
+    const ageDays = Math.floor((editionDate - eventDate) / 86400000);
+    if (eventDate > editionDate) failures.push(`${label} has a future event date: ${item.event_date}`);
+    if (item.freshness_status === "current" && ageDays > 7) {
+      failures.push(`${label} is ${ageDays} days old and cannot be labelled current.`);
+    }
+    if (item.freshness_status === "background" && ageDays <= 7) {
+      failures.push(`${label} is within the current seven-day window but is labelled background.`);
+    }
+  };
+  sources.forEach((source, index) => {
+    validateFreshness(source, `Source ${index + 1}`);
+    if (/^\d{4}-\d{2}-\d{2}$/.test(String(source.published_date || "")) &&
+        /^\d{4}-\d{2}-\d{2}$/.test(String(source.event_date || "")) &&
+        source.event_date > source.published_date) {
+      failures.push(`Source ${index + 1} claims an event date after its publication date.`);
+    }
+  });
+  stories.forEach((story, index) => validateFreshness(story, `Story ${index + 1}`));
+  if (sources.length === stories.length) {
+    sources.forEach((source, index) => {
+      const story = stories[index];
+      if (source.event_date !== story.event_date || source.freshness_status !== story.freshness_status) {
+        failures.push(`Source and story ${index + 1} disagree on event date or freshness.`);
+      }
+    });
   }
   return failures;
 }
@@ -300,6 +333,14 @@ async function main() {
       input: [
         { role: "system", content: discoveryInstruction },
         { role: "system", content: "You are the Clearforge Daily AI Brief Builder. Research first. Use the broad allowed source pool. Prefer primary sources for facts and reputable journalism for discovery/context. Distinguish confirmed facts from interpretation. Never copy article wording. A rerun must be genuinely new, not a reframing of earlier stories. Follow the supplied weekday editorial theme so the output has a distinct daily purpose. Resolve every material claim against cited evidence. A supplier announcement confirms what was announced, not a customer outcome. Drop any story whose material access, timing, pricing, scale, deployment or outcome claims remain unresolved. TikTok and other short-form creator posts may alert you to a possible story, but TikTok must never appear as a cited source or evidence. Trace the claim to the original speech, interview, transcript, survey, methodology, organisation, filing, research paper or credible reporting before using it." },
+        { role: "system", content: `DATE-AND-FRESHNESS GATE:
+- event_date is the date the announcement, incident, speech, survey release or other development actually happened. It is not TODAY, the access date or a date inferred from this task.
+- published_date is the cited page's publication date. event_date must not be later than published_date.
+- freshness_status is current only when event_date falls within the seven days ending TODAY. Anything older is background.
+- Background material cannot satisfy the required confirmed-development or human-impact counts and must never be described as a new launch, current announcement or today's development.
+- freshness_basis must explain the dated evidence used.
+- The matching source and story must use identical event_date and freshness_status.
+- Attribute survey findings to the named survey or publisher in public wording. Name the country in country-specific government or national partnerships.` },
         { role: "user", content: `${prompt}\n\nTODAY: ${today}\n\nCLEARFORGE WEEKDAY EDITORIAL THEME:\nDay: ${theme.day}\nTheme: ${theme.title}\nFocus: ${theme.focus}\nInstruction: ${theme.instruction}\n\nFor Saturday forecast editions, label forecasts as forecasts and do not present predictions as confirmed facts. For Sunday recap editions, separate confirmed outcomes from open questions and prepare the reader for the following week.\n\nFRESH-TOPIC ROTATION EVIDENCE — PREVIOUS SEVEN FRESH EDITIONS:\n${JSON.stringify(recentFreshTopicEvidence)}\n\nFRESH-TOPIC ROTATION RULE:\nInfer the dominant recurring subject from these previous seven fresh editions. A subject is dominant when it materially shaped multiple editions or most of one week's coverage; treat close semantic variants as the same subject. Do not choose that dominant subject again for today's fresh edition, even if it is still prominent in the news. For example, price versus performance, model value, inference cost and cheaper-model comparisons are one topic family. Select a materially different subject supported by genuinely fresh reporting. The same dominant fresh topic may run for no more than one week and must then have at least one full week out. This topic exclusion overrides popularity, but it does not override factual quality or the weekday editorial theme. If the evidence is too mixed to identify one dominant subject, avoid the two most repeated subject families.\n\nEXCLUSIONS FROM EARLIER RUNS:\n${JSON.stringify(exclusions)}\n\nPREFERRED DISCOVERY SOURCES (starting points, not a closed allow-list):\n${JSON.stringify(preferredSources)}\n\nREQUIRED RESEARCH MIX:\n- Select 3 to 5 distinct stories.\n- At least two must be confirmed_development stories: verified AI releases, research, policy, infrastructure, adoption, deployments or other concrete developments. Prefer the last 48 hours.\n- At least one must be a human_impact story: evidence about workplace adoption, education, employment, public reaction, creator experience, changing skills, surveys, speeches, interviews or documented case studies.\n- For the human-impact lane, search the last 48 hours first. If no strong candidate exists, expand only that lane to the previous seven days rather than forcing a weak or speculative story.\n- A human-impact story needs traceable evidence: the original speech/interview/transcript, original survey and methodology, named adopting organisation or case study, research paper, government/statistical source, or credible reporting that identifies its evidence. Record this in evidence_basis.\n- TikTok or another creator video may be a discovery lead, but do not cite it, repeat its interpretation as fact or include its URL. Trace every usable claim to the underlying evidence.\n- Set coverage_lane on every source and story summary to confirmed_development or human_impact. Use matching lanes for the source and story it supports.\n\nResearch the most useful AI developments filtered through today’s editorial theme. You may search outside the preferred pool when needed to reach the original speaker, survey, adopting organisation, official documentation, regulators, filings, research, statistical evidence or credible independent corroboration. Do not use any excluded URL. Do not select a story substantially similar to any excluded story title, even from a different publication. Prefer developments not covered in earlier runs. Maintain a mix of companies, research, policy, infrastructure, open-source, creator tools, business use, safety and real human consequences. The main article must be 700 to 1000 words and practical for creators, small businesses, and AI learners. For every story, set claim_to_verify to exactly "NONE — verified from cited sources." only after all material claims used are supported. Otherwise record the unresolved claim and allow validation to block the edition. claims_to_verify must be empty for publication.${fallbackInstruction}` }
       ],
       text: { format: { type: "json_schema", name: "clearforge_daily_brief", strict: true, schema } }

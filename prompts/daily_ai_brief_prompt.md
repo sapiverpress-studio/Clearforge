@@ -16,10 +16,32 @@ Clearforge voice:
 
 Research broadly across these lanes:
 
-1. Core AI advances: models, research, infrastructure, safety, policy, open source and developer tools.
-2. AI inside everyday products: design, media, ecommerce, publishing, productivity, office software, education, accessibility, customer service, audio, video and administration.
-3. AI adoption and business change: companies introducing AI into real workflows, pilots, customer deployments and internal operational change.
-4. Partnerships and deployment: who selected whom, why, what changes, rollout timing, scale and whether it is a pilot, contract, integration or full deployment.
+1. Official AI releases and capability changes: models, research, infrastructure, safety, policy, open source and developer tools.
+2. Workplace adoption and operational problems: real workflows, pilots, internal change, handoffs, reliability, review and accountability.
+3. Creators and AI-assisted creative practice: emerging behaviour and language such as vibe coding, vibe editing and vibe directing, as well as provenance and consistent creative identity.
+4. Education, graduates and employment: how work and training are changing, with careful separation between evidence and prediction.
+5. Surveys and statistical evidence: trace every figure to the original research or organisation.
+6. Speeches, interviews and public reactions: use these as attributed perspectives, not universal fact.
+7. Case studies and user experience: include evidence-based human-impact or workflow stories, not only product announcements.
+8. Regulation, accountability, privacy and ownership: disclosure, approval, rights, information sharing and responsibility for AI-assisted work. Actively look for relevant changes in legislation, proposed laws, regulator guidance, enforcement decisions and platform rules, but do not force this lane when nothing material has changed. Record which type it is internally so a proposal, policy or platform rule is never described as law.
+9. Small-business economics and workflow reliability: actual cost, time saved, repeatability, tool handoffs and errors passing between connected systems.
+10. AI inside everyday products and deployments: design, media, ecommerce, publishing, productivity, office software, accessibility, customer service, audio, video and administration.
+
+Every run should seek 2–3 confirmed relevant developments and at least one evidence-based human-impact or workflow story. TikTok, YouTube and creator posts may reveal leads or audience language, but substantive claims must be traced to original research, documentation, a named organisation, a direct speech or interview, or credible reporting.
+
+## Release Gate evidence lens
+
+The Clearforge AI Output Release Gate is the current flagship product under validation. Prefer a Release Gate-related story only when it is at least as timely, credible and useful as the strongest unrelated story. Never force the product onto unrelated news.
+
+Relevant problem signals include:
+
+- unchecked facts, citations or quotations;
+- unclear disclosure or provenance;
+- privacy, confidential information or rights uncertainty;
+- missing human approval or an unclear handoff;
+- AI-assisted work reaching a client, audience or live system without a recorded review.
+
+For each candidate story, assess whether it supplies credible evidence of one of those problems. A product connection is editorial interpretation, not a confirmed fact, and must be labelled accordingly. Most editions may have no direct product call to action.
 
 For adoption stories, establish where supported:
 
@@ -53,6 +75,8 @@ Use 3 to 5 strong sources. For each source include:
 - publication date;
 - confirmed fact;
 - interpretation.
+
+Label vendor claims as vendor claims. Do not present Clearforge interpretation as an externally confirmed fact.
 
 ## Story Summaries
 
@@ -99,24 +123,35 @@ Create:
 - LinkedIn-style post
 - 5 short quote/card lines
 
-Treat social platforms as interest graphs, not follower-only feeds. Every piece must make its likely audience and subject obvious immediately so the platform can match it to people who care.
+Treat social platforms as interest graphs, not follower-only feeds. The initial social audience is freelancers and solo operators who use AI to help create work that clients or the public will see. Write for an AI novice who may use ChatGPT, Gemini or another familiar tool but does not know terms such as governance, provenance, audit trail, human-in-the-loop or regulatory development.
 
-Before drafting, internally identify one specific target audience, the problem or useful outcome they already care about, the strongest verified proof point, the promised payoff and 3 to 5 natural search phrases. Do not output these as extra fields. Use them to shape every required social field. Internally score the idea from 1 to 10 for likely audience interest; rewrite it before output when the score is below 7.
+Keep rigorous evidence and legal-status labels in the research and review records. Translate the public post into ordinary language. Never weaken, exaggerate or hide the factual meaning while simplifying it.
+
+Before drafting, apply the Rule of One internally:
+
+- one specific audience;
+- one familiar situation, such as sending client work or publishing under their own name;
+- one problem or change;
+- one useful check the reader can do;
+- one appropriate next step.
 
 Social rules:
 
 - Do not open with generic brand language such as "AI news is noisy", "today in AI" or "here is the latest AI news".
-- Open with the audience's problem, a surprising verified change, a direct question or a concrete consequence.
-- The first sentence must identify the topic without needing hashtags or prior Clearforge knowledge.
-- Do not lead with a company name unless that name itself is the audience interest.
-- Give one clear payoff per post.
-- Prefer useful specificity over broad claims.
-- Avoid vague engagement bait, manufactured outrage and unsupported urgency.
-- Make the TikTok and YouTube scripts understandable to a new viewer with no context.
-- Facebook should invite a meaningful response by asking about a real choice, experience or workflow, not by asking for empty engagement.
-- Pinterest title and description must match a searchable problem, guide, checklist or practical question.
-- LinkedIn should foreground a workplace decision, operational consequence or professional lesson.
-- Quote/card lines must each carry a complete useful idea, not just brand slogans.
+- Open naturally with a recognisable situation, consequence, short question or useful warning. Do not force every post to begin with a question.
+- Make the first sentence understandable without hashtags, prior Clearforge knowledge or specialist AI language.
+- Do not lead with a company, regulator or law name unless the name is essential to understanding the change.
+- Explain what the reader needs to know, why it may affect their work and the one simple thing they should check.
+- Give one practical lesson per post. Do not turn it into a list of headlines.
+- Translate specialist terms: say "where it came from", "who checked it", "a saved record" and "work made with help from AI" where those phrases carry the meaning accurately.
+- A public post may briefly name and link its source, but must not read like a research report.
+- Avoid vague engagement bait, manufactured outrage, unsupported urgency and legal advice.
+- Use a save CTA when introducing a useful check, a simple response CTA when gathering real audience experience, and a Release Gate CTA only when the story clearly demonstrates a pre-send or pre-publication checking problem.
+- Make TikTok and YouTube understandable to a new viewer with no context.
+- Facebook should sound like a helpful person explaining one relevant issue, not a compliance notice.
+- Pinterest should promise one practical check, guide or answer.
+- LinkedIn should use plain workplace language rather than governance jargon.
+- Quote/card lines must each carry one complete useful idea, not a slogan.
 
 ## Suggested Headlines
 

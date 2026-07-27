@@ -46,46 +46,46 @@ function editorialTheme(dateValue) {
   const day = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/London", weekday: "long" }).format(new Date(`${datePart}T12:00:00Z`));
   const themes = {
     Monday: {
-      slug: "work",
-      title: "Work",
+      slug: "weekend-roundup",
+      title: "Weekend roundup",
+      focus: "The most important confirmed AI developments from the weekend and their practical consequences.",
+      instruction: "Select only the strongest developments. Explain what changed, who it affects and what deserves attention this week."
+    },
+    Tuesday: {
+      slug: "ai-at-work",
+      title: "AI at work",
       focus: "AI at work: daily tasks, teams, productivity, research, writing, support, admin, meetings and practical workplace use.",
       instruction: "Prioritise stories that help creators, small operators and small businesses test AI in real work. Ask what changes a workday, what still needs human review, and what is ready to try this week."
     },
-    Tuesday: {
-      slug: "life",
-      title: "Life",
+    Wednesday: {
+      slug: "everyday-life",
+      title: "AI in everyday life",
       focus: "Life-admin and personal usefulness: learning, household planning, accessibility, personal knowledge management, family logistics, study, note-taking and everyday problem solving.",
       instruction: "Keep the angle practical and careful. Avoid medical, legal or financial advice. Focus on how AI can help people understand, organise or learn, not replace judgement."
     },
-    Wednesday: {
+    Thursday: {
       slug: "systems-automation",
       title: "Systems and automation",
       focus: "Systems, automation, agents, reliability, review loops, handoffs, repeatable processes, governance, failure points and human accountability.",
       instruction: "Emphasise what should and should not be automated. Explain where human checks, logs, approvals and fallbacks belong."
     },
-    Thursday: {
-      slug: "stacks-workflows",
-      title: "Stacks and workflows",
-      focus: "Tool combinations: models, apps, APIs, image, video, voice, documents, databases, scheduling, publishing and creator pipelines.",
-      instruction: "Explain how pieces fit together rather than treating tools as isolated announcements. Include practical stack or workflow examples where supported by the sources."
-    },
     Friday: {
-      slug: "new-to-scene-watchlist",
-      title: "New to the scene / what to watch",
-      focus: "Emerging tools, early releases, previews, newly visible trends and practical watchlist items.",
-      instruction: "Make clear what is actually available now, what is staged, and what remains uncertain. Help readers decide what to test, watch or ignore."
+      slug: "new-tools-stacks-workflows",
+      title: "New tools, stacks and workflows",
+      focus: "Emerging tools and the combinations of models, apps, APIs, media, documents, databases, scheduling and publishing systems they enable.",
+      instruction: "Explain what is available now, how the pieces fit together, what remains uncertain and whether the workflow genuinely saves work."
     },
     Saturday: {
-      slug: "clearforge-forecast",
-      title: "Clearforge forecast",
-      focus: "Evidence-based forecast piece using the week’s confirmed developments.",
-      instruction: "Ask: if this happened this week, what might reasonably follow? Which companies may follow suit? What should creators and small businesses watch? Clearly label forecasts as forecasts. Do not present predictions as facts."
+      slug: "prediction-outlook",
+      title: "Prediction and outlook",
+      focus: "Evidence-based outlook using the week’s confirmed developments.",
+      instruction: "Ask what might reasonably follow and who may be affected. Clearly label forecasts as forecasts. Do not present predictions as facts."
     },
     Sunday: {
-      slug: "weekly-recap-prediction-check",
-      title: "Recap and prediction check",
-      focus: "Recap the strongest developments of the week, check any recent Clearforge forecasts where evidence exists, and prepare the reader for the following week.",
-      instruction: "Separate confirmed outcomes from still-open questions. Make the piece useful as a Sunday reset before the next week of AI news."
+      slug: "recap-preparation",
+      title: "Recap and preparation",
+      focus: "Recap the strongest developments of the week and prepare the reader for the following week.",
+      instruction: "Separate confirmed outcomes from still-open questions and give one practical preparation step."
     }
   };
   return { day, date: datePart, ...themes[day] };

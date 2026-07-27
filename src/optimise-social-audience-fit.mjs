@@ -43,7 +43,7 @@ const schema = {
       type: "array", minItems: 3, maxItems: 5,
       items: {
         type: "object", additionalProperties: false,
-        required: ["story_index", "story_title", "target_audience", "audience_problem_or_desire", "interest_signal", "stop_reason", "promised_payoff", "proof_point", "search_phrases", "scores", "overall_score", "score_reason"],
+        required: ["story_index", "story_title", "target_audience", "audience_problem_or_desire", "interest_signal", "stop_reason", "promised_payoff", "proof_point", "search_phrases", "scores", "overall_score", "score_reason", "release_gate_relevance_score", "release_gate_problem_signal", "release_gate_cta_eligible", "release_gate_reason"],
         properties: {
           story_index: { type: "integer", minimum: 0, maximum: 4 },
           story_title: { type: "string" },
@@ -69,7 +69,11 @@ const schema = {
             }
           },
           overall_score: { type: "integer", minimum: 1, maximum: 10 },
-          score_reason: { type: "string" }
+          score_reason: { type: "string" },
+          release_gate_relevance_score: { type: "integer", minimum: 0, maximum: 10 },
+          release_gate_problem_signal: { type: "string", enum: ["none", "facts_or_citations", "disclosure_or_provenance", "privacy_or_confidentiality", "rights_or_ownership", "handoff_or_human_approval", "connected_tool_error"] },
+          release_gate_cta_eligible: { type: "boolean" },
+          release_gate_reason: { type: "string" }
         }
       }
     },
@@ -78,7 +82,7 @@ const schema = {
       required: ["tiktok", "youtube", "facebook", "pinterest", "linkedin"],
       properties: Object.fromEntries(["tiktok", "youtube", "facebook", "pinterest", "linkedin"].map((platform) => [platform, {
         type: "object", additionalProperties: false,
-        required: ["story_index", "story_title", "target_audience", "format", "opening", "payoff", "selection_reason", "platform_fit_score"],
+        required: ["story_index", "story_title", "target_audience", "format", "opening", "payoff", "selection_reason", "platform_fit_score", "release_gate_cta_strength"],
         properties: {
           story_index: { type: "integer", minimum: 0, maximum: 4 },
           story_title: { type: "string" },
@@ -87,7 +91,8 @@ const schema = {
           opening: { type: "string" },
           payoff: { type: "string" },
           selection_reason: { type: "string" },
-          platform_fit_score: { type: "integer", minimum: 7, maximum: 10 }
+          platform_fit_score: { type: "integer", minimum: 7, maximum: 10 },
+          release_gate_cta_strength: { type: "string", enum: ["none", "soft", "direct"] }
         }
       }]))
     },
@@ -120,11 +125,15 @@ const response = await client.responses.create({
     },
     {
       role: "system",
-      content: "You are the Clearforge audience-fit editor. Treat social feeds as interest graphs. Assess every verified story before selecting content. Choose the strongest story independently for each platform; do not force one lead story everywhere. Social assets must provoke a useful response without clickbait: lead with a direct, natural question, give concise verified value, then make replying easy. Use only facts already present in the supplied research pack. Never invent details, urgency, popularity or outcomes. Story indexes are zero-based: the first story is 0, the second is 1, and so on."
+      content: "You are the Clearforge audience-fit editor. Treat social feeds as interest graphs. Assess every verified story before selecting content. Choose the strongest story independently for each platform; do not force one lead story everywhere. Social assets must provoke a useful response without clickbait: lead with a direct, natural question, give concise verified value, then make replying easy. Use only facts already present in the supplied research pack. Never invent details, urgency, popularity or outcomes. Story indexes are zero-based: the first story is 0, the second is 1, and so on. The Clearforge AI Output Release Gate is the current flagship under validation. Score its relevance separately from general audience interest. A story is directly eligible only when verified evidence concerns unchecked facts or citations, disclosure or provenance, privacy or confidentiality, rights or ownership, connected-tool errors, or missing handoff and human approval. Product relevance is Clearforge interpretation, never a sourced fact."
     },
     {
       role: "user",
       content: `CLEARFORGE EDITION: ${DATE}\n\nVERIFIED RESEARCH PACK:\n${JSON.stringify(source)}${editionSpecificRules}\n\nEvaluate every story on audience specificity, practical consequence, searchability, usefulness to a stranger, novelty, visual potential, discussion potential and whether the payoff can be explained clearly in under 30 seconds. Return exactly one assessment per supplied story, in the same order, using zero-based story_index values 0 through ${stories.length - 1}.\n\nThen choose the best story separately for TikTok, YouTube Shorts, Facebook, Pinterest and LinkedIn. Different platforms may use different stories unless the edition-specific rules require one shared considered-question story. Every selected platform concept must score at least 7/10 for platform fit.\n\nWrite final social assets around those platform selections. Rules:\n- Never start with generic phrases such as 'AI news is noisy', 'today in AI', 'here is the latest AI news' or Clearforge branding.\n- TikTok, YouTube Shorts, Facebook and LinkedIn must begin with a short direct question as the very first sentence. No statement, scene-setting, label or brand introduction may come before it. Prefer natural openings such as 'Can your...?', 'Would you...?', 'Which...?', 'What happens when...?' or 'How would you...?'.\n- Keep that opening question under 15 words. It must expose a practical problem, choice, risk or recognisable experience that the selected audience can answer.\n- After the hook, give a concise verified explanation that rewards attention before asking for engagement.\n- End each TikTok, YouTube Shorts, Facebook and LinkedIn asset with a clear prompt to action. First ask one specific, low-effort response question: offer two useful choices where natural, or ask for a concrete experience, test result or decision. Then invite the audience to put their answer in the comments, leave any questions, or suggest a related article Clearforge should investigate next.\n- Vary the closing naturally between comment, question and follow-up-article invitations so posts do not repeat the same boilerplate. Use no more than two invitations in one asset.\n- Never use the generic question 'What do you think?'. The response prompt must invite genuine discussion, not agreement bait, manufactured controversy or unsupported fear.\n- TikTok: 35–55 spoken words and four compact beats: a question under 15 words, one verified fact, one practical personal consequence, then one easy either/or or concrete-experience comment prompt. Aim for 12–18 seconds when spoken. Use plain language and only one selected story.\n- YouTube Shorts: 80–150 spoken words, question-first searchable problem, clear answer and an easy comment prompt.\n- Facebook: question first, recognisable situation, useful explanation and a meaningful choice or experience prompt.\n- Pinterest: use a searchable question-led title when it reads naturally; otherwise use a practical guide or checklist title. The description must state the benefit and invite one specific action or response.\n- LinkedIn: question first, then a workplace decision, operational consequence or professional lesson, followed by a specific experience or choice prompt.\n- Quote lines must each be a complete useful thought, not a slogan. At least two should be usable as question-led conversation cards.\n- Keep Clearforge calm, practical and human-led.\n- Do not add facts beyond the supplied verified pack.`
+    },
+    {
+      role: "system",
+      content: "Set release_gate_cta_strength independently for each platform. Use direct only when the selected story has release_gate_relevance_score of at least 8 and release_gate_cta_eligible is true. A direct CTA must naturally say that the Clearforge AI Output Release Gate is linked in the bio. Use soft for a relevant practical checking lesson without naming or linking the product. Use none for unrelated stories. Never attach the Release Gate merely because a story mentions AI, work, risk or regulation."
     },
     {
       role: "system",
@@ -175,6 +184,27 @@ for (const [platform, selection] of Object.entries(result.platform_selections)) 
   if (selection.story_index < 0 || selection.story_index >= stories.length) throw new Error(`${platform} selected an unavailable story`);
   selection.story_title = stories[selection.story_index].title;
   if (selection.platform_fit_score < 7) throw new Error(`${platform} platform fit below 7`);
+  const assessment = assessmentByIndex.get(selection.story_index);
+  if (selection.release_gate_cta_strength === "direct" && (!assessment.release_gate_cta_eligible || assessment.release_gate_relevance_score < 8)) {
+    throw new Error(`${platform} used a direct Release Gate CTA without strong, eligible evidence`);
+  }
+}
+
+const platformContent = {
+  tiktok: `${result.social.tiktok_script} ${result.social.tiktok_caption_prompt}`,
+  youtube: result.social.youtube_shorts_script,
+  facebook: result.social.facebook_post,
+  pinterest: `${result.social.pinterest_title} ${result.social.pinterest_description}`,
+  linkedin: result.social.linkedin_post
+};
+for (const [platform, selection] of Object.entries(result.platform_selections)) {
+  const hasDirectCta = /link(?:ed)? in (?:the|my|our) bio|payhip\.com\/b\/vgks8/i.test(platformContent[platform]);
+  if (selection.release_gate_cta_strength === "direct" && !hasDirectCta) {
+    throw new Error(`${platform} marked direct but did not include the approved link-in-bio CTA`);
+  }
+  if (selection.release_gate_cta_strength !== "direct" && hasDirectCta) {
+    throw new Error(`${platform} included a direct Release Gate CTA without direct eligibility`);
+  }
 }
 
 const enriched = {
@@ -191,10 +221,10 @@ fs.writeFileSync(structuredPath, JSON.stringify(enriched, null, 2) + "\n", "utf8
 fs.writeFileSync(path.join(draftDir, "audience_fit_report.json"), JSON.stringify(enriched.audience_fit, null, 2) + "\n", "utf8");
 
 const selectionLines = Object.entries(result.platform_selections).map(([platform, item]) =>
-  `### ${platform[0].toUpperCase()}${platform.slice(1)}\n\n- Selected story: ${item.story_title}\n- Audience: ${item.target_audience}\n- Format: ${item.format}\n- Opening: ${item.opening}\n- Payoff: ${item.payoff}\n- Platform fit: ${item.platform_fit_score}/10\n- Why selected: ${item.selection_reason}`
+  `### ${platform[0].toUpperCase()}${platform.slice(1)}\n\n- Selected story: ${item.story_title}\n- Audience: ${item.target_audience}\n- Format: ${item.format}\n- Opening: ${item.opening}\n- Payoff: ${item.payoff}\n- Platform fit: ${item.platform_fit_score}/10\n- Release Gate CTA: ${item.release_gate_cta_strength}\n- Why selected: ${item.selection_reason}`
 ).join("\n\n");
 const assessmentLines = result.story_assessments.map((item) =>
-  `### ${stories[item.story_index].title}\n\n- Audience: ${item.target_audience}\n- Interest signal: ${item.interest_signal}\n- Stop reason: ${item.stop_reason}\n- Payoff: ${item.promised_payoff}\n- Proof: ${item.proof_point}\n- Overall score: ${item.overall_score}/10\n- Reason: ${item.score_reason}`
+  `### ${stories[item.story_index].title}\n\n- Audience: ${item.target_audience}\n- Interest signal: ${item.interest_signal}\n- Stop reason: ${item.stop_reason}\n- Payoff: ${item.promised_payoff}\n- Proof: ${item.proof_point}\n- Overall score: ${item.overall_score}/10\n- Release Gate relevance: ${item.release_gate_relevance_score}/10 (${item.release_gate_problem_signal})\n- Direct CTA eligible: ${item.release_gate_cta_eligible ? "yes" : "no"}\n- Release Gate reasoning: ${item.release_gate_reason}\n- Reason: ${item.score_reason}`
 ).join("\n\n");
 fs.writeFileSync(path.join(draftDir, "audience_fit_report.md"), `# Clearforge Audience-Fit Report — ${DATE}\n\n## Story comparison\n\n${assessmentLines}\n\n## Platform selections\n\n${selectionLines}\n\n## Overall reasoning\n\n${result.overall_reasoning}\n`, "utf8");
 

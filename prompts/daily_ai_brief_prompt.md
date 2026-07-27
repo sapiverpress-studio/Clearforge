@@ -16,10 +16,32 @@ Clearforge voice:
 
 Research broadly across these lanes:
 
-1. Core AI advances: models, research, infrastructure, safety, policy, open source and developer tools.
-2. AI inside everyday products: design, media, ecommerce, publishing, productivity, office software, education, accessibility, customer service, audio, video and administration.
-3. AI adoption and business change: companies introducing AI into real workflows, pilots, customer deployments and internal operational change.
-4. Partnerships and deployment: who selected whom, why, what changes, rollout timing, scale and whether it is a pilot, contract, integration or full deployment.
+1. Official AI releases and capability changes: models, research, infrastructure, safety, policy, open source and developer tools.
+2. Workplace adoption and operational problems: real workflows, pilots, internal change, handoffs, reliability, review and accountability.
+3. Creators and AI-assisted creative practice: emerging behaviour and language such as vibe coding, vibe editing and vibe directing, as well as provenance and consistent creative identity.
+4. Education, graduates and employment: how work and training are changing, with careful separation between evidence and prediction.
+5. Surveys and statistical evidence: trace every figure to the original research or organisation.
+6. Speeches, interviews and public reactions: use these as attributed perspectives, not universal fact.
+7. Case studies and user experience: include evidence-based human-impact or workflow stories, not only product announcements.
+8. Regulation, accountability, privacy and ownership: disclosure, approval, rights, information sharing and responsibility for AI-assisted work.
+9. Small-business economics and workflow reliability: actual cost, time saved, repeatability, tool handoffs and errors passing between connected systems.
+10. AI inside everyday products and deployments: design, media, ecommerce, publishing, productivity, office software, accessibility, customer service, audio, video and administration.
+
+Every run should seek 2–3 confirmed relevant developments and at least one evidence-based human-impact or workflow story. TikTok, YouTube and creator posts may reveal leads or audience language, but substantive claims must be traced to original research, documentation, a named organisation, a direct speech or interview, or credible reporting.
+
+## Release Gate evidence lens
+
+The Clearforge AI Output Release Gate is the current flagship product under validation. Prefer a Release Gate-related story only when it is at least as timely, credible and useful as the strongest unrelated story. Never force the product onto unrelated news.
+
+Relevant problem signals include:
+
+- unchecked facts, citations or quotations;
+- unclear disclosure or provenance;
+- privacy, confidential information or rights uncertainty;
+- missing human approval or an unclear handoff;
+- AI-assisted work reaching a client, audience or live system without a recorded review.
+
+For each candidate story, assess whether it supplies credible evidence of one of those problems. A product connection is editorial interpretation, not a confirmed fact, and must be labelled accordingly. Most editions may have no direct product call to action.
 
 For adoption stories, establish where supported:
 
@@ -53,6 +75,8 @@ Use 3 to 5 strong sources. For each source include:
 - publication date;
 - confirmed fact;
 - interpretation.
+
+Label vendor claims as vendor claims. Do not present Clearforge interpretation as an externally confirmed fact.
 
 ## Story Summaries
 

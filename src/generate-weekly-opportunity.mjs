@@ -62,8 +62,8 @@ const response = await client.responses.create({
   model: process.env.OPENAI_MODEL || "gpt-5.4-mini",
   reasoning: { effort: "medium" },
   input: [
-    { role: "system", content: "You are Clearforge's commercial editorial analyst. Analyse only the supplied approved research. Identify one genuine recurring operational problem for solo creators and small businesses using AI, then recommend the smallest useful product solution. Never force a paid product when evidence is weak. Do not invent demand, statistics, testimonials, or facts. The product must be practical, demonstrable, reusable, and connected to the week's evidence." },
-    { role: "user", content: `WEEK: ${weekStart} to ${weekEnd}\n\nAPPROVED EDITIONS:\n${JSON.stringify(editions)}\n\nCreate one weekly opportunity brief. Follow the locked Clearforge editorial lanes in this exact order: Monday weekend roundup; Tuesday AI at work; Wednesday AI in everyday life; Thursday systems and automation; Friday new tools, stacks and workflows; Saturday prediction and outlook; Sunday recap and preparation. The seven content ideas must all illuminate the same genuine problem from different angles, with the product released or directly presented on Friday. Score the opportunity out of 35. A score below 22 should normally choose free_resource_only or an update/extension rather than a weak new pack. Distinguish sourced evidence from inference. Avoid hype and income promises.` }
+    { role: "system", content: "You are Clearforge's commercial editorial analyst. Analyse only the supplied approved research. The current flagship under validation is the £19 Clearforge AI Output Release Gate. Its job is to help creators, freelancers and small teams check AI-assisted work before publication, client delivery or action, record a named human reviewer, and reach a Release, Revise or Stop decision. Do not invent a different paid product merely to fill a weekly plan. First test whether the week's evidence supports this flagship, a small update or extension to it, or a free diagnostic that leads naturally to it. Never force the flagship onto unrelated evidence. Recommend a new pack only when at least three distinct credible sources reveal a separate, urgent, repeatable problem that the Release Gate and Workflow Control Kit cannot reasonably solve. Never invent demand, statistics, testimonials, or facts." },
+    { role: "user", content: `WEEK: ${weekStart} to ${weekEnd}\n\nAPPROVED EDITIONS:\n${JSON.stringify(editions)}\n\nCreate one weekly opportunity brief. Follow the locked Clearforge editorial lanes in this exact order: Monday weekend roundup; Tuesday AI at work; Wednesday AI in everyday life; Thursday systems and automation; Friday new tools, stacks and workflows; Saturday prediction and outlook; Sunday recap and preparation. Use the seven content ideas to test and explain one genuine problem from different angles. Do not schedule an artificial Friday product launch: the Release Gate already exists. Use direct product CTAs on only 2 or 3 days, and only where the evidence naturally demonstrates a release-check problem; use soft or no CTA elsewhere. Score the opportunity out of 35. A score below 22 should choose free_resource_only or an update/extension rather than a weak new pack. A new_pack route requires at least 30/35 and three distinct credible evidence items for a problem outside the scope of the Release Gate and Workflow Control Kit. Distinguish sourced evidence from inference. Avoid hype and income promises.` }
   ],
   text: { format: { type: "json_schema", name: "clearforge_weekly_opportunity", strict: true, schema } }
 });
@@ -72,6 +72,13 @@ if (!response.output_text) throw new Error("OpenAI returned no weekly opportunit
 const opportunity = JSON.parse(response.output_text);
 opportunity.week_start = weekStart;
 opportunity.week_end = weekEnd;
+const directCtaDays = opportunity.content_plan.filter((item) => item.cta_strength === "direct").length;
+if (directCtaDays < 2 || directCtaDays > 3) {
+  throw new Error(`Weekly plan must contain 2 or 3 direct CTAs; received ${directCtaDays}.`);
+}
+if (opportunity.recommended_route === "new_pack" && (opportunity.commercial_score.total < 30 || opportunity.evidence.length < 3)) {
+  throw new Error("A new paid pack requires at least 30/35 and three distinct credible evidence items.");
+}
 
 const evidenceMd = opportunity.evidence.map((x) => `- **${x.date} — ${x.headline}:** ${x.problem_signal} _Basis: ${x.source_basis}_`).join("\n");
 const score = opportunity.commercial_score;

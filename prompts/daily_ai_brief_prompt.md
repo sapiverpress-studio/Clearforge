@@ -130,7 +130,7 @@ Create:
 - LinkedIn-style post
 - 5 short quote/card lines
 
-Treat social platforms as interest graphs, not follower-only feeds. The initial social audience is freelancers and solo operators who use AI to help create work that clients or the public will see. Write for an AI novice who may use ChatGPT, Gemini or another familiar tool but does not know terms such as governance, provenance, audit trail, human-in-the-loop or regulatory development.
+Treat social platforms as interest graphs, not follower-only feeds. The fixed initial social audience is freelancers and solo operators using AI for client-facing or public work. Do not broaden this to businesses, teams, creators or AI users generally. Write for an AI novice who may use ChatGPT, Gemini or another familiar tool but does not know terms such as governance, provenance, audit trail, human-in-the-loop or regulatory development.
 
 Keep rigorous evidence and legal-status labels in the research and review records. Translate the public post into ordinary language. Never weaken, exaggerate or hide the factual meaning while simplifying it.
 
@@ -147,6 +147,7 @@ Social rules:
 - Do not open with generic brand language such as "AI news is noisy", "today in AI" or "here is the latest AI news".
 - Open naturally with a recognisable situation, consequence, short question or useful warning. Do not force every post to begin with a question.
 - Make the first sentence understandable without hashtags, prior Clearforge knowledge or specialist AI language.
+- For TikTok, explicitly identify a freelancer, client work, client-facing work or sending work to a client in the opening sentence.
 - Do not lead with a company, regulator or law name unless the name is essential to understanding the change.
 - Explain what the reader needs to know, why it may affect their work and the one simple thing they should check.
 - Give one practical lesson per post. Do not turn it into a list of headlines.

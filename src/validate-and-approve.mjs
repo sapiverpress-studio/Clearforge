@@ -144,6 +144,8 @@ if (uniqueHosts.size < 2) failures.push("Fewer than two distinct source domains"
 const coreApproved = failures.length === 0;
 const approval = {
   date: DATE,
+  automated_checks_passed: coreApproved,
+  human_approval_required: true,
   article_approved: coreApproved && Boolean(article),
   feature_approved: coreApproved && Boolean(feature),
   facebook_approved: coreApproved && Boolean(socialFields.facebook_post),
@@ -151,7 +153,7 @@ const approval = {
   youtube_approved: coreApproved && Boolean(socialFields.youtube_shorts_script),
   dev_approved: coreApproved && Boolean(feature),
   notes: coreApproved
-    ? `Automatically approved with ${warnings.length} non-blocking quality warning${warnings.length === 1 ? "" : "s"}.`
+    ? `Automated checks passed with ${warnings.length} non-blocking quality warning${warnings.length === 1 ? "" : "s"}. Human approval is still required.`
     : `Automatically blocked for factual or safety reasons: ${failures.join("; ")}`
 };
 

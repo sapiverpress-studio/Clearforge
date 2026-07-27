@@ -172,6 +172,7 @@ function pageTemplate(title, description, body, options = {}) {
     <a class="brand" href="/">Clearforge</a>
     <p>Human-led. AI-empowered.</p>
     <nav aria-label="Site links">
+      <a href="/#products">Products</a>
       <a href="/topics/">Topics</a>
       <a href="/reports/">Reports</a>
       <a href="${podcastPage}">Podcast</a>
@@ -182,7 +183,7 @@ function pageTemplate(title, description, body, options = {}) {
   <footer class="site-footer">
     <p>Turning human input into clear, usable systems.</p>
     <p>Produced with AI assistance and released with human approval by Clearforge.</p>
-    <p><a href="/topics/">Browse topics</a> · <a href="/reports/">Reports</a> · <a href="${podcastPage}">Podcast</a> · <a href="/newsletter/">Weekly digest</a></p>
+    <p><a href="/#products">Products</a> · <a href="/topics/">Browse topics</a> · <a href="/reports/">Reports</a> · <a href="${podcastPage}">Podcast</a> · <a href="/newsletter/">Weekly digest</a></p>
   </footer>
 </body>
 </html>`;

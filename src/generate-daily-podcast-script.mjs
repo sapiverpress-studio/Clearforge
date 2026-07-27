@@ -122,7 +122,7 @@ const response = await client.responses.create({
 
 if (!response.output_text) throw new Error("OpenAI returned no podcast script output.");
 const podcast = JSON.parse(response.output_text);
-const script = String(podcast.spoken_script || "").trim();
+const script = `${String(podcast.spoken_script || "").trim()}\n\nProduced with AI assistance and released with human approval by Clearforge.`;
 const words = wordCount(script);
 const lineCheck = spokenLineCheck(script);
 const warnings = [];

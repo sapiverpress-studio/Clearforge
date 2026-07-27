@@ -145,7 +145,9 @@ const genericOpeningPatterns = [
   /^today in (practical )?ai\b/i,
   /^here(?:'s| is) the latest ai news\b/i,
   /^clearforge\b/i,
-  /^in today(?:'s)? (?:ai )?(?:news|brief)\b/i
+  /^in today(?:'s)? (?:ai )?(?:news|brief)\b/i,
+  /\b(?:three|four|five|\d+)\s+(?:ai\s+)?updates?\b/i,
+  /\bai updates? that (?:actually )?matter\b/i
 ];
 
 function firstSentence(value) {
@@ -153,7 +155,7 @@ function firstSentence(value) {
 }
 
 const shortFormChecks = [
-  ["TikTok", socialFields.tiktok_script, 45],
+  ["TikTok", socialFields.tiktok_script, 18],
   ["YouTube Shorts", socialFields.youtube_shorts_script, 45],
   ["Facebook", socialFields.facebook_post, 35],
   ["LinkedIn", socialFields.linkedin_post, 35]
@@ -168,6 +170,21 @@ for (const [platform, value, minimumWords] of shortFormChecks) {
   if (value && words < minimumWords) warnings.push(`${platform} content is shorter than preferred (${words} words)`);
   if (value && opening.split(/\s+/).filter(Boolean).length < 5) warnings.push(`${platform} opening may be too vague to identify the subject`);
   socialChecks.push({ platform, opening, words, generic_opening: generic, passed: Boolean(value) });
+}
+
+const tiktokOpening = firstSentence(socialFields.tiktok_script);
+const tiktokWords = socialFields.tiktok_script.split(/\s+/).filter(Boolean).length;
+if (socialFields.tiktok_script && (tiktokWords < 18 || tiktokWords > 30)) {
+  failures.push(`TikTok script must contain 18–30 spoken words; got ${tiktokWords}`);
+}
+if (socialFields.tiktok_script && !/\b(freelanc\w*|client(?:-facing)? work|work (?:for|to) (?:a |your )?client|send(?:ing)? .* client)\b/i.test(tiktokOpening)) {
+  failures.push("TikTok opening does not identify the freelancer/client-work audience");
+}
+if (socialFields.tiktok_script && genericOpeningPatterns.some((pattern) => pattern.test(tiktokOpening))) {
+  failures.push("TikTok opening uses the failed generic AI-update format");
+}
+if (socialFields.tiktok_script && !/\b(check|verify|confirm|compare|review|keep|remove|record|open|read)\b/i.test(socialFields.tiktok_script)) {
+  failures.push("TikTok script gives no immediate practical check");
 }
 
 if (socialFields.pinterest_title && socialFields.pinterest_title.split(/\s+/).filter(Boolean).length < 4) {

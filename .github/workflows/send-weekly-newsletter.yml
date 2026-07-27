@@ -1,8 +1,6 @@
-name: Send Clearforge weekly newsletter
+name: Manually send Clearforge weekly newsletter
 
 on:
-  schedule:
-    - cron: "0 8 * * 6"
   workflow_dispatch:
     inputs:
       week_end:

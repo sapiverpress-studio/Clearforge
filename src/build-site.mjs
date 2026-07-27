@@ -181,6 +181,7 @@ function pageTemplate(title, description, body, options = {}) {
   <main class="content">${body}</main>
   <footer class="site-footer">
     <p>Turning human input into clear, usable systems.</p>
+    <p>Produced with AI assistance and released with human approval by Clearforge.</p>
     <p><a href="/topics/">Browse topics</a> · <a href="/reports/">Reports</a> · <a href="${podcastPage}">Podcast</a> · <a href="/newsletter/">Weekly digest</a></p>
   </footer>
 </body>

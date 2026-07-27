@@ -127,14 +127,18 @@ jobs:
             echo "Using fresh edition ID: ${BASE_DATE}"
           fi
 
-      - name: Skip retry when today's bundle already exists
+      - name: Skip retry when today's pending artifact already exists
         if: steps.gate.outputs.run == 'true' && steps.gate.outputs.retry == 'true'
         id: retrycheck
+        env:
+          GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
-          if [ -f "bridge/clearforge/${CLEARFORGE_DATE}/manifest.json" ]; then
+          ARTIFACT_NAME="clearforge-pending-edition-${CLEARFORGE_DATE}"
+          COUNT="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts?name=${ARTIFACT_NAME}" --jq '.total_count')"
+          if [ "${COUNT}" -gt 0 ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "Today's bundle already exists; retry not needed."
+            echo "Today's pending edition artifact already exists; retry not needed."
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"
           fi
@@ -296,6 +300,17 @@ jobs:
           if-no-files-found: error
           retention-days: 30
 
+      - name: Upload complete pending edition
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: clearforge-pending-edition-${{ env.CLEARFORGE_DATE }}
+          path: |
+            drafts/${{ env.CLEARFORGE_DATE }}/**/*
+            media/${{ env.CLEARFORGE_DATE }}/**/*
+          if-no-files-found: error
+          retention-days: 30
+
       - name: Add MP4 download to the podcast episode
         if: ${{ false }} # Publication happens only in Clearforge Approve and Publish
         env:
@@ -353,29 +368,11 @@ jobs:
           DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
         run: npm run syndicate:dev
 
-      - name: Commit generated edition and Release Desk for human review
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+      - name: Do not commit unapproved output
+        if: ${{ false }} # Pending editions remain workflow artifacts until Jim approves them
         shell: bash
         run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898242+github-actions[bot]@users.noreply.github.com"
-          git add -- drafts media
-          if git diff --cached --quiet; then
-            echo "No Clearforge changes to commit."
-            exit 0
-          fi
-          git commit -m "Run Clearforge daily autopilot"
-          for attempt in 1 2 3; do
-            if git pull --rebase origin main && git push origin HEAD:main; then
-              exit 0
-            fi
-            echo "Push attempt ${attempt} failed; retrying after synchronising main."
-            git rebase --abort 2>/dev/null || true
-            sleep 2
-          done
-          echo "::error::Could not save Clearforge outputs after three attempts."
-          exit 1
+          echo "Unapproved output is intentionally not committed."
 
       - name: Trigger full video render and live social distribution
         if: ${{ false }} # Publication happens only in Clearforge Approve and Publish

@@ -14,6 +14,7 @@ if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY is required for
 if (!fs.existsSync(structuredPath)) throw new Error(`Missing ${structuredPath}`);
 
 const source = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
+const TARGET_AUDIENCE = "Freelancers and solo operators using AI for client-facing or public work";
 const tiktokPerformance = fs.existsSync(performancePath)
   ? JSON.parse(fs.readFileSync(performancePath, "utf8"))
   : null;
@@ -125,7 +126,7 @@ const response = await client.responses.create({
     },
     {
       role: "system",
-      content: "You are the Clearforge audience-fit editor. Treat social feeds as interest graphs. Assess every verified story before selecting content. Choose the strongest story independently for each platform; do not force one lead story everywhere. Social assets must earn attention without clickbait: begin with a familiar situation, consequence, short question or useful warning, teach one simple check, then offer an appropriate next step. Do not force every post to begin with a question. Use only facts already present in the supplied research pack. Never invent details, urgency, popularity or outcomes. Story indexes are zero-based: the first story is 0, the second is 1, and so on. The initial social audience is freelancers and solo operators who use AI to help create work that clients or the public will see. Write for AI novices. Keep specialist evidence and legal labels in the internal assessment, but translate public copy into ordinary language. The Clearforge AI Output Release Gate is the current flagship under validation. Score its relevance separately from general audience interest. A story is directly eligible only when verified evidence concerns unchecked facts or citations, disclosure or provenance, privacy or confidentiality, rights or ownership, connected-tool errors, or missing handoff and human approval. Product relevance is Clearforge interpretation, never a sourced fact."
+      content: `You are the Clearforge audience-fit editor. Treat social feeds as interest graphs. The fixed audience is: ${TARGET_AUDIENCE}. Do not broaden this to businesses, AI users, teams or creators generally. Assess every verified story before selecting content. Choose the strongest story independently for each platform; do not force one lead story everywhere. Social assets must earn attention without clickbait: begin with that audience or a recognisable client-work situation, state one consequence, teach one simple check, then offer an appropriate next step. Do not force every post to begin with a question. Use only facts already present in the supplied research pack. Never invent details, urgency, popularity or outcomes. Story indexes are zero-based: the first story is 0, the second is 1, and so on. Write for AI novices. Keep specialist evidence and legal labels in the internal assessment, but translate public copy into ordinary language. The Clearforge AI Output Release Gate is the current flagship under validation. Score its relevance separately from general audience interest. A story is directly eligible only when verified evidence concerns unchecked facts or citations, disclosure or provenance, privacy or confidentiality, rights or ownership, connected-tool errors, or missing handoff and human approval. Product relevance is Clearforge interpretation, never a sourced fact.`
     },
     {
       role: "user",
@@ -137,7 +138,7 @@ const response = await client.responses.create({
     },
     {
       role: "system",
-      content: "Override any longer TikTok instruction above. The measured test format is exactly 18–30 spoken words and 8–12 seconds, covering one story. Open with a familiar situation, clear consequence or useful warning. Give one supported fact in ordinary language and one check the viewer can use immediately. No roundup, spoken brand line, sign-off or spoken engagement request. Return one short, story-specific, low-effort response question separately in social.tiktok_caption_prompt."
+      content: `Override any longer TikTok instruction above. The measured test format is exactly 18–30 spoken words and 8–12 seconds, covering one story for ${TARGET_AUDIENCE}. The opening sentence must explicitly identify a freelancer, client work, client-facing work or sending work to a client. State a meaningful consequence immediately. Give one supported fact in ordinary language and one check the viewer can use now. Never say "AI updates", "three updates", "today in AI" or "latest AI news". No roundup, spoken brand line, sign-off or spoken engagement request. Return one short, story-specific, low-effort response question separately in social.tiktok_caption_prompt.`
     }
   ],
   text: { format: { type: "json_schema", name: "clearforge_audience_fit", strict: true, schema } }
@@ -183,11 +184,28 @@ result.story_assessments = [...assessmentByIndex.entries()]
 for (const [platform, selection] of Object.entries(result.platform_selections)) {
   if (selection.story_index < 0 || selection.story_index >= stories.length) throw new Error(`${platform} selected an unavailable story`);
   selection.story_title = stories[selection.story_index].title;
+  selection.target_audience = TARGET_AUDIENCE;
   if (selection.platform_fit_score < 7) throw new Error(`${platform} platform fit below 7`);
   const assessment = assessmentByIndex.get(selection.story_index);
   if (selection.release_gate_cta_strength === "direct" && (!assessment.release_gate_cta_eligible || assessment.release_gate_relevance_score < 8)) {
     throw new Error(`${platform} used a direct Release Gate CTA without strong, eligible evidence`);
   }
+}
+
+const tiktokScript = String(result.social.tiktok_script || "").replace(/\s+/g, " ").trim();
+const tiktokOpening = tiktokScript.split(/(?<=[.!?])\s+/)[0] || "";
+const tiktokWordCount = tiktokScript.split(/\s+/).filter(Boolean).length;
+if (tiktokWordCount < 18 || tiktokWordCount > 30) {
+  throw new Error(`TikTok script must contain 18–30 spoken words; received ${tiktokWordCount}.`);
+}
+if (!/\b(freelanc\w*|client(?:-facing)? work|work (?:for|to) (?:a |your )?client|send(?:ing)? .* client)\b/i.test(tiktokOpening)) {
+  throw new Error("TikTok opening does not identify the fixed freelancer/client-work audience.");
+}
+if (/\b(?:three|four|five|\d+)\s+(?:ai\s+)?updates?\b|today in ai|latest ai news|ai updates? that (?:actually )?matter/i.test(tiktokOpening)) {
+  throw new Error("TikTok opening repeats the failed generic update format.");
+}
+if (!/\b(check|verify|confirm|compare|review|keep|remove|record|open|read)\b/i.test(tiktokScript)) {
+  throw new Error("TikTok script does not give the audience one immediate practical check.");
 }
 
 const platformContent = {

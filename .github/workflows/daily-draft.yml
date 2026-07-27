@@ -311,6 +311,18 @@ jobs:
           if-no-files-found: error
           retention-days: 30
 
+      - name: Email Daily Release Desk to Jim
+        if: always() && steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        continue-on-error: true
+        env:
+          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+          CLEARFORGE_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          CLEARFORGE_REVIEW_EMAIL: ${{ secrets.CLEARFORGE_REVIEW_EMAIL }}
+          BREVO_SENDER_EMAIL: clearforge@sapiverpress.co.uk
+          BREVO_SENDER_NAME: Clearforge
+        run: node src/send-release-desk-email.mjs
+
       - name: Add MP4 download to the podcast episode
         if: ${{ false }} # Publication happens only in Clearforge Approve and Publish
         env:

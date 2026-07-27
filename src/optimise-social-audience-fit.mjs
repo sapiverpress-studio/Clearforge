@@ -200,7 +200,8 @@ const platformContent = {
 for (const [platform, selection] of Object.entries(result.platform_selections)) {
   const hasDirectCta = /link(?:ed)? in (?:the|my|our) bio|payhip\.com\/b\/vgks8/i.test(platformContent[platform]);
   if (selection.release_gate_cta_strength === "direct" && !hasDirectCta) {
-    throw new Error(`${platform} marked direct but did not include the approved link-in-bio CTA`);
+    console.warn(`${platform} was marked direct without product wording; downgrading to a soft educational CTA.`);
+    selection.release_gate_cta_strength = "soft";
   }
   if (selection.release_gate_cta_strength !== "direct" && hasDirectCta) {
     throw new Error(`${platform} included a direct Release Gate CTA without direct eligibility`);

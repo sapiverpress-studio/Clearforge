@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clearforge AI Output Release Gate</title>
+<style>
+:root{--ink:#102437;--navy:#071827;--blue:#163d5c;--gold:#e2b85b;--cream:#f7f4ed;--paper:#fff;--muted:#607080;--line:#d8e0e6;--green:#19734b;--amber:#a56200;--red:#ad2d2d}
+*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;background:var(--cream);color:var(--ink)}
+header{background:var(--navy);color:white;padding:22px 18px}header .wrap{max-width:1050px;margin:auto}.brand{color:var(--gold);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.06;margin:.35rem 0}.sub{max-width:760px;color:#d6e2ea}
+main{max-width:1050px;margin:22px auto;padding:0 16px 60px}.panel{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 4px 18px #1024370b}
+.steps{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 22px}.step{padding:8px 12px;border-radius:999px;background:#e7edf1;color:var(--muted);font-size:.85rem}.step.active{background:var(--blue);color:#fff}
+h2{font-size:1.35rem;margin:.2rem 0 1rem}h3{font-size:1.05rem}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+label{display:block;font-weight:650;margin-bottom:5px}input,select,textarea{width:100%;padding:12px;border:1px solid #bfcbd3;border-radius:9px;background:white;color:var(--ink);font:inherit}textarea{min-height:100px;resize:vertical}
+.help{font-size:.84rem;color:var(--muted);margin:.3rem 0 0}.question{border-top:1px solid var(--line);padding:16px 0}.question:first-child{border-top:0}
+.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.choice input{position:absolute;opacity:0}.choice label{height:100%;border:1px solid var(--line);border-radius:10px;padding:10px;cursor:pointer;font-weight:550}.choice input:checked+label{outline:2px solid var(--blue);background:#edf5fa}.choice input:focus-visible+label{outline:3px solid var(--gold);outline-offset:3px}
+.choice small{display:block;font-weight:400;color:var(--muted)}button{border:0;border-radius:10px;padding:12px 17px;background:var(--blue);color:#fff;font-weight:750;cursor:pointer;font-size:.95rem}button.secondary{background:#e9eef2;color:var(--ink)}button.danger{background:#812828}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.hidden{display:none!important}.result{border-left:8px solid var(--amber)}.result.green{border-color:var(--green)}.result.red{border-color:var(--red)}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--amber);color:white;font-weight:800}.green .badge{background:var(--green)}.red .badge{background:var(--red)}
+.stop{background:#fff2f2;border:1px solid #edbcbc;border-radius:10px;padding:12px}.check{background:#f3f7f9;border-radius:10px;padding:12px;margin:8px 0}.check strong{display:block}
+table{width:100%;border-collapse:collapse;font-size:.88rem}th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#edf2f5}.scroll{overflow:auto}
+footer{text-align:center;color:var(--muted);font-size:.83rem;padding:24px}.notice{background:#fff8e6;border:1px solid #eed28d;border-radius:10px;padding:12px}
+@media(max-width:720px){.grid,.choices{grid-template-columns:1fr}.panel{padding:16px}th:nth-child(4),td:nth-child(4){display:none}}
+@media print{header,.steps,.actions,#registerPanel,#privacyNote,#intro,#gateForm{display:none!important}body{background:white}.panel{box-shadow:none;border:0}.result{border:2px solid #bbb}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="brand">Clearforge</div><h1>AI Output Release Gate</h1><p class="sub">A human approval system for deciding whether AI-assisted work should be released, revised or stopped.</p></div></header>
+<main>
+<div class="steps"><span class="step active" data-s="1">1. Describe</span><span class="step" data-s="2">2. Assess</span><span class="step" data-s="3">3. Decide</span><span class="step" data-s="4">4. Record</span></div>
+<section class="panel" id="intro">
+<h2>Before you begin</h2>
+<p>Many AI workflows are designed to move output faster. This tool protects the decision that should not be automated away: whether a named human is prepared to release it.</p>
+<p>This tool does not decide whether an output is true or legally safe. It makes the human checks visible, records what was reviewed and prevents high-risk output from being released by habit.</p>
+<div class="notice" id="privacyNote"><strong>Privacy:</strong> everything entered is stored only in this browser unless you export it. Do not paste confidential source material into the notes fields.</div>
+</section>
+<form id="gateForm">
+<section class="panel" id="describe">
+<h2>Describe the output</h2>
+<div class="grid">
+<div><label for="title">Output name</label><input id="title" required placeholder="e.g. Friday client update"></div>
+<div><label for="type">Output type</label><select id="type" required><option value="">Choose...</option><option>Article or social post</option><option>Email or business document</option><option>Meeting notes or action list</option><option>Creative asset</option><option>Automated action or handoff</option><option>Other</option></select></div>
+<div><label for="tool">AI tool used</label><input id="tool" placeholder="e.g. ChatGPT, Gemini, Copilot"></div>
+<div><label for="owner">Human reviewer</label><input id="owner" required placeholder="Name or role"></div>
+<div><label for="destination">Where will it go?</label><input id="destination" required placeholder="Website, client, team, automation..."></div>
+<div><label for="impact">Consequence if wrong</label><select id="impact" required><option value="">Choose...</option><option value="1">Low - easily corrected, internal or informal</option><option value="2">Medium - public, client-facing or creates rework</option><option value="4">High - money, rights, reputation, sensitive data or an irreversible action</option></select></div>
+</div>
+<div id="routeGuidance" class="notice hidden" aria-live="polite"></div>
+<div class="actions"><button type="button" onclick="goAssess()">Start assessment</button></div>
+</section>
+<section class="panel hidden" id="assess">
+<h2>Human release assessment</h2>
+<p class="help">Answer for this output, not for how the tool usually performs. “Not checked” scores as risk.</p>
+<div id="questions"></div>
+<div><label for="notes">Review notes</label><textarea id="notes" placeholder="What did you check, change or reject? Do not paste confidential content."></textarea></div>
+<div class="actions"><button type="submit">Generate decision</button><button type="button" class="secondary" onclick="showSection('describe',1)">Back</button></div>
+</section>
+</form>
+<section class="panel result hidden" id="result">
+<span class="badge" id="decisionBadge"></span><h2 id="decisionTitle"></h2><p id="decisionSummary"></p>
+<div id="stopReasons"></div><h3>Required release actions</h3><div id="requiredActions"></div>
+<h3>Approval statement</h3><p id="approvalStatement" class="check"></p>
+<div class="actions"><button onclick="saveRecord()">Save to local register</button><button class="secondary" onclick="window.print()">Print / save PDF</button><button class="secondary" onclick="downloadReport()">Download report</button><button class="secondary" onclick="resetGate()">New assessment</button></div>
+</section>
+<section class="panel" id="registerPanel"><h2>Local release register</h2><p class="help">Saved in this browser. Export regularly if the record matters.</p><div class="scroll"><table><thead><tr><th>Date</th><th>Output</th><th>Decision</th><th>Reviewer</th><th></th></tr></thead><tbody id="registerBody"></tbody></table></div><div class="actions"><button class="secondary" onclick="exportJSON()">Export JSON</button><button class="secondary" onclick="exportCSV()">Export CSV</button><button class="secondary" onclick="document.getElementById('importFile').click()">Import JSON</button><input class="hidden" type="file" id="importFile" accept=".json" onchange="importJSON(event)"><button class="danger" onclick="clearRegister()">Clear register</button></div></section>
+</main><footer>Clearforge - Human-led. AI-empowered.<br>Developed with AI assistance and subjected to human-led testing and review. Clearforge retains responsibility for the final product.<br>This operational aid is not legal, privacy, financial or professional advice.</footer>
+<script>
+const Q=[
+{id:'grounded',title:'Are factual claims supported by reliable evidence?',help:'Check the original source, not another AI summary.',actions:'Verify every material factual claim against an original or authoritative source.'},
+{id:'specifics',title:'Have names, dates, figures, links, quotations and commitments been checked?',help:'These details create disproportionate damage when wrong.',actions:'Check names, dates, figures, links, quotations and commitments individually.'},
+{id:'context',title:'Does the output preserve the source meaning and important context?',help:'A fluent summary can still omit qualifications or reverse emphasis.',actions:'Compare the output with the source for omissions, changed meaning and missing qualifications.'},
+{id:'privacy',title:'Is the input and output free of unnecessary personal, confidential or restricted information?',help:'Consider both what was entered and what will be released.',actions:'Remove unnecessary sensitive information and confirm the tool was permitted to process the input.'},
+{id:'rights',title:'Are ownership, licence, attribution and disclosure requirements clear?',help:'Especially important for images, audio, copied text and client assets.',actions:'Confirm the right to use every source asset and record any required attribution or AI disclosure.'},
+{id:'voice',title:'Does it match the intended human, brand and audience?',help:'Check tone, promises, exclusions and unintended implications.',actions:'Edit for the intended audience, brand constraints and promises a human is willing to stand behind.'},
+{id:'action',title:'If another tool or person acts on this, are the instructions and boundaries explicit?',help:'Include stop conditions and avoid ambiguous handoffs.',actions:'Define the exact permitted next action, limits and stop condition before the handoff.'},
+{id:'approval',title:'Has a named human accepted responsibility for release?',help:'“The AI checked it” is not approval.',actions:'Assign a named human reviewer and record their release decision.'}
+];
+const ROUTES={
+'Article or social post':['Open every cited source and confirm it supports the exact claim.','Distinguish confirmed fact, vendor claim and Clearforge interpretation.','Check quotations, statistics, dates, names, links and asset rights.'],
+'Email or business document':['Verify recipients, attachments, prices, deadlines and commitments.','Confirm confidential information was permitted to enter the AI tool.','Check unintended promises and ensure a human sends the final version.'],
+'Meeting notes or action list':['Compare decisions and actions against the recording, transcript or attendee confirmation.','Verify every owner and deadline rather than inferring them.','Separate agreed decisions from suggestions and unresolved discussion.'],
+'Creative asset':['Record the source and licence for every input asset.','Inspect faces, hands, text, logos and product details at full size.','Check brand identity and record any required disclosure or client restriction.'],
+'Automated action or handoff':['Define the permitted action, audience, amount and destination.','Set a stop condition and a recoverable fallback.','Prevent unreviewed output from publishing, sending, purchasing or deleting.'],
+'Other':['Define the intended destination and consequence if wrong.','Identify the evidence, rights, privacy and approval checks specific to this output.','Do not release it until a named human accepts responsibility.']
+};
+let current=null;
+function renderRouteGuidance(){const items=ROUTES[type.value];routeGuidance.classList.toggle('hidden',!items);routeGuidance.innerHTML=items?`<strong>Checks for this output type:</strong><ul>${items.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}
+function renderQuestions(){questions.innerHTML=Q.map((q,i)=>`<div class="question"><label>${i+1}. ${q.title}</label><p class="help">${q.help}</p><div class="choices">${[['yes','Checked','Completed and evidenced'],['partial','Partial','Some uncertainty remains'],['no','Not checked','Missing or failed']].map(x=>`<div class="choice"><input required type="radio" name="${q.id}" id="${q.id}-${x[0]}" value="${x[0]}"><label for="${q.id}-${x[0]}">${x[1]}<small>${x[2]}</small></label></div>`).join('')}</div></div>`).join('')}
+function showSection(id,s){['describe','assess'].forEach(x=>document.getElementById(x).classList.toggle('hidden',x!==id));document.querySelectorAll('.step').forEach(x=>x.classList.toggle('active',Number(x.dataset.s)===s));scrollTo({top:0,behavior:'smooth'})}
+function goAssess(){if(!['title','type','owner','destination','impact'].every(id=>document.getElementById(id).reportValidity()))return;showSection('assess',2)}
+gateForm.addEventListener('submit',e=>{e.preventDefault();assessOutput()});
+function assessOutput(){
+ const answers={};let risk=Number(impact.value);let missing=[];Q.forEach(q=>{const v=new FormData(gateForm).get(q.id);answers[q.id]=v;if(v==='partial'){risk+=1;missing.push(q)}if(v==='no'){risk+=3;missing.push(q)}});
+ const critical=['privacy','rights','action','approval'].filter(id=>answers[id]!=='yes');let decision=risk>=12||critical.length?'STOP':risk>=6?'REVISE':'RELEASE';
+ current={id:crypto.randomUUID(),date:new Date().toISOString(),title:title.value,type:type.value,tool:tool.value,owner:owner.value,destination:destination.value,impact:impact.options[impact.selectedIndex].text,answers,notes:notes.value,risk,decision,actions:missing.map(x=>x.actions)};
+ result.className='panel result '+(decision==='RELEASE'?'green':decision==='STOP'?'red':'');decisionBadge.textContent=decision;decisionTitle.textContent=decision==='RELEASE'?'Release with recorded human approval':decision==='REVISE'?'Revise before release':'Stop: release conditions are not met';
+ decisionSummary.textContent=`Risk score ${risk}. ${missing.length?missing.length+' check(s) require action.':'All eight release checks were completed.'}`;
+ stopReasons.innerHTML=critical.length?`<div class="stop"><strong>Automatic stop condition:</strong> ${critical.map(id=>Q.find(q=>q.id===id).title).join(' ')}</div>`:'';
+ requiredActions.innerHTML=missing.length?missing.map(q=>`<div class="check"><strong>${q.title}</strong>${q.actions}</div>`).join(''):'<div class="check"><strong>No unresolved checks recorded.</strong>Release only if the evidence remains current and the destination has not changed.</div>';
+ approvalStatement.textContent=decision==='RELEASE'?`${owner.value} reviewed "${title.value}" for release to ${destination.value}. The human reviewer accepts responsibility for the release decision.`:`${owner.value} has not approved "${title.value}" for release. Required actions must be completed and the gate run again.`;
+ result.classList.remove('hidden');document.querySelectorAll('.step').forEach(x=>x.classList.toggle('active',Number(x.dataset.s)===3));result.scrollIntoView({behavior:'smooth'})
+}
+const getRecords=()=>JSON.parse(localStorage.getItem('clearforgeReleaseRecords')||'[]');
+function saveRecord(){if(!current)return;current.notes=notes.value;const r=getRecords();const i=r.findIndex(x=>x.id===current.id);i<0?r.unshift(current):r[i]=current;localStorage.setItem('clearforgeReleaseRecords',JSON.stringify(r));renderRegister();document.querySelectorAll('.step').forEach(x=>x.classList.toggle('active',Number(x.dataset.s)===4));alert('Saved to this browser. Export the register if you need a durable copy.')}
+function renderRegister(){const r=getRecords();registerBody.innerHTML=r.length?r.map(x=>`<tr><td>${new Date(x.date).toLocaleDateString()}</td><td>${esc(x.title)}<br><small>${esc(x.type)}</small></td><td><strong>${esc(x.decision)}</strong></td><td>${esc(x.owner)}</td><td><button class="secondary" data-delete-id="${esc(x.id)}">Delete</button></td></tr>`).join(''):'<tr><td colspan="5">No saved assessments.</td></tr>';registerBody.querySelectorAll('[data-delete-id]').forEach(b=>b.addEventListener('click',()=>deleteRecord(b.dataset.deleteId)))}
+function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function dl(name,text,type='text/plain'){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;a.click();URL.revokeObjectURL(a.href)}
+function downloadReport(){if(!current)return;dl(`Clearforge_Release_Report_${current.title.replace(/[^a-z0-9]+/gi,'_')}.txt`,[`CLEARFORGE AI OUTPUT RELEASE REPORT`,`Decision: ${current.decision}`,`Risk score: ${current.risk}`,`Date: ${current.date}`,`Output: ${current.title}`,`Type: ${current.type}`,`AI tool: ${current.tool||'Not recorded'}`,`Reviewer: ${current.owner}`,`Destination: ${current.destination}`,`Consequence: ${current.impact}`,'',`Required actions:`,...(current.actions.length?current.actions.map(x=>'- '+x):['- None recorded']),'',`Review notes: ${current.notes||'None'}`].join('\n'))}
+function exportJSON(){dl('Clearforge_AI_Output_Release_Register.json',JSON.stringify(getRecords(),null,2),'application/json')}
+function exportCSV(){const rows=[['date','output','type','decision','risk_score','reviewer','destination'],...getRecords().map(x=>[x.date,x.title,x.type,x.decision,x.risk,x.owner,x.destination])];dl('Clearforge_AI_Output_Release_Register.csv',rows.map(r=>r.map(v=>`"${String(v).replaceAll('"','""')}"`).join(',')).join('\n'),'text/csv')}
+function validRecord(x){return x&&typeof x==='object'&&!Array.isArray(x)&&typeof x.id==='string'&&/^[a-zA-Z0-9-]{1,100}$/.test(x.id)&&typeof x.date==='string'&&!Number.isNaN(Date.parse(x.date))&&['RELEASE','REVISE','STOP'].includes(x.decision)&&['title','type','owner','destination'].every(k=>typeof x[k]==='string')&&Number.isFinite(Number(x.risk))}
+function importJSON(e){const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{try{const d=JSON.parse(rd.result);if(!Array.isArray(d)||!d.every(validRecord))throw 0;localStorage.setItem('clearforgeReleaseRecords',JSON.stringify(d));renderRegister()}catch{alert('That file is not a valid Clearforge release register.')}};rd.readAsText(f)}
+function deleteRecord(id){localStorage.setItem('clearforgeReleaseRecords',JSON.stringify(getRecords().filter(x=>x.id!==id)));renderRegister()}
+function clearRegister(){if(confirm('Delete every locally saved release record from this browser?')){localStorage.removeItem('clearforgeReleaseRecords');renderRegister()}}
+function resetGate(){gateForm.reset();current=null;result.classList.add('hidden');showSection('describe',1)}
+type.addEventListener('change',renderRouteGuidance);renderQuestions();renderRegister();
+</script></body></html>

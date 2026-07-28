@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import OpenAI from "openai";
+import OpenAI from "./gemini-openai-compat.mjs";
 
 const ROOT = process.cwd();
 const weekEnd = process.env.CLEARFORGE_WEEK_END || new Intl.DateTimeFormat("sv-SE", {
@@ -13,7 +13,7 @@ const weekStart = iso(start);
 const outDir = path.join(ROOT, "weekly-campaigns", weekEnd);
 fs.mkdirSync(outDir, { recursive: true });
 
-if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY is required.");
+if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required.");
 
 const editions = [];
 const draftsDir = path.join(ROOT, "drafts");
@@ -57,9 +57,9 @@ const schema = {
   }
 };
 
-const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const client = new OpenAI();
 const response = await client.responses.create({
-  model: process.env.OPENAI_MODEL || "gpt-5.4-mini",
+  model: process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite",
   reasoning: { effort: "medium" },
   input: [
     { role: "system", content: "You are Clearforge's commercial editorial analyst. Analyse only the supplied approved research. The current flagship under validation is the £19 Clearforge AI Output Release Gate. Its job is to help creators, freelancers and small teams check AI-assisted work before publication, client delivery or action, record a named human reviewer, and reach a Release, Revise or Stop decision. Do not invent a different paid product merely to fill a weekly plan. First test whether the week's evidence supports this flagship, a small update or extension to it, or a free diagnostic that leads naturally to it. Never force the flagship onto unrelated evidence. Recommend a new pack only when at least three distinct credible sources reveal a separate, urgent, repeatable problem that the Release Gate and Workflow Control Kit cannot reasonably solve. Never invent demand, statistics, testimonials, or facts." },

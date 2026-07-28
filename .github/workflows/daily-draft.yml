@@ -243,8 +243,31 @@ jobs:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
         run: npm run validate:auto
 
+      - name: Confirm edition is safe for paid media generation
+        id: media_gate
+        if: always() && steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          initial="${{ steps.initial_claim_verification.outcome }}"
+          final="${{ steps.claim_verification.outcome }}"
+          structural="${{ steps.structural_validation.outcome }}"
+          if [[ "$structural" == "success" && ( "$initial" == "success" || "$final" == "success" ) ]]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+            echo "Factual and structural gates passed. Paid media generation may proceed."
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            {
+              echo "## Paid media generation blocked"
+              echo
+              echo "Claim verification or structural validation did not pass."
+              echo "No Gemini podcast audio, AI images or social narration will be generated for this edition."
+              echo "The text and validation reports remain available for review and correction."
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
       - name: Install FFmpeg for podcast media
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.media_gate.outputs.ready == 'true'
         shell: bash
         run: |
           sudo apt-get update
@@ -252,7 +275,7 @@ jobs:
 
       - name: Generate full daily podcast MP3 with Kore
         id: full_podcast
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.podcast_audio == 'true'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.media_gate.outputs.ready == 'true' && steps.gate.outputs.podcast_audio == 'true'
         continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -287,6 +310,17 @@ jobs:
             echo "The validated podcast production script remains available in the daily package."
           } >> "$GITHUB_STEP_SUMMARY"
 
+      - name: Record requested podcast held by validation
+        if: always() && steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.podcast_audio == 'true' && steps.media_gate.outputs.ready != 'true'
+        shell: bash
+        run: |
+          {
+            echo "## Podcast held before spending"
+            echo
+            echo "A podcast was requested, but the edition did not pass validation."
+            echo "Gemini Kore was not called and no podcast-generation cost was incurred."
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Publish approved episode to Clearforge RSS feed
         if: ${{ false }} # Publication happens only in Clearforge Approve and Publish
         env:
@@ -298,7 +332,7 @@ jobs:
         run: node scripts/publish-podcast-feed.mjs
 
       - name: Generate story-specific AI visuals and narration
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.media_gate.outputs.ready == 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -310,7 +344,7 @@ jobs:
 
       - name: Detect available daily podcast MP3
         id: available_podcast_audio
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.media_gate.outputs.ready == 'true'
         shell: bash
         run: |
           audio="drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp3"

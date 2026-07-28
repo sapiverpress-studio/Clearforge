@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import OpenAI from "openai";
+import OpenAI from "./gemini-openai-compat.mjs";
 
 const ROOT = process.cwd();
 const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
@@ -11,7 +11,7 @@ const runsDir = path.join(draftDir, "runs");
 const currentPath = path.join(draftDir, "structured_output.json");
 const reportPath = path.join(draftDir, "event_novelty_report.json");
 
-if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY is required for event novelty checking.");
+if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required for event novelty checking.");
 if (!fs.existsSync(currentPath)) throw new Error(`Missing ${currentPath}`);
 
 const current = JSON.parse(fs.readFileSync(currentPath, "utf8"));
@@ -98,8 +98,8 @@ const schema = {
   }
 };
 
-const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-const model = process.env.OPENAI_MODEL || "gpt-5.4-mini";
+const client = new OpenAI();
+const model = process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite";
 const response = await client.responses.create({
   model,
   reasoning: { effort: "medium" },

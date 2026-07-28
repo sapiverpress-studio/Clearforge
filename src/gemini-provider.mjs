@@ -45,7 +45,7 @@ export async function generateGroundedEvidence({ system, prompt, model = process
   const result = await callGemini(model, {
     systemInstruction: { parts: [{ text: Array.isArray(system) ? system.join("\n\n") : system }] },
     contents: [{ role: "user", parts: [{ text: prompt }] }],
-    tools: [{ googleSearch: {} }],
+    tools: [{ google_search: {} }],
     generationConfig: { temperature: 0.1 }
   });
   const text = parts(result).map((part) => part.text || "").join("").trim();

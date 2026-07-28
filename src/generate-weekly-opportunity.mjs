@@ -68,7 +68,7 @@ const response = await client.responses.create({
   text: { format: { type: "json_schema", name: "clearforge_weekly_opportunity", strict: true, schema } }
 });
 
-if (!response.output_text) throw new Error("OpenAI returned no weekly opportunity output.");
+if (!response.output_text) throw new Error("Gemini returned no weekly opportunity output.");
 const opportunity = JSON.parse(response.output_text);
 opportunity.week_start = weekStart;
 opportunity.week_end = weekEnd;

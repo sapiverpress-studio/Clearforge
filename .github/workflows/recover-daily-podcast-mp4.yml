@@ -54,7 +54,7 @@ jobs:
       - name: Generate missing Kore MP3
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_TTS_MODEL: gemini-2.5-flash-preview-tts
+          GEMINI_TTS_MODEL: gemini-3.1-flash-tts-preview
           GEMINI_TTS_VOICE: Kore
         shell: bash
         run: |

@@ -16,6 +16,12 @@ const report = JSON.parse(fs.readFileSync(reportPath, "utf8"));
 if (report.decision === "STOP" || (report.hard_stops || []).length) {
   throw new Error("This edition is STOP and cannot be approved.");
 }
+const claimVerificationPath = path.join(draftDir, "claim-verification.json");
+if (!fs.existsSync(claimVerificationPath)) throw new Error("Claim-verification report is missing.");
+const claimVerification = JSON.parse(fs.readFileSync(claimVerificationPath, "utf8"));
+if (claimVerification.passed !== true || Number(claimVerification.confidence) < 0.9) {
+  throw new Error("Independent claim verification has not passed at confidence 0.90 or higher.");
+}
 
 const approval = {
   schema_version: 1,

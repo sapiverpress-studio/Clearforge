@@ -12,9 +12,13 @@ const featurePath = path.join(draftDir, "feature.md");
 const approvalPath = path.join(draftDir, "approval.json");
 const validationPath = path.join(draftDir, "validation.json");
 const socialInterestPath = path.join(draftDir, "social_interest_report.json");
+const claimVerificationPath = path.join(draftDir, "claim-verification.json");
 
 if (!fs.existsSync(structuredPath)) throw new Error(`Missing ${structuredPath}`);
 const data = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
+const claimVerification = fs.existsSync(claimVerificationPath)
+  ? JSON.parse(fs.readFileSync(claimVerificationPath, "utf8"))
+  : null;
 
 // Hard failures protect factual accuracy, safety and basic publishability.
 // Editorial and formatting imperfections are warnings so a usable edition can publish.
@@ -68,6 +72,20 @@ if (featureWords > 3000) warnings.push(`Full feature is longer than the preferre
 if (feature && !/^#\s+/m.test(feature)) warnings.push("Full feature has no H1 headline");
 if (feature && !/##\s+Sources/i.test(feature)) warnings.push("Full feature has no exact Sources section heading");
 if (openClaims.length) failures.push(`Unresolved claims remain: ${openClaims.join(" | ")}`);
+if (!claimVerification) {
+  failures.push("Independent claim-verification report is missing");
+} else {
+  if (claimVerification.passed !== true) failures.push("Independent claim verification did not pass");
+  if (Number(claimVerification.confidence) < 0.9) {
+    failures.push(`Claim-verification confidence is below 0.90 (${Number(claimVerification.confidence) || 0})`);
+  }
+  for (const finding of claimVerification.blocking_findings || []) {
+    failures.push(`Claim verification: ${finding.exact_claim || finding.reason || "blocking finding"}`);
+  }
+  for (const output of claimVerification.missing_outputs || []) {
+    failures.push(`Claim verifier did not inspect complete output: ${output}`);
+  }
+}
 
 for (const [i, story] of stories.entries()) {
   const check = String(story?.claim_to_verify || "").trim();
@@ -225,7 +243,7 @@ const approval = {
 const validation = {
   date: DATE,
   passed: coreApproved,
-  policy: "Only factual, sourcing, safety and minimum-content failures block publication. Editorial and formatting issues are warnings.",
+  policy: "Independent claim verification plus deterministic factual, sourcing, safety and minimum-content checks must pass. Editorial and formatting issues remain warnings.",
   failures,
   warnings,
   stats: {
@@ -235,6 +253,8 @@ const validation = {
     feature_words: featureWords,
     unique_source_domains: uniqueHosts.size,
     unresolved_claim_count: openClaims.length,
+    claim_verification_passed: claimVerification?.passed === true,
+    claim_verification_confidence: Number(claimVerification?.confidence) || 0,
     current_confirmed_development_count: currentConfirmedStories,
     current_human_impact_count: currentImpactStories,
     social_channels_present: socialChecks.filter((item) => item.passed).length,
@@ -258,6 +278,17 @@ const socialInterestReport = {
 fs.writeFileSync(approvalPath, JSON.stringify(approval, null, 2) + "\n");
 fs.writeFileSync(validationPath, JSON.stringify(validation, null, 2) + "\n");
 fs.writeFileSync(socialInterestPath, JSON.stringify(socialInterestReport, null, 2) + "\n");
+
+if (coreApproved) {
+  for (const file of [path.join(draftDir, "daily_brief.md"), path.join(draftDir, "social_pack.md")]) {
+    if (!fs.existsSync(file)) continue;
+    const content = fs.readFileSync(file, "utf8").replace(
+      /^Status: .*(?:automatic validation|independent claim verification) pending.*$/m,
+      "Status: Claim and structural checks passed — human approval pending"
+    );
+    fs.writeFileSync(file, content, "utf8");
+  }
+}
 
 console.log(`Validation ${coreApproved ? "passed" : "failed"} for ${DATE}`);
 if (!coreApproved) process.exit(2);

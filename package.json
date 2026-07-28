@@ -13,6 +13,7 @@
     "feature": "node src/generate-full-feature.mjs",
     "evergreen": "node src/generate-evergreen-explainer.mjs",
     "podcast:daily": "node src/generate-daily-podcast-script.mjs",
+    "verify:claims": "node src/verify-material-claims.mjs",
     "podcast:archive": "node scripts/archive-old-editions.mjs",
     "opportunity:weekly": "node src/generate-weekly-opportunity.mjs",
     "newsletter:weekly": "node src/generate-weekly-newsletter.mjs",
@@ -24,6 +25,7 @@
     "release:desk": "node src/build-release-desk.mjs",
     "release:approve": "node src/approve-release.mjs",
     "check": "node src/check-approval.mjs",
+    "test:validation-system": "node test/validation-system.mjs",
     "build:publishing": "node src/build-publishing-dashboard.mjs"
   },
   "dependencies": {

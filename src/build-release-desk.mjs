@@ -27,13 +27,9 @@ function clamp(value) {
 function ratio(items, test) {
   return items.length ? items.filter(test).length / items.length : 0;
 }
-function words(value, limit) {
-  const text = clean(value);
-  return text.length > limit ? `${text.slice(0, limit).trim()}…` : text;
-}
-
 const structured = readJson(path.join(draftDir, "structured_output.json"), {});
 const validation = readJson(path.join(draftDir, "validation.json"), {});
+const claimVerification = readJson(path.join(draftDir, "claim-verification.json"), {});
 const automated = readJson(path.join(draftDir, "approval.json"), {});
 const media = readJson(path.join(ROOT, "media", DATE, "media-manifest.json"), {});
 const podcastMeta = readJson(path.join(draftDir, "podcast", "episode-metadata.json"), {});
@@ -55,7 +51,8 @@ const sourceDetailScore = ratio(sources, (source) =>
   clean(source.confirmed_fact) &&
   clean(source.interpretation)
 );
-const storyResolutionScore = ratio(stories, (story) => /^none\b/i.test(clean(story.claim_to_verify)));
+const verifiedFindings = Array.isArray(claimVerification.findings) ? claimVerification.findings : [];
+const blockingFindings = Array.isArray(claimVerification.blocking_findings) ? claimVerification.blocking_findings : [];
 const socialFields = [
   social.tiktok_script,
   social.youtube_shorts_script,
@@ -64,8 +61,9 @@ const socialFields = [
   social.pinterest_description
 ];
 const componentScores = {
-  evidence: clamp((sourceDetailScore + storyResolutionScore + (openClaims.length ? 0 : 1)) / 3),
-  automated_validation: validation.passed === true ? 1 : 0,
+  source_completeness: sourceDetailScore,
+  claim_verification: claimVerification.passed === true ? clamp(claimVerification.confidence) : 0,
+  structural_checks: validation.passed === true ? 1 : 0,
   output_consistency: clamp(ratio(socialFields, (value) => clean(value).length > 0)),
   specifics: clamp(ratio(sources, (source) =>
     /^https:\/\//i.test(clean(source.url)) && /^\d{4}-\d{2}-\d{2}$/.test(clean(source.published_date))
@@ -81,18 +79,31 @@ const componentScores = {
 
 const hardStops = [];
 if (!article) hardStops.push("The daily article is missing.");
-if (validation.passed !== true) hardStops.push(...(validationFailures.length ? validationFailures : ["Automated validation did not pass."]));
+if (claimVerification.passed !== true) {
+  hardStops.push(...(blockingFindings.length
+    ? blockingFindings.map((item) => `Claim check: ${clean(item.exact_claim || item.reason || "blocking finding")}`)
+    : ["Independent claim verification did not pass."]));
+}
+if (Number(claimVerification.confidence) < 0.9) {
+  hardStops.push(`Claim-verification confidence is below 0.90 (${Number(claimVerification.confidence) || 0}).`);
+}
+if ((claimVerification.missing_outputs || []).length) {
+  hardStops.push(`Complete outputs were not verified: ${claimVerification.missing_outputs.join(", ")}.`);
+}
+if (validation.passed !== true) hardStops.push(...(validationFailures.length ? validationFailures : ["Structural validation did not pass."]));
 if (openClaims.length) hardStops.push(`Unresolved claims remain: ${openClaims.join(" | ")}`);
 if (stories.some((story) => !/^none\b/i.test(clean(story.claim_to_verify)))) hardStops.push("At least one story retains an unresolved verification check.");
 if (sources.length < 3) hardStops.push(`Only ${sources.length} source(s) were supplied; at least three are required.`);
 if (sources.some((source) => !/^https:\/\//i.test(clean(source.url)))) hardStops.push("At least one source lacks a valid HTTPS URL.");
-if (automated.article_approved !== true) hardStops.push("The article did not pass the existing automated publication checks.");
+if (automated.article_approved !== true) hardStops.push("The article did not pass the structural publication checks.");
+if (!Array.isArray(media.story_images) || media.story_images.length < 3) {
+  hardStops.push("Three generated story images were not confirmed; visual content cannot be approved.");
+}
 
 const advisoryFlags = [];
 if (validationWarnings.length) advisoryFlags.push(...validationWarnings);
 if (!feature) advisoryFlags.push("No full feature was generated.");
 if (!podcastScript) advisoryFlags.push("No podcast script was generated.");
-if (!Array.isArray(media.story_images) || media.story_images.length < 3) advisoryFlags.push("Three story images were not confirmed.");
 if (/\b(medical|legal advice|financial advice|employment law|guaranteed|lawsuit|fine|penalt(?:y|ies))\b/i.test(
   `${article}\n${feature}\n${podcastScript}`
 )) advisoryFlags.push("Potentially high-consequence wording was detected; inspect the relevant passage.");
@@ -125,7 +136,15 @@ const report = {
     stories: stories.length,
     article_words: article.split(/\s+/).filter(Boolean).length,
     feature_words: feature.split(/\s+/).filter(Boolean).length,
-    podcast_words: podcastScript.split(/\s+/).filter(Boolean).length
+    podcast_words: podcastScript.split(/\s+/).filter(Boolean).length,
+    verified_findings: verifiedFindings.length,
+    blocking_findings: blockingFindings.length
+  },
+  claim_verification: {
+    passed: claimVerification.passed === true,
+    confidence: Number(claimVerification.confidence) || 0,
+    summary: clean(claimVerification.summary),
+    findings: verifiedFindings
   }
 };
 
@@ -148,8 +167,16 @@ const storyCards = stories.map((story) => `<article class="item">
   <h3>${esc(story.title || "Untitled story")}</h3>
   <p><strong>Why it matters:</strong> ${esc(story.why_it_matters || "")}</p>
   <p><strong>Practical angle:</strong> ${esc(story.practical_angle || "")}</p>
-  <p><strong>Verification:</strong> ${esc(story.claim_to_verify || "Not recorded")}</p>
+  <p><strong>Draft generator note:</strong> ${esc(story.claim_to_verify || "Not recorded")}</p>
 </article>`).join("");
+const verificationRows = verifiedFindings.map((finding) => `<tr>
+  <td>${esc(finding.output || "")}</td>
+  <td>${esc(finding.exact_claim || "")}</td>
+  <td>${esc(finding.classification || "")}</td>
+  <td>${esc(finding.status || "")}</td>
+  <td>${esc(finding.reason || "")}${finding.source_url ? `<br><a href="${esc(finding.source_url)}">Open evidence</a>` : ""}</td>
+  <td>${esc(finding.required_correction || "None")}</td>
+</tr>`).join("");
 const socialCards = [
   ["TikTok", social.tiktok_script],
   ["YouTube", social.youtube_shorts_script],
@@ -163,18 +190,19 @@ const html = `<!doctype html>
 <title>Clearforge Release Desk - ${esc(DATE)}</title>
 <style>
 :root{--navy:#071827;--blue:#163d5c;--gold:#e2b85b;--paper:#fff;--cream:#f7f4ed;--ink:#102437;--line:#d8e0e6;--red:#ad2d2d}
-*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.5 system-ui,sans-serif}header{background:var(--navy);color:#fff;padding:24px}header div,main{max-width:1080px;margin:auto}main{padding:18px 14px 60px}.panel,.item{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;margin:14px 0}.decision{border-left:8px solid var(--gold)}.decision.stop{border-color:var(--red)}.scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:9px}.score{display:flex;justify-content:space-between;background:#edf3f6;padding:10px;border-radius:9px}.score strong{text-transform:capitalize}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:9px}.scroll{overflow:auto}.copy{background:#eef5f8;padding:12px;border-radius:9px}.approve-button{display:inline-block;background:#176b45;color:#fff;padding:12px 18px;border-radius:9px;font-weight:700;text-decoration:none}small{color:#607080}a{color:#0c567f}@media(max-width:680px){th:nth-child(4),td:nth-child(4){display:none}}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.5 system-ui,sans-serif}header{background:var(--navy);color:#fff;padding:24px}header div,main{max-width:1080px;margin:auto}main{padding:18px 14px 60px}.panel,.item{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;margin:14px 0}.decision{border-left:8px solid var(--gold)}.decision.stop{border-color:var(--red)}.scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:9px}.score{display:flex;justify-content:space-between;background:#edf3f6;padding:10px;border-radius:9px}.score strong{text-transform:capitalize}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:9px}.scroll{overflow:auto}.copy{background:#eef5f8;padding:12px;border-radius:9px;white-space:pre-wrap;overflow-wrap:anywhere}.approve-button{display:inline-block;background:#176b45;color:#fff;padding:12px 18px;border-radius:9px;font-weight:700;text-decoration:none}small{color:#607080}a{color:#0c567f}@media(max-width:680px){th:nth-child(4),td:nth-child(4){display:none}}
 </style></head><body>
 <header><div><strong>CLEARFORGE</strong><h1>Daily Release Desk</h1><p>${esc(DATE)} - nothing publishes without Jim's approval.</p></div></header>
 <main>
 <section class="panel decision ${decision === "STOP" ? "stop" : ""}"><h2>${esc(decision)}</h2><p><strong>Release assurance:</strong> ${report.assurance_score.toFixed(3)}</p><p>${esc(reviewDepth)}</p></section>
 <section class="panel"><h2>What Jim must do</h2><ol><li>Read the stop conditions and advisory flags.</li><li>Check the claims table and open any source that looks weak or surprising.</li><li>Read every social opening and check that it matches the evidence.</li><li>Inspect the article, podcast or video in full only when this report flags it or something looks wrong.</li></ol><p><a class="approve-button" href="${esc(approvalWorkflowUrl)}">Open approval workflow</a></p><p><small>Only continue when this exact edition is factually correct. GitHub will select the newest completed Release Desk and record your authenticated approval.</small></p></section>
-<section class="panel"><h2>Component scores</h2><div class="scores">${scoreCards}</div><p><small>The overall score is the weakest component, not an average. It never authorises publication.</small></p></section>
+<section class="panel"><h2>Component scores</h2><div class="scores">${scoreCards}</div><p><small>Structural checks confirm file shape and required fields. Claim verification separately checks meaning against sources. Neither authorises publication.</small></p></section>
 <section class="panel"><h2>Hard stops</h2>${stopList}<h2>Advisory flags</h2>${flagList}</section>
-<section class="panel"><h2>Evidence and claims</h2><div class="scroll"><table><thead><tr><th>#</th><th>Source</th><th>Confirmed fact</th><th>Clearforge interpretation</th></tr></thead><tbody>${sourceRows}</tbody></table></div></section>
+<section class="panel"><h2>Independent claim verification</h2><p><strong>Result:</strong> ${claimVerification.passed === true ? "PASS" : "FAIL"} · <strong>Confidence:</strong> ${(Number(claimVerification.confidence) || 0).toFixed(3)}</p><p>${esc(claimVerification.summary || "No verification summary was produced.")}</p><div class="scroll"><table><thead><tr><th>Output</th><th>Exact claim</th><th>Classification</th><th>Status</th><th>Reason/evidence</th><th>Required correction</th></tr></thead><tbody>${verificationRows || "<tr><td colspan=\"6\">No claim-level findings were recorded.</td></tr>"}</tbody></table></div></section>
+<section class="panel"><h2>Draft evidence map</h2><p><small>These are claims recorded during research. Their presence is not proof; use the independent verification table above for validation status.</small></p><div class="scroll"><table><thead><tr><th>#</th><th>Source</th><th>Draft factual claim</th><th>Clearforge interpretation</th></tr></thead><tbody>${sourceRows}</tbody></table></div></section>
 <section class="panel"><h2>Story summary</h2>${storyCards || "<p>No stories found.</p>"}</section>
 <section class="panel"><h2>Social copy</h2>${socialCards}</section>
-<section class="panel"><h2>Long-form outputs</h2><p><strong>Article:</strong> ${report.counts.article_words} words - ${esc(words(article, 700) || "Missing")}</p><p><strong>Feature:</strong> ${report.counts.feature_words} words - ${esc(words(feature, 500) || "Missing")}</p><p><strong>Podcast:</strong> ${report.counts.podcast_words} words - ${esc(words(podcastScript, 500) || "Missing")}</p></section>
+<section class="panel"><h2>Complete long-form outputs</h2><p>These are the exact full outputs checked by the claim verifier.</p><details><summary><strong>Article — ${report.counts.article_words} words</strong></summary><pre class="copy">${esc(article || "Missing")}</pre></details><details><summary><strong>Feature — ${report.counts.feature_words} words</strong></summary><pre class="copy">${esc(feature || "Missing")}</pre></details><details><summary><strong>Podcast — ${report.counts.podcast_words} words</strong></summary><pre class="copy">${esc(podcastScript || "Missing")}</pre></details></section>
 <section class="panel"><h2>Disclosure used after approval</h2><p class="copy">${esc(disclosure)}</p></section>
 </main></body></html>`;
 

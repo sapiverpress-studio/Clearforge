@@ -45,11 +45,17 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Generate missing Irene MP3
+      - name: Install FFmpeg
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Generate missing Kore MP3
         env:
-          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVENLAB_API || secrets.ELEVELAB_API }}
-          ELEVENLABS_VOICE_ID: w9xM4Spfmuw28ZXAirWK
-          ELEVENLABS_MODEL_ID: eleven_multilingual_v2
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_TTS_MODEL: gemini-2.5-flash-preview-tts
+          GEMINI_TTS_VOICE: Kore
         shell: bash
         run: |
           set -euo pipefail
@@ -58,20 +64,20 @@ jobs:
           script="$folder/COPY_PASTE_INTO_ELEVENLABS.txt"
           audio="$folder/clearforge-daily-podcast-$edition.mp3"
           [[ -s "$script" ]] || { echo "Approved podcast script is missing: $script"; exit 1; }
-          if [[ -s "$audio" ]]; then
-            echo "Existing Irene MP3 found; no ElevenLabs credit will be used."
+          hash="$audio.source-sha256"
+          source_hash="$(sha256sum "$script" | cut -d' ' -f1)"
+          if [[ -s "$audio" && -s "$hash" && "$(tr -d '\r\n' < "$hash")" == "$source_hash" ]]; then
+            echo "Existing Kore MP3 matches the narration; no Gemini request made."
           else
-            [[ -n "${ELEVENLABS_API_KEY:-}" ]] || { echo "Missing ElevenLabs API secret."; exit 1; }
-            INPUT_PATH="$script" OUTPUT_PATH="$audio" node scripts/generate-elevenlabs-mp3.mjs
+            [[ -n "${GEMINI_API_KEY:-}" ]] || { echo "Missing GEMINI_API_KEY repository secret."; exit 1; }
+            wav="$RUNNER_TEMP/clearforge-kore-$edition.wav"
+            INPUT_PATH="$script" OUTPUT_PATH="$wav" node scripts/generate-gemini-podcast-wav.mjs
+            ffmpeg -hide_banner -loglevel error -y -i "$wav" -codec:a libmp3lame -b:a 128k "$audio"
+            [[ -s "$audio" ]] || { echo "MP3 conversion failed: $audio"; exit 1; }
+            printf '%s\n' "$source_hash" > "$hash"
           fi
 
-      - name: Install FFmpeg
-        shell: bash
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg
-
-      - name: Generate MP4 from Irene MP3
+      - name: Generate MP4 from Kore MP3
         shell: bash
         run: |
           set -euo pipefail
@@ -79,7 +85,7 @@ jobs:
           folder="drafts/$edition/podcast"
           audio="$folder/clearforge-daily-podcast-$edition.mp3"
           video="$folder/clearforge-daily-podcast-$edition.mp4"
-          [[ -s "$audio" ]] || { echo "Existing Irene MP3 is missing: $audio"; exit 1; }
+          [[ -s "$audio" ]] || { echo "Existing Kore MP3 is missing: $audio"; exit 1; }
           if [[ -s "$video" ]]; then
             echo "Existing MP4 found; reusing it while refreshing the episode page."
           else

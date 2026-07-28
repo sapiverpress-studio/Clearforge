@@ -149,12 +149,16 @@ jobs:
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         run: npm install
 
+      - name: Verify Gemini provider contract
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        run: node test/gemini-provider-contract.mjs
+
       - name: Generate fresh research edition
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.edition == 'fresh'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-2.5-flash' }}
-          GEMINI_RESEARCH_MODEL: ${{ vars.GEMINI_RESEARCH_MODEL || 'gemini-2.5-flash' }}
+          GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
+          GEMINI_RESEARCH_MODEL: ${{ vars.GEMINI_RESEARCH_MODEL || 'gemini-3.6-flash' }}
         run: npm run daily
 
       - name: Generate alternate-angle edition from today's source base
@@ -164,7 +168,7 @@ jobs:
           CLEARFORGE_BASE_DATE: ${{ env.CLEARFORGE_BASE_DATE }}
           CLEARFORGE_ANGLE: ${{ env.CLEARFORGE_ANGLE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-2.5-flash' }}
+          GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
         run: npm run angle:alternate
 
       - name: Optimise social content for audience response
@@ -172,7 +176,7 @@ jobs:
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-2.5-flash' }}
+          GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
         run: npm run social:optimise
 
       - name: Generate long-form feature from research pack
@@ -180,7 +184,7 @@ jobs:
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-2.5-flash' }}
+          GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
         run: npm run feature
 
       - name: Generate daily biggest-story podcast script
@@ -188,7 +192,7 @@ jobs:
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-2.5-flash' }}
+          GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
         run: npm run podcast:daily
 
       - name: Validate and auto approve only when checks pass
@@ -210,7 +214,7 @@ jobs:
         continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_TTS_MODEL: gemini-2.5-flash-preview-tts
+          GEMINI_TTS_MODEL: gemini-3.1-flash-tts-preview
           GEMINI_TTS_VOICE: Kore
           INPUT_PATH: drafts/${{ env.CLEARFORGE_DATE }}/podcast/COPY_PASTE_INTO_ELEVENLABS.txt
         shell: bash
@@ -256,8 +260,8 @@ jobs:
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_IMAGE_MODEL: ${{ vars.GEMINI_IMAGE_MODEL || 'gemini-2.5-flash-image' }}
-          GEMINI_TTS_MODEL: ${{ vars.GEMINI_TTS_MODEL || 'gemini-2.5-flash-preview-tts' }}
+          GEMINI_IMAGE_MODEL: ${{ vars.GEMINI_IMAGE_MODEL || 'gemini-3.1-flash-image' }}
+          GEMINI_TTS_MODEL: ${{ vars.GEMINI_TTS_MODEL || 'gemini-3.1-flash-tts-preview' }}
           GEMINI_TTS_VOICE: ${{ vars.GEMINI_TTS_VOICE || 'Kore' }}
         run: npm run media:ai
 

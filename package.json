@@ -14,6 +14,7 @@
     "evergreen": "node src/generate-evergreen-explainer.mjs",
     "podcast:daily": "node src/generate-daily-podcast-script.mjs",
     "verify:claims": "node src/verify-material-claims.mjs",
+    "repair:claims": "node src/repair-material-claims.mjs",
     "podcast:archive": "node scripts/archive-old-editions.mjs",
     "opportunity:weekly": "node src/generate-weekly-opportunity.mjs",
     "newsletter:weekly": "node src/generate-weekly-newsletter.mjs",

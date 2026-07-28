@@ -204,8 +204,20 @@ jobs:
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
         run: npm run podcast:daily
 
-      - name: Validate automated checks; human approval still required
+      - name: Verify material claims against original sources
+        id: claim_verification
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        continue-on-error: true
+        env:
+          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
+        run: npm run verify:claims
+
+      - name: Validate structural checks; human approval still required
+        id: structural_validation
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        continue-on-error: true
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
         run: npm run validate:auto

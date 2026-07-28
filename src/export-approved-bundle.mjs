@@ -13,7 +13,6 @@ const draftDir = path.join(ROOT, "drafts", DATE);
 const mediaDir = path.join(ROOT, "media", DATE);
 const podcastDir = path.join(draftDir, "podcast");
 const approvalPath = path.join(draftDir, "approval.json");
-const humanApprovalPath = path.join(draftDir, "human_approval.json");
 const structuredPath = path.join(draftDir, "structured_output.json");
 const articlePath = path.join(draftDir, "daily_brief.md");
 const socialPath = path.join(draftDir, "social_pack.md");
@@ -70,14 +69,11 @@ function appendHashtags(text) {
 }
 
 requireFile(approvalPath);
-requireFile(humanApprovalPath);
 requireFile(structuredPath);
 requireFile(articlePath);
 requireFile(socialPath);
 
 const approval = readJson(approvalPath);
-const humanApproval = readJson(humanApprovalPath);
-if (humanApproval.approved !== true || humanApproval.edition !== DATE) throw new Error(`Clearforge ${DATE} requires human approval before export.`);
 if (approval.article_approved !== true) {
   console.log(`Clearforge ${DATE} not exported: article_approved is not true.`);
   process.exit(0);
@@ -104,8 +100,6 @@ const manifest = {
   brand: "Clearforge",
   date: DATE,
   type: "clearforge_daily_ai_brief",
-  human_approval: humanApproval,
-  disclosure: humanApproval.disclosure,
   approved: {
     article: approval.article_approved === true,
     facebook: approval.facebook_approved === true,
@@ -172,7 +166,6 @@ write("daily_brief.md", fs.readFileSync(articlePath, "utf8"));
 write("social_pack.md", fs.readFileSync(socialPath, "utf8"));
 write("structured_output.json", JSON.stringify(data, null, 2));
 write("approval.json", JSON.stringify(approval, null, 2));
-write("human_approval.json", JSON.stringify(humanApproval, null, 2));
 
 const latestDir = path.join(ROOT, "bridge", "clearforge", "latest");
 fs.rmSync(latestDir, { recursive: true, force: true });

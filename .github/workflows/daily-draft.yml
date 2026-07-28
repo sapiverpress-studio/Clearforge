@@ -127,7 +127,7 @@ jobs:
             echo "Using fresh edition ID: ${BASE_DATE}"
           fi
 
-      - name: Skip retry when today's pending artifact already exists
+      - name: Restore today's pending edition for retry
         if: steps.gate.outputs.run == 'true' && steps.gate.outputs.retry == 'true'
         id: retrycheck
         env:
@@ -135,12 +135,18 @@ jobs:
         shell: bash
         run: |
           ARTIFACT_NAME="clearforge-pending-edition-${CLEARFORGE_DATE}"
-          COUNT="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts?name=${ARTIFACT_NAME}" --jq '.total_count')"
-          if [ "${COUNT}" -gt 0 ]; then
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "Today's pending edition artifact already exists; retry not needed."
+          ARTIFACT_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts?name=${ARTIFACT_NAME}" --jq '[.artifacts[] | select(.expired == false)] | sort_by(.created_at) | last | .id // empty')"
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+          if [ -n "${ARTIFACT_ID}" ]; then
+            ARCHIVE="${RUNNER_TEMP}/${ARTIFACT_NAME}.zip"
+            gh api -H "Accept: application/vnd.github+json" "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > "${ARCHIVE}"
+            unzip -q -o "${ARCHIVE}" -d "${GITHUB_WORKSPACE}"
+            test -f "drafts/${CLEARFORGE_DATE}/structured_output.json"
+            echo "reuse=true" >> "$GITHUB_OUTPUT"
+            echo "Restored pending edition artifact ${ARTIFACT_ID}; retry will continue after research."
           else
-            echo "skip=false" >> "$GITHUB_OUTPUT"
+            echo "reuse=false" >> "$GITHUB_OUTPUT"
+            echo "No pending edition artifact exists; retry will perform fresh research."
           fi
 
       - name: Setup Node
@@ -154,7 +160,7 @@ jobs:
         run: npm install
 
       - name: Generate fresh research edition
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.edition == 'fresh'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.retrycheck.outputs.reuse != 'true' && steps.gate.outputs.edition == 'fresh'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}

@@ -22,8 +22,8 @@ on:
           - beginner_learning
           - business_systems
           - considered_question
-      generate_irene:
-        description: "Generate the paid full Irene podcast MP3 for this manual run"
+      generate_podcast_audio:
+        description: "Generate the full Gemini Kore podcast MP3 for this manual run"
         required: true
         default: false
         type: boolean
@@ -61,7 +61,7 @@ jobs:
             echo "retry=false" >> "$GITHUB_OUTPUT"
             echo "edition=${{ github.event.inputs.edition_mode }}" >> "$GITHUB_OUTPUT"
             echo "angle=${{ github.event.inputs.angle }}" >> "$GITHUB_OUTPUT"
-            echo "irene=${{ github.event.inputs.generate_irene }}" >> "$GITHUB_OUTPUT"
+            echo "podcast_audio=${{ github.event.inputs.generate_podcast_audio }}" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
@@ -73,25 +73,25 @@ jobs:
             echo "retry=false" >> "$GITHUB_OUTPUT"
             echo "edition=fresh" >> "$GITHUB_OUTPUT"
             echo "angle=creator_workflow" >> "$GITHUB_OUTPUT"
-            if [ "${LOCAL_DAY}" = "4" ]; then echo "irene=true" >> "$GITHUB_OUTPUT"; else echo "irene=false" >> "$GITHUB_OUTPUT"; fi
+            if [ "${LOCAL_DAY}" = "4" ]; then echo "podcast_audio=true" >> "$GITHUB_OUTPUT"; else echo "podcast_audio=false" >> "$GITHUB_OUTPUT"; fi
           elif [ "${LOCAL_TIME}" = "05:15" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "retry=true" >> "$GITHUB_OUTPUT"
             echo "edition=fresh" >> "$GITHUB_OUTPUT"
             echo "angle=creator_workflow" >> "$GITHUB_OUTPUT"
-            if [ "${LOCAL_DAY}" = "4" ]; then echo "irene=true" >> "$GITHUB_OUTPUT"; else echo "irene=false" >> "$GITHUB_OUTPUT"; fi
+            if [ "${LOCAL_DAY}" = "4" ]; then echo "podcast_audio=true" >> "$GITHUB_OUTPUT"; else echo "podcast_audio=false" >> "$GITHUB_OUTPUT"; fi
           elif [ "${LOCAL_TIME}" = "16:30" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "retry=false" >> "$GITHUB_OUTPUT"
             echo "edition=alternate" >> "$GITHUB_OUTPUT"
             echo "angle=considered_question" >> "$GITHUB_OUTPUT"
-            echo "irene=false" >> "$GITHUB_OUTPUT"
+            echo "podcast_audio=false" >> "$GITHUB_OUTPUT"
           else
             echo "run=false" >> "$GITHUB_OUTPUT"
             echo "retry=false" >> "$GITHUB_OUTPUT"
             echo "edition=fresh" >> "$GITHUB_OUTPUT"
             echo "angle=creator_workflow" >> "$GITHUB_OUTPUT"
-            echo "irene=false" >> "$GITHUB_OUTPUT"
+            echo "podcast_audio=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Checkout
@@ -243,31 +243,51 @@ jobs:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
         run: npm run validate:auto
 
-      - name: Generate full daily podcast MP3 with Irene
-        id: irene
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.irene == 'true'
+      - name: Install FFmpeg for podcast media
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Generate full daily podcast MP3 with Kore
+        id: full_podcast
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.podcast_audio == 'true'
         continue-on-error: true
         env:
-          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVENLAB_API || secrets.ELEVELAB_API }}
-          ELEVENLABS_VOICE_ID: w9xM4Spfmuw28ZXAirWK
-          ELEVENLABS_MODEL_ID: eleven_multilingual_v2
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_TTS_MODEL: gemini-2.5-flash-preview-tts
+          GEMINI_TTS_VOICE: Kore
           INPUT_PATH: drafts/${{ env.CLEARFORGE_DATE }}/podcast/COPY_PASTE_INTO_ELEVENLABS.txt
-          OUTPUT_PATH: drafts/${{ env.CLEARFORGE_DATE }}/podcast/clearforge-daily-podcast-${{ env.CLEARFORGE_DATE }}.mp3
-        run: node scripts/generate-elevenlabs-mp3.mjs
+        shell: bash
+        run: |
+          set -euo pipefail
+          audio="drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp3"
+          hash="$audio.source-sha256"
+          source_hash="$(sha256sum "$INPUT_PATH" | cut -d' ' -f1)"
+          if [[ -s "$audio" && -s "$hash" && "$(tr -d '\r\n' < "$hash")" == "$source_hash" ]]; then
+            echo "Existing Kore MP3 matches the narration; no Gemini request made."
+            exit 0
+          fi
+          wav="$RUNNER_TEMP/clearforge-kore-${CLEARFORGE_DATE}.wav"
+          OUTPUT_PATH="$wav" node scripts/generate-gemini-podcast-wav.mjs
+          ffmpeg -hide_banner -loglevel error -y -i "$wav" -codec:a libmp3lame -b:a 128k "$audio"
+          [[ -s "$audio" ]] || { echo "MP3 conversion failed: $audio"; exit 1; }
+          printf '%s\n' "$source_hash" > "$hash"
 
-      - name: Record Irene generation warning
-        if: always() && steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.irene == 'true' && steps.irene.outcome == 'failure'
+      - name: Record podcast generation warning
+        if: always() && steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.podcast_audio == 'true' && steps.full_podcast.outcome == 'failure'
         shell: bash
         run: |
           {
-            echo "## Irene MP3 not generated"
+            echo "## Gemini Kore podcast MP3 not generated"
             echo
-            echo "ElevenLabs failed or was unavailable. The full podcast MP3 and RSS episode were skipped."
-            echo "All non-Irene Clearforge outputs will continue. No substitute narrator was used."
-            echo "The validated COPY_PASTE_INTO_ELEVENLABS.txt production script remains available in the daily package."
+            echo "Gemini TTS failed or was unavailable. The full podcast MP3 and RSS episode were skipped."
+            echo "All other Clearforge outputs will continue. No substitute podcast narrator was used."
+            echo "The validated podcast production script remains available in the daily package."
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Publish Irene episode to Clearforge RSS feed
+      - name: Publish approved episode to Clearforge RSS feed
         if: ${{ false }} # Publication happens only in Clearforge Approve and Publish
         env:
           PODCAST_KIND: daily
@@ -288,30 +308,23 @@ jobs:
           OPENAI_TTS_VOICE: ${{ vars.OPENAI_TTS_VOICE || 'coral' }}
         run: npm run media:ai
 
-      - name: Install FFmpeg for podcast video
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
-        shell: bash
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg
-
-      - name: Detect available daily Irene MP3
-        id: podcast_audio
+      - name: Detect available daily podcast MP3
+        id: available_podcast_audio
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         shell: bash
         run: |
           audio="drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp3"
           if [[ -s "$audio" ]]; then
             echo "available=true" >> "$GITHUB_OUTPUT"
-            echo "Using existing verified Irene audio: $audio"
+            echo "Using available podcast audio: $audio"
           else
             echo "available=false" >> "$GITHUB_OUTPUT"
-            echo "No daily Irene MP3 is available; MP4 generation will be skipped without affecting other outputs."
+            echo "No daily podcast MP3 is available; MP4 generation will be skipped without affecting other outputs."
           fi
 
       - name: Generate full daily podcast MP4
         id: podcast_video
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.podcast_audio.outputs.available == 'true'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.available_podcast_audio.outputs.available == 'true'
         continue-on-error: true
         shell: bash
         run: |

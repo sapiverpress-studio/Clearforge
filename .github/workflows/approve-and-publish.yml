@@ -43,7 +43,7 @@ jobs:
           CLEARFORGE_APPROVER: ${{ github.actor }}
         run: npm run release:approve
 
-      - name: Publish approved Irene podcast files
+      - name: Publish approved podcast files
         shell: bash
         run: |
           set -euo pipefail
@@ -59,7 +59,7 @@ jobs:
             PODCAST_BASE_URL="${BLOG_BASE_URL}" \
             node scripts/publish-podcast-feed.mjs
           else
-            echo "No approved Irene MP3 package is present; podcast publication skipped."
+            echo "No approved podcast MP3 package is present; podcast publication skipped."
           fi
 
       - name: Build approved site

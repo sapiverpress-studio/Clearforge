@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import OpenAI from "openai";
+import OpenAI from "./gemini-openai-compat.mjs";
 
 const ROOT = process.cwd();
 const londonDate = new Intl.DateTimeFormat("sv-SE", {
@@ -126,15 +126,15 @@ const schema = {
 };
 
 async function main() {
-  if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY is required for alternate-angle generation.");
+  if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required for alternate-angle generation.");
   ensureDir(outDir);
   const base = findResearchBase();
   archiveCurrentRun("alternate-angle-previous");
   preserveOrCreateApproval();
 
   const theme = base.data.editorial_theme || editorialTheme(BASE_DATE);
-  const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-  const model = process.env.OPENAI_MODEL || "gpt-5.4-mini";
+  const client = new OpenAI();
+  const model = process.env.GEMINI_TEXT_MODEL || "gemini-2.5-flash";
   const response = await client.responses.create({
     model,
     reasoning: { effort: "medium" },
@@ -146,7 +146,7 @@ async function main() {
     text: { format: { type: "json_schema", name: "clearforge_alternate_angle_brief", strict: true, schema } }
   });
 
-  if (!response.output_text) throw new Error("OpenAI returned no alternate-angle output.");
+  if (!response.output_text) throw new Error("Gemini returned no alternate-angle output.");
   const data = JSON.parse(response.output_text);
   const enrichedData = { ...data, editorial_theme: theme, edition_id: DATE, base_date: BASE_DATE, edition_mode: "alternate_angle" };
   write(path.join(outDir, "daily_brief.md"), renderBrief(enrichedData));

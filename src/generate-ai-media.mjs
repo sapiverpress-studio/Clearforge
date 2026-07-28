@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import OpenAI from "openai";
+import { spawnSync } from "node:child_process";
+import OpenAI from "./gemini-openai-compat.mjs";
 
 const ROOT = process.cwd();
 const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
@@ -10,14 +11,22 @@ const draftDir = path.join(ROOT, "drafts", DATE);
 const structuredPath = path.join(draftDir, "structured_output.json");
 const outDir = path.join(ROOT, "media", DATE);
 
-if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY is required.");
+if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required.");
 if (!fs.existsSync(structuredPath)) throw new Error(`Missing ${structuredPath}`);
 
 const data = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
-const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const client = new OpenAI();
 fs.mkdirSync(outDir, { recursive: true });
 
 const spokenCta = "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.";
+
+function writeMp3FromSpeech(speech, target) {
+  const wav = `${target}.wav`;
+  fs.writeFileSync(wav, Buffer.from(speech));
+  const converted = spawnSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", "-i", wav, "-codec:a", "libmp3lame", "-b:a", "128k", target], { stdio: "inherit" });
+  fs.unlinkSync(wav);
+  if (converted.status !== 0 || !fs.existsSync(target)) throw new Error(`FFmpeg could not create ${target}`);
+}
 
 function editionSeed() {
   return [...String(DATE)].reduce((sum, char) => sum + char.charCodeAt(0), 0);
@@ -81,10 +90,10 @@ const images = [];
 for (let i = 0; i < stories.length; i++) {
   const prompt = visualPrompt(stories[i], i);
   const result = await client.images.generate({
-    model: process.env.OPENAI_IMAGE_MODEL || "gpt-image-2",
+    model: process.env.GEMINI_IMAGE_MODEL || "gemini-2.5-flash-image",
     prompt,
     size: "1024x1536",
-    quality: process.env.OPENAI_IMAGE_QUALITY || "low"
+    quality: "standard"
   });
   const b64 = result.data?.[0]?.b64_json;
   if (!b64) throw new Error(`No image returned for story ${i + 1}`);
@@ -110,13 +119,13 @@ const baseNarration = data.social?.youtube_shorts_script || [
 const narrationText = `${String(baseNarration).trim()} ${spokenCta}`;
 
 const speech = await client.audio.speech.create({
-  model: process.env.OPENAI_TTS_MODEL || "gpt-4o-mini-tts",
-  voice: process.env.OPENAI_TTS_VOICE || "coral",
+  model: process.env.GEMINI_TTS_MODEL || "gemini-2.5-flash-preview-tts",
+  voice: process.env.GEMINI_TTS_VOICE || "Kore",
   input: narrationText,
   instructions: "Speak like a sharp British technology news presenter. Natural, confident, energetic but not overhyped. Use clear pacing, slight emphasis on the practical takeaway, and a warm, concise delivery for the final Clearforge call to action."
 });
 const narrationFile = path.join(outDir, "narration.mp3");
-fs.writeFileSync(narrationFile, Buffer.from(await speech.arrayBuffer()));
+writeMp3FromSpeech(await speech.arrayBuffer(), narrationFile);
 
 const tiktokSelection = data.audience_fit?.platform_selections?.tiktok || {};
 const tiktokStoryIndex = Number.isInteger(tiktokSelection.story_index) && tiktokSelection.story_index >= 0 && tiktokSelection.story_index < stories.length
@@ -139,13 +148,13 @@ const tiktokResponsePrompt = String(data.social?.tiktok_caption_prompt || "Where
 const tiktokPayoff = tiktokSentences.slice(1).join(" ") || stories[tiktokStoryIndex].practical_angle;
 
 const tiktokSpeech = await client.audio.speech.create({
-  model: process.env.OPENAI_TTS_MODEL || "gpt-4o-mini-tts",
-  voice: process.env.OPENAI_TTS_VOICE || "coral",
+  model: process.env.GEMINI_TTS_MODEL || "gemini-2.5-flash-preview-tts",
+  voice: process.env.GEMINI_TTS_VOICE || "Kore",
   input: tiktokNarrationText,
   instructions: "Speak like a sharp, conversational British technology editor. Start immediately with the question. Keep the delivery brisk, natural and human, with a small pause before the final response prompt. Do not sound like a newsreader or advertisement."
 });
 const tiktokNarrationFile = path.join(outDir, "tiktok-narration.mp3");
-fs.writeFileSync(tiktokNarrationFile, Buffer.from(await tiktokSpeech.arrayBuffer()));
+writeMp3FromSpeech(await tiktokSpeech.arrayBuffer(), tiktokNarrationFile);
 
 const manifest = {
   version: 5,

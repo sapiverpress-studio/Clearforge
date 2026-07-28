@@ -98,7 +98,7 @@ All seven content briefs address the same genuine problem from distinct angles.
 
 ```bash
 CLEARFORGE_WEEK_END=2026-07-19 \
-OPENAI_API_KEY=... \
+GEMINI_API_KEY=... \
 npm run opportunity:weekly
 ```
 

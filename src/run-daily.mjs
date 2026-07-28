@@ -265,7 +265,7 @@ async function main() {
   const prompt = fs.readFileSync(promptPath, "utf8");
   const theme = editorialTheme(today);
   const client = new OpenAI();
-  const model = process.env.GEMINI_TEXT_MODEL || "gemini-2.5-flash";
+  const model = process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite";
 
   let data = null;
   let lastNoveltyFailures = [];

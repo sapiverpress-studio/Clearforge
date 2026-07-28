@@ -134,7 +134,7 @@ async function main() {
 
   const theme = base.data.editorial_theme || editorialTheme(BASE_DATE);
   const client = new OpenAI();
-  const model = process.env.GEMINI_TEXT_MODEL || "gemini-2.5-flash";
+  const model = process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite";
   const response = await client.responses.create({
     model,
     reasoning: { effort: "medium" },

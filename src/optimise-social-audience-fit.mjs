@@ -111,7 +111,7 @@ const schema = {
 
 const client = new OpenAI();
 const response = await client.responses.create({
-  model: process.env.GEMINI_TEXT_MODEL || "gemini-2.5-flash",
+  model: process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite",
   reasoning: { effort: "medium" },
   input: [
     {

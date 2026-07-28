@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import OpenAI from "openai";
+import { generateText } from "./gemini-provider.mjs";
 
 const ROOT = process.cwd();
 const today = new Date().toISOString().slice(0, 10);
@@ -121,28 +121,13 @@ function buildApprovalFile() {
   }, null, 2);
 }
 
-async function generateWithOpenAI(sourceNotes) {
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) return null;
-
+async function generateWithGemini(sourceNotes) {
+  if (!process.env.GEMINI_API_KEY) return null;
   const prompt = readIfExists(promptPath);
-  const client = new OpenAI({ apiKey });
-
-  const response = await client.responses.create({
-    model: process.env.OPENAI_MODEL || "gpt-4.1-mini",
-    input: [
-      {
-        role: "system",
-        content: "You create Clearforge draft content only. Do not claim anything is published. Do not copy wording from sources. Keep facts and interpretation separate."
-      },
-      {
-        role: "user",
-        content: `${prompt}\n\nSOURCE LINKS AND NOTES:\n${sourceNotes}`
-      }
-    ]
+  return generateText({
+    system: "You create Clearforge draft content only. Do not claim anything is published. Do not copy wording from sources. Keep facts and interpretation separate.",
+    prompt: `${prompt}\n\nSOURCE LINKS AND NOTES:\n${sourceNotes}`
   });
-
-  return response.output_text || null;
 }
 
 async function main() {
@@ -166,12 +151,12 @@ async function main() {
 
   write("sources.json", JSON.stringify({ date: today, sources_supplied: true, source_notes_path: `inputs/${today}-sources.md` }, null, 2));
 
-  const aiDraft = await generateWithOpenAI(sourceNotes);
+  const aiDraft = await generateWithGemini(sourceNotes);
 
   if (!aiDraft) {
-    write("daily_brief.md", `# Clearforge Daily AI Brief — ${today}\n\nStatus: Draft — OpenAI key not configured\n\n## Supplied Sources\n\n${sourceNotes}\n\n## Next Step\n\nSet OPENAI_API_KEY in your local environment or GitHub Actions secrets, then run npm run draft again.`);
+    write("daily_brief.md", `# Clearforge Daily AI Brief — ${today}\n\nStatus: Draft — Gemini key not configured\n\n## Supplied Sources\n\n${sourceNotes}\n\n## Next Step\n\nSet GEMINI_API_KEY in your local environment or GitHub Actions secrets, then run npm run draft again.`);
     write("social_pack.md", buildSocialFallback());
-    console.log("Sources found, but OPENAI_API_KEY is not configured. Created source-holding draft.");
+    console.log("Sources found, but GEMINI_API_KEY is not configured. Created source-holding draft.");
     return;
   }
 

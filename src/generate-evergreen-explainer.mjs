@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import OpenAI from "openai";
+import OpenAI from "./gemini-openai-compat.mjs";
 
 const ROOT = process.cwd();
 const DRAFTS = path.join(ROOT, "drafts");
@@ -10,7 +10,7 @@ const today = new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
 
-if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY is required.");
+if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required.");
 
 function ensureDir(dir) { fs.mkdirSync(dir, { recursive: true }); }
 function readJson(file, fallback = null) { try { return JSON.parse(fs.readFileSync(file, "utf8")); } catch { return fallback; } }
@@ -76,8 +76,8 @@ const schema = {
   }
 };
 
-const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-const model = process.env.OPENAI_MODEL || "gpt-5.4-mini";
+const client = new OpenAI();
+const model = process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite";
 const response = await client.responses.create({
   model,
   reasoning: { effort: "medium" },
@@ -94,7 +94,7 @@ const response = await client.responses.create({
   text: { format: { type: "json_schema", name: "clearforge_evergreen_explainer", strict: true, schema } }
 });
 
-if (!response.output_text) throw new Error("OpenAI returned no evergreen explainer output.");
+if (!response.output_text) throw new Error("Gemini returned no evergreen explainer output.");
 const result = JSON.parse(response.output_text);
 const approvedEditions = new Set(packs.map((pack) => pack.edition));
 const approvedUrls = new Set(packs.flatMap((pack) => pack.sources.map((source) => source.url).filter(Boolean)));

@@ -61,7 +61,7 @@ jobs:
       - name: Generate Gemini WAV test
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_TTS_MODEL: gemini-2.5-flash-preview-tts
+          GEMINI_TTS_MODEL: gemini-3.1-flash-tts-preview
           GEMINI_TTS_VOICE: ${{ inputs.voice }}
           INPUT_PATH: ${{ steps.edition.outputs.script }}
           OUTPUT_PATH: voice-test/gemini-${{ inputs.voice }}-${{ steps.edition.outputs.edition }}.wav

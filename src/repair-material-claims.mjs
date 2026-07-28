@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import OpenAI from "openai";
+import OpenAI from "./gemini-openai-compat.mjs";
 
 const ROOT = process.cwd();
 const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
@@ -8,7 +8,7 @@ const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
 }).format(new Date());
 const dir = path.join(ROOT, "drafts", DATE);
 const verificationPath = path.join(dir, "claim-verification-initial.json");
-if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY is required for factual repair.");
+if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required for factual repair.");
 if (!fs.existsSync(verificationPath)) throw new Error("Initial claim-verification report is missing.");
 
 const read = (file) => fs.readFileSync(path.join(dir, file), "utf8");
@@ -37,9 +37,9 @@ const schema = {
     corrections_applied: { type: "array", items: { type: "string" } }
   }
 };
-const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const client = new OpenAI();
 const response = await client.responses.create({
-  model: process.env.OPENAI_MODEL || "gpt-5.4-mini",
+  model: process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite",
   reasoning: { effort: "high" },
   input: [{
     role: "system",

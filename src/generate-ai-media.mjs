@@ -90,7 +90,7 @@ const images = [];
 for (let i = 0; i < stories.length; i++) {
   const prompt = visualPrompt(stories[i], i);
   const result = await client.images.generate({
-    model: process.env.GEMINI_IMAGE_MODEL || "gemini-2.5-flash-image",
+    model: process.env.GEMINI_IMAGE_MODEL || "gemini-3.1-flash-image",
     prompt,
     size: "1024x1536",
     quality: "standard"
@@ -119,7 +119,7 @@ const baseNarration = data.social?.youtube_shorts_script || [
 const narrationText = `${String(baseNarration).trim()} ${spokenCta}`;
 
 const speech = await client.audio.speech.create({
-  model: process.env.GEMINI_TTS_MODEL || "gemini-2.5-flash-preview-tts",
+  model: process.env.GEMINI_TTS_MODEL || "gemini-3.1-flash-tts-preview",
   voice: process.env.GEMINI_TTS_VOICE || "Kore",
   input: narrationText,
   instructions: "Speak like a sharp British technology news presenter. Natural, confident, energetic but not overhyped. Use clear pacing, slight emphasis on the practical takeaway, and a warm, concise delivery for the final Clearforge call to action."
@@ -148,7 +148,7 @@ const tiktokResponsePrompt = String(data.social?.tiktok_caption_prompt || "Where
 const tiktokPayoff = tiktokSentences.slice(1).join(" ") || stories[tiktokStoryIndex].practical_angle;
 
 const tiktokSpeech = await client.audio.speech.create({
-  model: process.env.GEMINI_TTS_MODEL || "gemini-2.5-flash-preview-tts",
+  model: process.env.GEMINI_TTS_MODEL || "gemini-3.1-flash-tts-preview",
   voice: process.env.GEMINI_TTS_VOICE || "Kore",
   input: tiktokNarrationText,
   instructions: "Speak like a sharp, conversational British technology editor. Start immediately with the question. Keep the delivery brisk, natural and human, with a small pause before the final response prompt. Do not sound like a newsreader or advertisement."

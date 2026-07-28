@@ -1,17 +1,17 @@
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
+import { generateSpeechWav } from "../src/gemini-provider.mjs";
 
 const inputPath = process.env.INPUT_PATH;
 const outputPath = process.env.OUTPUT_PATH;
-const apiKey = process.env.GEMINI_API_KEY;
-const model = process.env.GEMINI_TTS_MODEL || "gemini-2.5-flash-preview-tts";
+const model = process.env.GEMINI_TTS_MODEL || "gemini-3.1-flash-tts-preview";
 const voice = process.env.GEMINI_TTS_VOICE || "Kore";
 const maxChunkCharacters = Number(process.env.MAX_CHUNK_CHARACTERS || 1600);
 
 if (!inputPath || !outputPath)
   throw new Error("INPUT_PATH and OUTPUT_PATH are required.");
-if (!apiKey) throw new Error("GEMINI_API_KEY is required.");
+if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required.");
 if (voice !== "Kore")
   throw new Error(
     "Voice substitution blocked: Clearforge full podcasts must use Kore.",
@@ -95,45 +95,17 @@ for (let index = 0; index < chunks.length; index += 1) {
     chunks[index],
   ].join("\n");
 
-  const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`;
-  const response = await fetch(endpoint, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-goog-api-key": apiKey,
-    },
-    body: JSON.stringify({
-      contents: [{ role: "user", parts: [{ text: prompt }] }],
-      generationConfig: {
-        responseModalities: ["AUDIO"],
-        speechConfig: {
-          voiceConfig: { prebuiltVoiceConfig: { voiceName: voice } },
-        },
-      },
-    }),
+  const audio = await generateSpeechWav(chunks[index], {
+    model,
+    voice,
+    style: prompt.slice(0, prompt.lastIndexOf("SPOKEN TRANSCRIPT:"))
   });
-
-  if (!response.ok) {
-    const message = (await response.text()).slice(0, 1600);
-    throw new Error(
-      `Gemini TTS chunk ${index + 1}/${chunks.length} failed with ${response.status}: ${message}`,
-    );
-  }
-
-  const payload = await response.json();
-  const part = payload?.candidates?.[0]?.content?.parts?.find(
-    (candidate) => candidate?.inlineData?.data,
-  );
-  if (!part?.inlineData?.data)
-    throw new Error(`Gemini TTS chunk ${index + 1} returned no audio data.`);
-  const audio = Buffer.from(part.inlineData.data, "base64");
   if (audio.length < 1000)
     throw new Error(
       `Gemini TTS chunk ${index + 1} returned unexpectedly small audio.`,
     );
 
-  const mimeType = String(part.inlineData.mimeType || "").toLowerCase();
-  pcmParts.push(mimeType.includes("wav") ? audio.subarray(44) : audio);
+  pcmParts.push(audio.subarray(0, 4).toString() === "RIFF" ? audio.subarray(44) : audio);
   console.log(
     `Generated Gemini Kore podcast chunk ${index + 1}/${chunks.length}.`,
   );

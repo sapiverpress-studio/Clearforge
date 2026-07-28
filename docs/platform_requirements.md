@@ -66,7 +66,7 @@ Likely use:
 
 Needed secret:
 
-- OPENAI_API_KEY
+- GEMINI_API_KEY
 
 ## GitHub Actions
 

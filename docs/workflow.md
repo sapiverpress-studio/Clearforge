@@ -95,7 +95,7 @@ Target platforms:
 Possible technical path:
 
 - GitHub Actions scheduled workflow
-- OpenAI API for draft generation
+- Gemini API for draft generation
 - source feeds and API/RSS/news search
 - platform APIs for upload/publish
 - secret storage in GitHub Actions secrets
@@ -106,7 +106,7 @@ Do not add these to files.
 
 Likely future secrets:
 
-- OPENAI_API_KEY
+- GEMINI_API_KEY
 - NEWS_API_KEY or RSS source configuration
 - FACEBOOK_PAGE_ID
 - FACEBOOK_PAGE_ACCESS_TOKEN

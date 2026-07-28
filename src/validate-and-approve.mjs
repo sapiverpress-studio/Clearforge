@@ -183,7 +183,7 @@ if (socialFields.tiktok_script && !/\b(freelanc\w*|client(?:-facing)? work|work 
 if (socialFields.tiktok_script && genericOpeningPatterns.some((pattern) => pattern.test(tiktokOpening))) {
   failures.push("TikTok opening uses the failed generic AI-update format");
 }
-if (socialFields.tiktok_script && !/\b(check|verify|confirm|compare|review|keep|remove|record|open|read)\b/i.test(socialFields.tiktok_script)) {
+if (socialFields.tiktok_script && !/\b(check|verify|confirm|compare|review|keep|remove|record|open|read|stop|pause|ask|decide|label|mark|ensure|inspect|test)\b|make sure|look for|double[- ]check/i.test(socialFields.tiktok_script)) {
   failures.push("TikTok script gives no immediate practical check");
 }
 

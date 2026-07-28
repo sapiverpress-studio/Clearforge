@@ -40,10 +40,45 @@ function collectNumericOccurrences(value, output, occurrences) {
 const numericOccurrences = [];
 for (const [output, value] of Object.entries(material)) collectNumericOccurrences(value, output, numericOccurrences);
 
+function collectTextValues(value, values = []) {
+  if (typeof value === "string") values.push(value);
+  else if (Array.isArray(value)) value.forEach((item) => collectTextValues(item, values));
+  else if (value && typeof value === "object") Object.values(value).forEach((item) => collectTextValues(item, values));
+  return values;
+}
+
+function collectLanguageOccurrences(value, output, occurrences, pattern, prefix) {
+  const seen = new Set();
+  for (const text of collectTextValues(value)) {
+    const sentences = text.split(/(?<=[.!?])\s+|\n+/).map((item) => item.trim()).filter(Boolean);
+    for (const sentence of sentences) {
+      pattern.lastIndex = 0;
+      if (!pattern.test(sentence)) continue;
+      pattern.lastIndex = 0;
+      const normalized = sentence.replace(/\s+/g, " ").slice(0, 700);
+      if (seen.has(normalized)) continue;
+      seen.add(normalized);
+      occurrences.push({ id: `${prefix}-${occurrences.length + 1}`, output, context: normalized });
+    }
+  }
+}
+
+const qualificationOccurrences = [];
+const inferenceOccurrences = [];
+const qualificationPattern = /\b(?:available|availability|eligible|access|accessible|limited|preview|beta|rollout|self-service|enterprise customers?|selected customers?|general availability|generally available)\b/gi;
+const inferencePattern = /\b(?:suggests?|indicates?|implies?|may|might|could|likely|shows?|demonstrates?|proves?|means?|depends?|points? to|reinforces?|faster than|more likely)\b/gi;
+for (const [output, value] of Object.entries(material)) {
+  collectLanguageOccurrences(value, output, qualificationOccurrences, qualificationPattern, "qualification");
+  collectLanguageOccurrences(value, output, inferenceOccurrences, inferencePattern, "inference");
+}
+
 const schema = {
   type: "object",
   additionalProperties: false,
-  required: ["overall_pass", "confidence", "checked_outputs", "numeric_claim_audit", "findings", "summary"],
+  required: [
+    "overall_pass", "confidence", "checked_outputs", "numeric_claim_audit",
+    "qualification_claim_audit", "inference_claim_audit", "findings", "summary"
+  ],
   properties: {
     overall_pass: { type: "boolean" },
     confidence: { type: "number", minimum: 0, maximum: 1 },
@@ -61,6 +96,36 @@ const schema = {
           occurrence_id: { type: "string" },
           status: { type: "string", enum: ["supported_in_context", "misused", "unsupported"] },
           reason: { type: "string" },
+          source_url: { type: "string" }
+        }
+      }
+    },
+    qualification_claim_audit: {
+      type: "array",
+      items: {
+        type: "object",
+        additionalProperties: false,
+        required: ["occurrence_id", "status", "reason", "required_correction", "source_url"],
+        properties: {
+          occurrence_id: { type: "string" },
+          status: { type: "string", enum: ["supported_in_context", "needs_qualification", "unsupported"] },
+          reason: { type: "string" },
+          required_correction: { type: "string" },
+          source_url: { type: "string" }
+        }
+      }
+    },
+    inference_claim_audit: {
+      type: "array",
+      items: {
+        type: "object",
+        additionalProperties: false,
+        required: ["occurrence_id", "status", "reason", "required_correction", "source_url"],
+        properties: {
+          occurrence_id: { type: "string" },
+          status: { type: "string", enum: ["clearly_labelled_and_supported", "overstated", "unsupported"] },
+          reason: { type: "string" },
+          required_correction: { type: "string" },
           source_url: { type: "string" }
         }
       }
@@ -118,6 +183,8 @@ For every material factual, numerical, date, availability, survey, research, quo
 - keep Clearforge interpretation explicitly separate from source conclusions;
 - inspect every supplied social field and the complete article, feature and podcast;
 - audit every supplied percentage occurrence in its exact surrounding context; a true statistic used to imply a different conclusion is a blocking misuse;
+- audit every supplied availability/access occurrence individually, including eligibility, programme limits, preview/beta status, region, account tier, managed deployment and whether it is self-service;
+- audit every supplied inference occurrence individually; comparative claims such as "faster than", universal claims such as "depends on", and claims that an announcement proves a market-wide outcome require direct evidence or softer, explicit interpretation wording;
 - treat Clearforge's own AI-assistance disclosure, human-approval statement, product CTA and brand description as internal provenance, not externally sourced news claims; mark them not_applicable and never block them merely for lacking an external citation;
 - mark missing outputs as blocking;
 - mark any material overstatement, unsupported implication, inaccurate paraphrase or unresolved high-consequence claim as blocking.
@@ -137,7 +204,13 @@ ${JSON.stringify(material)}
 NUMERIC OCCURRENCES TO AUDIT INDIVIDUALLY:
 ${JSON.stringify(numericOccurrences)}
 
-Return exactly one numeric_claim_audit entry for every supplied occurrence_id. Check whether each statistic supports the conclusion drawn in its surrounding sentence and CTA, not merely whether the number appears somewhere in the source. Return a concise finding for every problem and each important availability claim. For supported claims, required_correction must be an empty string. For problems, give replacement-ready correction guidance and the best supporting source URL.`
+AVAILABILITY AND ACCESS OCCURRENCES TO AUDIT INDIVIDUALLY:
+${JSON.stringify(qualificationOccurrences)}
+
+INFERENCE OCCURRENCES TO AUDIT INDIVIDUALLY:
+${JSON.stringify(inferenceOccurrences)}
+
+Return exactly one audit entry for every supplied occurrence_id in all three audit lists. Check whether each statistic supports the conclusion drawn in its surrounding sentence and CTA, not merely whether the number appears somewhere in the source. Availability wording must preserve every material restriction from the original source. Interpretation must be explicitly framed as interpretation and must not claim the source measured something it did not measure. Return a concise blocking finding for every needs_qualification, overstated, unsupported or unverifiable item. For supported items, required_correction must be an empty string. For problems, give replacement-ready correction guidance and the best supporting source URL.`
     }
   ],
   text: {
@@ -156,9 +229,26 @@ const requiredOutputs = ["structured_output", "daily_article", "full_feature", "
 const checked = new Set(result.checked_outputs || []);
 const findings = Array.isArray(result.findings) ? result.findings : [];
 const numericAudit = Array.isArray(result.numeric_claim_audit) ? result.numeric_claim_audit : [];
+const qualificationAudit = Array.isArray(result.qualification_claim_audit) ? result.qualification_claim_audit : [];
+const inferenceAudit = Array.isArray(result.inference_claim_audit) ? result.inference_claim_audit : [];
 const auditedIds = new Set(numericAudit.map((item) => item.occurrence_id));
+const auditedQualificationIds = new Set(qualificationAudit.map((item) => item.occurrence_id));
+const auditedInferenceIds = new Set(inferenceAudit.map((item) => item.occurrence_id));
+const expectedNumericIds = new Set(numericOccurrences.map((item) => item.id));
+const expectedQualificationIds = new Set(qualificationOccurrences.map((item) => item.id));
+const expectedInferenceIds = new Set(inferenceOccurrences.map((item) => item.id));
 const missingNumericAudits = numericOccurrences.filter((item) => !auditedIds.has(item.id));
+const missingQualificationAudits = qualificationOccurrences.filter((item) => !auditedQualificationIds.has(item.id));
+const missingInferenceAudits = inferenceOccurrences.filter((item) => !auditedInferenceIds.has(item.id));
+const unexpectedNumericAudits = numericAudit.filter((item) => !expectedNumericIds.has(item.occurrence_id));
+const unexpectedQualificationAudits = qualificationAudit.filter((item) => !expectedQualificationIds.has(item.occurrence_id));
+const unexpectedInferenceAudits = inferenceAudit.filter((item) => !expectedInferenceIds.has(item.occurrence_id));
+const duplicateNumericAudits = numericAudit.length !== auditedIds.size;
+const duplicateQualificationAudits = qualificationAudit.length !== auditedQualificationIds.size;
+const duplicateInferenceAudits = inferenceAudit.length !== auditedInferenceIds.size;
 const badNumericAudits = numericAudit.filter((item) => item.status !== "supported_in_context");
+const badQualificationAudits = qualificationAudit.filter((item) => item.status !== "supported_in_context");
+const badInferenceAudits = inferenceAudit.filter((item) => item.status !== "clearly_labelled_and_supported");
 const blocking = findings.filter((item) => item.severity === "blocking");
 const missingOutputs = requiredOutputs.filter((name) => !checked.has(name) || !String(material[name] || "").trim());
 const passed = result.overall_pass === true &&
@@ -166,10 +256,20 @@ const passed = result.overall_pass === true &&
   blocking.length === 0 &&
   badNumericAudits.length === 0 &&
   missingNumericAudits.length === 0 &&
+  badQualificationAudits.length === 0 &&
+  missingQualificationAudits.length === 0 &&
+  badInferenceAudits.length === 0 &&
+  missingInferenceAudits.length === 0 &&
+  unexpectedNumericAudits.length === 0 &&
+  unexpectedQualificationAudits.length === 0 &&
+  unexpectedInferenceAudits.length === 0 &&
+  duplicateNumericAudits === false &&
+  duplicateQualificationAudits === false &&
+  duplicateInferenceAudits === false &&
   missingOutputs.length === 0;
 
 const report = {
-  schema_version: 1,
+  schema_version: 2,
   edition: DATE,
   generated_at: new Date().toISOString(),
   passed,
@@ -179,7 +279,21 @@ const report = {
   blocking_findings: blocking,
   numeric_claim_audit: numericAudit,
   missing_numeric_audits: missingNumericAudits,
+  unexpected_numeric_audits: unexpectedNumericAudits,
+  duplicate_numeric_audits: duplicateNumericAudits,
   failed_numeric_audits: badNumericAudits,
+  qualification_occurrences: qualificationOccurrences,
+  qualification_claim_audit: qualificationAudit,
+  missing_qualification_audits: missingQualificationAudits,
+  unexpected_qualification_audits: unexpectedQualificationAudits,
+  duplicate_qualification_audits: duplicateQualificationAudits,
+  failed_qualification_audits: badQualificationAudits,
+  inference_occurrences: inferenceOccurrences,
+  inference_claim_audit: inferenceAudit,
+  missing_inference_audits: missingInferenceAudits,
+  unexpected_inference_audits: unexpectedInferenceAudits,
+  duplicate_inference_audits: duplicateInferenceAudits,
+  failed_inference_audits: badInferenceAudits,
   findings,
   summary: result.summary || ""
 };

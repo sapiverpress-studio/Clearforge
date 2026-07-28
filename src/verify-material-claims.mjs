@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import OpenAI from "openai";
+import OpenAI from "./gemini-openai-compat.mjs";
 import {
   applyDeterministicGuards,
   deterministicInferenceFailure,
@@ -15,7 +15,7 @@ const draftDir = path.join(ROOT, "drafts", DATE);
 const structuredPath = path.join(draftDir, "structured_output.json");
 const reportPath = path.join(draftDir, process.env.CLAIM_VERIFICATION_FILE || "claim-verification.json");
 
-if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY is required for claim verification.");
+if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required for claim verification.");
 if (!fs.existsSync(structuredPath)) throw new Error(`Missing ${structuredPath}`);
 
 function readText(file) {
@@ -166,8 +166,8 @@ const schema = {
   }
 };
 
-const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-const model = process.env.OPENAI_MODEL || "gpt-5.4-mini";
+const client = new OpenAI();
+const model = process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite";
 const response = await client.responses.create({
   model,
   reasoning: { effort: "high" },

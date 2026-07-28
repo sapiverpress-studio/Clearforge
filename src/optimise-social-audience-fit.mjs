@@ -204,7 +204,7 @@ if (!/\b(freelanc\w*|client(?:-facing)? work|work (?:for|to) (?:a |your )?client
 if (/\b(?:three|four|five|\d+)\s+(?:ai\s+)?updates?\b|today in ai|latest ai news|ai updates? that (?:actually )?matter/i.test(tiktokOpening)) {
   throw new Error("TikTok opening repeats the failed generic update format.");
 }
-if (!/\b(check|verify|confirm|compare|review|keep|remove|record|open|read)\b/i.test(tiktokScript)) {
+if (!/\b(check|verify|confirm|compare|review|keep|remove|record|open|read|stop|pause|ask|decide|label|mark|ensure|inspect|test)\b|make sure|look for|double[- ]check/i.test(tiktokScript)) {
   throw new Error("TikTok script does not give the audience one immediate practical check.");
 }
 

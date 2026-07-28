@@ -192,12 +192,48 @@ for (const [platform, selection] of Object.entries(result.platform_selections)) 
   }
 }
 
-const tiktokScript = String(result.social.tiktok_script || "").replace(/\s+/g, " ").trim();
-const tiktokOpening = tiktokScript.split(/(?<=[.!?])\s+/)[0] || "";
-const tiktokWordCount = tiktokScript.split(/\s+/).filter(Boolean).length;
+let tiktokScript = String(result.social.tiktok_script || "").replace(/\s+/g, " ").trim();
+let tiktokWordCount = tiktokScript.split(/\s+/).filter(Boolean).length;
 if (tiktokWordCount < 18 || tiktokWordCount > 30) {
-  throw new Error(`TikTok script must contain 18–30 spoken words; received ${tiktokWordCount}.`);
+  console.warn(`TikTok script contained ${tiktokWordCount} words; requesting one automatic length correction.`);
+  const correction = await client.responses.create({
+    model: process.env.OPENAI_MODEL || "gpt-5.4-mini",
+    reasoning: { effort: "low" },
+    input: [
+      {
+        role: "system",
+        content: "Edit the supplied TikTok narration to exactly 18–30 spoken words. Preserve the freelancer/client-work audience, the supported fact, its meaning and one practical check. Remove only surplus wording. Do not add facts, branding, a CTA, hashtags or a sign-off."
+      },
+      {
+        role: "user",
+        content: tiktokScript
+      }
+    ],
+    text: {
+      format: {
+        type: "json_schema",
+        name: "clearforge_tiktok_length_correction",
+        strict: true,
+        schema: {
+          type: "object",
+          additionalProperties: false,
+          required: ["tiktok_script"],
+          properties: {
+            tiktok_script: { type: "string" }
+          }
+        }
+      }
+    }
+  });
+  if (!correction.output_text) throw new Error("OpenAI returned no TikTok length correction.");
+  tiktokScript = String(JSON.parse(correction.output_text).tiktok_script || "").replace(/\s+/g, " ").trim();
+  tiktokWordCount = tiktokScript.split(/\s+/).filter(Boolean).length;
+  if (tiktokWordCount < 18 || tiktokWordCount > 30) {
+    throw new Error(`TikTok script remained outside 18–30 spoken words after automatic correction; received ${tiktokWordCount}.`);
+  }
+  result.social.tiktok_script = tiktokScript;
 }
+const tiktokOpening = tiktokScript.split(/(?<=[.!?])\s+/)[0] || "";
 if (!/\b(freelanc\w*|client(?:-facing)? work|work (?:for|to) (?:a |your )?client|send(?:ing)? .* client)\b/i.test(tiktokOpening)) {
   throw new Error("TikTok opening does not identify the fixed freelancer/client-work audience.");
 }

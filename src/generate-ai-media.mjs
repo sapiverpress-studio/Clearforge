@@ -18,7 +18,7 @@ const data = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
 const client = new OpenAI();
 fs.mkdirSync(outDir, { recursive: true });
 
-const spokenCta = "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.";
+const spokenCta = "Before you send AI-assisted work to a client, use the Clearforge AI Output Release Gate through the link in our bio.";
 
 function writeMp3FromSpeech(speech, target) {
   const wav = `${target}.wav`;

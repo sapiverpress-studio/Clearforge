@@ -94,7 +94,7 @@ const response = await client.responses.create({
   text: { format: { type: "json_schema", name: "clearforge_evergreen_explainer", strict: true, schema } }
 });
 
-if (!response.output_text) throw new Error("OpenAI returned no evergreen explainer output.");
+if (!response.output_text) throw new Error("Gemini returned no evergreen explainer output.");
 const result = JSON.parse(response.output_text);
 const approvedEditions = new Set(packs.map((pack) => pack.edition));
 const approvedUrls = new Set(packs.flatMap((pack) => pack.sources.map((source) => source.url).filter(Boolean)));

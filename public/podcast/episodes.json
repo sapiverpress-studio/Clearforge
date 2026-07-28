@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-28",
+    "kind": "daily",
+    "title": "AI at work is moving from drafting to handoffs, checks and role blur",
+    "description": "This is the clearest and strongest story for today’s edition because it directly matches the headline and practical takeaway. It is based on a primary OpenAI research release, it gives a concrete numeric signal about how people are using AI at work, and it points to the real operational issue for small businesses and creators: not just making drafts faster, but deciding where the human handoff belongs.",
+    "published": "2026-07-28T07:00:00+01:00",
+    "duration": "00:08:54",
+    "size": 7530832,
+    "video_size": 24377733,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-28.mp3",
+    "video_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-28.mp4",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-28.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-28.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-28.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-28.html",
+    "source_dir": "drafts/2026-07-28/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-27",
     "kind": "daily",
     "title": "When AI stops chatting and starts doing",

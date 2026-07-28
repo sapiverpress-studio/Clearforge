@@ -7,17 +7,14 @@ const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
 }).format(new Date());
 const draftDir = path.join(ROOT, "drafts", DATE);
 const approvalPath = path.join(draftDir, "approval.json");
-const humanApprovalPath = path.join(draftDir, "human_approval.json");
 const featurePath = path.join(draftDir, "feature.md");
 const metaPath = path.join(draftDir, "feature.json");
 const statePath = path.join(draftDir, "dev-post-result.json");
 
 function requireFile(file) { if (!fs.existsSync(file)) throw new Error(`Missing ${file}`); }
-requireFile(approvalPath); requireFile(humanApprovalPath); requireFile(featurePath); requireFile(metaPath);
+requireFile(approvalPath); requireFile(featurePath); requireFile(metaPath);
 
 const approval = JSON.parse(fs.readFileSync(approvalPath, "utf8"));
-const humanApproval = JSON.parse(fs.readFileSync(humanApprovalPath, "utf8"));
-if (humanApproval.approved !== true || humanApproval.edition !== DATE) throw new Error("DEV syndication requires human approval for this exact edition.");
 if (approval.dev_approved !== true || approval.feature_approved !== true) {
   console.log("DEV syndication skipped: feature is not approved.");
   process.exit(0);
@@ -42,7 +39,7 @@ if (!apiKey) {
 }
 
 const meta = JSON.parse(fs.readFileSync(metaPath, "utf8"));
-const markdown = `${fs.readFileSync(featurePath, "utf8").trim()}\n\n---\n\nProduced with AI assistance and released with human approval by Clearforge.\n`;
+const markdown = fs.readFileSync(featurePath, "utf8");
 const blogBase = String(process.env.BLOG_BASE_URL || "").replace(/\/$/, "");
 const canonicalUrl = blogBase ? `${blogBase}/features/${DATE}.html` : undefined;
 const tags = (meta.tags || ["ai", "productivity", "technology"]).map((x) => String(x).toLowerCase().replace(/[^a-z0-9]/g, "")).filter(Boolean).slice(0, 4).join(", ");

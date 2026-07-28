@@ -22,9 +22,9 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     env:
-      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVENLAB_API || secrets.ELEVELAB_API }}
-      ELEVENLABS_VOICE_ID: w9xM4Spfmuw28ZXAirWK
-      ELEVENLABS_MODEL_ID: eleven_multilingual_v2
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_TTS_MODEL: gemini-2.5-flash-preview-tts
+      GEMINI_TTS_VOICE: Kore
 
     steps:
       - name: Check out Clearforge
@@ -78,12 +78,12 @@ jobs:
 
           echo "list_file=$list_file" >> "$GITHUB_OUTPUT"
 
-      - name: Generate Irene MP3 and full-length MP4
+      - name: Generate Kore MP3 and full-length MP4
         shell: bash
         run: |
           set -euo pipefail
-          if [[ -z "${ELEVENLABS_API_KEY:-}" ]]; then
-            echo "No ElevenLabs API secret is configured. Expected ELEVENLABS_API_KEY or ELEVENLAB_API."
+          if [[ -z "${GEMINI_API_KEY:-}" ]]; then
+            echo "No GEMINI_API_KEY repository secret is configured."
             exit 1
           fi
 
@@ -92,8 +92,18 @@ jobs:
             slug="$(basename "$folder")"
             output="$folder/clearforge-spoken-edition-$slug.mp3"
             video="$folder/clearforge-spoken-edition-$slug.mp4"
-            echo "Generating $output from $script"
-            INPUT_PATH="$script" OUTPUT_PATH="$output" node scripts/generate-elevenlabs-mp3.mjs
+            hash="$output.source-sha256"
+            source_hash="$(sha256sum "$script" | cut -d' ' -f1)"
+            if [[ -s "$output" && -s "$hash" && "$(tr -d '\r\n' < "$hash")" == "$source_hash" ]]; then
+              echo "Existing Kore MP3 matches the narration; no Gemini request made."
+            else
+              wav="$RUNNER_TEMP/clearforge-kore-$slug.wav"
+              echo "Generating $output from $script with Gemini Kore"
+              INPUT_PATH="$script" OUTPUT_PATH="$wav" node scripts/generate-gemini-podcast-wav.mjs
+              ffmpeg -hide_banner -loglevel error -y -i "$wav" -codec:a libmp3lame -b:a 128k "$output"
+              [[ -s "$output" ]] || { echo "MP3 conversion failed: $output"; exit 1; }
+              printf '%s\n' "$source_hash" > "$hash"
+            fi
             video_arg=""
             if bash scripts/generate-podcast-mp4.sh "$output" "$video" public/podcast/cover.png; then
               video_arg="$video"
@@ -131,5 +141,5 @@ jobs:
           git config user.name "clearforge-audio-bot"
           git config user.email "actions@users.noreply.github.com"
           git add -- 'reports/**/*.mp3' 'reports/**/*.mp3.source-sha256' 'reports/**/*.mp4' public/podcast
-          git commit -m "Generate Clearforge podcast MP3 and MP4 with Irene"
+          git commit -m "Generate Clearforge podcast MP3 and MP4 with Kore"
           git push

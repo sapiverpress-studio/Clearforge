@@ -1,0 +1,93 @@
+name: Test Gemini podcast voice
+
+on:
+  workflow_dispatch:
+    inputs:
+      edition_date:
+        description: "Approved edition to read (YYYY-MM-DD or dated edition slug)"
+        required: true
+        type: string
+      voice:
+        description: "Gemini preset voice"
+        required: true
+        default: Kore
+        type: choice
+        options:
+          - Kore
+          - Aoede
+          - Leda
+
+permissions:
+  contents: read
+
+concurrency:
+  group: clearforge-gemini-voice-test
+  cancel-in-progress: false
+
+jobs:
+  voice-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Clearforge
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Validate approved edition
+        id: edition
+        shell: bash
+        run: |
+          set -euo pipefail
+          edition="${{ inputs.edition_date }}"
+          [[ "$edition" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}([a-z0-9-]*)$ ]] || { echo "Invalid edition: $edition"; exit 1; }
+          script="drafts/$edition/podcast/COPY_PASTE_INTO_ELEVENLABS.txt"
+          [[ -s "$script" ]] || { echo "Approved podcast script is missing: $script"; exit 1; }
+          echo "edition=$edition" >> "$GITHUB_OUTPUT"
+          echo "script=$script" >> "$GITHUB_OUTPUT"
+
+      - name: Generate Gemini WAV test
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_TTS_MODEL: gemini-2.5-flash-preview-tts
+          GEMINI_TTS_VOICE: ${{ inputs.voice }}
+          INPUT_PATH: ${{ steps.edition.outputs.script }}
+          OUTPUT_PATH: voice-test/gemini-${{ inputs.voice }}-${{ steps.edition.outputs.edition }}.wav
+        run: node scripts/generate-gemini-voice-test.mjs
+
+      - name: Convert test to MP3
+        shell: bash
+        run: |
+          set -euo pipefail
+          command -v ffmpeg >/dev/null || { echo "FFmpeg is unavailable on the runner."; exit 1; }
+          wav="voice-test/gemini-${{ inputs.voice }}-${{ steps.edition.outputs.edition }}.wav"
+          mp3="voice-test/LISTEN-GEMINI-${{ inputs.voice }}-${{ steps.edition.outputs.edition }}.mp3"
+          ffmpeg -hide_banner -loglevel error -y -i "$wav" -codec:a libmp3lame -b:a 128k "$mp3"
+          [[ -s "$mp3" ]] || { echo "MP3 conversion failed."; exit 1; }
+
+      - name: Add listening instructions
+        shell: bash
+        run: |
+          cat > voice-test/START_HERE.txt <<'EOF'
+          CLEARFORGE GEMINI VOICE TEST
+
+          1. Play the MP3 beginning LISTEN-GEMINI.
+          2. Compare it with the published Irene version of the same edition.
+          3. Check pronunciation, pace, naturalness, voice consistency and whether every sentence was read correctly.
+          4. Do not publish this test. It has not passed the Clearforge Output Release Gate.
+
+          Report one result: PASS — acceptable replacement, or FAIL — keep Irene.
+          EOF
+
+      - name: Upload private listening artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: gemini-voice-test-${{ steps.edition.outputs.edition }}-${{ inputs.voice }}
+          path: |
+            voice-test/LISTEN-GEMINI-*.mp3
+            voice-test/*.json
+            voice-test/START_HERE.txt
+          if-no-files-found: error
+          retention-days: 7

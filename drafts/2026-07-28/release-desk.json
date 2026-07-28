@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "edition": "2026-07-28",
+  "generated_at": "2026-07-28T07:33:07.970Z",
+  "decision": "HUMAN REVIEW",
+  "assurance_score": 0.98,
+  "automatic_publication": false,
+  "human_approval_required": true,
+  "disclosure_after_approval": "Produced with AI assistance and released with human approval by Clearforge.",
+  "component_scores": {
+    "source_completeness": 1,
+    "claim_verification": 0.98,
+    "structural_checks": 1,
+    "output_consistency": 1,
+    "specifics": 1,
+    "privacy_rights": 1,
+    "technical_readiness": 1
+  },
+  "hard_stops": [],
+  "advisory_flags": [
+    "YouTube Shorts content is shorter than preferred (29 words)",
+    "Facebook post has no meaningful audience question",
+    "Potentially high-consequence wording was detected; inspect the relevant passage."
+  ],
+  "review_depth": "Closer review: inspect every flagged section and open the linked source or full output where indicated.",
+  "counts": {
+    "sources": 4,
+    "stories": 4,
+    "article_words": 2032,
+    "feature_words": 2211,
+    "podcast_words": 1297,
+    "verified_findings": 6,
+    "blocking_findings": 0
+  },
+  "claim_verification": {
+    "passed": true,
+    "confidence": 0.98,
+    "summary": "All 14 numeric occurrences are supported in context, and the core source-based claims about OpenAI Presence, Google Beyond Zero, and IBM CodeAlchemy match the official pages. The main article's opening thesis is a reasonable synthesis of those sources, and the only non-external line is Clearforge's own AI-assistance/human-approval disclosure, which is internal provenance. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))",
+    "findings": [
+      {
+        "output": "structured_output",
+        "exact_claim": "OpenAI says an analysis of more than 800,000 messages from U.S. ChatGPT users found that 16.8% of work-related messages and 43.5% of occupation-specific messages were about tasks associated with another occupation.",
+        "classification": "vendor_claim",
+        "status": "supported",
+        "severity": "info",
+        "reason": "This matches OpenAI's report and its task-crossover framing; the surrounding examples in the article are also directly reflected in the source. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))",
+        "required_correction": "",
+        "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
+      },
+      {
+        "output": "structured_output",
+        "exact_claim": "OpenAI says Presence is available today for voice and chat agents and is designed to help enterprises deploy trusted AI agents across customer and internal workflows with policies, guardrails and escalation rules.",
+        "classification": "vendor_claim",
+        "status": "supported",
+        "severity": "info",
+        "reason": "OpenAI's product page says Presence is available today for voice and chat agents and that deployments use approved actions, guardrails, escalation rules, and company-system access. ([openai.com](https://openai.com/index/introducing-openai-presence/))",
+        "required_correction": "",
+        "source_url": "https://openai.com/index/introducing-openai-presence/"
+      },
+      {
+        "output": "structured_output",
+        "exact_claim": "Google says Beyond Zero is a contextual, risk-based authorization model for AI-era enterprise security, built to secure both humans and agents at the level of individual actions and resources.",
+        "classification": "vendor_claim",
+        "status": "supported",
+        "severity": "info",
+        "reason": "Google's post says Beyond Zero is a contextual, risk-based, resource-level authorization model that secures humans and agents at the level of individual actions and resources. ([blog.google](https://blog.google/security/going-beyond-zero-a-new-paradigm-for-enterprise-security/))",
+        "required_correction": "",
+        "source_url": "https://blog.google/security/going-beyond-zero-a-new-paradigm-for-enterprise-security/"
+      },
+      {
+        "output": "structured_output",
+        "exact_claim": "IBM says CodeAlchemy is a synthetic code dataset of nearly 1 trillion tokens across 15 programming languages, released with the recipes used to create it.",
+        "classification": "vendor_claim",
+        "status": "supported",
+        "severity": "info",
+        "reason": "IBM's post states that CodeAlchemy totals nearly 1 trillion tokens across 15 programming languages and is released with the recipes used to create it. ([research.ibm.com](https://research.ibm.com/blog/code-alchemy-for-synthetic-code))",
+        "required_correction": "",
+        "source_url": "https://research.ibm.com/blog/code-alchemy-for-synthetic-code"
+      },
+      {
+        "output": "full_feature",
+        "exact_claim": "The latest workplace AI signal is not just that models can draft faster. It is that work is moving across job boundaries, agents are entering live workflows, and security teams are redesigning approvals around individual actions.",
+        "classification": "logical_inference",
+        "status": "supported",
+        "severity": "info",
+        "reason": "This is a fair synthesis of OpenAI's task-crossover findings, OpenAI Presence's production controls, and Google's action-level authorization model. It is an editorial conclusion, not a direct source quote. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))",
+        "required_correction": "",
+        "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
+      },
+      {
+        "output": "full_feature",
+        "exact_claim": "Produced with AI assistance and released with human approval by Clearforge.",
+        "classification": "internal_provenance",
+        "status": "not_applicable",
+        "severity": "info",
+        "reason": "Per Clearforge policy, this is internal provenance about the editorial process, not an external-world factual claim.",
+        "required_correction": "",
+        "source_url": ""
+      }
+    ]
+  }
+}

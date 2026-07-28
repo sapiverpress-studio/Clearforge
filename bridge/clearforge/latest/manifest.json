@@ -1,17 +1,17 @@
 {
   "version": 5,
   "brand": "Clearforge",
-  "date": "2026-07-27",
+  "date": "2026-07-28",
   "type": "clearforge_daily_ai_brief",
   "human_approval": {
     "schema_version": 1,
-    "edition": "2026-07-27",
+    "edition": "2026-07-28",
     "approved": true,
     "approved_by": "sapiverpress-studio",
-    "approved_at": "2026-07-27T14:21:45.028Z",
-    "assurance_score_at_approval": 0.75,
+    "approved_at": "2026-07-28T07:33:08.132Z",
+    "assurance_score_at_approval": 0.98,
     "automatic_publication": false,
-    "confirmation": "APPROVE 2026-07-27",
+    "confirmation": "APPROVE 2026-07-28",
     "disclosure": "Produced with AI assistance and released with human approval by Clearforge."
   },
   "disclosure": "Produced with AI assistance and released with human approval by Clearforge.",
@@ -22,9 +22,9 @@
     "youtube": true
   },
   "article": {
-    "headline": "Weekend roundup: AI is moving from chat to action, while Europe loosens the compliance clock",
-    "dek": "This weekend’s clearest shift was not another model race. It was control: Europe put the AI Omnibus into force, Google backed the EU transparency code, Meta pushed AI further into task completion, and employers kept arguing that the real change is task redesign, not mass replacement.",
-    "url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-27.html",
+    "headline": "AI at work is moving from drafting to handoffs, checks and role blur",
+    "dek": "Today’s useful signal is not that AI is getting smarter in the abstract. It is that real work is shifting across job boundaries, enterprise agents are being pushed into live workflows, and security teams are tightening the rules around every action those systems can take.",
+    "url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-28.html",
     "markdown": "daily_brief.md"
   },
   "calls_to_action": {
@@ -40,42 +40,42 @@
   },
   "stories": [
     {
-      "title": "Europe has stretched the AI compliance clock",
-      "summary": "The EU’s AI Omnibus took effect today and pushes back some deadlines while also expanding sandbox-style testing and reducing paperwork for smaller firms. That makes the near-term burden lighter for many deployers, but it does not remove the underlying compliance direction.",
-      "why_it_matters": "Small businesses and product teams now have more time to experiment without the same immediate pressure, but they should not read that as a free pass.",
-      "practical_angle": "If you build or buy AI tools in Europe, check whether your team’s next release still needs disclosure, logging or review even if the deadline moved.",
-      "source_name": "European Commission",
-      "source_url": "https://digital-strategy.ec.europa.eu/en/news/ai-omnibus-enters-force"
+      "title": "AI is pushing workers beyond their original job descriptions",
+      "summary": "OpenAI’s new Work at the Frontier report says a large share of ChatGPT work use crosses occupational boundaries, with 43.5% of occupation-specific messages linked to tasks from another occupation. The report suggests workers are increasingly using AI to do adjacent work, not just faster versions of the same job.",
+      "why_it_matters": "For freelancers, assistants, operators and solo business owners, this is a warning and an opportunity: AI is already nudging people into wider roles, so quality checks and clear ownership matter more, not less.",
+      "practical_angle": "Use AI to handle a neighboring task only if you can name who would normally own it and what must still be checked by a human before it goes out.",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
     },
     {
-      "title": "Google is treating AI transparency as a distribution problem",
-      "summary": "Google said it will sign the EU AI Act transparency code and continue pushing watermarking and content provenance through SynthID and C2PA. The key point is that disclosure is moving from a policy promise to a design choice across platforms and labs.",
-      "why_it_matters": "Creators and marketers may soon need to think not only about what they made, but about how they can prove where it came from.",
-      "practical_angle": "If you publish client work, ask your tool vendor how it labels AI-made or AI-edited content and whether that label survives export.",
+      "title": "OpenAI is packaging enterprise agents as a managed work product",
+      "summary": "OpenAI says Presence is available today for voice and chat agents and is meant to help enterprises run AI agents across customer and internal workflows. The announcement emphasizes policies, guardrails, approved actions and escalation to people when needed.",
+      "why_it_matters": "This is a sign that the market is moving away from one-off chat use and toward systems that can do repeatable work inside company processes.",
+      "practical_angle": "If you are testing AI in a business workflow, look for where an approval step, escalation path or saved record is needed before the system can touch live work.",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/introducing-openai-presence/"
+    },
+    {
+      "title": "Google is treating AI security as an authorization problem",
+      "summary": "Google’s new Beyond Zero model applies contextual, risk-based authorization to AI-era enterprise work. Google says it is designed to secure both humans and agents and to make decisions at the level of individual actions and resources.",
+      "why_it_matters": "As AI systems start acting inside company tools, access control becomes part of the product design, not just an IT afterthought.",
+      "practical_angle": "Before allowing an AI tool into a workflow, check whether it can do only the one action you want — and whether each action is logged or approved.",
       "source_name": "Google",
-      "source_url": "https://blog.google/company-news/outreach-and-initiatives/public-policy/eu-ai-act-transparency-code-of-practice/"
-    },
-    {
-      "title": "Meta is pushing AI from drafting into doing",
-      "summary": "Meta AI now goes beyond chat by making plans, pulling in calendar and email context, creating slides and following through on tasks. Meta said the rollout started in select markets on 24 July and will expand later.",
-      "why_it_matters": "This is a practical shift for solo operators: the tool is no longer just helping you write; it is trying to take the next step for you.",
-      "practical_angle": "Before you let a tool send, schedule or assemble something on your behalf, check what the app can actually do without a fresh approval step.",
-      "source_name": "Meta",
-      "source_url": "https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/"
+      "source_url": "https://blog.google/security/going-beyond-zero-a-new-paradigm-for-enterprise-security/"
     }
   ],
   "facebook": {
-    "post": "One useful number from Thomson Reuters: one in three professionals say they’re using AI tools their workplace never officially approved. That’s where mistakes slip into client work. Before anything goes out, have a person check the source, the claim and the wording. Save this for the next draft.\n\n#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI"
+    "post": "If you use AI to help with client work, the main problem is usually not the first draft. It is the moment you send something before you have checked what changed and who should own the final step. OpenAI says work is crossing job boundaries, so make the handoff visible before it goes out. Save this for later.\n\n#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI"
   },
   "pinterest": {
-    "title": "How to check if an AI label stays on after export",
-    "description": "If you publish client work with AI help, ask one thing before you send it: does the label still show after export? If it disappears, don’t assume the file explains itself. Save this check for later.",
-    "destination_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-27.html"
+    "title": "AI Client Work Check: What to Verify Before You Send",
+    "description": "If AI helps with client emails, posts, or notes, check the handoff: what it drafted, what you verified, and whether a human should review it before it goes out. A simple check for freelancers and solo operators.",
+    "destination_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-28.html"
   },
   "youtube": {
-    "title": "Weekend roundup: AI is moving from chat to action, while Europe loosens the compliance clock",
-    "script": "Meta says its assistant can now work with email, calendar and slides, so this is no longer just a writing tool. Before you use anything like that on client work, check that it stays in draft mode until you approve it. Keep that human yes step this week. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
-    "description": "Before you use any AI feature that can send, publish or schedule work, require one human check for source, claim and final wording."
+    "title": "AI at work is becoming a handoff problem",
+    "script": "If AI helps with client messages, invoices, or scheduling, the risky part is the handoff. OpenAI says Presence is available today. Check who approves it before anything goes out. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "description": "Before you let AI into a real work process this week, decide in writing what it can draft, what it can send, and what a human must check first."
   },
   "podcast": {
     "generated": true,
@@ -86,21 +86,21 @@
     "source_notes": "podcast/source-notes.md",
     "episode": {
       "version": 1,
-      "date": "2026-07-27",
+      "date": "2026-07-28",
       "brand": "Clearforge",
       "type": "clearforge_daily_biggest_story_podcast_script",
       "human_review_required": true,
       "narrator": "Irene",
       "elevenlabs_voice_id": "w9xM4Spfmuw28ZXAirWK",
-      "episode_title": "When AI stops chatting and starts doing",
-      "selected_story_index": 2,
-      "selected_story_title": "Meta is pushing AI from drafting into doing",
-      "selection_reason": "This is the biggest story because it marks a practical shift from AI as a writing helper to AI as a task helper. That changes how creators and small businesses approve work, manage permissions, and check output before anything is sent or scheduled.",
-      "word_count": 1325,
-      "estimated_duration_minutes": 9.1,
+      "episode_title": "AI at work is moving from drafting to handoffs, checks and role blur",
+      "selected_story_index": 0,
+      "selected_story_title": "AI is pushing workers beyond their original job descriptions",
+      "selection_reason": "This is the clearest and strongest story for today’s edition because it directly matches the headline and practical takeaway. It is based on a primary OpenAI research release, it gives a concrete numeric signal about how people are using AI at work, and it points to the real operational issue for small businesses and creators: not just making drafts faster, but deciding where the human handoff belongs.",
+      "word_count": 1297,
+      "estimated_duration_minutes": 8.9,
       "copy_paste_file": "COPY_PASTE_INTO_ELEVENLABS.txt",
       "source_notes": "source-notes.md",
-      "first_spoken_line": "The biggest shift in this weekend’s AI news is not that another model got better at talking. It is that AI is starting to do things.",
+      "first_spoken_line": "Here’s the useful signal today: AI at work is no longer just about getting a draft faster. It is starting to move work across job boundaries.",
       "final_spoken_line": "Produced with AI assistance and released with human approval by Clearforge.",
       "validation_warnings": [],
       "non_spoken_instruction_candidates": []
@@ -116,12 +116,12 @@
     ],
     "tiktok_narration": "media/tiktok-narration.mp3",
     "tiktok": {
-      "story_index": 2,
-      "hook": "Meta says its assistant can work with email and calendar.",
-      "payoff": "If yours can too, keep it drafting only. One human check before anything sends can stop a bad send.",
-      "response_prompt": "Which AI task would you keep in draft mode?",
-      "narration": "media/2026-07-27/tiktok-narration.mp3",
-      "narration_text": "Meta says its assistant can work with email and calendar. If yours can too, keep it drafting only. One human check before anything sends can stop a bad send.",
+      "story_index": 0,
+      "hook": "Freelancers sending client work: AI can cross roles, so a draft can slip through.",
+      "payoff": "Check what you verified before sending. Clearforge AI Output Release Gate is linked in bio.",
+      "response_prompt": "What do you verify before sending client work?",
+      "narration": "media/2026-07-28/tiktok-narration.mp3",
+      "narration_text": "Freelancers sending client work: AI can cross roles, so a draft can slip through. Check what you verified before sending. Clearforge AI Output Release Gate is linked in bio.",
       "target_duration_seconds": [
         8,
         12
@@ -131,71 +131,84 @@
     "generated": true
   },
   "quote_card_lines": [
-    "If AI can act for you, the review step matters more.",
-    "Before anything leaves the draft, check the source, the claim and the wording.",
-    "A label that disappears on export is not much help.",
-    "Unapproved AI use can slip into client work quietly.",
-    "One human approval step can stop a bad send."
+    "AI is moving work across job boundaries.",
+    "The first draft is not the risky part.",
+    "The risky part is the handoff.",
+    "Know what you verified before you send.",
+    "A human should still own the final send."
   ],
   "headline_options": [
-    "Weekend roundup: AI is moving from chat to action, while Europe loosens the compliance clock",
-    "AI’s weekend shift: more delegation, less paperwork, still more review",
-    "This weekend, AI got more useful — and more in need of human checks",
-    "Europe slowed the paperwork, Google pushed transparency, Meta pushed action",
-    "The AI story this weekend is control: who checks it, who sends it, who is responsible"
+    "AI at work is becoming a handoff problem",
+    "The new AI workplace question is who checks the work",
+    "AI is crossing job boundaries, and that changes the handoff",
+    "Enterprise AI is moving from chat to controlled action",
+    "What AI at work changes first: roles, approvals and security"
   ],
   "sources": [
     {
-      "source_name": "European Commission",
-      "title": "AI Omnibus enters into force",
-      "url": "https://digital-strategy.ec.europa.eu/en/news/ai-omnibus-enters-force",
+      "source_name": "OpenAI",
+      "title": "How AI is expanding what people do at work",
+      "url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/",
       "published_date": "2026-07-27",
+      "event_date": "2026-07-27",
+      "freshness_status": "current",
+      "freshness_basis": "The source page is dated July 27, 2026, and the event being reported is the release of OpenAI Economic Research’s Work at the Frontier report on that same date.",
+      "coverage_lane": "human_impact",
+      "topic_category": "workplace_and_business",
+      "evidence_basis": "Primary source report from OpenAI Economic Research; includes the sample size, methodology framing, and task-crossover findings.",
+      "confirmed_fact": "OpenAI says an analysis of more than 800,000 messages from U.S. ChatGPT users found that 16.8% of work-related messages and 43.5% of occupation-specific messages were about tasks associated with another occupation.",
+      "interpretation": "This suggests AI is already blurring job boundaries in day-to-day work, especially for small-business owners and people who routinely step outside a fixed role."
+    },
+    {
+      "source_name": "OpenAI",
+      "title": "Introducing OpenAI Presence",
+      "url": "https://openai.com/index/introducing-openai-presence/",
+      "published_date": "2026-07-22",
+      "event_date": "2026-07-22",
+      "freshness_status": "current",
+      "freshness_basis": "The product page is dated July 22, 2026, and it states the product is available today for voice and chat agents.",
       "coverage_lane": "confirmed_development",
-      "topic_category": "policy_safety_and_security",
-      "evidence_basis": "Official EU news release published today; primary source for the legal timing and the scope of the simplification package.",
-      "confirmed_fact": "The AI Omnibus entered into force across the EU on 27 July 2026 and extends timelines, expands testing opportunities and reduces some administrative burdens.",
-      "interpretation": "For smaller businesses and product teams, this lowers near-term compliance pressure while keeping the direction of travel toward formal AI oversight."
+      "topic_category": "workplace_and_business",
+      "evidence_basis": "Primary product announcement from OpenAI describing availability, enterprise positioning, and operating controls.",
+      "confirmed_fact": "OpenAI says Presence is available today for voice and chat agents and is designed to help enterprises deploy trusted AI agents across customer and internal workflows with policies, guardrails and escalation rules.",
+      "interpretation": "The important shift is from chat demos to managed production work, where the main issue becomes reliability, approval and escalation rather than capability alone."
     },
     {
       "source_name": "Google",
-      "title": "Google is signing the EU AI Act Code of Practice on Transparency of AI-Generated Content",
-      "url": "https://blog.google/company-news/outreach-and-initiatives/public-policy/eu-ai-act-transparency-code-of-practice/",
-      "published_date": "2026-07-24",
+      "title": "Going Beyond Zero: A New Paradigm For Enterprise Security",
+      "url": "https://blog.google/security/going-beyond-zero-a-new-paradigm-for-enterprise-security/",
+      "published_date": "2026-07-27",
+      "event_date": "2026-07-27",
+      "freshness_status": "current",
+      "freshness_basis": "The Google Security blog post is dated July 27, 2026, and describes Beyond Zero as a new security paradigm introduced on that date.",
       "coverage_lane": "confirmed_development",
       "topic_category": "policy_safety_and_security",
-      "evidence_basis": "Official company statement on the signing and on Google’s transparency tools and position on the EU code.",
-      "confirmed_fact": "Google said on 24 July 2026 that it is signing the EU AI Act transparency code and tying that to SynthID and C2PA work.",
-      "interpretation": "This is a signal that content provenance is becoming a product requirement, not just a policy talking point."
+      "evidence_basis": "Primary security blog post from Google describing the model, its principles and its early internal deployments.",
+      "confirmed_fact": "Google says Beyond Zero is a contextual, risk-based authorization model for AI-era enterprise security, built to secure both humans and agents at the level of individual actions and resources.",
+      "interpretation": "This is a strong sign that AI at work is now being treated as an access-control problem, not just a productivity feature."
     },
     {
-      "source_name": "Meta",
-      "title": "Meta AI Doesn’t Just Think, It Acts",
-      "url": "https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/",
-      "published_date": "2026-07-24",
+      "source_name": "IBM Research",
+      "title": "IBM open sources CodeAlchemy, a massive synthetic dataset of high-quality code",
+      "url": "https://research.ibm.com/blog/code-alchemy-for-synthetic-code",
+      "published_date": "2026-07-16",
+      "event_date": "2026-07-16",
+      "freshness_status": "background",
+      "freshness_basis": "The IBM Research post is dated July 16, 2026, which places the release outside the seven-day freshness window ending July 28, 2026.",
       "coverage_lane": "confirmed_development",
-      "topic_category": "creator_tools_and_media",
-      "evidence_basis": "Official Meta newsroom post describing the feature set, rollout timing and supported actions.",
-      "confirmed_fact": "Meta said Meta AI can now make plans, connect to email and calendar apps, create slides and handle tasks on a user’s behalf, with rollout starting in select markets on 24 July 2026.",
-      "interpretation": "The practical shift is from prompting to delegation, which raises the value of review before anything leaves the app or reaches other people."
-    },
-    {
-      "source_name": "Thomson Reuters",
-      "title": "Future of Professionals Report 2026",
-      "url": "https://insight.thomsonreuters.com/mena/business/resources/resource/future-of-professionals-report-2026-thomson-reuters",
-      "published_date": "2026-07-02",
-      "coverage_lane": "human_impact",
-      "topic_category": "workplace_and_business",
-      "evidence_basis": "Company report based on a global survey of 1,816 professionals across 62 countries, published with methodology context on the report page.",
-      "confirmed_fact": "Thomson Reuters said 35% of professionals see their organisation’s AI strategy affecting daily roles, one in three are using AI that was not officially approved, and one in four are considering leaving.",
-      "interpretation": "The risk is not just adoption speed; it is unapproved use slipping into real client or compliance work without a clear handoff."
+      "topic_category": "coding_and_building",
+      "evidence_basis": "Primary research release from IBM Research, including dataset scale, language coverage and the linked paper.",
+      "confirmed_fact": "IBM says CodeAlchemy is a synthetic code dataset of nearly 1 trillion tokens across 15 programming languages, released with the recipes used to create it.",
+      "interpretation": "For developers, this matters because AI coding quality now depends as much on training data and safe execution environments as on the model itself."
     }
   ],
   "media_metadata": {
     "version": 5,
-    "date": "2026-07-27",
-    "headline": "Weekend roundup: AI is moving from chat to action, while Europe loosens the compliance clock",
-    "dek": "This weekend’s clearest shift was not another model race. It was control: Europe put the AI Omnibus into force, Google backed the EU transparency code, Meta pushed AI further into task completion, and employers kept arguing that the real change is task redesign, not mass replacement.",
-    "hook": "Three AI updates that actually matter today",
+    "date": "2026-07-28",
+    "headline": "AI at work is moving from drafting to handoffs, checks and role blur",
+    "dek": "Today’s useful signal is not that AI is getting smarter in the abstract. It is that real work is shifting across job boundaries, enterprise agents are being pushed into live workflows, and security teams are tightening the rules around every action those systems can take.",
+    "hook": "If AI helps with client messages, invoices, or scheduling, the risky part is the handoff.",
+    "main_story_index": 1,
     "spoken_cta": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
     "visual_system": "Clearforge AI briefing podcast studio system",
     "visual_style_rules": {
@@ -219,52 +232,52 @@
     },
     "stories": [
       {
-        "file": "media/2026-07-27/story-1.png",
-        "title": "Europe has stretched the AI compliance clock",
-        "source_name": "European Commission",
-        "source_url": "https://digital-strategy.ec.europa.eu/en/news/ai-omnibus-enters-force",
-        "summary": "The EU’s AI Omnibus took effect today and pushes back some deadlines while also expanding sandbox-style testing and reducing paperwork for smaller firms. That makes the near-term burden lighter for many deployers, but it does not remove the underlying compliance direction.",
-        "why_it_matters": "Small businesses and product teams now have more time to experiment without the same immediate pressure, but they should not read that as a free pass.",
-        "practical_angle": "If you build or buy AI tools in Europe, check whether your team’s next release still needs disclosure, logging or review even if the deadline moved.",
-        "visual_prompt": "a weekly AI briefing workspace with layered research cards, calendar markers, a studio microphone, restrained blue interface glow and visible human review materials. vertical social-video still with a strong microphone foreground and clear desk detail. make the AI element clear through subtle circuit traces, waveform graphics, model cards and data-routing lines, not robots. change the hero object placement so this frame does not resemble the previous edition. Story context: Europe has stretched the AI compliance clock. Practical angle: If you build or buy AI tools in Europe, check whether your team’s next release still needs disclosure, logging or review even if the deadline moved.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+        "file": "media/2026-07-28/story-1.png",
+        "title": "AI is pushing workers beyond their original job descriptions",
+        "source_name": "OpenAI",
+        "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/",
+        "summary": "OpenAI’s new Work at the Frontier report says a large share of ChatGPT work use crosses occupational boundaries, with 43.5% of occupation-specific messages linked to tasks from another occupation. The report suggests workers are increasingly using AI to do adjacent work, not just faster versions of the same job.",
+        "why_it_matters": "For freelancers, assistants, operators and solo business owners, this is a warning and an opportunity: AI is already nudging people into wider roles, so quality checks and clear ownership matter more, not less.",
+        "practical_angle": "Use AI to handle a neighboring task only if you can name who would normally own it and what must still be checked by a human before it goes out.",
+        "visual_prompt": "a podcast-ready AI learning desk with a microphone in the foreground, tidy source folders, simple model cards, a soft waveform motif and a dark professional newsroom mood. clean editorial technology-magazine composition, practical rather than sci-fi. show AI as a system being reviewed by a person through notes, checks, source cards and controlled audio tools. include a different arrangement of source cards, notebook, microphone angle and background signal pattern. Story context: AI is pushing workers beyond their original job descriptions. Practical angle: Use AI to handle a neighboring task only if you can name who would normally own it and what must still be checked by a human before it goes out.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: dark blue studio background, graphite desk, white paper, blue highlights and restrained green accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
       },
       {
-        "file": "media/2026-07-27/story-2.png",
-        "title": "Google is treating AI transparency as a distribution problem",
+        "file": "media/2026-07-28/story-2.png",
+        "title": "OpenAI is packaging enterprise agents as a managed work product",
+        "source_name": "OpenAI",
+        "source_url": "https://openai.com/index/introducing-openai-presence/",
+        "summary": "OpenAI says Presence is available today for voice and chat agents and is meant to help enterprises run AI agents across customer and internal workflows. The announcement emphasizes policies, guardrails, approved actions and escalation to people when needed.",
+        "why_it_matters": "This is a sign that the market is moving away from one-off chat use and toward systems that can do repeatable work inside company processes.",
+        "practical_angle": "If you are testing AI in a business workflow, look for where an approval step, escalation path or saved record is needed before the system can touch live work.",
+        "visual_prompt": "a dark navy AI briefing studio desk with a professional podcast microphone, source notes, a small audio waveform display, subtle circuit-board lines in the background and one practical notebook open on the desk. vertical social-video still with a strong microphone foreground and clear desk detail. combine physical human-review materials with light digital signal motifs so it feels human-led and AI-empowered. vary camera distance, desk depth and object hierarchy while keeping the same Clearforge identity. Story context: OpenAI is packaging enterprise agents as a managed work product. Practical angle: If you are testing AI in a business workflow, look for where an approval step, escalation path or saved record is needed before the system can touch live work.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+      },
+      {
+        "file": "media/2026-07-28/story-3.png",
+        "title": "Google is treating AI security as an authorization problem",
         "source_name": "Google",
-        "source_url": "https://blog.google/company-news/outreach-and-initiatives/public-policy/eu-ai-act-transparency-code-of-practice/",
-        "summary": "Google said it will sign the EU AI Act transparency code and continue pushing watermarking and content provenance through SynthID and C2PA. The key point is that disclosure is moving from a policy promise to a design choice across platforms and labs.",
-        "why_it_matters": "Creators and marketers may soon need to think not only about what they made, but about how they can prove where it came from.",
-        "practical_angle": "If you publish client work, ask your tool vendor how it labels AI-made or AI-edited content and whether that label survives export.",
-        "visual_prompt": "a modern audio briefing desk where AI developments are represented by physical cards, circuit-like connection lines, a restrained waveform panel and careful human notes. cinematic three-quarter studio photograph with shallow depth of field. use restrained blue technology accents to signal AI without making the image look like generic AI stock art. include a different arrangement of source cards, notebook, microphone angle and background signal pattern. Story context: Google is treating AI transparency as a distribution problem. Practical angle: If you publish client work, ask your tool vendor how it labels AI-made or AI-edited content and whether that label survives export.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: dark blue studio background, graphite desk, white paper, blue highlights and restrained green accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
-      },
-      {
-        "file": "media/2026-07-27/story-3.png",
-        "title": "Meta is pushing AI from drafting into doing",
-        "source_name": "Meta",
-        "source_url": "https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/",
-        "summary": "Meta AI now goes beyond chat by making plans, pulling in calendar and email context, creating slides and following through on tasks. Meta said the rollout started in select markets on 24 July and will expand later.",
-        "why_it_matters": "This is a practical shift for solo operators: the tool is no longer just helping you write; it is trying to take the next step for you.",
-        "practical_angle": "Before you let a tool send, schedule or assemble something on your behalf, check what the app can actually do without a fresh approval step.",
-        "visual_prompt": "a practical creator workflow table showing verified source notes, timeline cards, a muted blue AI signal pattern, a microphone, headphones and a structured review checklist. premium podcast-cover composition with strong negative space for later text overlay. make it instantly understandable as an AI briefing or AI podcast image, but grounded in real studio objects. vary camera distance, desk depth and object hierarchy while keeping the same Clearforge identity. Story context: Meta is pushing AI from drafting into doing. Practical angle: Before you let a tool send, schedule or assemble something on your behalf, check what the app can actually do without a fresh approval step.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+        "source_url": "https://blog.google/security/going-beyond-zero-a-new-paradigm-for-enterprise-security/",
+        "summary": "Google’s new Beyond Zero model applies contextual, risk-based authorization to AI-era enterprise work. Google says it is designed to secure both humans and agents and to make decisions at the level of individual actions and resources.",
+        "why_it_matters": "As AI systems start acting inside company tools, access control becomes part of the product design, not just an IT afterthought.",
+        "practical_angle": "Before allowing an AI tool into a workflow, check whether it can do only the one action you want — and whether each action is logged or approved.",
+        "visual_prompt": "a high-end technology briefing set with a dark blue wall, subtle circuit traces, a clean desk, paper research packs, audio waveforms and one human-operated control surface. cinematic three-quarter studio photograph with shallow depth of field. make the AI element clear through subtle circuit traces, waveform graphics, model cards and data-routing lines, not robots. use a different AI signal motif: waveform, routing lines, model cards, calendar markers or evidence board. Story context: Google is treating AI security as an authorization problem. Practical angle: Before allowing an AI tool into a workflow, check whether it can do only the one action you want — and whether each action is logged or approved.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
       }
     ],
-    "narration": "media/2026-07-27/narration.mp3",
-    "narration_text": "Meta says its assistant can now work with email, calendar and slides, so this is no longer just a writing tool. Before you use anything like that on client work, check that it stays in draft mode until you approve it. Keep that human yes step this week. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "narration": "media/2026-07-28/narration.mp3",
+    "narration_text": "If AI helps with client messages, invoices, or scheduling, the risky part is the handoff. OpenAI says Presence is available today. Check who approves it before anything goes out. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
     "tiktok": {
-      "story_index": 2,
-      "hook": "Meta says its assistant can work with email and calendar.",
-      "payoff": "If yours can too, keep it drafting only. One human check before anything sends can stop a bad send.",
-      "response_prompt": "Which AI task would you keep in draft mode?",
-      "narration": "media/2026-07-27/tiktok-narration.mp3",
-      "narration_text": "Meta says its assistant can work with email and calendar. If yours can too, keep it drafting only. One human check before anything sends can stop a bad send.",
+      "story_index": 0,
+      "hook": "Freelancers sending client work: AI can cross roles, so a draft can slip through.",
+      "payoff": "Check what you verified before sending. Clearforge AI Output Release Gate is linked in bio.",
+      "response_prompt": "What do you verify before sending client work?",
+      "narration": "media/2026-07-28/tiktok-narration.mp3",
+      "narration_text": "Freelancers sending client work: AI can cross roles, so a draft can slip through. Check what you verified before sending. Clearforge AI Output Release Gate is linked in bio.",
       "target_duration_seconds": [
         8,
         12
       ],
       "format": "single_discovery_micro_explainer"
     },
-    "practical_takeaway": "Before you use any AI feature that can send, publish or schedule work, require one human check for source, claim and final wording.",
-    "what_to_test_next": "Pick one recurring task, such as a client update or weekly briefing, and run it through AI only as a draft. Then compare the draft against the final approved version to see exactly where review still saves you from errors."
+    "practical_takeaway": "Before you let AI into a real work process this week, decide in writing what it can draft, what it can send, and what a human must check first.",
+    "what_to_test_next": "Pick one recurring task — for example, replying to client questions, summarising a meeting, or drafting a simple code change — and map a three-step flow: AI draft, human check, final send. Then see where the handoff breaks."
   }
 }

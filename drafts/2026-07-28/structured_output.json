@@ -1,0 +1,338 @@
+{
+  "headline": "AI at work is moving from drafting to handoffs, checks and role blur",
+  "dek": "Today’s useful signal is not that AI is getting smarter in the abstract. It is that real work is shifting across job boundaries, enterprise agents are being pushed into live workflows, and security teams are tightening the rules around every action those systems can take.",
+  "sources": [
+    {
+      "source_name": "OpenAI",
+      "title": "How AI is expanding what people do at work",
+      "url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/",
+      "published_date": "2026-07-27",
+      "event_date": "2026-07-27",
+      "freshness_status": "current",
+      "freshness_basis": "The source page is dated July 27, 2026, and the event being reported is the release of OpenAI Economic Research’s Work at the Frontier report on that same date.",
+      "coverage_lane": "human_impact",
+      "topic_category": "workplace_and_business",
+      "evidence_basis": "Primary source report from OpenAI Economic Research; includes the sample size, methodology framing, and task-crossover findings.",
+      "confirmed_fact": "OpenAI says an analysis of more than 800,000 messages from U.S. ChatGPT users found that 16.8% of work-related messages and 43.5% of occupation-specific messages were about tasks associated with another occupation.",
+      "interpretation": "This suggests AI is already blurring job boundaries in day-to-day work, especially for small-business owners and people who routinely step outside a fixed role."
+    },
+    {
+      "source_name": "OpenAI",
+      "title": "Introducing OpenAI Presence",
+      "url": "https://openai.com/index/introducing-openai-presence/",
+      "published_date": "2026-07-22",
+      "event_date": "2026-07-22",
+      "freshness_status": "current",
+      "freshness_basis": "The product page is dated July 22, 2026, and it states the product is available today for voice and chat agents.",
+      "coverage_lane": "confirmed_development",
+      "topic_category": "workplace_and_business",
+      "evidence_basis": "Primary product announcement from OpenAI describing availability, enterprise positioning, and operating controls.",
+      "confirmed_fact": "OpenAI says Presence is available today for voice and chat agents and is designed to help enterprises deploy trusted AI agents across customer and internal workflows with policies, guardrails and escalation rules.",
+      "interpretation": "The important shift is from chat demos to managed production work, where the main issue becomes reliability, approval and escalation rather than capability alone."
+    },
+    {
+      "source_name": "Google",
+      "title": "Going Beyond Zero: A New Paradigm For Enterprise Security",
+      "url": "https://blog.google/security/going-beyond-zero-a-new-paradigm-for-enterprise-security/",
+      "published_date": "2026-07-27",
+      "event_date": "2026-07-27",
+      "freshness_status": "current",
+      "freshness_basis": "The Google Security blog post is dated July 27, 2026, and describes Beyond Zero as a new security paradigm introduced on that date.",
+      "coverage_lane": "confirmed_development",
+      "topic_category": "policy_safety_and_security",
+      "evidence_basis": "Primary security blog post from Google describing the model, its principles and its early internal deployments.",
+      "confirmed_fact": "Google says Beyond Zero is a contextual, risk-based authorization model for AI-era enterprise security, built to secure both humans and agents at the level of individual actions and resources.",
+      "interpretation": "This is a strong sign that AI at work is now being treated as an access-control problem, not just a productivity feature."
+    },
+    {
+      "source_name": "IBM Research",
+      "title": "IBM open sources CodeAlchemy, a massive synthetic dataset of high-quality code",
+      "url": "https://research.ibm.com/blog/code-alchemy-for-synthetic-code",
+      "published_date": "2026-07-16",
+      "event_date": "2026-07-16",
+      "freshness_status": "background",
+      "freshness_basis": "The IBM Research post is dated July 16, 2026, which places the release outside the seven-day freshness window ending July 28, 2026.",
+      "coverage_lane": "confirmed_development",
+      "topic_category": "coding_and_building",
+      "evidence_basis": "Primary research release from IBM Research, including dataset scale, language coverage and the linked paper.",
+      "confirmed_fact": "IBM says CodeAlchemy is a synthetic code dataset of nearly 1 trillion tokens across 15 programming languages, released with the recipes used to create it.",
+      "interpretation": "For developers, this matters because AI coding quality now depends as much on training data and safe execution environments as on the model itself."
+    }
+  ],
+  "story_summaries": [
+    {
+      "title": "AI is pushing workers beyond their original job descriptions",
+      "event_date": "2026-07-27",
+      "freshness_status": "current",
+      "coverage_lane": "human_impact",
+      "topic_category": "workplace_and_business",
+      "summary": "OpenAI’s new Work at the Frontier report says a large share of ChatGPT work use crosses occupational boundaries, with 43.5% of occupation-specific messages linked to tasks from another occupation. The report suggests workers are increasingly using AI to do adjacent work, not just faster versions of the same job.",
+      "why_it_matters": "For freelancers, assistants, operators and solo business owners, this is a warning and an opportunity: AI is already nudging people into wider roles, so quality checks and clear ownership matter more, not less.",
+      "practical_angle": "Use AI to handle a neighboring task only if you can name who would normally own it and what must still be checked by a human before it goes out.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "OpenAI is packaging enterprise agents as a managed work product",
+      "event_date": "2026-07-22",
+      "freshness_status": "current",
+      "coverage_lane": "confirmed_development",
+      "topic_category": "workplace_and_business",
+      "summary": "OpenAI says Presence is available today for voice and chat agents and is meant to help enterprises run AI agents across customer and internal workflows. The announcement emphasizes policies, guardrails, approved actions and escalation to people when needed.",
+      "why_it_matters": "This is a sign that the market is moving away from one-off chat use and toward systems that can do repeatable work inside company processes.",
+      "practical_angle": "If you are testing AI in a business workflow, look for where an approval step, escalation path or saved record is needed before the system can touch live work.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "Google is treating AI security as an authorization problem",
+      "event_date": "2026-07-27",
+      "freshness_status": "current",
+      "coverage_lane": "confirmed_development",
+      "topic_category": "policy_safety_and_security",
+      "summary": "Google’s new Beyond Zero model applies contextual, risk-based authorization to AI-era enterprise work. Google says it is designed to secure both humans and agents and to make decisions at the level of individual actions and resources.",
+      "why_it_matters": "As AI systems start acting inside company tools, access control becomes part of the product design, not just an IT afterthought.",
+      "practical_angle": "Before allowing an AI tool into a workflow, check whether it can do only the one action you want — and whether each action is logged or approved.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    },
+    {
+      "title": "IBM’s CodeAlchemy shows coding AI now depends on data pipelines, not just models",
+      "event_date": "2026-07-16",
+      "freshness_status": "background",
+      "coverage_lane": "confirmed_development",
+      "topic_category": "coding_and_building",
+      "summary": "IBM Research says CodeAlchemy is a synthetic code dataset of nearly 1 trillion tokens across 15 languages, released with the recipes used to generate it. IBM frames it as a way to improve model performance and to support more practical agentic coding workflows.",
+      "why_it_matters": "The story behind coding AI is shifting from ‘which model is smartest’ to ‘what data, sandbox and review process make the output dependable.’",
+      "practical_angle": "If you use AI to help write code, treat the training data story and the test environment as part of the tool choice, not an afterthought.",
+      "claim_to_verify": "NONE — verified from cited sources."
+    }
+  ],
+  "main_article": "If you want one simple read on AI at work this week, it is this: the useful question is no longer only whether AI can write, summarise or code. It is which parts of work are moving across role boundaries, which parts can safely be handed to an agent, and where a human still has to sign off.\n\nOpenAI’s new Work at the Frontier report gives the clearest signal on the first part. The company says that in an analysis of more than 800,000 messages from U.S. ChatGPT users, 16.8% of work-related messages and 43.5% of occupation-specific messages were about tasks associated with another occupation. In plain English, people are not just asking AI to do their own job faster; they are using it to reach into adjacent tasks that would once have belonged to someone else. OpenAI describes this as task crossover, and the examples are easy to recognise: a small-business owner drafting copy, checking a contract or doing basic financial analysis; a salesperson exploring a customer dataset; a marketer troubleshooting a website without waiting for a developer. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))\n\nThat matters because it changes how work gets managed. A tool that only speeds up a known task mostly affects timing. A tool that helps someone do other people’s work affects ownership, review and accountability. For creators and small operators, that can be helpful — you can move faster and cover more ground — but it also raises the risk of doing something outside your depth and sending it out too early. The practical lesson is not to avoid crossover work. It is to name it, check it and keep the human owner visible. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))\n\nOpenAI’s Presence announcement shows the next stage of that shift. The company says the product is available today for voice and chat agents and is designed to help enterprises deploy trusted AI agents across customer and internal workflows. The important detail is not just that the agents can answer questions. OpenAI says they are meant to use company systems, take approved actions and escalate to people when needed, with policies, guardrails and escalation rules built in. That is the difference between a demo and a work system. ([openai.com](https://openai.com/index/introducing-openai-presence/))\n\nFor a normal user, the practical implication is straightforward: if an AI tool will touch customer messages, internal tickets, invoices, scheduling or publishing, you need to know what it is allowed to do on its own and what has to wait for a human. The best question to ask is not “can it do this?” but “what is the handoff?” If there is no answer, you do not yet have a production workflow. You have a chat feature. ([openai.com](https://openai.com/index/introducing-openai-presence/))\n\nGoogle’s Beyond Zero post pushes that same logic into security. Google says AI agents are being deployed globally and that the new risk is not just model error but privileged actions moving too quickly through enterprise systems. Its answer is a contextual, risk-based authorization model that secures both humans and agents at the level of individual actions and resources. In other words, the security question is becoming: who or what is allowed to do this one thing, in this one context, right now? ([blog.google](https://blog.google/security/going-beyond-zero-a-new-paradigm-for-enterprise-security/))\n\nThat is a useful way to think about AI at work even outside a large enterprise. A freelancer sending client work, a small agency publishing social assets, or an admin using an AI assistant to update records all face the same basic issue: the problem is rarely the first draft. It is the moment the draft becomes a decision, a post, a filing or a record in a live system. Google’s framing is a reminder that the control point should sit there, not only at login or model access. ([blog.google](https://blog.google/security/going-beyond-zero-a-new-paradigm-for-enterprise-security/))\n\nIBM’s CodeAlchemy release rounds out the picture from the coding side. IBM says it has open sourced a synthetic code dataset of nearly 1 trillion tokens across 15 programming languages, along with the recipes used to create it. The company says the dataset is meant to improve model performance and support more practical coding workflows. The point for builders is that coding AI is now being shaped not only by larger models but also by the quality of the data pipeline and the safety of the execution environment around it. ([research.ibm.com](https://research.ibm.com/blog/code-alchemy-for-synthetic-code))\n\nPut together, these stories point in the same direction. AI at work is becoming a workflow layer, not a novelty layer. It is expanding what people do, but it is also forcing clearer boundaries: what is mine, what is delegated, what is approved, and what is logged. That is good news for anyone who wants practical value without hype. The tools are getting more capable. The discipline around them has to get better too. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))\n\nPractical takeaway: before you let AI into a real work process this week, decide in writing what it can draft, what it can send, and what a human must check first. \n",
+  "practical_takeaway": "Before you let AI into a real work process this week, decide in writing what it can draft, what it can send, and what a human must check first.",
+  "what_to_test_next": "Pick one recurring task — for example, replying to client questions, summarising a meeting, or drafting a simple code change — and map a three-step flow: AI draft, human check, final send. Then see where the handoff breaks.",
+  "claims_to_verify": [],
+  "social": {
+    "tiktok_script": "Freelancers sending client work: AI can cross roles, so a draft can slip through. Check what you verified before sending. Clearforge AI Output Release Gate is linked in bio.",
+    "tiktok_caption_prompt": "What do you verify before sending client work?",
+    "youtube_shorts_script": "If AI helps with client messages, invoices, or scheduling, the risky part is the handoff. OpenAI says Presence is available today. Check who approves it before anything goes out.",
+    "facebook_post": "If you use AI to help with client work, the main problem is usually not the first draft. It is the moment you send something before you have checked what changed and who should own the final step. OpenAI says work is crossing job boundaries, so make the handoff visible before it goes out. Save this for later.",
+    "pinterest_title": "AI Client Work Check: What to Verify Before You Send",
+    "pinterest_description": "If AI helps with client emails, posts, or notes, check the handoff: what it drafted, what you verified, and whether a human should review it before it goes out. A simple check for freelancers and solo operators.",
+    "linkedin_post": "If AI will touch client messages, invoices, or scheduling, the useful question is not whether it can do it. It is what has to happen before it sends. OpenAI says Presence is built with approved actions, guardrails, and escalation to people when needed. For freelancers and solo operators, the operational lesson is simple: define one human check before AI can move anything into a live system. Save this if you are mapping a workflow.",
+    "quote_card_lines": [
+      "AI is moving work across job boundaries.",
+      "The first draft is not the risky part.",
+      "The risky part is the handoff.",
+      "Know what you verified before you send.",
+      "A human should still own the final send."
+    ]
+  },
+  "headline_options": [
+    "AI at work is becoming a handoff problem",
+    "The new AI workplace question is who checks the work",
+    "AI is crossing job boundaries, and that changes the handoff",
+    "Enterprise AI is moving from chat to controlled action",
+    "What AI at work changes first: roles, approvals and security"
+  ],
+  "editorial_theme": {
+    "day": "Tuesday",
+    "date": "2026-07-28",
+    "slug": "ai-at-work",
+    "title": "AI at work",
+    "focus": "AI at work: daily tasks, teams, productivity, research, writing, support, admin, meetings and practical workplace use.",
+    "instruction": "Prioritise stories that help creators, small operators and small businesses test AI in real work. Ask what changes a workday, what still needs human review, and what is ready to try this week."
+  },
+  "audience_fit": {
+    "generated_at": "2026-07-28T06:50:07.917Z",
+    "story_assessments": [
+      {
+        "story_index": 0,
+        "story_title": "AI is pushing workers beyond their original job descriptions",
+        "target_audience": "Freelancers and solo operators sending client-facing work with AI help",
+        "audience_problem_or_desire": "They want AI to help them cover more client work without sending something they should have checked themselves.",
+        "interest_signal": "OpenAI says a large share of work-related messages cross into tasks associated with another occupation.",
+        "stop_reason": "It turns AI into a familiar client-work problem: what was drafted, what was verified, and who still owns the send.",
+        "promised_payoff": "A simple check before work leaves your hands.",
+        "proof_point": "OpenAI says an analysis of more than 800,000 messages found 16.8% of work-related messages and 43.5% of occupation-specific messages were about tasks associated with another occupation.",
+        "search_phrases": [
+          "AI client work check",
+          "AI crosses job boundaries",
+          "what to verify before sending AI work",
+          "freelancer AI handoff",
+          "client work human review"
+        ],
+        "scores": {
+          "audience_fit": 10,
+          "practical_consequence": 9,
+          "searchability": 9,
+          "stranger_usefulness": 9,
+          "novelty": 7,
+          "visual_potential": 7,
+          "discussion_potential": 8,
+          "short_form_clarity": 10
+        },
+        "overall_score": 9,
+        "score_reason": "This is the most directly useful story for freelancers and solo operators because it names a real work situation, shows a clear consequence, and gives a simple verification habit.",
+        "release_gate_relevance_score": 8,
+        "release_gate_problem_signal": "handoff_or_human_approval",
+        "release_gate_cta_eligible": true,
+        "release_gate_reason": "The verified evidence points to AI use crossing role boundaries, which creates a pre-send checking problem before client-facing work goes out."
+      },
+      {
+        "story_index": 1,
+        "story_title": "OpenAI is packaging enterprise agents as a managed work product",
+        "target_audience": "Freelancers and solo operators testing AI in live workflows that touch clients or records",
+        "audience_problem_or_desire": "They want AI to do more than draft, but they still need a clear human approval step before anything touches live work.",
+        "interest_signal": "OpenAI says Presence is available today for voice and chat agents with policies, guardrails and escalation rules.",
+        "stop_reason": "It explains the next workflow question in ordinary language: what can the system do on its own, and what still needs a person.",
+        "promised_payoff": "A clearer handoff between draft, approval and send.",
+        "proof_point": "OpenAI says Presence is available today and is designed to help enterprises deploy trusted AI agents across customer and internal workflows with policies, guardrails and escalation rules.",
+        "search_phrases": [
+          "AI handoff step",
+          "client workflow approval step",
+          "AI escalation rules",
+          "approved actions in AI workflow",
+          "human check before AI sends"
+        ],
+        "scores": {
+          "audience_fit": 8,
+          "practical_consequence": 8,
+          "searchability": 7,
+          "stranger_usefulness": 8,
+          "novelty": 8,
+          "visual_potential": 6,
+          "discussion_potential": 7,
+          "short_form_clarity": 8
+        },
+        "overall_score": 8,
+        "score_reason": "The story is practical and clear, especially for anyone turning AI from a draft tool into a live workflow with approvals.",
+        "release_gate_relevance_score": 9,
+        "release_gate_problem_signal": "handoff_or_human_approval",
+        "release_gate_cta_eligible": true,
+        "release_gate_reason": "The verified evidence explicitly centers approved actions, policies, guardrails and escalation rules in a live workflow, which maps to a handoff problem."
+      },
+      {
+        "story_index": 2,
+        "story_title": "Google is treating AI security as an authorization problem",
+        "target_audience": "Freelancers and solo operators who let AI touch live tools, accounts or publishing steps",
+        "audience_problem_or_desire": "They want AI to be useful without giving it more access than it needs.",
+        "interest_signal": "Google says Beyond Zero is a risk-based authorization model for AI-era security.",
+        "stop_reason": "It signals that AI access is becoming action-by-action instead of all-or-nothing.",
+        "promised_payoff": "A simple way to think about whether an AI tool should be allowed to do a specific action.",
+        "proof_point": "Google says Beyond Zero is a contextual, risk-based authorization model built to secure both humans and agents at the level of individual actions and resources.",
+        "search_phrases": [
+          "AI security authorization",
+          "risk-based authorization AI",
+          "AI access control",
+          "can AI take actions in tools",
+          "AI action approval"
+        ],
+        "scores": {
+          "audience_fit": 6,
+          "practical_consequence": 7,
+          "searchability": 8,
+          "stranger_usefulness": 7,
+          "novelty": 8,
+          "visual_potential": 6,
+          "discussion_potential": 8,
+          "short_form_clarity": 7
+        },
+        "overall_score": 7,
+        "score_reason": "Useful and timely, but the evidence is more enterprise-security oriented than the fixed freelancer audience needs for a fast social explanation.",
+        "release_gate_relevance_score": 5,
+        "release_gate_problem_signal": "none",
+        "release_gate_cta_eligible": false,
+        "release_gate_reason": "The evidence is about access control and authorization, but it is not a direct pre-send or pre-publication checking problem for the audience."
+      },
+      {
+        "story_index": 3,
+        "story_title": "IBM’s CodeAlchemy shows coding AI now depends on data pipelines, not just models",
+        "target_audience": "Freelancers and solo operators who use AI to help write code",
+        "audience_problem_or_desire": "They want coding help that is dependable, not just clever.",
+        "interest_signal": "IBM says CodeAlchemy is a nearly 1 trillion-token synthetic code dataset across 15 languages.",
+        "stop_reason": "It is credible and technical, but it speaks more to coding infrastructure than to a broad client-work check.",
+        "promised_payoff": "A reminder to treat data quality and test setup as part of the tool choice.",
+        "proof_point": "IBM says CodeAlchemy is a synthetic code dataset of nearly 1 trillion tokens across 15 programming languages, released with the recipes used to create it.",
+        "search_phrases": [
+          "synthetic code dataset",
+          "AI coding data pipeline",
+          "AI code testing setup",
+          "CodeAlchemy IBM",
+          "reliable AI coding"
+        ],
+        "scores": {
+          "audience_fit": 4,
+          "practical_consequence": 5,
+          "searchability": 6,
+          "stranger_usefulness": 5,
+          "novelty": 7,
+          "visual_potential": 5,
+          "discussion_potential": 6,
+          "short_form_clarity": 6
+        },
+        "overall_score": 5,
+        "score_reason": "Interesting for coders, but less useful for the fixed audience and harder to explain as a quick, practical social post.",
+        "release_gate_relevance_score": 2,
+        "release_gate_problem_signal": "none",
+        "release_gate_cta_eligible": false,
+        "release_gate_reason": "The verified evidence is about training data and coding infrastructure, not a handoff, disclosure or pre-send checking problem."
+      }
+    ],
+    "platform_selections": {
+      "tiktok": {
+        "story_index": 0,
+        "story_title": "AI is pushing workers beyond their original job descriptions",
+        "target_audience": "Freelancers and solo operators using AI for client-facing or public work",
+        "format": "micro-explainer",
+        "opening": "Freelancers sending client work:",
+        "payoff": "AI can cross roles, so a draft can slip through. Check what you verified before sending. Clearforge AI Output Release Gate is linked in bio.",
+        "selection_reason": "This is the strongest three-second hook for the fixed audience because it starts with client work, names the consequence immediately, and gives one simple check with a direct next step.",
+        "platform_fit_score": 10,
+        "release_gate_cta_strength": "soft"
+      },
+      "youtube": {
+        "story_index": 1,
+        "story_title": "OpenAI is packaging enterprise agents as a managed work product",
+        "target_audience": "Freelancers and solo operators using AI for client-facing or public work",
+        "format": "short explainer",
+        "opening": "If AI helps with client messages, invoices, or scheduling, the risky part is the handoff.",
+        "payoff": "OpenAI says Presence is available today. Check who approves it before anything goes out.",
+        "selection_reason": "This story fits a slightly longer explanation because it teaches the difference between a draft tool and a live workflow in plain language.",
+        "platform_fit_score": 8,
+        "release_gate_cta_strength": "soft"
+      },
+      "facebook": {
+        "story_index": 0,
+        "story_title": "AI is pushing workers beyond their original job descriptions",
+        "target_audience": "Freelancers and solo operators using AI for client-facing or public work",
+        "format": "helpful explanation",
+        "opening": "If you use AI to help with client work, the main problem is usually not the first draft.",
+        "payoff": "It is the moment you send something before you have checked what changed and who should own the final step. OpenAI says work is crossing job boundaries, so make the handoff visible before it goes out. Save this for later.",
+        "selection_reason": "The post sounds like one helpful person explaining a familiar client-work mistake and gives a plain-language check people can actually use.",
+        "platform_fit_score": 8,
+        "release_gate_cta_strength": "soft"
+      },
+      "pinterest": {
+        "story_index": 0,
+        "story_title": "AI is pushing workers beyond their original job descriptions",
+        "target_audience": "Freelancers and solo operators using AI for client-facing or public work",
+        "format": "searchable practical check",
+        "opening": "Before you send AI-assisted client work, check the handoff.",
+        "payoff": "Ask what AI drafted, what you verified, and whether a human should review it before it goes out. Save this for client emails, posts, and notes.",
+        "selection_reason": "Pinterest rewards a searchable how-to answer, and this story converts cleanly into a simple check people can save and return to later.",
+        "platform_fit_score": 9,
+        "release_gate_cta_strength": "soft"
+      },
+      "linkedin": {
+        "story_index": 1,
+        "story_title": "OpenAI is packaging enterprise agents as a managed work product",
+        "target_audience": "Freelancers and solo operators using AI for client-facing or public work",
+        "format": "operational lesson",
+        "opening": "If AI will touch client messages, invoices, or scheduling, the useful question is not whether it can do it.",
+        "payoff": "It is what has to happen before it sends. OpenAI says Presence is built with approved actions, guardrails, and escalation to people when needed. The practical lesson is simple: define one human check before AI can move anything into a live system. Save this if you are mapping a workflow.",
+        "selection_reason": "This is the cleanest LinkedIn angle because it turns the product shift into a workplace lesson about approvals, handoff points and live-system responsibility.",
+        "platform_fit_score": 8,
+        "release_gate_cta_strength": "soft"
+      }
+    },
+    "overall_reasoning": "Story 0 is the strongest public-facing hook because it speaks directly to freelancers and solo operators sending work to clients, and it gives one simple pre-send check. Story 1 is the best follow-up for YouTube Shorts and LinkedIn because it explains managed workflows, approvals and escalation in plain workplace language. Story 2 is useful but too enterprise-security-specific for the fixed audience, and story 3 is too coding-specific to carry the edition on social. The selected assets keep to one audience, one familiar situation, one consequence, one check and one next step."
+  }
+}

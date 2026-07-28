@@ -1,26 +1,26 @@
-# Source notes — 2026-07-27
+# Source notes — 2026-07-28
 
-Podcast focused on: Meta is pushing AI from drafting into doing
+Podcast focused on: AI is pushing workers beyond their original job descriptions
 
 ## Sources supplied to the script generator
 
-- 1. European Commission: AI Omnibus enters into force
-  - URL: https://digital-strategy.ec.europa.eu/en/news/ai-omnibus-enters-force
+- 1. OpenAI: How AI is expanding what people do at work
+  - URL: https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/
   - Published/date field: 2026-07-27
-  - Confirmed fact: The AI Omnibus entered into force across the EU on 27 July 2026 and extends timelines, expands testing opportunities and reduces some administrative burdens.
-  - Interpretation: For smaller businesses and product teams, this lowers near-term compliance pressure while keeping the direction of travel toward formal AI oversight.
-- 2. Google: Google is signing the EU AI Act Code of Practice on Transparency of AI-Generated Content
-  - URL: https://blog.google/company-news/outreach-and-initiatives/public-policy/eu-ai-act-transparency-code-of-practice/
-  - Published/date field: 2026-07-24
-  - Confirmed fact: Google said on 24 July 2026 that it is signing the EU AI Act transparency code and tying that to SynthID and C2PA work.
-  - Interpretation: This is a signal that content provenance is becoming a product requirement, not just a policy talking point.
-- 3. Meta: Meta AI Doesn’t Just Think, It Acts
-  - URL: https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/
-  - Published/date field: 2026-07-24
-  - Confirmed fact: Meta said Meta AI can now make plans, connect to email and calendar apps, create slides and handle tasks on a user’s behalf, with rollout starting in select markets on 24 July 2026.
-  - Interpretation: The practical shift is from prompting to delegation, which raises the value of review before anything leaves the app or reaches other people.
-- 4. Thomson Reuters: Future of Professionals Report 2026
-  - URL: https://insight.thomsonreuters.com/mena/business/resources/resource/future-of-professionals-report-2026-thomson-reuters
-  - Published/date field: 2026-07-02
-  - Confirmed fact: Thomson Reuters said 35% of professionals see their organisation’s AI strategy affecting daily roles, one in three are using AI that was not officially approved, and one in four are considering leaving.
-  - Interpretation: The risk is not just adoption speed; it is unapproved use slipping into real client or compliance work without a clear handoff.
+  - Confirmed fact: OpenAI says an analysis of more than 800,000 messages from U.S. ChatGPT users found that 16.8% of work-related messages and 43.5% of occupation-specific messages were about tasks associated with another occupation.
+  - Interpretation: This suggests AI is already blurring job boundaries in day-to-day work, especially for small-business owners and people who routinely step outside a fixed role.
+- 2. OpenAI: Introducing OpenAI Presence
+  - URL: https://openai.com/index/introducing-openai-presence/
+  - Published/date field: 2026-07-22
+  - Confirmed fact: OpenAI says Presence is available today for voice and chat agents and is designed to help enterprises deploy trusted AI agents across customer and internal workflows with policies, guardrails and escalation rules.
+  - Interpretation: The important shift is from chat demos to managed production work, where the main issue becomes reliability, approval and escalation rather than capability alone.
+- 3. Google: Going Beyond Zero: A New Paradigm For Enterprise Security
+  - URL: https://blog.google/security/going-beyond-zero-a-new-paradigm-for-enterprise-security/
+  - Published/date field: 2026-07-27
+  - Confirmed fact: Google says Beyond Zero is a contextual, risk-based authorization model for AI-era enterprise security, built to secure both humans and agents at the level of individual actions and resources.
+  - Interpretation: This is a strong sign that AI at work is now being treated as an access-control problem, not just a productivity feature.
+- 4. IBM Research: IBM open sources CodeAlchemy, a massive synthetic dataset of high-quality code
+  - URL: https://research.ibm.com/blog/code-alchemy-for-synthetic-code
+  - Published/date field: 2026-07-16
+  - Confirmed fact: IBM says CodeAlchemy is a synthetic code dataset of nearly 1 trillion tokens across 15 programming languages, released with the recipes used to create it.
+  - Interpretation: For developers, this matters because AI coding quality now depends as much on training data and safe execution environments as on the model itself.

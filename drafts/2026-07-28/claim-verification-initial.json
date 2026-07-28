@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "edition": "2026-07-28",
+  "generated_at": "2026-07-28T06:52:50.761Z",
+  "passed": true,
+  "confidence": 0.98,
+  "checked_outputs": [
+    "structured_output",
+    "daily_article",
+    "full_feature",
+    "podcast_script"
+  ],
+  "missing_outputs": [],
+  "blocking_findings": [],
+  "numeric_claim_audit": [
+    {
+      "occurrence_id": "numeric-1",
+      "status": "supported_in_context",
+      "reason": "OpenAI's page gives the same 16.8% figure for work-related messages; the denominator and task-crossover framing match the source. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))",
+      "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
+    },
+    {
+      "occurrence_id": "numeric-2",
+      "status": "supported_in_context",
+      "reason": "OpenAI's page gives the same 43.5% figure for occupation-specific messages; the sentence uses it with the correct denominator and conclusion. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))",
+      "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
+    },
+    {
+      "occurrence_id": "numeric-3",
+      "status": "supported_in_context",
+      "reason": "The 43.5% figure is used correctly to describe task crossover among occupation-specific messages, which is exactly how OpenAI frames the result. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))",
+      "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
+    },
+    {
+      "occurrence_id": "numeric-4",
+      "status": "supported_in_context",
+      "reason": "The 16.8% figure matches OpenAI's report and is applied to work-related messages, which is the correct denominator. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))",
+      "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
+    },
+    {
+      "occurrence_id": "numeric-5",
+      "status": "supported_in_context",
+      "reason": "The 43.5% figure matches OpenAI's report and is used to support the task-crossover claim in the same way the source does. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))",
+      "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
+    },
+    {
+      "occurrence_id": "numeric-6",
+      "status": "supported_in_context",
+      "reason": "OpenAI reports 16.8% of work-related messages; this use is aligned with the source and not transferred to a different denominator or conclusion. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))",
+      "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
+    },
+    {
+      "occurrence_id": "numeric-7",
+      "status": "supported_in_context",
+      "reason": "OpenAI reports 43.5% of occupation-specific messages; the surrounding proof point uses that exact research result correctly. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))",
+      "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
+    },
+    {
+      "occurrence_id": "numeric-8",
+      "status": "supported_in_context",
+      "reason": "The 16.8% figure matches OpenAI's report on work-related messages and supports the summary's task-crossover point. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))",
+      "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
+    },
+    {
+      "occurrence_id": "numeric-9",
+      "status": "supported_in_context",
+      "reason": "The 43.5% figure matches OpenAI's report on occupation-specific messages and supports the summary's task-crossover point. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))",
+      "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
+    },
+    {
+      "occurrence_id": "numeric-10",
+      "status": "supported_in_context",
+      "reason": "OpenAI's report does say 43.5% of occupation-specific messages fall outside the user's occupation, so this summary uses the statistic correctly. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))",
+      "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
+    },
+    {
+      "occurrence_id": "numeric-11",
+      "status": "supported_in_context",
+      "reason": "The 16.8% work-related-message figure is used with the same denominator and conclusion as in OpenAI's report. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))",
+      "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
+    },
+    {
+      "occurrence_id": "numeric-12",
+      "status": "supported_in_context",
+      "reason": "The 43.5% occupation-specific-message figure matches OpenAI's report and is applied to the correct slice of the data. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))",
+      "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
+    },
+    {
+      "occurrence_id": "numeric-13",
+      "status": "supported_in_context",
+      "reason": "The 16.8% statistic is quoted correctly from OpenAI's report and supports the full feature's opening argument. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))",
+      "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
+    },
+    {
+      "occurrence_id": "numeric-14",
+      "status": "supported_in_context",
+      "reason": "The 43.5% statistic is quoted correctly from OpenAI's report and supports the full feature's opening argument. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))",
+      "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
+    }
+  ],
+  "missing_numeric_audits": [],
+  "failed_numeric_audits": [],
+  "findings": [
+    {
+      "output": "structured_output",
+      "exact_claim": "OpenAI says an analysis of more than 800,000 messages from U.S. ChatGPT users found that 16.8% of work-related messages and 43.5% of occupation-specific messages were about tasks associated with another occupation.",
+      "classification": "vendor_claim",
+      "status": "supported",
+      "severity": "info",
+      "reason": "This matches OpenAI's report and its task-crossover framing; the surrounding examples in the article are also directly reflected in the source. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))",
+      "required_correction": "",
+      "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
+    },
+    {
+      "output": "structured_output",
+      "exact_claim": "OpenAI says Presence is available today for voice and chat agents and is designed to help enterprises deploy trusted AI agents across customer and internal workflows with policies, guardrails and escalation rules.",
+      "classification": "vendor_claim",
+      "status": "supported",
+      "severity": "info",
+      "reason": "OpenAI's product page says Presence is available today for voice and chat agents and that deployments use approved actions, guardrails, escalation rules, and company-system access. ([openai.com](https://openai.com/index/introducing-openai-presence/))",
+      "required_correction": "",
+      "source_url": "https://openai.com/index/introducing-openai-presence/"
+    },
+    {
+      "output": "structured_output",
+      "exact_claim": "Google says Beyond Zero is a contextual, risk-based authorization model for AI-era enterprise security, built to secure both humans and agents at the level of individual actions and resources.",
+      "classification": "vendor_claim",
+      "status": "supported",
+      "severity": "info",
+      "reason": "Google's post says Beyond Zero is a contextual, risk-based, resource-level authorization model that secures humans and agents at the level of individual actions and resources. ([blog.google](https://blog.google/security/going-beyond-zero-a-new-paradigm-for-enterprise-security/))",
+      "required_correction": "",
+      "source_url": "https://blog.google/security/going-beyond-zero-a-new-paradigm-for-enterprise-security/"
+    },
+    {
+      "output": "structured_output",
+      "exact_claim": "IBM says CodeAlchemy is a synthetic code dataset of nearly 1 trillion tokens across 15 programming languages, released with the recipes used to create it.",
+      "classification": "vendor_claim",
+      "status": "supported",
+      "severity": "info",
+      "reason": "IBM's post states that CodeAlchemy totals nearly 1 trillion tokens across 15 programming languages and is released with the recipes used to create it. ([research.ibm.com](https://research.ibm.com/blog/code-alchemy-for-synthetic-code))",
+      "required_correction": "",
+      "source_url": "https://research.ibm.com/blog/code-alchemy-for-synthetic-code"
+    },
+    {
+      "output": "full_feature",
+      "exact_claim": "The latest workplace AI signal is not just that models can draft faster. It is that work is moving across job boundaries, agents are entering live workflows, and security teams are redesigning approvals around individual actions.",
+      "classification": "logical_inference",
+      "status": "supported",
+      "severity": "info",
+      "reason": "This is a fair synthesis of OpenAI's task-crossover findings, OpenAI Presence's production controls, and Google's action-level authorization model. It is an editorial conclusion, not a direct source quote. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))",
+      "required_correction": "",
+      "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"
+    },
+    {
+      "output": "full_feature",
+      "exact_claim": "Produced with AI assistance and released with human approval by Clearforge.",
+      "classification": "internal_provenance",
+      "status": "not_applicable",
+      "severity": "info",
+      "reason": "Per Clearforge policy, this is internal provenance about the editorial process, not an external-world factual claim.",
+      "required_correction": "",
+      "source_url": ""
+    }
+  ],
+  "summary": "All 14 numeric occurrences are supported in context, and the core source-based claims about OpenAI Presence, Google Beyond Zero, and IBM CodeAlchemy match the official pages. The main article's opening thesis is a reasonable synthesis of those sources, and the only non-external line is Clearforge's own AI-assistance/human-approval disclosure, which is internal provenance. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))"
+}

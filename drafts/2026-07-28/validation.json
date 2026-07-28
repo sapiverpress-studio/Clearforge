@@ -1,0 +1,24 @@
+{
+  "date": "2026-07-28",
+  "passed": true,
+  "policy": "Independent claim verification plus deterministic factual, sourcing, safety and minimum-content checks must pass. Editorial and formatting issues remain warnings.",
+  "failures": [],
+  "warnings": [
+    "YouTube Shorts content is shorter than preferred (29 words)",
+    "Facebook post has no meaningful audience question"
+  ],
+  "stats": {
+    "source_count": 4,
+    "story_count": 4,
+    "article_words": 813,
+    "feature_words": 2211,
+    "unique_source_domains": 3,
+    "unresolved_claim_count": 0,
+    "claim_verification_passed": true,
+    "claim_verification_confidence": 0.98,
+    "current_confirmed_development_count": 2,
+    "current_human_impact_count": 1,
+    "social_channels_present": 4,
+    "social_channels_total": 4
+  }
+}

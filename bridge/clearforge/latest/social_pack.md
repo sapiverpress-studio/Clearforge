@@ -1,92 +1,92 @@
-# Clearforge Social Repurpose Pack — 2026-07-27
+# Clearforge Social Repurpose Pack — 2026-07-28
 
-Status: Draft — audience-fit optimised; automatic validation pending
+Status: Claim and structural checks passed — human approval pending
 
-Editorial theme: Monday — Weekend roundup
+Editorial theme: Tuesday — AI at work
 
 ## Platform Story Selections
 
 ### Tiktok
 
-- Selected story: Meta is pushing AI from drafting into doing
-- Audience: Freelancers and solo operators who use AI to help create work that clients or the public will see
-- Format: single-discovery micro-explainer
-- Opening: Meta says its assistant can work with email and calendar.
-- Payoff: Keep it drafting only, and make one human check before anything sends.
-- Platform fit: 9/10
-- Release Gate CTA: none
-- Why selected: This is the fastest short-form hook because it names a familiar tool, shows the consequence and gives one immediate check in plain language.
+- Selected story: AI is pushing workers beyond their original job descriptions
+- Audience: Freelancers and solo operators using AI for client-facing or public work
+- Format: micro-explainer
+- Opening: Freelancers sending client work:
+- Payoff: AI can cross roles, so a draft can slip through. Check what you verified before sending. Clearforge AI Output Release Gate is linked in bio.
+- Platform fit: 10/10
+- Release Gate CTA: soft
+- Why selected: This is the strongest three-second hook for the fixed audience because it starts with client work, names the consequence immediately, and gives one simple check with a direct next step.
 
 ### Youtube
 
-- Selected story: Meta is pushing AI from drafting into doing
-- Audience: Freelancers and solo operators who use AI to help create work that clients or the public will see
-- Format: short explainer with one check
-- Opening: Meta says its assistant can now work with email, calendar and slides, so this is no longer just a writing tool.
-- Payoff: Check that it stays in draft mode until you approve it, then keep that human yes step for client work this week.
-- Platform fit: 9/10
+- Selected story: OpenAI is packaging enterprise agents as a managed work product
+- Audience: Freelancers and solo operators using AI for client-facing or public work
+- Format: short explainer
+- Opening: If AI helps with client messages, invoices, or scheduling, the risky part is the handoff.
+- Payoff: OpenAI says Presence is available today. Check who approves it before anything goes out.
+- Platform fit: 8/10
 - Release Gate CTA: soft
-- Why selected: Best fit for a slightly fuller explanation because it can show the shift from drafting to acting and end with a practical next step.
+- Why selected: This story fits a slightly longer explanation because it teaches the difference between a draft tool and a live workflow in plain language.
 
 ### Facebook
 
-- Selected story: The workplace story is not mass replacement; it is unapproved use and role redesign
-- Audience: Freelancers and solo operators who use AI in client-facing or public work
-- Format: helpful plain-language post
-- Opening: One useful number from Thomson Reuters: one in three professionals say they are using AI tools their workplace never officially approved.
-- Payoff: The simplest safeguard is still the best one: before anything goes out, have a person check the source, the claim and the wording.
+- Selected story: AI is pushing workers beyond their original job descriptions
+- Audience: Freelancers and solo operators using AI for client-facing or public work
+- Format: helpful explanation
+- Opening: If you use AI to help with client work, the main problem is usually not the first draft.
+- Payoff: It is the moment you send something before you have checked what changed and who should own the final step. OpenAI says work is crossing job boundaries, so make the handoff visible before it goes out. Save this for later.
 - Platform fit: 8/10
 - Release Gate CTA: soft
-- Why selected: This sounds natural on Facebook because it reads like a practical reminder from one person to another, not a report or a policy note.
+- Why selected: The post sounds like one helpful person explaining a familiar client-work mistake and gives a plain-language check people can actually use.
 
 ### Pinterest
 
-- Selected story: Google is treating AI transparency as a distribution problem
-- Audience: Freelancers, creators and solo operators who publish client work or public content with AI help
+- Selected story: AI is pushing workers beyond their original job descriptions
+- Audience: Freelancers and solo operators using AI for client-facing or public work
 - Format: searchable practical check
-- Opening: If you publish client work with AI help, check one thing first.
-- Payoff: Ask whether the AI label still shows after export before you send or publish the file.
-- Platform fit: 8/10
+- Opening: Before you send AI-assisted client work, check the handoff.
+- Payoff: Ask what AI drafted, what you verified, and whether a human should review it before it goes out. Save this for client emails, posts, and notes.
+- Platform fit: 9/10
 - Release Gate CTA: soft
-- Why selected: This is the strongest Pinterest fit because people can search it as a practical how-to and save it for later use.
+- Why selected: Pinterest rewards a searchable how-to answer, and this story converts cleanly into a simple check people can save and return to later.
 
 ### Linkedin
 
-- Selected story: The workplace story is not mass replacement; it is unapproved use and role redesign
-- Audience: Freelancers and solo operators who use AI in client-facing or public work
-- Format: operational workplace lesson
-- Opening: A third of professionals are already using AI tools their workplace never approved.
-- Payoff: If AI helps draft client-facing work, nothing should go out until a person checks the source, the claim and the wording.
-- Platform fit: 9/10
-- Release Gate CTA: direct
-- Why selected: This is the cleanest LinkedIn angle because it turns a survey finding into an operational rule for teams and solo operators alike.
+- Selected story: OpenAI is packaging enterprise agents as a managed work product
+- Audience: Freelancers and solo operators using AI for client-facing or public work
+- Format: operational lesson
+- Opening: If AI will touch client messages, invoices, or scheduling, the useful question is not whether it can do it.
+- Payoff: It is what has to happen before it sends. OpenAI says Presence is built with approved actions, guardrails, and escalation to people when needed. The practical lesson is simple: define one human check before AI can move anything into a live system. Save this if you are mapping a workflow.
+- Platform fit: 8/10
+- Release Gate CTA: soft
+- Why selected: This is the cleanest LinkedIn angle because it turns the product shift into a workplace lesson about approvals, handoff points and live-system responsibility.
 
 ## TikTok Script
 
-Meta says its assistant can work with email and calendar. If yours can too, keep it drafting only. One human check before anything sends can stop a bad send.
+Freelancers sending client work: AI can cross roles, so a draft can slip through. Check what you verified before sending. Clearforge AI Output Release Gate is linked in bio.
 
 ## YouTube Shorts Script
 
-Meta says its assistant can now work with email, calendar and slides, so this is no longer just a writing tool. Before you use anything like that on client work, check that it stays in draft mode until you approve it. Keep that human yes step this week.
+If AI helps with client messages, invoices, or scheduling, the risky part is the handoff. OpenAI says Presence is available today. Check who approves it before anything goes out.
 
 ## Facebook Post
 
-One useful number from Thomson Reuters: one in three professionals say they’re using AI tools their workplace never officially approved. That’s where mistakes slip into client work. Before anything goes out, have a person check the source, the claim and the wording. Save this for the next draft.
+If you use AI to help with client work, the main problem is usually not the first draft. It is the moment you send something before you have checked what changed and who should own the final step. OpenAI says work is crossing job boundaries, so make the handoff visible before it goes out. Save this for later.
 
 ## Pinterest Pin
 
-**Title:** How to check if an AI label stays on after export
+**Title:** AI Client Work Check: What to Verify Before You Send
 
-**Description:** If you publish client work with AI help, ask one thing before you send it: does the label still show after export? If it disappears, don’t assume the file explains itself. Save this check for later.
+**Description:** If AI helps with client emails, posts, or notes, check the handoff: what it drafted, what you verified, and whether a human should review it before it goes out. A simple check for freelancers and solo operators.
 
 ## LinkedIn-Style Post
 
-A third of professionals are already using AI tools their workplace never approved, according to Thomson Reuters. The operational lesson is simple: if AI helps draft client-facing work, nothing should go out until a person checks the source, the claim and the wording. If this is the gap your team is closing, the Clearforge AI Output Release Gate is linked in the bio.
+If AI will touch client messages, invoices, or scheduling, the useful question is not whether it can do it. It is what has to happen before it sends. OpenAI says Presence is built with approved actions, guardrails, and escalation to people when needed. For freelancers and solo operators, the operational lesson is simple: define one human check before AI can move anything into a live system. Save this if you are mapping a workflow.
 
 ## 5 Short Quote/Card Lines
 
-- If AI can act for you, the review step matters more.
-- Before anything leaves the draft, check the source, the claim and the wording.
-- A label that disappears on export is not much help.
-- Unapproved AI use can slip into client work quietly.
-- One human approval step can stop a bad send.
+- AI is moving work across job boundaries.
+- The first draft is not the risky part.
+- The risky part is the handoff.
+- Know what you verified before you send.
+- A human should still own the final send.

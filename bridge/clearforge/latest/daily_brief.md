@@ -1,123 +1,158 @@
-# Weekend roundup: AI is moving from chat to action, while Europe loosens the compliance clock
+# AI at work is moving from drafting to handoffs, checks and role blur
 
-Status: Draft — automatic validation pending
+Status: Claim and structural checks passed — human approval pending
 
-Editorial theme: Monday — Weekend roundup
+Editorial theme: Tuesday — AI at work
 
-This weekend’s clearest shift was not another model race. It was control: Europe put the AI Omnibus into force, Google backed the EU transparency code, Meta pushed AI further into task completion, and employers kept arguing that the real change is task redesign, not mass replacement.
+Today’s useful signal is not that AI is getting smarter in the abstract. It is that real work is shifting across job boundaries, enterprise agents are being pushed into live workflows, and security teams are tightening the rules around every action those systems can take.
 
 ## Source List
 
-1. [AI Omnibus enters into force](https://digital-strategy.ec.europa.eu/en/news/ai-omnibus-enters-force) — European Commission (2026-07-27)
-   - Coverage lane: confirmed_development
-   - Topic category: policy_safety_and_security
-   - Evidence basis: Official EU news release published today; primary source for the legal timing and the scope of the simplification package.
-   - Confirmed: The AI Omnibus entered into force across the EU on 27 July 2026 and extends timelines, expands testing opportunities and reduces some administrative burdens.
-   - Interpretation: For smaller businesses and product teams, this lowers near-term compliance pressure while keeping the direction of travel toward formal AI oversight.
-
-2. [Google is signing the EU AI Act Code of Practice on Transparency of AI-Generated Content](https://blog.google/company-news/outreach-and-initiatives/public-policy/eu-ai-act-transparency-code-of-practice/) — Google (2026-07-24)
-   - Coverage lane: confirmed_development
-   - Topic category: policy_safety_and_security
-   - Evidence basis: Official company statement on the signing and on Google’s transparency tools and position on the EU code.
-   - Confirmed: Google said on 24 July 2026 that it is signing the EU AI Act transparency code and tying that to SynthID and C2PA work.
-   - Interpretation: This is a signal that content provenance is becoming a product requirement, not just a policy talking point.
-
-3. [Meta AI Doesn’t Just Think, It Acts](https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/) — Meta (2026-07-24)
-   - Coverage lane: confirmed_development
-   - Topic category: creator_tools_and_media
-   - Evidence basis: Official Meta newsroom post describing the feature set, rollout timing and supported actions.
-   - Confirmed: Meta said Meta AI can now make plans, connect to email and calendar apps, create slides and handle tasks on a user’s behalf, with rollout starting in select markets on 24 July 2026.
-   - Interpretation: The practical shift is from prompting to delegation, which raises the value of review before anything leaves the app or reaches other people.
-
-4. [Future of Professionals Report 2026](https://insight.thomsonreuters.com/mena/business/resources/resource/future-of-professionals-report-2026-thomson-reuters) — Thomson Reuters (2026-07-02)
+1. [How AI is expanding what people do at work](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/) — OpenAI (2026-07-27)
+   - Event date: 2026-07-27
+   - Freshness: current
+   - Freshness basis: The source page is dated July 27, 2026, and the event being reported is the release of OpenAI Economic Research’s Work at the Frontier report on that same date.
    - Coverage lane: human_impact
    - Topic category: workplace_and_business
-   - Evidence basis: Company report based on a global survey of 1,816 professionals across 62 countries, published with methodology context on the report page.
-   - Confirmed: Thomson Reuters said 35% of professionals see their organisation’s AI strategy affecting daily roles, one in three are using AI that was not officially approved, and one in four are considering leaving.
-   - Interpretation: The risk is not just adoption speed; it is unapproved use slipping into real client or compliance work without a clear handoff.
+   - Evidence basis: Primary source report from OpenAI Economic Research; includes the sample size, methodology framing, and task-crossover findings.
+   - Confirmed: OpenAI says an analysis of more than 800,000 messages from U.S. ChatGPT users found that 16.8% of work-related messages and 43.5% of occupation-specific messages were about tasks associated with another occupation.
+   - Interpretation: This suggests AI is already blurring job boundaries in day-to-day work, especially for small-business owners and people who routinely step outside a fixed role.
+
+2. [Introducing OpenAI Presence](https://openai.com/index/introducing-openai-presence/) — OpenAI (2026-07-22)
+   - Event date: 2026-07-22
+   - Freshness: current
+   - Freshness basis: The product page is dated July 22, 2026, and it states the product is available today for voice and chat agents.
+   - Coverage lane: confirmed_development
+   - Topic category: workplace_and_business
+   - Evidence basis: Primary product announcement from OpenAI describing availability, enterprise positioning, and operating controls.
+   - Confirmed: OpenAI says Presence is available today for voice and chat agents and is designed to help enterprises deploy trusted AI agents across customer and internal workflows with policies, guardrails and escalation rules.
+   - Interpretation: The important shift is from chat demos to managed production work, where the main issue becomes reliability, approval and escalation rather than capability alone.
+
+3. [Going Beyond Zero: A New Paradigm For Enterprise Security](https://blog.google/security/going-beyond-zero-a-new-paradigm-for-enterprise-security/) — Google (2026-07-27)
+   - Event date: 2026-07-27
+   - Freshness: current
+   - Freshness basis: The Google Security blog post is dated July 27, 2026, and describes Beyond Zero as a new security paradigm introduced on that date.
+   - Coverage lane: confirmed_development
+   - Topic category: policy_safety_and_security
+   - Evidence basis: Primary security blog post from Google describing the model, its principles and its early internal deployments.
+   - Confirmed: Google says Beyond Zero is a contextual, risk-based authorization model for AI-era enterprise security, built to secure both humans and agents at the level of individual actions and resources.
+   - Interpretation: This is a strong sign that AI at work is now being treated as an access-control problem, not just a productivity feature.
+
+4. [IBM open sources CodeAlchemy, a massive synthetic dataset of high-quality code](https://research.ibm.com/blog/code-alchemy-for-synthetic-code) — IBM Research (2026-07-16)
+   - Event date: 2026-07-16
+   - Freshness: background
+   - Freshness basis: The IBM Research post is dated July 16, 2026, which places the release outside the seven-day freshness window ending July 28, 2026.
+   - Coverage lane: confirmed_development
+   - Topic category: coding_and_building
+   - Evidence basis: Primary research release from IBM Research, including dataset scale, language coverage and the linked paper.
+   - Confirmed: IBM says CodeAlchemy is a synthetic code dataset of nearly 1 trillion tokens across 15 programming languages, released with the recipes used to create it.
+   - Interpretation: For developers, this matters because AI coding quality now depends as much on training data and safe execution environments as on the model itself.
 
 ## Story Summaries
 
-### Europe has stretched the AI compliance clock
+### AI is pushing workers beyond their original job descriptions
 
-**Coverage lane:** confirmed_development
+**Event date:** 2026-07-27
 
-**Topic category:** policy_safety_and_security
-
-The EU’s AI Omnibus took effect today and pushes back some deadlines while also expanding sandbox-style testing and reducing paperwork for smaller firms. That makes the near-term burden lighter for many deployers, but it does not remove the underlying compliance direction.
-
-**Why it matters:** Small businesses and product teams now have more time to experiment without the same immediate pressure, but they should not read that as a free pass.
-
-**Practical angle:** If you build or buy AI tools in Europe, check whether your team’s next release still needs disclosure, logging or review even if the deadline moved.
-
-**Claim to verify:** NONE — verified from cited sources.
-
-### Google is treating AI transparency as a distribution problem
-
-**Coverage lane:** confirmed_development
-
-**Topic category:** policy_safety_and_security
-
-Google said it will sign the EU AI Act transparency code and continue pushing watermarking and content provenance through SynthID and C2PA. The key point is that disclosure is moving from a policy promise to a design choice across platforms and labs.
-
-**Why it matters:** Creators and marketers may soon need to think not only about what they made, but about how they can prove where it came from.
-
-**Practical angle:** If you publish client work, ask your tool vendor how it labels AI-made or AI-edited content and whether that label survives export.
-
-**Claim to verify:** NONE — verified from cited sources.
-
-### Meta is pushing AI from drafting into doing
-
-**Coverage lane:** confirmed_development
-
-**Topic category:** creator_tools_and_media
-
-Meta AI now goes beyond chat by making plans, pulling in calendar and email context, creating slides and following through on tasks. Meta said the rollout started in select markets on 24 July and will expand later.
-
-**Why it matters:** This is a practical shift for solo operators: the tool is no longer just helping you write; it is trying to take the next step for you.
-
-**Practical angle:** Before you let a tool send, schedule or assemble something on your behalf, check what the app can actually do without a fresh approval step.
-
-**Claim to verify:** NONE — verified from cited sources.
-
-### The workplace story is not mass replacement; it is unapproved use and role redesign
+**Freshness:** current
 
 **Coverage lane:** human_impact
 
 **Topic category:** workplace_and_business
 
-Thomson Reuters’ survey found a gap between AI ambition and day-to-day reality, with many professionals using AI tools that were not officially approved. Separately, Adecco told Reuters that AI is changing tasks and roles more than eliminating jobs outright.
+OpenAI’s new Work at the Frontier report says a large share of ChatGPT work use crosses occupational boundaries, with 43.5% of occupation-specific messages linked to tasks from another occupation. The report suggests workers are increasingly using AI to do adjacent work, not just faster versions of the same job.
 
-**Why it matters:** The biggest operational problem is less ‘will AI exist?’ and more ‘who approved this, who checked it, and what happens if it is wrong?’
+**Why it matters:** For freelancers, assistants, operators and solo business owners, this is a warning and an opportunity: AI is already nudging people into wider roles, so quality checks and clear ownership matter more, not less.
 
-**Practical angle:** If your team uses AI for client-facing work, create one simple rule: no outside send until a human has checked the source, the claim and the output.
+**Practical angle:** Use AI to handle a neighboring task only if you can name who would normally own it and what must still be checked by a human before it goes out.
+
+**Claim to verify:** NONE — verified from cited sources.
+
+### OpenAI is packaging enterprise agents as a managed work product
+
+**Event date:** 2026-07-22
+
+**Freshness:** current
+
+**Coverage lane:** confirmed_development
+
+**Topic category:** workplace_and_business
+
+OpenAI says Presence is available today for voice and chat agents and is meant to help enterprises run AI agents across customer and internal workflows. The announcement emphasizes policies, guardrails, approved actions and escalation to people when needed.
+
+**Why it matters:** This is a sign that the market is moving away from one-off chat use and toward systems that can do repeatable work inside company processes.
+
+**Practical angle:** If you are testing AI in a business workflow, look for where an approval step, escalation path or saved record is needed before the system can touch live work.
+
+**Claim to verify:** NONE — verified from cited sources.
+
+### Google is treating AI security as an authorization problem
+
+**Event date:** 2026-07-27
+
+**Freshness:** current
+
+**Coverage lane:** confirmed_development
+
+**Topic category:** policy_safety_and_security
+
+Google’s new Beyond Zero model applies contextual, risk-based authorization to AI-era enterprise work. Google says it is designed to secure both humans and agents and to make decisions at the level of individual actions and resources.
+
+**Why it matters:** As AI systems start acting inside company tools, access control becomes part of the product design, not just an IT afterthought.
+
+**Practical angle:** Before allowing an AI tool into a workflow, check whether it can do only the one action you want — and whether each action is logged or approved.
+
+**Claim to verify:** NONE — verified from cited sources.
+
+### IBM’s CodeAlchemy shows coding AI now depends on data pipelines, not just models
+
+**Event date:** 2026-07-16
+
+**Freshness:** background
+
+**Coverage lane:** confirmed_development
+
+**Topic category:** coding_and_building
+
+IBM Research says CodeAlchemy is a synthetic code dataset of nearly 1 trillion tokens across 15 languages, released with the recipes used to generate it. IBM frames it as a way to improve model performance and to support more practical agentic coding workflows.
+
+**Why it matters:** The story behind coding AI is shifting from ‘which model is smartest’ to ‘what data, sandbox and review process make the output dependable.’
+
+**Practical angle:** If you use AI to help write code, treat the training data story and the test environment as part of the tool choice, not an afterthought.
 
 **Claim to verify:** NONE — verified from cited sources.
 
 ## Main Article
 
-This weekend’s AI story was not mainly about another model launch. It was about control points. Europe moved to simplify and delay parts of its AI rulebook, Google chose to sign up to the EU’s transparency code, Meta pushed its assistant closer to actual task completion, and workplace research kept pointing to the same practical risk: AI is spreading faster than the approvals, reviews and records around it.
+If you want one simple read on AI at work this week, it is this: the useful question is no longer only whether AI can write, summarise or code. It is which parts of work are moving across role boundaries, which parts can safely be handed to an agent, and where a human still has to sign off.
 
-The clearest policy change is the EU AI Omnibus entering into force on 27 July 2026. The Commission says the package extends some timelines, expands testing and experimentation opportunities and reduces some administrative burdens, especially for smaller businesses. For a lot of teams, that matters immediately. If you are a startup, a small agency or a business trying to ship a feature without a large compliance department, extra time can mean a cleaner rollout and less rush. But the important word is extra time, not no rules. The direction of travel is still toward stronger AI oversight, clearer disclosure and more structured testing.
+OpenAI’s new Work at the Frontier report gives the clearest signal on the first part. The company says that in an analysis of more than 800,000 messages from U.S. ChatGPT users, 16.8% of work-related messages and 43.5% of occupation-specific messages were about tasks associated with another occupation. In plain English, people are not just asking AI to do their own job faster; they are using it to reach into adjacent tasks that would once have belonged to someone else. OpenAI describes this as task crossover, and the examples are easy to recognise: a small-business owner drafting copy, checking a contract or doing basic financial analysis; a salesperson exploring a customer dataset; a marketer troubleshooting a website without waiting for a developer. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))
 
-That same logic shows up in Google’s decision to sign the EU AI Act Code of Practice on Transparency of AI-Generated Content. Google says it will keep building on its watermarking and provenance work through SynthID and C2PA. That is not just a policy gesture. It is a reminder that content origin is becoming part of the product itself. For creators, marketers and small businesses, this is the practical problem: if AI helped make the thing you are publishing, can you prove where it came from, whether it was edited, and whether the label survives when the file leaves your tool? The answer will matter more in client work, advertising and platform distribution than it does in casual experimentation.
+That matters because it changes how work gets managed. A tool that only speeds up a known task mostly affects timing. A tool that helps someone do other people’s work affects ownership, review and accountability. For creators and small operators, that can be helpful — you can move faster and cover more ground — but it also raises the risk of doing something outside your depth and sending it out too early. The practical lesson is not to avoid crossover work. It is to name it, check it and keep the human owner visible. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))
 
-Meta’s update is the most obvious example of AI moving from drafting to doing. The company says Meta AI can now make plans, connect to email and calendar apps, create slides and handle tasks on a user’s behalf. It also says the rollout began on 24 July in select markets. That is a meaningful shift because the product is no longer framed only as a conversational helper. It is being positioned as an assistant that can follow through. For a freelancer or solo operator, that sounds convenient: ask for a plan, a deck or a summary and get something closer to a finished package. But the same feature set raises the stakes. Once an assistant can work across apps, the user needs a clear handoff point. What gets checked by a human? What can be sent automatically? What should stay as a draft until someone confirms it?
+OpenAI’s Presence announcement shows the next stage of that shift. The company says the product is available today for voice and chat agents and is designed to help enterprises deploy trusted AI agents across customer and internal workflows. The important detail is not just that the agents can answer questions. OpenAI says they are meant to use company systems, take approved actions and escalate to people when needed, with policies, guardrails and escalation rules built in. That is the difference between a demo and a work system. ([openai.com](https://openai.com/index/introducing-openai-presence/))
 
-The human side of that question came through in the Thomson Reuters Future of Professionals Report 2026. The survey, based on 1,816 professionals across 62 countries, found that only 35% say their organisation’s AI strategy is affecting their daily role, while one in three are already using AI tools that were not officially approved. That is the gap that matters. The tool may be in the company, but the process around it often is not. Some people are moving faster than their employers. Others are using AI quietly because the approved options feel slow, limited or absent. Either way, the risk is the same: sensitive work can move through an untracked path.
+For a normal user, the practical implication is straightforward: if an AI tool will touch customer messages, internal tickets, invoices, scheduling or publishing, you need to know what it is allowed to do on its own and what has to wait for a human. The best question to ask is not “can it do this?” but “what is the handoff?” If there is no answer, you do not yet have a production workflow. You have a chat feature. ([openai.com](https://openai.com/index/introducing-openai-presence/))
 
-Adecco’s comments to Reuters reinforce that point from a labour-market angle. The staffing company said AI is more likely to change roles and tasks than trigger a collapse in employment, and its CEO argued that upskilling and reskilling matter more than simple headcount cuts. That is a useful counterweight to the most dramatic claims. It does not mean AI is harmless. It means the more immediate effect is usually workflow redesign: junior work changes first, review work expands, and approval becomes more important, not less.
+Google’s Beyond Zero post pushes that same logic into security. Google says AI agents are being deployed globally and that the new risk is not just model error but privileged actions moving too quickly through enterprise systems. Its answer is a contextual, risk-based authorization model that secures both humans and agents at the level of individual actions and resources. In other words, the security question is becoming: who or what is allowed to do this one thing, in this one context, right now? ([blog.google](https://blog.google/security/going-beyond-zero-a-new-paradigm-for-enterprise-security/))
 
-Put together, the weekend points in one direction. AI is becoming more capable, but the real bottleneck is trust. The winners this week are not just the teams shipping new features. They are the teams that can prove what the system did, who checked it, and whether the final output was safe to send. For creators and small businesses, that is the practical lesson: the more your AI tool can act for you, the more you need a simple rule for review before anything leaves your hands.
+That is a useful way to think about AI at work even outside a large enterprise. A freelancer sending client work, a small agency publishing social assets, or an admin using an AI assistant to update records all face the same basic issue: the problem is rarely the first draft. It is the moment the draft becomes a decision, a post, a filing or a record in a live system. Google’s framing is a reminder that the control point should sit there, not only at login or model access. ([blog.google](https://blog.google/security/going-beyond-zero-a-new-paradigm-for-enterprise-security/))
+
+IBM’s CodeAlchemy release rounds out the picture from the coding side. IBM says it has open sourced a synthetic code dataset of nearly 1 trillion tokens across 15 programming languages, along with the recipes used to create it. The company says the dataset is meant to improve model performance and support more practical coding workflows. The point for builders is that coding AI is now being shaped not only by larger models but also by the quality of the data pipeline and the safety of the execution environment around it. ([research.ibm.com](https://research.ibm.com/blog/code-alchemy-for-synthetic-code))
+
+Put together, these stories point in the same direction. AI at work is becoming a workflow layer, not a novelty layer. It is expanding what people do, but it is also forcing clearer boundaries: what is mine, what is delegated, what is approved, and what is logged. That is good news for anyone who wants practical value without hype. The tools are getting more capable. The discipline around them has to get better too. ([openai.com](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/))
+
+Practical takeaway: before you let AI into a real work process this week, decide in writing what it can draft, what it can send, and what a human must check first. 
+
 
 ## Practical Takeaway
 
-Before you use any AI feature that can send, publish or schedule work, require one human check for source, claim and final wording.
+Before you let AI into a real work process this week, decide in writing what it can draft, what it can send, and what a human must check first.
 
 ## What To Test Next
 
-Pick one recurring task, such as a client update or weekly briefing, and run it through AI only as a draft. Then compare the draft against the final approved version to see exactly where review still saves you from errors.
+Pick one recurring task — for example, replying to client questions, summarising a meeting, or drafting a simple code change — and map a three-step flow: AI draft, human check, final send. Then see where the handoff breaks.
 
-## Claims To Verify Before Publishing
+## Additional Checks Raised By Draft Generator
 
-None — all material claims used in this edition were verified against the cited sources.
+None raised by the draft generator. Independent claim verification is still required.

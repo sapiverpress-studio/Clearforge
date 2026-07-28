@@ -1,0 +1,44 @@
+{
+  "date": "2026-07-28",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Freelancers sending client work: AI can cross roles, so a draft can slip through.",
+      "words": 29,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "If AI helps with client messages, invoices, or scheduling, the risky part is the handoff.",
+      "words": 29,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "If you use AI to help with client work, the main problem is usually not the first draft.",
+      "words": 58,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "If AI will touch client messages, invoices, or scheduling, the useful question is not whether it can do it.",
+      "words": 74,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "AI Client Work Check: What to Verify Before You Send",
+    "title_words": 10,
+    "description_words": 37
+  },
+  "warnings": [
+    "YouTube Shorts content is shorter than preferred (29 words)",
+    "Facebook post has no meaningful audience question"
+  ]
+}

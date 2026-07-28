@@ -1,0 +1,78 @@
+{
+  "version": 5,
+  "date": "2026-07-28",
+  "headline": "AI at work is moving from drafting to handoffs, checks and role blur",
+  "dek": "Today’s useful signal is not that AI is getting smarter in the abstract. It is that real work is shifting across job boundaries, enterprise agents are being pushed into live workflows, and security teams are tightening the rules around every action those systems can take.",
+  "hook": "If AI helps with client messages, invoices, or scheduling, the risky part is the handoff.",
+  "main_story_index": 1,
+  "spoken_cta": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+  "visual_system": "Clearforge AI briefing podcast studio system",
+  "visual_style_rules": {
+    "include": [
+      "dark navy AI briefing or podcast studio atmosphere",
+      "microphone or audio-briefing cues where appropriate",
+      "subtle circuit traces, waveform motifs, model cards or data-routing lines",
+      "physical source notes, checklists and human-review materials",
+      "premium editorial technology-magazine lighting"
+    ],
+    "avoid": [
+      "robots",
+      "glowing brains",
+      "hologram faces",
+      "generic dashboards",
+      "random floating code",
+      "excessive neon",
+      "fake readable text",
+      "Sapiver or unrelated branding"
+    ]
+  },
+  "stories": [
+    {
+      "file": "media/2026-07-28/story-1.png",
+      "title": "AI is pushing workers beyond their original job descriptions",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/",
+      "summary": "OpenAI’s new Work at the Frontier report says a large share of ChatGPT work use crosses occupational boundaries, with 43.5% of occupation-specific messages linked to tasks from another occupation. The report suggests workers are increasingly using AI to do adjacent work, not just faster versions of the same job.",
+      "why_it_matters": "For freelancers, assistants, operators and solo business owners, this is a warning and an opportunity: AI is already nudging people into wider roles, so quality checks and clear ownership matter more, not less.",
+      "practical_angle": "Use AI to handle a neighboring task only if you can name who would normally own it and what must still be checked by a human before it goes out.",
+      "visual_prompt": "a podcast-ready AI learning desk with a microphone in the foreground, tidy source folders, simple model cards, a soft waveform motif and a dark professional newsroom mood. clean editorial technology-magazine composition, practical rather than sci-fi. show AI as a system being reviewed by a person through notes, checks, source cards and controlled audio tools. include a different arrangement of source cards, notebook, microphone angle and background signal pattern. Story context: AI is pushing workers beyond their original job descriptions. Practical angle: Use AI to handle a neighboring task only if you can name who would normally own it and what must still be checked by a human before it goes out.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: dark blue studio background, graphite desk, white paper, blue highlights and restrained green accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-07-28/story-2.png",
+      "title": "OpenAI is packaging enterprise agents as a managed work product",
+      "source_name": "OpenAI",
+      "source_url": "https://openai.com/index/introducing-openai-presence/",
+      "summary": "OpenAI says Presence is available today for voice and chat agents and is meant to help enterprises run AI agents across customer and internal workflows. The announcement emphasizes policies, guardrails, approved actions and escalation to people when needed.",
+      "why_it_matters": "This is a sign that the market is moving away from one-off chat use and toward systems that can do repeatable work inside company processes.",
+      "practical_angle": "If you are testing AI in a business workflow, look for where an approval step, escalation path or saved record is needed before the system can touch live work.",
+      "visual_prompt": "a dark navy AI briefing studio desk with a professional podcast microphone, source notes, a small audio waveform display, subtle circuit-board lines in the background and one practical notebook open on the desk. vertical social-video still with a strong microphone foreground and clear desk detail. combine physical human-review materials with light digital signal motifs so it feels human-led and AI-empowered. vary camera distance, desk depth and object hierarchy while keeping the same Clearforge identity. Story context: OpenAI is packaging enterprise agents as a managed work product. Practical angle: If you are testing AI in a business workflow, look for where an approval step, escalation path or saved record is needed before the system can touch live work.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-07-28/story-3.png",
+      "title": "Google is treating AI security as an authorization problem",
+      "source_name": "Google",
+      "source_url": "https://blog.google/security/going-beyond-zero-a-new-paradigm-for-enterprise-security/",
+      "summary": "Google’s new Beyond Zero model applies contextual, risk-based authorization to AI-era enterprise work. Google says it is designed to secure both humans and agents and to make decisions at the level of individual actions and resources.",
+      "why_it_matters": "As AI systems start acting inside company tools, access control becomes part of the product design, not just an IT afterthought.",
+      "practical_angle": "Before allowing an AI tool into a workflow, check whether it can do only the one action you want — and whether each action is logged or approved.",
+      "visual_prompt": "a high-end technology briefing set with a dark blue wall, subtle circuit traces, a clean desk, paper research packs, audio waveforms and one human-operated control surface. cinematic three-quarter studio photograph with shallow depth of field. make the AI element clear through subtle circuit traces, waveform graphics, model cards and data-routing lines, not robots. use a different AI signal motif: waveform, routing lines, model cards, calendar markers or evidence board. Story context: Google is treating AI security as an authorization problem. Practical angle: Before allowing an AI tool into a workflow, check whether it can do only the one action you want — and whether each action is logged or approved.. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    }
+  ],
+  "narration": "media/2026-07-28/narration.mp3",
+  "narration_text": "If AI helps with client messages, invoices, or scheduling, the risky part is the handoff. OpenAI says Presence is available today. Check who approves it before anything goes out. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+  "tiktok": {
+    "story_index": 0,
+    "hook": "Freelancers sending client work: AI can cross roles, so a draft can slip through.",
+    "payoff": "Check what you verified before sending. Clearforge AI Output Release Gate is linked in bio.",
+    "response_prompt": "What do you verify before sending client work?",
+    "narration": "media/2026-07-28/tiktok-narration.mp3",
+    "narration_text": "Freelancers sending client work: AI can cross roles, so a draft can slip through. Check what you verified before sending. Clearforge AI Output Release Gate is linked in bio.",
+    "target_duration_seconds": [
+      8,
+      12
+    ],
+    "format": "single_discovery_micro_explainer"
+  },
+  "practical_takeaway": "Before you let AI into a real work process this week, decide in writing what it can draft, what it can send, and what a human must check first.",
+  "what_to_test_next": "Pick one recurring task — for example, replying to client questions, summarising a meeting, or drafting a simple code change — and map a three-step flow: AI draft, human check, final send. Then see where the handoff breaks."
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "source_name": "OpenAI",
+    "title": "How AI is expanding what people do at work",
+    "url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/",
+    "published_date": "2026-07-27",
+    "event_date": "2026-07-27",
+    "freshness_status": "current",
+    "freshness_basis": "The source page is dated July 27, 2026, and the event being reported is the release of OpenAI Economic Research’s Work at the Frontier report on that same date.",
+    "coverage_lane": "human_impact",
+    "topic_category": "workplace_and_business",
+    "evidence_basis": "Primary source report from OpenAI Economic Research; includes the sample size, methodology framing, and task-crossover findings.",
+    "confirmed_fact": "OpenAI says an analysis of more than 800,000 messages from U.S. ChatGPT users found that 16.8% of work-related messages and 43.5% of occupation-specific messages were about tasks associated with another occupation.",
+    "interpretation": "This suggests AI is already blurring job boundaries in day-to-day work, especially for small-business owners and people who routinely step outside a fixed role."
+  },
+  {
+    "source_name": "OpenAI",
+    "title": "Introducing OpenAI Presence",
+    "url": "https://openai.com/index/introducing-openai-presence/",
+    "published_date": "2026-07-22",
+    "event_date": "2026-07-22",
+    "freshness_status": "current",
+    "freshness_basis": "The product page is dated July 22, 2026, and it states the product is available today for voice and chat agents.",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "workplace_and_business",
+    "evidence_basis": "Primary product announcement from OpenAI describing availability, enterprise positioning, and operating controls.",
+    "confirmed_fact": "OpenAI says Presence is available today for voice and chat agents and is designed to help enterprises deploy trusted AI agents across customer and internal workflows with policies, guardrails and escalation rules.",
+    "interpretation": "The important shift is from chat demos to managed production work, where the main issue becomes reliability, approval and escalation rather than capability alone."
+  },
+  {
+    "source_name": "Google",
+    "title": "Going Beyond Zero: A New Paradigm For Enterprise Security",
+    "url": "https://blog.google/security/going-beyond-zero-a-new-paradigm-for-enterprise-security/",
+    "published_date": "2026-07-27",
+    "event_date": "2026-07-27",
+    "freshness_status": "current",
+    "freshness_basis": "The Google Security blog post is dated July 27, 2026, and describes Beyond Zero as a new security paradigm introduced on that date.",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "policy_safety_and_security",
+    "evidence_basis": "Primary security blog post from Google describing the model, its principles and its early internal deployments.",
+    "confirmed_fact": "Google says Beyond Zero is a contextual, risk-based authorization model for AI-era enterprise security, built to secure both humans and agents at the level of individual actions and resources.",
+    "interpretation": "This is a strong sign that AI at work is now being treated as an access-control problem, not just a productivity feature."
+  },
+  {
+    "source_name": "IBM Research",
+    "title": "IBM open sources CodeAlchemy, a massive synthetic dataset of high-quality code",
+    "url": "https://research.ibm.com/blog/code-alchemy-for-synthetic-code",
+    "published_date": "2026-07-16",
+    "event_date": "2026-07-16",
+    "freshness_status": "background",
+    "freshness_basis": "The IBM Research post is dated July 16, 2026, which places the release outside the seven-day freshness window ending July 28, 2026.",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "coding_and_building",
+    "evidence_basis": "Primary research release from IBM Research, including dataset scale, language coverage and the linked paper.",
+    "confirmed_fact": "IBM says CodeAlchemy is a synthetic code dataset of nearly 1 trillion tokens across 15 programming languages, released with the recipes used to create it.",
+    "interpretation": "For developers, this matters because AI coding quality now depends as much on training data and safe execution environments as on the model itself."
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "date": "2026-07-28",
+  "editorial_theme": {
+    "day": "Tuesday",
+    "date": "2026-07-28",
+    "slug": "ai-at-work",
+    "title": "AI at work",
+    "focus": "AI at work: daily tasks, teams, productivity, research, writing, support, admin, meetings and practical workplace use.",
+    "instruction": "Prioritise stories that help creators, small operators and small businesses test AI in real work. Ask what changes a workday, what still needs human review, and what is ready to try this week."
+  },
+  "same_day_prior_runs": 0,
+  "excluded_url_count": 28,
+  "excluded_story_title_count": 28,
+  "topic_rotation_evidence_dates": [
+    "2026-07-21",
+    "2026-07-22",
+    "2026-07-23",
+    "2026-07-24",
+    "2026-07-25",
+    "2026-07-26",
+    "2026-07-27"
+  ],
+  "consecutive_week_topic_block": true,
+  "confirmed_development_count": 3,
+  "human_impact_count": 1,
+  "topic_categories": [
+    "workplace_and_business",
+    "policy_safety_and_security",
+    "coding_and_building"
+  ],
+  "tiktok_used_as_evidence": false,
+  "passed": true
+}

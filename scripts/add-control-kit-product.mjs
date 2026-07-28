@@ -56,7 +56,7 @@ const section = `${marker}
     <div class="product-copy">
       <p class="product-kicker">Companion workflow toolkit</p>
       <h3>Clearforge AI Workflow Control Kit PRO</h3>
-      <p>Map, control, test and review AI-assisted workflows without losing human oversight. Includes the local-first Workflow Control Mapper, a 46-page implementation workbook, a completed example, operating checklists and the companion Notion workspace.</p>
+      <p>Map, control, test and review AI-assisted workflows without losing human oversight. Includes the local-first Workflow Control Mapper, an implementation workbook, a completed example, operating checklists and the companion Notion workspace.</p>
       <div class="report-actions">
         <a class="button button-secondary" href="${controlKitUrl}" target="_blank" rel="noopener noreferrer">View the Control Kit — £19</a>
       </div>

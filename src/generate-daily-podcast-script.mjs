@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import OpenAI from "openai";
+import OpenAI from "./gemini-openai-compat.mjs";
 
 const ROOT = process.cwd();
 const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
@@ -14,7 +14,7 @@ const draftDir = path.join(ROOT, "drafts", DATE);
 const structuredPath = path.join(draftDir, "structured_output.json");
 const podcastDir = path.join(draftDir, "podcast");
 
-if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY is required for podcast script generation.");
+if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required for podcast script generation.");
 if (!fs.existsSync(structuredPath)) throw new Error(`Missing ${structuredPath}`);
 
 function ensureDir(dir) {
@@ -101,8 +101,8 @@ const schema = {
   }
 };
 
-const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-const model = process.env.OPENAI_MODEL || "gpt-5.4-mini";
+const client = new OpenAI();
+const model = process.env.GEMINI_TEXT_MODEL || "gemini-2.5-flash";
 
 const response = await client.responses.create({
   model,
@@ -120,7 +120,7 @@ const response = await client.responses.create({
   text: { format: { type: "json_schema", name: "clearforge_daily_podcast_script", strict: true, schema } }
 });
 
-if (!response.output_text) throw new Error("OpenAI returned no podcast script output.");
+if (!response.output_text) throw new Error("Gemini returned no podcast script output.");
 const podcast = JSON.parse(response.output_text);
 const script = String(podcast.spoken_script || "").trim();
 const words = wordCount(script);
@@ -133,7 +133,7 @@ if (lineCheck.offenders.length) warnings.push(`Spoken script contains ${lineChec
 
 ensureDir(podcastDir);
 write(path.join(podcastDir, "COPY_PASTE_INTO_ELEVENLABS.txt"), script);
-write(path.join(podcastDir, "podcast-script.md"), `# ${podcast.episode_title}\n\nDate: ${DATE}\nNarrator: Irene\nVoice ID: w9xM4Spfmuw28ZXAirWK\nHuman review required: yes\nEstimated duration: ${(words / 145).toFixed(1)} minutes\nWord count: ${words}\nSelected story: ${podcast.selected_story_title}\nSelection reason: ${podcast.selection_reason}\n\n## Spoken script\n\n${script}\n\n## Plain-English terms\n\n${podcast.plain_english_terms.map((item) => `- ${item}`).join("\n")}\n\n## Human-review checks\n\n${podcast.human_review_checks.map((item) => `- [ ] ${item}`).join("\n")}\n\n## Chapter timing plan\n\n${podcast.chapter_timing_plan.map((item) => `- ${item.approx_minutes} — ${item.section}: ${item.purpose}`).join("\n")}\n\n## Production notes\n\n${podcast.production_notes.map((item) => `- ${item}`).join("\n")}\n\n## Validation warnings\n\n${warnings.length ? warnings.map((item) => `- ${item}`).join("\n") : "- None"}\n`);
+write(path.join(podcastDir, "podcast-script.md"), `# ${podcast.episode_title}\n\nDate: ${DATE}\nNarrator: Kore\nVoice provider: Gemini\nHuman review required: yes\nEstimated duration: ${(words / 145).toFixed(1)} minutes\nWord count: ${words}\nSelected story: ${podcast.selected_story_title}\nSelection reason: ${podcast.selection_reason}\n\n## Spoken script\n\n${script}\n\n## Plain-English terms\n\n${podcast.plain_english_terms.map((item) => `- ${item}`).join("\n")}\n\n## Human-review checks\n\n${podcast.human_review_checks.map((item) => `- [ ] ${item}`).join("\n")}\n\n## Chapter timing plan\n\n${podcast.chapter_timing_plan.map((item) => `- ${item.approx_minutes} — ${item.section}: ${item.purpose}`).join("\n")}\n\n## Production notes\n\n${podcast.production_notes.map((item) => `- ${item}`).join("\n")}\n\n## Validation warnings\n\n${warnings.length ? warnings.map((item) => `- ${item}`).join("\n") : "- None"}\n`);
 write(path.join(podcastDir, "source-notes.md"), `# Source notes — ${DATE}\n\nPodcast focused on: ${podcast.selected_story_title}\n\n## Sources supplied to the script generator\n\n${sources.map((source, index) => `- ${index + 1}. ${source.source_name || "Source"}: ${source.title || "Untitled"}\n  - URL: ${source.url || ""}\n  - Published/date field: ${source.published_date || "unknown"}\n  - Confirmed fact: ${source.confirmed_fact || ""}\n  - Interpretation: ${source.interpretation || ""}`).join("\n")}\n`);
 write(path.join(podcastDir, "episode-metadata.json"), JSON.stringify({
   version: 1,
@@ -141,8 +141,8 @@ write(path.join(podcastDir, "episode-metadata.json"), JSON.stringify({
   brand: "Clearforge",
   type: "clearforge_daily_biggest_story_podcast_script",
   human_review_required: true,
-  narrator: "Irene",
-  elevenlabs_voice_id: "w9xM4Spfmuw28ZXAirWK",
+  narrator: "Kore",
+  voice_provider: "Gemini",
   episode_title: podcast.episode_title,
   selected_story_index: podcast.selected_story_index,
   selected_story_title: podcast.selected_story_title,

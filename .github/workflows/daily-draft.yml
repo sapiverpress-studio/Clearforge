@@ -204,9 +204,34 @@ jobs:
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
         run: npm run podcast:daily
 
-      - name: Verify material claims against original sources
-        id: claim_verification
+      - name: First claim verification against original sources
+        id: initial_claim_verification
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        continue-on-error: true
+        env:
+          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+          CLAIM_VERIFICATION_FILE: claim-verification-initial.json
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
+        run: npm run verify:claims
+
+      - name: Apply one factual correction pass
+        id: factual_repair
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.initial_claim_verification.outcome == 'failure'
+        continue-on-error: true
+        env:
+          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
+        run: npm run repair:claims
+
+      - name: Reuse successful first verification
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.initial_claim_verification.outcome == 'success'
+        run: cp "drafts/${CLEARFORGE_DATE}/claim-verification-initial.json" "drafts/${CLEARFORGE_DATE}/claim-verification.json"
+
+      - name: Final independent claim verification
+        id: claim_verification
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.initial_claim_verification.outcome == 'failure'
         continue-on-error: true
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}

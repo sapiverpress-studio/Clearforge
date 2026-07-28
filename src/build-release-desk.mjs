@@ -53,6 +53,7 @@ const sourceDetailScore = ratio(sources, (source) =>
 );
 const verifiedFindings = Array.isArray(claimVerification.findings) ? claimVerification.findings : [];
 const blockingFindings = Array.isArray(claimVerification.blocking_findings) ? claimVerification.blocking_findings : [];
+const failedNumericAudits = Array.isArray(claimVerification.failed_numeric_audits) ? claimVerification.failed_numeric_audits : [];
 const socialFields = [
   social.tiktok_script,
   social.youtube_shorts_script,
@@ -80,8 +81,11 @@ const componentScores = {
 const hardStops = [];
 if (!article) hardStops.push("The daily article is missing.");
 if (claimVerification.passed !== true) {
-  hardStops.push(...(blockingFindings.length
-    ? blockingFindings.map((item) => `Claim check: ${clean(item.exact_claim || item.reason || "blocking finding")}`)
+  hardStops.push(...(blockingFindings.length || failedNumericAudits.length
+    ? [
+        ...blockingFindings.map((item) => `Claim check: ${clean(item.exact_claim || item.reason || "blocking finding")}`),
+        ...failedNumericAudits.map((item) => `Statistic used out of context: ${clean(item.reason || item.occurrence_id)}`)
+      ]
     : ["Independent claim verification did not pass."]));
 }
 if (Number(claimVerification.confidence) < 0.9) {
@@ -90,7 +94,10 @@ if (Number(claimVerification.confidence) < 0.9) {
 if ((claimVerification.missing_outputs || []).length) {
   hardStops.push(`Complete outputs were not verified: ${claimVerification.missing_outputs.join(", ")}.`);
 }
-if (validation.passed !== true) hardStops.push(...(validationFailures.length ? validationFailures : ["Structural validation did not pass."]));
+const structuralFailures = validationFailures.filter((item) =>
+  !/independent claim verification|claim-verification confidence|claim verifier did not inspect/i.test(item)
+);
+if (validation.passed !== true && structuralFailures.length) hardStops.push(...structuralFailures);
 if (openClaims.length) hardStops.push(`Unresolved claims remain: ${openClaims.join(" | ")}`);
 if (stories.some((story) => !/^none\b/i.test(clean(story.claim_to_verify)))) hardStops.push("At least one story retains an unresolved verification check.");
 if (sources.length < 3) hardStops.push(`Only ${sources.length} source(s) were supplied; at least three are required.`);
@@ -109,7 +116,11 @@ if (/\b(medical|legal advice|financial advice|employment law|guaranteed|lawsuit|
 )) advisoryFlags.push("Potentially high-consequence wording was detected; inspect the relevant passage.");
 
 const assurance = Math.min(...Object.values(componentScores));
-const decision = hardStops.length ? "STOP" : "HUMAN REVIEW";
+const uniqueHardStops = [...new Map(hardStops.map((item) => [
+  clean(item).toLowerCase().replace(/^(claim check:|claim verification:)\s*/, ""),
+  clean(item)
+])).values()];
+const decision = uniqueHardStops.length ? "STOP" : "HUMAN REVIEW";
 const reviewDepth = hardStops.length
   ? "Do not approve. Correct the listed stop conditions and regenerate the report."
   : assurance >= 0.96 && !advisoryFlags.length
@@ -128,7 +139,7 @@ const report = {
   human_approval_required: true,
   disclosure_after_approval: disclosure,
   component_scores: Object.fromEntries(Object.entries(componentScores).map(([key, value]) => [key, Number(value.toFixed(3))])),
-  hard_stops: [...new Set(hardStops)],
+  hard_stops: uniqueHardStops,
   advisory_flags: [...new Set(advisoryFlags)],
   review_depth: reviewDepth,
   counts: {
@@ -148,8 +159,14 @@ const report = {
   }
 };
 
-const scoreCards = Object.entries(report.component_scores).map(([name, score]) =>
-  `<div class="score"><strong>${esc(name.replaceAll("_", " "))}</strong><span>${score.toFixed(3)}</span></div>`
+const readiness = {
+  facts: claimVerification.passed === true ? "PASS" : "FAIL",
+  structure: validation.passed === true ? "PASS" : "FAIL",
+  images: Array.isArray(media.story_images) && media.story_images.length >= 3 ? "READY" : "MISSING",
+  human_approval: "REQUIRED"
+};
+const scoreCards = Object.entries(readiness).map(([name, status]) =>
+  `<div class="score"><strong>${esc(name.replaceAll("_", " "))}</strong><span>${esc(status)}</span></div>`
 ).join("");
 const stopList = report.hard_stops.length
   ? `<ul>${report.hard_stops.map((item) => `<li>${esc(item)}</li>`).join("")}</ul>`
@@ -194,9 +211,9 @@ const html = `<!doctype html>
 </style></head><body>
 <header><div><strong>CLEARFORGE</strong><h1>Daily Release Desk</h1><p>${esc(DATE)} - nothing publishes without Jim's approval.</p></div></header>
 <main>
-<section class="panel decision ${decision === "STOP" ? "stop" : ""}"><h2>${esc(decision)}</h2><p><strong>Release assurance:</strong> ${report.assurance_score.toFixed(3)}</p><p>${esc(reviewDepth)}</p></section>
+<section class="panel decision ${decision === "STOP" ? "stop" : ""}"><h2>${esc(decision)}</h2><p>${esc(reviewDepth)}</p></section>
 <section class="panel"><h2>What Jim must do</h2><ol><li>Read the stop conditions and advisory flags.</li><li>Check the claims table and open any source that looks weak or surprising.</li><li>Read every social opening and check that it matches the evidence.</li><li>Inspect the article, podcast or video in full only when this report flags it or something looks wrong.</li></ol><p><a class="approve-button" href="${esc(approvalWorkflowUrl)}">Open approval workflow</a></p><p><small>Only continue when this exact edition is factually correct. GitHub will select the newest completed Release Desk and record your authenticated approval.</small></p></section>
-<section class="panel"><h2>Component scores</h2><div class="scores">${scoreCards}</div><p><small>Structural checks confirm file shape and required fields. Claim verification separately checks meaning against sources. Neither authorises publication.</small></p></section>
+<section class="panel"><h2>Release readiness</h2><div class="scores">${scoreCards}</div><p><small>Facts, structure and images are separate checks. Publication always requires Jim's approval.</small></p></section>
 <section class="panel"><h2>Hard stops</h2>${stopList}<h2>Advisory flags</h2>${flagList}</section>
 <section class="panel"><h2>Independent claim verification</h2><p><strong>Result:</strong> ${claimVerification.passed === true ? "PASS" : "FAIL"} · <strong>Confidence:</strong> ${(Number(claimVerification.confidence) || 0).toFixed(3)}</p><p>${esc(claimVerification.summary || "No verification summary was produced.")}</p><div class="scroll"><table><thead><tr><th>Output</th><th>Exact claim</th><th>Classification</th><th>Status</th><th>Reason/evidence</th><th>Required correction</th></tr></thead><tbody>${verificationRows || "<tr><td colspan=\"6\">No claim-level findings were recorded.</td></tr>"}</tbody></table></div></section>
 <section class="panel"><h2>Draft evidence map</h2><p><small>These are claims recorded during research. Their presence is not proof; use the independent verification table above for validation status.</small></p><div class="scroll"><table><thead><tr><th>#</th><th>Source</th><th>Draft factual claim</th><th>Clearforge interpretation</th></tr></thead><tbody>${sourceRows}</tbody></table></div></section>
@@ -209,7 +226,9 @@ const html = `<!doctype html>
 const summary = `# Clearforge Release Desk - ${DATE}
 
 **Decision:** ${decision}
-**Release assurance:** ${report.assurance_score.toFixed(3)}
+**Facts:** ${readiness.facts}
+**Structure:** ${readiness.structure}
+**Images:** ${readiness.images}
 **Automatic publication:** disabled
 **Human approval:** required
 

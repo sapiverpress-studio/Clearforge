@@ -8,7 +8,7 @@ const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
 }).format(new Date());
 const draftDir = path.join(ROOT, "drafts", DATE);
 const structuredPath = path.join(draftDir, "structured_output.json");
-const reportPath = path.join(draftDir, "claim-verification.json");
+const reportPath = path.join(draftDir, process.env.CLAIM_VERIFICATION_FILE || "claim-verification.json");
 
 if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY is required for claim verification.");
 if (!fs.existsSync(structuredPath)) throw new Error(`Missing ${structuredPath}`);
@@ -25,16 +25,45 @@ const material = {
   podcast_script: readText(path.join(draftDir, "podcast", "COPY_PASTE_INTO_ELEVENLABS.txt"))
 };
 
+function collectNumericOccurrences(value, output, occurrences) {
+  const text = typeof value === "string" ? value : JSON.stringify(value);
+  const pattern = /\b\d+(?:\.\d+)?%/g;
+  for (const match of text.matchAll(pattern)) {
+    occurrences.push({
+      id: `numeric-${occurrences.length + 1}`,
+      output,
+      value: match[0],
+      context: text.slice(Math.max(0, match.index - 140), Math.min(text.length, match.index + 220))
+    });
+  }
+}
+const numericOccurrences = [];
+for (const [output, value] of Object.entries(material)) collectNumericOccurrences(value, output, numericOccurrences);
+
 const schema = {
   type: "object",
   additionalProperties: false,
-  required: ["overall_pass", "confidence", "checked_outputs", "findings", "summary"],
+  required: ["overall_pass", "confidence", "checked_outputs", "numeric_claim_audit", "findings", "summary"],
   properties: {
     overall_pass: { type: "boolean" },
     confidence: { type: "number", minimum: 0, maximum: 1 },
     checked_outputs: {
       type: "array",
       items: { type: "string", enum: ["structured_output", "daily_article", "full_feature", "podcast_script"] }
+    },
+    numeric_claim_audit: {
+      type: "array",
+      items: {
+        type: "object",
+        additionalProperties: false,
+        required: ["occurrence_id", "status", "reason", "source_url"],
+        properties: {
+          occurrence_id: { type: "string" },
+          status: { type: "string", enum: ["supported_in_context", "misused", "unsupported"] },
+          reason: { type: "string" },
+          source_url: { type: "string" }
+        }
+      }
     },
     findings: {
       type: "array",
@@ -50,11 +79,11 @@ const schema = {
           exact_claim: { type: "string" },
           classification: {
             type: "string",
-            enum: ["verified_fact", "vendor_claim", "logical_inference", "unknown_or_unverifiable"]
+            enum: ["verified_fact", "vendor_claim", "logical_inference", "unknown_or_unverifiable", "internal_provenance"]
           },
           status: {
             type: "string",
-            enum: ["supported", "needs_qualification", "unsupported", "unverifiable"]
+            enum: ["supported", "needs_qualification", "unsupported", "unverifiable", "not_applicable"]
           },
           severity: { type: "string", enum: ["info", "warning", "blocking"] },
           reason: { type: "string" },
@@ -88,6 +117,8 @@ For every material factual, numerical, date, availability, survey, research, quo
 - do not turn message classifications, survey responses or vendor descriptions into established real-world outcomes;
 - keep Clearforge interpretation explicitly separate from source conclusions;
 - inspect every supplied social field and the complete article, feature and podcast;
+- audit every supplied percentage occurrence in its exact surrounding context; a true statistic used to imply a different conclusion is a blocking misuse;
+- treat Clearforge's own AI-assistance disclosure, human-approval statement, product CTA and brand description as internal provenance, not externally sourced news claims; mark them not_applicable and never block them merely for lacking an external citation;
 - mark missing outputs as blocking;
 - mark any material overstatement, unsupported implication, inaccurate paraphrase or unresolved high-consequence claim as blocking.
 
@@ -103,7 +134,10 @@ ${JSON.stringify((structured.sources || []).map((source) => source.url).filter(B
 COMPLETE MATERIAL TO VERIFY:
 ${JSON.stringify(material)}
 
-Return a concise finding for every problem and for each important statistic or availability claim. For supported claims, required_correction must be an empty string. For problems, give replacement-ready correction guidance and the best supporting source URL.`
+NUMERIC OCCURRENCES TO AUDIT INDIVIDUALLY:
+${JSON.stringify(numericOccurrences)}
+
+Return exactly one numeric_claim_audit entry for every supplied occurrence_id. Check whether each statistic supports the conclusion drawn in its surrounding sentence and CTA, not merely whether the number appears somewhere in the source. Return a concise finding for every problem and each important availability claim. For supported claims, required_correction must be an empty string. For problems, give replacement-ready correction guidance and the best supporting source URL.`
     }
   ],
   text: {
@@ -121,14 +155,17 @@ const result = JSON.parse(response.output_text);
 const requiredOutputs = ["structured_output", "daily_article", "full_feature", "podcast_script"];
 const checked = new Set(result.checked_outputs || []);
 const findings = Array.isArray(result.findings) ? result.findings : [];
-const blocking = findings.filter((item) =>
-  item.severity === "blocking" ||
-  ["needs_qualification", "unsupported", "unverifiable"].includes(item.status)
-);
+const numericAudit = Array.isArray(result.numeric_claim_audit) ? result.numeric_claim_audit : [];
+const auditedIds = new Set(numericAudit.map((item) => item.occurrence_id));
+const missingNumericAudits = numericOccurrences.filter((item) => !auditedIds.has(item.id));
+const badNumericAudits = numericAudit.filter((item) => item.status !== "supported_in_context");
+const blocking = findings.filter((item) => item.severity === "blocking");
 const missingOutputs = requiredOutputs.filter((name) => !checked.has(name) || !String(material[name] || "").trim());
 const passed = result.overall_pass === true &&
   Number(result.confidence) >= 0.9 &&
   blocking.length === 0 &&
+  badNumericAudits.length === 0 &&
+  missingNumericAudits.length === 0 &&
   missingOutputs.length === 0;
 
 const report = {
@@ -140,6 +177,9 @@ const report = {
   checked_outputs: [...checked],
   missing_outputs: missingOutputs,
   blocking_findings: blocking,
+  numeric_claim_audit: numericAudit,
+  missing_numeric_audits: missingNumericAudits,
+  failed_numeric_audits: badNumericAudits,
   findings,
   summary: result.summary || ""
 };

@@ -95,12 +95,19 @@ writeJson(path.join(draftDir, "claim-verification.json"), {
   }],
   summary: "All material claims passed."
 });
+fs.copyFileSync(
+  path.join(draftDir, "claim-verification.json"),
+  path.join(draftDir, "claim-verification-initial.json")
+);
 writeJson(path.join(mediaDir, "media-manifest.json"), { story_images: ["one.png", "two.png", "three.png"] });
 fs.writeFileSync(path.join(draftDir, "daily_brief.md"), article);
 fs.writeFileSync(path.join(draftDir, "feature.md"), feature);
 fs.writeFileSync(path.join(draftDir, "podcast", "COPY_PASTE_INTO_ELEVENLABS.txt"), podcast);
 
-let result = run("src/build-release-desk.mjs");
+let result = run("src/repair-material-claims.mjs", { OPENAI_API_KEY: "not-used-for-passing-report" });
+assert.equal(result.status, 0, result.stderr);
+
+result = run("src/build-release-desk.mjs");
 assert.equal(result.status, 0, result.stderr);
 let report = JSON.parse(fs.readFileSync(path.join(draftDir, "release-desk.json"), "utf8"));
 let html = fs.readFileSync(path.join(draftDir, `clearforge-release-desk-${date}.html`), "utf8");

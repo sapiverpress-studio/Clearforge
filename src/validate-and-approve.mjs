@@ -79,9 +79,6 @@ if (!claimVerification) {
   if (Number(claimVerification.confidence) < 0.9) {
     failures.push(`Claim-verification confidence is below 0.90 (${Number(claimVerification.confidence) || 0})`);
   }
-  for (const finding of claimVerification.blocking_findings || []) {
-    failures.push(`Claim verification: ${finding.exact_claim || finding.reason || "blocking finding"}`);
-  }
   for (const output of claimVerification.missing_outputs || []) {
     failures.push(`Claim verifier did not inspect complete output: ${output}`);
   }

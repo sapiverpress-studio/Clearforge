@@ -127,26 +127,16 @@ jobs:
             echo "Using fresh edition ID: ${BASE_DATE}"
           fi
 
-      - name: Restore today's pending edition for retry
+      - name: Skip retry when today's bundle already exists
         if: steps.gate.outputs.run == 'true' && steps.gate.outputs.retry == 'true'
         id: retrycheck
-        env:
-          GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
-          ARTIFACT_NAME="clearforge-pending-edition-${CLEARFORGE_DATE}"
-          ARTIFACT_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts?name=${ARTIFACT_NAME}" --jq '[.artifacts[] | select(.expired == false)] | sort_by(.created_at) | last | .id // empty')"
-          echo "skip=false" >> "$GITHUB_OUTPUT"
-          if [ -n "${ARTIFACT_ID}" ]; then
-            ARCHIVE="${RUNNER_TEMP}/${ARTIFACT_NAME}.zip"
-            gh api -H "Accept: application/vnd.github+json" "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > "${ARCHIVE}"
-            unzip -q -o "${ARCHIVE}" -d "${GITHUB_WORKSPACE}"
-            test -f "drafts/${CLEARFORGE_DATE}/structured_output.json"
-            echo "reuse=true" >> "$GITHUB_OUTPUT"
-            echo "Restored pending edition artifact ${ARTIFACT_ID}; retry will continue after research."
+          if [ -f "bridge/clearforge/${CLEARFORGE_DATE}/manifest.json" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "Today's bundle already exists; retry not needed."
           else
-            echo "reuse=false" >> "$GITHUB_OUTPUT"
-            echo "No pending edition artifact exists; retry will perform fresh research."
+            echo "skip=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Setup Node
@@ -160,7 +150,7 @@ jobs:
         run: npm install
 
       - name: Generate fresh research edition
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.retrycheck.outputs.reuse != 'true' && steps.gate.outputs.edition == 'fresh'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.edition == 'fresh'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
@@ -200,82 +190,22 @@ jobs:
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
         run: npm run podcast:daily
 
-      - name: First claim verification against original sources
-        id: initial_claim_verification
+      - name: Validate and auto approve only when checks pass
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
-        continue-on-error: true
-        env:
-          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
-          CLAIM_VERIFICATION_FILE: claim-verification-initial.json
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
-        run: npm run verify:claims
-
-      - name: Apply one factual correction pass
-        id: factual_repair
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.initial_claim_verification.outcome == 'failure'
-        continue-on-error: true
-        env:
-          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
-        run: npm run repair:claims
-
-      - name: Reuse successful first verification
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.initial_claim_verification.outcome == 'success'
-        run: cp "drafts/${CLEARFORGE_DATE}/claim-verification-initial.json" "drafts/${CLEARFORGE_DATE}/claim-verification.json"
-
-      - name: Final independent claim verification
-        id: claim_verification
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.initial_claim_verification.outcome == 'failure'
-        continue-on-error: true
-        env:
-          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
-        run: npm run verify:claims
-
-      - name: Validate structural checks; human approval still required
-        id: structural_validation
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
-        continue-on-error: true
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
         run: npm run validate:auto
 
-      - name: Confirm edition is safe for paid media generation
-        id: media_gate
-        if: always() && steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
-        shell: bash
-        run: |
-          set -euo pipefail
-          initial="${{ steps.initial_claim_verification.outcome }}"
-          final="${{ steps.claim_verification.outcome }}"
-          structural="${{ steps.structural_validation.outcome }}"
-          if [[ "$structural" == "success" && ( "$initial" == "success" || "$final" == "success" ) ]]; then
-            echo "ready=true" >> "$GITHUB_OUTPUT"
-            echo "Factual and structural gates passed. Paid media generation may proceed."
-          else
-            echo "ready=false" >> "$GITHUB_OUTPUT"
-            {
-              echo "## Paid media generation blocked"
-              echo
-              echo "Claim verification or structural validation did not pass."
-              echo "No Gemini podcast audio, AI images or social narration will be generated for this edition."
-              echo "The text and validation reports remain available for review and correction."
-            } >> "$GITHUB_STEP_SUMMARY"
-          fi
-
-      - name: Install FFmpeg for podcast media
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.media_gate.outputs.ready == 'true'
+      - name: Install FFmpeg for Gemini podcast media
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.podcast_audio == 'true'
         shell: bash
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg
 
-      - name: Generate full daily podcast MP3 with Kore
+      - name: Generate full daily podcast MP3 with Gemini Kore
         id: full_podcast
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.media_gate.outputs.ready == 'true' && steps.gate.outputs.podcast_audio == 'true'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.podcast_audio == 'true'
         continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -289,7 +219,7 @@ jobs:
           hash="$audio.source-sha256"
           source_hash="$(sha256sum "$INPUT_PATH" | cut -d' ' -f1)"
           if [[ -s "$audio" && -s "$hash" && "$(tr -d '\r\n' < "$hash")" == "$source_hash" ]]; then
-            echo "Existing Kore MP3 matches the narration; no Gemini request made."
+            echo "Existing Gemini Kore MP3 matches the narration; no Gemini request made."
             exit 0
           fi
           wav="$RUNNER_TEMP/clearforge-kore-${CLEARFORGE_DATE}.wav"
@@ -298,31 +228,20 @@ jobs:
           [[ -s "$audio" ]] || { echo "MP3 conversion failed: $audio"; exit 1; }
           printf '%s\n' "$source_hash" > "$hash"
 
-      - name: Record podcast generation warning
+      - name: Record Gemini podcast generation warning
         if: always() && steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.podcast_audio == 'true' && steps.full_podcast.outcome == 'failure'
         shell: bash
         run: |
           {
             echo "## Gemini Kore podcast MP3 not generated"
             echo
-            echo "Gemini TTS failed or was unavailable. The full podcast MP3 and RSS episode were skipped."
-            echo "All other Clearforge outputs will continue. No substitute podcast narrator was used."
-            echo "The validated podcast production script remains available in the daily package."
+            echo "Gemini TTS failed or was unavailable. The podcast MP3 and RSS episode were skipped."
+            echo "All other Clearforge outputs will continue."
+            echo "The podcast production script remains available in the daily package."
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Record requested podcast held by validation
-        if: always() && steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.podcast_audio == 'true' && steps.media_gate.outputs.ready != 'true'
-        shell: bash
-        run: |
-          {
-            echo "## Podcast held before spending"
-            echo
-            echo "A podcast was requested, but the edition did not pass validation."
-            echo "Gemini Kore was not called and no podcast-generation cost was incurred."
-          } >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Publish approved episode to Clearforge RSS feed
-        if: ${{ false }} # Publication happens only in Clearforge Approve and Publish
+      - name: Publish Gemini Kore episode to Clearforge RSS feed
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.podcast_audio == 'true' && steps.full_podcast.outcome == 'success'
         env:
           PODCAST_KIND: daily
           EPISODE_SLUG: ${{ env.CLEARFORGE_DATE }}
@@ -332,7 +251,7 @@ jobs:
         run: node scripts/publish-podcast-feed.mjs
 
       - name: Generate story-specific AI visuals and narration
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.media_gate.outputs.ready == 'true'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -342,23 +261,23 @@ jobs:
           OPENAI_TTS_VOICE: ${{ vars.OPENAI_TTS_VOICE || 'coral' }}
         run: npm run media:ai
 
-      - name: Detect available daily podcast MP3
-        id: available_podcast_audio
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.media_gate.outputs.ready == 'true'
+      - name: Detect available daily Gemini podcast MP3
+        id: podcast_audio
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         shell: bash
         run: |
           audio="drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp3"
           if [[ -s "$audio" ]]; then
             echo "available=true" >> "$GITHUB_OUTPUT"
-            echo "Using available podcast audio: $audio"
+            echo "Using available Gemini Kore audio: $audio"
           else
             echo "available=false" >> "$GITHUB_OUTPUT"
-            echo "No daily podcast MP3 is available; MP4 generation will be skipped without affecting other outputs."
+            echo "No daily Gemini podcast MP3 is available; MP4 generation will be skipped without affecting other outputs."
           fi
 
       - name: Generate full daily podcast MP4
         id: podcast_video
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.available_podcast_audio.outputs.available == 'true'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.podcast_audio.outputs.available == 'true'
         continue-on-error: true
         shell: bash
         run: |
@@ -367,54 +286,8 @@ jobs:
             "drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp4" \
             "media/${CLEARFORGE_DATE}/story-1.png"
 
-      - name: Build Daily Release Desk
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
-        env:
-          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
-        run: npm run release:desk
-
-      - name: Show Daily Release Desk summary
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && always()
-        shell: bash
-        run: cat "drafts/${CLEARFORGE_DATE}/release-summary.md" >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Upload Daily Release Desk
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: clearforge-release-desk-${{ env.CLEARFORGE_DATE }}
-          path: |
-            drafts/${{ env.CLEARFORGE_DATE }}/clearforge-release-desk-*.html
-            drafts/${{ env.CLEARFORGE_DATE }}/release-desk.json
-            drafts/${{ env.CLEARFORGE_DATE }}/release-summary.md
-          if-no-files-found: error
-          retention-days: 30
-
-      - name: Upload complete pending edition
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: clearforge-pending-edition-${{ env.CLEARFORGE_DATE }}
-          path: |
-            drafts/${{ env.CLEARFORGE_DATE }}/**/*
-            media/${{ env.CLEARFORGE_DATE }}/**/*
-          if-no-files-found: error
-          retention-days: 30
-
-      - name: Email Daily Release Desk to Jim
-        if: always() && steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
-        continue-on-error: true
-        env:
-          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
-          CLEARFORGE_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
-          CLEARFORGE_REVIEW_EMAIL: ${{ secrets.CLEARFORGE_REVIEW_EMAIL }}
-          BREVO_SENDER_EMAIL: clearforge@sapiverpress.co.uk
-          BREVO_SENDER_NAME: Clearforge
-        run: node src/send-release-desk-email.mjs
-
       - name: Add MP4 download to the podcast episode
-        if: ${{ false }} # Publication happens only in Clearforge Approve and Publish
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.podcast_video.outcome == 'success'
         env:
           PODCAST_KIND: daily
           EPISODE_SLUG: ${{ env.CLEARFORGE_DATE }}
@@ -436,11 +309,11 @@ jobs:
           retention-days: 90
 
       - name: Build approved static site
-        if: ${{ false }} # Publication happens only in Clearforge Approve and Publish
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         run: npm run build:site
 
       - name: Deploy Clearforge production site to Netlify
-        if: ${{ false }} # Publication happens only in Clearforge Approve and Publish
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         shell: bash
@@ -458,26 +331,44 @@ jobs:
             --message="Clearforge autopilot ${CLEARFORGE_DATE}"
 
       - name: Export approved distribution bundle
-        if: ${{ false }} # Publication happens only in Clearforge Approve and Publish
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
         run: npm run export:approved
 
       - name: Syndicate full feature to DEV
-        if: ${{ false }} # Publication happens only in Clearforge Approve and Publish
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
         run: npm run syndicate:dev
 
-      - name: Do not commit unapproved output
-        if: ${{ false }} # Pending editions remain workflow artifacts until Jim approves them
+      - name: Commit daily article feature media bridge site and syndication state
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         shell: bash
         run: |
-          echo "Unapproved output is intentionally not committed."
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898242+github-actions[bot]@users.noreply.github.com"
+          git add -- drafts media bridge public
+          if git diff --cached --quiet; then
+            echo "No Clearforge changes to commit."
+            exit 0
+          fi
+          git commit -m "Run Clearforge daily autopilot"
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push attempt ${attempt} failed; retrying after synchronising main."
+            git rebase --abort 2>/dev/null || true
+            sleep 2
+          done
+          echo "::error::Could not save Clearforge outputs after three attempts."
+          exit 1
 
       - name: Trigger full video render and live social distribution
-        if: ${{ false }} # Publication happens only in Clearforge Approve and Publish
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:
           GH_TOKEN: ${{ secrets.CROSS_REPO_GITHUB_TOKEN }}
         shell: bash

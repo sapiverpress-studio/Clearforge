@@ -107,13 +107,7 @@ const baseNarration = data.social?.youtube_shorts_script || [
   ...stories.map((s) => `${s.title}. ${s.why_it_matters}`),
   data.practical_takeaway || "Focus on what changes your workflow, not what creates the most hype."
 ].join(" ");
-const youtubeSelection = data.audience_fit?.platform_selections?.youtube || {};
-const mainStoryIndex = Number.isInteger(youtubeSelection.story_index) && youtubeSelection.story_index >= 0 && youtubeSelection.story_index < stories.length
-  ? youtubeSelection.story_index
-  : 0;
 const narrationText = `${String(baseNarration).trim()} ${spokenCta}`;
-const mainSentences = String(baseNarration).trim().match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map((part) => part.trim()).filter(Boolean) || [];
-const mainHook = mainSentences[0] || data.headline;
 
 const speech = await client.audio.speech.create({
   model: process.env.OPENAI_TTS_MODEL || "gpt-4o-mini-tts",
@@ -148,7 +142,7 @@ const tiktokSpeech = await client.audio.speech.create({
   model: process.env.OPENAI_TTS_MODEL || "gpt-4o-mini-tts",
   voice: process.env.OPENAI_TTS_VOICE || "coral",
   input: tiktokNarrationText,
-  instructions: "Speak like a sharp, conversational British technology editor. Start immediately with the audience and their situation. Keep the delivery brisk, natural and human. Do not sound like a newsreader or advertisement."
+  instructions: "Speak like a sharp, conversational British technology editor. Start immediately with the question. Keep the delivery brisk, natural and human, with a small pause before the final response prompt. Do not sound like a newsreader or advertisement."
 });
 const tiktokNarrationFile = path.join(outDir, "tiktok-narration.mp3");
 fs.writeFileSync(tiktokNarrationFile, Buffer.from(await tiktokSpeech.arrayBuffer()));
@@ -158,8 +152,7 @@ const manifest = {
   date: DATE,
   headline: data.headline,
   dek: data.dek,
-  hook: mainHook,
-  main_story_index: mainStoryIndex,
+  hook: "Three AI updates that actually matter today",
   spoken_cta: spokenCta,
   visual_system: "Clearforge AI briefing podcast studio system",
   visual_style_rules: {

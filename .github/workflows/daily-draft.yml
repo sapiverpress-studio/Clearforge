@@ -58,11 +58,7 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
-            if [ "${{ github.event.inputs.edition_mode }}" = "fresh" ]; then
-              echo "retry=true" >> "$GITHUB_OUTPUT"
-            else
-              echo "retry=false" >> "$GITHUB_OUTPUT"
-            fi
+            echo "retry=false" >> "$GITHUB_OUTPUT"
             echo "edition=${{ github.event.inputs.edition_mode }}" >> "$GITHUB_OUTPUT"
             echo "angle=${{ github.event.inputs.angle }}" >> "$GITHUB_OUTPUT"
             echo "irene=${{ github.event.inputs.generate_irene }}" >> "$GITHUB_OUTPUT"

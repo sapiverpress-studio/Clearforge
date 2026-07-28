@@ -27,7 +27,8 @@
     "release:approve": "node src/approve-release.mjs",
     "check": "node src/check-approval.mjs",
     "test:validation-system": "node test/validation-system.mjs",
-    "build:publishing": "node src/build-publishing-dashboard.mjs"
+    "build:publishing": "node src/build-publishing-dashboard.mjs",
+    "test:gemini": "node test/gemini-provider-contract.mjs"
   },
   "dependencies": {
     "openai": "latest"

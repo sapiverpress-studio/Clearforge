@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import OpenAI from "openai";
+import OpenAI from "./gemini-openai-compat.mjs";
 
 const ROOT = process.cwd();
 const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
@@ -10,7 +10,7 @@ const draftDir = path.join(ROOT, "drafts", DATE);
 const structuredPath = path.join(draftDir, "structured_output.json");
 const performancePath = path.join(ROOT, "config", "tiktok-performance.json");
 
-if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY is required for audience-fit optimisation.");
+if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required for audience-fit optimisation.");
 if (!fs.existsSync(structuredPath)) throw new Error(`Missing ${structuredPath}`);
 
 const source = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
@@ -109,9 +109,9 @@ const schema = {
   }
 };
 
-const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const client = new OpenAI();
 const response = await client.responses.create({
-  model: process.env.OPENAI_MODEL || "gpt-5.4-mini",
+  model: process.env.GEMINI_TEXT_MODEL || "gemini-2.5-flash",
   reasoning: { effort: "medium" },
   input: [
     {
@@ -134,7 +134,7 @@ const response = await client.responses.create({
   text: { format: { type: "json_schema", name: "clearforge_audience_fit", strict: true, schema } }
 });
 
-if (!response.output_text) throw new Error("OpenAI returned no audience-fit output.");
+if (!response.output_text) throw new Error("Gemini returned no audience-fit output.");
 const result = JSON.parse(response.output_text);
 
 function normaliseTitle(value) {

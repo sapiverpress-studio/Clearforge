@@ -99,7 +99,11 @@ fs.copyFileSync(
   path.join(draftDir, "claim-verification.json"),
   path.join(draftDir, "claim-verification-initial.json")
 );
-writeJson(path.join(mediaDir, "media-manifest.json"), { story_images: ["one.png", "two.png", "three.png"] });
+const imageFiles = ["one.png", "two.png", "three.png"];
+writeJson(path.join(mediaDir, "media-manifest.json"), {
+  stories: imageFiles.map((file) => ({ file: `media/${date}/${file}` }))
+});
+for (const file of imageFiles) fs.writeFileSync(path.join(mediaDir, file), "test-image");
 fs.writeFileSync(path.join(draftDir, "daily_brief.md"), article);
 fs.writeFileSync(path.join(draftDir, "feature.md"), feature);
 fs.writeFileSync(path.join(draftDir, "podcast", "COPY_PASTE_INTO_ELEVENLABS.txt"), podcast);
@@ -117,6 +121,19 @@ assert.match(html, new RegExp(articleTail));
 assert.match(html, new RegExp(featureTail));
 assert.match(html, new RegExp(podcastTail));
 assert.match(html, /Independent claim verification/);
+assert.equal(report.component_scores.technical_readiness, 1);
+
+fs.unlinkSync(path.join(mediaDir, "three.png"));
+result = run("src/build-release-desk.mjs");
+assert.equal(result.status, 0, result.stderr);
+report = JSON.parse(fs.readFileSync(path.join(draftDir, "release-desk.json"), "utf8"));
+assert.equal(report.decision, "STOP");
+assert.ok(report.hard_stops.some((item) => item.includes("only 2 readable image file(s)")));
+fs.writeFileSync(path.join(mediaDir, "three.png"), "test-image");
+result = run("src/build-release-desk.mjs");
+assert.equal(result.status, 0, result.stderr);
+report = JSON.parse(fs.readFileSync(path.join(draftDir, "release-desk.json"), "utf8"));
+assert.equal(report.decision, "HUMAN REVIEW");
 
 result = run("src/approve-release.mjs", {
   CLEARFORGE_APPROVER: "test-reviewer",

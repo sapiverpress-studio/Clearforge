@@ -1,9 +1,18 @@
 const API_BASE = "https://generativelanguage.googleapis.com/v1beta/models";
+const INTERACTIONS_URL = "https://generativelanguage.googleapis.com/v1beta/interactions";
 
 function apiKey() {
   const key = process.env.GEMINI_API_KEY;
   if (!key) throw new Error("GEMINI_API_KEY is required.");
   return key;
+}
+
+class GeminiRequestError extends Error {
+  constructor(model, status, detail) {
+    super(`Gemini ${model} request failed (${status}): ${detail.slice(0, 1200)}`);
+    this.model = model;
+    this.status = status;
+  }
 }
 
 async function callGemini(model, body) {
@@ -17,17 +26,49 @@ async function callGemini(model, body) {
   });
   if (!response.ok) {
     const detail = await response.text();
-    throw new Error(`Gemini ${model} request failed (${response.status}): ${detail.slice(0, 1200)}`);
+    throw new GeminiRequestError(model, response.status, detail);
   }
   return response.json();
+}
+
+async function callInteractions(model, body) {
+  const response = await fetch(INTERACTIONS_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-goog-api-key": apiKey(),
+      "Api-Revision": "2026-05-20"
+    },
+    body: JSON.stringify({ model, ...body })
+  });
+  if (!response.ok) {
+    const detail = await response.text();
+    throw new GeminiRequestError(model, response.status, detail);
+  }
+  return response.json();
+}
+
+async function withModelFallback(primary, fallbacks, request) {
+  const models = [...new Set([primary, ...fallbacks].filter(Boolean))];
+  let lastError;
+  for (const model of models) {
+    try {
+      return await request(model);
+    } catch (error) {
+      lastError = error;
+      if (!(error instanceof GeminiRequestError) || error.status !== 404) throw error;
+      console.warn(`Gemini model ${model} is unavailable; trying the next supported model.`);
+    }
+  }
+  throw lastError;
 }
 
 function parts(result) {
   return result?.candidates?.[0]?.content?.parts || [];
 }
 
-export async function generateStructured({ system, prompt, schema, model = process.env.GEMINI_TEXT_MODEL || "gemini-2.5-flash" }) {
-  const result = await callGemini(model, {
+export async function generateStructured({ system, prompt, schema, model = process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite" }) {
+  const result = await withModelFallback(model, ["gemini-3.1-flash-lite", "gemini-3.6-flash"], (selectedModel) => callGemini(selectedModel, {
     systemInstruction: { parts: [{ text: Array.isArray(system) ? system.join("\n\n") : system }] },
     contents: [{ role: "user", parts: [{ text: prompt }] }],
     generationConfig: {
@@ -35,19 +76,19 @@ export async function generateStructured({ system, prompt, schema, model = proce
       responseJsonSchema: schema,
       temperature: 0.2
     }
-  });
+  }));
   const text = parts(result).map((part) => part.text || "").join("").trim();
   if (!text) throw new Error(`Gemini ${model} returned no structured text.`);
   return JSON.parse(text);
 }
 
-export async function generateGroundedEvidence({ system, prompt, model = process.env.GEMINI_RESEARCH_MODEL || "gemini-2.5-flash" }) {
-  const result = await callGemini(model, {
+export async function generateGroundedEvidence({ system, prompt, model = process.env.GEMINI_RESEARCH_MODEL || "gemini-3.6-flash" }) {
+  const result = await withModelFallback(model, ["gemini-3.6-flash", "gemini-3.1-flash-lite"], (selectedModel) => callGemini(selectedModel, {
     systemInstruction: { parts: [{ text: Array.isArray(system) ? system.join("\n\n") : system }] },
     contents: [{ role: "user", parts: [{ text: prompt }] }],
     tools: [{ google_search: {} }],
     generationConfig: { temperature: 0.1 }
-  });
+  }));
   const text = parts(result).map((part) => part.text || "").join("").trim();
   if (!text) throw new Error(`Gemini ${model} returned no grounded evidence.`);
   return {
@@ -56,14 +97,27 @@ export async function generateGroundedEvidence({ system, prompt, model = process
   };
 }
 
-export async function generateImage(prompt, model = process.env.GEMINI_IMAGE_MODEL || "gemini-2.5-flash-image") {
-  const result = await callGemini(model, {
+export async function generateText({ system, prompt, model = process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite" }) {
+  const result = await withModelFallback(model, ["gemini-3.1-flash-lite", "gemini-3.6-flash"], (selectedModel) => callGemini(selectedModel, {
+    systemInstruction: { parts: [{ text: Array.isArray(system) ? system.join("\n\n") : system }] },
     contents: [{ role: "user", parts: [{ text: prompt }] }],
-    generationConfig: { responseModalities: ["TEXT", "IMAGE"] }
-  });
-  const image = parts(result).find((part) => part.inlineData?.data);
-  if (!image) throw new Error(`Gemini ${model} returned no image.`);
-  return { data: image.inlineData.data, mimeType: image.inlineData.mimeType || "image/png" };
+    generationConfig: { temperature: 0.2 }
+  }));
+  const text = parts(result).map((part) => part.text || "").join("").trim();
+  if (!text) throw new Error(`Gemini ${model} returned no text.`);
+  return text;
+}
+
+export async function generateImage(prompt, model = process.env.GEMINI_IMAGE_MODEL || "gemini-3.1-flash-image") {
+  const result = await withModelFallback(model, ["gemini-3.1-flash-image", "gemini-3.1-flash-lite-image"], (selectedModel) => callInteractions(selectedModel, {
+    input: prompt,
+    response_format: { type: "image", mime_type: "image/png", aspect_ratio: "2:3", image_size: "1K" }
+  }));
+  const image = result.output_image || result.outputImage ||
+    result.outputs?.find((item) => item.type === "image") ||
+    result.output?.find?.((item) => item.type === "image");
+  if (!image?.data) throw new Error(`Gemini ${model} returned no image.`);
+  return { data: image.data, mimeType: image.mime_type || image.mimeType || "image/png" };
 }
 
 function wavHeader(pcmLength, sampleRate = 24000, channels = 1, bitsPerSample = 16) {
@@ -87,20 +141,20 @@ function wavHeader(pcmLength, sampleRate = 24000, channels = 1, bitsPerSample = 
 }
 
 export async function generateSpeechWav(text, {
-  model = process.env.GEMINI_TTS_MODEL || "gemini-2.5-flash-preview-tts",
+  model = process.env.GEMINI_TTS_MODEL || "gemini-3.1-flash-tts-preview",
   voice = process.env.GEMINI_TTS_VOICE || "Kore",
   style = "Speak clearly, naturally and conversationally."
 } = {}) {
-  const result = await callGemini(model, {
-    contents: [{ role: "user", parts: [{ text: `${style}\n\n${text}` }] }],
-    generationConfig: {
-      responseModalities: ["AUDIO"],
-      speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: voice } } }
-    }
-  });
-  const audio = parts(result).find((part) => part.inlineData?.data);
-  if (!audio) throw new Error(`Gemini ${model} returned no audio.`);
-  const bytes = Buffer.from(audio.inlineData.data, "base64");
-  if ((audio.inlineData.mimeType || "").includes("wav") || bytes.subarray(0, 4).toString() === "RIFF") return bytes;
+  const result = await withModelFallback(model, ["gemini-3.1-flash-tts-preview", "gemini-2.5-flash-preview-tts"], (selectedModel) => callInteractions(selectedModel, {
+    input: `${style}\n\n${text}`,
+    response_format: { type: "audio" },
+    generation_config: { speech_config: [{ voice }] }
+  }));
+  const audio = result.output_audio || result.outputAudio ||
+    result.outputs?.find((item) => item.type === "audio") ||
+    result.output?.find?.((item) => item.type === "audio");
+  if (!audio?.data) throw new Error(`Gemini ${model} returned no audio.`);
+  const bytes = Buffer.from(audio.data, "base64");
+  if ((audio.mime_type || audio.mimeType || "").includes("wav") || bytes.subarray(0, 4).toString() === "RIFF") return bytes;
   return Buffer.concat([wavHeader(bytes.length), bytes]);
 }

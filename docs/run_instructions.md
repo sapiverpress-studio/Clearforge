@@ -8,7 +8,7 @@ It can:
 
 - create a dated draft folder
 - store source notes
-- generate an AI article draft if OPENAI_API_KEY is configured
+- generate an AI article draft if GEMINI_API_KEY is configured
 - create an editor checklist
 - create an approval file
 - build a static blog from approved articles only
@@ -59,21 +59,21 @@ Then run:
 npm run draft
 ```
 
-## Add OpenAI key locally
+## Add Gemini key locally
 
 Do not commit secrets.
 
 PowerShell:
 
 ```powershell
-$env:OPENAI_API_KEY="your_key_here"
+$env:GEMINI_API_KEY="your_key_here"
 npm run draft
 ```
 
 Mac/Linux:
 
 ```bash
-export OPENAI_API_KEY="your_key_here"
+export GEMINI_API_KEY="your_key_here"
 npm run draft
 ```
 
@@ -82,7 +82,7 @@ npm run draft
 Add this repository secret:
 
 ```text
-OPENAI_API_KEY
+GEMINI_API_KEY
 ```
 
 Then run:

@@ -69,6 +69,10 @@ const sourceDetailScore = ratio(sources, (source) =>
 const verifiedFindings = Array.isArray(claimVerification.findings) ? claimVerification.findings : [];
 const blockingFindings = Array.isArray(claimVerification.blocking_findings) ? claimVerification.blocking_findings : [];
 const failedNumericAudits = Array.isArray(claimVerification.failed_numeric_audits) ? claimVerification.failed_numeric_audits : [];
+const failedQualificationAudits = Array.isArray(claimVerification.failed_qualification_audits) ? claimVerification.failed_qualification_audits : [];
+const failedInferenceAudits = Array.isArray(claimVerification.failed_inference_audits) ? claimVerification.failed_inference_audits : [];
+const missingQualificationAudits = Array.isArray(claimVerification.missing_qualification_audits) ? claimVerification.missing_qualification_audits : [];
+const missingInferenceAudits = Array.isArray(claimVerification.missing_inference_audits) ? claimVerification.missing_inference_audits : [];
 const socialFields = [
   social.tiktok_script,
   social.youtube_shorts_script,
@@ -96,10 +100,14 @@ const componentScores = {
 const hardStops = [];
 if (!article) hardStops.push("The daily article is missing.");
 if (claimVerification.passed !== true) {
-  hardStops.push(...(blockingFindings.length || failedNumericAudits.length
+  hardStops.push(...(blockingFindings.length || failedNumericAudits.length || failedQualificationAudits.length || failedInferenceAudits.length || missingQualificationAudits.length || missingInferenceAudits.length
     ? [
         ...blockingFindings.map((item) => `Claim check: ${clean(item.exact_claim || item.reason || "blocking finding")}`),
-        ...failedNumericAudits.map((item) => `Statistic used out of context: ${clean(item.reason || item.occurrence_id)}`)
+        ...failedNumericAudits.map((item) => `Statistic used out of context: ${clean(item.reason || item.occurrence_id)}`),
+        ...failedQualificationAudits.map((item) => `Availability/access wording failed: ${clean(item.reason || item.occurrence_id)}`),
+        ...failedInferenceAudits.map((item) => `Editorial inference failed: ${clean(item.reason || item.occurrence_id)}`),
+        ...missingQualificationAudits.map((item) => `Availability/access wording was not audited: ${clean(item.context || item.id)}`),
+        ...missingInferenceAudits.map((item) => `Editorial inference was not audited: ${clean(item.context || item.id)}`)
       ]
     : ["Independent claim verification did not pass."]));
 }

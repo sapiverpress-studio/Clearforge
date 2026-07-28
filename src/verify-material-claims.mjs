@@ -1,6 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import OpenAI from "openai";
+import {
+  applyDeterministicGuards,
+  deterministicInferenceFailure,
+  deterministicQualificationFailure
+} from "./deterministic-claim-guards.mjs";
 
 const ROOT = process.cwd();
 const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
@@ -66,7 +71,7 @@ function collectLanguageOccurrences(value, output, occurrences, pattern, prefix)
 const qualificationOccurrences = [];
 const inferenceOccurrences = [];
 const qualificationPattern = /\b(?:available|availability|eligible|access|accessible|limited|preview|beta|rollout|self-service|enterprise customers?|selected customers?|general availability|generally available)\b/gi;
-const inferencePattern = /\b(?:suggests?|indicates?|implies?|may|might|could|likely|shows?|demonstrates?|proves?|means?|depends?|points? to|reinforces?|faster than|more likely)\b/gi;
+const inferencePattern = /\b(?:suggests?|indicates?|implies?|may|might|could|likely|shows?|demonstrates?|proves?|means?|depends?|points? to|reinforces?|faster than|more likely|as much as|more important than|less important than|matters? more than|matters? less than)\b/gi;
 for (const [output, value] of Object.entries(material)) {
   collectLanguageOccurrences(value, output, qualificationOccurrences, qualificationPattern, "qualification");
   collectLanguageOccurrences(value, output, inferenceOccurrences, inferencePattern, "inference");
@@ -227,10 +232,49 @@ if (!response.output_text) throw new Error("Claim verifier returned no result.")
 const result = JSON.parse(response.output_text);
 const requiredOutputs = ["structured_output", "daily_article", "full_feature", "podcast_script"];
 const checked = new Set(result.checked_outputs || []);
-const findings = Array.isArray(result.findings) ? result.findings : [];
+const modelFindings = Array.isArray(result.findings) ? result.findings : [];
 const numericAudit = Array.isArray(result.numeric_claim_audit) ? result.numeric_claim_audit : [];
-const qualificationAudit = Array.isArray(result.qualification_claim_audit) ? result.qualification_claim_audit : [];
-const inferenceAudit = Array.isArray(result.inference_claim_audit) ? result.inference_claim_audit : [];
+const qualificationAudit = applyDeterministicGuards(
+  qualificationOccurrences,
+  Array.isArray(result.qualification_claim_audit) ? result.qualification_claim_audit : [],
+  deterministicQualificationFailure
+);
+const inferenceAudit = applyDeterministicGuards(
+  inferenceOccurrences,
+  Array.isArray(result.inference_claim_audit) ? result.inference_claim_audit : [],
+  deterministicInferenceFailure
+);
+const deterministicFindings = [
+  ...qualificationOccurrences.flatMap((occurrence) => {
+    const failure = deterministicQualificationFailure(occurrence);
+    if (!failure) return [];
+    return [{
+      output: occurrence.output,
+      exact_claim: occurrence.context,
+      classification: "vendor_claim",
+      status: "needs_qualification",
+      severity: "blocking",
+      reason: failure.reason,
+      required_correction: failure.required_correction,
+      source_url: qualificationAudit.find((item) => item.occurrence_id === occurrence.id)?.source_url || ""
+    }];
+  }),
+  ...inferenceOccurrences.flatMap((occurrence) => {
+    const failure = deterministicInferenceFailure(occurrence);
+    if (!failure) return [];
+    return [{
+      output: occurrence.output,
+      exact_claim: occurrence.context,
+      classification: "logical_inference",
+      status: "unsupported",
+      severity: "blocking",
+      reason: failure.reason,
+      required_correction: failure.required_correction,
+      source_url: inferenceAudit.find((item) => item.occurrence_id === occurrence.id)?.source_url || ""
+    }];
+  })
+];
+const findings = [...modelFindings, ...deterministicFindings];
 const auditedIds = new Set(numericAudit.map((item) => item.occurrence_id));
 const auditedQualificationIds = new Set(qualificationAudit.map((item) => item.occurrence_id));
 const auditedInferenceIds = new Set(inferenceAudit.map((item) => item.occurrence_id));

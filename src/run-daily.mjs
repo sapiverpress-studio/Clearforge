@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import OpenAI from "openai";
+import OpenAI from "./gemini-openai-compat.mjs";
 
 const ROOT = process.cwd();
 const today = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
@@ -253,7 +253,7 @@ function validateCoverageMix(candidate) {
 }
 
 async function main() {
-  if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY is required for automated daily research.");
+  if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required for automated daily research.");
   ensureDir(outDir);
   archiveCurrentRun();
   const history = collectHistoricalUsage();
@@ -264,8 +264,8 @@ async function main() {
   const preferredSources = config.sources.map(({ name, type, url, use_for }) => ({ name, type, url, use_for }));
   const prompt = fs.readFileSync(promptPath, "utf8");
   const theme = editorialTheme(today);
-  const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-  const model = process.env.OPENAI_MODEL || "gpt-5.4-mini";
+  const client = new OpenAI();
+  const model = process.env.GEMINI_TEXT_MODEL || "gemini-2.5-flash";
 
   let data = null;
   let lastNoveltyFailures = [];
@@ -290,7 +290,7 @@ async function main() {
       text: { format: { type: "json_schema", name: "clearforge_daily_brief", strict: true, schema } }
     });
 
-    if (!response.output_text) throw new Error("OpenAI returned no structured output.");
+    if (!response.output_text) throw new Error("Gemini returned no structured output.");
     const candidate = JSON.parse(response.output_text);
     lastNoveltyFailures = [
       ...validateNovelty(candidate, history),

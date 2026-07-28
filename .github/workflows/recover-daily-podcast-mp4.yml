@@ -1,4 +1,4 @@
-name: Recover Clearforge daily podcast MP4
+name: Recover Clearforge daily podcast MP3 and MP4
 
 on:
   workflow_dispatch:
@@ -40,13 +40,38 @@ jobs:
           [[ "$edition" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}([a-z0-9-]*)$ ]] || { echo "Invalid edition: $edition"; exit 1; }
           echo "edition=$edition" >> "$GITHUB_OUTPUT"
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Generate missing Irene MP3
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVENLAB_API || secrets.ELEVELAB_API }}
+          ELEVENLABS_VOICE_ID: w9xM4Spfmuw28ZXAirWK
+          ELEVENLABS_MODEL_ID: eleven_multilingual_v2
+        shell: bash
+        run: |
+          set -euo pipefail
+          edition="${{ steps.edition.outputs.edition }}"
+          folder="drafts/$edition/podcast"
+          script="$folder/COPY_PASTE_INTO_ELEVENLABS.txt"
+          audio="$folder/clearforge-daily-podcast-$edition.mp3"
+          [[ -s "$script" ]] || { echo "Approved podcast script is missing: $script"; exit 1; }
+          if [[ -s "$audio" ]]; then
+            echo "Existing Irene MP3 found; no ElevenLabs credit will be used."
+          else
+            [[ -n "${ELEVENLABS_API_KEY:-}" ]] || { echo "Missing ElevenLabs API secret."; exit 1; }
+            INPUT_PATH="$script" OUTPUT_PATH="$audio" node scripts/generate-elevenlabs-mp3.mjs
+          fi
+
       - name: Install FFmpeg
         shell: bash
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg
 
-      - name: Generate MP4 from existing Irene MP3
+      - name: Generate MP4 from Irene MP3
         shell: bash
         run: |
           set -euo pipefail
@@ -78,8 +103,11 @@ jobs:
           edition="${{ steps.edition.outputs.edition }}"
           git config user.name "clearforge-audio-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add "drafts/$edition/podcast/clearforge-daily-podcast-$edition.mp4" public/podcast
-          git commit -m "Recover Clearforge daily podcast MP4 for $edition"
+          git add "drafts/$edition/podcast/clearforge-daily-podcast-$edition.mp3" \
+            "drafts/$edition/podcast/clearforge-daily-podcast-$edition.mp3.source-sha256" \
+            "drafts/$edition/podcast/clearforge-daily-podcast-$edition.mp4" \
+            public/podcast
+          git commit -m "Recover Clearforge daily podcast MP3 and MP4 for $edition"
           git pull --rebase origin main
           git push origin HEAD:main
 
@@ -91,4 +119,4 @@ jobs:
         run: |
           set -euo pipefail
           [[ -n "${NETLIFY_AUTH_TOKEN:-}" ]] || { echo "Missing NETLIFY_AUTH_TOKEN."; exit 1; }
-          npx --yes netlify-cli@latest deploy --prod --dir=public --site="$NETLIFY_SITE_ID" --auth="$NETLIFY_AUTH_TOKEN" --message="Recover Clearforge podcast MP4 ${{ steps.edition.outputs.edition }}"
+          npx --yes netlify-cli@latest deploy --prod --dir=public --site="$NETLIFY_SITE_ID" --auth="$NETLIFY_AUTH_TOKEN" --message="Recover Clearforge podcast MP3 and MP4 ${{ steps.edition.outputs.edition }}"

@@ -35,6 +35,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: bash scripts/download-latest-release-desk.sh
 
+      - name: Rebuild Release Desk with current validation rules
+        run: npm run release:desk
+
       - name: Record Jim's release approval
         env:
           CLEARFORGE_APPROVER: ${{ github.actor }}

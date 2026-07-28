@@ -44,6 +44,21 @@ const openClaims = Array.isArray(structured.claims_to_verify)
   : [];
 const validationFailures = Array.isArray(validation.failures) ? validation.failures.map(clean).filter(Boolean) : [];
 const validationWarnings = Array.isArray(validation.warnings) ? validation.warnings.map(clean).filter(Boolean) : [];
+const storyImagePaths = Array.isArray(media.stories)
+  ? media.stories.map((story) => clean(story.file)).filter(Boolean)
+  : Array.isArray(media.story_images)
+    ? media.story_images.map(clean).filter(Boolean)
+    : [];
+const readableStoryImages = storyImagePaths.filter((file) => {
+  const resolved = path.isAbsolute(file) ? file : path.join(ROOT, file);
+  try {
+    const stat = fs.statSync(resolved);
+    return stat.isFile() && stat.size > 0;
+  } catch {
+    return false;
+  }
+});
+const storyImagesReady = readableStoryImages.length >= 3;
 
 const sourceDetailScore = ratio(sources, (source) =>
   /^https:\/\//i.test(clean(source.url)) &&
@@ -74,7 +89,7 @@ const componentScores = {
     article.length > 0,
     feature.length > 0,
     podcastScript.length > 0,
-    Array.isArray(media.story_images) && media.story_images.length >= 3
+    storyImagesReady
   ].filter(Boolean).length / 4)
 };
 
@@ -103,8 +118,8 @@ if (stories.some((story) => !/^none\b/i.test(clean(story.claim_to_verify)))) har
 if (sources.length < 3) hardStops.push(`Only ${sources.length} source(s) were supplied; at least three are required.`);
 if (sources.some((source) => !/^https:\/\//i.test(clean(source.url)))) hardStops.push("At least one source lacks a valid HTTPS URL.");
 if (automated.article_approved !== true) hardStops.push("The article did not pass the structural publication checks.");
-if (!Array.isArray(media.story_images) || media.story_images.length < 3) {
-  hardStops.push("Three generated story images were not confirmed; visual content cannot be approved.");
+if (!storyImagesReady) {
+  hardStops.push(`Three generated story images are required, but only ${readableStoryImages.length} readable image file(s) were found.`);
 }
 
 const advisoryFlags = [];
@@ -162,7 +177,7 @@ const report = {
 const readiness = {
   facts: claimVerification.passed === true ? "PASS" : "FAIL",
   structure: validation.passed === true ? "PASS" : "FAIL",
-  images: Array.isArray(media.story_images) && media.story_images.length >= 3 ? "READY" : "MISSING",
+  images: storyImagesReady ? "READY FOR APPROVAL" : "MISSING",
   human_approval: "REQUIRED"
 };
 const scoreCards = Object.entries(readiness).map(([name, status]) =>

@@ -123,7 +123,7 @@ const response = await client.responses.create({
   }
 });
 
-if (!response.output_text) throw new Error("OpenAI returned no event novelty result.");
+if (!response.output_text) throw new Error("Gemini returned no event novelty result.");
 const result = JSON.parse(response.output_text);
 const duplicates = (result.duplicate_events || []).filter((item) => item.confidence >= 0.75);
 const passed = duplicates.length === 0 && result.overall_pass === true;

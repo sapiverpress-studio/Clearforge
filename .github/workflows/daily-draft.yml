@@ -349,10 +349,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: clearforge-candidate-${{ env.CLEARFORGE_DATE }}-${{ steps.candidate.outputs.candidate_id }}
-          path: |
-            drafts/${{ env.CLEARFORGE_DATE }}/**/*
-            media/${{ env.CLEARFORGE_DATE }}/**/*
-            public/**/*
+          path: candidate-package/**/*
           if-no-files-found: error
           retention-days: 30
 

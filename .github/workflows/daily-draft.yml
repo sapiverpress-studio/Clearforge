@@ -332,6 +332,15 @@ jobs:
           CLEARFORGE_SOURCE_SHA: ${{ github.sha }}
         run: npm run review:human
 
+      - name: Upload exact pending candidate
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: clearforge-candidate-${{ env.CLEARFORGE_DATE }}-${{ steps.candidate.outputs.candidate_id }}
+          path: candidate-package/**/*
+          if-no-files-found: error
+          retention-days: 30
+
       - name: Email exact candidate HTML to Jim
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:
@@ -343,15 +352,6 @@ jobs:
           CLEARFORGE_CANDIDATE_ID: ${{ steps.candidate.outputs.candidate_id }}
           CLEARFORGE_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: npm run review:email
-
-      - name: Upload exact pending candidate
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: clearforge-candidate-${{ env.CLEARFORGE_DATE }}-${{ steps.candidate.outputs.candidate_id }}
-          path: candidate-package/**/*
-          if-no-files-found: error
-          retention-days: 30
 
       - name: Candidate summary
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'

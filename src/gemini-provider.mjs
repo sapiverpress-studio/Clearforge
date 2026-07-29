@@ -111,13 +111,13 @@ export async function generateText({ system, prompt, model = process.env.GEMINI_
 export async function generateImage(prompt, model = process.env.GEMINI_IMAGE_MODEL || "gemini-3.1-flash-image") {
   const result = await withModelFallback(model, ["gemini-3.1-flash-image", "gemini-3.1-flash-lite-image"], (selectedModel) => callInteractions(selectedModel, {
     input: prompt,
-    response_format: { type: "image", mime_type: "image/png", aspect_ratio: "2:3", image_size: "1K" }
+    response_format: { type: "image", mime_type: "image/jpeg", aspect_ratio: "2:3", image_size: "1K" }
   }));
   const image = result.output_image || result.outputImage ||
     result.outputs?.find((item) => item.type === "image") ||
     result.output?.find?.((item) => item.type === "image");
   if (!image?.data) throw new Error(`Gemini ${model} returned no image.`);
-  return { data: image.data, mimeType: image.mime_type || image.mimeType || "image/png" };
+  return { data: image.data, mimeType: image.mime_type || image.mimeType || "image/jpeg" };
 }
 
 function wavHeader(pcmLength, sampleRate = 24000, channels = 1, bitsPerSample = 16) {
@@ -145,11 +145,29 @@ export async function generateSpeechWav(text, {
   voice = process.env.GEMINI_TTS_VOICE || "Kore",
   style = "Speak clearly, naturally and conversationally."
 } = {}) {
-  const result = await withModelFallback(model, ["gemini-3.1-flash-tts-preview", "gemini-2.5-flash-preview-tts"], (selectedModel) => callInteractions(selectedModel, {
-    input: `${style}\n\n${text}`,
-    response_format: { type: "audio" },
-    generation_config: { speech_config: [{ voice }] }
-  }));
+  const result = await withModelFallback(model, ["gemini-3.1-flash-tts-preview", "gemini-2.5-flash-preview-tts"], async (selectedModel) => {
+    const request = {
+      input: `${style}\n\nSPOKEN TRANSCRIPT:\n${text}`,
+      response_format: { type: "audio" },
+      generation_config: { speech_config: [{ voice }] }
+    };
+    let lastResult;
+    for (let attempt = 1; attempt <= 2; attempt += 1) {
+      try {
+        lastResult = await callInteractions(selectedModel, request);
+        const audio = lastResult.output_audio || lastResult.outputAudio ||
+          lastResult.outputs?.find((item) => item.type === "audio") ||
+          lastResult.output?.find?.((item) => item.type === "audio");
+        if (audio?.data || attempt === 2) return lastResult;
+        console.warn(`Gemini ${selectedModel} returned no audio; retrying once.`);
+      } catch (error) {
+        const transient = error instanceof GeminiRequestError && error.status >= 500;
+        if (!transient || attempt === 2) throw error;
+        console.warn(`Gemini ${selectedModel} TTS request failed transiently; retrying once.`);
+      }
+    }
+    return lastResult;
+  });
   const audio = result.output_audio || result.outputAudio ||
     result.outputs?.find((item) => item.type === "audio") ||
     result.output?.find?.((item) => item.type === "audio");

@@ -67,6 +67,26 @@ function parts(result) {
   return result?.candidates?.[0]?.content?.parts || [];
 }
 
+function interactionMedia(result, type) {
+  const convenience = type === "image"
+    ? result?.output_image || result?.outputImage
+    : result?.output_audio || result?.outputAudio;
+  if (convenience?.data) return convenience;
+
+  const collections = [
+    result?.outputs,
+    result?.output,
+    ...(result?.steps || []).map((step) => step?.content)
+  ];
+  for (const collection of collections) {
+    const media = Array.isArray(collection)
+      ? collection.find((item) => item?.type === type && item?.data)
+      : null;
+    if (media) return media;
+  }
+  return null;
+}
+
 export async function generateStructured({ system, prompt, schema, model = process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite" }) {
   const result = await withModelFallback(model, ["gemini-3.1-flash-lite", "gemini-3.6-flash"], (selectedModel) => callGemini(selectedModel, {
     systemInstruction: { parts: [{ text: Array.isArray(system) ? system.join("\n\n") : system }] },
@@ -113,9 +133,7 @@ export async function generateImage(prompt, model = process.env.GEMINI_IMAGE_MOD
     input: prompt,
     response_format: { type: "image", mime_type: "image/jpeg", aspect_ratio: "2:3", image_size: "1K" }
   }));
-  const image = result.output_image || result.outputImage ||
-    result.outputs?.find((item) => item.type === "image") ||
-    result.output?.find?.((item) => item.type === "image");
+  const image = interactionMedia(result, "image");
   if (!image?.data) throw new Error(`Gemini ${model} returned no image.`);
   return { data: image.data, mimeType: image.mime_type || image.mimeType || "image/jpeg" };
 }
@@ -155,9 +173,7 @@ export async function generateSpeechWav(text, {
     for (let attempt = 1; attempt <= 2; attempt += 1) {
       try {
         lastResult = await callInteractions(selectedModel, request);
-        const audio = lastResult.output_audio || lastResult.outputAudio ||
-          lastResult.outputs?.find((item) => item.type === "audio") ||
-          lastResult.output?.find?.((item) => item.type === "audio");
+        const audio = interactionMedia(lastResult, "audio");
         if (audio?.data || attempt === 2) return lastResult;
         console.warn(`Gemini ${selectedModel} returned no audio; retrying once.`);
       } catch (error) {
@@ -168,9 +184,7 @@ export async function generateSpeechWav(text, {
     }
     return lastResult;
   });
-  const audio = result.output_audio || result.outputAudio ||
-    result.outputs?.find((item) => item.type === "audio") ||
-    result.output?.find?.((item) => item.type === "audio");
+  const audio = interactionMedia(result, "audio");
   if (!audio?.data) throw new Error(`Gemini ${model} returned no audio.`);
   const bytes = Buffer.from(audio.data, "base64");
   if ((audio.mime_type || audio.mimeType || "").includes("wav") || bytes.subarray(0, 4).toString() === "RIFF") return bytes;

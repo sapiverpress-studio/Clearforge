@@ -36,6 +36,7 @@ on:
     - cron: "30 16 * * *"
 
 permissions:
+  actions: read
   contents: write
   issues: write
 
@@ -127,14 +128,18 @@ jobs:
             echo "Using fresh edition ID: ${BASE_DATE}"
           fi
 
-      - name: Skip retry when today's bundle already exists
+      - name: Skip retry when today's review candidate already exists
         if: steps.gate.outputs.run == 'true' && steps.gate.outputs.retry == 'true'
         id: retrycheck
+        env:
+          GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
-          if [ -f "bridge/clearforge/${CLEARFORGE_DATE}/manifest.json" ]; then
+          PREFIX="clearforge-candidate-${CLEARFORGE_DATE}-"
+          NAMES="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts" --paginate --jq '.artifacts[].name')"
+          if printf '%s\n' "${NAMES}" | grep -q "^${PREFIX}"; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "Today's bundle already exists; retry not needed."
+            echo "A sealed review candidate already exists; retry not needed."
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"
           fi
@@ -195,7 +200,8 @@ jobs:
           GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
         run: npm run podcast:daily
 
-      - name: Validate and auto approve only when checks pass
+      - name: Run automated checks for the human reviewer
+        id: automated_checks
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
@@ -245,7 +251,7 @@ jobs:
             echo "The podcast production script remains available in the daily package."
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Publish Gemini Kore episode to Clearforge RSS feed
+      - name: Stage Gemini Kore episode inside the unpublished candidate
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.podcast_audio == 'true' && steps.full_podcast.outcome == 'success'
         env:
           PODCAST_KIND: daily
@@ -291,7 +297,7 @@ jobs:
             "drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp4" \
             "media/${CLEARFORGE_DATE}/story-1.png"
 
-      - name: Add MP4 download to the podcast episode
+      - name: Stage MP4 download inside the unpublished candidate
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.podcast_video.outcome == 'success'
         env:
           PODCAST_KIND: daily
@@ -313,79 +319,54 @@ jobs:
           if-no-files-found: error
           retention-days: 90
 
-      - name: Build approved static site
+      - name: Build exact unpublished candidate site
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         run: npm run build:site
 
-      - name: Deploy Clearforge production site to Netlify
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          if [ -z "${NETLIFY_AUTH_TOKEN:-}" ]; then
-            echo "::error::Missing NETLIFY_AUTH_TOKEN repository secret."
-            exit 1
-          fi
-          npx --yes netlify-cli@latest deploy \
-            --prod \
-            --dir=public \
-            --site="${NETLIFY_SITE_ID}" \
-            --auth="${NETLIFY_AUTH_TOKEN}" \
-            --message="Clearforge autopilot ${CLEARFORGE_DATE}"
-
-      - name: Export approved distribution bundle
+      - name: Build sealed human review package
+        id: candidate
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
-        run: npm run export:approved
+          CLEARFORGE_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          CLEARFORGE_SOURCE_SHA: ${{ github.sha }}
+        run: npm run review:human
 
-      - name: Syndicate full feature to DEV
+      - name: Upload exact pending candidate
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: clearforge-candidate-${{ env.CLEARFORGE_DATE }}-${{ steps.candidate.outputs.candidate_id }}
+          path: candidate-package/**/*
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Email exact candidate HTML to Jim
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          CLEARFORGE_REVIEW_EMAIL: ${{ secrets.CLEARFORGE_REVIEW_EMAIL }}
+          BREVO_SENDER_EMAIL: clearforge@sapiverpress.co.uk
+          BREVO_SENDER_NAME: Clearforge
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
-          DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
-        run: npm run syndicate:dev
+          CLEARFORGE_CANDIDATE_ID: ${{ steps.candidate.outputs.candidate_id }}
+          CLEARFORGE_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: npm run review:email
 
-      - name: Commit daily article feature media bridge site and syndication state
+      - name: Candidate summary
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         shell: bash
         run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898242+github-actions[bot]@users.noreply.github.com"
-          git add -- drafts media bridge public
-          if git diff --cached --quiet; then
-            echo "No Clearforge changes to commit."
-            exit 0
-          fi
-          git commit -m "Run Clearforge daily autopilot"
-          for attempt in 1 2 3; do
-            if git pull --rebase origin main && git push origin HEAD:main; then
-              exit 0
-            fi
-            echo "Push attempt ${attempt} failed; retrying after synchronising main."
-            git rebase --abort 2>/dev/null || true
-            sleep 2
-          done
-          echo "::error::Could not save Clearforge outputs after three attempts."
-          exit 1
-
-      - name: Trigger full video render and live social distribution
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
-        env:
-          GH_TOKEN: ${{ secrets.CROSS_REPO_GITHUB_TOKEN }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          if [ -z "${GH_TOKEN:-}" ]; then
-            echo "::error::Missing CROSS_REPO_GITHUB_TOKEN repository secret."
-            exit 1
-          fi
-          PAYLOAD="{\"event_type\":\"clearforge_publish\",\"client_payload\":{\"date\":\"${CLEARFORGE_DATE}\"}}"
-          gh api repos/sapiverpress-studio/SapiverPress_comic_public/dispatches --method POST --input - <<< "${PAYLOAD}"
-          echo "Triggered full Clearforge video render and live social distribution for ${CLEARFORGE_DATE}."
+          {
+            echo "## Awaiting Jim's human validation"
+            echo
+            echo "- Edition: ${CLEARFORGE_DATE}"
+            echo "- Candidate: ${{ steps.candidate.outputs.candidate_id }}"
+            echo "- Website deployment: not run"
+            echo "- Podcast publication: not run"
+            echo "- DEV syndication: not run"
+            echo "- Social distribution: not run"
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Open final failure issue after retry
         if: failure() && steps.gate.outputs.retry == 'true'

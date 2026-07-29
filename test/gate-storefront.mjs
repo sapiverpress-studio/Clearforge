@@ -24,7 +24,8 @@ const payhipLinks = [
   "https://payhip.com/b/4rcSt",
   "https://payhip.com/b/qBPip",
   "https://payhip.com/b/pkSEY",
-  "https://payhip.com/b/rgFXP"
+  "https://payhip.com/b/rgFXP",
+  "https://payhip.com/b/gq89f"
 ];
 
 for (const link of payhipLinks) {
@@ -33,6 +34,23 @@ for (const link of payhipLinks) {
 
 assert.ok(!homepage.includes("https://payhip.com/b/vGks8"), "Legacy Release Gate link is still present.");
 assert.ok(!homepage.includes("https://payhip.com/b/VK2yl"), "Legacy Workflow Control Kit link is still present.");
+
+const workspaceText = [
+  "Clearforge AI Gate Workspace",
+  "Make clearer decisions about where and how you use AI.",
+  "one ready-to-duplicate blank assessment for each stage",
+  "Get the complete workspace free.",
+  "Buy direct and support Clearforge.",
+  "It does not include the separate browser-based decision tools"
+];
+
+for (const text of workspaceText) {
+  assert.ok(homepage.includes(text), `Homepage is missing workspace text: ${text}`);
+}
+
+assert.ok(homepage.includes('href="https://sapiver-press.kit.com/5147ce2817"'), "Homepage is missing the clean Kit workspace link.");
+assert.ok(!homepage.includes("\u2060"), "Homepage contains an invisible word-joiner character.");
+assert.ok(!homepage.includes("\ufffd"), "Homepage contains a replacement character.");
 
 const imageRoot = path.join(root, "public", "products", "gate-system");
 const images = fs.readdirSync(imageRoot, { recursive: true })

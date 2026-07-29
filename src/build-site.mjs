@@ -232,6 +232,41 @@ function gateSystemStorefront() {
     <div><p class="product-kicker">Plain scope</p><h3>Practical operating tools, not legal advice.</h3><p>The Gates support more consistent review but do not guarantee compliance or remove professional responsibility.</p></div>
   </section>`;
 }
+function gateWorkspaceOffer() {
+  return `<section class="workspace-offer" id="gate-workspace" aria-labelledby="workspace-title">
+    <div class="workspace-intro">
+      <p class="eyebrow">Clearforge AI Gate Workspace</p>
+      <h2 id="workspace-title">Make clearer decisions about where and how you use AI.</h2>
+      <p>The Clearforge AI Gate Workspace is a connected Notion system for working through and recording decisions at four stages:</p>
+      <ul class="workspace-stages">
+        <li><strong>Opportunity</strong><span>Should AI be used for this task?</span></li>
+        <li><strong>Workflow Control</strong><span>Is the proposed workflow properly controlled?</span></li>
+        <li><strong>Output Release</strong><span>Is this particular AI-assisted output ready to leave?</span></li>
+        <li><strong>Outcome Review</strong><span>Is the workflow producing worthwhile results?</span></li>
+      </ul>
+      <p>It includes four reusable assessment databases, one ready-to-duplicate blank assessment for each stage and eight worked examples.</p>
+    </div>
+    <div class="workspace-options" aria-label="Choose how to access the Clearforge AI Gate Workspace">
+      <article class="workspace-option workspace-option-primary">
+        <p class="product-kicker">Free by email</p>
+        <h3>Get the complete workspace free.</h3>
+        <p>Receive the complete Notion workspace by email, followed by two short setup and feedback emails. You may also receive occasional Clearforge product updates from Sapiver Press. You can unsubscribe at any time.</p>
+        <a class="button" href="https://sapiver-press.kit.com/5147ce2817" target="_blank" rel="noopener noreferrer">Get the free workspace</a>
+      </article>
+      <article class="workspace-option">
+        <p class="product-kicker">Direct access · £19</p>
+        <h3>Buy direct and support Clearforge.</h3>
+        <p>Purchase the same complete Notion workspace through Payhip without joining the Clearforge marketing sequence. Payhip will still send the transactional messages needed for purchase and delivery.</p>
+        <a class="button button-secondary" href="https://payhip.com/b/gq89f" target="_blank" rel="noopener noreferrer">Buy direct and support Clearforge — £19</a>
+      </article>
+    </div>
+    <aside class="workspace-distinction">
+      <p class="product-kicker">What this workspace does—and does not include</p>
+      <p>The Notion workspace helps you record assessments, decisions, conditions, owners and follow-up actions. It does not include the separate browser-based decision tools, printable workbooks, handbooks or Agent Connector Safety add-on supplied with the complete Clearforge Applied AI Gate System.</p>
+      <a class="text-link" href="https://payhip.com/b/cmklU" target="_blank" rel="noopener noreferrer">View the complete Gate System</a>
+    </aside>
+  </section>`;
+}
 function pageTemplate(title, description, body, options = {}) {
   const pathname = options.pathname || "/";
   const pageUrl = canonical(pathname);
@@ -274,6 +309,7 @@ function pageTemplate(title, description, body, options = {}) {
     <p>Human-led. AI-empowered.</p>
     <nav aria-label="Site links">
       <a href="/#products">Products</a>
+      <a href="/#gate-workspace">Free workspace</a>
       <a href="/#latest-guidance">Latest guidance</a>
       <a href="/guides/">Guides</a>
       <a href="/topics/">Topics</a>
@@ -407,7 +443,7 @@ function main() {
     : "";
   const listenSection = `<section class="posts"><p class="eyebrow">Listen on the go</p><h2>Clearforge AI Briefing</h2><p>Hear the practical breakdown in your podcast app. Search for <strong>Clearforge AI Briefing</strong>, or open the Clearforge podcast page.</p><p><a class="button" href="${podcastPage}">Open the podcast</a></p></section><section class="posts" data-clearforge-latest-short hidden><p class="eyebrow">Ready to post</p><h2>Latest TikTok video and caption</h2><div data-short-content></div></section><script src="/podcast/latest-short.js" defer></script>`;
   const featureSection = `<section class="posts"><p class="eyebrow">Analysis behind the tools</p><h2>Recent Clearforge articles</h2>${features.length ? `<ul>${features.slice(0, 3).map((entry) => `<li><a href="${entry.url}">${escapeHtml(entry.title)}</a><span> — ${escapeHtml(datePart(entry.date))}</span><p>${escapeHtml(entry.description)}</p></li>`).join("")}</ul>${latestFeature ? `<p><a class="button button-secondary" href="${latestFeature.url}">Read the latest feature</a></p>` : ""}` : "<p>No approved features yet.</p>"}</section>`;
-  const indexBody = `${gateSystemStorefront()}${latestSection}${featureSection}${listenSection}<section class="posts"><h2>Explore the wider Clearforge library</h2><p>Use the topic archive and evergreen guides to understand the changing AI problems behind the Gates.</p><div class="report-actions"><a class="button" href="/topics/">Browse topics</a><a class="button button-secondary" href="/guides/">Read evergreen guides</a><a class="button button-secondary" href="/reports/">Open reports</a></div></section>${newsletterCallout()}`;
+  const indexBody = `${gateSystemStorefront()}${gateWorkspaceOffer()}${latestSection}${featureSection}${listenSection}<section class="posts"><h2>Explore the wider Clearforge library</h2><p>Use the topic archive and evergreen guides to understand the changing AI problems behind the Gates.</p><div class="report-actions"><a class="button" href="/topics/">Browse topics</a><a class="button button-secondary" href="/guides/">Read evergreen guides</a><a class="button button-secondary" href="/reports/">Open reports</a></div></section>${newsletterCallout()}`;
   write(path.join(publicDir, "index.html"), pageTemplate("Clearforge Applied AI Gate System", "Human-led AI checkpoints, practical guidance and Clearforge analysis for controlling AI-assisted work.", indexBody, { pathname: "/", structuredData: { "@context": "https://schema.org", "@graph": [{ "@type": "WebSite", name: "Clearforge", url: blogBase, description: "Human-led AI checkpoints, practical guidance and analysis for controlling AI-assisted work." }, { "@type": "Product", name: "Clearforge Applied AI Gate System — Complete Four-Gate Bundle", description: "Four practical human checkpoints for AI-assisted work, with a bundle-only agent connection safety add-on.", image: canonical("/products/gate-system/complete-bundle/01_Cover.webp"), brand: { "@type": "Brand", name: "Clearforge" }, offers: { "@type": "Offer", priceCurrency: "GBP", price: "58.80", url: "https://payhip.com/b/cmklU", availability: "https://schema.org/InStock" } }] } }));
   const rss = `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Clearforge Features</title><link>${xmlEscape(blogBase)}</link><description>Long-form practical AI analysis from Clearforge.</description>${feedItems.join("")}</channel></rss>`;
   write(path.join(publicDir, "features.xml"), rss);

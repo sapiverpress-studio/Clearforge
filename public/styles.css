@@ -447,6 +447,99 @@ body {
   scroll-margin-top: 24px;
 }
 
+.workspace-offer {
+  scroll-margin-top: 24px;
+  margin: 28px 0;
+  padding: clamp(24px, 5vw, 46px);
+  border: 1px solid rgba(185,155,94,.42);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 95% 5%, rgba(185,155,94,.16), transparent 18rem),
+    rgba(255,253,248,.97);
+  box-shadow: var(--shadow);
+}
+
+.workspace-intro {
+  max-width: 840px;
+}
+
+.workspace-intro h2 {
+  margin-top: 0;
+}
+
+.workspace-stages {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 22px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workspace-stages li {
+  display: flex;
+  padding: 15px 16px;
+  flex-direction: column;
+  gap: 3px;
+  border: 1px solid #ded5c3;
+  border-radius: 14px;
+  background: rgba(255,255,255,.72);
+}
+
+.workspace-stages span {
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.workspace-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.workspace-option {
+  display: flex;
+  max-width: none !important;
+  min-height: 100%;
+  margin: 0 !important;
+  padding: clamp(20px, 3vw, 28px) !important;
+  flex-direction: column;
+  border: 1px solid #d8cfbd !important;
+  box-shadow: none !important;
+}
+
+.workspace-option-primary {
+  border: 2px solid var(--accent) !important;
+  background: linear-gradient(145deg, rgba(232,240,234,.94), rgba(255,253,248,.98)) !important;
+}
+
+.workspace-option h3 {
+  margin: 2px 0 12px;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+}
+
+.workspace-option .button {
+  width: fit-content;
+  margin-top: auto;
+}
+
+.workspace-distinction {
+  margin-top: 20px;
+  padding: 20px;
+  border-left: 4px solid var(--gold);
+  border-radius: 0 16px 16px 0;
+  background: rgba(185,155,94,.1);
+}
+
+.workspace-distinction p {
+  margin-top: 0;
+}
+
+.text-link {
+  font-weight: 800;
+}
+
 .products-showcase > h2 {
   max-width: 760px;
   margin-top: 0;
@@ -657,7 +750,9 @@ ul { padding-left: 1.25rem; }
   .bundle-card,
   .gate-product-grid,
   .gate-trust,
-  .gate-chooser ul {
+  .gate-chooser ul,
+  .workspace-stages,
+  .workspace-options {
     grid-template-columns: 1fr;
   }
 
@@ -676,6 +771,12 @@ ul { padding-left: 1.25rem; }
   .gate-product .button {
     width: 100%;
     justify-content: center;
+  }
+
+  .workspace-option .button {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 }
 

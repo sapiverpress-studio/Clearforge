@@ -28,6 +28,20 @@ function writeMp3FromSpeech(speech, target) {
   if (converted.status !== 0 || !fs.existsSync(target)) throw new Error(`FFmpeg could not create ${target}`);
 }
 
+function probeDuration(file) {
+  const result = spawnSync("ffprobe", [
+    "-v", "error",
+    "-show_entries", "format=duration",
+    "-of", "default=nw=1:nk=1",
+    file
+  ], { encoding: "utf8" });
+  const duration = Number(String(result.stdout || "").trim());
+  if (result.status !== 0 || !Number.isFinite(duration) || duration <= 0) {
+    throw new Error(`FFprobe could not determine the duration of ${file}`);
+  }
+  return duration;
+}
+
 function editionSeed() {
   return [...String(DATE)].reduce((sum, char) => sum + char.charCodeAt(0), 0);
 }
@@ -149,7 +163,7 @@ if (!tiktokNarrationText) {
   throw new Error("TikTok script is required.");
 }
 if (tiktokWords.length < 18 || tiktokWords.length > 30) {
-  throw new Error(`TikTok script must match the measured micro-explainer test (18–30 words); received ${tiktokWords.length}.`);
+  console.warn(`TikTok script is outside the preferred 18–30-word range (${tiktokWords.length} words). The video will match the rendered narration instead of discarding the media pack.`);
 }
 if (/three ai updates|today in ai|latest ai news|clearforge/i.test(tiktokSentences[0] || "")) {
   throw new Error("TikTok opening repeats the failed generic briefing format.");
@@ -166,6 +180,7 @@ const tiktokSpeech = await client.audio.speech.create({
 });
 const tiktokNarrationFile = path.join(outDir, "tiktok-narration.mp3");
 writeMp3FromSpeech(await tiktokSpeech.arrayBuffer(), tiktokNarrationFile);
+const tiktokNarrationDuration = probeDuration(tiktokNarrationFile);
 
 const manifest = {
   version: 5,
@@ -204,7 +219,8 @@ const manifest = {
     response_prompt: tiktokResponsePrompt,
     narration: path.relative(ROOT, tiktokNarrationFile).replaceAll("\\", "/"),
     narration_text: tiktokNarrationText,
-    target_duration_seconds: [8, 12],
+    narration_duration_seconds: Number(tiktokNarrationDuration.toFixed(3)),
+    target_duration_seconds: Number((tiktokNarrationDuration + 0.35).toFixed(3)),
     format: "single_discovery_micro_explainer"
   },
   practical_takeaway: data.practical_takeaway,

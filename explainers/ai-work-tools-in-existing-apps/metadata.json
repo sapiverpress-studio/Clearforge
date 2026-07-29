@@ -3,14 +3,14 @@
   "slug": "ai-work-tools-in-existing-apps",
   "title": "How to adopt AI tools that work inside the apps your team already uses",
   "description": "A practical guide to AI features embedded in docs, search, design, support, project and meeting tools. It explains where the workflow gains come from, why review, disclosure and control matter, and what to check before rolling it out.",
-  "search_question": "How do I adopt AI tools inside the apps my team already uses?",
+  "search_question": "How do I integrate AI tools into my existing business workflows safely?",
   "topic_slugs": [
     "ai-adoption",
     "ai-inside-products",
-    "creators-small-business"
+    "systems-automation"
   ],
   "created": "2026-07-14",
-  "last_updated": "2026-07-28",
+  "last_updated": "2026-07-29",
   "source_editions": [
     "2026-07-09",
     "2026-07-10",
@@ -29,7 +29,9 @@
     "2026-07-23",
     "2026-07-24",
     "2026-07-26",
-    "2026-07-27"
+    "2026-07-27",
+    "2026-07-29",
+    "2026-07-29-considered"
   ],
   "source_urls": [
     "https://openai.com/products/release-notes/",
@@ -59,7 +61,9 @@
     "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/",
     "https://www.zoom.com/en/blog/zoom-ai-on-prem/",
     "https://insight.thomsonreuters.com/mena/business/resources/resource/future-of-professionals-report-2026-thomson-reuters",
-    "https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/articles/artificialintelligenceinukbusinesses/2023to2026"
+    "https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/articles/artificialintelligenceinukbusinesses/2023to2026",
+    "https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/",
+    "https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/"
   ],
   "revisions": [
     {
@@ -141,6 +145,14 @@
         "2026-07-24",
         "2026-07-23",
         "2026-07-20"
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "summary": "Updated to incorporate the latest research on the Model Context Protocol (MCP) stateless architecture, the shift from prompt engineering to 'agent harness' design, and the operational risks of discovery-remediation bottlenecks.",
+      "source_editions": [
+        "2026-07-29-considered",
+        "2026-07-29"
       ]
     }
   ],

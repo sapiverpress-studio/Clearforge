@@ -1,6 +1,6 @@
 # Source notes — How to adopt AI tools that work inside the apps your team already uses
 
-Last checked: 2026-07-28
+Last checked: 2026-07-29
 
 - https://openai.com/products/release-notes/
 - https://openai.com/index/chatgpt-for-your-most-ambitious-work/
@@ -30,6 +30,8 @@ Last checked: 2026-07-28
 - https://www.zoom.com/en/blog/zoom-ai-on-prem/
 - https://insight.thomsonreuters.com/mena/business/resources/resource/future-of-professionals-report-2026-thomson-reuters
 - https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/articles/artificialintelligenceinukbusinesses/2023to2026
+- https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/
+- https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/
 
 ## Revision history
 
@@ -41,3 +43,4 @@ Last checked: 2026-07-28
 - 2026-07-19: Updated the existing workflow guide to reflect newer evidence on embedded AI tools, workflow economics, disclosure, shared-workspace controls and review gates. The revision adds current examples from OpenAI, Google, Canva, Notion and GitHub, and clarifies that rollout details and measured productivity outcomes are often not fully disclosed.
 - 2026-07-19: Updated the guide to reflect newer evidence that AI work tools are becoming workflow layers inside existing apps, with stronger emphasis on task-level measurement, review gates, disclosure, logging and other control points.
 - 2026-07-28: Updated the guide to focus on AI features embedded in existing apps, with new emphasis on task handoffs, disclosure, permissions, and workflow review. Added current examples from Search-connected apps, Vids, ChatGPT Work, Meta AI, Notion, Zoom, Salesforce and Xero, and grounded the update in July 2026 research on transparency, adoption and governance.
+- 2026-07-29: Updated to incorporate the latest research on the Model Context Protocol (MCP) stateless architecture, the shift from prompt engineering to 'agent harness' design, and the operational risks of discovery-remediation bottlenecks.

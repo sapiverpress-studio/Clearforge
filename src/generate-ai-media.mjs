@@ -97,8 +97,19 @@ for (let i = 0; i < stories.length; i++) {
   });
   const b64 = result.data?.[0]?.b64_json;
   if (!b64) throw new Error(`No image returned for story ${i + 1}`);
+  const jpegFile = path.join(outDir, `story-${i + 1}.jpg`);
   const file = path.join(outDir, `story-${i + 1}.png`);
-  fs.writeFileSync(file, Buffer.from(b64, "base64"));
+  fs.writeFileSync(jpegFile, Buffer.from(b64, "base64"));
+  const convertedImage = spawnSync("ffmpeg", [
+    "-hide_banner", "-loglevel", "error", "-y",
+    "-i", jpegFile,
+    "-frames:v", "1",
+    file
+  ], { stdio: "inherit" });
+  fs.unlinkSync(jpegFile);
+  if (convertedImage.status !== 0 || !fs.existsSync(file)) {
+    throw new Error(`FFmpeg could not convert Gemini JPEG for story ${i + 1}`);
+  }
   images.push({
     file: path.relative(ROOT, file).replaceAll("\\", "/"),
     title: stories[i].title,

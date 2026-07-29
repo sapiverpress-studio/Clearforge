@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-29-considered",
+    "kind": "daily",
+    "title": "The Remediation Bottleneck: When AI Discovery Outpaces Human Capacity",
+    "description": "This story highlights a critical, under-discussed operational risk in AI adoption: the imbalance between automated discovery and human remediation, which is essential for our audience to understand before scaling their own workflows.",
+    "published": "2026-07-29T07:00:00+01:00",
+    "duration": "00:05:12",
+    "size": 4728237,
+    "video_size": 19034368,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-29-considered.mp3",
+    "video_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-29-considered.mp4",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-29-considered.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-29-considered.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-29-considered.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-29-considered.html",
+    "source_dir": "drafts/2026-07-29-considered/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-29",
     "kind": "daily",
     "title": "Beyond the Prompt: The Shift to AI Workflow Harnesses",

@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-29-considered",
+  "base_date": "2026-07-29",
+  "angle": "considered_question",
+  "editorial_theme": {
+    "day": "Wednesday",
+    "date": "2026-07-29",
+    "slug": "systems-automation",
+    "title": "Systems and automation",
+    "focus": "Systems, automation, agents, reliability, review loops, handoffs, repeatable processes, governance, failure points and human accountability.",
+    "instruction": "Emphasise what should and should not be automated. Explain where human checks, logs, approvals and fallbacks belong."
+  },
+  "reused_base_run": "base-current-2026-07-29",
+  "source_urls_reused": [
+    "https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/",
+    "https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/",
+    "https://www.propublica.org/article/anthropic-claude-mythos-microsoft-bugs-vulnerabilities",
+    "https://www.anthropic.com/news/cognizant-anthropic-expansion"
+  ],
+  "passed": true
+}

@@ -1,0 +1,139 @@
+{
+  "generated_at": "2026-07-29T17:03:03.454Z",
+  "story_assessments": [
+    {
+      "story_index": 0,
+      "story_title": "The Model Context Protocol goes stateless",
+      "target_audience": "Infrastructure engineers and solo developers",
+      "audience_problem_or_desire": "Securing AI agent traffic without bespoke middleware",
+      "interest_signal": "Standardization of AI security",
+      "stop_reason": "Technical infrastructure focus is less immediate for solo operators than workflow output",
+      "promised_payoff": "Simplified security architecture",
+      "proof_point": "AWS support for MCP 2026-07-28 spec",
+      "search_phrases": [
+        "Model Context Protocol stateless",
+        "secure AI agent traffic",
+        "AWS Bedrock AgentCore Gateway"
+      ],
+      "scores": {
+        "audience_fit": 6,
+        "practical_consequence": 7,
+        "searchability": 8,
+        "stranger_usefulness": 6,
+        "novelty": 7,
+        "visual_potential": 5,
+        "discussion_potential": 5,
+        "short_form_clarity": 7
+      },
+      "overall_score": 6,
+      "score_reason": "Important for infrastructure but lacks the immediate 'pre-send' urgency for solo operators."
+    },
+    {
+      "story_index": 1,
+      "story_title": "GitHub's shift to the 'agent harness'",
+      "target_audience": "Solo developers and freelancers",
+      "audience_problem_or_desire": "Improving AI coding productivity",
+      "interest_signal": "Workflow optimization",
+      "stop_reason": "Focuses on productivity rather than the critical 'pre-send' safety check",
+      "promised_payoff": "Reduced review costs",
+      "proof_point": "GitHub architectural guidance on agent harnesses",
+      "search_phrases": [
+        "GitHub Copilot agent harness",
+        "AI coding productivity",
+        "AI review gates"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 8,
+        "searchability": 7,
+        "stranger_usefulness": 8,
+        "novelty": 7,
+        "visual_potential": 6,
+        "discussion_potential": 7,
+        "short_form_clarity": 8
+      },
+      "overall_score": 7,
+      "score_reason": "Strong practical advice for solo operators building AI-assisted workflows."
+    },
+    {
+      "story_index": 2,
+      "story_title": "The Microsoft 'mad dash' bottleneck",
+      "target_audience": "Freelancers and solo operators",
+      "audience_problem_or_desire": "Avoiding operational crises from AI output",
+      "interest_signal": "Risk management in AI workflows",
+      "stop_reason": "None; this is the most critical 'pre-send' lesson for the target audience.",
+      "promised_payoff": "Preventing operational bottlenecks",
+      "proof_point": "ProPublica report on Claude Mythos and Microsoft SharePoint",
+      "search_phrases": [
+        "AI remediation bottleneck",
+        "AI discovery vs human patching",
+        "Claude Mythos Microsoft bugs"
+      ],
+      "scores": {
+        "audience_fit": 10,
+        "practical_consequence": 10,
+        "searchability": 9,
+        "stranger_usefulness": 10,
+        "novelty": 8,
+        "visual_potential": 8,
+        "discussion_potential": 10,
+        "short_form_clarity": 10
+      },
+      "overall_score": 10,
+      "score_reason": "Directly addresses the 'pre-send' check requirement with a clear, high-stakes example."
+    }
+  ],
+  "platform_selections": {
+    "tiktok": {
+      "story_index": 2,
+      "story_title": "The Microsoft 'mad dash' bottleneck",
+      "target_audience": "Freelancers and solo operators",
+      "format": "Micro-explainer",
+      "opening": "What happens when your AI finds bugs faster than you can fix them?",
+      "payoff": "Stop automating discovery until you have a triage system to handle the results.",
+      "selection_reason": "High-stakes, relatable problem that demands an immediate, concrete check.",
+      "platform_fit_score": 10
+    },
+    "youtube": {
+      "story_index": 2,
+      "story_title": "The Microsoft 'mad dash' bottleneck",
+      "target_audience": "Freelancers and solo operators",
+      "format": "Micro-explainer",
+      "opening": "What happens when AI finds bugs faster than you can fix them?",
+      "payoff": "Build a triage gate before you turn the automation on.",
+      "selection_reason": "Allows for a deeper explanation of the 'remediation bottleneck' concept.",
+      "platform_fit_score": 10
+    },
+    "facebook": {
+      "story_index": 2,
+      "story_title": "The Microsoft 'mad dash' bottleneck",
+      "target_audience": "Freelancers and solo operators",
+      "format": "Question-led post",
+      "opening": "Have you considered the 'remediation bottleneck' in your AI workflow?",
+      "payoff": "Automating discovery without a triage system creates a crisis.",
+      "selection_reason": "Encourages professional discussion on workflow management.",
+      "platform_fit_score": 9
+    },
+    "pinterest": {
+      "story_index": 2,
+      "story_title": "The Microsoft 'mad dash' bottleneck",
+      "target_audience": "Freelancers and solo operators",
+      "format": "Checklist-style guide",
+      "opening": "Are you automating your way into a crisis?",
+      "payoff": "Learn why AI discovery needs a human triage gate.",
+      "selection_reason": "Highly searchable and visual potential for process diagrams.",
+      "platform_fit_score": 9
+    },
+    "linkedin": {
+      "story_index": 2,
+      "story_title": "The Microsoft 'mad dash' bottleneck",
+      "target_audience": "Freelancers and solo operators",
+      "format": "Professional insight",
+      "opening": "Have you considered the 'remediation bottleneck' in your AI strategy?",
+      "payoff": "Prioritize the reliability of your human review gates over discovery speed.",
+      "selection_reason": "Strong professional lesson on operational accountability.",
+      "platform_fit_score": 10
+    }
+  },
+  "overall_reasoning": "The ProPublica report on Microsoft's 'mad dash' provides the most concrete, evidence-based lesson for solo operators: the danger of discovery outpacing remediation. This story was selected across all platforms because it directly challenges the assumption that 'more AI discovery' equals 'more productivity,' providing a clear, actionable lesson on the necessity of triage gates."
+}

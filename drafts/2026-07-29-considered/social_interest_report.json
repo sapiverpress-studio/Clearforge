@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-29-considered",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "What happens when your AI finds bugs faster than you can fix them?",
+      "words": 51,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "What happens when AI finds bugs faster than you can fix them?",
+      "words": 121,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Have you considered the 'remediation bottleneck' in your AI workflow?",
+      "words": 97,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Have you considered the 'remediation bottleneck' in your AI strategy?",
+      "words": 85,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "The AI Remediation Bottleneck",
+    "title_words": 4,
+    "description_words": 24
+  },
+  "warnings": []
+}

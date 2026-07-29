@@ -261,7 +261,7 @@ jobs:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_IMAGE_MODEL: ${{ vars.GEMINI_IMAGE_MODEL || 'gemini-3.1-flash-image' }}
-          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVELAB_API }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVENLAB_API }}
           ELEVENLABS_VOICE_ID: w9xM4Spfmuw28ZXAirWK
           ELEVENLABS_MODEL_ID: eleven_multilingual_v2
         run: npm run media:ai

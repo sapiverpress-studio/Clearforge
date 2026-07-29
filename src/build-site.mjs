@@ -131,6 +131,107 @@ function relatedBlock(entry, allEntries) {
 function newsletterCallout() {
   return `<section class="newsletter-callout"><h2>Get the weekly Clearforge digest</h2><p>One calm email covering what changed, why it matters and what is worth testing. No daily inbox noise.</p><p><a class="button" href="/newsletter/">Join the weekly digest</a></p></section>`;
 }
+function productGallery(folder, filenames, title) {
+  return `<div class="gate-gallery" aria-label="${escapeHtml(title)} product previews">${filenames.map((filename, index) => `<a href="/products/gate-system/${folder}/${filename}.webp" target="_blank" rel="noopener noreferrer"><img src="/products/gate-system/${folder}/${filename}.webp" alt="${escapeHtml(title)} preview ${index + 1} of ${filenames.length}" width="1200" height="1200" loading="${index === 0 ? "eager" : "lazy"}"></a>`).join("")}</div>`;
+}
+function gateSystemStorefront() {
+  const gates = [
+    {
+      number: "Gate 1",
+      folder: "opportunity-gate",
+      title: "Opportunity Gate",
+      question: "Should AI be used for this task at all?",
+      description: "Test the value, suitability, sensitivity and human responsibility before time, money or information is committed.",
+      url: "https://payhip.com/b/4rcSt",
+      images: ["01_Cover", "02_What_It_Does", "03_What_You_Receive"]
+    },
+    {
+      number: "Gate 2",
+      folder: "workflow-control-gate",
+      title: "Workflow Control Gate",
+      question: "Who controls each step once AI enters the workflow?",
+      description: "Define ownership, boundaries, approval points, evidence and fallback routes before AI-assisted work moves forward.",
+      url: "https://payhip.com/b/qBPip",
+      images: ["01_Cover", "02_What_It_Does", "03_What_You_Receive"]
+    },
+    {
+      number: "Gate 3",
+      folder: "output-release-gate",
+      title: "Output Release Gate",
+      question: "Is this safe and ready to publish, send or use?",
+      description: "Check evidence, names, figures, privacy, ownership, disclosure and readiness before AI-assisted output leaves your control.",
+      url: "https://payhip.com/b/pkSEY",
+      images: ["01_Cover", "02_What_It_Does", "03_What_You_Receive"]
+    },
+    {
+      number: "Gate 4",
+      folder: "outcome-review-gate",
+      title: "Outcome Review Gate",
+      question: "Did the workflow produce a worthwhile result?",
+      description: "Review the real outcome and decide whether to continue, change, pause or retire the workflow.",
+      url: "https://payhip.com/b/rgFXP",
+      images: ["01_Cover", "02_What_It_Does", "03_What_You_Receive"]
+    }
+  ];
+  const rail = gates.map((gate) => `<a href="#${gate.folder}"><span>${gate.number}</span><strong>${gate.title}</strong></a>`).join("");
+  const chooser = gates.map((gate) => `<li><a href="#${gate.folder}"><strong>${escapeHtml(gate.question)}</strong><span>Start with ${escapeHtml(gate.title)}</span></a></li>`).join("");
+  const cards = gates.map((gate) => `<article class="gate-product" id="${gate.folder}">
+    ${productGallery(gate.folder, gate.images, gate.title)}
+    <div class="gate-product-copy">
+      <p class="product-kicker">${gate.number} · £22.80 including VAT</p>
+      <h3>${gate.title}</h3>
+      <p class="gate-question">${gate.question}</p>
+      <p>${gate.description}</p>
+      <a class="button button-secondary" href="${gate.url}" target="_blank" rel="noopener noreferrer">Get ${gate.title} — £22.80</a>
+    </div>
+  </article>`).join("");
+  return `<section class="gate-hero" id="products" aria-labelledby="gate-system-title">
+    <div class="gate-hero-copy">
+      <p class="eyebrow">Clearforge Applied AI Gate System</p>
+      <h1 id="gate-system-title">Put a human at every gate before AI-assisted work goes out.</h1>
+      <p>Four practical checkpoints for deciding whether AI belongs in a task, controlling the workflow, checking the output and reviewing what happened afterwards.</p>
+      <div class="report-actions">
+        <a class="button" href="#complete-gate-bundle">Get all four + bonus — £58.80</a>
+        <a class="button button-secondary" href="#choose-a-gate">Choose one Gate</a>
+      </div>
+      <p class="price-note">Customer price shown including UK VAT. Payhip handles checkout and delivery.</p>
+    </div>
+    ${productGallery("complete-bundle", ["01_Cover"], "Complete Applied AI Gate System")}
+  </section>
+  <nav class="gate-rail" aria-label="The four Clearforge Gates">${rail}<span class="gate-rail-bonus"><small>Bundle bonus</small><strong>Agent Connection Safety add-on</strong></span></nav>
+  <section class="posts gate-chooser" id="choose-a-gate">
+    <p class="eyebrow">Choose by the problem in front of you</p>
+    <h2>Which Gate do you need?</h2>
+    <ul>${chooser}</ul>
+  </section>
+  <section class="bundle-card" id="complete-gate-bundle" aria-labelledby="bundle-title">
+    <div class="bundle-copy">
+      <p class="product-kicker">Complete system · £58.80 including VAT</p>
+      <h2 id="bundle-title">All four Gates, plus the bundle-only safety add-on.</h2>
+      <p>Carry work through the full sequence or use the right Gate when a specific problem appears.</p>
+      <ul>
+        <li>Four standalone, local-first HTML Gate tools</li>
+        <li>Supporting workbooks, quick-start material and completed examples</li>
+        <li>Clear records for human review and decision-making</li>
+        <li>Clearforge AI Agent Connection Safety Gate add-on at no extra cost</li>
+      </ul>
+      <p class="saving"><strong>Pay £58.80 instead of £91.20</strong> for the four core Gates bought separately—a £32.40 saving—plus the bundle-only add-on.</p>
+      <p class="digital-notice"><strong>Digital download:</strong> supplied through Payhip. No physical item is shipped.</p>
+      <a class="button" href="https://payhip.com/b/cmklU" target="_blank" rel="noopener noreferrer">Get the complete system — £58.80</a>
+    </div>
+    ${productGallery("complete-bundle", ["01_Cover", "02_Four_Stage_System", "03_What_You_Receive"], "Complete Applied AI Gate System bundle")}
+  </section>
+  <section class="individual-gates" aria-labelledby="individual-gates-title">
+    <p class="eyebrow">Start with the point where work is getting stuck</p>
+    <h2 id="individual-gates-title">Individual Gates — £22.80 each</h2>
+    <div class="gate-product-grid">${cards}</div>
+  </section>
+  <section class="gate-trust" aria-label="How the Clearforge Gates work">
+    <div><p class="product-kicker">Local-first</p><h3>Your working information stays in your browser.</h3><p>The Gate tools are standalone HTML files. No Clearforge account or subscription is required.</p></div>
+    <div><p class="product-kicker">Human decisions</p><h3>The tool structures judgement; it does not replace it.</h3><p>Each Gate helps a named person record checks, evidence and the decision made.</p></div>
+    <div><p class="product-kicker">Plain scope</p><h3>Practical operating tools, not legal advice.</h3><p>The Gates support more consistent review but do not guarantee compliance or remove professional responsibility.</p></div>
+  </section>`;
+}
 function pageTemplate(title, description, body, options = {}) {
   const pathname = options.pathname || "/";
   const pageUrl = canonical(pathname);
@@ -173,6 +274,8 @@ function pageTemplate(title, description, body, options = {}) {
     <p>Human-led. AI-empowered.</p>
     <nav aria-label="Site links">
       <a href="/#products">Products</a>
+      <a href="/#latest-guidance">Latest guidance</a>
+      <a href="/guides/">Guides</a>
       <a href="/topics/">Topics</a>
       <a href="/reports/">Reports</a>
       <a href="${podcastPage}">Podcast</a>
@@ -300,11 +403,12 @@ function main() {
   const latestBrief = briefs[0];
   const latestFeature = features[0];
   const latestSection = latestBrief
-    ? `<section class="posts"><p class="eyebrow">Latest Clearforge briefing</p><h2><a href="${latestBrief.url}">${escapeHtml(latestBrief.title)}</a></h2><p>${escapeHtml(latestBrief.description)}</p><div class="report-actions"><a class="button" href="${latestBrief.url}">Read the latest brief</a><a class="button button-secondary" href="${podcastPage}">Listen to the latest episode</a></div></section>`
+    ? `<section class="posts latest-guidance" id="latest-guidance"><p class="eyebrow">Latest practical guidance</p><h2><a href="${latestBrief.url}">${escapeHtml(latestBrief.title)}</a></h2><p>${escapeHtml(latestBrief.description)}</p><div class="report-actions"><a class="button" href="${latestBrief.url}">Read the latest brief</a><a class="button button-secondary" href="${podcastPage}">Listen to the latest episode</a></div></section>`
     : "";
   const listenSection = `<section class="posts"><p class="eyebrow">Listen on the go</p><h2>Clearforge AI Briefing</h2><p>Hear the practical breakdown in your podcast app. Search for <strong>Clearforge AI Briefing</strong>, or open the Clearforge podcast page.</p><p><a class="button" href="${podcastPage}">Open the podcast</a></p></section>`;
-  const indexBody = `<section class="hero"><p class="eyebrow">Practical AI news and learning</p><h1>Clear AI learning from noisy AI news.</h1><p>Clearforge explains what changed, who is adopting it, why it matters and what is worth testing.</p><div class="report-actions">${latestBrief ? `<a class="button" href="${latestBrief.url}">Read today’s brief</a>` : `<a class="button" href="/topics/">Explore topics</a>`}<a class="button button-secondary" href="${podcastPage}">Listen to the podcast</a></div></section>${latestSection}${listenSection}<section class="posts"><h2>Feature Analysis</h2>${features.length ? `<ul>${features.slice(0, 8).map((entry) => `<li><a href="${entry.url}">${escapeHtml(entry.title)}</a><span> — ${escapeHtml(entry.date)}</span></li>`).join("")}</ul>${latestFeature ? `<p><a class="button button-secondary" href="${latestFeature.url}">Read the latest feature</a></p>` : ""}` : "<p>No approved features yet.</p>"}</section><section class="posts"><h2>Explore by topic</h2><p>Follow durable coverage of AI adoption, everyday products, creator workflows, automation, models and accountability.</p><p><a class="button" href="/topics/">Browse all topics</a></p></section><section class="posts"><h2>Clearforge Reports</h2><p>Go deeper with weekly AI learning briefs and standalone research papers.</p><p><a class="button" href="/reports/">Browse reports</a></p></section>${newsletterCallout()}`;
-  write(path.join(publicDir, "index.html"), pageTemplate("Clearforge", "Practical AI news, adoption analysis, podcast briefings and workflow learning without the hype.", indexBody, { pathname: "/", structuredData: { "@context": "https://schema.org", "@type": "WebSite", name: "Clearforge", url: blogBase, description: "Practical AI news, adoption analysis, podcast briefings and workflow learning without the hype.", potentialAction: { "@type": "SearchAction", target: `${blogBase}/topics/?q={search_term_string}`, "query-input": "required name=search_term_string" } } }));
+  const featureSection = `<section class="posts"><p class="eyebrow">Analysis behind the tools</p><h2>Recent Clearforge articles</h2>${features.length ? `<ul>${features.slice(0, 3).map((entry) => `<li><a href="${entry.url}">${escapeHtml(entry.title)}</a><span> — ${escapeHtml(datePart(entry.date))}</span><p>${escapeHtml(entry.description)}</p></li>`).join("")}</ul>${latestFeature ? `<p><a class="button button-secondary" href="${latestFeature.url}">Read the latest feature</a></p>` : ""}` : "<p>No approved features yet.</p>"}</section>`;
+  const indexBody = `${gateSystemStorefront()}${latestSection}${featureSection}${listenSection}<section class="posts"><h2>Explore the wider Clearforge library</h2><p>Use the topic archive and evergreen guides to understand the changing AI problems behind the Gates.</p><div class="report-actions"><a class="button" href="/topics/">Browse topics</a><a class="button button-secondary" href="/guides/">Read evergreen guides</a><a class="button button-secondary" href="/reports/">Open reports</a></div></section>${newsletterCallout()}`;
+  write(path.join(publicDir, "index.html"), pageTemplate("Clearforge Applied AI Gate System", "Human-led AI checkpoints, practical guidance and Clearforge analysis for controlling AI-assisted work.", indexBody, { pathname: "/", structuredData: { "@context": "https://schema.org", "@graph": [{ "@type": "WebSite", name: "Clearforge", url: blogBase, description: "Human-led AI checkpoints, practical guidance and analysis for controlling AI-assisted work." }, { "@type": "Product", name: "Clearforge Applied AI Gate System — Complete Four-Gate Bundle", description: "Four practical human checkpoints for AI-assisted work, with a bundle-only agent connection safety add-on.", image: canonical("/products/gate-system/complete-bundle/01_Cover.webp"), brand: { "@type": "Brand", name: "Clearforge" }, offers: { "@type": "Offer", priceCurrency: "GBP", price: "58.80", url: "https://payhip.com/b/cmklU", availability: "https://schema.org/InStock" } }] } }));
   const rss = `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Clearforge Features</title><link>${xmlEscape(blogBase)}</link><description>Long-form practical AI analysis from Clearforge.</description>${feedItems.join("")}</channel></rss>`;
   write(path.join(publicDir, "features.xml"), rss);
   buildDiscoveryFiles(entries);

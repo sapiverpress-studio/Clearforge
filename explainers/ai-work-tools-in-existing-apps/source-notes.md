@@ -1,6 +1,6 @@
 # Source notes — How to adopt AI tools that work inside the apps your team already uses
 
-Last checked: 2026-07-28
+Last checked: 2026-07-29
 
 - https://openai.com/products/release-notes/
 - https://openai.com/index/chatgpt-for-your-most-ambitious-work/
@@ -30,6 +30,7 @@ Last checked: 2026-07-28
 - https://www.zoom.com/en/blog/zoom-ai-on-prem/
 - https://insight.thomsonreuters.com/mena/business/resources/resource/future-of-professionals-report-2026-thomson-reuters
 - https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/articles/artificialintelligenceinukbusinesses/2023to2026
+- https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/
 
 ## Revision history
 
@@ -41,3 +42,4 @@ Last checked: 2026-07-28
 - 2026-07-19: Updated the existing workflow guide to reflect newer evidence on embedded AI tools, workflow economics, disclosure, shared-workspace controls and review gates. The revision adds current examples from OpenAI, Google, Canva, Notion and GitHub, and clarifies that rollout details and measured productivity outcomes are often not fully disclosed.
 - 2026-07-19: Updated the guide to reflect newer evidence that AI work tools are becoming workflow layers inside existing apps, with stronger emphasis on task-level measurement, review gates, disclosure, logging and other control points.
 - 2026-07-28: Updated the guide to focus on AI features embedded in existing apps, with new emphasis on task handoffs, disclosure, permissions, and workflow review. Added current examples from Search-connected apps, Vids, ChatGPT Work, Meta AI, Notion, Zoom, Salesforce and Xero, and grounded the update in July 2026 research on transparency, adoption and governance.
+- 2026-07-29: Updated the guide to reflect the shift from standalone chat tools to integrated, workflow-based AI systems. Added practical guidance on human-in-the-loop review, auditability, and the importance of administrative controls in enterprise settings.

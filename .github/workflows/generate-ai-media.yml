@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: "24"
       - run: npm install
-      - name: Install FFmpeg for Gemini narration
+      - name: Install FFmpeg for media inspection
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg
@@ -29,8 +29,9 @@ jobs:
           CLEARFORGE_DATE: ${{ github.event.inputs.date_override }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_IMAGE_MODEL: gemini-3.1-flash-image
-          GEMINI_TTS_MODEL: gemini-3.1-flash-tts-preview
-          GEMINI_TTS_VOICE: Kore
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVELAB_API }}
+          ELEVENLABS_VOICE_ID: w9xM4Spfmuw28ZXAirWK
+          ELEVENLABS_MODEL_ID: eleven_multilingual_v2
         run: npm run media:ai
       - name: Export reviewed bundle
         env:

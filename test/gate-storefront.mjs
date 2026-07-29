@@ -51,6 +51,10 @@ for (const text of workspaceText) {
 assert.ok(homepage.includes('href="https://sapiver-press.kit.com/5147ce2817"'), "Homepage is missing the clean Kit workspace link.");
 assert.ok(!homepage.includes("\u2060"), "Homepage contains an invisible word-joiner character.");
 assert.ok(!homepage.includes("\ufffd"), "Homepage contains a replacement character.");
+assert.ok(
+  homepage.indexOf('id="gate-workspace"') < homepage.indexOf('id="choose-a-gate"'),
+  "Gate Workspace offer must appear before the detailed Gate chooser and product sections."
+);
 
 const imageRoot = path.join(root, "public", "products", "gate-system");
 const images = fs.readdirSync(imageRoot, { recursive: true })

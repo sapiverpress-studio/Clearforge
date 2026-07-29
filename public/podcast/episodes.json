@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-29",
+    "kind": "daily",
+    "title": "Beyond the Prompt: The Shift to AI Workflow Harnesses",
+    "description": "This story provides the most actionable, high-leverage advice for our audience, moving the conversation from 'prompt engineering' to professional-grade workflow architecture.",
+    "published": "2026-07-29T07:00:00+01:00",
+    "duration": "00:05:12",
+    "size": 4698285,
+    "video_size": 16492353,
+    "audio_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-29.mp3",
+    "video_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-29.mp4",
+    "episode_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-29.html",
+    "transcript_url": "https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-29.txt",
+    "related_article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-29.html",
+    "related_feature_url": "https://clearforge-daily-brief.netlify.app/features/2026-07-29.html",
+    "source_dir": "drafts/2026-07-29/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-28",
     "kind": "daily",
     "title": "AI at work is moving from drafting to handoffs, checks and role blur",

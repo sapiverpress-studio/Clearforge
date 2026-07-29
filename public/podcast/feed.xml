@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>
     <copyright>Clearforge</copyright>
     <generator>Clearforge hosted podcast feed</generator>
-    <lastBuildDate>Tue, 28 Jul 2026 08:50:35 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2026 10:23:16 GMT</lastBuildDate>
     <atom:link href="https://clearforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Clearforge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://clearforge-daily-brief.netlify.app/podcast/cover.png"/>
+    <item>
+      <title>Beyond the Prompt: The Shift to AI Workflow Harnesses</title>
+      <description>This story provides the most actionable, high-leverage advice for our audience, moving the conversation from &apos;prompt engineering&apos; to professional-grade workflow architecture.</description>
+      <content:encoded><![CDATA[<p>This story provides the most actionable, high-leverage advice for our audience, moving the conversation from &#039;prompt engineering&#039; to professional-grade workflow architecture.</p><p><strong>Read alongside this episode:</strong> <a href="https://clearforge-daily-brief.netlify.app/posts/2026-07-29.html">daily briefing</a> · <a href="https://clearforge-daily-brief.netlify.app/features/2026-07-29.html">feature analysis</a></p><p><a href="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-29.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-29.html</link>
+      <guid isPermaLink="false">clearforge:2026-07-29</guid>
+      <pubDate>Wed, 29 Jul 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-29.mp3" length="4698285" type="audio/mpeg"/>
+      <itunes:author>Clearforge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:05:12</itunes:duration>
+      <podcast:transcript url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-29.txt" type="text/plain"/>
+    </item>
     <item>
       <title>AI at work is moving from drafting to handoffs, checks and role blur</title>
       <description>This is the clearest and strongest story for today’s edition because it directly matches the headline and practical takeaway. It is based on a primary OpenAI research release, it gives a concrete numeric signal about how people are using AI at work, and it points to the real operational issue for small businesses and creators: not just making drafts faster, but deciding where the human handoff belongs.</description>

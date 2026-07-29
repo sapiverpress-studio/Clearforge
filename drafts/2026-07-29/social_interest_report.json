@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-29",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Are you still wasting time on secret AI prompts?",
+      "words": 53,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "What happens when AI finds bugs faster than you can fix them?",
+      "words": 140,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "How do you ensure your AI-assisted client work is actually safe to send?",
+      "words": 101,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Can your review process keep up with AI-generated output?",
+      "words": 97,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "How to Build a Reliable AI Coding Harness",
+    "title_words": 8,
+    "description_words": 31
+  },
+  "warnings": []
+}

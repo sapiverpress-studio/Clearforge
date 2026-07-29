@@ -1,0 +1,46 @@
+[
+  {
+    "source_name": "AWS Machine Learning Blog",
+    "title": "How AgentCore Gateway supports the MCP 2026-07-28 spec",
+    "url": "https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/",
+    "published_date": "2026-07-28",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "models_and_infrastructure",
+    "evidence_basis": "Official AWS technical blog post detailing the integration of the 2026-07-28 MCP specification into Amazon Bedrock AgentCore Gateway.",
+    "confirmed_fact": "On July 28, 2026, the Model Context Protocol (MCP) team published its 2026-07-28 specification, converting MCP into a stateless protocol running over standard HTTP infrastructure, adding OAuth 2.0/OpenID Connect enterprise authorization, and establishing lifecycle guarantees. AWS announced immediate opt-in support for the spec in Amazon Bedrock AgentCore Gateway via a single UpdateGateway API call.",
+    "interpretation": "Transitioning MCP to stateless requests removes persistent session management bottlenecks, enabling enterprise engineering teams to secure and scale AI agent traffic using standard web load balancers, firewalls, and identity providers rather than bespoke agent middleware."
+  },
+  {
+    "source_name": "The GitHub Blog",
+    "title": "The harness is all you need (mostly)",
+    "url": "https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/",
+    "published_date": "2026-07-27",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "coding_and_building",
+    "evidence_basis": "GitHub engineering blog post analyzing the architectural factors influencing AI coding productivity and review costs.",
+    "confirmed_fact": "GitHub published technical architecture guidance on July 27, 2026, demonstrating that developer productivity gains from AI depend on the agent harness—repository context, issue tracking, terminal permission boundaries, and review gates—rather than prompt engineering hacks. Separately, GitHub detailed how re-architecting Copilot code review around pull request evidence reduced review costs by 20% while preserving review accuracy.",
+    "interpretation": "Software automation is shifting focus from prompt optimization to workflow containment, ensuring AI agents operate within defined repositories, explicit instruction files, and strict human pull request review gates."
+  },
+  {
+    "source_name": "ProPublica",
+    "title": "Anthropic's New AI Model Can Identify More Software Bugs Than Ever. Microsoft Is Struggling to Fix Them Fast Enough.",
+    "url": "https://www.propublica.org/article/anthropic-claude-mythos-microsoft-bugs-vulnerabilities",
+    "published_date": "2026-07-29",
+    "coverage_lane": "human_impact",
+    "topic_category": "policy_safety_and_security",
+    "evidence_basis": "Internal Microsoft meeting recordings, internal presentation slides, and statements from engineering manager Hans Andersen from mid-May 2026, reviewed and reported by ProPublica journalists Renee Dudley and Doris Burke on July 29, 2026.",
+    "confirmed_fact": "Internal Microsoft meeting recordings reveal that Anthropic's pre-release Claude Mythos model discovered 90 critical bugs and 141 important vulnerabilities in Microsoft SharePoint during April 2026 alone. Microsoft engineering managers confirmed that the AI model identified software flaws faster than human development teams could write, test, and release patches, triggering an internal \"mad dash\" to remediate code.",
+    "interpretation": "Unchecked AI automation in vulnerability discovery creates severe operational bottlenecks when human remediation and patch verification pipelines cannot keep pace, demonstrating that automated analysis tools require structured triage queues and human testing fallbacks."
+  },
+  {
+    "source_name": "Anthropic Newsroom",
+    "title": "Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients",
+    "url": "https://www.anthropic.com/news/cognizant-anthropic-expansion",
+    "published_date": "2026-07-27",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "workplace_and_business",
+    "evidence_basis": "Official press release from Anthropic detailing the expansion of the partnership with Cognizant and reported performance metrics from initial deployments.",
+    "confirmed_fact": "Anthropic and Cognizant announced an expanded enterprise partnership on July 27, 2026, embedding Claude into Cognizant's Flowsource engineering platform and Neuro platforms. Over 30,000 Cognizant associates completed Claude training, and Cognizant introduced a \"Frontier Certified\" workforce model. Cognizant reported an initial deployment where an agentic contract-intelligence system for a biopharma client reduced contract review duration by up to 40% with over 88% extraction accuracy.",
+    "interpretation": "Enterprise adoption of complex AI agents relies on specialized systems integrators to enforce domain-specific governance, spec-driven development standards, and human-in-the-loop validation before agent outputs reach production environments."
+  }
+]

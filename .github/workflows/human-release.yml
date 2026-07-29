@@ -81,21 +81,34 @@ jobs:
             exit 1
           fi
           ARCHIVE="${RUNNER_TEMP}/clearforge-candidate.zip"
+          STAGE="${RUNNER_TEMP}/clearforge-candidate"
           gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > "${ARCHIVE}"
-          rm -rf "drafts/${CLEARFORGE_DATE}" "media/${CLEARFORGE_DATE}" public
-          unzip -q "${ARCHIVE}" -d .
-          test -f "drafts/${CLEARFORGE_DATE}/candidate-manifest.json"
+          mkdir -p "${STAGE}"
+          unzip -q "${ARCHIVE}" -d "${STAGE}"
+          test -f "${STAGE}/drafts/${CLEARFORGE_DATE}/candidate-manifest.json"
+          echo "CLEARFORGE_CANDIDATE_STAGE=${STAGE}" >> "$GITHUB_ENV"
 
       - name: Refuse a candidate built from an outdated production state
         shell: bash
         run: |
           set -euo pipefail
-          SOURCE_COMMIT="$(jq -r '.source_commit // empty' "drafts/${CLEARFORGE_DATE}/candidate-manifest.json")"
+          MANIFEST="${CLEARFORGE_CANDIDATE_STAGE}/drafts/${CLEARFORGE_DATE}/candidate-manifest.json"
+          SOURCE_COMMIT="$(jq -r '.source_commit // empty' "${MANIFEST}")"
           CURRENT_COMMIT="$(git rev-parse HEAD)"
           if [ -z "${SOURCE_COMMIT}" ] || [ "${SOURCE_COMMIT}" != "${CURRENT_COMMIT}" ]; then
             echo "::error::Production changed after this candidate was generated. Generate and review a fresh candidate so an older site cannot overwrite newer work."
             exit 1
           fi
+          while IFS= read -r deleted; do
+            [ -z "${deleted}" ] && continue
+            if [[ "${deleted}" != public/* || "${deleted}" == *".."* ]]; then
+              echo "::error::Unsafe deletion path in candidate: ${deleted}"
+              exit 1
+            fi
+            rm -f -- "${deleted}"
+          done < <(jq -r '.deleted_paths[]?' "${MANIFEST}")
+          rm -rf "drafts/${CLEARFORGE_DATE}" "media/${CLEARFORGE_DATE}"
+          cp -a "${CLEARFORGE_CANDIDATE_STAGE}/." .
 
       - name: Verify file hashes and record human approval
         env:

@@ -12,6 +12,7 @@ const structuredPath = path.join(draftDir, "structured_output.json");
 const outDir = path.join(ROOT, "media", DATE);
 
 if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required.");
+if (!process.env.ELEVENLABS_API_KEY) throw new Error("ELEVENLABS_API_KEY is required for Irene social narration.");
 if (!fs.existsSync(structuredPath)) throw new Error(`Missing ${structuredPath}`);
 
 const data = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
@@ -19,13 +20,42 @@ const client = new OpenAI();
 fs.mkdirSync(outDir, { recursive: true });
 
 const spokenCta = "Before you send AI-assisted work to a client, use the Clearforge AI Output Release Gate through the link in our bio.";
+const IRENE_VOICE_ID = "w9xM4Spfmuw28ZXAirWK";
+const elevenLabsVoiceId = process.env.ELEVENLABS_VOICE_ID || IRENE_VOICE_ID;
+const elevenLabsModelId = process.env.ELEVENLABS_MODEL_ID || "eleven_multilingual_v2";
 
-function writeMp3FromSpeech(speech, target) {
-  const wav = `${target}.wav`;
-  fs.writeFileSync(wav, Buffer.from(speech));
-  const converted = spawnSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", "-i", wav, "-codec:a", "libmp3lame", "-b:a", "128k", target], { stdio: "inherit" });
-  fs.unlinkSync(wav);
-  if (converted.status !== 0 || !fs.existsSync(target)) throw new Error(`FFmpeg could not create ${target}`);
+if (elevenLabsVoiceId !== IRENE_VOICE_ID) {
+  throw new Error("Voice substitution blocked: Clearforge social narration must use Irene.");
+}
+
+async function createIreneSpeech(text, target) {
+  const response = await fetch(
+    `https://api.elevenlabs.io/v1/text-to-speech/${IRENE_VOICE_ID}?output_format=mp3_44100_128`,
+    {
+      method: "POST",
+      headers: {
+        "xi-api-key": process.env.ELEVENLABS_API_KEY,
+        "Content-Type": "application/json",
+        Accept: "audio/mpeg"
+      },
+      body: JSON.stringify({
+        text,
+        model_id: elevenLabsModelId,
+        apply_text_normalization: "auto"
+      })
+    }
+  );
+  if (!response.ok) {
+    const message = (await response.text()).slice(0, 1200);
+    throw new Error(`Irene narration failed with ${response.status}: ${message}`);
+  }
+  const audio = Buffer.from(await response.arrayBuffer());
+  const looksLikeMp3 = audio.subarray(0, 3).toString("ascii") === "ID3"
+    || (audio[0] === 0xff && (audio[1] & 0xe0) === 0xe0);
+  if (audio.length < 1000 || !looksLikeMp3) {
+    throw new Error("Irene narration did not return a valid MP3.");
+  }
+  fs.writeFileSync(target, audio);
 }
 
 function probeDuration(file) {
@@ -143,14 +173,8 @@ const baseNarration = data.social?.youtube_shorts_script || [
 ].join(" ");
 const narrationText = `${String(baseNarration).trim()} ${spokenCta}`;
 
-const speech = await client.audio.speech.create({
-  model: process.env.GEMINI_TTS_MODEL || "gemini-3.1-flash-tts-preview",
-  voice: process.env.GEMINI_TTS_VOICE || "Kore",
-  input: narrationText,
-  instructions: "Speak like a sharp British technology news presenter. Natural, confident, energetic but not overhyped. Use clear pacing, slight emphasis on the practical takeaway, and a warm, concise delivery for the final Clearforge call to action."
-});
 const narrationFile = path.join(outDir, "narration.mp3");
-writeMp3FromSpeech(await speech.arrayBuffer(), narrationFile);
+await createIreneSpeech(narrationText, narrationFile);
 
 const tiktokSelection = data.audience_fit?.platform_selections?.tiktok || {};
 const tiktokStoryIndex = Number.isInteger(tiktokSelection.story_index) && tiktokSelection.story_index >= 0 && tiktokSelection.story_index < stories.length
@@ -172,14 +196,8 @@ const tiktokHook = tiktokSentences[0];
 const tiktokResponsePrompt = String(data.social?.tiktok_caption_prompt || "Where would this make the biggest difference for you?").trim();
 const tiktokPayoff = tiktokSentences.slice(1).join(" ") || stories[tiktokStoryIndex].practical_angle;
 
-const tiktokSpeech = await client.audio.speech.create({
-  model: process.env.GEMINI_TTS_MODEL || "gemini-3.1-flash-tts-preview",
-  voice: process.env.GEMINI_TTS_VOICE || "Kore",
-  input: tiktokNarrationText,
-  instructions: "Speak like a sharp, conversational British technology editor. Start immediately with the question. Keep the delivery brisk, natural and human, with a small pause before the final response prompt. Do not sound like a newsreader or advertisement."
-});
 const tiktokNarrationFile = path.join(outDir, "tiktok-narration.mp3");
-writeMp3FromSpeech(await tiktokSpeech.arrayBuffer(), tiktokNarrationFile);
+await createIreneSpeech(tiktokNarrationText, tiktokNarrationFile);
 const tiktokNarrationDuration = probeDuration(tiktokNarrationFile);
 
 const manifest = {
@@ -190,6 +208,12 @@ const manifest = {
   hook: "Three AI updates that actually matter today",
   spoken_cta: spokenCta,
   visual_system: "Clearforge AI briefing podcast studio system",
+  social_voice: {
+    name: "Irene",
+    provider: "ElevenLabs",
+    voice_id: IRENE_VOICE_ID,
+    model: elevenLabsModelId
+  },
   visual_style_rules: {
     include: [
       "dark navy AI briefing or podcast studio atmosphere",

@@ -5,6 +5,7 @@ import path from "node:path";
 const ROOT = process.cwd();
 const EDITION = String(process.env.CLEARFORGE_DATE || "").trim();
 const RUN_URL = String(process.env.CLEARFORGE_RUN_URL || "").trim();
+const SOURCE_COMMIT = String(process.env.CLEARFORGE_SOURCE_SHA || "").trim();
 if (!/^\d{4}-\d{2}-\d{2}(?:-[a-z0-9-]+)?$/.test(EDITION)) {
   throw new Error("CLEARFORGE_DATE must be an exact Clearforge edition ID.");
 }
@@ -67,6 +68,7 @@ const payload = {
   edition: EDITION,
   generated_at: new Date().toISOString(),
   workflow_run_url: RUN_URL,
+  source_commit: SOURCE_COMMIT,
   human_approval_required: true,
   files
 };

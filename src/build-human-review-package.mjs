@@ -1,4 +1,5 @@
 import crypto from "node:crypto";
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -43,6 +44,20 @@ function collectFiles(directory, prefix) {
   }
   return files;
 }
+function changedPublicPaths() {
+  const modified = execFileSync("git", ["diff", "--name-only", "HEAD", "--", "public"], { encoding: "utf8" })
+    .split(/\r?\n/).filter(Boolean);
+  const untracked = execFileSync("git", ["ls-files", "--others", "--exclude-standard", "public"], { encoding: "utf8" })
+    .split(/\r?\n/).filter(Boolean);
+  return [...new Set([...modified, ...untracked])].sort();
+}
+function collectNamedFiles(paths) {
+  return paths.filter((relative) => fs.existsSync(path.join(ROOT, relative))).map((relative) => {
+    const absolute = path.join(ROOT, relative);
+    const stat = fs.statSync(absolute);
+    return { path: relative.replaceAll("\\", "/"), bytes: stat.size, sha256: sha256(absolute) };
+  });
+}
 function markdownBlock(title, content) {
   return `<section class="panel"><h2>${esc(title)}</h2><pre>${esc(content || "Not generated")}</pre></section>`;
 }
@@ -57,10 +72,14 @@ const podcastScript = readText(path.join(draftDir, "podcast", "COPY_PASTE_INTO_E
 const sources = Array.isArray(structured.sources) ? structured.sources : [];
 const social = structured.social || {};
 
+const publicChanges = changedPublicPaths();
+const deletedPaths = publicChanges
+  .filter((relative) => !fs.existsSync(path.join(ROOT, relative)))
+  .map((relative) => relative.replaceAll("\\", "/"));
 const files = [
   ...collectFiles(draftDir, `drafts/${EDITION}`),
   ...collectFiles(mediaDir, `media/${EDITION}`),
-  ...collectFiles(publicDir, "public")
+  ...collectNamedFiles(publicChanges)
 ].sort((a, b) => a.path.localeCompare(b.path));
 
 const payload = {
@@ -70,6 +89,7 @@ const payload = {
   workflow_run_url: RUN_URL,
   source_commit: SOURCE_COMMIT,
   human_approval_required: true,
+  deleted_paths: deletedPaths,
   files
 };
 const candidateId = crypto
@@ -161,9 +181,24 @@ ${markdownBlock("Podcast script", podcastScript)}
 </main></body></html>`;
 fs.writeFileSync(htmlPath, html);
 
+const packageDir = path.join(ROOT, "candidate-package");
+fs.rmSync(packageDir, { recursive: true, force: true });
+for (const file of files) {
+  const destination = path.join(packageDir, file.path);
+  fs.mkdirSync(path.dirname(destination), { recursive: true });
+  fs.copyFileSync(path.join(ROOT, file.path), destination);
+}
+for (const file of [manifestPath, htmlPath]) {
+  const relative = path.relative(ROOT, file);
+  const destination = path.join(packageDir, relative);
+  fs.mkdirSync(path.dirname(destination), { recursive: true });
+  fs.copyFileSync(file, destination);
+}
+
 const githubOutput = process.env.GITHUB_OUTPUT;
 if (githubOutput) {
   fs.appendFileSync(githubOutput, `candidate_id=${candidateId}\n`);
   fs.appendFileSync(githubOutput, `review_html=${path.relative(ROOT, htmlPath)}\n`);
+  fs.appendFileSync(githubOutput, "package_dir=candidate-package\n");
 }
 console.log(`Built human review package ${candidateId} for ${EDITION}.`);

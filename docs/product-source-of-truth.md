@@ -1,24 +1,33 @@
 # Clearforge product source-of-truth inventory
 
-Last verified: 2026-07-28
+Last verified: 2026-07-29
 
-This file records only offers that can be verified from the public Clearforge site and the linked Payhip pages. Do not publish a product claim from memory when this inventory and the customer files disagree.
+This inventory records the active Clearforge Applied AI Gate System offers confirmed by the owner. Do not publish product links, prices or bundle claims from memory when they conflict with this file or the customer download files.
 
-| Product | Public status | Price shown | Payhip URL | Website location | Verified customer-facing components | Open checks |
-|---|---|---:|---|---|---|---|
-| Clearforge AI Output Release Gate | Live and featured | £19 launch price | https://payhip.com/b/vGks8 | `public/index.html#products` | Standalone HTML release tool; detailed PDF handbook; duplicate-ready Notion version | Confirm the uploaded Payhip ZIP version and the exact handbook page count before adding a numerical claim |
-| Clearforge AI Workflow Control Kit PRO | Live companion offer | £19 | https://payhip.com/b/VK2yl | `public/index.html#products` | Local-first Workflow Control Mapper; implementation workbook; completed example; operating checklists; companion Notion workspace | Payhip currently describes the workbook as 14 pages. Confirm the uploaded customer file before using a page count elsewhere |
+| Product | Offer | Price | Payhip URL | Website destination |
+|---|---|---:|---|---|
+| Clearforge AI Opportunity Gate | Individual Gate 1 | £19 | https://payhip.com/b/4rcSt | `public/index.html#products` |
+| Clearforge AI Workflow Control Gate | Individual Gate 2 | £19 | https://payhip.com/b/qBPip | `public/index.html#products` |
+| Clearforge AI Output Release Gate | Individual Gate 3 | £19 | https://payhip.com/b/pkSEY | `public/index.html#products` |
+| Clearforge AI Outcome Review Gate | Individual Gate 4 | £19 | https://payhip.com/b/rgFXP | `public/index.html#products` |
+| Clearforge Applied AI Gate System — Complete Four-Gate Bundle | Four core Gates plus exclusive add-on | £49 | https://payhip.com/b/cmklU | `public/index.html#products` |
 
-## Not yet verified as live offers
+## Bundle rule
 
-The wider Gate system has been discussed as four individual Gates plus a complete bundle. The Clearforge repository and public homepage currently expose only the two products above. Add the remaining products here only after each Payhip URL, price, uploaded ZIP version, description and website destination have been checked.
+The bundle includes the Agent Connection Safety Gate as an exclusive add-on at no extra cost. It is not a standalone product.
 
-## Publishing rule
+The four individual Gates cost £76 when purchased separately. The £49 bundle therefore has a verified cash saving of £27, plus the exclusive add-on. Do not assign a separate monetary value to that add-on unless it becomes a separately priced product.
 
-Before changing a product card or generating a campaign:
+## Customer-file verification still required
 
-1. Check the live Payhip listing.
-2. Check the exact uploaded customer ZIP and its version/changelog.
-3. Update this inventory.
-4. Keep numerical claims in one maintained source where practical.
-5. Run the product-link and claim checks before release.
+Before publishing detailed component counts, page counts, version numbers or compatibility claims:
+
+1. Check the exact customer ZIP currently uploaded to Payhip.
+2. Confirm each claim against the files a buyer actually receives.
+3. Record any product version or packaging change here.
+4. Keep the homepage, Payhip description, artwork and customer files aligned.
+5. Run product-link, build and claim checks before release.
+
+## Current artwork
+
+The original Payhip product artwork is stored under `public/products/gate-system/`. Optimised WebP copies are used on the homepage; the original PNG files are retained as source assets.

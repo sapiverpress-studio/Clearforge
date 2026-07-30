@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>
     <copyright>Clearforge</copyright>
     <generator>Clearforge hosted podcast feed</generator>
-    <lastBuildDate>Wed, 29 Jul 2026 17:09:51 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2026 07:04:46 GMT</lastBuildDate>
     <atom:link href="https://clearforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Clearforge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://clearforge-daily-brief.netlify.app/podcast/cover.png"/>
+    <item>
+      <title>The Shadow AI Crisis: Why Your Team Needs Integrated Workflows</title>
+      <description>This story highlights the critical intersection of security, policy, and operational efficiency, serving as a foundational warning for all organizations currently navigating AI adoption.</description>
+      <content:encoded><![CDATA[<p>This story highlights the critical intersection of security, policy, and operational efficiency, serving as a foundational warning for all organizations currently navigating AI adoption.</p><p><strong>Read alongside this episode:</strong> <a href="https://clearforge-daily-brief.netlify.app/posts/2026-07-30.html">daily briefing</a> · <a href="https://clearforge-daily-brief.netlify.app/features/2026-07-30.html">feature analysis</a></p><p><a href="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-30.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-30.html</link>
+      <guid isPermaLink="false">clearforge:2026-07-30</guid>
+      <pubDate>Thu, 30 Jul 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-30.mp3" length="4802733" type="audio/mpeg"/>
+      <itunes:author>Clearforge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:05:24</itunes:duration>
+      <podcast:transcript url="https://clearforge-daily-brief.netlify.app/podcast/episodes/2026-07-30.txt" type="text/plain"/>
+    </item>
     <item>
       <title>The Remediation Bottleneck: When AI Discovery Outpaces Human Capacity</title>
       <description>This story highlights a critical, under-discussed operational risk in AI adoption: the imbalance between automated discovery and human remediation, which is essential for our audience to understand before scaling their own workflows.</description>

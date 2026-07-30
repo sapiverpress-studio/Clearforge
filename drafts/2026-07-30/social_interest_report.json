@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-30",
+  "principle": "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Do you paste client work into AI chatbots to save time?",
+      "words": 48,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Are you still downloading client files just to review them?",
+      "words": 79,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Have you ever pasted client data into an AI tool to speed up your work?",
+      "words": 79,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Is your remote team using the same AI tools as you?",
+      "words": 78,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "How to Streamline Client Reviews with Integrated AI Tools",
+    "title_words": 9,
+    "description_words": 28
+  },
+  "warnings": []
+}

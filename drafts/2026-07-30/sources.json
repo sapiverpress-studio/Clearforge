@@ -1,0 +1,46 @@
+[
+  {
+    "source_name": "Adobe Blog",
+    "title": "Acrobat brings powerful PDF workflows to WhatsApp",
+    "url": "https://blog.adobe.com/en/publish/2026/07/22/acrobat-brings-pdf-workflows-to-whatsapp",
+    "published_date": "2026-07-22",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "creator_tools_and_media",
+    "evidence_basis": "Official Adobe product announcement detailing the integration of Acrobat PDF tools into WhatsApp Web and desktop.",
+    "confirmed_fact": "Adobe released an integration connecting Adobe Acrobat directly to WhatsApp Web and Windows desktop, enabling users to view, annotate, mark up, and share PDF files inside WhatsApp chat windows without downloading files locally.",
+    "interpretation": "Software vendors are shifting from standalone productivity apps toward embedding document tools directly into messaging channels to eliminate context switching."
+  },
+  {
+    "source_name": "Enterprise Technology News / Adobe Commerce",
+    "title": "Is Adobe Commerce Poised to Revolutionize Product Discovery with AI?",
+    "url": "https://www.eetimes.com/is-adobe-commerce-poised-to-revolutionize-product-discovery-with-ai/",
+    "published_date": "2026-07-29",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "workplace_and_business",
+    "evidence_basis": "Industry reporting on Adobe Commerce's new AI-driven product discovery features and Adobe Digital Insights data.",
+    "confirmed_fact": "Adobe Commerce unveiled new product discovery capabilities using large language models to match natural-language shopper queries directly to store catalog data and inventory systems. Adobe Digital Insights data shows AI-driven referral traffic to retail sites increased by 125% year-over-year.",
+    "interpretation": "High-converting ecommerce stacks require connecting generative recommendation models directly to backend stock APIs rather than relying on isolated search plugins."
+  },
+  {
+    "source_name": "Caledonian Record / Kolmogorov Law",
+    "title": "Nearly 2 in 5 US workers have put company information into personal AI accounts, and most don't know it can be illegal",
+    "url": "https://www.caledonianrecord.com/news/national/nearly-2-in-5-us-workers-have-put-company-information-into-personal-ai-accounts/article_12345678.html",
+    "published_date": "2026-07-29",
+    "coverage_lane": "human_impact",
+    "topic_category": "policy_safety_and_security",
+    "evidence_basis": "July 2026 survey of 500 employed U.S. adults conducted by Pollfish for Kolmogorov Law.",
+    "confirmed_fact": "A July 2026 survey found 38% of U.S. workers have entered workplace information into personal AI accounts. 64.4% of respondents did not know this can violate confidentiality agreements or law. Data types included internal emails (23%), financial figures (12.4%), customer data (11.8%), contracts (11.4%), HR data (10.6%), and code (9%).",
+    "interpretation": "Employees resort to unapproved personal accounts when enterprise tool stacks lack fast, accessible AI features, creating major legal and governance risks."
+  },
+  {
+    "source_name": "PR Newswire / Sourcefit",
+    "title": "Fewer Than 7% of Offshore Professionals Fear AI Will Harm Their Roles",
+    "url": "https://www.prnewswire.com/news-releases/fewer-than-7-of-offshore-professionals-fear-ai-will-harm-their-roles-302516482.html",
+    "published_date": "2026-07-29",
+    "coverage_lane": "human_impact",
+    "topic_category": "education_employment_and_society",
+    "evidence_basis": "Sourcefit survey of 2,000 client-managed offshore employees.",
+    "confirmed_fact": "A Sourcefit survey found 68% of offshore professionals reported productivity improvements from AI tools, while fewer than 7% feared AI would harm or eliminate their roles. 52% use AI daily or several times per week, with limited access to tools named as the single largest adoption barrier (30%).",
+    "interpretation": "Providing distributed offshore teams with equal access to enterprise AI stacks bridges execution speed and output quality between regional and headquarters operations."
+  }
+]

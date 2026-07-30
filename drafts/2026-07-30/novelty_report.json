@@ -1,0 +1,34 @@
+{
+  "date": "2026-07-30",
+  "editorial_theme": {
+    "day": "Thursday",
+    "date": "2026-07-30",
+    "slug": "stacks-workflows",
+    "title": "Stacks and workflows",
+    "focus": "Tool combinations: models, apps, APIs, image, video, voice, documents, databases, scheduling, publishing and creator pipelines.",
+    "instruction": "Explain how pieces fit together rather than treating tools as isolated announcements. Include practical stack or workflow examples where supported by the sources."
+  },
+  "same_day_prior_runs": 0,
+  "excluded_url_count": 27,
+  "excluded_story_title_count": 28,
+  "topic_rotation_evidence_dates": [
+    "2026-07-23",
+    "2026-07-24",
+    "2026-07-25",
+    "2026-07-26",
+    "2026-07-27",
+    "2026-07-28",
+    "2026-07-29"
+  ],
+  "consecutive_week_topic_block": true,
+  "confirmed_development_count": 2,
+  "human_impact_count": 2,
+  "topic_categories": [
+    "creator_tools_and_media",
+    "workplace_and_business",
+    "policy_safety_and_security",
+    "education_employment_and_society"
+  ],
+  "tiktok_used_as_evidence": false,
+  "passed": true
+}

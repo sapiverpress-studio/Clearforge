@@ -1,4 +1,20 @@
+import fs from "node:fs";
+import path from "node:path";
 import { generateGroundedEvidence, generateImage, generateSpeechWav, generateStructured } from "./gemini-provider.mjs";
+
+const ROOT = process.cwd();
+const FALLBACK_ART_BASE64_PATH = process.env.CLEARFORGE_FALLBACK_ART_BASE64_PATH
+  ? path.resolve(ROOT, process.env.CLEARFORGE_FALLBACK_ART_BASE64_PATH)
+  : path.join(ROOT, "assets", "clearforge-fallback-art.jpg.base64");
+
+function fallbackArtworkBase64() {
+  if (!fs.existsSync(FALLBACK_ART_BASE64_PATH)) {
+    throw new Error(`Gemini image generation failed and fallback artwork is missing at ${FALLBACK_ART_BASE64_PATH}`);
+  }
+  const data = fs.readFileSync(FALLBACK_ART_BASE64_PATH, "utf8").replace(/\s+/g, "").trim();
+  if (!data) throw new Error(`Fallback artwork is empty at ${FALLBACK_ART_BASE64_PATH}`);
+  return data;
+}
 
 function splitInput(input = []) {
   const system = input.filter((item) => item.role === "system").map((item) => item.content);
@@ -37,8 +53,20 @@ export default class GeminiClient {
     };
     this.images = {
       generate: async ({ prompt }) => {
-        const image = await generateImage(prompt);
-        return { data: [{ b64_json: image.data }] };
+        try {
+          const image = await generateImage(prompt);
+          return { data: [{ b64_json: image.data, artwork_source: "gemini" }] };
+        } catch (error) {
+          const reason = error instanceof Error ? error.message : String(error);
+          console.warn(`Gemini image generation failed; using Clearforge fallback artwork. ${reason}`);
+          return {
+            data: [{
+              b64_json: fallbackArtworkBase64(),
+              artwork_source: "fallback",
+              fallback_reason: reason
+            }]
+          };
+        }
       }
     };
     this.audio = {

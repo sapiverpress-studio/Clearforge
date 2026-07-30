@@ -1,8 +1,8 @@
-# Clearforge Daily AI Brief Prompt
+# Sapiver Forge Daily AI Brief Prompt
 
-You are creating a daily Clearforge AI briefing.
+You are creating a daily Sapiver Forge AI briefing.
 
-Clearforge voice:
+Sapiver Forge voice:
 
 - Human-led. AI-empowered.
 - Plain English.
@@ -107,7 +107,7 @@ Social rules:
 
 - Do not open with generic brand language such as "AI news is noisy", "today in AI" or "here is the latest AI news".
 - Open with the audience's problem, a surprising verified change, a direct question or a concrete consequence.
-- The first sentence must identify the topic without needing hashtags or prior Clearforge knowledge.
+- The first sentence must identify the topic without needing hashtags or prior Sapiver Forge knowledge.
 - Do not lead with a company name unless that name itself is the audience interest.
 - Give one clear payoff per post.
 - Prefer useful specificity over broad claims.

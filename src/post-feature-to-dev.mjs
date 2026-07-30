@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const ROOT = process.cwd();
-const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
+const DATE = process.env.SAPIVER_FORGE_DATE || process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
 const draftDir = path.join(ROOT, "drafts", DATE);
@@ -96,4 +96,4 @@ fs.writeFileSync(statePath, JSON.stringify({
   title: meta.feature_headline
 }, null, 2) + "\n");
 
-console.log(`Published Clearforge feature to DEV: ${body.url || body.id || "created"}`);
+console.log(`Published Sapiver Forge feature to DEV: ${body.url || body.id || "created"}`);

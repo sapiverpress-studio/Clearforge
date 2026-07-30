@@ -1,4 +1,4 @@
-# Clearforge Social Repurpose Template
+# Sapiver Forge Social Repurpose Template
 
 Daily brief date:
 
@@ -41,7 +41,7 @@ Hook:
 [Lead with the audience problem, a concrete consequence, a direct question or a surprising verified change. Make the topic unmistakable in the first sentence.]
 
 Body:
-[Explain one useful idea in plain English. Assume the viewer has never heard of Clearforge.]
+[Explain one useful idea in plain English. Assume the viewer has never heard of Sapiver Forge.]
 
 Proof:
 [Use the strongest verified detail.]

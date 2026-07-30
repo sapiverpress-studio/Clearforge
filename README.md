@@ -1,4 +1,4 @@
-# Clearforge
+# Sapiverforge
 
 **Human-led. AI-empowered.**
 
@@ -6,11 +6,11 @@ Turning human input into clear, usable systems.
 
 ## Current project
 
-Clearforge Daily AI Brief Builder.
+Sapiver,forge Daily AI Brief Builder.
 
 ## Core promise
 
-AI news is noisy. Clearforge turns it into clear, usable daily learning and content.
+AI news is noisy. SapiverForge turns it into clear, usable daily learning and content.
 
 ## End goal
 
@@ -48,8 +48,8 @@ Full automation is intentionally not active yet.
 
 ## Publishing rule
 
-Clearforge must never auto-publish raw AI output. Every article and social post must be reviewed by a human before publication.
+Sapiverforge must never auto-publish raw AI output. Every article and social post must be reviewed by a human before publication.
 
 ## Brand separation
 
-Clearforge is a separate brand. Public-facing Clearforge material must not mention or link to any unrelated publishing imprint, product line, or previous business identity.
+SapiverForge is a separate brand. Public-facing SapiverForge material must not mention or link to any unrelated publishing imprint, product line, or previous business identity.

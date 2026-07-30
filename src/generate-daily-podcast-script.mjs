@@ -3,7 +3,7 @@ import path from "node:path";
 import OpenAI from "./gemini-openai-compat.mjs";
 
 const ROOT = process.cwd();
-const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
+const DATE = process.env.SAPIVER_FORGE_DATE || process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London",
   year: "numeric",
   month: "2-digit",
@@ -47,7 +47,7 @@ function spokenLineCheck(script) {
     /\[[^\]]+\]/,
     /\([^)]*(pause|music|emphasis|direction|pronunciation|beat|breathe)[^)]*\)/i,
     /https?:\/\//i,
-    /Sapiver/i
+    /Sapiver Press/i
   ];
   const offenders = [];
   for (const [index, line] of lines.entries()) {
@@ -110,14 +110,14 @@ const response = await client.responses.create({
   input: [
     {
       role: "system",
-      content: "You are the Clearforge daily podcast editor. The podcast provides broad AI coverage, not a Release Gate sales programme. Cover useful new problems, solutions, products and working methods across creator tools and media, coding and automation, workplace use, models and infrastructure, research and science, education and employment, privacy, ownership, regulation and human impact. Choose the most useful story regardless of whether it relates to a Clearforge product. Clearforge is separate from Sapiver Press: never mention Sapiver, Sapiver Press, Sapiver products, Sapiver websites, shops, logos or branding. Do not give medical, legal or financial advice. Do not say AI replaces human accountability. Use only the supplied facts and sources. Distinguish confirmed facts, vendor claims, independent reporting, Clearforge interpretation and unknowns."
+      content: "You are the Sapiver Forge daily podcast editor. The podcast provides broad AI coverage, not a Release Gate sales programme. Cover useful new problems, solutions, products and working methods across creator tools and media, coding and automation, workplace use, models and infrastructure, research and science, education and employment, privacy, ownership, regulation and human impact. Choose the most useful story regardless of whether it relates to a Sapiver Forge product. Never mention Sapiver Press, Sapiver Press products, Sapiver Press websites, shops, logos or publisher branding in the spoken script. Do not give medical, legal or financial advice. Do not say AI replaces human accountability. Use only the supplied facts and sources. Distinguish confirmed facts, vendor claims, independent reporting, Sapiver Forge interpretation and unknowns."
     },
     {
       role: "user",
-      content: `EDITION ID: ${DATE}\nHEADLINE: ${data.headline}\nDEK: ${data.dek}\nPRACTICAL TAKEAWAY: ${data.practical_takeaway}\nWHAT TO TEST NEXT: ${data.what_to_test_next}\n\nSTORIES:\n${JSON.stringify(stories, null, 2)}\n\nSOURCES:\n${JSON.stringify(sources, null, 2)}\n\nTask:\nChoose the single biggest story of this edition and write a detailed daily Clearforge podcast script about it.\n\nTarget length:\n- Approximately 10 minutes spoken.\n- Aim for 1,350 to 1,650 spoken words.\n\nSpoken script requirements:\n- The spoken_script field must contain only the exact words the narrator should speak.\n- No headings, titles, narrator labels, timestamps, bracketed directions, parenthesised production notes, source URLs or markdown.\n- Use punctuation and paragraph breaks for pacing.\n- Narrator voice: calm, intelligent, practical, conversational, professional and non-hyped.\n- Audience: mixed beginner and intermediate AI learners, creators and small businesses.\n- Explain what happened, what the tool or concept is, what changed, why it matters, who should care, a practical example, one useful experiment, risks and human-review checks, and what to watch next.\n- Include a Clearforge-style verdict in natural speech: use now, test carefully, watch, or skip for now.\n- Be careful with claims. Say when information is unknown or access is limited.\n- Do not read the article verbatim. Make it sound like a standalone spoken briefing.\n\nMetadata requirements:\n- selected_story_index is zero-based from the supplied story list.\n- Keep sources and production notes outside the spoken_script field.`
+      content: `EDITION ID: ${DATE}\nHEADLINE: ${data.headline}\nDEK: ${data.dek}\nPRACTICAL TAKEAWAY: ${data.practical_takeaway}\nWHAT TO TEST NEXT: ${data.what_to_test_next}\n\nSTORIES:\n${JSON.stringify(stories, null, 2)}\n\nSOURCES:\n${JSON.stringify(sources, null, 2)}\n\nTask:\nChoose the single biggest story of this edition and write a detailed daily Sapiver Forge podcast script about it.\n\nTarget length:\n- Approximately 10 minutes spoken.\n- Aim for 1,350 to 1,650 spoken words.\n\nSpoken script requirements:\n- The spoken_script field must contain only the exact words the narrator should speak.\n- No headings, titles, narrator labels, timestamps, bracketed directions, parenthesised production notes, source URLs or markdown.\n- Use punctuation and paragraph breaks for pacing.\n- Narrator voice: calm, intelligent, practical, conversational, professional and non-hyped.\n- Audience: mixed beginner and intermediate AI learners, creators and small businesses.\n- Explain what happened, what the tool or concept is, what changed, why it matters, who should care, a practical example, one useful experiment, risks and human-review checks, and what to watch next.\n- Include a Sapiver Forge-style verdict in natural speech: use now, test carefully, watch, or skip for now.\n- Be careful with claims. Say when information is unknown or access is limited.\n- Do not read the article verbatim. Make it sound like a standalone spoken briefing.\n\nMetadata requirements:\n- selected_story_index is zero-based from the supplied story list.\n- Keep sources and production notes outside the spoken_script field.`
     }
   ],
-  text: { format: { type: "json_schema", name: "clearforge_daily_podcast_script", strict: true, schema } }
+  text: { format: { type: "json_schema", name: "sapiver_forge_daily_podcast_script", strict: true, schema } }
 });
 
 if (!response.output_text) throw new Error("Gemini returned no podcast script output.");
@@ -138,8 +138,8 @@ write(path.join(podcastDir, "source-notes.md"), `# Source notes — ${DATE}\n\nP
 write(path.join(podcastDir, "episode-metadata.json"), JSON.stringify({
   version: 1,
   date: DATE,
-  brand: "Clearforge",
-  type: "clearforge_daily_biggest_story_podcast_script",
+  brand: "Sapiver Forge",
+  type: "sapiver_forge_daily_biggest_story_podcast_script",
   human_review_required: true,
   narrator: "Kore",
   voice_provider: "Gemini",
@@ -157,4 +157,4 @@ write(path.join(podcastDir, "episode-metadata.json"), JSON.stringify({
   non_spoken_instruction_candidates: lineCheck.offenders
 }, null, 2));
 
-console.log(`Generated Clearforge daily podcast script for ${DATE}: ${words} words, ${warnings.length} warning(s).`);
+console.log(`Generated Sapiver Forge daily podcast script for ${DATE}: ${words} words, ${warnings.length} warning(s).`);

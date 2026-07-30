@@ -4,7 +4,7 @@ import { spawnSync } from "node:child_process";
 import OpenAI from "./gemini-openai-compat.mjs";
 
 const ROOT = process.cwd();
-const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
+const DATE = process.env.SAPIVER_FORGE_DATE || process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
 const draftDir = path.join(ROOT, "drafts", DATE);
@@ -19,13 +19,13 @@ const data = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
 const client = new OpenAI();
 fs.mkdirSync(outDir, { recursive: true });
 
-const spokenCta = "Before you send AI-assisted work to a client, use the Clearforge AI Output Release Gate through the link in our bio.";
+const spokenCta = "Before you send AI-assisted work to a client, use the Sapiver Forge AI Output Release Gate through the link in our bio.";
 const IRENE_VOICE_ID = "w9xM4Spfmuw28ZXAirWK";
 const elevenLabsVoiceId = process.env.ELEVENLABS_VOICE_ID || IRENE_VOICE_ID;
 const elevenLabsModelId = process.env.ELEVENLABS_MODEL_ID || "eleven_multilingual_v2";
 
 if (elevenLabsVoiceId !== IRENE_VOICE_ID) {
-  throw new Error("Voice substitution blocked: Clearforge social narration must use Irene.");
+  throw new Error("Voice substitution blocked: Sapiver Forge social narration must use Irene.");
 }
 
 async function createIreneSpeech(text, target) {
@@ -112,7 +112,7 @@ function visualPrompt(story, index) {
   const variationDevices = [
     "change the hero object placement so this frame does not resemble the previous edition",
     "include a different arrangement of source cards, notebook, microphone angle and background signal pattern",
-    "vary camera distance, desk depth and object hierarchy while keeping the same Clearforge identity",
+    "vary camera distance, desk depth and object hierarchy while keeping the same Sapiver Forge identity",
     "use a different AI signal motif: waveform, routing lines, model cards, calendar markers or evidence board",
     "make the story context visible through objects and composition rather than readable text"
   ];
@@ -124,7 +124,7 @@ function visualPrompt(story, index) {
     "professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light"
   ];
 
-  return `${pick(aiBriefingScenes, index * 3)}. ${pick(compositions, index * 5)}. ${pick(aiSignals, index * 7)}. ${pick(variationDevices, index * 11)}. Story context: ${story.title}. Practical angle: ${story.practical_angle}. Clearforge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: ${pick(palette, index * 13)}. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver, Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective.`;
+  return `${pick(aiBriefingScenes, index * 3)}. ${pick(compositions, index * 5)}. ${pick(aiSignals, index * 7)}. ${pick(variationDevices, index * 11)}. Story context: ${story.title}. Practical angle: ${story.practical_angle}. Sapiver Forge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: ${pick(palette, index * 13)}. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective.`;
 }
 
 const stories = (data.story_summaries || []).slice(0, 3);
@@ -189,7 +189,7 @@ if (!tiktokNarrationText) {
 if (tiktokWords.length < 18 || tiktokWords.length > 30) {
   console.warn(`TikTok script is outside the preferred 18–30-word range (${tiktokWords.length} words). The video will match the rendered narration instead of discarding the media pack.`);
 }
-if (/three ai updates|today in ai|latest ai news|clearforge/i.test(tiktokSentences[0] || "")) {
+if (/three ai updates|today in ai|latest ai news|sapiver forge/i.test(tiktokSentences[0] || "")) {
   throw new Error("TikTok opening repeats the failed generic briefing format.");
 }
 const tiktokHook = tiktokSentences[0];
@@ -207,7 +207,7 @@ const manifest = {
   dek: data.dek,
   hook: "Three AI updates that actually matter today",
   spoken_cta: spokenCta,
-  visual_system: "Clearforge AI briefing podcast studio system",
+  visual_system: "Sapiver Forge AI briefing podcast studio system",
   social_voice: {
     name: "Irene",
     provider: "ElevenLabs",
@@ -230,7 +230,7 @@ const manifest = {
       "random floating code",
       "excessive neon",
       "fake readable text",
-      "Sapiver or unrelated branding"
+      "Sapiver Press or unrelated branding"
     ]
   },
   stories: images,
@@ -251,4 +251,4 @@ const manifest = {
   what_to_test_next: data.what_to_test_next
 };
 fs.writeFileSync(path.join(outDir, "media-manifest.json"), JSON.stringify(manifest, null, 2) + "\n");
-console.log(`Generated AI media pack for ${DATE} with link-free Clearforge CTA`);
+console.log(`Generated AI media pack for ${DATE} with link-free Sapiver Forge CTA`);

@@ -21,7 +21,7 @@ function write(fileName, content) {
 }
 
 function buildFallbackDraft() {
-  return `# Clearforge Daily AI Brief — ${today}
+  return `# Sapiver Forge Daily AI Brief — ${today}
 
 Status: Draft — sources needed
 
@@ -61,7 +61,7 @@ Approved: false
 }
 
 function buildSocialFallback() {
-  return `# Clearforge Social Pack — ${today}
+  return `# Sapiver Forge Social Pack — ${today}
 
 Status: Draft — waiting for approved article.
 
@@ -92,7 +92,7 @@ Not generated yet.
 }
 
 function buildChecklist() {
-  return `# Clearforge Editor Checklist — ${today}
+  return `# Sapiver Forge Editor Checklist — ${today}
 
 Before publishing, confirm:
 
@@ -125,7 +125,7 @@ async function generateWithGemini(sourceNotes) {
   if (!process.env.GEMINI_API_KEY) return null;
   const prompt = readIfExists(promptPath);
   return generateText({
-    system: "You create Clearforge draft content only. Do not claim anything is published. Do not copy wording from sources. Keep facts and interpretation separate.",
+    system: "You create Sapiver Forge draft content only. Do not claim anything is published. Do not copy wording from sources. Keep facts and interpretation separate.",
     prompt: `${prompt}\n\nSOURCE LINKS AND NOTES:\n${sourceNotes}`
   });
 }
@@ -154,14 +154,14 @@ async function main() {
   const aiDraft = await generateWithGemini(sourceNotes);
 
   if (!aiDraft) {
-    write("daily_brief.md", `# Clearforge Daily AI Brief — ${today}\n\nStatus: Draft — Gemini key not configured\n\n## Supplied Sources\n\n${sourceNotes}\n\n## Next Step\n\nSet GEMINI_API_KEY in your local environment or GitHub Actions secrets, then run npm run draft again.`);
+    write("daily_brief.md", `# Sapiver Forge Daily AI Brief — ${today}\n\nStatus: Draft — Gemini key not configured\n\n## Supplied Sources\n\n${sourceNotes}\n\n## Next Step\n\nSet GEMINI_API_KEY in your local environment or GitHub Actions secrets, then run npm run draft again.`);
     write("social_pack.md", buildSocialFallback());
     console.log("Sources found, but GEMINI_API_KEY is not configured. Created source-holding draft.");
     return;
   }
 
   write("daily_brief.md", aiDraft);
-  write("social_pack.md", `# Clearforge Social Pack — ${today}\n\nStatus: Draft\n\nUse templates/social_repurpose_template.md to repurpose the approved article.\n\nDo not publish until daily_brief.md has passed human review.`);
+  write("social_pack.md", `# Sapiver Forge Social Pack — ${today}\n\nStatus: Draft\n\nUse templates/social_repurpose_template.md to repurpose the approved article.\n\nDo not publish until daily_brief.md has passed human review.`);
 
   console.log(`Generated draft folder: drafts/${today}`);
 }

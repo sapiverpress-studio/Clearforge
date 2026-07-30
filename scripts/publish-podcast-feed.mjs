@@ -2,7 +2,10 @@ import fs from "node:fs";
 import path from "node:path";
 
 const ROOT = process.cwd();
-const BASE = (process.env.PODCAST_BASE_URL || "https://sapiverforge-daily-brief.netlify.app").replace(/\/$/, "");
+const requestedBase = String(process.env.PODCAST_BASE_URL || "").replace(/\/$/, "");
+const LEGACY_BASE = "https://clearforge-daily-brief.netlify.app";
+const SAPIVER_FORGE_BASE = "https://sapiverforge-daily-brief.netlify.app";
+const BASE = !requestedBase || requestedBase === LEGACY_BASE ? SAPIVER_FORGE_BASE : requestedBase;
 const sourceMp3 = process.env.SOURCE_MP3;
 const sourceMp4 = process.env.SOURCE_MP4;
 const metadataPath = process.env.METADATA_PATH;

@@ -1,51 +1,49 @@
 # How to adopt AI tools that work inside the apps your team already uses
 
-Adopting AI tools that integrate directly into your existing software stack—such as project management boards, design platforms, and communication suites—is the most effective way to move from experimental chat to operational efficiency. The goal is to embed AI into the "plumbing" of your business, where it can assist with drafting, triage, and data retrieval without forcing your team to switch between disconnected windows.
+Integrating AI directly into your existing software stack—such as messaging apps, project management boards, or design platforms—is the most effective way to capture productivity gains. Rather than forcing teams to jump between isolated AI chat windows and their actual work, modern software is increasingly embedding AI as a functional layer within the tools where data already lives. The goal is to keep context intact, reduce manual copy-pasting, and ensure that AI-generated outputs are subject to the same governance as any other business task.
 
 ## What it means
 
-AI integration is shifting from standalone chat interfaces to "agentic" workflows embedded within enterprise platforms like Notion, Jira, Canva, and Google Workspace. In this model, the AI acts as a layer that can read context from your existing files, pull data from your project boards, and draft responses or assets directly in the tools where your work already lives. The primary benefit is the reduction of context switching, which allows for more fluid transitions between planning, drafting, and review.
+Adopting AI "inside the app" means using features where the AI has access to your specific project context, such as a document, a chat thread, or a database. This shift moves AI from a standalone novelty to a utility. For example, Adobe Acrobat now allows users to annotate PDFs directly within WhatsApp, and Atlassian’s Jira integrates AI to turn Slack discussions into structured tickets. This approach minimizes context switching, which is a primary source of inefficiency in modern digital work.
 
 ## How it works in practice
 
-Successful integration relies on a structured handoff. Instead of asking an AI to "do the work," you should treat it as a participant in a multi-step process:
+Successful integration relies on three components: context, containment, and review. 
 
-1. **Contextual Input:** Use tools that can access your existing repository of documents, issue trackers, or project briefs.
-2. **Scoped Execution:** Assign the AI a specific, repeatable task—such as summarizing a meeting thread into a Jira ticket or drafting a social media asset based on a brand brief.
-3. **Human-in-the-loop Review:** Every AI-generated output must pass through a human review gate. This is where the "harness" comes in: defining clear repository instructions, permission boundaries, and mandatory approval steps before the output is finalized.
+1. **Context:** The AI tool must be able to "see" the relevant file or thread. This is why tools like Notion 3.6 allow you to assign agents to specific boards, or why Google Search now connects to apps like Canva and Instacart.
+2. **Containment:** The AI should operate within defined boundaries. For instance, GitHub’s architecture focuses on the "harness"—repository instructions and permission boundaries—rather than just prompt engineering.
+3. **Review:** Every AI-assisted action should have a human-in-the-loop checkpoint. Whether it is a contract review in a biopharma workflow or a code patch in SharePoint, the AI identifies the issue, but the human verifies the fix.
 
 ## Why organisations are adopting it
 
-Organisations are moving toward integrated AI to solve the "bottleneck of discovery." As seen in recent enterprise deployments, AI can identify bugs, contract errors, or data anomalies at a speed that far outpaces human remediation. By embedding these tools into existing platforms, companies can create structured triage queues, ensuring that AI-discovered issues are automatically prioritized for human review rather than overwhelming the development pipeline.
+Organisations are moving toward integrated AI pipelines to solve the "shadow AI" problem. A July 2026 survey found that 38% of U.S. workers have entered company data into personal AI accounts, often without realizing the confidentiality risks. By providing official, integrated tools, businesses can keep data within their security perimeter. Furthermore, offshore workforce data shows that teams provided with standard enterprise AI stacks see 68% higher productivity gains compared to those with limited access, proving that standardisation is a competitive advantage.
 
 ## What changes for people and workflows
 
-- **Role Redesign:** AI is blurring job boundaries. Workers are increasingly using AI to perform tasks adjacent to their primary role. This requires clear ownership: if an AI handles a neighboring task, you must define who is responsible for the final quality check.
-- **From Prompting to Harnessing:** Productivity is no longer about "prompt engineering." It is about the "harness"—the environment, repository instructions, and permission boundaries you set. Reliability is built through system design, not clever phrasing.
-- **Governance as a Feature:** Security and compliance are moving from IT afterthoughts to product requirements. Features like stateless protocols (e.g., the 2026-07-28 MCP specification) allow enterprise teams to secure AI traffic using standard web firewalls and OAuth, treating AI tool calls with the same rigor as standard web requests.
+Work is shifting from "prompting" to "delegation." Instead of spending hours crafting the perfect prompt, employees are now expected to manage the "harness"—the instructions, permission boundaries, and review gates. This requires a change in mindset: you are no longer just a creator; you are an auditor of AI-generated work. For example, when AI identifies software vulnerabilities, the bottleneck is no longer discovery—it is the human capacity to patch and verify those findings. Therefore, workflows must now include automated triage queues to prioritize what a human needs to review first.
 
 ## Limits, risks and what remains uncertain
 
-- **The Remediation Gap:** Automating discovery without scaling remediation creates operational bottlenecks. If your AI identifies 90 bugs in a month but your team can only patch 10, you have created a crisis, not a solution.
-- **Unapproved Use:** Many professionals are using AI tools that were not officially vetted. This "shadow AI" usage creates risks regarding data privacy and intellectual property.
-- **Deployment Complexity:** While some tools are plug-and-play, enterprise-grade agentic systems often require specialized systems integrators to enforce domain-specific governance and human-in-the-loop validation.
+- **The Remediation Bottleneck:** As seen in the Microsoft SharePoint case, AI can identify bugs faster than humans can fix them. Automating discovery without scaling the remediation pipeline creates operational gridlock.
+- **Data Privacy:** Even with enterprise tools, there is a risk of data leakage if employees do not understand the boundaries of the tool. 
+- **Compliance:** With the EU AI Act transparency obligations, organisations must now treat disclosure as a workflow step. It is not enough to use AI; you must be able to label and trace it.
 
 ## Practical questions to ask before using it
 
-1. **Where is the handoff?** Can you clearly define the point where the AI stops and the human review begins?
-2. **What is the triage queue?** If the AI automates discovery (e.g., bug finding, contract review), do you have an automated system to prioritize these findings for human action?
-3. **What are the boundaries?** Does the tool have access to sensitive data? Can you restrict its terminal or file-system permissions?
-4. **Is there a disclosure path?** If the AI generates content, is there a built-in way to label or track its provenance?
+- **Where is the handoff?** Can I clearly define where the AI stops and the human review begins?
+- **Is the data secure?** Does this tool keep my data within our company's security perimeter, or is it being used to train public models?
+- **What is the triage process?** If the AI finds 100 issues, do we have a system to prioritize the top 5 for human review?
+- **Is there a disclosure requirement?** Does this output need to be labeled as AI-generated for clients or regulators?
 
 ## Current examples
 
-- **GitHub Copilot:** GitHub has shifted focus to the "agent harness," emphasizing that productivity gains come from repository context and pull request review gates rather than prompt hacks.
-- **Notion 3.6:** Notion allows teams to assign work to external agents from a shared board, providing a central place to track agent actions and human approvals.
-- **Cognizant & Anthropic:** This partnership embeds Claude into engineering platforms, using spec-driven development modules to enforce architectural blueprints before code reaches production.
+- **Adobe Acrobat & WhatsApp:** Users can now view and annotate PDFs inside WhatsApp, keeping the document review process within the communication thread.
+- **Jira Planner:** Atlassian’s tools now pull context from GitHub and Confluence to create structured work items, keeping the project thread alive across different platforms.
+- **Cognizant & Anthropic:** Enterprise deployments are using spec-driven development where AI agents must satisfy written architectural blueprints before code moves to production.
 
 ## Sources and further reading
 
-- [AWS Machine Learning Blog: How AgentCore Gateway supports the MCP 2026-07-28 spec](https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/)
-- [The GitHub Blog: The harness is all you need (mostly)](https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/)
+- [Adobe Blog: Acrobat brings powerful PDF workflows to WhatsApp](https://blog.adobe.com/en/publish/2026/07/22/acrobat-brings-pdf-workflows-to-whatsapp)
 - [ProPublica: Anthropic's New AI Model Can Identify More Software Bugs Than Ever](https://www.propublica.org/article/anthropic-claude-mythos-microsoft-bugs-vulnerabilities)
-- [Anthropic Newsroom: Cognizant and Anthropic expand their partnership](https://www.anthropic.com/news/cognizant-anthropic-expansion)
+- [GitHub Blog: The harness is all you need (mostly)](https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/)
+- [Caledonian Record: Nearly 2 in 5 US workers have put company information into personal AI accounts](https://www.caledonianrecord.com/news/national/nearly-2-in-5-us-workers-have-put-company-information-into-personal-ai-accounts/article_12345678.html)

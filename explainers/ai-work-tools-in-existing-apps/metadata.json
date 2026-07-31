@@ -3,14 +3,14 @@
   "slug": "ai-work-tools-in-existing-apps",
   "title": "How to adopt AI tools that work inside the apps your team already uses",
   "description": "A practical guide to AI features embedded in docs, search, design, support, project and meeting tools. It explains where the workflow gains come from, why review, disclosure and control matter, and what to check before rolling it out.",
-  "search_question": "How do I integrate AI tools into my existing business workflows safely?",
+  "search_question": "How do I safely integrate AI tools into my existing business software workflows?",
   "topic_slugs": [
     "ai-adoption",
     "ai-inside-products",
     "systems-automation"
   ],
   "created": "2026-07-14",
-  "last_updated": "2026-07-29",
+  "last_updated": "2026-07-31",
   "source_editions": [
     "2026-07-09",
     "2026-07-10",
@@ -31,7 +31,8 @@
     "2026-07-26",
     "2026-07-27",
     "2026-07-29",
-    "2026-07-29-considered"
+    "2026-07-29-considered",
+    "2026-07-30"
   ],
   "source_urls": [
     "https://openai.com/products/release-notes/",
@@ -63,7 +64,9 @@
     "https://insight.thomsonreuters.com/mena/business/resources/resource/future-of-professionals-report-2026-thomson-reuters",
     "https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/articles/artificialintelligenceinukbusinesses/2023to2026",
     "https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/",
-    "https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/"
+    "https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/",
+    "https://blog.adobe.com/en/publish/2026/07/22/acrobat-brings-pdf-workflows-to-whatsapp",
+    "https://www.propublica.org/article/anthropic-claude-mythos-microsoft-bugs-vulnerabilities"
   ],
   "revisions": [
     {
@@ -152,6 +155,14 @@
       "summary": "Updated to incorporate the latest research on the Model Context Protocol (MCP) stateless architecture, the shift from prompt engineering to 'agent harness' design, and the operational risks of discovery-remediation bottlenecks.",
       "source_editions": [
         "2026-07-29-considered",
+        "2026-07-29"
+      ]
+    },
+    {
+      "date": "2026-07-31",
+      "summary": "Updated the guide to incorporate recent research on integrated software stacks, the risks of shadow AI, and the operational bottlenecks caused by automated discovery tools.",
+      "source_editions": [
+        "2026-07-30",
         "2026-07-29"
       ]
     }

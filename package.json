@@ -10,7 +10,7 @@
     "angle:alternate": "node src/reangle-daily.mjs && npm run brand:current",
     "draft": "node src/generate-daily-brief.mjs && npm run brand:current",
     "novelty:event": "node src/check-event-novelty.mjs",
-    "social:optimise": "node src/optimise-social-audience-fit.mjs && npm run brand:current",
+    "social:optimise": "node src/optimise-social-audience-fit.mjs && node src/finalise-social-links.mjs && npm run brand:current",
     "feature": "node src/generate-full-feature.mjs && npm run brand:current",
     "evergreen": "node src/generate-evergreen-explainer.mjs",
     "podcast:daily": "node src/generate-daily-podcast-script.mjs && npm run brand:current",

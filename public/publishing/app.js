@@ -31,5 +31,5 @@ try {
   assetsRoot.replaceChildren(...cards);
   status.textContent = `Edition ${manifest.date}. These temporary publishing files are public while the sales test is running.`;
 } catch (error) {
-  status.textContent = error.message + " Check again after the next successful Sapiver Forge Social Distribution run.";
+  status.textContent = error.message + " Check again after the next successful Clearforge Social Distribution run.";
 }

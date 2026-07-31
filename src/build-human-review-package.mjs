@@ -8,12 +8,11 @@ const EDITION = String(process.env.CLEARFORGE_DATE || "").trim();
 const RUN_URL = String(process.env.CLEARFORGE_RUN_URL || "").trim();
 const SOURCE_COMMIT = String(process.env.CLEARFORGE_SOURCE_SHA || "").trim();
 if (!/^\d{4}-\d{2}-\d{2}(?:-[a-z0-9-]+)?$/.test(EDITION)) {
-  throw new Error("CLEARFORGE_DATE must be an exact Clearforge edition ID.");
+  throw new Error("The edition ID must be an exact Sapiver Forge edition ID.");
 }
 
 const draftDir = path.join(ROOT, "drafts", EDITION);
 const mediaDir = path.join(ROOT, "media", EDITION);
-const publicDir = path.join(ROOT, "public");
 if (!fs.existsSync(draftDir)) throw new Error(`Missing candidate directory: ${draftDir}`);
 
 function readText(file) {
@@ -61,6 +60,20 @@ function collectNamedFiles(paths) {
 function markdownBlock(title, content) {
   return `<section class="panel"><h2>${esc(title)}</h2><pre>${esc(content || "Not generated")}</pre></section>`;
 }
+function assertNoLegacyBrandReferences(files) {
+  const textExtensions = new Set([".css", ".csv", ".html", ".js", ".json", ".md", ".mjs", ".rss", ".svg", ".txt", ".xml", ".yml", ".yaml"]);
+  const legacyPattern = /\bclear\s*forge\b|\bclearforge\b/i;
+  const failures = [];
+  for (const file of files) {
+    if (!textExtensions.has(path.extname(file.path).toLowerCase())) continue;
+    const absolute = path.join(ROOT, file.path);
+    const content = fs.readFileSync(absolute, "utf8");
+    if (legacyPattern.test(content) || legacyPattern.test(file.path)) failures.push(file.path);
+  }
+  if (failures.length) {
+    throw new Error(`Legacy Clearforge branding remains in candidate files: ${failures.join(", ")}`);
+  }
+}
 
 const structured = readJson(path.join(draftDir, "structured_output.json"));
 const validation = readJson(path.join(draftDir, "validation.json"));
@@ -81,6 +94,8 @@ const files = [
   ...collectFiles(mediaDir, `media/${EDITION}`),
   ...collectNamedFiles(publicChanges)
 ].sort((a, b) => a.path.localeCompare(b.path));
+
+assertNoLegacyBrandReferences(files);
 
 const payload = {
   schema_version: 2,
@@ -140,7 +155,7 @@ const validationWarnings = Array.isArray(validation.warnings) ? validation.warni
 const htmlPath = path.join(draftDir, `human-review-${EDITION}-${candidateId.slice(0, 12)}.html`);
 const html = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Clearforge human review — ${esc(EDITION)}</title>
+<title>Sapiver Forge human review — ${esc(EDITION)}</title>
 <style>
 :root{--navy:#071827;--ink:#102437;--gold:#e2b85b;--paper:#fff;--cream:#f7f4ed;--line:#d8e0e6;--red:#a62929}
 *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.5 system-ui,sans-serif}
@@ -152,7 +167,7 @@ header{background:var(--navy);color:#fff;padding:24px}header div,main{max-width:
 .media img{display:block;width:100%;height:auto;border-radius:8px;margin-bottom:10px}code{overflow-wrap:anywhere}
 .warning{color:var(--red)}a{color:#075a86}
 </style></head><body>
-<header><div><strong>CLEARFORGE</strong><h1>Human validation package</h1><p>Review the exact candidate before manually releasing it.</p></div></header>
+<header><div><strong>SAPIVER FORGE</strong><h1>Human validation package</h1><p>Review the exact candidate before manually releasing it.</p></div></header>
 <main>
 <section class="panel status">
   <h2>AWAITING HUMAN APPROVAL</h2>
@@ -169,13 +184,13 @@ header{background:var(--navy);color:#fff;padding:24px}header div,main{max-width:
 </section>
 ${markdownBlock("Daily brief", article)}
 ${markdownBlock("Long-form feature", feature)}
-<section class="panel"><h2>Evidence and interpretation</h2><div class="scroll"><table><thead><tr><th>#</th><th>Source</th><th>Confirmed fact</th><th>Clearforge interpretation</th></tr></thead><tbody>${sourceRows || "<tr><td colspan=\"4\">No sources recorded.</td></tr>"}</tbody></table></div></section>
+<section class="panel"><h2>Evidence and interpretation</h2><div class="scroll"><table><thead><tr><th>#</th><th>Source</th><th>Confirmed fact</th><th>Sapiver Forge interpretation</th></tr></thead><tbody>${sourceRows || "<tr><td colspan=\"4\">No sources recorded.</td></tr>"}</tbody></table></div></section>
 <section class="panel"><h2>Social materials</h2><div class="grid">${socialSections}</div>${socialPack ? `<details><summary>Open complete generated social pack</summary><pre>${esc(socialPack)}</pre></details>` : ""}</section>
 ${markdownBlock("Podcast script", podcastScript)}
 <section class="panel"><h2>Podcast metadata</h2><pre>${esc(JSON.stringify(podcastMeta, null, 2))}</pre></section>
 <section class="panel"><h2>Generated media</h2><p>Images are embedded where the email-size safety limit permits. Audio and video are sealed in the workflow candidate artifact and listed by name, size and hash.</p><div class="grid">${mediaCards || "<p>No media files were generated.</p>"}</div></section>
 <section class="panel"><h2>Release decision</h2>
-  <ol><li>Check the evidence, wording, product references, scripts and media.</li><li>If anything is wrong, do not release this candidate.</li><li>If satisfied, run <strong>Release Human-Validated Clearforge Edition</strong> with this edition and candidate ID.</li></ol>
+  <ol><li>Check the evidence, wording, product references, scripts and media.</li><li>If anything is wrong, do not release this candidate.</li><li>If satisfied, run <strong>Release Human-Validated Sapiver Forge Edition</strong> with this edition and candidate ID.</li></ol>
   <p>The release workflow will reject changed or substituted files.</p>
 </section>
 </main></body></html>`;
@@ -201,4 +216,4 @@ if (githubOutput) {
   fs.appendFileSync(githubOutput, `review_html=${path.relative(ROOT, htmlPath)}\n`);
   fs.appendFileSync(githubOutput, "package_dir=candidate-package\n");
 }
-console.log(`Built human review package ${candidateId} for ${EDITION}.`);
+console.log(`Built Sapiver Forge human review package ${candidateId} for ${EDITION}.`);

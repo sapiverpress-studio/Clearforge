@@ -1,4 +1,4 @@
-name: Release Human-Validated Clearforge Edition
+name: Release Human-Validated Sapiver Forge Edition
 
 on:
   workflow_dispatch:
@@ -128,7 +128,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No publication files changed."
           else
-            git commit -m "Release human-validated Clearforge edition ${CLEARFORGE_DATE}"
+            git commit -m "Release human-validated Sapiver Forge edition ${CLEARFORGE_DATE}"
             git push origin HEAD:main
           fi
 
@@ -147,7 +147,7 @@ jobs:
             --dir=public \
             --site="${NETLIFY_SITE_ID}" \
             --auth="${NETLIFY_AUTH_TOKEN}" \
-            --message="Human-validated Clearforge ${CLEARFORGE_DATE} ${CLEARFORGE_CANDIDATE_ID}"
+            --message="Human-validated Sapiver Forge ${CLEARFORGE_DATE} ${CLEARFORGE_CANDIDATE_ID}"
 
       - name: Syndicate the approved feature to DEV
         env:
@@ -172,11 +172,11 @@ jobs:
         shell: bash
         run: |
           {
-            echo "## Clearforge human release"
+            echo "## Sapiver Forge human release"
             echo
             echo "- Edition: ${CLEARFORGE_DATE}"
             echo "- Candidate: ${CLEARFORGE_CANDIDATE_ID}"
             echo "- Approver: ${{ github.actor }}"
             echo "- File identity: verified before release"
-            echo "- Disclosure: Produced with AI assistance and released with human approval by Clearforge."
+            echo "- Disclosure: Produced with AI assistance and released with human approval by Sapiver Forge."
           } >> "$GITHUB_STEP_SUMMARY"

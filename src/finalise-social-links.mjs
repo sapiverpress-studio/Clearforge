@@ -24,6 +24,11 @@ const social = structured.social || {};
 
 function cleanCommercialCopy(value) {
   return String(value || "")
+    .replace(/Get the Sapiver Forge Notion Workspace free by email:\s*https:\/\/sapiver-press\.kit\.com\/5147ce2817\s*Buy it directly:\s*https:\/\/payhip\.com\/b\/o8iQA/gi, "")
+    .replace(/Get the Sapiver Forge Notion Workspace free by email:\s*/gi, "")
+    .replace(/Buy it directly:\s*/gi, "")
+    .replaceAll(FREE_NOTION_URL, "")
+    .replaceAll(PAID_NOTION_URL, "")
     .replaceAll(OLD_PRODUCT_URL, "")
     .replace(/[^.!?\n]*\bSapiver Forge AI Output Release Gate\b[^.!?\n]*[.!?]?/gi, "")
     .replace(/\b(?:here|at|via)\s*:\s*[.!?]?/gi, "")
@@ -35,11 +40,7 @@ function cleanCommercialCopy(value) {
 }
 
 function appendNotionCta(value) {
-  const base = cleanCommercialCopy(value)
-    .replace(new RegExp(`\\s*${FREE_NOTION_URL.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*`, "g"), " ")
-    .replace(new RegExp(`\\s*${PAID_NOTION_URL.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*`, "g"), " ")
-    .replace(/\s{2,}/g, " ")
-    .trim();
+  const base = cleanCommercialCopy(value).replace(/\s{2,}/g, " ").trim();
   return base ? `${base}\n\n${NOTION_CTA}` : NOTION_CTA;
 }
 
@@ -102,6 +103,8 @@ for (const [field, value] of Object.entries({
 })) {
   if (!String(value || "").includes(FREE_NOTION_URL)) failures.push(`${field} is missing the free Notion link`);
   if (!String(value || "").includes(PAID_NOTION_URL)) failures.push(`${field} is missing the paid Notion link`);
+  if ((String(value || "").match(new RegExp(FREE_NOTION_URL.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g")) || []).length !== 1) failures.push(`${field} must contain the free Notion link exactly once`);
+  if ((String(value || "").match(new RegExp(PAID_NOTION_URL.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g")) || []).length !== 1) failures.push(`${field} must contain the paid Notion link exactly once`);
 }
 if (failures.length) throw new Error(`Social CTA finalisation failed: ${failures.join("; ")}`);
 

@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-07-31",
+    "kind": "daily",
+    "title": "Friday Watchlist: The Economics of AI Routing",
+    "description": "This story provides the most immediate, actionable financial and architectural impact for our audience of creators and developers, directly addressing the 'how-to' of scaling AI workflows.",
+    "published": "2026-07-31T07:00:00+01:00",
+    "duration": "00:05:12",
+    "size": 4948653,
+    "video_size": 19205715,
+    "audio_url": "https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-31.mp3",
+    "video_url": "https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-31.mp4",
+    "episode_url": "https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-31.html",
+    "transcript_url": "https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-31.txt",
+    "related_article_url": "https://sapiverforge-daily-brief.netlify.app/posts/2026-07-31.html",
+    "related_feature_url": "https://sapiverforge-daily-brief.netlify.app/features/2026-07-31.html",
+    "source_dir": "drafts/2026-07-31/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-30",
     "kind": "daily",
     "title": "The Shadow AI Crisis: Why Your Team Needs Integrated Workflows",

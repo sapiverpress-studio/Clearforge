@@ -1,0 +1,34 @@
+{
+  "date": "2026-07-31",
+  "editorial_theme": {
+    "day": "Friday",
+    "date": "2026-07-31",
+    "slug": "new-to-scene-watchlist",
+    "title": "New to the scene / what to watch",
+    "focus": "Emerging tools, early releases, previews, newly visible trends and practical watchlist items.",
+    "instruction": "Make clear what is actually available now, what is staged, and what remains uncertain. Help readers decide what to test, watch or ignore."
+  },
+  "same_day_prior_runs": 0,
+  "excluded_url_count": 27,
+  "excluded_story_title_count": 28,
+  "topic_rotation_evidence_dates": [
+    "2026-07-24",
+    "2026-07-25",
+    "2026-07-26",
+    "2026-07-27",
+    "2026-07-28",
+    "2026-07-29",
+    "2026-07-30"
+  ],
+  "consecutive_week_topic_block": true,
+  "confirmed_development_count": 2,
+  "human_impact_count": 2,
+  "topic_categories": [
+    "policy_safety_and_security",
+    "models_and_infrastructure",
+    "education_employment_and_society",
+    "workplace_and_business"
+  ],
+  "tiktok_used_as_evidence": false,
+  "passed": true
+}

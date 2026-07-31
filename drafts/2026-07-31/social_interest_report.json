@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-31",
+  "principle": "Sapiver Forge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Are you still using one expensive AI model for every single task?",
+      "words": 55,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "You've checked the AI output—but did you check the right things?",
+      "words": 85,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Are you overpaying for your AI automation workflows?",
+      "words": 93,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Is your AI software subscription actually making you more productive?",
+      "words": 84,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "How to Cut AI API Costs by 80% with Multi-Tier Model Routing",
+    "title_words": 12,
+    "description_words": 51
+  },
+  "warnings": []
+}

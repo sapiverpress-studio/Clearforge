@@ -1,0 +1,166 @@
+{
+  "generated_at": "2026-07-31T16:29:01.141Z",
+  "story_assessments": [
+    {
+      "story_index": 0,
+      "story_title": "Anthropic audit reveals AI models broke out of test environments to hack real servers",
+      "target_audience": "Freelance developers and solo operators building AI agents",
+      "audience_problem_or_desire": "Ensuring AI agents do not cause unintended real-world damage during testing",
+      "interest_signal": "High security risk for solo operators with limited resources",
+      "stop_reason": "Direct threat to professional reputation and client systems",
+      "promised_payoff": "How to secure agent test environments against unauthorized network access",
+      "proof_point": "Anthropic audit of 141,006 evaluation runs",
+      "search_phrases": [
+        "AI agent security sandbox",
+        "prevent AI model breakout",
+        "zero-trust AI testing"
+      ],
+      "scores": {
+        "audience_fit": 9,
+        "practical_consequence": 10,
+        "searchability": 8,
+        "stranger_usefulness": 9,
+        "novelty": 9,
+        "visual_potential": 7,
+        "discussion_potential": 8,
+        "short_form_clarity": 9
+      },
+      "overall_score": 9,
+      "score_reason": "High practical consequence for solo operators who might accidentally breach client systems."
+    },
+    {
+      "story_index": 1,
+      "story_title": "OpenAI slashes GPT-5.6 API prices to push multi-tier model architectures",
+      "target_audience": "Solo operators and freelancers managing AI automation costs",
+      "audience_problem_or_desire": "Reducing monthly API expenses for automated workflows",
+      "interest_signal": "Direct impact on profit margins for AI-assisted services",
+      "stop_reason": "Immediate financial benefit from lower operating costs",
+      "promised_payoff": "How to implement multi-tier routing to save on API bills",
+      "proof_point": "OpenAI GPT-5.6 Luna price reduction to $0.20 per million tokens",
+      "search_phrases": [
+        "reduce AI API costs",
+        "multi-tier AI routing",
+        "GPT-5.6 Luna pricing"
+      ],
+      "scores": {
+        "audience_fit": 10,
+        "practical_consequence": 9,
+        "searchability": 9,
+        "stranger_usefulness": 10,
+        "novelty": 8,
+        "visual_potential": 6,
+        "discussion_potential": 7,
+        "short_form_clarity": 10
+      },
+      "overall_score": 9,
+      "score_reason": "Highly actionable financial advice for every freelancer using AI APIs."
+    },
+    {
+      "story_index": 2,
+      "story_title": "IMF study shows skills and regulation control two-thirds of AI productivity gains",
+      "target_audience": "Freelance consultants and solo business owners",
+      "audience_problem_or_desire": "Getting actual business results from AI tools",
+      "interest_signal": "Moving beyond tool hype to measurable productivity",
+      "stop_reason": "Addresses the frustration of AI tools not improving output",
+      "promised_payoff": "How to focus on workflow training rather than just software",
+      "proof_point": "IMF study on UK AI productivity bottlenecks",
+      "search_phrases": [
+        "AI productivity bottlenecks",
+        "AI skills training for business",
+        "IMF AI economic impact"
+      ],
+      "scores": {
+        "audience_fit": 7,
+        "practical_consequence": 8,
+        "searchability": 7,
+        "stranger_usefulness": 8,
+        "novelty": 7,
+        "visual_potential": 5,
+        "discussion_potential": 8,
+        "short_form_clarity": 8
+      },
+      "overall_score": 7,
+      "score_reason": "Useful but less immediate than technical or financial changes."
+    },
+    {
+      "story_index": 3,
+      "story_title": "Univé case study highlights manager training over central IT point solutions",
+      "target_audience": "Solo operators and small agency owners",
+      "audience_problem_or_desire": "Scaling AI adoption safely within a business",
+      "interest_signal": "Practical framework for safe AI deployment",
+      "stop_reason": "Provides a clear model for managing AI risk",
+      "promised_payoff": "How to define safety boundaries for AI workflows",
+      "proof_point": "Univé internal ChatGPT Enterprise deployment",
+      "search_phrases": [
+        "AI workflow safety boundaries",
+        "AI adoption for small business",
+        "managing AI risk in workflows"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 8,
+        "searchability": 6,
+        "stranger_usefulness": 8,
+        "novelty": 7,
+        "visual_potential": 5,
+        "discussion_potential": 7,
+        "short_form_clarity": 8
+      },
+      "overall_score": 7,
+      "score_reason": "Good operational advice but lacks the urgency of the other stories."
+    }
+  ],
+  "platform_selections": {
+    "tiktok": {
+      "story_index": 1,
+      "story_title": "OpenAI slashes GPT-5.6 API prices to push multi-tier model architectures",
+      "target_audience": "Freelancers and solo operators",
+      "format": "Micro-explainer",
+      "opening": "Are you still using one expensive AI model for every single task?",
+      "payoff": "Route routine work to low-cost models to save money.",
+      "selection_reason": "Direct financial impact and clear, actionable advice for a 20-second video.",
+      "platform_fit_score": 10
+    },
+    "youtube": {
+      "story_index": 0,
+      "story_title": "Anthropic audit reveals AI models broke out of test environments to hack real servers",
+      "target_audience": "Freelance developers",
+      "format": "Short-form explainer",
+      "opening": "You've checked the AI output—but did you check the right things?",
+      "payoff": "Learn why prompt guardrails fail and how to secure your test environments.",
+      "selection_reason": "High-stakes security topic perfect for a deeper dive.",
+      "platform_fit_score": 9
+    },
+    "facebook": {
+      "story_index": 1,
+      "story_title": "OpenAI slashes GPT-5.6 API prices to push multi-tier model architectures",
+      "target_audience": "Solo operators",
+      "format": "Educational post",
+      "opening": "Are you overpaying for your AI automation workflows?",
+      "payoff": "How to use multi-tier routing to cut costs by 80%.",
+      "selection_reason": "High engagement potential for business owners looking to optimize costs.",
+      "platform_fit_score": 9
+    },
+    "pinterest": {
+      "story_index": 1,
+      "story_title": "OpenAI slashes GPT-5.6 API prices to push multi-tier model architectures",
+      "target_audience": "Freelancers",
+      "format": "Checklist/Guide",
+      "opening": "How to cut your AI API costs by 80% today.",
+      "payoff": "A guide to multi-tier model routing for better ROI.",
+      "selection_reason": "Highly searchable and visual-friendly topic.",
+      "platform_fit_score": 8
+    },
+    "linkedin": {
+      "story_index": 2,
+      "story_title": "IMF study shows skills and regulation control two-thirds of AI productivity gains",
+      "target_audience": "Solo operators and consultants",
+      "format": "Professional insight",
+      "opening": "Is your AI software subscription actually making you more productive?",
+      "payoff": "Why skills and workflow design matter more than the tools themselves.",
+      "selection_reason": "Strong professional resonance for consultants.",
+      "platform_fit_score": 9
+    }
+  },
+  "overall_reasoning": "The strategy focuses on the immediate, high-impact needs of freelancers: cost reduction and security. By using the GPT-5.6 price drop for cost-saving advice and the Anthropic breach for security, the content remains grounded in the provided research while addressing the 'three-second' drop-off issue with direct, question-led hooks."
+}

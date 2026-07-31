@@ -48,3 +48,4 @@ Last checked: 2026-07-31
 - 2026-07-29: Updated to incorporate the latest research on the Model Context Protocol (MCP) stateless architecture, the shift from prompt engineering to 'agent harness' design, and the operational risks of discovery-remediation bottlenecks.
 - 2026-07-31: Updated the guide to incorporate recent research on integrated software stacks, the risks of shadow AI, and the operational bottlenecks caused by automated discovery tools.
 - 2026-07-31: Updated to include the latest research on connected software stacks, the shift to stateless protocols like MCP, and the operational risks of shadow AI and discovery-remediation bottlenecks.
+- 2026-07-31: Updated the guide to incorporate new research on integrated software stacks, the risks of shadow AI, and the operational bottlenecks created when AI discovery outpaces human remediation.

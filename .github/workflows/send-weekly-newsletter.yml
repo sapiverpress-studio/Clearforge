@@ -1,4 +1,4 @@
-name: Send Clearforge weekly newsletter
+name: Send Sapiver Forge weekly newsletter
 
 on:
   schedule:
@@ -26,7 +26,7 @@ jobs:
   build-and-send:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out Clearforge
+      - name: Check out Sapiver Forge
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -49,7 +49,7 @@ jobs:
 
       - name: Generate Saturday newsletter
         env:
-          BLOG_BASE_URL: https://clearforge-daily-brief.netlify.app
+          BLOG_BASE_URL: https://sapiverforge-daily-brief.netlify.app
         run: node src/generate-weekly-newsletter.mjs
 
       - name: Send newsletter through Brevo
@@ -57,7 +57,7 @@ jobs:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
           BREVO_LIST_ID: ${{ secrets.BREVO_LIST_ID }}
           BREVO_SENDER_EMAIL: clearforge@sapiverpress.co.uk
-          BREVO_SENDER_NAME: Clearforge
+          BREVO_SENDER_NAME: Sapiver Forge
           BREVO_TEST_ONLY: ${{ github.event_name == 'workflow_dispatch' && inputs.test_send || 'false' }}
         run: node src/send-weekly-newsletter-brevo.mjs
 
@@ -72,6 +72,6 @@ jobs:
             echo "No newsletter record changes to commit."
             exit 0
           fi
-          git commit -m "Send Clearforge weekly newsletter ${CLEARFORGE_WEEK_END}"
+          git commit -m "Send Sapiver Forge weekly newsletter ${CLEARFORGE_WEEK_END}"
           git pull --rebase origin main
           git push origin HEAD:main

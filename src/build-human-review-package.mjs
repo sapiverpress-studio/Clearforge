@@ -71,7 +71,7 @@ function assertNoLegacyBrandReferences(files) {
     if (legacyPattern.test(content) || legacyPattern.test(file.path)) failures.push(file.path);
   }
   if (failures.length) {
-    throw new Error(`Legacy Clearforge branding remains in candidate files: ${failures.join(", ")}`);
+    throw new Error(`Legacy Sapiver Forge branding remains in candidate files: ${failures.join(", ")}`);
   }
 }
 

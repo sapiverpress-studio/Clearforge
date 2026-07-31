@@ -32,7 +32,7 @@ const approval = {
   assurance_score_at_approval: report.assurance_score,
   automatic_publication: false,
   confirmation: CONFIRMATION,
-  disclosure: "Produced with AI assistance and released with human approval by Clearforge."
+  disclosure: "Produced with AI assistance and released with human approval by Sapiver Forge."
 };
 fs.writeFileSync(path.join(draftDir, "human_approval.json"), JSON.stringify(approval, null, 2) + "\n");
 console.log(`Recorded human approval for ${DATE} by ${APPROVER}.`);

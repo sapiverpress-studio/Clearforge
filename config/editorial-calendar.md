@@ -1,6 +1,6 @@
-# Clearforge Editorial Calendar
+# Sapiver Forge Editorial Calendar
 
-Clearforge uses a repeating weekly editorial rhythm to reduce repetition and make each day feel distinct.
+Sapiver Forge uses a repeating weekly editorial rhythm to reduce repetition and make each day feel distinct.
 
 ## Monday — Work
 
@@ -22,13 +22,13 @@ Focus on tool combinations: models, apps, APIs, image, video, voice, documents, 
 
 Focus on emerging tools, early releases, previews, newly visible trends and practical watchlist items. Make clear what is actually available now, what is staged, and what remains uncertain.
 
-## Saturday — Clearforge Forecast
+## Saturday — Sapiver Forge Forecast
 
 Produce an evidence-based forecast piece using the week’s confirmed developments. Ask: if this happened this week, what might reasonably follow? Which companies may follow suit? What should creators and small businesses watch? Clearly label forecasts as forecasts. Do not present predictions as facts.
 
 ## Sunday — Recap and Prediction Check
 
-Recap the strongest developments of the week, check any recent Clearforge forecasts where evidence exists, and prepare the reader for the following week. Separate confirmed outcomes from still-open questions.
+Recap the strongest developments of the week, check any recent Sapiver Forge forecasts where evidence exists, and prepare the reader for the following week. Separate confirmed outcomes from still-open questions.
 
 ## Rules
 
@@ -36,5 +36,5 @@ Recap the strongest developments of the week, check any recent Clearforge foreca
 - Predictions must be labelled as predictions.
 - Do not invent future releases, pricing, access, dates or company plans.
 - Prefer primary or authoritative sources.
-- Keep the Clearforge voice: plain, practical, useful, careful, non-hyped.
-- Clearforge is separate from Sapiver Press. Do not include Sapiver branding in public Clearforge content.
+- Keep the Sapiver Forge voice: plain, practical, useful, careful, non-hyped.
+- Sapiver Forge is separate from Sapiver Press. Do not include Sapiver branding in public Sapiver Forge content.

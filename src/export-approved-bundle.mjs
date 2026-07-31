@@ -17,16 +17,16 @@ const structuredPath = path.join(draftDir, "structured_output.json");
 const articlePath = path.join(draftDir, "daily_brief.md");
 const socialPath = path.join(draftDir, "social_pack.md");
 const outDir = path.join(ROOT, "bridge", "clearforge", DATE);
-const socialHashtags = "#AINews #AIWorkflow #PracticalAI #Clearforge #HumanLedAI";
+const socialHashtags = "#AINews #AIWorkflow #PracticalAI #Sapiver Forge #HumanLedAI";
 const cta = {
-  spoken: "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+  spoken: "Read the full breakdown through the link in our bio, or search Sapiver Forge AI Briefing in your podcast app to listen on the go.",
   screen_lines: [
     "READ THE FULL BREAKDOWN",
     "Link in bio",
     "LISTEN ON THE GO",
-    "Search: Clearforge AI Briefing"
+    "Search: Sapiver Forge AI Briefing"
   ],
-  caption: "Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+  caption: "Read the full Sapiver Forge breakdown through the link in our bio. Prefer to listen? Search ‘Sapiver Forge AI Briefing’ on your podcast provider.",
   direct_links_allowed_in_social_copy: false
 };
 
@@ -60,7 +60,7 @@ function appendHashtags(text) {
     .replace(/#AITools\b/gi, "")
     .replace(/#FacelessContentCreator\b/gi, "")
     .replace(/#SapiverPress\b/gi, "")
-    .replace(/#Clearforge\b/gi, "")
+    .replace(/#Sapiver Forge\b/gi, "")
     .replace(/#HumanLedAI\b/gi, "")
     .replace(/[ \t]+\n/g, "\n")
     .replace(/\n{3,}/g, "\n\n")
@@ -75,7 +75,7 @@ requireFile(socialPath);
 
 const approval = readJson(approvalPath);
 if (approval.article_approved !== true) {
-  console.log(`Clearforge ${DATE} not exported: article_approved is not true.`);
+  console.log(`Sapiver Forge ${DATE} not exported: article_approved is not true.`);
   process.exit(0);
 }
 
@@ -97,7 +97,7 @@ if (hasPodcast) copyDir(podcastDir, path.join(outDir, "podcast"));
 
 const manifest = {
   version: 5,
-  brand: "Clearforge",
+  brand: "Sapiver Forge",
   date: DATE,
   type: "clearforge_daily_ai_brief",
   approved: {
@@ -130,7 +130,7 @@ const manifest = {
     destination_url: articleUrl
   },
   youtube: {
-    title: (data.headline_options?.[0] || data.headline || "Clearforge Daily AI Brief").slice(0, 95),
+    title: (data.headline_options?.[0] || data.headline || "Sapiver Forge Daily AI Brief").slice(0, 95),
     script: `${String(data.social.youtube_shorts_script || "").trim()} ${cta.spoken}`.trim(),
     description: String(data.practical_takeaway || "").trim()
   },
@@ -171,4 +171,4 @@ const latestDir = path.join(ROOT, "bridge", "clearforge", "latest");
 fs.rmSync(latestDir, { recursive: true, force: true });
 copyDir(outDir, latestDir);
 
-console.log(`Exported approved Clearforge bundle for ${DATE}${hasMedia ? " with AI media" : " without AI media"}${hasPodcast ? " and podcast script" : ""}.`);
+console.log(`Exported approved Sapiver Forge bundle for ${DATE}${hasMedia ? " with AI media" : " without AI media"}${hasPodcast ? " and podcast script" : ""}.`);

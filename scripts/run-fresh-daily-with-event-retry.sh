@@ -12,7 +12,7 @@ attempt=1
 start_epoch=$(date +%s)
 wall_limit_seconds="${CLEARFORGE_FRESH_WALL_LIMIT_SECONDS:-600}"
 
-echo "Clearforge fresh-story loop starting (one bounded story set; wall limit ${wall_limit_seconds}s)."
+echo "Sapiver Forge fresh-story loop starting (one bounded story set; wall limit ${wall_limit_seconds}s)."
 
 while [ "$attempt" -le "$max_attempts" ]; do
   elapsed=$(( $(date +%s) - start_epoch ))

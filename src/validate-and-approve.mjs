@@ -175,7 +175,7 @@ const validation = {
 
 const socialInterestReport = {
   date: DATE,
-  principle: "Clearforge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  principle: "Sapiver Forge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
   passed: socialChecks.every((item) => item.passed),
   checks: socialChecks,
   pinterest: {

@@ -5,7 +5,7 @@ const ROOT = process.cwd();
 const apiKey = process.env.BREVO_API_KEY;
 const listId = Number(process.env.BREVO_LIST_ID);
 const senderEmail = process.env.BREVO_SENDER_EMAIL || "clearforge@sapiverpress.co.uk";
-const senderName = process.env.BREVO_SENDER_NAME || "Clearforge";
+const senderName = process.env.BREVO_SENDER_NAME || "Sapiver Forge";
 const weekEnd = process.env.CLEARFORGE_WEEK_END || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
@@ -27,7 +27,7 @@ const createResponse = await fetch("https://api.brevo.com/v3/emailCampaigns", {
   method: "POST",
   headers,
   body: JSON.stringify({
-    name: `Clearforge Weekly Digest ${weekEnd}${testOnly ? " TEST" : ""}`,
+    name: `Sapiver Forge Weekly Digest ${weekEnd}${testOnly ? " TEST" : ""}`,
     subject: metadata.subject,
     sender: { name: senderName, email: senderEmail },
     type: "classic",
@@ -35,7 +35,7 @@ const createResponse = await fetch("https://api.brevo.com/v3/emailCampaigns", {
     recipients: { listIds: [listId] },
     inlineImageActivation: false,
     mirrorActive: true,
-    footer: "You received this because you subscribed to the Clearforge Weekly Digest."
+    footer: "You received this because you subscribed to the Sapiver Forge Weekly Digest."
   })
 });
 
@@ -61,4 +61,4 @@ const updated = {
   test_run: testOnly
 };
 fs.writeFileSync(metaPath, JSON.stringify(updated, null, 2) + "\n");
-console.log(`Sent Clearforge Weekly Digest ${weekEnd} through Brevo campaign ${campaign.id} to list ${listId}.`);
+console.log(`Sent Sapiver Forge Weekly Digest ${weekEnd} through Brevo campaign ${campaign.id} to list ${listId}.`);

@@ -58,7 +58,7 @@ export default class GeminiClient {
           return { data: [{ b64_json: image.data, artwork_source: "gemini" }] };
         } catch (error) {
           const reason = error instanceof Error ? error.message : String(error);
-          console.warn(`Gemini image generation failed; using Clearforge fallback artwork. ${reason}`);
+          console.warn(`Gemini image generation failed; using Sapiver Forge fallback artwork. ${reason}`);
           return {
             data: [{
               b64_json: fallbackArtworkBase64(),

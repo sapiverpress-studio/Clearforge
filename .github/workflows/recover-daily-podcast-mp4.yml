@@ -1,4 +1,4 @@
-name: Recover Clearforge daily podcast MP3 and MP4
+name: Recover Sapiver Forge daily podcast MP3 and MP4
 
 on:
   workflow_dispatch:
@@ -22,7 +22,7 @@ jobs:
   recover:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out Clearforge
+      - name: Check out Sapiver Forge
         uses: actions/checkout@v4
 
       - name: Select edition
@@ -99,7 +99,7 @@ jobs:
           SOURCE_MP3: drafts/${{ steps.edition.outputs.edition }}/podcast/clearforge-daily-podcast-${{ steps.edition.outputs.edition }}.mp3
           SOURCE_MP4: drafts/${{ steps.edition.outputs.edition }}/podcast/clearforge-daily-podcast-${{ steps.edition.outputs.edition }}.mp4
           METADATA_PATH: drafts/${{ steps.edition.outputs.edition }}/podcast/episode-metadata.json
-          PODCAST_BASE_URL: https://clearforge-daily-brief.netlify.app
+          PODCAST_BASE_URL: https://sapiverforge-daily-brief.netlify.app
         run: node scripts/publish-podcast-feed.mjs
 
       - name: Save recovered MP4
@@ -113,7 +113,7 @@ jobs:
             "drafts/$edition/podcast/clearforge-daily-podcast-$edition.mp3.source-sha256" \
             "drafts/$edition/podcast/clearforge-daily-podcast-$edition.mp4" \
             public/podcast
-          git commit -m "Recover Clearforge daily podcast MP3 and MP4 for $edition"
+          git commit -m "Recover Sapiver Forge daily podcast MP3 and MP4 for $edition"
           git pull --rebase origin main
           git push origin HEAD:main
 
@@ -125,4 +125,4 @@ jobs:
         run: |
           set -euo pipefail
           [[ -n "${NETLIFY_AUTH_TOKEN:-}" ]] || { echo "Missing NETLIFY_AUTH_TOKEN."; exit 1; }
-          npx --yes netlify-cli@latest deploy --prod --dir=public --site="$NETLIFY_SITE_ID" --auth="$NETLIFY_AUTH_TOKEN" --message="Recover Clearforge podcast MP3 and MP4 ${{ steps.edition.outputs.edition }}"
+          npx --yes netlify-cli@latest deploy --prod --dir=public --site="$NETLIFY_SITE_ID" --auth="$NETLIFY_AUTH_TOKEN" --message="Recover Sapiver Forge podcast MP3 and MP4 ${{ steps.edition.outputs.edition }}"

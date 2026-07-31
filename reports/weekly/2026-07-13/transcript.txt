@@ -1,4 +1,4 @@
-Welcome to the Clearforge Weekly AI Brief.
+Welcome to the Sapiver Forge Weekly AI Brief.
 
 Human-led. AI-empowered.
 
@@ -29,7 +29,7 @@ That could make complex workflows faster. It also means one poor assumption can 
 
 OpenAI has published benchmark results and customer examples suggesting better performance and efficiency. Those figures are useful, but they are still vendor claims. They do not prove that GPT-5.6 will improve your particular task.
 
-The Clearforge verdict is: test carefully.
+The Sapiver Forge verdict is: test carefully.
 
 Do not rebuild your workflow because a launch page says the model is smarter. Give the new and old models the same real task. Use the same source material and the same checklist. Then measure time, errors, corrections, cost and whether the final output was actually usable.
 
@@ -117,7 +117,7 @@ If you are a developer, a contained experiment may be useful. Work on a copy. Re
 
 If you are a nontechnical creator, this is probably something to watch rather than build around today.
 
-Clearforge's rule is simple: preview access is not permission to rebuild your business.
+Sapiver Forge's rule is simple: preview access is not permission to rebuild your business.
 
 
 Anthropic introduced a different kind of update this week: a feature designed to help people reflect on how they use Claude.
@@ -140,7 +140,7 @@ And which tasks should I not delegate again?
 
 An AI-generated reflection is still only an interpretation. It should not be treated as a psychological assessment or a perfect record. But it can help expose repeated habits.
 
-The Clearforge verdict here is: use now. A ten-minute review can improve a workflow without requiring another subscription or another tool.
+The Sapiver Forge verdict here is: use now. A ten-minute review can improve a workflow without requiring another subscription or another tool.
 
 
 The final theme is accountability.
@@ -177,7 +177,7 @@ Then make a deliberate decision: use it, test it further, watch it or skip it.
 That small controlled experiment will teach you more than a week of launch headlines.
 
 
-This has been the Clearforge Weekly AI Brief.
+This has been the Sapiver Forge Weekly AI Brief.
 
 Human-led. AI-empowered.
 

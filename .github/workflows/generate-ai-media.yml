@@ -1,4 +1,4 @@
-name: Generate Clearforge AI Media
+name: Generate Sapiver Forge AI Media
 
 on:
   workflow_dispatch:
@@ -41,5 +41,5 @@ jobs:
       - name: Commit generated media
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Generate Clearforge AI media"
+          commit_message: "Generate Sapiver Forge AI media"
           file_pattern: "media/** bridge/**"

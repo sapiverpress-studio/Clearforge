@@ -84,7 +84,7 @@ const response = await client.responses.create({
   input: [
     {
       role: "system",
-      content: "You are the Clearforge evergreen learning editor. Build durable, search-led explainers from approved Clearforge research only. Never invent facts, never turn a temporary announcement into a timeless claim, and clearly distinguish established facts, current examples, uncertainty and practical interpretation. Prefer updating an existing guide when new evidence improves the same question."
+      content: "You are the Sapiver Forge evergreen learning editor. Build durable, search-led explainers from approved Sapiver Forge research only. Never invent facts, never turn a temporary announcement into a timeless claim, and clearly distinguish established facts, current examples, uncertainty and practical interpretation. Prefer updating an existing guide when new evidence improves the same question."
     },
     {
       role: "user",
@@ -124,7 +124,7 @@ const metadata = {
   source_urls: [...new Set([...(previousMeta.source_urls || []), ...result.source_urls])],
   revisions,
   approved_for_publication: true,
-  editorial_basis: "Generated only from Clearforge research packs that had already passed publication approval and material-claim verification."
+  editorial_basis: "Generated only from Sapiver Forge research packs that had already passed publication approval and material-claim verification."
 };
 
 write(path.join(dir, "guide.md"), result.guide_markdown.trim());

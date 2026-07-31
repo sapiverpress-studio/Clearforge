@@ -1,4 +1,4 @@
-name: Recover live Clearforge podcast archive
+name: Recover live Sapiver Forge podcast archive
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
   recover:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out Clearforge
+      - name: Check out Sapiver Forge
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -41,7 +41,7 @@ jobs:
             echo "Live podcast archive already matches the repository."
             exit 0
           fi
-          git commit -m "Recover live Clearforge podcast archive"
+          git commit -m "Recover live Sapiver Forge podcast archive"
           for attempt in 1 2 3; do
             if git pull --rebase origin main && git push origin HEAD:main; then
               exit 0

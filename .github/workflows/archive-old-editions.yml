@@ -1,4 +1,4 @@
-name: Archive Clearforge editions after 90 days
+name: Archive Sapiver Forge editions after 90 days
 
 on:
   schedule:
@@ -22,7 +22,7 @@ jobs:
   archive:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out Clearforge
+      - name: Check out Sapiver Forge
         uses: actions/checkout@v4
 
       - name: Set up Node
@@ -34,7 +34,7 @@ jobs:
         env:
           ARCHIVE_AFTER_DAYS: "90"
           ARCHIVE_DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
-          PODCAST_BASE_URL: https://clearforge-daily-brief.netlify.app
+          PODCAST_BASE_URL: https://sapiverforge-daily-brief.netlify.app
         run: node scripts/archive-old-editions.mjs
 
       - name: Save archive changes
@@ -49,5 +49,5 @@ jobs:
           git config user.name "clearforge-archive-bot"
           git config user.email "actions@users.noreply.github.com"
           git add public/archive public/podcast
-          git commit -m "Archive Clearforge editions older than 90 days"
+          git commit -m "Archive Sapiver Forge editions older than 90 days"
           git push

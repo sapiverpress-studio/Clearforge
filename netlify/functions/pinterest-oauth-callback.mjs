@@ -14,7 +14,7 @@ function escapeHtml(value) {
 }
 
 function page(status, body) {
-  return new Response(`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Clearforge Pinterest setup</title><style>body{font-family:system-ui,sans-serif;max-width:820px;margin:40px auto;padding:0 20px;line-height:1.5;color:#17202a}.box{border:1px solid #d1d5db;border-radius:.65rem;padding:1rem;margin:1rem 0;background:#f9fafb}.token{display:block;word-break:break-all;background:#111827;color:#fff;padding:.8rem;border-radius:.45rem;font-family:ui-monospace,monospace}button{padding:.65rem .9rem;border:0;border-radius:.45rem;background:#111827;color:white;margin-top:.5rem}code{background:#f3f4f6;padding:.15rem .35rem;border-radius:.3rem}.warn{background:#fff7ed;border-color:#fdba74}</style><body>${body}<script>for(const b of document.querySelectorAll('[data-copy]'))b.addEventListener('click',()=>navigator.clipboard.writeText(document.getElementById(b.dataset.copy).textContent));</script></body></html>`, {
+  return new Response(`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sapiver Forge Pinterest setup</title><style>body{font-family:system-ui,sans-serif;max-width:820px;margin:40px auto;padding:0 20px;line-height:1.5;color:#17202a}.box{border:1px solid #d1d5db;border-radius:.65rem;padding:1rem;margin:1rem 0;background:#f9fafb}.token{display:block;word-break:break-all;background:#111827;color:#fff;padding:.8rem;border-radius:.45rem;font-family:ui-monospace,monospace}button{padding:.65rem .9rem;border:0;border-radius:.45rem;background:#111827;color:white;margin-top:.5rem}code{background:#f3f4f6;padding:.15rem .35rem;border-radius:.3rem}.warn{background:#fff7ed;border-color:#fdba74}</style><body>${body}<script>for(const b of document.querySelectorAll('[data-copy]'))b.addEventListener('click',()=>navigator.clipboard.writeText(document.getElementById(b.dataset.copy).textContent));</script></body></html>`, {
     status,
     headers: {
       "content-type": "text/html; charset=utf-8",
@@ -80,14 +80,14 @@ export default async function pinterestOauthCallback(req) {
   try { data = text ? JSON.parse(text) : {}; } catch { data = { raw: text }; }
 
   if (!response.ok || !data.access_token || !data.refresh_token) {
-    return page(response.status || 500, `<h1>Pinterest token exchange failed</h1><div class="box warn"><pre>${escapeHtml(JSON.stringify(data, null, 2))}</pre></div><p>No token has been stored or logged by Clearforge.</p>`);
+    return page(response.status || 500, `<h1>Pinterest token exchange failed</h1><div class="box warn"><pre>${escapeHtml(JSON.stringify(data, null, 2))}</pre></div><p>No token has been stored or logged by Sapiver Forge.</p>`);
   }
 
   return page(200, `<h1>Pinterest connection authorised</h1><p>Copy both values now. This page is not stored and should be closed after updating GitHub.</p>
     <div class="box"><strong>GitHub secret: PINTEREST_ACCESS_TOKEN</strong><span class="token" id="access-token">${escapeHtml(data.access_token)}</span><button data-copy="access-token">Copy access token</button></div>
     <div class="box"><strong>GitHub secret: PINTEREST_REFRESH_TOKEN</strong><span class="token" id="refresh-token">${escapeHtml(data.refresh_token)}</span><button data-copy="refresh-token">Copy refresh token</button></div>
     <div class="box"><strong>Granted scopes</strong><p>${escapeHtml(data.scope || "Not returned")}</p><strong>Access-token lifetime</strong><p>${escapeHtml(data.expires_in || "Not returned")} seconds</p><strong>Refresh-token lifetime</strong><p>${escapeHtml(data.refresh_token_expires_in || "Not returned")} seconds</p></div>
-    <div class="box warn"><strong>Final GitHub step</strong><p>Update those two repository secrets in <code>sapiverpress-studio/SapiverPress_comic_public</code>, then run <code>Clearforge Social Distribution</code> in <code>verify</code> mode.</p></div>`);
+    <div class="box warn"><strong>Final GitHub step</strong><p>Update those two repository secrets in <code>sapiverpress-studio/SapiverPress_comic_public</code>, then run <code>Sapiver Forge Social Distribution</code> in <code>verify</code> mode.</p></div>`);
 }
 
 export const config = {

@@ -43,7 +43,7 @@ const response = await client.responses.create({
   reasoning: { effort: "high" },
   input: [{
     role: "system",
-    content: `You are Clearforge's factual correction editor. Apply every blocking claim finding and every failed numeric, availability/access and inference audit across every occurrence in all supplied outputs. Preserve all material eligibility, programme, account, region, preview, rollout and self-service restrictions from the cited source. Replace unsupported comparative or universal conclusions with explicit, proportionate Clearforge interpretation. Preserve structure, length, voice, source URLs, relevant product CTA and the internal Clearforge AI-assistance/human-approval disclosure. Make only necessary factual corrections. Do not introduce new claims. The returned structured_output_json must parse as JSON and preserve its complete schema.`
+    content: `You are Sapiver Forge's factual correction editor. Apply every blocking claim finding and every failed numeric, availability/access and inference audit across every occurrence in all supplied outputs. Preserve all material eligibility, programme, account, region, preview, rollout and self-service restrictions from the cited source. Replace unsupported comparative or universal conclusions with explicit, proportionate Sapiver Forge interpretation. Preserve structure, length, voice, source URLs, relevant product CTA and the internal Sapiver Forge AI-assistance/human-approval disclosure. Make only necessary factual corrections. Do not introduce new claims. The returned structured_output_json must parse as JSON and preserve its complete schema.`
   }, {
     role: "user",
     content: `EDITION: ${DATE}\n\nVERIFICATION REPORT:\n${JSON.stringify(verification)}\n\nFILES:\n${JSON.stringify(files)}`
@@ -62,7 +62,7 @@ fs.writeFileSync(path.join(dir, "factual-repair.json"), JSON.stringify({
 }, null, 2) + "\n");
 
 const social = repairedStructured.social || {};
-fs.writeFileSync(path.join(dir, "social_pack.md"), `# Clearforge Social Repurpose Pack — ${DATE}
+fs.writeFileSync(path.join(dir, "social_pack.md"), `# Sapiver Forge Social Repurpose Pack — ${DATE}
 
 Status: Draft — corrected; final independent claim verification pending
 

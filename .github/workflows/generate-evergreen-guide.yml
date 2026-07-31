@@ -1,4 +1,4 @@
-name: Clearforge Evergreen Guide
+name: Sapiver Forge Evergreen Guide
 
 on:
   workflow_dispatch:
@@ -43,13 +43,13 @@ jobs:
 
       - name: Rebuild approved static site
         env:
-          BLOG_BASE_URL: https://clearforge-daily-brief.netlify.app
+          BLOG_BASE_URL: https://sapiverforge-daily-brief.netlify.app
         run: npm run build:site
 
       - name: Commit evergreen guide and public pages
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Publish Clearforge evergreen guide"
+          commit_message: "Publish Sapiver Forge evergreen guide"
           file_pattern: "explainers/** public/**"
 
       - name: Confirm safe scope

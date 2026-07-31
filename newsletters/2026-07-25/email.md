@@ -1,4 +1,4 @@
-# Clearforge Weekly Digest — 2026-07-25
+# Sapiver Forge Weekly Digest — 2026-07-25
 
 AI news moved quickly this week. Here are the developments worth carrying forward, without the noise.
 
@@ -43,14 +43,14 @@ Our current read: This week’s confirmed moves suggest a practical shift: compa
 
 **Saturday forecast: open models, production agents and AI measurement are the next things to watch**
 
-[Open Clearforge AI Briefing](https://clearforge-daily-brief.netlify.app/podcast/)
+[Open Sapiver Forge AI Briefing](https://clearforge-daily-brief.netlify.app/podcast/)
 
-## Keep following Clearforge
+## Keep following Sapiver Forge
 
-- [Latest Clearforge briefing](https://clearforge-daily-brief.netlify.app/)
+- [Latest Sapiver Forge briefing](https://clearforge-daily-brief.netlify.app/)
 - [Podcast](https://clearforge-daily-brief.netlify.app/podcast/)
 - [Reports](https://clearforge-daily-brief.netlify.app/reports/)
 
 Human-led. AI-empowered.
 
-You are receiving this because you subscribed to the Clearforge Weekly Digest. [Unsubscribe]({{ unsubscribe }})
+You are receiving this because you subscribed to the Sapiver Forge Weekly Digest. [Unsubscribe]({{ unsubscribe }})

@@ -1,4 +1,4 @@
-name: Generate Clearforge podcast MP3 and MP4
+name: Generate Sapiver Forge podcast MP3 and MP4
 
 on:
   push:
@@ -27,7 +27,7 @@ jobs:
       GEMINI_TTS_VOICE: Kore
 
     steps:
-      - name: Check out Clearforge
+      - name: Check out Sapiver Forge
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
@@ -116,7 +116,7 @@ jobs:
             else
               kind="special"
             fi
-            PODCAST_KIND="$kind" EPISODE_SLUG="$slug" SOURCE_MP3="$output" SOURCE_MP4="$video_arg" METADATA_PATH="$metadata" PODCAST_BASE_URL="https://clearforge-daily-brief.netlify.app" node scripts/publish-podcast-feed.mjs
+            PODCAST_KIND="$kind" EPISODE_SLUG="$slug" SOURCE_MP3="$output" SOURCE_MP4="$video_arg" METADATA_PATH="$metadata" PODCAST_BASE_URL="https://sapiverforge-daily-brief.netlify.app" node scripts/publish-podcast-feed.mjs
           done < "${{ steps.narration.outputs.list_file }}"
 
       - name: Upload MP3 and MP4 package
@@ -141,5 +141,5 @@ jobs:
           git config user.name "clearforge-audio-bot"
           git config user.email "actions@users.noreply.github.com"
           git add -- 'reports/**/*.mp3' 'reports/**/*.mp3.source-sha256' 'reports/**/*.mp4' public/podcast
-          git commit -m "Generate Clearforge podcast MP3 and MP4 with Kore"
+          git commit -m "Generate Sapiver Forge podcast MP3 and MP4 with Kore"
           git push

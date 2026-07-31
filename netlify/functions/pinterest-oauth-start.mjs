@@ -6,7 +6,7 @@ function env(name) {
 }
 
 function html(status, body) {
-  return new Response(`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Clearforge Pinterest setup</title><style>body{font-family:system-ui,sans-serif;max-width:760px;margin:48px auto;padding:0 20px;line-height:1.5;color:#17202a}code{background:#f3f4f6;padding:.15rem .35rem;border-radius:.3rem}a.button{display:inline-block;background:#111827;color:#fff;text-decoration:none;padding:.8rem 1rem;border-radius:.55rem}</style><body>${body}</body></html>`, {
+  return new Response(`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sapiver Forge Pinterest setup</title><style>body{font-family:system-ui,sans-serif;max-width:760px;margin:48px auto;padding:0 20px;line-height:1.5;color:#17202a}code{background:#f3f4f6;padding:.15rem .35rem;border-radius:.3rem}a.button{display:inline-block;background:#111827;color:#fff;text-decoration:none;padding:.8rem 1rem;border-radius:.55rem}</style><body>${body}</body></html>`, {
     status,
     headers: {
       "content-type": "text/html; charset=utf-8",

@@ -1,10 +1,10 @@
-Welcome to the Clearforge Weekly AI Briefing, where we turn noisy AI news into clear, usable learning. Human-led. AI-empowered.
+Welcome to the Sapiver Forge Weekly AI Briefing, where we turn noisy AI news into clear, usable learning. Human-led. AI-empowered.
 
 This week’s central story is not one model beating another on a chart. It is AI moving deeper into the workflow itself.
 
 The clearest example came from Canva. Canva AI 2.0 was announced as a research preview, and the ambition is much larger than generating a picture. Canva says the new system can work conversationally, keep designs layered and editable, connect to tools such as Gmail, Slack, Google Drive and Notion, research the web, schedule recurring work, apply brand rules, build spreadsheets and create interactive experiences.
 
-That sounds powerful. It also changes the risk. A tool that makes one image can make one bad image. A connected system with access to email, files, calendars and publishing can carry one bad assumption much further. So the Clearforge verdict is test carefully. Start with one draft output. Give it approved source material. Do not let it publish automatically. Check what every connector can access, and remove permissions you do not need.
+That sounds powerful. It also changes the risk. A tool that makes one image can make one bad image. A connected system with access to email, files, calendars and publishing can carry one bad assumption much further. So the Sapiver Forge verdict is test carefully. Start with one draft output. Give it approved source material. Do not let it publish automatically. Check what every connector can access, and remove permissions you do not need.
 
 For a creator, this could mean turning an approved campaign brief into a draft social graphic, a presentation and a simple landing page without rebuilding the same idea three times. For a small business, it could mean summarising customer feedback, organising the themes in a sheet and preparing a draft response plan. In both cases, the value comes from continuity between steps. The human job is to define the source of truth, protect confidential material and check that the final claim, price, date and call to action are correct.
 
@@ -54,8 +54,8 @@ Use a simple review card for each attempt. Record whether the first answer was u
 
 Next week, watch for clearer Canva access details, wider Gemini Notebook code execution, early independent testing of Inkling, and practical implementation information around the European Commission’s measures.
 
-Clearforge does not ask you to chase every release. We help you turn change into one useful, human-led system.
+Sapiver Forge does not ask you to chase every release. We help you turn change into one useful, human-led system.
 
-Visit the Clearforge website for the full learning guide, daily briefings and practical exercises. You can also follow Clearforge AI Briefing in your usual podcast app, including Spotify.
+Visit the Sapiver Forge website for the full learning guide, daily briefings and practical exercises. You can also follow Sapiver Forge AI Briefing in your usual podcast app, including Spotify.
 
 Human-led. AI-empowered. Turning human input into clear, usable systems.

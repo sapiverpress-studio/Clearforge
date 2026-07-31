@@ -5,14 +5,14 @@ const out = path.join(process.cwd(), "public", "publishing");
 fs.mkdirSync(out, { recursive: true });
 fs.writeFileSync(path.join(out, "index.html"), `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow"><title>Publishing Pack | Clearforge</title>
+<meta name="robots" content="noindex,nofollow"><title>Publishing Pack | Sapiver Forge</title>
 <link rel="stylesheet" href="/styles.css"><style>
 .pack{max-width:760px;margin:auto}.notice,.asset{background:#0b1d31;border:1px solid #24415f;border-radius:16px;padding:1rem;margin:1rem 0}
 .asset video{width:100%;max-height:72vh;border-radius:10px;background:#000}.actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}
 .actions button,.actions a{padding:.7rem 1rem;border-radius:9px}.copybox{white-space:pre-wrap;background:#061525;padding:.8rem;border-radius:8px}
 </style></head><body><main class="content pack">
-<section><p class="eyebrow">Clearforge creator workspace</p><h1>Latest Publishing Pack</h1><p>Preview and download both finished video versions, then copy the matching caption.</p></section>
+<section><p class="eyebrow">Sapiver Forge creator workspace</p><h1>Latest Publishing Pack</h1><p>Preview and download both finished video versions, then copy the matching caption.</p></section>
 <p id="status" class="notice">Loading the latest publishing pack…</p><section id="assets"></section>
 </main><script type="module" src="/publishing/app.js"></script></body></html>`, "utf8");
 fs.copyFileSync(path.join(process.cwd(), "src", "publishing-dashboard-client.mjs"), path.join(out, "app.js"));
-console.log("Built public Clearforge publishing page.");
+console.log("Built public Sapiver Forge publishing page.");

@@ -150,8 +150,8 @@ const reviewDepth = hardStops.length
     ? "Routine review: check the claims table, opening hooks, product references and disclosure. Full consumption is not required unless something looks wrong."
     : "Closer review: inspect every flagged section and open the linked source or full output where indicated.";
 
-const disclosure = "Produced with AI assistance and released with human approval by Clearforge.";
-const approvalWorkflowUrl = "https://github.com/sapiverpress-studio/Clearforge/actions/workflows/approve-and-publish.yml";
+const disclosure = "Produced with AI assistance and released with human approval by Sapiver Forge.";
+const approvalWorkflowUrl = "https://github.com/sapiverpress-studio/Sapiver Forge/actions/workflows/approve-and-publish.yml";
 const report = {
   schema_version: 1,
   edition: DATE,
@@ -227,7 +227,7 @@ const socialCards = [
 
 const html = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Clearforge Release Desk - ${esc(DATE)}</title>
+<title>Sapiver Forge Release Desk - ${esc(DATE)}</title>
 <style>
 :root{--navy:#071827;--blue:#163d5c;--gold:#e2b85b;--paper:#fff;--cream:#f7f4ed;--ink:#102437;--line:#d8e0e6;--red:#ad2d2d}
 *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.5 system-ui,sans-serif}header{background:var(--navy);color:#fff;padding:24px}header div,main{max-width:1080px;margin:auto}main{padding:18px 14px 60px}.panel,.item{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;margin:14px 0}.decision{border-left:8px solid var(--gold)}.decision.stop{border-color:var(--red)}.scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:9px}.score{display:flex;justify-content:space-between;background:#edf3f6;padding:10px;border-radius:9px}.score strong{text-transform:capitalize}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:9px}.scroll{overflow:auto}.copy{background:#eef5f8;padding:12px;border-radius:9px;white-space:pre-wrap;overflow-wrap:anywhere}.approve-button{display:inline-block;background:#176b45;color:#fff;padding:12px 18px;border-radius:9px;font-weight:700;text-decoration:none}small{color:#607080}a{color:#0c567f}@media(max-width:680px){th:nth-child(4),td:nth-child(4){display:none}}
@@ -239,14 +239,14 @@ const html = `<!doctype html>
 <section class="panel"><h2>Release readiness</h2><div class="scores">${scoreCards}</div><p><small>Facts, structure and images are separate checks. Publication always requires Jim's approval.</small></p></section>
 <section class="panel"><h2>Hard stops</h2>${stopList}<h2>Advisory flags</h2>${flagList}</section>
 <section class="panel"><h2>Independent claim verification</h2><p><strong>Result:</strong> ${claimVerification.passed === true ? "PASS" : "FAIL"} · <strong>Confidence:</strong> ${(Number(claimVerification.confidence) || 0).toFixed(3)}</p><p>${esc(claimVerification.summary || "No verification summary was produced.")}</p><div class="scroll"><table><thead><tr><th>Output</th><th>Exact claim</th><th>Classification</th><th>Status</th><th>Reason/evidence</th><th>Required correction</th></tr></thead><tbody>${verificationRows || "<tr><td colspan=\"6\">No claim-level findings were recorded.</td></tr>"}</tbody></table></div></section>
-<section class="panel"><h2>Draft evidence map</h2><p><small>These are claims recorded during research. Their presence is not proof; use the independent verification table above for validation status.</small></p><div class="scroll"><table><thead><tr><th>#</th><th>Source</th><th>Draft factual claim</th><th>Clearforge interpretation</th></tr></thead><tbody>${sourceRows}</tbody></table></div></section>
+<section class="panel"><h2>Draft evidence map</h2><p><small>These are claims recorded during research. Their presence is not proof; use the independent verification table above for validation status.</small></p><div class="scroll"><table><thead><tr><th>#</th><th>Source</th><th>Draft factual claim</th><th>Sapiver Forge interpretation</th></tr></thead><tbody>${sourceRows}</tbody></table></div></section>
 <section class="panel"><h2>Story summary</h2>${storyCards || "<p>No stories found.</p>"}</section>
 <section class="panel"><h2>Social copy</h2>${socialCards}</section>
 <section class="panel"><h2>Complete long-form outputs</h2><p>These are the exact full outputs checked by the claim verifier.</p><details><summary><strong>Article — ${report.counts.article_words} words</strong></summary><pre class="copy">${esc(article || "Missing")}</pre></details><details><summary><strong>Feature — ${report.counts.feature_words} words</strong></summary><pre class="copy">${esc(feature || "Missing")}</pre></details><details><summary><strong>Podcast — ${report.counts.podcast_words} words</strong></summary><pre class="copy">${esc(podcastScript || "Missing")}</pre></details></section>
 <section class="panel"><h2>Disclosure used after approval</h2><p class="copy">${esc(disclosure)}</p></section>
 </main></body></html>`;
 
-const summary = `# Clearforge Release Desk - ${DATE}
+const summary = `# Sapiver Forge Release Desk - ${DATE}
 
 **Decision:** ${decision}
 **Facts:** ${readiness.facts}
@@ -293,7 +293,7 @@ ${clean(social.pinterest_description || "Not generated")}
 1. Check the claims, source links, flags and social copy above.
 2. Download and open \`clearforge-release-desk-${DATE}.html\` only when you need the fuller report.
 3. Open full outputs only where flagged or questionable.
-4. If satisfied, open [Clearforge Approve and Publish](${approvalWorkflowUrl}) and press **Run workflow**. GitHub will select the newest completed Release Desk.
+4. If satisfied, open [Sapiver Forge Approve and Publish](${approvalWorkflowUrl}) and press **Run workflow**. GitHub will select the newest completed Release Desk.
 
 Nothing publishes from this report automatically.
 `;
@@ -302,4 +302,4 @@ fs.mkdirSync(draftDir, { recursive: true });
 fs.writeFileSync(path.join(draftDir, "release-desk.json"), JSON.stringify(report, null, 2) + "\n");
 fs.writeFileSync(path.join(draftDir, `clearforge-release-desk-${DATE}.html`), html);
 fs.writeFileSync(path.join(draftDir, "release-summary.md"), summary);
-console.log(`Built Clearforge Release Desk for ${DATE}: ${decision}, assurance ${report.assurance_score.toFixed(3)}`);
+console.log(`Built Sapiver Forge Release Desk for ${DATE}: ${decision}, assurance ${report.assurance_score.toFixed(3)}`);

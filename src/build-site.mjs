@@ -131,8 +131,8 @@ function relatedBlock(entry, allEntries) {
 function newsletterCallout() {
   return `<section class="newsletter-callout"><h2>Get the weekly Sapiver Forge digest</h2><p>One calm email covering what changed, why it matters and what is worth testing. No daily inbox noise.</p><p><a class="button" href="/newsletter/">Join the weekly digest</a></p></section>`;
 }
-function productGallery(folder, filenames, title) {
-  return `<div class="gate-gallery" aria-label="${escapeHtml(title)} product previews">${filenames.map((filename, index) => `<a href="/products/gate-system/${folder}/${filename}.webp" target="_blank" rel="noopener noreferrer"><img src="/products/gate-system/${folder}/${filename}.webp" alt="${escapeHtml(title)} preview ${index + 1} of ${filenames.length}" width="1200" height="1200" loading="${index === 0 ? "eager" : "lazy"}"></a>`).join("")}</div>`;
+function productGallery(folder, filenames, title, basePath = "/products/gate-system") {
+  return `<div class="gate-gallery" aria-label="${escapeHtml(title)} product previews">${filenames.map((filename, index) => `<a href="${basePath}/${folder}/${filename}.webp" target="_blank" rel="noopener noreferrer"><img src="${basePath}/${folder}/${filename}.webp" alt="${escapeHtml(title)} preview ${index + 1} of ${filenames.length}" width="1200" height="1200" loading="${index === 0 ? "eager" : "lazy"}"></a>`).join("")}</div>`;
 }
 function gateSystemStorefront() {
   const gates = [
@@ -235,6 +235,7 @@ function gateSystemStorefront() {
 }
 function gateWorkspaceOffer() {
   return `<section class="workspace-offer" id="gate-workspace" aria-labelledby="workspace-title">
+    ${productGallery("notion-workspace", ["01_Cover", "02_What_It_Does", "03_What_You_Receive"], "Sapiver Forge AI Gate Workspace", "/products")}
     <div class="workspace-intro">
       <p class="eyebrow">Sapiver Forge AI Gate Workspace</p>
       <h2 id="workspace-title">Make clearer decisions about where and how you use AI.</h2>

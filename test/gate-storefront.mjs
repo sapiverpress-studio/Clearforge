@@ -11,8 +11,8 @@ const requiredText = [
   "Individual Gates — £22.80 each",
   "Agent Connection Safety add-on",
   "Latest practical guidance",
-  "Recent Clearforge articles",
-  "Clearforge AI Briefing"
+  "Recent Sapiver Forge articles",
+  "Sapiver Forge AI Briefing"
 ];
 
 for (const text of requiredText) {
@@ -36,11 +36,11 @@ assert.ok(!homepage.includes("https://payhip.com/b/vGks8"), "Legacy Release Gate
 assert.ok(!homepage.includes("https://payhip.com/b/VK2yl"), "Legacy Workflow Control Kit link is still present.");
 
 const workspaceText = [
-  "Clearforge AI Gate Workspace",
+  "Sapiver Forge AI Gate Workspace",
   "Make clearer decisions about where and how you use AI.",
   "one ready-to-duplicate blank assessment for each stage",
   "Get the complete workspace free.",
-  "Buy direct and support Clearforge.",
+  "Buy direct and support Sapiver Forge.",
   "It does not include the separate browser-based decision tools"
 ];
 
@@ -65,6 +65,15 @@ for (const image of images) {
   const file = path.join(imageRoot, image);
   assert.ok(fs.statSync(file).size > 0, `Product image is empty: ${image}`);
   assert.ok(homepage.includes(`/products/gate-system/${image.replaceAll(path.sep, "/")}`), `Product image is not used by the homepage: ${image}`);
+}
+
+const notionImageRoot = path.join(root, "public", "products", "notion-workspace");
+const notionImages = fs.readdirSync(notionImageRoot).filter((entry) => entry.endsWith(".webp"));
+assert.equal(notionImages.length, 3, "Expected all 3 Notion Workspace product images.");
+for (const image of notionImages) {
+  const file = path.join(notionImageRoot, image);
+  assert.ok(fs.statSync(file).size > 0, `Notion Workspace image is empty: ${image}`);
+  assert.ok(homepage.includes(`/products/notion-workspace/${image}`), `Notion Workspace image is not used by the homepage: ${image}`);
 }
 
 console.log("Gate System storefront checks passed.");

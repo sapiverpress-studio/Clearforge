@@ -34,6 +34,7 @@ Last checked: 2026-07-31
 - https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/
 - https://blog.adobe.com/en/publish/2026/07/22/acrobat-brings-pdf-workflows-to-whatsapp
 - https://www.propublica.org/article/anthropic-claude-mythos-microsoft-bugs-vulnerabilities
+- https://www.caledonianrecord.com/news/national/nearly-2-in-5-us-workers-have-put-company-information-into-personal-ai-accounts/article_12345678.html
 
 ## Revision history
 
@@ -48,3 +49,4 @@ Last checked: 2026-07-31
 - 2026-07-29: Updated to incorporate the latest research on the Model Context Protocol (MCP) stateless architecture, the shift from prompt engineering to 'agent harness' design, and the operational risks of discovery-remediation bottlenecks.
 - 2026-07-31: Updated the guide to incorporate recent research on integrated software stacks, the risks of shadow AI, and the operational bottlenecks caused by automated discovery tools.
 - 2026-07-31: Updated to include the latest research on connected software stacks, the shift to stateless protocols like MCP, and the operational risks of shadow AI and discovery-remediation bottlenecks.
+- 2026-07-31: Updated the guide to incorporate findings from the 2026-07-30 research pack, specifically focusing on the shift toward integrated software stacks, the risks of shadow AI, and the importance of workflow containment.

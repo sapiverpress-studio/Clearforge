@@ -1,53 +1,48 @@
 # How to adopt AI tools that work inside the apps your team already uses
 
-Adopting AI effectively is less about choosing a standalone chatbot and more about integrating AI features into the software your team already uses daily. By embedding AI into existing document, design, project management, and communication tools, organizations can reduce context switching and keep data within established security perimeters.
+Adopting AI tools is most effective when they are integrated directly into the software your team already uses, rather than relying on isolated, standalone AI applications. By embedding AI into existing workflows—such as document review, project management, and communication platforms—organizations can reduce context switching and keep data within established security perimeters.
 
 ## What it means
 
-AI is shifting from isolated, browser-based chat interfaces to integrated features within enterprise software stacks. This "connected software" approach allows AI to access relevant context—such as project files, inventory data, or chat history—directly within the application. The goal is to automate repetitive tasks like document annotation, inventory discovery, or meeting triage without requiring employees to move sensitive information into unapproved, external AI accounts.
+AI integration is shifting from standalone chat interfaces to "connected software stacks." This means AI features are now appearing inside tools like Adobe Acrobat, Jira, Notion, and Google Workspace. The goal is to allow AI to act as a layer within your existing operational tools, enabling tasks like document annotation, project planning, and automated triage to happen where the work is already being managed.
 
 ## How it works in practice
 
-Successful integration relies on "workflow containment." Instead of relying on prompt engineering hacks, teams should focus on:
+To adopt these tools effectively, focus on "workflow containment." Instead of asking employees to copy-paste sensitive data into external AI websites, look for features that operate within your company's existing security and governance boundaries. For example:
 
-*   **Defining boundaries:** Use repository instructions (e.g., `.github/copilot-instructions.md`) and permission boundaries to define what an AI agent can and cannot do.
-*   **Automating triage:** Do not automate the discovery of issues (like bugs or contract errors) unless you have a pre-built, automated triage system that prioritizes findings for human review.
-*   **Standardizing handoffs:** Ensure that AI-generated outputs are subject to mandatory human review checkpoints before they reach production or customer communications.
+*   **Document Workflows:** Tools like Adobe Acrobat now allow users to annotate and share PDFs directly within messaging platforms like WhatsApp, keeping the document review process inside the communication thread.
+*   **Project Management:** Platforms like Notion and Jira allow users to assign tasks to AI agents directly from shared boards, ensuring that AI-generated work remains attached to the relevant project record.
+*   **Operational Triage:** In customer support, tools like Salesforce Agentforce are being packaged as managed services that can handle routine inquiries, with clear handoff points to human agents for complex cases.
 
 ## Why organisations are adopting it
 
-Organisations are moving toward integrated AI pipelines to solve three primary problems:
-
-1.  **Shadow AI risks:** A July 2026 survey found that 38% of U.S. workers have entered company data into personal AI accounts, often violating confidentiality agreements. Providing official, integrated tools reduces this risk.
-2.  **Operational bottlenecks:** When AI discovery speed (e.g., identifying software bugs) outpaces human remediation capacity, it creates a "mad dash" scenario. Integrated systems allow for structured triage queues.
-3.  **Productivity gaps:** Offshore and distributed teams see significant productivity gains (up to 68% in some surveys) when provided with standard enterprise AI stacks, helping to close output quality gaps across global operations.
+Organizations are moving toward integrated AI pipelines to solve the "shadow AI" problem. A July 2026 survey found that 38% of U.S. workers have entered company data into personal AI accounts, often without realizing it violates confidentiality agreements. By providing official, easy-to-use AI tools embedded in existing apps, managers can reduce the incentive for employees to use unapproved personal accounts, thereby keeping data within the company's security perimeter.
 
 ## What changes for people and workflows
 
-AI is blurring traditional job boundaries. Research indicates that a large share of AI-assisted work crosses occupational lines, with many workers using AI to perform tasks adjacent to their primary roles. This requires managers to establish explicit copy-paste policies and clear ownership of AI-assisted outputs. The focus is shifting from "prompting" to "delegation," where the human role is to set the constraints, validate the output, and handle the final sign-off.
+AI is increasingly blurring job boundaries, with workers using AI to handle tasks adjacent to their primary roles. While this can lead to significant productivity gains—some offshore teams reported 68% improvements—it also requires a shift in how work is reviewed. The focus is moving from "prompt engineering" to "workflow containment," where the priority is defining clear repository instructions, permission boundaries, and mandatory human review gates.
 
 ## Limits, risks and what remains uncertain
 
-*   **Remediation lag:** Automated discovery tools can identify flaws faster than human teams can patch them. If your discovery speed exceeds your remediation speed, you are creating a bottleneck.
-*   **Compliance complexity:** While some regions are simplifying administrative burdens (such as the EU's AI Omnibus), transparency obligations regarding disclosure and provenance remain a core product requirement.
-*   **Data residency:** For sensitive workflows, the deployment model (e.g., on-premise vs. cloud) often matters more than the model's capability.
+Automation can create a "discovery bottleneck." If AI identifies bugs, contract errors, or data anomalies faster than human teams can patch or review them, the organization may face an operational crisis. Furthermore, while stateless protocols like the Model Context Protocol (MCP) are making it easier to secure AI traffic, the speed of discovery currently outpaces human remediation capacity in many complex systems. It is also important to note that while productivity gains are widely reported, the long-term impact on role definitions and team structures remains an area of ongoing adjustment.
 
 ## Practical questions to ask before using it
 
-1.  Does this tool allow for human-in-the-loop validation before an action is taken?
-2.  Where does the data live, and who has access to the logs of AI interactions?
-3.  Is there an automated triage system to prioritize AI-generated findings for human review?
-4.  Does the tool provide clear provenance or watermarking for AI-generated content?
+*   **Where does the data live?** Does the tool keep data within our existing security perimeter, or does it send information to external model training pipelines?
+*   **Who owns the handoff?** If the AI drafts a response or identifies an issue, what is the specific human review step required before that output is finalized?
+*   **Is there an automated triage system?** If we automate discovery (e.g., bug finding or data auditing), do we have a pre-built system to prioritize these findings for human review?
+*   **What are the permission boundaries?** Can the AI tool access only the specific files or repositories it needs, or does it have broad access to our entire system?
 
 ## Current examples
 
-*   **Adobe Acrobat:** Integrated directly into WhatsApp, allowing users to annotate and share PDFs without leaving the chat thread.
-*   **Adobe Commerce:** Links LLM-powered discovery to real-time inventory APIs, allowing shoppers to query complex needs against live stock.
-*   **Model Context Protocol (MCP):** The 2026-07-28 specification enables stateless AI agent interactions over standard HTTP, allowing enterprise teams to secure AI traffic using existing firewalls and OAuth.
+*   **Adobe Acrobat:** Integrated into WhatsApp to allow PDF annotation and sharing without leaving the chat.
+*   **Adobe Commerce:** Uses LLMs to connect conversational search directly to backend inventory and catalog systems.
+*   **Notion 3.6:** Allows teams to assign tasks to external agents like Claude and Cursor from a shared board, keeping the AI's work visible and auditable.
+*   **Salesforce Agentforce:** Provides prepackaged customer service agents with pay-per-resolution pricing, designed to handle routine support cases.
 
 ## Sources and further reading
 
 *   [Adobe Blog: Acrobat brings powerful PDF workflows to WhatsApp](https://blog.adobe.com/en/publish/2026/07/22/acrobat-brings-pdf-workflows-to-whatsapp)
-*   [AWS Machine Learning Blog: How AgentCore Gateway supports the MCP 2026-07-28 spec](https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/)
-*   [ProPublica: Anthropic's New AI Model Can Identify More Software Bugs Than Ever](https://www.propublica.org/article/anthropic-claude-mythos-microsoft-bugs-vulnerabilities)
+*   [Enterprise Technology News: Is Adobe Commerce Poised to Revolutionize Product Discovery with AI?](https://www.eetimes.com/is-adobe-commerce-poised-to-revolutionize-product-discovery-with-ai/)
 *   [Caledonian Record: Nearly 2 in 5 US workers have put company information into personal AI accounts](https://www.caledonianrecord.com/news/national/nearly-2-in-5-us-workers-have-put-company-information-into-personal-ai-accounts/article_12345678.html)
+*   [PR Newswire: Fewer Than 7% of Offshore Professionals Fear AI Will Harm Their Roles](https://www.prnewswire.com/news-releases/fewer-than-7-of-offshore-professionals-fear-ai-will-harm-their-roles-302516482.html)

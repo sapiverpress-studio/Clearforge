@@ -2,6 +2,7 @@ import crypto from "node:crypto";
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
+import { containsVisibleLegacyBrand } from "./legacy-brand-guard.mjs";
 
 const ROOT = process.cwd();
 const EDITION = String(process.env.CLEARFORGE_DATE || "").trim();
@@ -62,16 +63,15 @@ function markdownBlock(title, content) {
 }
 function assertNoLegacyBrandReferences(files) {
   const textExtensions = new Set([".css", ".csv", ".html", ".js", ".json", ".md", ".mjs", ".rss", ".svg", ".txt", ".xml", ".yml", ".yaml"]);
-  const legacyPattern = /\bclear\s*forge\b|\bclearforge\b/i;
   const failures = [];
   for (const file of files) {
     if (!textExtensions.has(path.extname(file.path).toLowerCase())) continue;
     const absolute = path.join(ROOT, file.path);
     const content = fs.readFileSync(absolute, "utf8");
-    if (legacyPattern.test(content) || legacyPattern.test(file.path)) failures.push(file.path);
+    if (containsVisibleLegacyBrand(content) || containsVisibleLegacyBrand(file.path)) failures.push(file.path);
   }
   if (failures.length) {
-    throw new Error(`Legacy Sapiver Forge branding remains in candidate files: ${failures.join(", ")}`);
+    throw new Error(`Legacy Clearforge branding remains in candidate files: ${failures.join(", ")}`);
   }
 }
 

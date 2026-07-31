@@ -19,7 +19,6 @@ fs.writeFileSync(tempFile, transformed, "utf8");
 
 try {
   await import(`${pathToFileURL(tempFile).href}?run=${Date.now()}`);
-  await import(`${pathToFileURL(path.join(process.cwd(), "scripts", "product-only-homepage.mjs")).href}?run=${Date.now()}`);
 } finally {
   fs.rmSync(tempDir, { recursive: true, force: true });
 }

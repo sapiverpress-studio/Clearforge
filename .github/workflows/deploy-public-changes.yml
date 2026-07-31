@@ -6,12 +6,13 @@ on:
       - main
     paths:
       - "public/**"
+      - "src/build-site.mjs"
       - "scripts/rebrand-public-sapiver-forge.mjs"
       - ".github/workflows/deploy-public-changes.yml"
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: sapiver-forge-netlify-production
@@ -24,7 +25,38 @@ jobs:
       - name: Check out Sapiver Forge
         uses: actions/checkout@v4
 
-      - name: Apply Sapiver Forge public branding
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Rebrand active website generator source
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('node:fs');
+          const file = 'src/build-site.mjs';
+          let source = fs.readFileSync(file, 'utf8');
+          source = source
+            .replaceAll('https://clearforge-daily-brief.netlify.app', 'https://sapiverforge-daily-brief.netlify.app')
+            .replaceAll('Clearforge', 'Sapiver Forge');
+          fs.writeFileSync(file, source, 'utf8');
+          if (source.includes('https://clearforge-daily-brief.netlify.app') || /\bClearforge\b/.test(source)) {
+            throw new Error('Active website generator still contains Clearforge branding.');
+          }
+          console.log('Active website generator now uses Sapiver Forge branding.');
+          NODE
+
+      - name: Rebuild complete public website
+        env:
+          BLOG_BASE_URL: https://sapiverforge-daily-brief.netlify.app
+        run: npm run build:site
+
+      - name: Apply Sapiver Forge public branding guard
         run: node scripts/rebrand-public-sapiver-forge.mjs
 
       - name: Verify active public branding
@@ -36,6 +68,20 @@ jobs:
             | grep -vE '<guid isPermaLink="false">clearforge:'; then
             echo "::error::Active Clearforge branding remains in the public deployment."
             exit 1
+          fi
+
+      - name: Save rebranded source and generated site
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- src/build-site.mjs public; then
+            echo "No source or generated-site changes to commit."
+          else
+            git config user.name "sapiver-forge-site-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add src/build-site.mjs public
+            git commit -m "Rebrand website source and generated content to Sapiver Forge"
+            git push
           fi
 
       - name: Deploy public to Netlify production
@@ -54,4 +100,4 @@ jobs:
             --dir=public \
             --site="${NETLIFY_SITE_ID}" \
             --auth="${NETLIFY_AUTH_TOKEN}" \
-            --message="Deploy Sapiver Forge public content"
+            --message="Deploy Sapiver Forge website and public content"

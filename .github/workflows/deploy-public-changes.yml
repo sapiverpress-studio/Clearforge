@@ -1,4 +1,4 @@
-name: Deploy Clearforge public changes
+name: Deploy Sapiver Forge public changes
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "public/**"
+      - "scripts/rebrand-public-sapiver-forge.mjs"
       - ".github/workflows/deploy-public-changes.yml"
   workflow_dispatch:
 
@@ -13,15 +14,29 @@ permissions:
   contents: read
 
 concurrency:
-  group: clearforge-netlify-production
+  group: sapiver-forge-netlify-production
   cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out Clearforge
+      - name: Check out Sapiver Forge
         uses: actions/checkout@v4
+
+      - name: Apply Sapiver Forge public branding
+        run: node scripts/rebrand-public-sapiver-forge.mjs
+
+      - name: Verify active public branding
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RInE --include='*.html' --include='*.xml' --include='*.json' --include='*.js' --include='*.txt' --include='*.md' \
+            'Clearforge|ClearForge|CLEARFORGE|clearforge-daily-brief\.netlify\.app' public \
+            | grep -vE '<guid isPermaLink="false">clearforge:'; then
+            echo "::error::Active Clearforge branding remains in the public deployment."
+            exit 1
+          fi
 
       - name: Deploy public to Netlify production
         env:
@@ -39,4 +54,4 @@ jobs:
             --dir=public \
             --site="${NETLIFY_SITE_ID}" \
             --auth="${NETLIFY_AUTH_TOKEN}" \
-            --message="Deploy Clearforge public content"
+            --message="Deploy Sapiver Forge public content"

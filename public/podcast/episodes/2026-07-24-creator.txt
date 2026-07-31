@@ -64,7 +64,7 @@ But we do know enough to make a practical judgment.
 
 For creators and small teams, Canva AI 2.0 is the most useful story of the day because it is about production, not spectacle. It is trying to fit into the actual mess of making things on a deadline.
 
-My Clearforge verdict is: test carefully.
+My Sapiver Forge verdict is: test carefully.
 
 Not because it is unsafe. Not because it is a bad idea. But because the best way to judge a tool like this is with one real task, one small scope, and one honest question: did it save time without creating more cleanup?
 

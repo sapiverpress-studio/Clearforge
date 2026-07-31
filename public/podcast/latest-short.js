@@ -13,7 +13,7 @@
     if (!sections.length) return;
 
     const manifestResponse = await fetch(manifestUrl, { cache: "no-store" });
-    if (!manifestResponse.ok) throw new Error("Latest Clearforge social manifest is unavailable.");
+    if (!manifestResponse.ok) throw new Error("Latest Sapiver Forge social manifest is unavailable.");
     const manifest = await manifestResponse.json();
     const videoPath = safeRepositoryPath(manifest?.tiktok?.video || manifest?.outputs?.tiktok_video);
     const captionPath = safeRepositoryPath(manifest?.tiktok?.caption || manifest?.outputs?.tiktok_caption);
@@ -72,5 +72,5 @@
     }
   }
 
-  load().catch((error) => console.warn("Clearforge latest short:", error.message));
+  load().catch((error) => console.warn("Sapiver Forge latest short:", error.message));
 })();

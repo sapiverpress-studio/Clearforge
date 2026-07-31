@@ -40,6 +40,6 @@ If you want one useful experiment, make it this week’s test. Choose one AI-ass
 
 The risk to watch next is not only model quality. It is workflow drift. A process that starts with harmless drafts can gradually pick up more permissions, more shortcuts, and fewer checks. That is how a system becomes fragile. The fix is not to avoid AI. It is to keep the lanes separated. Draft in one lane. Review in another. Publish in a third. The closer you get to the final action, the more human oversight you want.
 
-So here is the Clearforge verdict: test carefully. Use AI now for the repetitive drafting work, the variations, the cleanup, and the early checks. But keep a human checkpoint where the decision matters, because that is where quality, trust, and reversibility live.
+So here is the Sapiver Forge verdict: test carefully. Use AI now for the repetitive drafting work, the variations, the cleanup, and the early checks. But keep a human checkpoint where the decision matters, because that is where quality, trust, and reversibility live.
 
 If you remember one sentence from today, make it this: automate the draft, not the approval.

@@ -62,4 +62,4 @@ This is worth using if you have a clear workflow, a real review step, and a task
 
 If you want one line to remember from this weekend, make it this: AI is moving from chat to action, and the more action it takes, the more important your review step becomes.
 
-Produced with AI assistance and released with human approval by Clearforge.
+Produced with AI assistance and released with human approval by Sapiver Forge.

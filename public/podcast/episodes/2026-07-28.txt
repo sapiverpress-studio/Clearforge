@@ -42,8 +42,8 @@ If you are a beginner, start with one low-risk internal task and keep the human 
 
 What should you watch next? Watch whether more tools move from simple chat into managed workflows with logging, approvals, and escalation. Watch whether companies begin treating AI access as an authorization problem, not just a software choice. And watch how often people keep using AI outside their original role, because that is where the biggest work changes are likely to show up first.
 
-The Clearforge verdict is: use now, but test carefully.
+The Sapiver Forge verdict is: use now, but test carefully.
 
 Not because the technology is unsafe by default, and not because the opportunity is small, but because the work pattern is changing faster than most teams have written their rules for it. The advantage goes to the people who define the handoff before the handoff breaks.
 
-Produced with AI assistance and released with human approval by Clearforge.
+Produced with AI assistance and released with human approval by Sapiver Forge.

@@ -36,7 +36,7 @@ If you are a creator, this affects how you package AI-assisted work before it go
 
 There is a bigger lesson here too. AI adoption is no longer just about what the tool can produce. It is about what the surrounding process can safely handle. That is why disclosure is becoming a product question, not only a policy question.
 
-So here is the Clearforge verdict: use now, but test carefully.
+So here is the Sapiver Forge verdict: use now, but test carefully.
 
 Use it now in the sense that every team can start mapping disclosure into the workflow immediately. Test carefully because the exact implementation will vary by content type, platform, and jurisdiction, and because the line between a helpful label and a broken process is easy to miss.
 

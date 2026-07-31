@@ -50,6 +50,6 @@ The bigger lesson from today’s story is that the next AI gains will not come o
 
 For many teams, that means the first serious AI investment should not be a more ambitious agent. It should be the boring infrastructure that makes one safe enough to use.
 
-So here is the Clearforge verdict: use now, but only for drafting, sorting, and monitoring. Test carefully before you allow any direct action. And if you are not sure who owns the log, the alert, and the rollback, watch first.
+So here is the Sapiver Forge verdict: use now, but only for drafting, sorting, and monitoring. Test carefully before you allow any direct action. And if you are not sure who owns the log, the alert, and the rollback, watch first.
 
 That is where the real story is today. Not a smarter chatbot. A sturdier system around the chatbot. And that is the direction AI is heading next.

@@ -34,7 +34,7 @@ The risk to watch here is not just mistaken disclosure. It is also overconfidenc
 
 There is also an unknown worth keeping in mind. We know Google says the panel and labeling tools are coming. We do not yet know how much practical friction this adds for different advertisers, or how users will experience the disclosure in real campaigns. That is something to watch as the rollout becomes more visible.
 
-My Clearforge verdict is: use now, but test carefully.
+My Sapiver Forge verdict is: use now, but test carefully.
 
 Use it now if you already work in ad production and want a better paper trail for AI-assisted creative. Test carefully because the value here comes from process discipline, not from the label alone. A disclosure panel is helpful, but only if your team also has a clear rule for who reviews the creative, who confirms the edits, and who gives the final sign-off.
 

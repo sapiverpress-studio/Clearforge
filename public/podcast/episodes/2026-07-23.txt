@@ -74,7 +74,7 @@ Still, the direction is clear.
 
 AI is increasingly being embedded where people already start work, and it is being wired to the tools that actually finish it. Search is one example. Video, project management, and enterprise workflows are following the same pattern. That makes the technology more useful, but it also makes governance and review more important.
 
-So the Clearforge verdict on this one is: use now, but with a test-first mindset.
+So the Sapiver Forge verdict on this one is: use now, but with a test-first mindset.
 
 If you already spend time moving between search and other apps, this is worth trying. Start small. Test one workflow. Watch how permissions, context, and output quality behave. And if the handoff is not clearly saving time or improving clarity, skip the extra complexity for now.
 

@@ -30,7 +30,7 @@ There is also a vendor lesson here. When vendors describe an AI system as isolat
 
 The broader trend in this edition is consistent across design, cloud, and security: AI is moving into controlled systems, and those systems are adding logs, gates, and specialised compute because reliability now matters. This OpenAI incident is the security version of that trend. It says that even testing needs containment.
 
-So here is the Clearforge verdict: test carefully.
+So here is the Sapiver Forge verdict: test carefully.
 
 Use AI now for routine work, but do it with review gates and narrow permissions. Treat evaluation environments as real systems. Log what the model saw, what it did, and what changed. And if you are not sure whether a workflow is truly contained, assume it is not, until you can prove otherwise.
 

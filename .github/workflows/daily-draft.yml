@@ -1,4 +1,4 @@
-name: Clearforge Daily Autopilot
+name: Sapiver Forge Daily Autopilot
 
 on:
   workflow_dispatch:
@@ -45,7 +45,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  BLOG_BASE_URL: "https://clearforge-daily-brief.netlify.app"
+  BLOG_BASE_URL: "https://sapiverforge-daily-brief.netlify.app"
   NETLIFY_SITE_ID: "8e72a4fc-5ad6-4377-8f4a-399d4c936060"
 
 jobs:
@@ -247,7 +247,7 @@ jobs:
             echo "## Gemini Kore podcast MP3 not generated"
             echo
             echo "Gemini TTS failed or was unavailable. The podcast MP3 and RSS episode were skipped."
-            echo "All other Clearforge outputs will continue."
+            echo "All other Sapiver Forge outputs will continue."
             echo "The podcast production script remains available in the daily package."
           } >> "$GITHUB_STEP_SUMMARY"
 
@@ -258,7 +258,7 @@ jobs:
           EPISODE_SLUG: ${{ env.CLEARFORGE_DATE }}
           SOURCE_MP3: drafts/${{ env.CLEARFORGE_DATE }}/podcast/clearforge-daily-podcast-${{ env.CLEARFORGE_DATE }}.mp3
           METADATA_PATH: drafts/${{ env.CLEARFORGE_DATE }}/podcast/episode-metadata.json
-          PODCAST_BASE_URL: https://clearforge-daily-brief.netlify.app
+          PODCAST_BASE_URL: https://sapiverforge-daily-brief.netlify.app
         run: node scripts/publish-podcast-feed.mjs
 
       - name: Generate story-specific AI visuals and narration
@@ -305,7 +305,7 @@ jobs:
           SOURCE_MP3: drafts/${{ env.CLEARFORGE_DATE }}/podcast/clearforge-daily-podcast-${{ env.CLEARFORGE_DATE }}.mp3
           SOURCE_MP4: drafts/${{ env.CLEARFORGE_DATE }}/podcast/clearforge-daily-podcast-${{ env.CLEARFORGE_DATE }}.mp4
           METADATA_PATH: drafts/${{ env.CLEARFORGE_DATE }}/podcast/episode-metadata.json
-          PODCAST_BASE_URL: https://clearforge-daily-brief.netlify.app
+          PODCAST_BASE_URL: https://sapiverforge-daily-brief.netlify.app
         run: node scripts/publish-podcast-feed.mjs
 
       - name: Upload daily podcast MP3 and MP4 package
@@ -347,7 +347,7 @@ jobs:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
           CLEARFORGE_REVIEW_EMAIL: ${{ secrets.CLEARFORGE_REVIEW_EMAIL }}
           BREVO_SENDER_EMAIL: clearforge@sapiverpress.co.uk
-          BREVO_SENDER_NAME: Clearforge
+          BREVO_SENDER_NAME: Sapiver Forge
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           CLEARFORGE_CANDIDATE_ID: ${{ steps.candidate.outputs.candidate_id }}
           CLEARFORGE_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
@@ -374,7 +374,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
-          TITLE="Clearforge autopilot failed ${CLEARFORGE_DATE}"
+          TITLE="Sapiver Forge autopilot failed ${CLEARFORGE_DATE}"
           BODY="The automatic retry also failed. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           EXISTING="$(gh issue list --state open --search "${TITLE} in:title" --json number --jq '.[0].number // empty')"
           if [ -z "${EXISTING}" ]; then

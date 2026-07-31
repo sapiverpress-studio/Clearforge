@@ -25,7 +25,7 @@ while [ "$attempt" -le "$max_attempts" ]; do
   fi
 
   log_file="$(mktemp)"
-  echo "Clearforge research attempt ${attempt}/${max_attempts}: ${research_mode} (hard limit ${attempt_timeout_seconds}s; total budget ${total_timeout_seconds}s)"
+  echo "Sapiver Forge research attempt ${attempt}/${max_attempts}: ${research_mode} (hard limit ${attempt_timeout_seconds}s; total budget ${total_timeout_seconds}s)"
 
   set +e
   CLEARFORGE_RESEARCH_MODE="$research_mode" \

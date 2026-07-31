@@ -5,7 +5,7 @@ const ROOT = process.cwd();
 const apiKey = process.env.BREVO_API_KEY;
 const recipientEmail = process.env.CLEARFORGE_REVIEW_EMAIL;
 const senderEmail = process.env.BREVO_SENDER_EMAIL || "clearforge@sapiverpress.co.uk";
-const senderName = process.env.BREVO_SENDER_NAME || "Clearforge";
+const senderName = process.env.BREVO_SENDER_NAME || "Sapiver Forge";
 const edition = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
@@ -42,8 +42,8 @@ const hardStops = Array.isArray(report.hard_stops) ? report.hard_stops : [];
 const flags = Array.isArray(report.advisory_flags) ? report.advisory_flags : [];
 
 const subject = hasReleaseDesk
-  ? `Clearforge review ready — ${decision} — ${edition}`
-  : `Clearforge run needs attention — ${edition}`;
+  ? `Sapiver Forge review ready — ${decision} — ${edition}`
+  : `Sapiver Forge run needs attention — ${edition}`;
 
 const summaryHtml = hasReleaseDesk
   ? `<p><strong>Decision:</strong> ${esc(decision)}</p>
@@ -53,7 +53,7 @@ const summaryHtml = hasReleaseDesk
      <h2>Advisory flags</h2>
      ${flags.length ? `<ul>${flags.map((item) => `<li>${esc(item)}</li>`).join("")}</ul>` : "<p>None detected.</p>"}
      <p>The complete Daily Release Desk is attached. Nothing has been approved or published.</p>`
-  : `<p>The Clearforge draft run did not produce a Daily Release Desk.</p>
+  : `<p>The Sapiver Forge draft run did not produce a Daily Release Desk.</p>
      <p>No content was approved or published. Open the workflow run to inspect the failure.</p>`;
 
 const runLink = runUrl
@@ -65,7 +65,7 @@ const payload = {
   to: [{ email: recipientEmail, name: "Jim" }],
   subject,
   htmlContent: `<!doctype html><html><body style="font-family:Arial,sans-serif;line-height:1.5;color:#102437">
-    <h1>Clearforge Daily Review</h1>
+    <h1>Sapiver Forge Daily Review</h1>
     <p><strong>Edition:</strong> ${esc(edition)}</p>
     ${summaryHtml}
     ${runLink}
@@ -76,7 +76,7 @@ const payload = {
 if (hasReleaseDesk) {
   const attachment = fs.readFileSync(htmlPath);
   if (attachment.length > 8 * 1024 * 1024) {
-    throw new Error("Release Desk attachment exceeds the 8 MB Clearforge email safety limit.");
+    throw new Error("Release Desk attachment exceeds the 8 MB Sapiver Forge email safety limit.");
   }
   payload.attachment = [{
     name: path.basename(htmlPath),
@@ -110,5 +110,5 @@ if (!response.ok) {
 }
 
 console.log(hasReleaseDesk
-  ? `Emailed Clearforge Release Desk for ${edition} to the configured review address.`
-  : `Emailed Clearforge run-failure notice for ${edition} to the configured review address.`);
+  ? `Emailed Sapiver Forge Release Desk for ${edition} to the configured review address.`
+  : `Emailed Sapiver Forge run-failure notice for ${edition} to the configured review address.`);

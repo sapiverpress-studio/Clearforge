@@ -16,7 +16,7 @@ if (!apiKey) {
   throw new Error("No ElevenLabs API key was provided.");
 }
 if (voiceId !== "w9xM4Spfmuw28ZXAirWK") {
-  throw new Error("Voice substitution blocked: Clearforge must use Irene.");
+  throw new Error("Voice substitution blocked: Sapiver Forge must use Irene.");
 }
 if (!fs.existsSync(inputPath)) {
   throw new Error(`Narration file not found: ${inputPath}`);

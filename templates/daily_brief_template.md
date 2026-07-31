@@ -1,4 +1,4 @@
-# Clearforge Daily AI Brief Template
+# Sapiver Forge Daily AI Brief Template
 
 Date:
 

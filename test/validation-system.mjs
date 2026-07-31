@@ -24,7 +24,7 @@ const sources = [1, 2, 3].map((number) => ({
   topic_category: "workplace_and_business",
   evidence_basis: "Original publication",
   confirmed_fact: `Supported fact ${number}`,
-  interpretation: `Clearforge interpretation ${number}`
+  interpretation: `Sapiver Forge interpretation ${number}`
 }));
 const stories = sources.map((source, index) => ({
   title: `Story ${index + 1}`,

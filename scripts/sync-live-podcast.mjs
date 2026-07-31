@@ -40,4 +40,4 @@ for (const episode of episodes) {
   await download(pageUrl.href, path.join(episodesDir, `${slug}.html`), "text/html");
 }
 
-console.log(`Recovered ${episodes.length} live Clearforge podcast episode(s) without calling ElevenLabs.`);
+console.log(`Recovered ${episodes.length} live Sapiver Forge podcast episode(s) without calling ElevenLabs.`);

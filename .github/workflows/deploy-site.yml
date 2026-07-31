@@ -1,4 +1,4 @@
-name: Deploy Clearforge Site
+name: Deploy Sapiver Forge Site
 
 on:
   workflow_dispatch:
@@ -33,7 +33,7 @@ jobs:
         run: npm install
       - name: Build site
         env:
-          BLOG_BASE_URL: https://clearforge-daily-brief.netlify.app
+          BLOG_BASE_URL: https://sapiverforge-daily-brief.netlify.app
         run: npm run build:site
       - name: Deploy production
         env:
@@ -44,4 +44,4 @@ jobs:
             echo "::error::Missing NETLIFY_AUTH_TOKEN repository secret."
             exit 1
           fi
-          npx --yes netlify-cli@latest deploy --prod --dir=public --site="${NETLIFY_SITE_ID}" --auth="${NETLIFY_AUTH_TOKEN}" --message="Clearforge protected publishing dashboard"
+          npx --yes netlify-cli@latest deploy --prod --dir=public --site="${NETLIFY_SITE_ID}" --auth="${NETLIFY_AUTH_TOKEN}" --message="Sapiver Forge protected publishing dashboard"

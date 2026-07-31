@@ -28,7 +28,7 @@ jobs:
   voice-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out Clearforge
+      - name: Check out Sapiver Forge
         uses: actions/checkout@v4
 
       - name: Set up Node
@@ -86,7 +86,7 @@ jobs:
           1. Play the MP3 beginning LISTEN-GEMINI.
           2. Compare it with the published Irene version of the same edition.
           3. Check pronunciation, pace, naturalness, voice consistency and whether every sentence was read correctly.
-          4. Do not publish this test. It has not passed the Clearforge Output Release Gate.
+          4. Do not publish this test. It has not passed the Sapiver Forge Output Release Gate.
 
           Report one result: PASS — acceptable replacement, or FAIL — keep Irene.
           EOF

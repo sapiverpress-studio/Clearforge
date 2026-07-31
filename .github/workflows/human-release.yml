@@ -25,7 +25,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  BLOG_BASE_URL: "https://clearforge-daily-brief.netlify.app"
+  BLOG_BASE_URL: "https://sapiverforge-daily-brief.netlify.app"
   NETLIFY_SITE_ID: "8e72a4fc-5ad6-4377-8f4a-399d4c936060"
 
 jobs:

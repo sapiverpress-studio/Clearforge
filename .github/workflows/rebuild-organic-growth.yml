@@ -1,4 +1,4 @@
-name: Rebuild Clearforge Organic Growth Pages
+name: Rebuild Sapiver Forge Organic Growth Pages
 
 on:
   workflow_dispatch:
@@ -37,11 +37,11 @@ jobs:
 
       - name: Build approved static site
         env:
-          BLOG_BASE_URL: https://clearforge-daily-brief.netlify.app
+          BLOG_BASE_URL: https://sapiverforge-daily-brief.netlify.app
         run: npm run build:site
 
       - name: Commit organic discovery pages
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Rebuild Clearforge organic discovery pages"
+          commit_message: "Rebuild Sapiver Forge organic discovery pages"
           file_pattern: "public/**"

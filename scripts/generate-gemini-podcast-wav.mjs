@@ -14,7 +14,7 @@ if (!inputPath || !outputPath)
 if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required.");
 if (voice !== "Kore")
   throw new Error(
-    "Voice substitution blocked: Clearforge full podcasts must use Kore.",
+    "Voice substitution blocked: Sapiver Forge full podcasts must use Kore.",
   );
 if (!fs.existsSync(inputPath))
   throw new Error(`Approved narration file not found: ${inputPath}`);

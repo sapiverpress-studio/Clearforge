@@ -31,7 +31,7 @@ const approval = {
   approved_by: approver,
   approved_at: new Date().toISOString(),
   confirmation,
-  disclosure: "Produced with AI assistance and released with human approval by Clearforge."
+  disclosure: "Produced with AI assistance and released with human approval by Sapiver Forge."
 };
 fs.writeFileSync(
   path.join(ROOT, "drafts", edition, "human_approval.json"),

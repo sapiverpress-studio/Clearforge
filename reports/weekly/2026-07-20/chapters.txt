@@ -1,4 +1,4 @@
-00:00 — Clearforge introduction
+00:00 — Sapiver Forge introduction
 00:35 — The week’s central shift: AI as a workflow layer
 01:25 — Canva AI 2.0
 03:15 — Inkling and open weights

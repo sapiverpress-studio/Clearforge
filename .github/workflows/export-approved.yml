@@ -1,4 +1,4 @@
-name: Export Approved Clearforge Bundle
+name: Export Approved Sapiver Forge Bundle
 
 on:
   workflow_dispatch:
@@ -38,5 +38,5 @@ jobs:
       - name: Commit approved bundle and site
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Export approved Clearforge bundle for ${{ github.event.inputs.date_override }}"
+          commit_message: "Export approved Sapiver Forge bundle for ${{ github.event.inputs.date_override }}"
           file_pattern: "bridge/** public/**"

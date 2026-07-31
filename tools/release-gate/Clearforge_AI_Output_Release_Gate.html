@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Clearforge AI Output Release Gate</title>
+<title>Sapiver Forge AI Output Release Gate</title>
 <style>
 :root{--ink:#102437;--navy:#071827;--blue:#163d5c;--gold:#e2b85b;--cream:#f7f4ed;--paper:#fff;--muted:#607080;--line:#d8e0e6;--green:#19734b;--amber:#a56200;--red:#ad2d2d}
 *{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;background:var(--cream);color:var(--ink)}
@@ -26,7 +26,7 @@ footer{text-align:center;color:var(--muted);font-size:.83rem;padding:24px}.notic
 </style>
 </head>
 <body>
-<header><div class="wrap"><div class="brand">Clearforge</div><h1>AI Output Release Gate</h1><p class="sub">A human approval system for deciding whether AI-assisted work should be released, revised or stopped.</p></div></header>
+<header><div class="wrap"><div class="brand">Sapiver Forge</div><h1>AI Output Release Gate</h1><p class="sub">A human approval system for deciding whether AI-assisted work should be released, revised or stopped.</p></div></header>
 <main>
 <div class="steps"><span class="step active" data-s="1">1. Describe</span><span class="step" data-s="2">2. Assess</span><span class="step" data-s="3">3. Decide</span><span class="step" data-s="4">4. Record</span></div>
 <section class="panel" id="intro">
@@ -64,7 +64,7 @@ footer{text-align:center;color:var(--muted);font-size:.83rem;padding:24px}.notic
 <div class="actions"><button onclick="saveRecord()">Save to local register</button><button class="secondary" onclick="window.print()">Print / save PDF</button><button class="secondary" onclick="downloadReport()">Download report</button><button class="secondary" onclick="resetGate()">New assessment</button></div>
 </section>
 <section class="panel" id="registerPanel"><h2>Local release register</h2><p class="help">Saved in this browser. Export regularly if the record matters.</p><div class="scroll"><table><thead><tr><th>Date</th><th>Output</th><th>Decision</th><th>Reviewer</th><th></th></tr></thead><tbody id="registerBody"></tbody></table></div><div class="actions"><button class="secondary" onclick="exportJSON()">Export JSON</button><button class="secondary" onclick="exportCSV()">Export CSV</button><button class="secondary" onclick="document.getElementById('importFile').click()">Import JSON</button><input class="hidden" type="file" id="importFile" accept=".json" onchange="importJSON(event)"><button class="danger" onclick="clearRegister()">Clear register</button></div></section>
-</main><footer>Clearforge - Human-led. AI-empowered.<br>Developed with AI assistance and subjected to human-led testing and review. Clearforge retains responsibility for the final product.<br>This operational aid is not legal, privacy, financial or professional advice.</footer>
+</main><footer>Sapiver Forge - Human-led. AI-empowered.<br>Developed with AI assistance and subjected to human-led testing and review. Sapiver Forge retains responsibility for the final product.<br>This operational aid is not legal, privacy, financial or professional advice.</footer>
 <script>
 const Q=[
 {id:'grounded',title:'Are factual claims supported by reliable evidence?',help:'Check the original source, not another AI summary.',actions:'Verify every material factual claim against an original or authoritative source.'},
@@ -77,7 +77,7 @@ const Q=[
 {id:'approval',title:'Has a named human accepted responsibility for release?',help:'“The AI checked it” is not approval.',actions:'Assign a named human reviewer and record their release decision.'}
 ];
 const ROUTES={
-'Article or social post':['Open every cited source and confirm it supports the exact claim.','Distinguish confirmed fact, vendor claim and Clearforge interpretation.','Check quotations, statistics, dates, names, links and asset rights.'],
+'Article or social post':['Open every cited source and confirm it supports the exact claim.','Distinguish confirmed fact, vendor claim and Sapiver Forge interpretation.','Check quotations, statistics, dates, names, links and asset rights.'],
 'Email or business document':['Verify recipients, attachments, prices, deadlines and commitments.','Confirm confidential information was permitted to enter the AI tool.','Check unintended promises and ensure a human sends the final version.'],
 'Meeting notes or action list':['Compare decisions and actions against the recording, transcript or attendee confirmation.','Verify every owner and deadline rather than inferring them.','Separate agreed decisions from suggestions and unresolved discussion.'],
 'Creative asset':['Record the source and licence for every input asset.','Inspect faces, hands, text, logos and product details at full size.','Check brand identity and record any required disclosure or client restriction.'],
@@ -106,11 +106,11 @@ function saveRecord(){if(!current)return;current.notes=notes.value;const r=getRe
 function renderRegister(){const r=getRecords();registerBody.innerHTML=r.length?r.map(x=>`<tr><td>${new Date(x.date).toLocaleDateString()}</td><td>${esc(x.title)}<br><small>${esc(x.type)}</small></td><td><strong>${esc(x.decision)}</strong></td><td>${esc(x.owner)}</td><td><button class="secondary" data-delete-id="${esc(x.id)}">Delete</button></td></tr>`).join(''):'<tr><td colspan="5">No saved assessments.</td></tr>';registerBody.querySelectorAll('[data-delete-id]').forEach(b=>b.addEventListener('click',()=>deleteRecord(b.dataset.deleteId)))}
 function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function dl(name,text,type='text/plain'){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;a.click();URL.revokeObjectURL(a.href)}
-function downloadReport(){if(!current)return;dl(`Clearforge_Release_Report_${current.title.replace(/[^a-z0-9]+/gi,'_')}.txt`,[`CLEARFORGE AI OUTPUT RELEASE REPORT`,`Decision: ${current.decision}`,`Risk score: ${current.risk}`,`Date: ${current.date}`,`Output: ${current.title}`,`Type: ${current.type}`,`AI tool: ${current.tool||'Not recorded'}`,`Reviewer: ${current.owner}`,`Destination: ${current.destination}`,`Consequence: ${current.impact}`,'',`Required actions:`,...(current.actions.length?current.actions.map(x=>'- '+x):['- None recorded']),'',`Review notes: ${current.notes||'None'}`].join('\n'))}
-function exportJSON(){dl('Clearforge_AI_Output_Release_Register.json',JSON.stringify(getRecords(),null,2),'application/json')}
-function exportCSV(){const rows=[['date','output','type','decision','risk_score','reviewer','destination'],...getRecords().map(x=>[x.date,x.title,x.type,x.decision,x.risk,x.owner,x.destination])];dl('Clearforge_AI_Output_Release_Register.csv',rows.map(r=>r.map(v=>`"${String(v).replaceAll('"','""')}"`).join(',')).join('\n'),'text/csv')}
+function downloadReport(){if(!current)return;dl(`Sapiver Forge_Release_Report_${current.title.replace(/[^a-z0-9]+/gi,'_')}.txt`,[`CLEARFORGE AI OUTPUT RELEASE REPORT`,`Decision: ${current.decision}`,`Risk score: ${current.risk}`,`Date: ${current.date}`,`Output: ${current.title}`,`Type: ${current.type}`,`AI tool: ${current.tool||'Not recorded'}`,`Reviewer: ${current.owner}`,`Destination: ${current.destination}`,`Consequence: ${current.impact}`,'',`Required actions:`,...(current.actions.length?current.actions.map(x=>'- '+x):['- None recorded']),'',`Review notes: ${current.notes||'None'}`].join('\n'))}
+function exportJSON(){dl('Sapiver Forge_AI_Output_Release_Register.json',JSON.stringify(getRecords(),null,2),'application/json')}
+function exportCSV(){const rows=[['date','output','type','decision','risk_score','reviewer','destination'],...getRecords().map(x=>[x.date,x.title,x.type,x.decision,x.risk,x.owner,x.destination])];dl('Sapiver Forge_AI_Output_Release_Register.csv',rows.map(r=>r.map(v=>`"${String(v).replaceAll('"','""')}"`).join(',')).join('\n'),'text/csv')}
 function validRecord(x){return x&&typeof x==='object'&&!Array.isArray(x)&&typeof x.id==='string'&&/^[a-zA-Z0-9-]{1,100}$/.test(x.id)&&typeof x.date==='string'&&!Number.isNaN(Date.parse(x.date))&&['RELEASE','REVISE','STOP'].includes(x.decision)&&['title','type','owner','destination'].every(k=>typeof x[k]==='string')&&Number.isFinite(Number(x.risk))}
-function importJSON(e){const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{try{const d=JSON.parse(rd.result);if(!Array.isArray(d)||!d.every(validRecord))throw 0;localStorage.setItem('clearforgeReleaseRecords',JSON.stringify(d));renderRegister()}catch{alert('That file is not a valid Clearforge release register.')}};rd.readAsText(f)}
+function importJSON(e){const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{try{const d=JSON.parse(rd.result);if(!Array.isArray(d)||!d.every(validRecord))throw 0;localStorage.setItem('clearforgeReleaseRecords',JSON.stringify(d));renderRegister()}catch{alert('That file is not a valid Sapiver Forge release register.')}};rd.readAsText(f)}
 function deleteRecord(id){localStorage.setItem('clearforgeReleaseRecords',JSON.stringify(getRecords().filter(x=>x.id!==id)));renderRegister()}
 function clearRegister(){if(confirm('Delete every locally saved release record from this browser?')){localStorage.removeItem('clearforgeReleaseRecords');renderRegister()}}
 function resetGate(){gateForm.reset();current=null;result.classList.add('hidden');showSection('describe',1)}

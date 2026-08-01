@@ -1,0 +1,46 @@
+[
+  {
+    "source_name": "AWS Machine Learning Blog",
+    "title": "Deploying Kimi K3 on Amazon SageMaker HyperPod and Amazon EKS",
+    "url": "https://aws.amazon.com/blogs/machine-learning/deploying-kimi-k3-on-amazon-sagemaker-hyperpod-and-amazon-eks/",
+    "published_date": "2026-07-30",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "models_and_infrastructure",
+    "evidence_basis": "Official engineering announcement and infrastructure guide published on the AWS Machine Learning Blog on July 30, 2026.",
+    "confirmed_fact": "On July 27, 2026, Moonshot AI launched Kimi K3, a 2.8 trillion parameter Mixture of Experts (MoE) open-weight model. On July 30, 2026, AWS published official enterprise deployment architectures to run and self-host Kimi K3 on Amazon SageMaker HyperPod and Amazon EKS clusters.",
+    "interpretation": "Enterprise cloud providers are building reference architectures for self-hosting multi-trillion parameter open-weight models, giving organizations sovereign control over model weights without relying exclusively on closed third-party API providers."
+  },
+  {
+    "source_name": "Revelio Labs",
+    "title": "AI Labor Market Tracker — July 2026",
+    "url": "https://www.reveliolabs.com/news/macro/ai-labor-market-tracker-july-2026/",
+    "published_date": "2026-07-28",
+    "coverage_lane": "human_impact",
+    "topic_category": "workplace_and_business",
+    "evidence_basis": "Monthly macroeconomic statistical tracking report published by Revelio Labs analyzing employment listings, hiring conversion rates, and online upskilling trends in July 2026.",
+    "confirmed_fact": "Revelio Labs' July 2026 tracking data shows that job postings are yielding fewer hires per listing as firms re-evaluate talent needs prior to AI deployment, while computer science university enrollments have plateaued since 2022 as workers rapidly seek online generative AI certifications.",
+    "interpretation": "The labor market impact of artificial intelligence is currently showing up as hiring friction, restructured job postings, and rapid self-directed skill updates rather than immediate broad headcount reduction."
+  },
+  {
+    "source_name": "European Commission",
+    "title": "Action Plan on Cybersecurity and AI",
+    "url": "https://digital-strategy.ec.europa.eu/en/news/ai-act",
+    "published_date": "2026-07-31",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "policy_safety_and_security",
+    "evidence_basis": "Official press update and policy document released by the European Commission's Directorate-General for Communications Networks, Content and Technology on July 31, 2026.",
+    "confirmed_fact": "The European Commission updated its AI Act action plan on July 31, 2026, initiating a call to establish EU-wide third-party model evaluation capacity operational by 2027 and deploying an official AI Act Complaint Tool for individuals and organizations.",
+    "interpretation": "AI oversight in Europe is transitioning from legislative principles into concrete administrative infrastructure, establishing pre-market testing capabilities and public grievance mechanisms."
+  },
+  {
+    "source_name": "AACSB International",
+    "title": "A Framework for Artificial Intelligence in Business Education: July 2026 Update",
+    "url": "https://www.aacsb.edu/insights/articles/2026/07/a-framework-for-artificial-intelligence-in-business-education-july-2026-update",
+    "published_date": "2026-07-28",
+    "coverage_lane": "human_impact",
+    "topic_category": "education_employment_and_society",
+    "evidence_basis": "Joint institutional survey report published on July 28, 2026 by AACSB International, the Graduate Business Curriculum Roundtable, and GMAC.",
+    "confirmed_fact": "AACSB, the Graduate Business Curriculum Roundtable, and GMAC expanded their benchmark report to 84 business schools (a 75% increase since January 2026), documenting a shift toward mandatory AI literacy and institutional governance across teaching, research, and operations.",
+    "interpretation": "Higher education is replacing ad-hoc classroom experimentation with mandatory AI literacy standards and institutional governance platforms to match changing employer expectations."
+  }
+]

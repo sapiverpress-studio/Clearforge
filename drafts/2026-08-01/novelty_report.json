@@ -1,0 +1,34 @@
+{
+  "date": "2026-08-01",
+  "editorial_theme": {
+    "day": "Saturday",
+    "date": "2026-08-01",
+    "slug": "Sapiver Forge-forecast",
+    "title": "Sapiver Forge forecast",
+    "focus": "Evidence-based forecast piece using the week’s confirmed developments.",
+    "instruction": "Ask: if this happened this week, what might reasonably follow? Which companies may follow suit? What should creators and small businesses watch? Clearly label forecasts as forecasts. Do not present predictions as facts."
+  },
+  "same_day_prior_runs": 0,
+  "excluded_url_count": 27,
+  "excluded_story_title_count": 28,
+  "topic_rotation_evidence_dates": [
+    "2026-07-25",
+    "2026-07-26",
+    "2026-07-27",
+    "2026-07-28",
+    "2026-07-29",
+    "2026-07-30",
+    "2026-07-31"
+  ],
+  "consecutive_week_topic_block": true,
+  "confirmed_development_count": 2,
+  "human_impact_count": 2,
+  "topic_categories": [
+    "models_and_infrastructure",
+    "workplace_and_business",
+    "policy_safety_and_security",
+    "education_employment_and_society"
+  ],
+  "tiktok_used_as_evidence": false,
+  "passed": true
+}

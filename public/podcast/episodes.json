@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-08-01",
+    "kind": "daily",
+    "title": "The Shift to Self-Hosted Intelligence",
+    "description": "This story represents a fundamental shift in infrastructure, moving from reliance on external APIs to sovereign, self-hosted enterprise models, which is the most significant development for long-term business strategy.",
+    "published": "2026-08-01T07:00:00+01:00",
+    "duration": "00:05:12",
+    "size": 4791213,
+    "video_size": 21001330,
+    "audio_url": "https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-01.mp3",
+    "video_url": "https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-01.mp4",
+    "episode_url": "https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-01.html",
+    "transcript_url": "https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-01.txt",
+    "related_article_url": "https://sapiverforge-daily-brief.netlify.app/posts/2026-08-01.html",
+    "related_feature_url": "https://sapiverforge-daily-brief.netlify.app/features/2026-08-01.html",
+    "source_dir": "drafts/2026-08-01/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-07-31",
     "kind": "daily",
     "title": "Friday Watchlist: The Economics of AI Routing",

@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Sapiver Forge)</managingEditor>
     <copyright>Sapiver Forge by Sapiver Press</copyright>
     <generator>Sapiver Forge hosted podcast feed</generator>
-    <lastBuildDate>Fri, 31 Jul 2026 16:35:48 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 01 Aug 2026 07:55:02 GMT</lastBuildDate>
     <atom:link href="https://sapiverforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Sapiver Forge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://sapiverforge-daily-brief.netlify.app/podcast/cover.png"/>
+    <item>
+      <title>The Shift to Self-Hosted Intelligence</title>
+      <description>This story represents a fundamental shift in infrastructure, moving from reliance on external APIs to sovereign, self-hosted enterprise models, which is the most significant development for long-term business strategy.</description>
+      <content:encoded><![CDATA[<p>This story represents a fundamental shift in infrastructure, moving from reliance on external APIs to sovereign, self-hosted enterprise models, which is the most significant development for long-term business strategy.</p><p><strong>Read alongside this episode:</strong> <a href="https://sapiverforge-daily-brief.netlify.app/posts/2026-08-01.html">daily briefing</a> · <a href="https://sapiverforge-daily-brief.netlify.app/features/2026-08-01.html">feature analysis</a></p><p><a href="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-01.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-01.html</link>
+      <guid isPermaLink="false">clearforge:2026-08-01</guid>
+      <pubDate>Sat, 01 Aug 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-01.mp3" length="4791213" type="audio/mpeg"/>
+      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:05:12</itunes:duration>
+      <podcast:transcript url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-01.txt" type="text/plain"/>
+    </item>
     <item>
       <title>Friday Watchlist: The Economics of AI Routing</title>
       <description>This story provides the most immediate, actionable financial and architectural impact for our audience of creators and developers, directly addressing the &apos;how-to&apos; of scaling AI workflows.</description>

@@ -115,6 +115,9 @@ jobs:
                 newsletters/*)
                   echo "Allowing unrelated newsletter change since candidate review: ${changed}"
                   ;;
+                .github/workflows/human-release.yml)
+                  echo "Allowing release-guard maintenance change since candidate review: ${changed}"
+                  ;;
                 *)
                   CONFLICTING_PATHS+=("${changed}")
                   ;;

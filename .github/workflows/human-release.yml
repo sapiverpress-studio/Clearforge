@@ -88,17 +88,46 @@ jobs:
           test -f "${STAGE}/drafts/${CLEARFORGE_DATE}/candidate-manifest.json"
           echo "CLEARFORGE_CANDIDATE_STAGE=${STAGE}" >> "$GITHUB_ENV"
 
-      - name: Refuse a candidate built from an outdated production state
+      - name: Refuse conflicting production changes
         shell: bash
         run: |
           set -euo pipefail
           MANIFEST="${CLEARFORGE_CANDIDATE_STAGE}/drafts/${CLEARFORGE_DATE}/candidate-manifest.json"
           SOURCE_COMMIT="$(jq -r '.source_commit // empty' "${MANIFEST}")"
           CURRENT_COMMIT="$(git rev-parse HEAD)"
-          if [ -z "${SOURCE_COMMIT}" ] || [ "${SOURCE_COMMIT}" != "${CURRENT_COMMIT}" ]; then
-            echo "::error::Production changed after this candidate was generated. Generate and review a fresh candidate so an older site cannot overwrite newer work."
+
+          if [ -z "${SOURCE_COMMIT}" ]; then
+            echo "::error::Candidate manifest does not record its source commit."
             exit 1
           fi
+
+          if [ "${SOURCE_COMMIT}" != "${CURRENT_COMMIT}" ]; then
+            if ! git merge-base --is-ancestor "${SOURCE_COMMIT}" "${CURRENT_COMMIT}"; then
+              echo "::error::Candidate source commit is not an ancestor of current main."
+              exit 1
+            fi
+
+            mapfile -t CHANGED_PATHS < <(git diff --name-only "${SOURCE_COMMIT}..${CURRENT_COMMIT}")
+            CONFLICTING_PATHS=()
+            for changed in "${CHANGED_PATHS[@]}"; do
+              [ -z "${changed}" ] && continue
+              case "${changed}" in
+                newsletters/*)
+                  echo "Allowing unrelated newsletter change since candidate review: ${changed}"
+                  ;;
+                *)
+                  CONFLICTING_PATHS+=("${changed}")
+                  ;;
+              esac
+            done
+
+            if [ "${#CONFLICTING_PATHS[@]}" -gt 0 ]; then
+              printf '::error::Production files changed after candidate review: %s\n' "${CONFLICTING_PATHS[*]}"
+              echo "::error::Generate and review a fresh candidate so newer production work cannot be overwritten."
+              exit 1
+            fi
+          fi
+
           while IFS= read -r deleted; do
             [ -z "${deleted}" ] && continue
             if [[ "${deleted}" != public/* || "${deleted}" == *".."* ]]; then

@@ -17,7 +17,7 @@ const structuredPath = path.join(draftDir, "structured_output.json");
 const articlePath = path.join(draftDir, "daily_brief.md");
 const socialPath = path.join(draftDir, "social_pack.md");
 const outDir = path.join(ROOT, "bridge", "clearforge", DATE);
-const socialHashtags = "#AINews #AIWorkflow #PracticalAI #Sapiver Forge #HumanLedAI";
+const socialHashtags = "#AINews #AIWorkflow #PracticalAI #SapiverForge #HumanLedAI";
 const cta = {
   spoken: "Read the full breakdown through the link in our bio, or search Sapiver Forge AI Briefing in your podcast app to listen on the go.",
   screen_lines: [
@@ -60,7 +60,9 @@ function appendHashtags(text) {
     .replace(/#AITools\b/gi, "")
     .replace(/#FacelessContentCreator\b/gi, "")
     .replace(/#SapiverPress\b/gi, "")
-    .replace(/#Sapiver Forge\b/gi, "")
+    .replace(/#Clearforge\b/gi, "")
+    .replace(/#Sapiver\s+Forge\b/gi, "")
+    .replace(/#SapiverForge\b/gi, "")
     .replace(/#HumanLedAI\b/gi, "")
     .replace(/[ \t]+\n/g, "\n")
     .replace(/\n{3,}/g, "\n\n")

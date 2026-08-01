@@ -1,0 +1,46 @@
+name: PR site preview artifact
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "package.json"
+      - "scripts/**"
+      - "src/**"
+      - "public/**"
+      - "explainers/**"
+      - ".github/workflows/pr-site-preview.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out pull request
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install --ignore-scripts --no-audit --no-fund
+
+      - name: Build Sapiver Forge site
+        run: npm run build:site
+
+      - name: Validate public branding
+        run: npm run validate:public-brand
+
+      - name: Upload generated site
+        uses: actions/upload-artifact@v4
+        with:
+          name: sapiver-forge-pr-site-preview
+          path: public/
+          if-no-files-found: error
+          retention-days: 7

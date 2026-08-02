@@ -19,6 +19,14 @@ function extractCanonical(html) { return html.match(/<link[^>]+rel=["']canonical
 function visibleText(html) { return decodeEntities(String(html || "").replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<style[\s\S]*?<\/style>/gi, " ").replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim(); }
 function materialNumbers(value) { return [...new Set(String(value || "").match(/\b\d+(?:[,.]\d+)*(?:%|B|M|K|bn|million|billion)?\b/gi) || [])].filter((item) => !/^20\d{2}$/.test(item)); }
 function importantTerms(source) { const found = `${source.title || ""} ${source.confirmed_fact || ""}`.match(/\b[A-Z][A-Za-z0-9.-]{2,}(?:\s+[A-Z][A-Za-z0-9.-]{2,}){0,3}\b/g) || []; return [...new Set(found.map(normalize).filter((x) => x.length > 3))].slice(0, 8); }
+function hasCompleteResearchEvidence(source) {
+  return Boolean(
+    String(source?.title || "").trim()
+    && String(source?.url || "").trim()
+    && String(source?.confirmed_fact || "").trim()
+    && String(source?.published_date || "").trim()
+  );
+}
 async function fetchPage(url) { const controller = new AbortController(); const timer = setTimeout(() => controller.abort(), Number(process.env.SOURCE_FETCH_TIMEOUT_MS || 15000)); try { return await fetch(url, { redirect: "follow", signal: controller.signal, headers: { "user-agent": "Mozilla/5.0 (compatible; SapiverForgeSourceVerifier/1.0; +https://sapiverforge-daily-brief.netlify.app)", accept: "text/html,application/xhtml+xml" } }); } finally { clearTimeout(timer); } }
 
 if (!fs.existsSync(structuredPath)) throw new Error(`Missing ${structuredPath}`);
@@ -35,37 +43,47 @@ for (let index = 0; index < sources.length; index += 1) {
   const source = sources[index], failures = [], warnings = [];
   const requestedUrl = String(source.url || "").trim();
   const groundedEvidence = grounded.get(requestedUrl);
+  const completeResearchEvidence = hasCompleteResearchEvidence(source);
   let finalUrl = "", canonicalUrl = "", pageTitle = "", body = "", status = 0, publisherBlocked = false;
   try { const parsed = new URL(requestedUrl); if (parsed.protocol !== "https:") failures.push("Source URL must use HTTPS."); if (!parsed.hostname.includes(".")) failures.push("Source URL has no valid hostname."); } catch { failures.push("Source URL is not a valid absolute URL."); }
   if (!failures.length) {
     try {
       const response = await fetchPage(requestedUrl); status = response.status; finalUrl = response.url;
-      publisherBlocked = [401, 403, 429].includes(response.status) && Boolean(groundedEvidence);
-      if (!response.ok && !publisherBlocked) failures.push(`Source returned HTTP ${response.status}.`);
-      if (publisherBlocked) warnings.push(`Publisher blocked direct fetch with HTTP ${response.status}; grounded evidence retained.`);
+      publisherBlocked = [401, 403, 429].includes(response.status) && completeResearchEvidence;
+      if (response.status === 404 || response.status === 410) failures.push(`Source returned HTTP ${response.status}.`);
+      else if (!response.ok && !publisherBlocked) failures.push(`Source returned HTTP ${response.status}.`);
+      if (publisherBlocked) warnings.push(`Publisher blocked direct verification with HTTP ${response.status}; complete research evidence retained for human review.`);
       const contentType = response.headers.get("content-type") || "";
       if (response.ok && !contentType.includes("text/html")) failures.push(`Source returned unsupported content type: ${contentType || "unknown"}.`);
-      if (response.ok) { body = await response.text(); pageTitle = extractTitle(body); canonicalUrl = extractCanonical(body); if (!pageTitle) failures.push("No page title could be read from the resolved source."); }
-    } catch (error) { failures.push(`Source could not be opened: ${error?.message || error}`); }
+      if (response.ok) { body = await response.text(); pageTitle = extractTitle(body); canonicalUrl = extractCanonical(body); if (!pageTitle) warnings.push("No page title could be read; retain for human review."); }
+    } catch (error) {
+      if (completeResearchEvidence) warnings.push(`Direct source verification was unavailable (${error?.message || error}); complete research evidence retained for human review.`);
+      else failures.push(`Source could not be opened: ${error?.message || error}`);
+    }
   }
   const pageText = visibleText(body);
   const evidenceTitle = groundedEvidence?.evidence_title || "";
   const titleScore = pageTitle ? similarity(source.title, pageTitle) : similarity(source.title, evidenceTitle);
-  if ((pageTitle || evidenceTitle) && titleScore < 0.35) failures.push(`Recorded title does not match resolved/search-evidence title (similarity ${titleScore.toFixed(2)}).`);
-  const missingNumbers = publisherBlocked ? [] : materialNumbers(source.confirmed_fact).filter((number) => !normalize(pageText).includes(normalize(number)));
-  if (missingNumbers.length) failures.push(`Confirmed-fact numbers not found on source page: ${missingNumbers.join(", ")}.`);
-  const terms = importantTerms(source); const matchedTerms = publisherBlocked ? [] : terms.filter((term) => normalize(pageText).includes(term));
-  if (!publisherBlocked && terms.length >= 2 && matchedTerms.length === 0) failures.push("Central named entities were not found on the resolved page.");
-  results.push({ index: index + 1, original_index: index, source_name: source.source_name || "", recorded_title: source.title || "", requested_url: requestedUrl, final_url: finalUrl, canonical_url: canonicalUrl, resolved_title: pageTitle || evidenceTitle, http_status: status, publisher_blocked: publisherBlocked, search_evidence_grounded: Boolean(groundedEvidence), title_similarity: Number(titleScore.toFixed(3)), checked_numbers: materialNumbers(source.confirmed_fact), matched_named_terms: matchedTerms, passed: failures.length === 0, warnings, failures });
+  if ((pageTitle || evidenceTitle) && titleScore < 0.35) warnings.push(`Recorded title differs from resolved/search-evidence title (similarity ${titleScore.toFixed(2)}); human reviewer should confirm.`);
+  const missingNumbers = publisherBlocked || !pageText ? [] : materialNumbers(source.confirmed_fact).filter((number) => !normalize(pageText).includes(normalize(number)));
+  if (missingNumbers.length) warnings.push(`Confirmed-fact numbers were not found verbatim on the fetched page: ${missingNumbers.join(", ")}.`);
+  const terms = importantTerms(source); const matchedTerms = publisherBlocked || !pageText ? [] : terms.filter((term) => normalize(pageText).includes(term));
+  if (!publisherBlocked && pageText && terms.length >= 2 && matchedTerms.length === 0) warnings.push("Central named entities were not found verbatim on the fetched page; human reviewer should confirm the page context.");
+  results.push({ index: index + 1, original_index: index, source_name: source.source_name || "", recorded_title: source.title || "", requested_url: requestedUrl, final_url: finalUrl, canonical_url: canonicalUrl, resolved_title: pageTitle || evidenceTitle, http_status: status, publisher_blocked: publisherBlocked, complete_research_evidence: completeResearchEvidence, search_evidence_grounded: Boolean(groundedEvidence), title_similarity: Number(titleScore.toFixed(3)), checked_numbers: materialNumbers(source.confirmed_fact), matched_named_terms: matchedTerms, passed: failures.length === 0, warnings, failures });
 }
 
 const passedIndexes = results.filter((item) => item.passed).map((item) => item.original_index);
 const failed = results.filter((item) => !item.passed);
 const enoughSurvivors = passedIndexes.length >= 1;
-const report = { schema_version: 4, edition: DATE, generated_at: new Date().toISOString(), passed: enoughSurvivors, degraded: failed.length > 0 && enoughSurvivors, source_count: results.length, survivor_count: passedIndexes.length, failed_source_count: failed.length, policy: "Validate independently. Continue with a detailed report and full social pack when at least one verified story survives. Podcast remains optional and requires three stories.", results };
+const report = { schema_version: 5, edition: DATE, generated_at: new Date().toISOString(), passed: enoughSurvivors, degraded: failed.length > 0 && enoughSurvivors, source_count: results.length, survivor_count: passedIndexes.length, failed_source_count: failed.length, policy: "Hard-block invalid URLs, 404/410 pages and unsupported responses. Retain reachable sources and publisher-blocked 401/403/429 sources with complete research evidence for explicit human review. Continue when at least one candidate survives.", results };
 fs.writeFileSync(reportPath, `${JSON.stringify(report, null, 2)}\n`, "utf8");
 
-for (const item of failed) { console.error(`SOURCE BLOCK ${item.index}: ${item.recorded_title}`); for (const failure of item.failures) console.error(`  - ${failure}`); }
+for (const item of results) {
+  const label = item.passed ? "SOURCE KEEP" : "SOURCE BLOCK";
+  console[item.passed ? "log" : "error"](`${label} ${item.index}: ${item.recorded_title}`);
+  for (const warning of item.warnings) console.warn(`  - WARNING: ${warning}`);
+  for (const failure of item.failures) console.error(`  - ${failure}`);
+}
 if (!enoughSurvivors) throw new Error("No source candidates passed integrity validation.");
 
 if (failed.length) {

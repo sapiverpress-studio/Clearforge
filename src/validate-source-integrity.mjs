@@ -25,7 +25,7 @@ if (!fs.existsSync(structuredPath)) throw new Error(`Missing ${structuredPath}`)
 const structured = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
 const sources = Array.isArray(structured.sources) ? structured.sources : [];
 const stories = Array.isArray(structured.story_summaries) ? structured.story_summaries : [];
-if (sources.length < 3) throw new Error("Source integrity requires at least three sources.");
+if (sources.length < 1) throw new Error("Source integrity requires at least one source.");
 if (stories.length !== sources.length) throw new Error("Source and story arrays must remain aligned.");
 const resolution = fs.existsSync(resolutionPath) ? JSON.parse(fs.readFileSync(resolutionPath, "utf8")) : { replacements: [] };
 const grounded = new Map((resolution.replacements || []).filter((x) => x.evidence_grounded).map((x) => [x.new_url, x]));
@@ -61,14 +61,12 @@ for (let index = 0; index < sources.length; index += 1) {
 
 const passedIndexes = results.filter((item) => item.passed).map((item) => item.original_index);
 const failed = results.filter((item) => !item.passed);
-const enoughSurvivors = passedIndexes.length >= 3;
-const report = { schema_version: 3, edition: DATE, generated_at: new Date().toISOString(), passed: enoughSurvivors, degraded: failed.length > 0 && enoughSurvivors, source_count: results.length, survivor_count: passedIndexes.length, failed_source_count: failed.length, policy: "Validate candidates independently. Discard up to two failures and continue when at least three verified stories survive.", results };
+const enoughSurvivors = passedIndexes.length >= 1;
+const report = { schema_version: 4, edition: DATE, generated_at: new Date().toISOString(), passed: enoughSurvivors, degraded: failed.length > 0 && enoughSurvivors, source_count: results.length, survivor_count: passedIndexes.length, failed_source_count: failed.length, policy: "Validate independently. Continue with a detailed report and full social pack when at least one verified story survives. Podcast remains optional and requires three stories.", results };
 fs.writeFileSync(reportPath, `${JSON.stringify(report, null, 2)}\n`, "utf8");
 
-if (!enoughSurvivors) {
-  for (const item of failed) { console.error(`SOURCE BLOCK ${item.index}: ${item.recorded_title}`); for (const failure of item.failures) console.error(`  - ${failure}`); }
-  throw new Error(`Only ${passedIndexes.length} source candidates passed integrity validation; at least three are required.`);
-}
+for (const item of failed) { console.error(`SOURCE BLOCK ${item.index}: ${item.recorded_title}`); for (const failure of item.failures) console.error(`  - ${failure}`); }
+if (!enoughSurvivors) throw new Error("No source candidates passed integrity validation.");
 
 if (failed.length) {
   const previousState = fs.existsSync(pruneStatePath) ? JSON.parse(fs.readFileSync(pruneStatePath, "utf8")) : { edition: DATE, initial_count: sources.length, dropped: [] };

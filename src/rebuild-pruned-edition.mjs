@@ -35,6 +35,7 @@ const schema = {
 };
 
 const survivorCount = data.sources.length;
+const minimumWords = 850;
 const formatInstruction = survivorCount === 1
   ? "Create a definitive single-story report of 1,000 to 1,300 words. Explain what happened, the exact evidence, how it works, who is affected, what is available now, limitations, unresolved questions, the practical consequence and a useful test. Do not pad with unrelated stories or generic AI commentary."
   : survivorCount === 2
@@ -42,18 +43,33 @@ const formatInstruction = survivorCount === 1
     : "Create a substantial multi-story report of 900 to 1,200 words. Lead with the strongest verified development and use the others as supporting context rather than a thin roundup.";
 
 const client = new OpenAI();
-const response = await client.responses.create({
-  model: process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite",
-  input: [
-    { role: "system", content: `Rewrite the Sapiver Forge edition using only the surviving verified sources and story summaries. Do not mention or infer discarded stories. Preserve all qualifications. ${formatInstruction} Cover what happened, what is confirmed, how it works, who is affected, current availability or rollout stage, measured versus projected outcomes, limitations, risks, unresolved questions, clearly labelled Sapiver Forge interpretation and one practical action. Generate the complete social pack every time from the strongest surviving story. The social assets must contain useful explanatory substance while retaining the existing Sapiver Forge narration and branded visual format; do not require a presenter. Return empty claims_to_verify only when every material claim is directly supported.` },
-    { role: "user", content: `EDITION: ${DATE}\nSURVIVING SOURCES:\n${JSON.stringify(data.sources, null, 2)}\nSURVIVING STORY SUMMARIES:\n${JSON.stringify(data.story_summaries, null, 2)}` }
-  ],
-  text: { format: { type: "json_schema", name: "sapiver_forge_depth_first_rebuild", strict: true, schema } }
-});
-if (!response.output_text) throw new Error("Pruned edition rebuild returned no output.");
-const rebuilt = JSON.parse(response.output_text);
-const articleWords = String(rebuilt.main_article || "").trim().split(/\s+/).filter(Boolean).length;
-if (articleWords < 850) throw new Error(`Depth-first report is too short: ${articleWords} words; minimum 850.`);
+async function generateDepthReport(extraInstruction = "") {
+  const response = await client.responses.create({
+    model: process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite",
+    input: [
+      { role: "system", content: `Rewrite the Sapiver Forge edition using only the surviving verified sources and story summaries. Do not mention or infer discarded stories. Preserve all qualifications. ${formatInstruction} Cover what happened, what is confirmed, how it works, who is affected, current availability or rollout stage, measured versus projected outcomes, limitations, risks, unresolved questions, clearly labelled Sapiver Forge interpretation and one practical action. Generate the complete social pack every time from the strongest surviving story. The social assets must contain useful explanatory substance while retaining the existing Sapiver Forge narration and branded visual format; do not require a presenter. Return empty claims_to_verify only when every material claim is directly supported. ${extraInstruction}` },
+      { role: "user", content: `EDITION: ${DATE}\nSURVIVING SOURCES:\n${JSON.stringify(data.sources, null, 2)}\nSURVIVING STORY SUMMARIES:\n${JSON.stringify(data.story_summaries, null, 2)}` }
+    ],
+    text: { format: { type: "json_schema", name: "sapiver_forge_depth_first_rebuild", strict: true, schema } }
+  });
+  if (!response.output_text) throw new Error("Pruned edition rebuild returned no output.");
+  return JSON.parse(response.output_text);
+}
+
+let rebuilt = await generateDepthReport("Before returning, count the main_article words and ensure it is at least 900 words.");
+let articleWords = String(rebuilt.main_article || "").trim().split(/\s+/).filter(Boolean).length;
+if (articleWords < minimumWords) {
+  console.warn(`Initial depth-first report was ${articleWords} words; requesting one focused expansion instead of failing the run.`);
+  rebuilt = await generateDepthReport(`The previous attempt was only ${articleWords} words. Produce a complete replacement with at least 900 words in main_article. Add evidence-based context, mechanism, availability, limitations, unresolved questions and practical implications. Do not add unsupported facts or repeat paragraphs.`);
+  articleWords = String(rebuilt.main_article || "").trim().split(/\s+/).filter(Boolean).length;
+}
+if (articleWords < 600) {
+  throw new Error(`Depth-first report remained unusably short after expansion: ${articleWords} words; minimum fallback 600.`);
+}
+if (articleWords < minimumWords) {
+  console.warn(`Depth-first report remained below the preferred ${minimumWords}-word target at ${articleWords} words; retaining verified content so socials and review output are not lost.`);
+}
+
 Object.assign(data, rebuilt);
 data.edition_depth_mode = survivorCount === 1 ? "single_story_deep_dive" : survivorCount === 2 ? "two_story_deep_dive" : "multi_story_depth_first";
 data.verified_story_count = survivorCount;

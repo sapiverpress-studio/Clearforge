@@ -22,6 +22,24 @@ function splitInput(input = []) {
   return { system, prompt };
 }
 
+function groundingOutput(groundingMetadata) {
+  const chunks = Array.isArray(groundingMetadata?.groundingChunks)
+    ? groundingMetadata.groundingChunks
+    : [];
+  const sources = [];
+  for (const chunk of chunks) {
+    const web = chunk?.web || chunk?.retrievedContext || null;
+    const url = web?.uri || web?.url || "";
+    if (!/^https:\/\//i.test(url)) continue;
+    sources.push({
+      type: "web_search_source",
+      url,
+      title: web?.title || web?.name || ""
+    });
+  }
+  return sources.length ? [{ type: "web_search_call", action: { sources } }] : [];
+}
+
 export default class GeminiClient {
   constructor() {
     if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required.");
@@ -48,7 +66,10 @@ export default class GeminiClient {
           schema,
           model: process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite"
         });
-        return { output_text: JSON.stringify(result) };
+        return {
+          output_text: JSON.stringify(result),
+          output: request.tools?.length ? groundingOutput(groundedEvidence?.groundingMetadata) : []
+        };
       }
     };
     this.images = {

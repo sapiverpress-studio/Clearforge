@@ -36,6 +36,7 @@ Last checked: 2026-08-02
 - https://www.propublica.org/article/anthropic-claude-mythos-microsoft-bugs-vulnerabilities
 - https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/
 - https://www.salesforce.com/uk/news/stories/agentforce-help-agent-announcement/?bc=OTH
+- https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html?m=1
 
 ## Revision history
 
@@ -54,3 +55,4 @@ Last checked: 2026-08-02
 - 2026-08-02: Updated the guide to emphasize the shift from standalone AI tools to integrated, governed workflow layers, incorporating recent research on agentic observability, human-in-the-loop review gates, and the importance of workflow containment.
 - 2026-08-02: Updated the guide to reflect the shift from standalone AI chat tools to integrated, governed AI workflows within existing enterprise software, emphasizing the importance of human review gates and auditability.
 - 2026-08-02: Updated to include recent enterprise integrations from Xero, Notion, Salesforce, and Canva, emphasizing the shift from standalone chat tools to governed, workflow-integrated AI systems.
+- 2026-08-02: Updated guide to include recent developments in integrated AI workflows, emphasizing the shift from standalone chat to managed, governed systems within existing enterprise software.

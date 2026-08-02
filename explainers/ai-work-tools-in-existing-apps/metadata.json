@@ -32,7 +32,8 @@
     "2026-07-27",
     "2026-07-29",
     "2026-07-29-considered",
-    "2026-07-30"
+    "2026-07-30",
+    "2026-07-31"
   ],
   "source_urls": [
     "https://openai.com/products/release-notes/",
@@ -215,6 +216,14 @@
       "source_editions": [
         "2026-07-16",
         "2026-07-20"
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "summary": "Updated the guide to emphasize the shift from standalone AI tools to integrated, governed workflows within existing software stacks, incorporating recent developments in project management and document tools.",
+      "source_editions": [
+        "2026-07-30",
+        "2026-07-31"
       ]
     }
   ],

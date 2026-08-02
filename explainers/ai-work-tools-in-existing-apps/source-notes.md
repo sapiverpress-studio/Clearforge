@@ -1,6 +1,6 @@
 # Source notes — How to adopt AI tools that work inside the apps your team already uses
 
-Last checked: 2026-07-31
+Last checked: 2026-08-02
 
 - https://openai.com/products/release-notes/
 - https://openai.com/index/chatgpt-for-your-most-ambitious-work/
@@ -34,6 +34,7 @@ Last checked: 2026-07-31
 - https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/
 - https://blog.adobe.com/en/publish/2026/07/22/acrobat-brings-pdf-workflows-to-whatsapp
 - https://www.propublica.org/article/anthropic-claude-mythos-microsoft-bugs-vulnerabilities
+- https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/
 
 ## Revision history
 
@@ -49,3 +50,4 @@ Last checked: 2026-07-31
 - 2026-07-31: Updated the guide to incorporate recent research on integrated software stacks, the risks of shadow AI, and the operational bottlenecks caused by automated discovery tools.
 - 2026-07-31: Updated to include the latest research on connected software stacks, the shift to stateless protocols like MCP, and the operational risks of shadow AI and discovery-remediation bottlenecks.
 - 2026-07-31: Updated the guide to incorporate new research on integrated software stacks, the risks of shadow AI, and the operational bottlenecks created when AI discovery outpaces human remediation.
+- 2026-08-02: Updated the guide to reflect the shift from standalone AI tools to embedded, workflow-integrated AI systems, emphasizing the importance of human review loops and administrative control.

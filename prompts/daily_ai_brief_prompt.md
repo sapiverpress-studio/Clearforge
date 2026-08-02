@@ -41,11 +41,11 @@ Use primary sources for factual claims wherever possible. Use reputable reportin
 
 ## Output requirements
 
-Create:
+Create exactly five candidate stories and exactly five corresponding source records. The source and story arrays must use the same order: source 1 supports story 1, source 2 supports story 2, and so on. The later validation stage may discard up to two failed candidates and publish from the remaining minimum of three.
 
 ## Source List
 
-Use 3 to 5 strong sources. For each source include:
+Use exactly 5 strong sources. For each source include:
 
 - source name;
 - title;
@@ -56,7 +56,7 @@ Use 3 to 5 strong sources. For each source include:
 
 ## Story Summaries
 
-Create 3 to 5 distinct story summaries. For each include:
+Create exactly 5 distinct story summaries. For each include:
 
 - title;
 - summary;

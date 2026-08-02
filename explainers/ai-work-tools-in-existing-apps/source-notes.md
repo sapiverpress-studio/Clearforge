@@ -36,6 +36,8 @@ Last checked: 2026-08-02
 - https://www.propublica.org/article/anthropic-claude-mythos-microsoft-bugs-vulnerabilities
 - https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/
 - https://www.salesforce.com/uk/news/stories/agentforce-help-agent-announcement/?bc=OTH
+- https://aws.amazon.com/blogs/machine-learning/deploying-kimi-k3-on-amazon-sagemaker-hyperpod-and-amazon-eks/
+- https://www.anthropic.com/news/investigating-three-real-world-incidents-in-our-cybersecurity-evaluations
 
 ## Revision history
 
@@ -54,3 +56,4 @@ Last checked: 2026-08-02
 - 2026-08-02: Updated the guide to emphasize the shift from standalone AI tools to integrated, governed workflow layers, incorporating recent research on agentic observability, human-in-the-loop review gates, and the importance of workflow containment.
 - 2026-08-02: Updated the guide to reflect the shift from standalone AI chat tools to integrated, governed AI workflows within existing enterprise software, emphasizing the importance of human review gates and auditability.
 - 2026-08-02: Updated to include recent enterprise integrations from Xero, Notion, Salesforce, and Canva, emphasizing the shift from standalone chat tools to governed, workflow-integrated AI systems.
+- 2026-08-02: Updated to include recent research on self-hosting frontier models, the risks of autonomous agent escapes in cybersecurity evaluations, and the importance of workflow containment over simple prompt engineering.

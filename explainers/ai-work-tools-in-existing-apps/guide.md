@@ -1,55 +1,51 @@
 # How to adopt AI tools that work inside the apps your team already uses
 
-AI tools are increasingly embedded directly into the software platforms teams use daily, such as project management boards, design suites, messaging apps, and accounting software. Rather than treating AI as a separate destination, organizations are shifting toward integrating AI features into existing workflows to reduce context switching and improve data continuity.
+AI is increasingly moving from standalone chat interfaces into the software your team uses daily—including project management, design, communication, and finance tools. The most effective way to adopt these tools is to treat them as workflow layers that require clear governance, human review, and defined handoffs rather than as magic solutions that replace human judgment.
 
 ## What it means
 
-Adopting AI inside existing apps means using features that operate within your current security and data perimeter. Instead of moving sensitive information to external browser windows or public AI models, teams use integrated tools—such as AI-powered document summarization in project boards or automated data entry in accounting software—to handle routine tasks. This approach treats AI as a functional layer within established business processes rather than a standalone experiment.
+Adopting AI inside existing apps means using features that connect to your current data, such as project boards, document repositories, or inventory systems. Instead of moving data to an external AI site, the AI acts as an assistant within your existing environment. This shift moves the focus from 'prompt engineering' to 'workflow containment'—ensuring the AI operates within defined boundaries, follows repository instructions, and respects existing permission structures.
 
 ## How it works in practice
 
-Successful adoption focuses on three operational pillars: containment, handoffs, and human review.
+Successful integration relies on three core components:
 
-1. **Containment:** Use tools that operate within your existing security boundaries. For example, using AI features inside enterprise-managed platforms like Notion, Salesforce, or Xero allows teams to maintain access controls and audit logs.
-2. **Handoffs:** Design workflows where AI handles the initial draft or data triage, then passes the output to a human for verification. For instance, an AI agent might capture invoice data, but a human must approve the final posting to the ledger.
-3. **Review:** Establish explicit checkpoints. If an AI tool drafts a response or summarizes a meeting, a human must verify the accuracy and tone before the output reaches a client or is finalized in a system of record.
+1. **Workflow Containment:** Use tools that allow you to define repository instructions (like .github/copilot-instructions.md) or specific project boundaries. This ensures the AI understands the context of your work without needing constant manual guidance.
+2. **Human-in-the-loop Review:** Establish mandatory checkpoints. For example, if an AI agent drafts a contract or suggests a code patch, the workflow must require a human to review the output against explicit criteria before it is committed to production or sent to a client.
+3. **Stateless Protocols:** As protocols like the Model Context Protocol (MCP) move toward stateless architectures, enterprise teams can secure AI traffic using standard web firewalls and OAuth, treating AI agent connections with the same rigor as standard HTTPS web requests.
 
 ## Why organisations are adopting it
 
-Organizations are moving toward integrated AI to solve the "shadow AI" problem, where employees use unapproved personal accounts to process company data. By providing easy-to-use, governed AI features within standard tools, companies can:
-
-* **Reduce data leakage:** Keep information within the company's security perimeter.
-* **Improve productivity:** Eliminate the time lost to copying and pasting between apps.
-* **Standardize quality:** Ensure that AI-assisted outputs follow company-defined templates and review standards.
+Organisations are shifting toward integrated AI to reduce context switching and improve data security. By keeping AI inside the company's security perimeter, teams avoid the risks associated with employees pasting confidential data into unapproved personal AI accounts. Furthermore, embedding AI into existing platforms allows for better auditability, as actions can be logged and monitored through existing administrative dashboards.
 
 ## What changes for people and workflows
 
-For employees, the shift is from "prompting" to "workflow management." Instead of spending time crafting complex prompts, staff focus on setting up the environment—such as repository instructions or project templates—that guides the AI. The role of the manager shifts to defining the "harness": the boundaries, permission inheritance, and mandatory review gates that ensure AI-generated work meets quality standards.
+- **Role Redesign:** AI is blurring job boundaries. Workers are increasingly using AI to perform tasks adjacent to their primary roles. This requires managers to define clear ownership and quality standards for these cross-functional tasks.
+- **Shift to Oversight:** The primary role of the human is shifting from 'doing' to 'auditing.' You are no longer just writing the draft; you are managing the system that generates the draft and verifying its accuracy.
+- **Skill Requirements:** Practical AI fluency—knowing how to configure a tool, set permission boundaries, and verify outputs—is becoming more valuable than broad technical degrees.
 
 ## Limits, risks and what remains uncertain
 
-* **Discovery vs. Remediation:** Automated discovery of issues (like software bugs or data anomalies) can outpace human capacity to fix them. If your AI identifies 90 critical bugs in a month, but your team can only patch 10, you have created a bottleneck.
-* **Autonomous Risk:** As AI agents gain the ability to interact with external systems, traditional prompt-based guardrails may be insufficient. Network-level isolation and zero-trust authorization are required to prevent unauthorized system access.
-* **Transparency:** As regulatory requirements like the EU AI Act take effect, organizations must ensure that AI-assisted content is properly labeled and that provenance is traceable.
+- **Discovery vs. Remediation:** A significant risk is that AI can identify issues (like security vulnerabilities or data anomalies) faster than human teams can fix them. Without an automated triage and prioritization system, this creates an operational bottleneck.
+- **Autonomous Agent Risks:** As agents gain the ability to browse the web or execute shell commands, they can inadvertently breach real-world systems if not properly sandboxed. Prompt-based guardrails are insufficient; network-level isolation is required.
+- **Uncertainty:** While productivity gains are reported, the long-term macroeconomic impact remains subject to regulatory and structural adjustments. Simply providing software access does not guarantee productivity; it requires administrative reform and training.
 
 ## Practical questions to ask before using it
 
-* **Where is the human checkpoint?** Can we identify the exact step where a person must review the AI output before it is sent or published?
-* **What is the triage queue?** If the AI finds 100 issues, do we have an automated system to prioritize them for human review?
-* **Who owns the data?** Does the tool keep our data within our security perimeter, or is it used to train public models?
-* **What is the fallback?** If the AI fails or produces an error, how do we revert to a manual process without stopping the entire workflow?
+- **Where is the handoff?** Can I clearly define which step is automated and which step requires human sign-off?
+- **What is the triage plan?** If the AI finds 100 issues, do we have a system to prioritize the top 5 for immediate human review?
+- **Is the sandbox isolated?** If this agent has browsing or shell access, are there strict outbound firewall rules in place?
+- **Who owns the data?** Does the tool keep data within our security perimeter, or is it used for external model training?
 
 ## Current examples
 
-* **Finance:** Xero's JAX platform automates document capture and workflow tasks for small businesses, reducing manual entry while keeping the human in the loop for final approval.
-* **Project Management:** Notion 3.6 allows teams to assign tasks to external agents from a shared board, keeping the brief, the agent's work, and the human review in one place.
-* **Support:** Salesforce's Agentforce provides prepackaged help agents that route complex cases to humans, using a pay-per-resolution model that aligns costs with actual work completed.
-* **Design:** Canva AI 2.0 integrates research, design, and scheduling into one loop, allowing creators to manage the full campaign lifecycle within a single workspace.
+- **Adobe Acrobat:** Integrates PDF workflows directly into WhatsApp, allowing users to annotate and share documents without leaving the chat.
+- **Atlassian Jira:** Uses AI to turn context from Slack and GitHub into structured work items, keeping the human in the loop for final approval.
+- **Cognizant & Anthropic:** Use spec-driven development modules to enforce architectural blueprints before AI-generated code reaches production.
 
 ## Sources and further reading
 
-* [Xero Announces New AI Innovations at Xerocon London](https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/)
-* [Notion 3.6: External Agents, HTML blocks, and more](https://www.notion.com/releases/2026-07-01)
-* [Salesforce Announces Prepackaged Agentforce Help Agent](https://www.salesforce.com/uk/news/stories/agentforce-help-agent-announcement/?bc=OTH)
-* [Introducing Canva AI 2.0: Reimagining how the world creates](https://www.canva.com/newsroom/news/canva-create-2026-ai/)
-* [Anthropic: UST is bringing Claude to physical AI](https://www.anthropic.com/news/ust-claude)
+- [AWS Machine Learning Blog: Deploying Kimi K3 on Amazon SageMaker HyperPod and Amazon EKS](https://aws.amazon.com/blogs/machine-learning/deploying-kimi-k3-on-amazon-sagemaker-hyperpod-and-amazon-eks/)
+- [Anthropic: Investigating three real-world incidents in our cybersecurity evaluations](https://www.anthropic.com/news/investigating-three-real-world-incidents-in-our-cybersecurity-evaluations)
+- [The GitHub Blog: The harness is all you need (mostly)](https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/)
+- [ProPublica: Anthropic's New AI Model Can Identify More Software Bugs Than Ever. Microsoft Is Struggling to Fix Them Fast Enough.](https://www.propublica.org/article/anthropic-claude-mythos-microsoft-bugs-vulnerabilities)

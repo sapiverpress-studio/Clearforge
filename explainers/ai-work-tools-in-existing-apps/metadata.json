@@ -3,7 +3,7 @@
   "slug": "ai-work-tools-in-existing-apps",
   "title": "How to adopt AI tools that work inside the apps your team already uses",
   "description": "A practical guide to AI features embedded in docs, search, design, support, project and meeting tools. It explains where the workflow gains come from, why review, disclosure and control matter, and what to check before rolling it out.",
-  "search_question": "How do I safely adopt AI features embedded in my existing business software?",
+  "search_question": "How do I safely adopt AI tools embedded in my existing software stack?",
   "topic_slugs": [
     "ai-adoption",
     "ai-inside-products",
@@ -67,7 +67,8 @@
     "https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/",
     "https://blog.adobe.com/en/publish/2026/07/22/acrobat-brings-pdf-workflows-to-whatsapp",
     "https://www.propublica.org/article/anthropic-claude-mythos-microsoft-bugs-vulnerabilities",
-    "https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/"
+    "https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/",
+    "https://www.salesforce.com/uk/news/stories/agentforce-help-agent-announcement/?bc=OTH"
   ],
   "revisions": [
     {
@@ -194,6 +195,14 @@
     {
       "date": "2026-08-02",
       "summary": "Updated the guide to reflect the shift from standalone AI chat tools to integrated, governed AI workflows within existing enterprise software, emphasizing the importance of human review gates and auditability.",
+      "source_editions": [
+        "2026-07-16",
+        "2026-07-20"
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "summary": "Updated to include recent enterprise integrations from Xero, Notion, Salesforce, and Canva, emphasizing the shift from standalone chat tools to governed, workflow-integrated AI systems.",
       "source_editions": [
         "2026-07-16",
         "2026-07-20"

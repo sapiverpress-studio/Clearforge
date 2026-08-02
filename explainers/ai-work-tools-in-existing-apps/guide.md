@@ -1,53 +1,55 @@
 # How to adopt AI tools that work inside the apps your team already uses
 
-Adopting AI tools embedded directly into your existing software—such as project management boards, document editors, and communication platforms—is the most effective way to integrate AI into daily work. Rather than switching between standalone chat interfaces and your core business tools, these integrations allow you to automate tasks like drafting, summarizing, and data entry within the environment where your work already lives.
+AI tools are increasingly embedded directly into the software platforms teams use daily, such as project management boards, design suites, messaging apps, and accounting software. Rather than treating AI as a separate destination, organizations are shifting toward integrating AI features into existing workflows to reduce context switching and improve data continuity.
 
 ## What it means
 
-AI-in-app integration means that generative models are now accessible via native buttons, sidebars, or automated triggers within tools like Notion, Jira, Xero, and Google Workspace. This shift moves AI from a "destination" (a separate website) to a "layer" of your existing software stack. The goal is to reduce context switching—the time lost moving data between apps—and to ensure that AI actions are governed by the same permissions and security settings as your other business activities.
+Adopting AI inside existing apps means using features that operate within your current security and data perimeter. Instead of moving sensitive information to external browser windows or public AI models, teams use integrated tools—such as AI-powered document summarization in project boards or automated data entry in accounting software—to handle routine tasks. This approach treats AI as a functional layer within established business processes rather than a standalone experiment.
 
 ## How it works in practice
 
-Successful adoption relies on treating AI as a workflow component rather than a magic button. 
+Successful adoption focuses on three operational pillars: containment, handoffs, and human review.
 
-1. **Identify the Handoff:** Map your weekly tasks to find where manual copy-pasting occurs. For example, if you move meeting notes from a video call into a project board, look for tools that automate this transfer.
-2. **Define the Human Gate:** AI should handle the drafting, sorting, or summarizing, but a human must remain in the loop for final approval, especially for client-facing content, financial data, or code deployment.
-3. **Configure Settings:** Many platforms now allow administrators to define when AI features are active. For instance, in Google Meet, admins can restrict note-taking to meetings with three or more participants. Review these defaults before rolling out features to your team.
+1. **Containment:** Use tools that operate within your existing security boundaries. For example, using AI features inside enterprise-managed platforms like Notion, Salesforce, or Xero allows teams to maintain access controls and audit logs.
+2. **Handoffs:** Design workflows where AI handles the initial draft or data triage, then passes the output to a human for verification. For instance, an AI agent might capture invoice data, but a human must approve the final posting to the ledger.
+3. **Review:** Establish explicit checkpoints. If an AI tool drafts a response or summarizes a meeting, a human must verify the accuracy and tone before the output reaches a client or is finalized in a system of record.
 
 ## Why organisations are adopting it
 
-Organisations are moving toward integrated AI to improve operational efficiency and data security. By keeping AI inside the company's existing software perimeter, teams can better manage data residency and access controls. Furthermore, integrated tools allow for better auditability; when an AI agent performs an action in a tool like Notion or Jira, the activity is often logged within the project record, making it easier to track who requested an action and what the outcome was.
+Organizations are moving toward integrated AI to solve the "shadow AI" problem, where employees use unapproved personal accounts to process company data. By providing easy-to-use, governed AI features within standard tools, companies can:
+
+* **Reduce data leakage:** Keep information within the company's security perimeter.
+* **Improve productivity:** Eliminate the time lost to copying and pasting between apps.
+* **Standardize quality:** Ensure that AI-assisted outputs follow company-defined templates and review standards.
 
 ## What changes for people and workflows
 
-- **From Prompting to Delegation:** Instead of spending time on complex prompt engineering, users are shifting to defining "harnesses"—the repository instructions, permission boundaries, and review gates that constrain how an AI agent operates.
-- **Role Blurring:** AI allows workers to handle adjacent tasks, such as a designer drafting their own project briefs or a developer automating their own documentation. This requires clearer ownership and documented quality standards.
-- **Provenance Requirements:** As AI becomes part of the production stack, platforms are increasingly requiring disclosure. For example, Google now includes a 'How this ad was made' panel in its ad center, making transparency a standard part of the publishing workflow.
+For employees, the shift is from "prompting" to "workflow management." Instead of spending time crafting complex prompts, staff focus on setting up the environment—such as repository instructions or project templates—that guides the AI. The role of the manager shifts to defining the "harness": the boundaries, permission inheritance, and mandatory review gates that ensure AI-generated work meets quality standards.
 
 ## Limits, risks and what remains uncertain
 
-- **Discovery vs. Remediation:** Automated discovery tools (like those identifying software bugs) can find issues faster than human teams can fix them. Without an automated triage and prioritization system, this creates a bottleneck rather than a solution.
-- **Shadow AI:** When enterprise tools lack accessible AI features, employees often resort to personal accounts, which can lead to the accidental exposure of confidential corporate data to public model training pipelines.
-- **Operational Incidents:** Even in testing, AI agents can chain vulnerabilities across environments. Always isolate test environments from production systems.
+* **Discovery vs. Remediation:** Automated discovery of issues (like software bugs or data anomalies) can outpace human capacity to fix them. If your AI identifies 90 critical bugs in a month, but your team can only patch 10, you have created a bottleneck.
+* **Autonomous Risk:** As AI agents gain the ability to interact with external systems, traditional prompt-based guardrails may be insufficient. Network-level isolation and zero-trust authorization are required to prevent unauthorized system access.
+* **Transparency:** As regulatory requirements like the EU AI Act take effect, organizations must ensure that AI-assisted content is properly labeled and that provenance is traceable.
 
 ## Practical questions to ask before using it
 
-- **Where does the data live?** Does the AI tool process data within our existing security perimeter, or does it send information to an external vendor?
-- **Who owns the approval?** What is the specific human review step required before an AI-generated output is sent to a client or pushed to production?
-- **Can we audit the action?** If the AI makes a mistake, is there a log of the prompt, the output, and the user who triggered it?
-- **What is the fallback?** If the AI tool fails or becomes unavailable, can the team complete the task manually without significant disruption?
+* **Where is the human checkpoint?** Can we identify the exact step where a person must review the AI output before it is sent or published?
+* **What is the triage queue?** If the AI finds 100 issues, do we have an automated system to prioritize them for human review?
+* **Who owns the data?** Does the tool keep our data within our security perimeter, or is it used to train public models?
+* **What is the fallback?** If the AI fails or produces an error, how do we revert to a manual process without stopping the entire workflow?
 
 ## Current examples
 
-- **Finance:** Xero’s JAX platform automates document capture and workflow entry for small businesses, reducing manual data entry.
-- **Project Management:** Notion 3.6 allows teams to assign tasks to external agents (like Claude or Cursor) directly from a shared board, keeping the handoff visible.
-- **Software Development:** GitHub’s AI security detections now run on pull requests, providing informational feedback to developers without blocking the merge process.
-- **Video Production:** Google Vids integrates Gemini Omni to allow users to generate and edit clips with built-in SynthID watermarks, keeping provenance within the production tool.
+* **Finance:** Xero's JAX platform automates document capture and workflow tasks for small businesses, reducing manual entry while keeping the human in the loop for final approval.
+* **Project Management:** Notion 3.6 allows teams to assign tasks to external agents from a shared board, keeping the brief, the agent's work, and the human review in one place.
+* **Support:** Salesforce's Agentforce provides prepackaged help agents that route complex cases to humans, using a pay-per-resolution model that aligns costs with actual work completed.
+* **Design:** Canva AI 2.0 integrates research, design, and scheduling into one loop, allowing creators to manage the full campaign lifecycle within a single workspace.
 
 ## Sources and further reading
 
-- [OpenAI: ChatGPT is now a partner for your most ambitious work](https://openai.com/index/chatgpt-for-your-most-ambitious-work/)
-- [Notion: Notion 3.6 Release Notes](https://www.notion.com/releases/2026-07-01)
-- [Google Workspace: New Google Meet 'Take notes for me' settings](https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html)
-- [GitHub: Code scanning shows AI security detections on pull requests](https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests/)
-- [Xero: New AI Innovations at Xerocon London](https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/)
+* [Xero Announces New AI Innovations at Xerocon London](https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/)
+* [Notion 3.6: External Agents, HTML blocks, and more](https://www.notion.com/releases/2026-07-01)
+* [Salesforce Announces Prepackaged Agentforce Help Agent](https://www.salesforce.com/uk/news/stories/agentforce-help-agent-announcement/?bc=OTH)
+* [Introducing Canva AI 2.0: Reimagining how the world creates](https://www.canva.com/newsroom/news/canva-create-2026-ai/)
+* [Anthropic: UST is bringing Claude to physical AI](https://www.anthropic.com/news/ust-claude)

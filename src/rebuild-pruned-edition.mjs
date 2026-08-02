@@ -36,28 +36,32 @@ const schema = {
 
 const survivorCount = data.sources.length;
 const formatInstruction = survivorCount === 1
-  ? "Create a detailed single-story report. Go deeper on what happened, what is confirmed, what remains uncertain, who is affected, the practical consequence, and what a creator or small business should test next. Do not pad it with unrelated news."
+  ? "Create a definitive single-story report of 1,000 to 1,300 words. Explain what happened, the exact evidence, how it works, who is affected, what is available now, limitations, unresolved questions, the practical consequence and a useful test. Do not pad with unrelated stories or generic AI commentary."
   : survivorCount === 2
-    ? "Create a detailed two-story report with a clear shared angle. Give each verified story substantial treatment and do not mention discarded stories."
-    : "Create the normal multi-story Sapiver Forge edition using only the surviving stories.";
+    ? "Create a substantial two-story report of 950 to 1,250 words. Use one coherent angle, give both stories proper treatment and explain their practical relationship without inventing a connection."
+    : "Create a substantial multi-story report of 900 to 1,200 words. Lead with the strongest verified development and use the others as supporting context rather than a thin roundup.";
 
 const client = new OpenAI();
 const response = await client.responses.create({
   model: process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite",
   input: [
-    { role: "system", content: `Rewrite an existing Sapiver Forge edition using only the surviving verified sources and story summaries supplied. Do not mention or infer discarded stories. Preserve all material qualifications. ${formatInstruction} The main article must contain at least 700 words. Generate the complete social pack every time. Return empty claims_to_verify only when every material claim is directly supported by the supplied source records.` },
+    { role: "system", content: `Rewrite the Sapiver Forge edition using only the surviving verified sources and story summaries. Do not mention or infer discarded stories. Preserve all qualifications. ${formatInstruction} Cover what happened, what is confirmed, how it works, who is affected, current availability or rollout stage, measured versus projected outcomes, limitations, risks, unresolved questions, clearly labelled Sapiver Forge interpretation and one practical action. Generate the complete social pack every time from the strongest surviving story. The social assets must contain useful explanatory substance while retaining the existing Sapiver Forge narration and branded visual format; do not require a presenter. Return empty claims_to_verify only when every material claim is directly supported.` },
     { role: "user", content: `EDITION: ${DATE}\nSURVIVING SOURCES:\n${JSON.stringify(data.sources, null, 2)}\nSURVIVING STORY SUMMARIES:\n${JSON.stringify(data.story_summaries, null, 2)}` }
   ],
-  text: { format: { type: "json_schema", name: "sapiver_forge_pruned_rebuild", strict: true, schema } }
+  text: { format: { type: "json_schema", name: "sapiver_forge_depth_first_rebuild", strict: true, schema } }
 });
 if (!response.output_text) throw new Error("Pruned edition rebuild returned no output.");
 const rebuilt = JSON.parse(response.output_text);
+const articleWords = String(rebuilt.main_article || "").trim().split(/\s+/).filter(Boolean).length;
+if (articleWords < 850) throw new Error(`Depth-first report is too short: ${articleWords} words; minimum 850.`);
 Object.assign(data, rebuilt);
+data.edition_depth_mode = survivorCount === 1 ? "single_story_deep_dive" : survivorCount === 2 ? "two_story_deep_dive" : "multi_story_depth_first";
+data.verified_story_count = survivorCount;
 fs.writeFileSync(structuredPath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
 
 const sourceLines = data.sources.map((s, i) => `${i + 1}. [${s.title}](${s.url}) — ${s.source_name} (${s.published_date})\n   - Confirmed: ${s.confirmed_fact}\n   - Interpretation: ${s.interpretation}`).join("\n\n");
 const summaries = data.story_summaries.map((s) => `### ${s.title}\n\n${s.summary}\n\n**Why it matters:** ${s.why_it_matters}\n\n**Practical angle:** ${s.practical_angle}`).join("\n\n");
-fs.writeFileSync(path.join(dir, "daily_brief.md"), `# ${data.headline}\n\nStatus: Draft — automatic validation pending\n\n${data.dek}\n\n## Source List\n\n${sourceLines}\n\n## Story Summaries\n\n${summaries}\n\n## Main Article\n\n${data.main_article}\n\n## Practical Takeaway\n\n${data.practical_takeaway}\n\n## What To Test Next\n\n${data.what_to_test_next}\n\n## Claims To Verify Before Publishing\n\n${data.claims_to_verify.length ? data.claims_to_verify.map((x) => `- ${x}`).join("\n") : "None — all material claims used in this edition were verified against the cited sources."}\n`, "utf8");
-fs.writeFileSync(path.join(dir, "social_pack.md"), `# Sapiver Forge Social Repurpose Pack — ${DATE}\n\n## TikTok Script\n\n${data.social.tiktok_script}\n\n## YouTube Shorts Script\n\n${data.social.youtube_shorts_script}\n\n## Facebook Post\n\n${data.social.facebook_post}\n\n## Pinterest Pin\n\n**Title:** ${data.social.pinterest_title}\n\n**Description:** ${data.social.pinterest_description}\n\n## LinkedIn-Style Post\n\n${data.social.linkedin_post}\n\n## 5 Short Quote/Card Lines\n\n${data.social.quote_card_lines.map((x) => `- ${x}`).join("\n")}\n`, "utf8");
-fs.writeFileSync(pruneStatePath, `${JSON.stringify({ ...state, survivor_count: data.sources.length, rebuilt_at: new Date().toISOString() }, null, 2)}\n`, "utf8");
-console.log(`Rebuilt detailed edition and full social pack from ${data.sources.length} verified surviving ${data.sources.length === 1 ? "story" : "stories"}.`);
+fs.writeFileSync(path.join(dir, "daily_brief.md"), `# ${data.headline}\n\nStatus: Draft — automatic validation pending\n\nFormat: ${data.edition_depth_mode}\n\n${data.dek}\n\n## Source List\n\n${sourceLines}\n\n## Story Summaries\n\n${summaries}\n\n## Main Article\n\n${data.main_article}\n\n## Practical Takeaway\n\n${data.practical_takeaway}\n\n## What To Test Next\n\n${data.what_to_test_next}\n\n## Claims To Verify Before Publishing\n\n${data.claims_to_verify.length ? data.claims_to_verify.map((x) => `- ${x}`).join("\n") : "None — all material claims used in this edition were verified against the cited sources."}\n`, "utf8");
+fs.writeFileSync(path.join(dir, "social_pack.md"), `# Sapiver Forge Social Repurpose Pack — ${DATE}\n\nSource format: ${data.edition_depth_mode}\n\n## TikTok Script\n\n${data.social.tiktok_script}\n\n## YouTube Shorts Script\n\n${data.social.youtube_shorts_script}\n\n## Facebook Post\n\n${data.social.facebook_post}\n\n## Pinterest Pin\n\n**Title:** ${data.social.pinterest_title}\n\n**Description:** ${data.social.pinterest_description}\n\n## LinkedIn-Style Post\n\n${data.social.linkedin_post}\n\n## 5 Short Quote/Card Lines\n\n${data.social.quote_card_lines.map((x) => `- ${x}`).join("\n")}\n`, "utf8");
+fs.writeFileSync(pruneStatePath, `${JSON.stringify({ ...state, survivor_count: survivorCount, rebuilt_at: new Date().toISOString(), depth_mode: data.edition_depth_mode, article_words: articleWords }, null, 2)}\n`, "utf8");
+console.log(`Rebuilt ${data.edition_depth_mode} edition from ${survivorCount} verified ${survivorCount === 1 ? "story" : "stories"}: ${articleWords} words plus full socials.`);

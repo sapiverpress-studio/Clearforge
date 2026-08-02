@@ -5,11 +5,11 @@
       "slug": "ai-work-tools-in-existing-apps",
       "title": "How to adopt AI tools that work inside the apps your team already uses",
       "description": "A practical guide to AI features embedded in docs, search, design, support, project and meeting tools. It explains where the workflow gains come from, why review, disclosure and control matter, and what to check before rolling it out.",
-      "search_question": "How do I integrate AI tools into my existing business workflows safely?",
+      "search_question": "How do I safely adopt AI tools embedded in my existing business software?",
       "topic_slugs": [
-        "ai-adoption",
         "ai-inside-products",
-        "systems-automation"
+        "systems-automation",
+        "ai-adoption"
       ],
       "created": "2026-07-14",
       "last_updated": "2026-08-02",

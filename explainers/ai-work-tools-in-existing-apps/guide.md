@@ -1,42 +1,51 @@
 # How to adopt AI tools that work inside the apps your team already uses
 
-Adopting AI is most effective when it is integrated directly into the software your team already uses, rather than treating it as a separate, isolated tool. By embedding AI into existing workflows—such as project management, document creation, and communication platforms—organizations can reduce context switching and improve operational speed. However, successful adoption requires moving beyond simple prompt-based chat to a model of governed, task-specific automation.
+Adopting AI tools embedded directly into your existing software stack—such as project management boards, design platforms, and communication tools—is the most effective way to integrate AI into daily operations. Rather than treating AI as a separate destination, these integrations allow teams to automate routine tasks like document summarization, data entry, and meeting triage within the environments where they already work.
 
 ## What it means
-Integrating AI into existing apps means using features that connect directly to your company’s data, such as internal documents, project boards, and communication threads. Instead of copying and pasting information into a public chatbot, you use tools that operate within your established security perimeter. This shift transforms AI from a standalone assistant into a functional layer of your daily operations.
+
+AI-native features are shifting from standalone chatbots to integrated workflow layers. Modern platforms like Notion, Canva, and Jira are embedding AI agents that can read, write, and coordinate tasks across your existing files and communication threads. This transition means that AI is no longer just a tool for drafting text; it is becoming a functional component of your operational infrastructure.
 
 ## How it works in practice
-Effective integration follows a structured workflow: 
-1. **Identify high-friction tasks:** Look for repetitive processes like summarizing meeting notes, drafting project specs, or capturing invoice data.
-2. **Use native integrations:** Leverage AI features built into tools like Notion, Jira, Canva, or Xero that allow the AI to read and write directly to your project files or databases.
-3. **Establish human-in-the-loop gates:** Ensure that AI-generated outputs—whether code, text, or design—are reviewed by a human before they are finalized, published, or sent to clients.
-4. **Define permission boundaries:** Use administrative settings to control which team members can trigger AI actions and what data those agents can access.
+
+Successful adoption relies on treating AI as a participant in a governed workflow rather than an autonomous replacement for human judgment. 
+
+1. **Identify the Handoff:** Map your current manual processes. Identify where AI can handle the "first pass"—such as drafting a project spec, summarizing a meeting transcript, or capturing invoice data.
+2. **Define the Review Gate:** Never allow AI to finalize a task that impacts customers, finances, or legal compliance without a human review step. 
+3. **Use Shared Control Surfaces:** Utilize platforms like Notion or Jira that allow you to assign tasks to agents from a shared board. This keeps the agent's actions visible to the whole team, making it easier to audit what was requested, what the agent produced, and what still needs human sign-off.
 
 ## Why organisations are adopting it
-Organizations are moving toward integrated AI to solve the problem of "shadow AI," where employees use unapproved personal accounts to process company data. By providing official, governed tools, companies can maintain data security while enabling productivity. Furthermore, integrated tools allow for better auditability; when AI acts within a managed platform, the actions are often logged, making it easier to track what was changed and by whom.
+
+Organisations are moving toward integrated AI to reduce "context switching." When AI tools live inside the apps your team already uses, you avoid the productivity drain of copying data between browser tabs. Furthermore, enterprise-grade integrations often come with built-in governance, such as role-based access controls and audit logs, which are difficult to maintain when employees use unapproved personal AI accounts.
 
 ## What changes for people and workflows
-For employees, the primary change is a shift from manual data entry and formatting to a role of "workflow architect" and "reviewer." Instead of writing every word or building every slide, staff define the parameters for the AI, review the output, and handle the final polish. This requires new skills in structured communication and quality control rather than just technical coding or design expertise.
+
+- **From Drafting to Reviewing:** Your role shifts from writing from scratch to verifying AI-generated drafts. This requires a higher level of attention to detail and a clear understanding of the source material.
+- **Visibility and Accountability:** Because AI actions are now logged within your project management or communication tools, it is easier to trace errors back to specific prompts or data inputs.
+- **Role Blurring:** As AI handles adjacent tasks (e.g., a project manager using AI to draft technical specs), team members are increasingly stepping into wider roles. This makes clear ownership and documented quality standards essential.
 
 ## Limits, risks and what remains uncertain
-- **Automation bottlenecks:** As seen in recent software development cases, AI can identify bugs or issues faster than human teams can fix them, creating a backlog of remediation work.
-- **Security and egress:** Even in integrated tools, autonomous agents can potentially access unauthorized data if permission boundaries are not strictly defined.
-- **Regulatory uncertainty:** While frameworks like the EU AI Act are establishing transparency requirements, the specific operational burden for small businesses remains in flux as enforcement mechanisms evolve.
+
+- **The Remediation Bottleneck:** As AI models become better at discovering bugs or data anomalies, they can overwhelm human teams. If your discovery speed exceeds your remediation capacity, you create a bottleneck rather than a solution.
+- **Shadow AI Risks:** When businesses fail to provide easy-to-use, approved AI tools, employees often turn to personal accounts. A July 2026 survey found that 38% of U.S. workers have entered company data into personal AI accounts, often unaware that this may violate confidentiality agreements.
+- **Network Egress:** Autonomous agents can sometimes bypass traditional prompt guardrails. Testing security tools in staging environments requires physical network isolation to prevent accidental real-world breaches.
 
 ## Practical questions to ask before using it
-- **Where does the data go?** Does the tool process data within our existing security perimeter, or is it sent to a third-party model provider?
-- **Who owns the output?** If the AI makes a mistake, is there a clear audit trail to identify the source of the error?
-- **What is the human review step?** Is there a mandatory checkpoint before the AI-generated output is sent to a client or pushed to production?
-- **How do we turn it off?** If the tool behaves unexpectedly, can we disable the AI features immediately without breaking the core software functionality?
+
+- **Where is the human review step?** If the AI output is sent to a client or triggers a financial transaction, who is responsible for verifying the accuracy?
+- **What data is being used?** Does the tool have access to sensitive customer or financial data, and is that data being used to train public models?
+- **How do we handle failures?** If the AI produces an incorrect result, what is the process for flagging it and correcting the error?
+- **Is there a clear audit trail?** Can we see who triggered the AI action and what the output was?
 
 ## Current examples
-- **Project Management:** Notion 3.6 allows teams to assign tasks to external agents directly from shared boards, keeping the AI's work attached to the project record.
-- **Finance:** Xero’s JAX platform automates document capture and workflow tasks, reducing manual data entry for accountants.
-- **Software Development:** GitHub’s AI security detections run automatically on pull requests, providing informational feedback without blocking the development workflow.
-- **Creative Work:** Canva AI 2.0 integrates research, design, and scheduling into a single loop, allowing teams to manage a campaign from idea to publication in one environment.
+
+- **Notion 3.6:** Allows teams to assign tasks to external agents like Claude and Cursor directly from a shared board, keeping the AI's work visible and auditable.
+- **Canva AI 2.0:** Integrates design, research, scheduling, and brand intelligence into one workflow, allowing teams to move from idea to published asset without leaving the platform.
+- **Google Meet:** Admins can now configure AI note-taking settings, allowing teams to define when automation is enabled and who owns the resulting action items.
 
 ## Sources and further reading
-- [OpenAI: ChatGPT is now a partner for your most ambitious work](https://openai.com/index/chatgpt-for-your-most-ambitious-work/)
-- [Notion: Notion 3.6 Release Notes](https://www.notion.com/releases/2026-07-01)
-- [GitHub: AI security detections on pull requests](https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests/)
-- [Xero: AI Innovations at Xerocon London](https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/)
+
+- [Notion 3.6: External Agents, HTML blocks, and more](https://www.notion.com/releases/2026-07-01)
+- [Introducing Canva AI 2.0: Reimagining how the world creates](https://www.canva.com/newsroom/news/canva-create-2026-ai/)
+- [New Google Meet 'Take notes for me' settings for admins and end users](https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html?m=1)
+- [Nearly 2 in 5 US workers have put company information into personal AI accounts](https://www.caledonianrecord.com/news/national/nearly-2-in-5-us-workers-have-put-company-information-into-personal-ai-accounts/article_12345678.html)

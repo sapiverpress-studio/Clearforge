@@ -3,11 +3,11 @@
   "slug": "ai-work-tools-in-existing-apps",
   "title": "How to adopt AI tools that work inside the apps your team already uses",
   "description": "A practical guide to AI features embedded in docs, search, design, support, project and meeting tools. It explains where the workflow gains come from, why review, disclosure and control matter, and what to check before rolling it out.",
-  "search_question": "How do I integrate AI tools into my existing business workflows safely?",
+  "search_question": "How do I safely adopt AI tools embedded in my existing business software?",
   "topic_slugs": [
-    "ai-adoption",
     "ai-inside-products",
-    "systems-automation"
+    "systems-automation",
+    "ai-adoption"
   ],
   "created": "2026-07-14",
   "last_updated": "2026-08-02",
@@ -70,7 +70,8 @@
     "https://www.propublica.org/article/anthropic-claude-mythos-microsoft-bugs-vulnerabilities",
     "https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/",
     "https://www.salesforce.com/uk/news/stories/agentforce-help-agent-announcement/?bc=OTH",
-    "https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html?m=1"
+    "https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html?m=1",
+    "https://www.caledonianrecord.com/news/national/nearly-2-in-5-us-workers-have-put-company-information-into-personal-ai-accounts/article_12345678.html"
   ],
   "revisions": [
     {
@@ -240,6 +241,14 @@
       "source_editions": [
         "2026-07-16",
         "2026-07-20"
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "summary": "Updated the guide to reflect the shift from standalone AI tools to integrated workflow layers, incorporating new research on agentic coordination in Notion and the risks of shadow AI usage.",
+      "source_editions": [
+        "2026-07-20",
+        "2026-07-30"
       ]
     }
   ],

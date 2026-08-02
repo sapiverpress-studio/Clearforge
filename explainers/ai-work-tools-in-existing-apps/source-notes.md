@@ -37,6 +37,7 @@ Last checked: 2026-08-02
 - https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/
 - https://www.salesforce.com/uk/news/stories/agentforce-help-agent-announcement/?bc=OTH
 - https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html?m=1
+- https://www.caledonianrecord.com/news/national/nearly-2-in-5-us-workers-have-put-company-information-into-personal-ai-accounts/article_12345678.html
 
 ## Revision history
 
@@ -59,3 +60,4 @@ Last checked: 2026-08-02
 - 2026-08-02: Updated the guide to emphasize the shift from standalone AI tools to integrated, governed workflows within existing software stacks, incorporating recent developments in project management and document tools.
 - 2026-08-02: Updated the guide to emphasize the shift from standalone AI tools to integrated workflow layers, incorporating recent developments in bookkeeping, project management, and creative design tools.
 - 2026-08-02: Updated the guide to emphasize the shift from standalone chat tools to integrated workflow layers, incorporating recent developments in project management (Notion), finance (Xero), and software development (GitHub) tools.
+- 2026-08-02: Updated the guide to reflect the shift from standalone AI tools to integrated workflow layers, incorporating new research on agentic coordination in Notion and the risks of shadow AI usage.

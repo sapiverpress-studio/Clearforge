@@ -14,7 +14,7 @@ permissions:
 
 concurrency:
   group: sapiver-forge-candidate-repair-2026-08-02
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 env:
   CLEARFORGE_DATE: "2026-08-02"
@@ -115,10 +115,15 @@ jobs:
       - name: Rebuild site from corrected candidate
         run: npm run build:site
 
-      - name: Validate corrected public branding and content
+      - name: Validate corrected public branding and forbidden claims
+        shell: bash
         run: |
+          set -euo pipefail
           npm run validate:public-brand
-          node scripts/repair-2026-08-02-candidate.mjs
+          ! grep -R -n -E '38% of (U\.S\. )?workers|hardware-level isolation is required|requires disclosure for all AI interactions and synthetic media|visit for our release gate guide|COPY_PASTE_INTO_ELEVENLABS' "drafts/${CLEARFORGE_DATE}" "public/posts/${CLEARFORGE_DATE}.html" "public/features/${CLEARFORGE_DATE}.html"
+          test -s "drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp3"
+          test -s "drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp4"
+          test -s "media/${CLEARFORGE_DATE}/tiktok-narration.mp3"
 
       - name: Build and seal replacement human-review candidate
         env:

@@ -1,11 +1,6 @@
 name: Repair Sapiver Forge Candidate 2026-08-02
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "scripts/repair-2026-08-02-candidate.mjs"
-      - ".github/workflows/repair-2026-08-02-candidate.yml"
   workflow_dispatch:
 
 permissions:

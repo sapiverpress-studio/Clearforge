@@ -20,12 +20,21 @@ const normaliseUrl = (value) => {
   return url.toString().replace(/\/$/, "");
 };
 const normaliseText = (value) => String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
-const similarity = (a, b) => {
-  const A = new Set(normaliseText(a).split(" ").filter((x) => x.length > 2));
-  const B = new Set(normaliseText(b).split(" ").filter((x) => x.length > 2));
+const titleTokens = (value) => new Set(normaliseText(value).split(" ").filter((x) => x.length > 2 && !["the","and","for","with","from","into","your","about"].includes(x)));
+const titleSimilarity = (a, b) => {
+  const A = titleTokens(a);
+  const B = titleTokens(b);
   if (!A.size || !B.size) return 0;
-  let n = 0; for (const x of A) if (B.has(x)) n += 1;
+  let n = 0;
+  for (const x of A) if (B.has(x)) n += 1;
   return n / Math.min(A.size, B.size);
+};
+const titlesCompatible = (a, b) => {
+  const left = normaliseText(a);
+  const right = normaliseText(b);
+  if (!left || !right) return true;
+  if (left.includes(right) || right.includes(left)) return true;
+  return titleSimilarity(left, right) >= 0.22;
 };
 function collectSearchEvidence(value, out = []) {
   if (!value || typeof value !== "object") return out;
@@ -71,20 +80,48 @@ const replacements = [];
 data.sources = original.map((source, index) => {
   const resolved = byIndex.get(index);
   if (!resolved) throw new Error(`Missing resolved source ${index}`);
-  let key; try { key = normaliseUrl(resolved.url); } catch { throw new Error(`Resolver returned invalid URL for source ${index + 1}`); }
+  let key;
+  try { key = normaliseUrl(resolved.url); }
+  catch { throw new Error(`Resolver returned invalid URL for source ${index + 1}`); }
   const evidenceItem = evidenceByUrl.get(key);
   if (!evidenceItem) throw new Error(`Resolver URL for source ${index + 1} was not present in the web-search evidence: ${resolved.url}`);
-  if (evidenceItem.title && similarity(resolved.title, evidenceItem.title) < 0.35) throw new Error(`Resolver title for source ${index + 1} does not match the search-result title.`);
-  replacements.push({ old_url: source.url || "", new_url: resolved.url, old_title: source.title || "", new_title: resolved.title, evidence_url: evidenceItem.url, evidence_title: evidenceItem.title, evidence_grounded: true });
-  return { ...source, source_name: resolved.source_name, title: resolved.title, url: resolved.url, published_date: resolved.published_date, evidence_basis: `${source.evidence_basis || ""} Exact source resolution: ${resolved.resolution_basis}`.trim() };
+
+  const canonicalTitle = String(evidenceItem.title || resolved.title || source.title || "").trim();
+  if (!canonicalTitle) throw new Error(`No grounded title was available for source ${index + 1}.`);
+  if (resolved.title && evidenceItem.title && !titlesCompatible(resolved.title, evidenceItem.title)) {
+    console.warn(`Source ${index + 1} title differed from Google grounding metadata; using the grounded title instead.`);
+  }
+
+  replacements.push({
+    old_url: source.url || "",
+    new_url: evidenceItem.url,
+    old_title: source.title || "",
+    new_title: canonicalTitle,
+    model_title: resolved.title,
+    evidence_url: evidenceItem.url,
+    evidence_title: evidenceItem.title,
+    evidence_grounded: true
+  });
+  return {
+    ...source,
+    source_name: resolved.source_name,
+    title: canonicalTitle,
+    url: evidenceItem.url,
+    published_date: resolved.published_date,
+    evidence_basis: `${source.evidence_basis || ""} Exact source resolution: ${resolved.resolution_basis}`.trim()
+  };
 });
 
 fs.writeFileSync(structuredPath, `${JSON.stringify(data, null, 2)}\n`);
 fs.writeFileSync(path.join(dir, "sources.json"), `${JSON.stringify(data.sources, null, 2)}\n`);
 for (const filename of ["daily_brief.md", "social_pack.md"]) {
-  const file = path.join(dir, filename); if (!fs.existsSync(file)) continue;
+  const file = path.join(dir, filename);
+  if (!fs.existsSync(file)) continue;
   let text = fs.readFileSync(file, "utf8");
-  for (const r of replacements) { if (r.old_url) text = text.split(r.old_url).join(r.new_url); if (r.old_title) text = text.split(r.old_title).join(r.new_title); }
+  for (const r of replacements) {
+    if (r.old_url) text = text.split(r.old_url).join(r.new_url);
+    if (r.old_title) text = text.split(r.old_title).join(r.new_title);
+  }
   fs.writeFileSync(file, text);
 }
 fs.writeFileSync(path.join(dir, "source-resolution-report.json"), `${JSON.stringify({ edition: DATE, generated_at: new Date().toISOString(), search_evidence_count: evidenceByUrl.size, replacements }, null, 2)}\n`);

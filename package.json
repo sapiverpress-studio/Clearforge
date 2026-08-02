@@ -1,13 +1,13 @@
 {
   "name": "sapiver-forge-daily-ai-brief-builder",
-  "version": "0.15.0",
+  "version": "0.15.1",
   "private": true,
   "type": "module",
   "description": "Sapiver Forge automated daily AI news research, validation, depth-first reporting, social production, media and distribution system.",
   "scripts": {
     "brand:current": "node src/rebrand-current-edition.mjs",
-    "daily": "bash scripts/run-fresh-daily-with-event-retry.sh && npm run resolve:sources && npm run verify:sources && npm run rebuild:pruned && npm run brand:current",
-    "angle:alternate": "node src/reangle-daily.mjs && npm run resolve:sources && npm run verify:sources && npm run rebuild:pruned && npm run brand:current",
+    "daily": "bash scripts/run-fresh-daily-with-event-retry.sh && npm run verify:sources && npm run rebuild:pruned && npm run brand:current",
+    "angle:alternate": "node src/reangle-daily.mjs && npm run verify:sources && npm run rebuild:pruned && npm run brand:current",
     "draft": "node src/generate-daily-brief.mjs && npm run brand:current",
     "novelty:event": "node src/check-event-novelty.mjs",
     "social:optimise": "node src/optimise-social-or-preserve.mjs && node src/finalise-social-links.mjs && npm run brand:current",
@@ -35,6 +35,7 @@
     "check": "node src/check-approval.mjs",
     "test:validation-system": "node test/validation-system.mjs",
     "test:source-integrity": "node test/source-integrity-validator.mjs",
+    "test:production-source-path": "node test/production-source-path-contract.mjs",
     "build:publishing": "node src/build-publishing-dashboard.mjs",
     "test:gemini": "node test/gemini-provider-contract.mjs",
     "validate:public-brand": "node scripts/validate-sapiver-forge-public.mjs"

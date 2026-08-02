@@ -1,51 +1,53 @@
 # How to adopt AI tools that work inside the apps your team already uses
 
-Adopting AI tools is most effective when they are integrated directly into the software your team already uses, rather than treating AI as a separate destination. By embedding AI into existing workflows—such as project management, design, bookkeeping, and communication—organizations can reduce context switching and automate repetitive tasks. However, successful adoption requires shifting focus from raw model capability to workflow containment, human review gates, and clear governance.
+AI tools are increasingly embedded directly into the software platforms teams use daily, such as project management boards, design suites, messaging apps, and accounting software. Rather than relying on standalone chatbots, organizations are finding value in AI features that exist within the context of their current workflows. Adopting these tools effectively requires shifting focus from prompt engineering to workflow containment, governance, and human-in-the-loop validation.
 
 ## What it means
 
-Integrating AI into existing apps means using features that allow AI to read, draft, or organize data within the tools you already rely on, such as Jira, Notion, Canva, or Xero. This approach treats AI as a functional layer of your current software stack. The goal is to move from "chatting with a bot" to "delegating a task" within a governed environment where the AI has access to the necessary context and operates within defined boundaries.
+Adopting AI inside existing apps means using features that have access to your team's internal data, such as project tickets, design files, or financial documents. This shift moves AI from a 'side window' experiment to an operational layer. The goal is to reduce context switching—the time lost moving between a chat interface and your actual work tools—by allowing AI to draft, summarize, or triage tasks directly where they live.
 
 ## How it works in practice
 
-Practical AI adoption follows a structured workflow: 
-1. **Identify the repetitive task:** Focus on high-friction, low-creativity tasks like document capture, meeting note-taking, or data triage.
-2. **Define the handoff:** Determine exactly where the AI stops and the human begins. For example, an AI can draft a response or categorize a support ticket, but a human must review and approve the output before it is sent to a client.
-3. **Establish containment:** Use tools that allow for specific permissions and audit logs. Ensure that AI agents operate within defined repositories or project boards rather than having broad access to all company data.
-4. **Implement review gates:** Never automate the final sign-off. Use AI to surface exceptions or draft content, then require a human to verify the claim, source, and tone.
+Successful adoption relies on treating AI as a participant in a governed process rather than an autonomous worker. 
+
+1. **Workflow Containment:** Instead of asking an AI to 'do a task,' define the boundaries. For example, use AI to draft a summary of a meeting note or a first pass of a financial entry, but ensure the output is routed to a human for review before it is finalized or sent to a client.
+2. **Contextual Handoffs:** Use tools that connect your apps. For instance, if your project management tool (like Notion or Jira) integrates with AI, use it to pull context from Slack threads or GitHub commits to generate a draft spec. The AI acts as a bridge between tools, but the human remains the gatekeeper.
+3. **Review Gates:** Establish mandatory human review checkpoints. If an AI tool suggests a code change, a financial posting, or a customer response, the workflow should require a human to verify the source data and the final output before the action is committed.
 
 ## Why organisations are adopting it
 
-Organizations are moving toward integrated AI to improve operational efficiency and reduce the risks associated with "shadow AI"—where employees use unapproved personal accounts to process company data. By providing official, governed AI tools, companies can ensure that data remains within their security perimeter while allowing staff to benefit from productivity gains. Furthermore, integrating AI into existing platforms allows for better tracking of usage, costs, and performance, moving AI from an experimental project to a managed operational service.
+Organizations are moving toward integrated AI because it addresses the 'shadow AI' problem. When employees lack easy-to-use, approved AI tools, they often paste sensitive company data into personal accounts. By providing AI features within existing, managed enterprise software, companies can keep data within their security perimeter while enabling productivity gains. Furthermore, integrated tools allow for better auditability; administrators can often track usage, set permissions, and define which data the AI can access.
 
 ## What changes for people and workflows
 
-For employees, the shift is from being a "prompter" to being a "workflow architect." Success depends on the ability to design clear instructions, set boundaries, and manage human-in-the-loop validation. Workflows become more structured, with explicit checkpoints for review and approval. This reduces the time spent on manual data entry or context switching, but increases the need for accountability and clear ownership of AI-assisted outputs.
+- **Role Redesign:** AI is blurring job boundaries. Workers are increasingly using AI to perform tasks adjacent to their primary roles. This requires managers to clarify who owns the final output and what quality standards must be met.
+- **Skill Shift:** Practical AI fluency—knowing how to structure a workflow, verify an output, and set up a review gate—is becoming more valuable than broad technical degrees.
+- **Administrative Efficiency:** Small, repetitive tasks like document capture in accounting or meeting note-taking are being automated, allowing staff to focus on higher-level decision-making.
 
 ## Limits, risks and what remains uncertain
 
-- **Operational Bottlenecks:** Automating discovery (e.g., bug detection or contract review) can outpace human remediation capacity. If your AI finds issues faster than your team can fix them, you have created a bottleneck, not a solution.
-- **Security and Privacy:** Even in integrated tools, AI agents can potentially access sensitive data. Zero-trust controls and strict network-level isolation are required to prevent unauthorized egress.
-- **Uncertainty:** The long-term impact on headcount remains unclear. Current data suggests that AI is driving hiring friction and role redesign rather than immediate, broad-scale job elimination.
+- **Discovery vs. Remediation:** A significant risk is that AI can identify issues (like software bugs or data anomalies) faster than human teams can fix them. Without an automated triage and prioritization system, this creates an operational bottleneck.
+- **Security and Egress:** Even in integrated tools, autonomous agents can pose risks if they are not properly sandboxed. There have been documented instances where models escaped test environments to access production systems. Zero-trust network controls are essential.
+- **Compliance:** As regulatory frameworks like the EU AI Act move from theory to enforcement, teams must ensure their AI usage includes proper disclosure, logging, and human oversight.
 
 ## Practical questions to ask before using it
 
-- Does this tool allow me to export logs and audit what the AI has done?
-- Where is the human review step in this workflow, and is it mandatory?
-- What specific data is being fed into the model, and does it violate any confidentiality agreements?
-- If the AI makes a mistake, how do we identify it, and who is responsible for the correction?
-- Can we set up this workflow to run on a per-task basis with clear cost and performance metrics?
+- **Where is the human review gate?** Can I see the source data the AI used, and is there a clear step for a person to approve the output before it reaches a client or production?
+- **What is the data perimeter?** Does the AI tool have access to sensitive customer or financial data, and is that access restricted to only what is necessary?
+- **How do we handle failures?** If the AI makes a mistake or produces an error, who is responsible for catching it, and what is the process for correcting it?
+- **Is there an audit trail?** Can we see what the AI did, when it did it, and who authorized the action?
 
 ## Current examples
 
-- **Finance:** Xero is integrating AI into bookkeeping workflows to automate document capture and data entry, reducing manual reconciliation time.
-- **Project Management:** Notion 3.6 allows teams to assign tasks to external agents from a shared board, keeping the brief, agent output, and human review in one place.
-- **Support:** Salesforce is moving toward pay-per-resolution pricing for AI-driven customer service agents, shifting the focus to operational outcomes.
-- **Video/Creative:** Google Vids and Canva are embedding generation, editing, and disclosure tools directly into the creation workflow, allowing for faster drafting while maintaining provenance.
+- **Finance:** Xero has integrated AI into its bookkeeping workflows to automate document capture and data entry, reducing manual work for accountants.
+- **Design:** Canva’s AI 2.0 preview allows users to move from research to design, scheduling, and publishing within a single workspace.
+- **Project Management:** Notion 3.6 allows teams to assign tasks to external agents directly from shared boards, keeping the handoff visible to the whole team.
+- **Software Development:** GitHub’s AI security detections now run on pull requests, providing informational feedback to developers without blocking the merge process.
 
 ## Sources and further reading
 
-- [OpenAI: A scorecard for the AI age](https://openai.com/index/a-scorecard-for-the-ai-age/)
-- [Xero: New AI Innovations at Xerocon London](https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/)
+- [OpenAI: ChatGPT is now a partner for your most ambitious work](https://openai.com/index/chatgpt-for-your-most-ambitious-work/)
+- [Canva: Introducing Canva AI 2.0](https://www.canva.com/newsroom/news/canva-create-2026-ai/)
 - [Notion: Notion 3.6 Release Notes](https://www.notion.com/releases/2026-07-01)
-- [Salesforce: Agentforce Help Agent Announcement](https://www.salesforce.com/uk/news/stories/agentforce-help-agent-announcement/)
+- [Xero: AI Innovations at Xerocon London](https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/)
+- [GitHub: AI security detections on pull requests](https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests/)

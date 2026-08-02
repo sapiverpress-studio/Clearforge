@@ -9,7 +9,7 @@
   }
 
   async function load() {
-    const sections = [...document.querySelectorAll("[data-clearforge-latest-short]")];
+    const sections = [...document.querySelectorAll("[data-sapiver-forge-latest-short]")];
     if (!sections.length) return;
 
     const manifestResponse = await fetch(manifestUrl, { cache: "no-store" });

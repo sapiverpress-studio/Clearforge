@@ -1,0 +1,26 @@
+# Sapiver Forge
+
+> Practical human-led AI decision, workflow-control, output-release and outcome-review tools for creators, freelancers and small teams.
+
+Sapiver Forge is a Sapiver Press product line. Its tools structure human judgement; they do not replace legal, compliance, security or professional advice and do not guarantee accuracy, safety or business outcomes.
+
+## Core pages
+
+- [Applied AI Gate System](https://sapiverforge-daily-brief.netlify.app/gate-system/): overview of the four-stage system.
+- [Which AI Gate do I need?](https://sapiverforge-daily-brief.netlify.app/which-ai-gate-do-i-need/): problem-led product selector.
+- [Complete Gate System](https://sapiverforge-daily-brief.netlify.app/products/complete-gate-system/): all four Gates plus the bundle-exclusive Agent & Connector Safety Add-on.
+- [AI Gate Workspace](https://sapiverforge-daily-brief.netlify.app/products/notion-workspace/): Notion workspace for recording assessments and decisions.
+
+## Individual Gates
+
+- [Sapiver Forge AI Opportunity Gate](https://sapiverforge-daily-brief.netlify.app/products/opportunity-gate/): Should AI be considered for this task?
+- [Sapiver Forge AI Workflow Control Gate](https://sapiverforge-daily-brief.netlify.app/products/workflow-control-gate/): Is the proposed workflow properly bounded and ready to operate?
+- [Sapiver Forge AI Output Release Gate](https://sapiverforge-daily-brief.netlify.app/products/output-release-gate/): Is this exact consequential output ready to leave?
+- [Sapiver Forge AI Outcome Review Gate](https://sapiverforge-daily-brief.netlify.app/products/outcome-review-gate/): Is the operating workflow delivering worthwhile results?
+
+## Guidance and evidence
+
+- [Evergreen guides](https://sapiverforge-daily-brief.netlify.app/guides/): durable, source-backed explanations.
+- [Topics](https://sapiverforge-daily-brief.netlify.app/topics/): themed AI coverage.
+- [Reports](https://sapiverforge-daily-brief.netlify.app/reports/): published Sapiver Forge reports.
+- [Podcast](https://sapiverforge-daily-brief.netlify.app/podcast/): Sapiver Forge AI Briefing.

@@ -51,3 +51,4 @@ Last checked: 2026-08-02
 - 2026-07-31: Updated to include the latest research on connected software stacks, the shift to stateless protocols like MCP, and the operational risks of shadow AI and discovery-remediation bottlenecks.
 - 2026-07-31: Updated the guide to incorporate new research on integrated software stacks, the risks of shadow AI, and the operational bottlenecks created when AI discovery outpaces human remediation.
 - 2026-08-02: Updated the guide to emphasize the shift from standalone AI tools to integrated, governed workflow layers, incorporating recent research on agentic observability, human-in-the-loop review gates, and the importance of workflow containment.
+- 2026-08-02: Updated the guide to reflect the shift from standalone AI chat tools to integrated, governed AI workflows within existing enterprise software, emphasizing the importance of human review gates and auditability.

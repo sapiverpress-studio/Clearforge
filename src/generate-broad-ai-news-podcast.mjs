@@ -11,17 +11,27 @@ const structuredPath = path.join(draftDir, "structured_output.json");
 const sourceReportPath = path.join(draftDir, "source-integrity-report.json");
 const podcastDir = path.join(draftDir, "podcast");
 
-if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required for podcast generation.");
 if (!fs.existsSync(structuredPath)) throw new Error(`Missing ${structuredPath}`);
 if (!fs.existsSync(sourceReportPath)) throw new Error("Podcast generation is blocked until source integrity has passed.");
-
 const sourceReport = JSON.parse(fs.readFileSync(sourceReportPath, "utf8"));
 if (sourceReport.passed !== true) throw new Error("Podcast generation is blocked because source integrity failed.");
 const data = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
 const stories = Array.isArray(data.story_summaries) ? data.story_summaries : [];
 const sources = Array.isArray(data.sources) ? data.sources : [];
-if (stories.length < 3 || sources.length < 3) throw new Error("Broad AI podcast requires at least three verified stories.");
 
+if (stories.length < 3 || sources.length < 3) {
+  fs.mkdirSync(podcastDir, { recursive: true });
+  fs.writeFileSync(path.join(podcastDir, "podcast-skipped.json"), `${JSON.stringify({
+    date: DATE,
+    skipped: true,
+    verified_story_count: Math.min(stories.length, sources.length),
+    reason: "Broad podcast requires at least three verified stories. The detailed report and social pack remain available."
+  }, null, 2)}\n`, "utf8");
+  console.log(`Podcast skipped without failing the run: only ${Math.min(stories.length, sources.length)} verified ${Math.min(stories.length, sources.length) === 1 ? "story" : "stories"}; socials and report continue.`);
+  process.exit(0);
+}
+
+if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required for podcast generation.");
 const schema = {
   type: "object", additionalProperties: false,
   required: ["episode_title", "story_order", "selection_reason", "spoken_script", "human_review_checks", "production_notes"],

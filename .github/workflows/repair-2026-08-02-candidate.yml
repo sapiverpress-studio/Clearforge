@@ -1,0 +1,178 @@
+name: Repair Sapiver Forge Candidate 2026-08-02
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/repair-2026-08-02-candidate.mjs"
+      - ".github/workflows/repair-2026-08-02-candidate.yml"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: sapiver-forge-candidate-repair-2026-08-02
+  cancel-in-progress: false
+
+env:
+  CLEARFORGE_DATE: "2026-08-02"
+  ORIGINAL_ARTIFACT_ID: "8830323452"
+  BLOG_BASE_URL: "https://sapiverforge-daily-brief.netlify.app"
+
+jobs:
+  repair-and-reseal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Download original sealed candidate
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="$RUNNER_TEMP/original-candidate.zip"
+          stage="$RUNNER_TEMP/original-candidate"
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ORIGINAL_ARTIFACT_ID}/zip" > "$archive"
+          mkdir -p "$stage"
+          unzip -q "$archive" -d "$stage"
+          test -f "$stage/drafts/${CLEARFORGE_DATE}/candidate-manifest.json"
+          cp -a "$stage/." .
+
+      - name: Apply deterministic factual and commercial repair
+        run: node scripts/repair-2026-08-02-candidate.mjs
+
+      - name: Regenerate corrected Gemini Kore podcast audio
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_TTS_MODEL: gemini-3.1-flash-tts-preview
+          GEMINI_TTS_VOICE: Kore
+          INPUT_PATH: drafts/2026-08-02/podcast/PODCAST_NARRATION_SCRIPT.txt
+        shell: bash
+        run: |
+          set -euo pipefail
+          wav="$RUNNER_TEMP/sapiver-forge-repaired-2026-08-02.wav"
+          mp3="drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp3"
+          OUTPUT_PATH="$wav" node scripts/generate-gemini-podcast-wav.mjs
+          ffmpeg -hide_banner -loglevel error -y -i "$wav" -codec:a libmp3lame -b:a 128k "$mp3"
+          sha256sum "${INPUT_PATH}" | cut -d' ' -f1 > "$mp3.source-sha256"
+          test -s "$mp3"
+
+      - name: Stage corrected podcast feed files
+        env:
+          PODCAST_KIND: daily
+          EPISODE_SLUG: "2026-08-02"
+          SOURCE_MP3: drafts/2026-08-02/podcast/clearforge-daily-podcast-2026-08-02.mp3
+          METADATA_PATH: drafts/2026-08-02/podcast/episode-metadata.json
+          PODCAST_BASE_URL: https://sapiverforge-daily-brief.netlify.app
+        run: node scripts/publish-podcast-feed.mjs
+
+      - name: Regenerate corrected social narration and media
+        env:
+          CLEARFORGE_DATE: "2026-08-02"
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_IMAGE_MODEL: ${{ vars.GEMINI_IMAGE_MODEL || 'gemini-3.1-flash-image' }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVENLAB_API }}
+          ELEVENLABS_VOICE_ID: w9xM4Spfmuw28ZXAirWK
+          ELEVENLABS_MODEL_ID: eleven_multilingual_v2
+        run: npm run media:ai
+
+      - name: Generate corrected podcast MP4
+        shell: bash
+        run: |
+          bash scripts/generate-podcast-mp4.sh \
+            "drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp3" \
+            "drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp4" \
+            "media/${CLEARFORGE_DATE}/story-1.png"
+
+      - name: Restage podcast with MP4
+        env:
+          PODCAST_KIND: daily
+          EPISODE_SLUG: "2026-08-02"
+          SOURCE_MP3: drafts/2026-08-02/podcast/clearforge-daily-podcast-2026-08-02.mp3
+          SOURCE_MP4: drafts/2026-08-02/podcast/clearforge-daily-podcast-2026-08-02.mp4
+          METADATA_PATH: drafts/2026-08-02/podcast/episode-metadata.json
+          PODCAST_BASE_URL: https://sapiverforge-daily-brief.netlify.app
+        run: node scripts/publish-podcast-feed.mjs
+
+      - name: Rebuild site from corrected candidate
+        run: npm run build:site
+
+      - name: Validate corrected public branding and content
+        run: |
+          npm run validate:public-brand
+          node scripts/repair-2026-08-02-candidate.mjs
+
+      - name: Build and seal replacement human-review candidate
+        env:
+          CLEARFORGE_WORKFLOW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          CLEARFORGE_SOURCE_COMMIT: ${{ github.sha }}
+        run: npm run review:human
+
+      - name: Read replacement candidate identity
+        id: candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          manifest="drafts/${CLEARFORGE_DATE}/candidate-manifest.json"
+          candidate_id="$(jq -r '.candidate_id' "$manifest")"
+          review_file="$(find "drafts/${CLEARFORGE_DATE}" -maxdepth 1 -name 'human-review-*.html' -type f | head -1)"
+          test "${#candidate_id}" -eq 64
+          test -f "$review_file"
+          echo "candidate_id=$candidate_id" >> "$GITHUB_OUTPUT"
+          echo "review_file=$review_file" >> "$GITHUB_OUTPUT"
+
+      - name: Upload replacement sealed candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: clearforge-candidate-2026-08-02-${{ steps.candidate.outputs.candidate_id }}
+          path: |
+            drafts/2026-08-02/
+            media/2026-08-02/
+            public/
+            bridge/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload replacement human review
+        uses: actions/upload-artifact@v4
+        with:
+          name: sapiver-forge-human-review-2026-08-02-${{ steps.candidate.outputs.candidate_id }}
+          path: ${{ steps.candidate.outputs.review_file }}
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Email replacement review package
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          REVIEW_EMAIL_TO: ${{ secrets.REVIEW_EMAIL_TO }}
+        run: npm run review:email
+
+      - name: Repair summary
+        shell: bash
+        run: |
+          {
+            echo "## Replacement Sapiver Forge candidate ready"
+            echo
+            echo "- Edition: 2026-08-02"
+            echo "- Replacement candidate: ${{ steps.candidate.outputs.candidate_id }}"
+            echo "- Original candidate remains untouched and must not be released."
+            echo "- Research and unaffected assets were reused; affected narration and media were regenerated."
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -22,7 +22,7 @@
     "podcast:archive": "node scripts/archive-old-editions.mjs",
     "opportunity:weekly": "node src/generate-weekly-opportunity.mjs",
     "newsletter:weekly": "node src/generate-weekly-newsletter.mjs",
-    "validate:auto": "npm run brand:current && bash scripts/validate-with-report.sh",
+    "validate:auto": "npm run brand:current && node src/run-graceful-validation.mjs",
     "media:ai": "node src/run-optional-media.mjs",
     "syndicate:dev": "node src/post-feature-to-dev.mjs",
     "export:approved": "node src/export-approved-bundle.mjs",

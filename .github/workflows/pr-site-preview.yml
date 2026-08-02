@@ -1,0 +1,68 @@
+name: PR site preview artifact
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "package.json"
+      - "scripts/**"
+      - "src/**"
+      - "public/**"
+      - "explainers/**"
+      - ".github/workflows/pr-site-preview.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out pull request
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install --ignore-scripts --no-audit --no-fund
+
+      - name: Build Sapiver Forge site
+        run: npm run build:site
+
+      - name: Validate public branding
+        run: npm run validate:public-brand
+
+      - name: Prepare focused sales preview
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p preview
+          cp public/index.html preview/
+          cp public/styles.css preview/
+          cp public/llms.txt preview/
+          cp public/sitemap.xml preview/
+          for dir in gate-system which-ai-gate-do-i-need products/opportunity-gate products/workflow-control-gate products/output-release-gate products/outcome-review-gate products/complete-gate-system products/notion-workspace; do
+            mkdir -p "preview/$dir"
+            cp "public/$dir/index.html" "preview/$dir/index.html"
+          done
+          if [ -d public/products/gate-system ]; then
+            mkdir -p preview/products
+            cp -R public/products/gate-system preview/products/
+          fi
+          if [ -d public/products/notion-workspace ]; then
+            mkdir -p preview/products
+            cp -R public/products/notion-workspace preview/products/
+          fi
+
+      - name: Upload focused generated site
+        uses: actions/upload-artifact@v4
+        with:
+          name: sapiver-forge-pr-site-preview
+          path: preview/
+          if-no-files-found: error
+          retention-days: 7

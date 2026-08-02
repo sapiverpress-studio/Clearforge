@@ -35,27 +35,53 @@ const schema = {
 };
 
 const survivorCount = data.sources.length;
+const preferredWords = survivorCount === 1 ? 900 : survivorCount === 2 ? 850 : 800;
 const formatInstruction = survivorCount === 1
-  ? "Create a definitive single-story report of 1,000 to 1,300 words. Explain what happened, the exact evidence, how it works, who is affected, what is available now, limitations, unresolved questions, the practical consequence and a useful test. Do not pad with unrelated stories or generic AI commentary."
+  ? "Create the strongest useful single-story report the verified evidence supports. Prefer depth, but do not pad, repeat or invent material merely to reach a fixed length."
   : survivorCount === 2
-    ? "Create a substantial two-story report of 950 to 1,250 words. Use one coherent angle, give both stories proper treatment and explain their practical relationship without inventing a connection."
-    : "Create a substantial multi-story report of 900 to 1,200 words. Lead with the strongest verified development and use the others as supporting context rather than a thin roundup.";
+    ? "Create the strongest useful two-story report the verified evidence supports, using a shared angle only when the evidence genuinely supports one."
+    : "Create a useful depth-first multi-story report led by the strongest verified development rather than a thin roundup.";
 
 const client = new OpenAI();
-const response = await client.responses.create({
-  model: process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite",
-  input: [
-    { role: "system", content: `Rewrite the Sapiver Forge edition using only the surviving verified sources and story summaries. Do not mention or infer discarded stories. Preserve all qualifications. ${formatInstruction} Cover what happened, what is confirmed, how it works, who is affected, current availability or rollout stage, measured versus projected outcomes, limitations, risks, unresolved questions, clearly labelled Sapiver Forge interpretation and one practical action. Generate the complete social pack every time from the strongest surviving story. The social assets must contain useful explanatory substance while retaining the existing Sapiver Forge narration and branded visual format; do not require a presenter. Return empty claims_to_verify only when every material claim is directly supported.` },
-    { role: "user", content: `EDITION: ${DATE}\nSURVIVING SOURCES:\n${JSON.stringify(data.sources, null, 2)}\nSURVIVING STORY SUMMARIES:\n${JSON.stringify(data.story_summaries, null, 2)}` }
-  ],
-  text: { format: { type: "json_schema", name: "sapiver_forge_depth_first_rebuild", strict: true, schema } }
-});
-if (!response.output_text) throw new Error("Pruned edition rebuild returned no output.");
-const rebuilt = JSON.parse(response.output_text);
-const articleWords = String(rebuilt.main_article || "").trim().split(/\s+/).filter(Boolean).length;
-if (articleWords < 850) throw new Error(`Depth-first report is too short: ${articleWords} words; minimum 850.`);
+async function generateDepthReport(extraInstruction = "") {
+  const response = await client.responses.create({
+    model: process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite",
+    input: [
+      { role: "system", content: `Rewrite the Sapiver Forge edition using only the surviving verified sources and story summaries. Do not mention or infer discarded stories. Preserve all qualifications. ${formatInstruction} Cover what happened, what is confirmed, how it works, who is affected, current availability or rollout stage, measured versus projected outcomes, limitations, risks, unresolved questions, clearly labelled Sapiver Forge interpretation and one practical action. Generate the complete social pack every time from the strongest surviving story. The social assets must contain useful explanatory substance while retaining the existing Sapiver Forge narration and branded visual format; do not require a presenter. Return empty claims_to_verify only when every material claim is directly supported. ${extraInstruction}` },
+      { role: "user", content: `EDITION: ${DATE}\nSURVIVING SOURCES:\n${JSON.stringify(data.sources, null, 2)}\nSURVIVING STORY SUMMARIES:\n${JSON.stringify(data.story_summaries, null, 2)}` }
+    ],
+    text: { format: { type: "json_schema", name: "sapiver_forge_depth_first_rebuild", strict: true, schema } }
+  });
+  if (!response.output_text) throw new Error("Pruned edition rebuild returned no output.");
+  return JSON.parse(response.output_text);
+}
+
+let rebuilt = await generateDepthReport(`Aim for about ${preferredWords} words when the evidence supports it, but return a shorter complete report rather than padding or omitting output.`);
+let articleWords = String(rebuilt.main_article || "").trim().split(/\s+/).filter(Boolean).length;
+
+if (articleWords > 0 && articleWords < Math.min(preferredWords, 700)) {
+  console.warn(`Initial depth-first report was ${articleWords} words; attempting one evidence-bound expansion without making length a release gate.`);
+  try {
+    const expanded = await generateDepthReport(`The previous draft was ${articleWords} words. Expand only where the supplied evidence supports more explanation. Do not invent facts, repeat paragraphs or pad. A short complete report is acceptable.`);
+    const expandedWords = String(expanded.main_article || "").trim().split(/\s+/).filter(Boolean).length;
+    if (expandedWords > articleWords) {
+      rebuilt = expanded;
+      articleWords = expandedWords;
+    }
+  } catch (error) {
+    console.warn(`Optional report expansion failed; retaining the original verified report: ${error?.message || error}`);
+  }
+}
+
+if (!String(rebuilt.main_article || "").trim()) {
+  throw new Error("Depth-first rebuild returned no article text.");
+}
+if (articleWords < preferredWords) {
+  console.warn(`Retaining a shorter verified report of ${articleWords} words so socials and review output are still produced.`);
+}
+
 Object.assign(data, rebuilt);
-data.edition_depth_mode = survivorCount === 1 ? "single_story_deep_dive" : survivorCount === 2 ? "two_story_deep_dive" : "multi_story_depth_first";
+data.edition_depth_mode = survivorCount === 1 ? "single_story_report" : survivorCount === 2 ? "two_story_report" : "multi_story_depth_first";
 data.verified_story_count = survivorCount;
 fs.writeFileSync(structuredPath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
 

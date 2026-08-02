@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "edition": "2026-08-02",
+  "production_model": "research -> locked facts -> constrained paraphrase -> labelled interpretation -> platform formatting",
+  "prohibited_behaviour": [
+    "Do not add a named standard, technology, legal requirement, exception, consequence, quantity or certainty absent from supported_fact.",
+    "Do not turn some, certain, defined or applicable cases into all, every or universal claims.",
+    "Do not describe machine-checkable or independently verifiable output as infallible, guaranteed, absolutely accurate or 100% correct.",
+    "Do not present Sapiver Forge interpretation as a sourced fact."
+  ],
+  "facts": [
+    {
+      "story_index": 0,
+      "source_name": "European Commission",
+      "source_title": "Commission starts enforcing AI Act rules and new transparency requirements on 2 August",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august",
+      "published_date": "2026-07-31",
+      "supported_fact": "The European Commission AI Office and national authorities begin enforcement of EU AI Act transparency rules on August 2, 2026, requiring chatbots to notify users they are interacting with AI, mandating deepfake labelling, and requiring machine-readable content marking.",
+      "labelled_interpretation": "AI compliance has shifted from legal policy discussions directly into front-end software design, requiring immediate user-interface disclaimers and digital provenance metadata.",
+      "rule": "Factual copy may paraphrase supported_fact without widening scope or certainty. labelled_interpretation must remain clearly presented as analysis, implication or Sapiver Forge interpretation."
+    },
+    {
+      "story_index": 1,
+      "source_name": "Anthropic",
+      "source_title": "Introducing Claude Opus 5",
+      "source_url": "https://www.anthropic.com/news/claude-opus-5",
+      "published_date": "2026-07-24",
+      "supported_fact": "Anthropic released Claude Opus 5 priced at $5 per million input tokens and $25 per million output tokens, delivering near-frontier intelligence on coding and knowledge work benchmarks.",
+      "labelled_interpretation": "Frontier AI providers are competing intensely on token cost-performance, making long-running multi-step software agents economically viable for everyday small business deployment.",
+      "rule": "Factual copy may paraphrase supported_fact without widening scope or certainty. labelled_interpretation must remain clearly presented as analysis, implication or Sapiver Forge interpretation."
+    },
+    {
+      "story_index": 2,
+      "source_name": "The Conference Board",
+      "source_title": "Most Organizations Are Preparing Workers for Today's AI, Not Tomorrow's",
+      "source_url": "https://www.conference-board.org/press/preparing-workers-for-today-ai-not-tomorrow",
+      "published_date": "2026-07-28",
+      "supported_fact": "While 55% of employees regularly use AI, only 33% have participated in employer-provided training, with existing programs focused on current-role upskilling rather than future reskilling.",
+      "labelled_interpretation": "Corporate training initiatives are lagging significantly behind worker adoption, creating future skill bottlenecks.",
+      "rule": "Factual copy may paraphrase supported_fact without widening scope or certainty. labelled_interpretation must remain clearly presented as analysis, implication or Sapiver Forge interpretation."
+    },
+    {
+      "story_index": 3,
+      "source_name": "CBRE",
+      "source_title": "2026 Americas Office Occupier Sentiment Survey",
+      "source_url": "https://www.cbre.com/insights/reports/2026-americas-office-occupier-sentiment-survey",
+      "published_date": "2026-07-30",
+      "supported_fact": "23% of organizations report AI is already influencing physical office space planning decisions, while another 30% expect an impact within two years.",
+      "labelled_interpretation": "The operational impact of AI automation is expanding beyond software tools into physical asset allocation.",
+      "rule": "Factual copy may paraphrase supported_fact without widening scope or certainty. labelled_interpretation must remain clearly presented as analysis, implication or Sapiver Forge interpretation."
+    }
+  ]
+}

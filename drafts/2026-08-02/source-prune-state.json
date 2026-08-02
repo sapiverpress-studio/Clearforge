@@ -1,0 +1,15 @@
+{
+  "edition": "2026-08-02",
+  "initial_count": 5,
+  "dropped": [
+    {
+      "title": "Organizational AI Adoption Jumps Six Points",
+      "url": "https://www.gallup.com/workplace/647312/organizational-ai-adoption-jumps-six-points.aspx",
+      "reason": "Source returned HTTP 404."
+    }
+  ],
+  "survivor_count": 4,
+  "rebuilt_at": "2026-08-02T20:49:39.850Z",
+  "depth_mode": "multi_story_depth_first",
+  "article_words": 273
+}

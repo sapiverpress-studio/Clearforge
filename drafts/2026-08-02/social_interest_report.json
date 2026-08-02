@@ -1,0 +1,43 @@
+{
+  "date": "2026-08-02",
+  "principle": "Sapiver Forge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "You've checked the AI output—but did you check the right things?",
+      "words": 31,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Are your AI API costs higher than they need to be?",
+      "words": 72,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Does your client-facing AI work meet the new EU transparency rules?",
+      "words": 80,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Are you training yourself to govern AI agents or just prompt them?",
+      "words": 81,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "EU AI Act Compliance Checklist for Freelancers",
+    "title_words": 7,
+    "description_words": 47
+  },
+  "warnings": [
+    "TikTok content is shorter than preferred (31 words)"
+  ]
+}

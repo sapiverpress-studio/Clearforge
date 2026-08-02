@@ -1,0 +1,81 @@
+{
+  "version": 5,
+  "date": "2026-08-02",
+  "headline": "The Compliance-Cost Pivot: AI Regulation Meets Economic Efficiency",
+  "dek": "As EU transparency mandates take effect, the arrival of lower-cost frontier models like Claude Opus 5 creates a new operational baseline for enterprise AI deployment.",
+  "hook": "Three AI updates that actually matter today",
+  "spoken_cta": "Before you send AI-assisted work to a client, use the Sapiver Forge AI Output Release Gate through the link in our bio.",
+  "visual_system": "Sapiver Forge AI briefing podcast studio system",
+  "social_voice": {
+    "name": "Irene",
+    "provider": "ElevenLabs",
+    "voice_id": "w9xM4Spfmuw28ZXAirWK",
+    "model": "eleven_multilingual_v2"
+  },
+  "visual_style_rules": {
+    "include": [
+      "dark navy AI briefing or podcast studio atmosphere",
+      "microphone or audio-briefing cues where appropriate",
+      "subtle circuit traces, waveform motifs, model cards or data-routing lines",
+      "physical source notes, checklists and human-review materials",
+      "premium editorial technology-magazine lighting"
+    ],
+    "avoid": [
+      "robots",
+      "glowing brains",
+      "hologram faces",
+      "generic dashboards",
+      "random floating code",
+      "excessive neon",
+      "fake readable text",
+      "Sapiver Press or unrelated branding"
+    ]
+  },
+  "stories": [
+    {
+      "file": "media/2026-08-02/story-1.png",
+      "title": "EU AI Act Transparency Rules Take Effect",
+      "source_name": "European Commission",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august",
+      "summary": "On August 2, 2026, the European Commission's AI Office and national authorities began enforcing mandatory transparency obligations. Interactive AI systems must notify users they are interacting with AI, and synthetic media must carry visible labels and machine-readable metadata.",
+      "why_it_matters": "Transparency moves from voluntary pledges to legally enforceable front-end design, affecting every app serving European users.",
+      "practical_angle": "Audit customer-facing forms and media pipelines to ensure automated disclaimers and metadata tagging are active.",
+      "visual_prompt": "a practical AI systems review scene with a microphone, pinned evidence cards, process arrows, muted blue signal lines and a clear before-to-after analysis structure. vertical social-video still with a strong microphone foreground and clear desk detail. make it instantly understandable as an AI briefing or AI podcast image, but grounded in real studio objects. make the story context visible through objects and composition rather than readable text. Story context: EU AI Act Transparency Rules Take Effect. Practical angle: Audit customer-facing forms and media pipelines to ensure automated disclaimers and metadata tagging are active.. Sapiver Forge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: midnight navy, charcoal, soft white, clear blue and muted brass details. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-08-02/story-2.png",
+      "title": "Anthropic Ships Claude Opus 5 at Half Cost",
+      "source_name": "Anthropic",
+      "source_url": "https://www.anthropic.com/news/claude-opus-5",
+      "summary": "Anthropic launched Claude Opus 5 on July 24, 2026, at $5 per million input tokens and $25 per million output tokens. The model provides near-frontier reasoning at half the cost of previous tiers, improving the economics of autonomous agents.",
+      "why_it_matters": "Lower token costs make multi-step autonomous workflows economically viable for small business deployment.",
+      "practical_angle": "Review API routing and test swapping high-cost frontier calls to mid-tier models like Opus 5 to cut expenses.",
+      "visual_prompt": "an editorial AI news analysis desk with printed source cards, model comparison sheets, a compact microphone arm, blue data-light accents and a calm control-room atmosphere. cinematic three-quarter studio photograph with shallow depth of field. show AI as a system being reviewed by a person through notes, checks, source cards and controlled audio tools. change the hero object placement so this frame does not resemble the previous edition. Story context: Anthropic Ships Claude Opus 5 at Half Cost. Practical angle: Review API routing and test swapping high-cost frontier calls to mid-tier models like Opus 5 to cut expenses.. Sapiver Forge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: professional dark newsroom blue with pale paper, steel microphone tones and subtle cyan signal light. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    },
+    {
+      "file": "media/2026-08-02/story-3.png",
+      "title": "The Conference Board Identifies Reskilling Deficit",
+      "source_name": "The Conference Board",
+      "source_url": "https://www.conference-board.org/press/preparing-workers-for-today-ai-not-tomorrow",
+      "summary": "A study released July 28 revealed that while 55% of workers use AI, only 33% have received employer-provided training, which remains focused on current-role incremental upskilling.",
+      "why_it_matters": "Businesses risk creating internal skill bottlenecks as workers self-teach unguided AI habits.",
+      "practical_angle": "Develop training programs that teach employees how to govern AI agents rather than just writing simple prompts.",
+      "visual_prompt": "a weekly AI briefing workspace with layered research cards, calendar markers, a studio microphone, restrained blue interface glow and visible human review materials. premium podcast-cover composition with strong negative space for later text overlay. combine physical human-review materials with light digital signal motifs so it feels human-led and AI-empowered. include a different arrangement of source cards, notebook, microphone angle and background signal pattern. Story context: The Conference Board Identifies Reskilling Deficit. Practical angle: Develop training programs that teach employees how to govern AI agents rather than just writing simple prompts.. Sapiver Forge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: deep navy, near-black blue, clean white, cool electric blue and soft mint accents. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective."
+    }
+  ],
+  "narration": "media/2026-08-02/narration.mp3",
+  "narration_text": "Are your AI API costs higher than they need to be? Anthropic just launched Claude Opus 5 at half the cost of previous models, making autonomous agents much more affordable for solo operators. If you are running high-frequency workflows, this is the time to audit your routing. Reading AI work twice is not the same as knowing what to check. Are you currently using Claude or another model for your client work? Before you send AI-assisted work to a client, use the Sapiver Forge AI Output Release Gate through the link in our bio.",
+  "tiktok": {
+    "story_index": 0,
+    "hook": "You've checked the AI output—but did you check the right things?",
+    "payoff": "EU transparency rules are now enforced, requiring mandatory labels on all AI-assisted work. Have you audited your client-facing pipelines yet?",
+    "response_prompt": "Have you updated your client-facing AI disclaimers yet?\n\nGet the Sapiver Forge Notion Workspace free by email: https://sapiver-press.kit.com/5147ce2817\nBuy it directly: https://payhip.com/b/o8iQA",
+    "narration": "media/2026-08-02/tiktok-narration.mp3",
+    "narration_text": "You've checked the AI output—but did you check the right things? EU transparency rules are now enforced, requiring mandatory labels on all AI-assisted work. Have you audited your client-facing pipelines yet?",
+    "narration_duration_seconds": 13.793,
+    "target_duration_seconds": 14.143,
+    "format": "single_discovery_micro_explainer"
+  },
+  "practical_takeaway": "Audit your customer-facing AI interfaces for mandatory EU transparency disclaimers and evaluate your current API usage to determine if Claude Opus 5 can replace higher-cost models for your autonomous agent workflows.",
+  "what_to_test_next": "Assess the impact of automated workflows on your team's physical collaboration needs to inform upcoming real estate lease renewals."
+}

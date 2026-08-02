@@ -1,0 +1,148 @@
+{
+  "schema_version": 5,
+  "edition": "2026-08-02",
+  "generated_at": "2026-08-02T20:49:30.261Z",
+  "passed": true,
+  "degraded": true,
+  "source_count": 5,
+  "survivor_count": 4,
+  "failed_source_count": 1,
+  "policy": "Hard-block invalid URLs, 404/410 pages and unsupported responses. Retain reachable sources and publisher-blocked 401/403/429 sources with complete research evidence for explicit human review. Continue when at least one candidate survives.",
+  "results": [
+    {
+      "index": 1,
+      "original_index": 0,
+      "source_name": "European Commission",
+      "recorded_title": "Commission starts enforcing AI Act rules and new transparency requirements on 2 August",
+      "requested_url": "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august",
+      "final_url": "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august",
+      "canonical_url": "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august",
+      "resolved_title": "Commission starts enforcing AI Act rules and new transparency requirements on 2 August",
+      "http_status": 200,
+      "publisher_blocked": false,
+      "complete_research_evidence": true,
+      "search_evidence_grounded": false,
+      "title_similarity": 1,
+      "checked_numbers": [
+        "2"
+      ],
+      "matched_named_terms": [
+        "commission",
+        "office",
+        "august"
+      ],
+      "passed": true,
+      "warnings": [],
+      "failures": []
+    },
+    {
+      "index": 2,
+      "original_index": 1,
+      "source_name": "Anthropic",
+      "recorded_title": "Introducing Claude Opus 5",
+      "requested_url": "https://www.anthropic.com/news/claude-opus-5",
+      "final_url": "https://www.anthropic.com/news/claude-opus-5",
+      "canonical_url": "https://www.anthropic.com/news/claude-opus-5",
+      "resolved_title": "Introducing Claude Opus 5",
+      "http_status": 200,
+      "publisher_blocked": false,
+      "complete_research_evidence": true,
+      "search_evidence_grounded": false,
+      "title_similarity": 1,
+      "checked_numbers": [
+        "5",
+        "25"
+      ],
+      "matched_named_terms": [
+        "introducing claude opus",
+        "anthropic",
+        "claude opus"
+      ],
+      "passed": true,
+      "warnings": [],
+      "failures": []
+    },
+    {
+      "index": 3,
+      "original_index": 2,
+      "source_name": "Gallup",
+      "recorded_title": "Organizational AI Adoption Jumps Six Points",
+      "requested_url": "https://www.gallup.com/workplace/647312/organizational-ai-adoption-jumps-six-points.aspx",
+      "final_url": "https://www.gallup.com/workplace/647312/organizational-ai-adoption-jumps-six-points.aspx",
+      "canonical_url": "",
+      "resolved_title": "",
+      "http_status": 404,
+      "publisher_blocked": false,
+      "complete_research_evidence": true,
+      "search_evidence_grounded": false,
+      "title_similarity": 0,
+      "checked_numbers": [
+        "47",
+        "41"
+      ],
+      "matched_named_terms": [],
+      "passed": false,
+      "warnings": [],
+      "failures": [
+        "Source returned HTTP 404."
+      ]
+    },
+    {
+      "index": 4,
+      "original_index": 3,
+      "source_name": "The Conference Board",
+      "recorded_title": "Most Organizations Are Preparing Workers for Today's AI, Not Tomorrow's",
+      "requested_url": "https://www.conference-board.org/press/preparing-workers-for-today-ai-not-tomorrow",
+      "final_url": "https://www.conference-board.org/press/",
+      "canonical_url": "https://www.conference-board.org/press",
+      "resolved_title": "Press Releases",
+      "http_status": 200,
+      "publisher_blocked": false,
+      "complete_research_evidence": true,
+      "search_evidence_grounded": false,
+      "title_similarity": 0,
+      "checked_numbers": [
+        "55",
+        "33"
+      ],
+      "matched_named_terms": [
+        "most organizations are preparing",
+        "workers",
+        "today",
+        "not tomorrow"
+      ],
+      "passed": true,
+      "warnings": [
+        "Recorded title differs from resolved/search-evidence title (similarity 0.00); human reviewer should confirm.",
+        "Confirmed-fact numbers were not found verbatim on the fetched page: 55."
+      ],
+      "failures": []
+    },
+    {
+      "index": 5,
+      "original_index": 4,
+      "source_name": "CBRE",
+      "recorded_title": "2026 Americas Office Occupier Sentiment Survey",
+      "requested_url": "https://www.cbre.com/insights/reports/2026-americas-office-occupier-sentiment-survey",
+      "final_url": "https://www.cbre.com/insights/reports/2026-americas-office-occupier-sentiment-survey",
+      "canonical_url": "https://www.cbre.com/insights/reports/2026-americas-office-occupier-sentiment-survey",
+      "resolved_title": "2026 Americas Office Occupier Sentiment Survey",
+      "http_status": 200,
+      "publisher_blocked": false,
+      "complete_research_evidence": true,
+      "search_evidence_grounded": false,
+      "title_similarity": 1,
+      "checked_numbers": [
+        "23",
+        "30"
+      ],
+      "matched_named_terms": [
+        "americas office occupier sentiment",
+        "survey"
+      ],
+      "passed": true,
+      "warnings": [],
+      "failures": []
+    }
+  ]
+}

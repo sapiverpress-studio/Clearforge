@@ -233,6 +233,14 @@
         "2026-07-20",
         "2026-07-16"
       ]
+    },
+    {
+      "date": "2026-08-02",
+      "summary": "Updated the guide to emphasize the shift from standalone chat tools to integrated workflow layers, incorporating recent developments in project management (Notion), finance (Xero), and software development (GitHub) tools.",
+      "source_editions": [
+        "2026-07-16",
+        "2026-07-20"
+      ]
     }
   ],
   "approved_for_publication": true,

@@ -1,6 +1,6 @@
 {
   "name": "sapiver-forge-daily-ai-brief-builder",
-  "version": "0.15.1",
+  "version": "0.15.2",
   "private": true,
   "type": "module",
   "description": "Sapiver Forge automated daily AI news research, validation, depth-first reporting, social production, media and distribution system.",
@@ -13,7 +13,7 @@
     "social:optimise": "node src/optimise-social-or-preserve.mjs && node src/finalise-social-links.mjs && npm run brand:current",
     "feature": "node src/generate-full-feature.mjs && npm run brand:current",
     "evergreen": "node src/generate-evergreen-explainer.mjs",
-    "podcast:daily": "node src/generate-broad-ai-news-podcast.mjs && npm run brand:current && npm run verify:claims",
+    "podcast:daily": "node src/run-optional-podcast.mjs",
     "resolve:sources": "node src/resolve-source-records.mjs",
     "verify:sources": "node src/validate-source-integrity.mjs",
     "rebuild:pruned": "node src/rebuild-pruned-edition.mjs",

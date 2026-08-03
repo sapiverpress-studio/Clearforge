@@ -22,7 +22,9 @@ const sources = Array.isArray(data.sources) ? data.sources : [];
 const verifiedCount = Math.min(stories.length, sources.length);
 if (verifiedCount < 1) throw new Error("Podcast requires at least one verified story.");
 const requiredStoryCount = Math.min(3, verifiedCount);
-const targetWords = verifiedCount === 1 ? { min: 650, max: 1000 } : verifiedCount === 2 ? { min: 900, max: 1300 } : { min: 1250, max: 1650 };
+// Keep the requested depth proportional to the amount of verified material. Inflating a
+// small evidence set to a long fixed runtime encourages filler or unsupported claims.
+const targetWords = verifiedCount === 1 ? { min: 350, max: 650 } : verifiedCount === 2 ? { min: 500, max: 800 } : { min: 550, max: 1000 };
 const formatName = verifiedCount >= 3 ? "broad AI news briefing" : verifiedCount === 2 ? "two-story AI briefing" : "verified AI deep dive";
 
 if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required for podcast generation.");

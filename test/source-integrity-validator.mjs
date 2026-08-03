@@ -20,7 +20,12 @@ const assertions = [
   [podcast.includes("whole AI landscape"), "Podcast scope must remain broad."],
   [podcast.includes("sourceReport.passed !== true"), "Podcast must not run from unverified sources."],
   [workflow.indexOf("Run automated checks for the human reviewer") < workflow.indexOf("Install FFmpeg"), "Validation must occur before expensive media work."],
-  [workflow.indexOf("Generate daily biggest-story podcast script") < workflow.indexOf("Install FFmpeg"), "Podcast text and claim checks must complete before media work."]
+  [workflow.indexOf("Generate daily biggest-story podcast script") < workflow.indexOf("Install FFmpeg"), "Podcast text and claim checks must complete before media work."],
+  [workflow.indexOf("Rebuild any narrowed verified edition") < workflow.indexOf("Optimise social content"), "A narrowed factual core must rebuild the commercial social pack before optimisation."],
+  [workflow.indexOf("Rebuild any narrowed verified edition") < workflow.indexOf("Generate long-form feature"), "A narrowed factual core must rebuild before optional feature expansion."],
+  [workflow.indexOf("Rebuild any narrowed verified edition") < workflow.indexOf("Generate story-specific AI visuals"), "TikTok media must be generated from the corrected narrowed script."],
+  [workflow.indexOf("Preserve a usable verified commercial pack") > workflow.indexOf("Optimise social content"), "Usability recovery must run after social optimisation."],
+  [workflow.indexOf("Preserve a usable verified commercial pack") < workflow.indexOf("Generate long-form feature"), "Usable core assets must be restored before optional downstream expansion."]
 ];
 
 const failed = assertions.filter(([passed]) => !passed);

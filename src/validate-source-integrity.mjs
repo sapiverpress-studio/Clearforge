@@ -11,6 +11,7 @@ const structuredPath = path.join(draftDir, "structured_output.json");
 const reportPath = path.join(draftDir, "source-integrity-report.json");
 const evidencePath = path.join(draftDir, "source-evidence.json");
 const pruneStatePath = path.join(draftDir, "source-prune-state.json");
+const fixtureDir = process.env.SAPIVER_FORGE_ALLOW_SOURCE_FIXTURES === "1" ? String(process.env.SOURCE_FIXTURE_DIR || "").trim() : "";
 
 function extractMeta(html, key) {
   for (const pattern of [
@@ -68,8 +69,21 @@ for (let index = 0; index < sources.length; index += 1) {
   } catch { failures.push("Source URL is not a valid absolute URL."); }
   if (!failures.length) {
     try {
-      response = await fetchPage(requestedUrl); status = response.status; finalUrl = response.url;
-      if ([401, 403, 429].includes(status)) {
+      const fixturePath = fixtureDir ? path.join(fixtureDir, `source-${index + 1}.html`) : "";
+      if (fixturePath && fs.existsSync(fixturePath)) {
+        html = fs.readFileSync(fixturePath, "utf8");
+        const fixtureMetaPath = path.join(fixtureDir, `source-${index + 1}.json`);
+        const fixtureMeta = fs.existsSync(fixtureMetaPath) ? JSON.parse(fs.readFileSync(fixtureMetaPath, "utf8")) : {};
+        status = Number(fixtureMeta.status || 200);
+        finalUrl = String(fixtureMeta.final_url || requestedUrl);
+        retrievalStatus = String(fixtureMeta.retrieval_status || (status === 200 ? "retrieved_fixture" : "http_error"));
+        if (status !== 200) failures.push(`Source fixture returned HTTP ${status}.`);
+      } else {
+        response = await fetchPage(requestedUrl); status = response.status; finalUrl = response.url;
+      }
+      if (fixturePath && fs.existsSync(fixturePath)) {
+        // The replay fixture is already loaded above; skip the network response branches.
+      } else if ([401, 403, 429].includes(status)) {
         retrievalStatus = "publisher_blocked";
         failures.push(`Publisher blocked evidence retrieval with HTTP ${status}; detailed claims cannot be verified.`);
       } else if (!response.ok) {
@@ -84,11 +98,11 @@ for (let index = 0; index < sources.length; index += 1) {
     }
   }
   const sourceText = extractUsableText(html);
-  if (retrievalStatus === "retrieved" && sourceText.length < 120) {
+  if (["retrieved", "retrieved_fixture"].includes(retrievalStatus) && sourceText.length < 120) {
     retrievalStatus = "no_usable_body"; failures.push("Source returned no usable body text for claim verification.");
   }
   const proposedFact = String(source.confirmed_fact || "").trim();
-  const fallbackContext = [source.title, stories[index]?.title, stories[index]?.summary, stories[index]?.why_it_matters].filter(Boolean).join(" ");
+  const fallbackContext = [source.title, stories[index]?.title, stories[index]?.summary, stories[index]?.why_it_matters].filter(Boolean);
   const verification = failures.length ? { atomic: [], verified: [] } : buildVerifiedClaims(proposedFact, sourceText, fallbackContext);
   const unsupported = verification.atomic.filter((item) => !item.supported);
   if (unsupported.length) warnings.push(`${unsupported.length} proposed atomic claim(s) lacked source evidence and were excluded.`);

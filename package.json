@@ -39,6 +39,7 @@
     "test:production-source-path": "node test/production-source-path-contract.mjs",
     "test:graceful-production": "node test/graceful-production-contract.mjs",
     "test:fact-lock": "node test/fact-lock-contract.mjs",
+    "test:tiktok-pack": "node test/tiktok-publishing-pack-contract.mjs",
     "build:publishing": "node src/build-publishing-dashboard.mjs",
     "test:gemini": "node test/gemini-provider-contract.mjs",
     "validate:public-brand": "node scripts/validate-sapiver-forge-public.mjs"

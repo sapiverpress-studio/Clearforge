@@ -70,7 +70,7 @@ jobs:
           LOCAL_DAY="$(TZ=Europe/London date +%u)"
           LOCAL_DATE="$(TZ=Europe/London date +%F)"
           CAMPAIGN_ACTIVE=false
-          if [[ "${LOCAL_DATE}" > "2026-08-03" && "${LOCAL_DATE}" < "2026-09-03" ]]; then CAMPAIGN_ACTIVE=true; fi
+          if [[ "${LOCAL_DATE}" > "2026-08-02" && "${LOCAL_DATE}" < "2026-09-02" ]]; then CAMPAIGN_ACTIVE=true; fi
           echo "Europe/London local time: ${LOCAL_TIME}; weekday: ${LOCAL_DAY}"
           if [ "${LOCAL_TIME}" = "04:30" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"

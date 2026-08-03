@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import OpenAI from "./gemini-openai-compat.mjs";
+import { campaignIsActive, writeCampaignRecord } from "./commercial-campaign.mjs";
 
 const ROOT = process.cwd();
 const DATE = process.env.SAPIVER_FORGE_DATE || process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
@@ -10,6 +11,7 @@ const DATE = process.env.SAPIVER_FORGE_DATE || process.env.CLEARFORGE_DATE || ne
 const draftDir = path.join(ROOT, "drafts", DATE);
 const structuredPath = path.join(draftDir, "structured_output.json");
 const outDir = path.join(ROOT, "media", DATE);
+const campaignActive = campaignIsActive(DATE);
 
 if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required.");
 if (!process.env.ELEVENLABS_API_KEY) throw new Error("ELEVENLABS_API_KEY is required for Irene social narration.");
@@ -81,6 +83,9 @@ function pick(list, index) {
 }
 
 function visualPrompt(story, index) {
+  if (campaignActive) {
+    return `A realistic vertical editorial photograph of a freelancer at a calm desk reviewing the exact AI-assisted client deliverable before sending it. Show one clearly identified final file, printed source notes, a human review checklist, recipient and destination checks, and restrained privacy and rights reminder symbols. Story context: ${story.title}. Practical release problem: ${story.practical_angle}. Sapiver Forge feel: human-led, precise, useful, calm and professional. Deep navy, clean white, cool blue and soft mint palette. Leave clean space for later text overlay. Do not render readable text, logos or watermarks. Avoid robots, glowing brains, generic dashboards, cyberpunk imagery, random code, approval guarantees or autonomous-system imagery. Portrait composition for a short-form video, realistic materials and coherent perspective.`;
+  }
   const aiBriefingScenes = [
     "a dark navy AI briefing studio desk with a professional podcast microphone, source notes, a small audio waveform display, subtle circuit-board lines in the background and one practical notebook open on the desk",
     "an editorial AI news analysis desk with printed source cards, model comparison sheets, a compact microphone arm, blue data-light accents and a calm control-room atmosphere",
@@ -127,8 +132,8 @@ function visualPrompt(story, index) {
   return `${pick(aiBriefingScenes, index * 3)}. ${pick(compositions, index * 5)}. ${pick(aiSignals, index * 7)}. ${pick(variationDevices, index * 11)}. Story context: ${story.title}. Practical angle: ${story.practical_angle}. Sapiver Forge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: ${pick(palette, index * 13)}. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective.`;
 }
 
-const stories = (data.story_summaries || []).slice(0, 3);
-if (stories.length < 3) throw new Error("Need at least three story summaries for AI media generation.");
+const stories = (data.story_summaries || []).slice(0, campaignActive ? 1 : 3);
+if (stories.length < (campaignActive ? 1 : 3)) throw new Error(`Need at least ${campaignActive ? 1 : 3} story summaries for AI media generation.`);
 
 const images = [];
 for (let i = 0; i < stories.length; i++) {
@@ -174,7 +179,7 @@ const baseNarration = data.social?.youtube_shorts_script || [
 const narrationText = `${String(baseNarration).trim()} ${spokenCta}`;
 
 const narrationFile = path.join(outDir, "narration.mp3");
-await createIreneSpeech(narrationText, narrationFile);
+if (!campaignActive) await createIreneSpeech(narrationText, narrationFile);
 
 const tiktokSelection = data.audience_fit?.platform_selections?.tiktok || {};
 const tiktokStoryIndex = Number.isInteger(tiktokSelection.story_index) && tiktokSelection.story_index >= 0 && tiktokSelection.story_index < stories.length
@@ -234,8 +239,8 @@ const manifest = {
     ]
   },
   stories: images,
-  narration: path.relative(ROOT, narrationFile).replaceAll("\\", "/"),
-  narration_text: narrationText,
+  narration: path.relative(ROOT, campaignActive ? tiktokNarrationFile : narrationFile).replaceAll("\\", "/"),
+  narration_text: campaignActive ? tiktokNarrationText : narrationText,
   tiktok: {
     story_index: tiktokStoryIndex,
     hook: tiktokHook,
@@ -251,4 +256,5 @@ const manifest = {
   what_to_test_next: data.what_to_test_next
 };
 fs.writeFileSync(path.join(outDir, "media-manifest.json"), JSON.stringify(manifest, null, 2) + "\n");
+if (campaignActive) writeCampaignRecord(draftDir, { media: { vertical_images: images.length, tiktok_narration: true, general_social_narration: false }, api_activity_media: { gemini_image_calls: images.length, elevenlabs_calls: 1 } });
 console.log(`Generated AI media pack for ${DATE} with link-free Sapiver Forge CTA`);

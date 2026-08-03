@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
+import { campaignIsActive } from "./commercial-campaign.mjs";
 
 const ROOT = process.cwd();
 const DATE = process.env.SAPIVER_FORGE_DATE || process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
@@ -21,7 +22,7 @@ try {
     const data = JSON.parse(originalStructured);
     const stories = Array.isArray(data.story_summaries) ? data.story_summaries : [];
     const sources = Array.isArray(data.sources) ? data.sources : [];
-    if (stories.length >= 1 && stories.length < 3 && stories.length === sources.length) {
+    if (!campaignIsActive(DATE) && stories.length >= 1 && stories.length < 3 && stories.length === sources.length) {
       const expandedStories = [];
       const expandedSources = [];
       for (let index = 0; index < 3; index += 1) {

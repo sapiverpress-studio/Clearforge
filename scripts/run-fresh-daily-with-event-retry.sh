@@ -33,6 +33,11 @@ while [ "$attempt" -le "$max_attempts" ]; do
     exit "$research_status"
   fi
 
+  if [ -f "drafts/${CLEARFORGE_DATE}/no-public-content.json" ]; then
+    echo "No suitable verified campaign story was found. This is a successful skipped day."
+    exit 0
+  fi
+
   novelty_log="$(mktemp)"
   set +e
   node src/check-event-novelty.mjs 2>&1 | tee "$novelty_log"

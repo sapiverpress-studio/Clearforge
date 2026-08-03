@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import OpenAI from "./gemini-openai-compat.mjs";
 import { acquireExaSources } from "./exa-source-acquisition.mjs";
+import { campaignIsActive, loadCommercialCampaign, writeCampaignRecord } from "./commercial-campaign.mjs";
 
 const ROOT = process.cwd();
 const today = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
@@ -264,13 +265,27 @@ async function main() {
   preserveOrCreateApproval();
 
   const config = readJson(configPath);
+  const campaign = loadCommercialCampaign();
+  const campaignActive = campaignIsActive(today, campaign);
+  if (campaignActive) {
+    schema.properties.sources.maxItems = 1;
+    schema.properties.story_summaries.maxItems = 1;
+  }
   const preferredSources = config.sources.map(({ name, type, url, use_for }) => ({ name, type, url, use_for }));
-  let prompt = fs.readFileSync(promptPath, "utf8");
+  let prompt = fs.readFileSync(campaignActive ? path.join(ROOT, "prompts", "output_release_validation_prompt.md") : promptPath, "utf8");
   const theme = editorialTheme(today);
   const acquisition = await acquireExaSources({
-    apiKey: process.env.EXA_API_KEY, date: today, theme, excludedUrls: history.usedUrls
+    apiKey: process.env.EXA_API_KEY, date: today, theme, excludedUrls: history.usedUrls,
+    campaign: campaignActive ? campaign : null
   });
   write(path.join(outDir, "source-acquisition.json"), JSON.stringify(acquisition, null, 2));
+  if (campaignActive && !acquisition.candidates.length) {
+    const reason = "No retrievable source supported an approved Output Release Gate customer problem.";
+    write(path.join(outDir, "no-public-content.json"), JSON.stringify({ edition: today, status: "no_public_content", reason, downstream_generation_started: false }, null, 2));
+    writeCampaignRecord(outDir, { edition: today, campaign_id: campaign.id, status: "rejected_before_generation", reason, content_rejected_before_publication: 1, api_activity: { exa_queries: acquisition.query_count, gemini_text_calls: 0 }, source_cost_usd: acquisition.provider_cost_usd });
+    console.log(`No public content produced for ${today}: ${reason}`);
+    return;
+  }
   const acquisitionById = new Map(acquisition.candidates.map((item) => [item.acquisition_id, item]));
   const acquisitionDossier = acquisition.candidates.map((item) => ({
     acquisition_id: item.acquisition_id, title: item.page_title, url: item.final_url,
@@ -279,12 +294,16 @@ async function main() {
     usable_source_text: item.usable_source_text
   }));
   prompt += `\n\nEXA-RETRIEVED SOURCE DOSSIER — THESE ARE THE ONLY PERMITTED SOURCES:\n${JSON.stringify(acquisitionDossier)}\n\nSelect only acquisition_id values from this dossier. The corresponding URL is immutable.`;
+  if (campaignActive) prompt += `\n\nBINDING 30-DAY COMMERCIAL TEST RULES:\nSelect exactly one story and one source. The story must expose a practical release problem for freelancers, creators or small agencies. Start with a recognisable customer moment. State separately what the source proves, what Sapiver Forge infers, and what remains unknown. Give three to five checks before release. Explain the Output Release Gate as a structured human review tool, never an automated fact-checker, approval system or guarantee. Use one CTA only: "${campaign.call_to_action}" Link only to ${campaign.product_url}. Do not mention price, a bundle, workspace, podcast, subscription or another product. Reject general AI news rather than force a sales angle.`;
   const client = new OpenAI();
   const model = process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite";
 
   let data = null;
   let lastNoveltyFailures = [];
-  for (let attempt = 1; attempt <= 4; attempt += 1) {
+  const maxAttempts = campaignActive ? Number(campaign.max_generation_attempts || 2) : 4;
+  let generationAttempts = 0;
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    generationAttempts = attempt;
     const exclusions = {
       urls_already_used: history.usedUrls,
       story_titles_already_used: history.usedStoryTitles,
@@ -296,9 +315,10 @@ async function main() {
       model,
       reasoning: { effort: attempt === 1 ? "low" : "medium" },
       input: [
-        { role: "system", content: "Before selecting stories, actively sweep all seven discovery categories: creator tools and media (including image, video, audio, design, editing, publishing, vibe editing and vibe directing); coding and building (agents, app creation, no-code, vibe coding and automation); workplace and business; models and infrastructure; research and science; policy, safety and security; and education, employment and society. Do not stop after finding major-company announcements. Select 3–5 stories spanning at least three genuinely distinct topic categories; several companies discussing the same underlying subject do not constitute breadth. Set topic_category on every source and matching story summary." },
+        { role: "system", content: campaignActive ? "Select exactly one verified, problem-led story for the Output Release Gate commercial test. Reject unrelated AI news. Use no other product or call to action." : "Before selecting stories, actively sweep all seven discovery categories: creator tools and media (including image, video, audio, design, editing, publishing, vibe editing and vibe directing); coding and building (agents, app creation, no-code, vibe coding and automation); workplace and business; models and infrastructure; research and science; policy, safety and security; and education, employment and society. Do not stop after finding major-company announcements. Select 3–5 stories spanning at least three genuinely distinct topic categories; several companies discussing the same underlying subject do not constitute breadth. Set topic_category on every source and matching story summary." },
         { role: "system", content: "You are the Sapiver Forge Daily AI Brief Builder. Use only the supplied Exa-retrieved evidence dossier. Every selected source must use an acquisition_id from that dossier. Do not invent, edit, shorten, redirect or replace any source URL. Use only claims directly supported by the supplied source text or evidence passages. Prefer primary sources for facts and reputable journalism for context. Distinguish confirmed facts from Sapiver Forge interpretation. A supplier announcement confirms what was announced, not a customer outcome. One meaningful source is sufficient when fewer sources support a trustworthy edition." },
         { role: "user", content: `${prompt}\n\nTODAY: ${today}\n\nCLEARFORGE WEEKDAY EDITORIAL THEME:\nDay: ${theme.day}\nTheme: ${theme.title}\nFocus: ${theme.focus}\nInstruction: ${theme.instruction}\n\nFor Saturday forecast editions, label forecasts as forecasts and do not present predictions as confirmed facts. For Sunday recap editions, separate confirmed outcomes from open questions and prepare the reader for the following week.\n\nFRESH-TOPIC ROTATION EVIDENCE — PREVIOUS SEVEN FRESH EDITIONS:\n${JSON.stringify(recentFreshTopicEvidence)}\n\nFRESH-TOPIC ROTATION RULE:\nInfer the dominant recurring subject from these previous seven fresh editions. A subject is dominant when it materially shaped multiple editions or most of one week's coverage; treat close semantic variants as the same subject. Do not choose that dominant subject again for today's fresh edition, even if it is still prominent in the news. For example, price versus performance, model value, inference cost and cheaper-model comparisons are one topic family. Select a materially different subject supported by genuinely fresh reporting. The same dominant fresh topic may run for no more than one week and must then have at least one full week out. This topic exclusion overrides popularity, but it does not override factual quality or the weekday editorial theme. If the evidence is too mixed to identify one dominant subject, avoid the two most repeated subject families.\n\nEXCLUSIONS FROM EARLIER RUNS:\n${JSON.stringify(exclusions)}\n\nPREFERRED DISCOVERY SOURCES (starting points, not a closed allow-list):\n${JSON.stringify(preferredSources)}\n\nREQUIRED RESEARCH MIX:\n- Select 3 to 5 distinct stories.\n- At least two must be confirmed_development stories: verified AI releases, research, policy, infrastructure, adoption, deployments or other concrete developments. Prefer the last 48 hours.\n- At least one must be a human_impact story: evidence about workplace adoption, education, employment, public reaction, creator experience, changing skills, surveys, speeches, interviews or documented case studies.\n- For the human-impact lane, search the last 48 hours first. If no strong candidate exists, expand only that lane to the previous seven days rather than forcing a weak or speculative story.\n- A human-impact story needs traceable evidence: the original speech/interview/transcript, original survey and methodology, named adopting organisation or case study, research paper, government/statistical source, or credible reporting that identifies its evidence. Record this in evidence_basis.\n- TikTok or another creator video may be a discovery lead, but do not cite it, repeat its interpretation as fact or include its URL. Trace every usable claim to the underlying evidence.\n- Set coverage_lane on every source and story summary to confirmed_development or human_impact. Use matching lanes for the source and story it supports.\n\nResearch the most useful AI developments filtered through today’s editorial theme. You may search outside the preferred pool when needed to reach the original speaker, survey, adopting organisation, official documentation, regulators, filings, research, statistical evidence or credible independent corroboration. Do not use any excluded URL. Do not select a story substantially similar to any excluded story title, even from a different publication. Prefer developments not covered in earlier runs. Maintain a mix of companies, research, policy, infrastructure, open-source, creator tools, business use, safety and real human consequences. The main article must be 700 to 1000 words and practical for creators, small businesses, and AI learners. For every story, set claim_to_verify to exactly "NONE — verified from cited sources." only after all material claims used are supported. Otherwise record the unresolved claim and allow validation to block the edition. claims_to_verify must be empty for publication.` }
+        , ...(campaignActive ? [{ role: "system", content: "FINAL CAMPAIGN OVERRIDE: Ignore instructions requesting 3–5 stories, category breadth, a human-impact lane, a weekday news mix or broad coverage. Return exactly one suitable source and story for the Output Release Gate campaign, with the single approved CTA and product URL." }] : [])
       ],
       text: { format: { type: "json_schema", name: "clearforge_daily_brief", strict: true, schema } }
     });
@@ -327,7 +347,7 @@ async function main() {
     console.warn(`Novelty attempt ${attempt} rejected: ${lastNoveltyFailures.join(" | ")}`);
   }
 
-  if (!data) throw new Error(`Could not produce a genuinely fresh same-day story set after 4 attempts: ${lastNoveltyFailures.join("; ")}`);
+  if (!data) throw new Error(`Could not produce a suitable verified story set after ${maxAttempts} attempts: ${lastNoveltyFailures.join("; ")}`);
 
   const enrichedData = { ...data, editorial_theme: theme };
   write(path.join(outDir, "daily_brief.md"), renderBrief(enrichedData, theme));
@@ -338,6 +358,7 @@ async function main() {
   write(path.join(outDir, "novelty_report.json"), JSON.stringify({ date: today, editorial_theme: theme, same_day_prior_runs: fs.existsSync(runsDir) ? fs.readdirSync(runsDir).length : 0, excluded_url_count: history.usedUrls.length, excluded_story_title_count: history.usedStoryTitles.length, topic_rotation_evidence_dates: recentFreshTopicEvidence.map((item) => item.date), consecutive_week_topic_block: true, confirmed_development_count: enrichedData.story_summaries.filter((item) => item.coverage_lane === "confirmed_development").length, human_impact_count: enrichedData.story_summaries.filter((item) => item.coverage_lane === "human_impact").length, topic_categories: [...new Set(enrichedData.story_summaries.map((item) => item.topic_category))], tiktok_used_as_evidence: false, passed: true }, null, 2));
   write(path.join(outDir, "claims_to_verify.md"), `# Claims To Verify — ${today}\n\nEditorial theme: ${theme.day} — ${theme.title}\n\n${enrichedData.claims_to_verify.length ? enrichedData.claims_to_verify.map((x) => `- [ ] ${x}`).join("\n") : "None — all material claims used in this edition were verified against the cited sources."}\n`);
   write(path.join(outDir, "editor_checklist.md"), `# Sapiver Forge Automatic QA Context — ${today}\n\n- Editorial theme: ${theme.day} — ${theme.title}.\n- Current run passed same-day URL exclusion.\n- Current run passed same-day story-title similarity gate.\n- Previous same-day runs are archived under drafts/${today}/runs/.\n- Automatic validation blocks publication when any material claim remains unresolved.\n- Supplier claims about customer outcomes require customer confirmation or credible independent reporting.\n`);
+  if (campaignActive) writeCampaignRecord(outDir, { edition: today, campaign_id: campaign.id, status: "generated_pending_verification", content_theme: acquisition.candidates.find((item) => item.acquisition_id === enrichedData.sources[0]?.acquisition_id)?.release_problem_themes?.[0] || "release_review", source_url: enrichedData.sources[0]?.url || "", product_page_url: campaign.product_url, api_activity: { exa_queries: acquisition.query_count, gemini_text_calls: generationAttempts }, source_cost_usd: acquisition.provider_cost_usd, content_rejected_before_publication: 0 });
   console.log(`Sapiver Forge fresh daily pack created in drafts/${today} using ${theme.day} theme: ${theme.title}`);
 }
 

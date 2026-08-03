@@ -80,6 +80,7 @@ const validation = readJson(path.join(draftDir, "validation.json"));
 const lockedFacts = readJson(path.join(draftDir, "locked-facts.json"), { facts: [], interpretations: [] });
 const sourceEvidence = readJson(path.join(draftDir, "source-evidence.json"), { records: [] });
 const disciplineReport = readJson(path.join(draftDir, "fact-discipline-report.json"), { changes: [] });
+const campaignRecord = readJson(path.join(draftDir, "commercial-validation-record.json"), null);
 const podcastMeta = readJson(path.join(draftDir, "podcast", "episode-metadata.json"));
 const article = readText(path.join(draftDir, "daily_brief.md"));
 const feature = readText(path.join(draftDir, "feature.md"));
@@ -190,6 +191,14 @@ header{background:var(--navy);color:#fff;padding:24px}header div,main{max-width:
   <p>Nothing in this candidate should be deployed, syndicated or distributed until you manually run the human release workflow for this exact candidate.</p>
   ${RUN_URL ? `<p><a href="${esc(RUN_URL)}">Open the generating workflow run</a></p>` : ""}
 </section>
+${campaignRecord ? `<section class="panel"><h2>30-day commercial validation record</h2>
+  <p><strong>Theme:</strong> ${esc(campaignRecord.content_theme || "Not classified")}</p>
+  <p><strong>Source:</strong> ${campaignRecord.source_url ? `<a href="${esc(campaignRecord.source_url)}">Open source</a>` : "Not recorded"}</p>
+  <p><strong>Product link:</strong> ${esc(campaignRecord.product_page_url || "Not recorded")}</p>
+  <p><strong>Recorded API activity:</strong> ${esc(JSON.stringify({ ...campaignRecord.api_activity, ...campaignRecord.api_activity_media }))}</p>
+  <p><strong>Recorded source cost:</strong> $${esc(Number(campaignRecord.source_cost_usd || 0).toFixed(4))}</p>
+  <p><strong>Human review time:</strong> record manually in the aggregate scorecard after review.</p>
+</section>` : ""}
 <section class="panel"><h2>Automated checks for your attention</h2>
   <p>These checks support your review; they do not approve or reject the candidate.</p>
   <h3>Failures</h3>${validationFailures.length ? `<ul class="warning">${validationFailures.map((item) => `<li>${esc(item)}</li>`).join("")}</ul>` : "<p>None recorded.</p>"}

@@ -39,9 +39,12 @@ async function preflight(fetchImpl, url) {
   } finally { clearTimeout(timer); }
 }
 
-export async function acquireExaSources({ apiKey, date, theme, excludedUrls = [], fetchImpl = fetch }) {
+export async function acquireExaSources({ apiKey, date, theme, excludedUrls = [], campaign = null, fetchImpl = fetch }) {
   if (!apiKey) throw new Error("EXA_API_KEY is required before paid content generation.");
-  const queries = [
+  const queries = campaign ? [
+    `Current primary-source evidence about AI-assisted output containing invented facts, sources, quotations, private information, confidential data, copied material, ownership or disclosure problems relevant on ${date}. Focus on consequences before client work or public content is released.`,
+    `Current documented incidents or authoritative guidance about the wrong AI-generated draft, file, recipient or destination, automated sending or publishing without human review, or unsuitable client-facing AI output relevant on ${date}.`
+  ] : [
     `Latest substantive AI product, research, policy and infrastructure developments relevant on ${date}. Prefer original company announcements, official documentation, papers, government sources and named research reports.`,
     `Latest evidence about AI's effect on work, education, creators, freelancers and small businesses relevant on ${date}. Prefer original surveys with methodology, research papers, transcripts and documented case studies.`,
     `Latest AI developments for ${theme?.title || "practical use"}: ${theme?.focus || "tools, workflows and human review"}. Prefer primary sources with a visible publication date and detailed body text.`
@@ -64,6 +67,12 @@ export async function acquireExaSources({ apiKey, date, theme, excludedUrls = []
       const highlights = (result.highlights || []).map(clean).filter(Boolean);
       const evidenceText = text || highlights.join(" ");
       if (!title || evidenceText.length < MIN_EVIDENCE_CHARS) continue;
+      const releaseProblemThemes = campaign?.themes
+        ? Object.entries(campaign.themes)
+          .filter(([, phrases]) => phrases.some((phrase) => `${title} ${evidenceText}`.toLowerCase().includes(String(phrase).toLowerCase())))
+          .map(([themeName]) => themeName)
+        : [];
+      if (campaign && !releaseProblemThemes.length) continue;
       const check = await preflight(fetchImpl, requestedUrl);
       if ([0, 404, 410].includes(check.status) || (check.status >= 500 && check.status <= 599)) continue;
       const secondary = !check.ok;
@@ -77,6 +86,7 @@ export async function acquireExaSources({ apiKey, date, theme, excludedUrls = []
         usable_source_text: evidenceText, evidence_passages: highlights.length ? highlights : [evidenceText.slice(0, 1800)],
         retrieval_status: secondary ? "retrieved_by_exa_after_publisher_block" : "preflight_passed_with_exa_text",
         direct_http_status: check.status, retrieval_provider: "exa", discovery_query_index: queryIndex,
+        release_problem_themes: releaseProblemThemes,
         retrieval_timestamp: new Date().toISOString()
       });
     }
@@ -88,9 +98,10 @@ export async function acquireExaSources({ apiKey, date, theme, excludedUrls = []
     domainCounts.set(item.publisher_domain, count + 1);
     return true;
   }).slice(0, 15);
-  if (!ranked.length) throw new Error("Exa source acquisition found no retrievable evidence. Paid content generation was not started.");
+  if (!ranked.length && !campaign) throw new Error("Exa source acquisition found no retrievable evidence. Paid content generation was not started.");
   return {
     schema_version: 1, provider: "exa", edition: date, acquired_at: new Date().toISOString(),
+    status: ranked.length ? "usable_candidates_found" : "no_suitable_source",
     query_count: queries.length, candidate_count: ranked.length,
     provider_cost_usd: searches.reduce((sum, item) => sum + Number(item.costDollars?.total || 0), 0),
     candidates: ranked

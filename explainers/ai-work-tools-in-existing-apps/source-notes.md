@@ -1,6 +1,6 @@
 # Source notes — How to adopt AI tools that work inside the apps your team already uses
 
-Last checked: 2026-08-02
+Last checked: 2026-08-03
 
 - https://openai.com/products/release-notes/
 - https://openai.com/index/chatgpt-for-your-most-ambitious-work/
@@ -38,6 +38,7 @@ Last checked: 2026-08-02
 - https://www.salesforce.com/uk/news/stories/agentforce-help-agent-announcement/?bc=OTH
 - https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html?m=1
 - https://www.caledonianrecord.com/news/national/nearly-2-in-5-us-workers-have-put-company-information-into-personal-ai-accounts/article_12345678.html
+- https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august
 
 ## Revision history
 
@@ -61,3 +62,4 @@ Last checked: 2026-08-02
 - 2026-08-02: Updated the guide to emphasize the shift from standalone AI tools to integrated workflow layers, incorporating recent developments in bookkeeping, project management, and creative design tools.
 - 2026-08-02: Updated the guide to emphasize the shift from standalone chat tools to integrated workflow layers, incorporating recent developments in project management (Notion), finance (Xero), and software development (GitHub) tools.
 - 2026-08-02: Updated the guide to reflect the shift from standalone AI tools to integrated workflow layers, incorporating new research on agentic coordination in Notion and the risks of shadow AI usage.
+- 2026-08-03: Updated to include new EU AI Act transparency requirements and the shift toward embedded, workflow-integrated AI tools as highlighted in recent research.

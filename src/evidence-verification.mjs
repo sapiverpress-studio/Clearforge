@@ -68,7 +68,12 @@ export function extractEntities(value) {
 export function splitSentences(value) {
   const text = String(value || "").replace(/\s+/g, " ").trim();
   if (!text) return [];
-  return text.match(/[^.!?]+[.!?]?/g)?.map((item) => item.trim()).filter(Boolean) || [];
+  const protectedText = text
+    .replace(/(?<=\d)\.(?=\d)/g, "\uE000")
+    .replace(/\b(?:Mr|Mrs|Ms|Dr|Prof|Sr|Jr|St|vs|e\.g|i\.e)\./gi, (match) => match.replaceAll(".", "\uE000"));
+  return (protectedText.match(/[^.!?]+[.!?]?/g) || [])
+    .map((item) => item.replaceAll("\uE000", ".").trim())
+    .filter(Boolean);
 }
 
 export function splitAtomicClaims(value) {
@@ -102,14 +107,6 @@ export function verifyAtomicClaim(claim, sourceText) {
   const entities = extractEntities(claim);
   const comparisons = comparisonMarkers(claim);
   const quotes = extractQuotedWording(claim);
-  const checks = {
-    numbers: numbers.map((value) => ({ value, supported: normalizedSource.includes(value) })),
-    dates: dates.map((value) => ({ value, supported: normalizedSource.includes(normalizeText(value)) })),
-    entities: entities.map((value) => ({ value, supported: normalizedSource.includes(normalizeText(value)) })),
-    comparisons: comparisons.map((value) => ({ value, supported: normalizedSource.includes(normalizeText(value)) })),
-    quotes: quotes.map((value) => ({ value, supported: normalizedSource.includes(normalizeText(value)) }))
-  };
-  const deterministicPass = Object.values(checks).flat().every((check) => check.supported);
   const claimTokens = [...new Set(tokens(claim))];
   let best = { passage: "", score: 0, start: -1, end: -1 };
   for (const passage of evidenceCandidates(sourceText)) {
@@ -121,6 +118,16 @@ export function verifyAtomicClaim(claim, sourceText) {
     }
   }
   const exact = normalizedSource.includes(normalizeText(claim));
+  const evidenceText = exact ? claim : best.passage;
+  const normalizedEvidence = normalizeText(evidenceText);
+  const checks = {
+    numbers: numbers.map((value) => ({ value, supported: normalizedEvidence.includes(value) })),
+    dates: dates.map((value) => ({ value, supported: normalizedEvidence.includes(normalizeText(value)) })),
+    entities: entities.map((value) => ({ value, supported: normalizedEvidence.includes(normalizeText(value)) })),
+    comparisons: comparisons.map((value) => ({ value, supported: normalizedEvidence.includes(normalizeText(value)) })),
+    quotes: quotes.map((value) => ({ value, supported: normalizedEvidence.includes(normalizeText(value)) }))
+  };
+  const deterministicPass = Object.values(checks).flat().every((check) => check.supported);
   const lexicalEntailment = exact || best.score >= (claimTokens.length <= 5 ? 0.8 : 0.62);
   const supported = Boolean(sourceText.trim()) && deterministicPass && lexicalEntailment;
   const failedChecks = Object.entries(checks).flatMap(([kind, values]) => values.filter((item) => !item.supported).map((item) => `${kind}:${item.value}`));

@@ -8,7 +8,6 @@ const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
 }).format(new Date());
 const dir = path.join(ROOT, "drafts", DATE);
 const verificationPath = path.join(dir, "claim-verification-initial.json");
-if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required for factual repair.");
 if (!fs.existsSync(verificationPath)) throw new Error("Initial claim-verification report is missing.");
 
 const read = (file) => fs.readFileSync(path.join(dir, file), "utf8");
@@ -19,6 +18,7 @@ if (verification.passed === true) {
   console.log("No factual repair required.");
   process.exit(0);
 }
+if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required for factual repair.");
 
 const files = {
   structured_output_json: JSON.stringify(structured),

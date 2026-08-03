@@ -55,6 +55,15 @@ try {
   } else {
     fs.rmSync(warningPath, { force: true });
     console.log(`Optional media generated for ${DATE}.`);
+
+    const tiktokVideo = spawnSync(process.execPath, ["src/generate-tiktok-video.mjs"], {
+      cwd: ROOT,
+      env: process.env,
+      stdio: "inherit"
+    });
+    if (tiktokVideo.status !== 0) {
+      console.warn("TikTok MP4 generation returned a non-zero status; narration audio, script and caption remain available.");
+    }
   }
 } finally {
   if (originalStructured !== null) fs.writeFileSync(structuredPath, originalStructured, "utf8");

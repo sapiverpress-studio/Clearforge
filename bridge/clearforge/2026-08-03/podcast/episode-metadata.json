@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "date": "2026-08-03",
+  "brand": "Sapiver Forge",
+  "type": "sapiver_forge_broad_ai_news_podcast",
+  "human_review_required": true,
+  "narrator": "Kore",
+  "voice_provider": "Gemini",
+  "episode_title": "The Rise of Autonomous Agents and the Academic Pivot",
+  "story_order": [
+    1,
+    3,
+    0
+  ],
+  "stories_covered": [
+    "Sapiver Forge interpretation: the retrieved evidence supports a narrower conclusion than the original draft claimed.",
+    "Sapiver Forge interpretation: the retrieved evidence supports a narrower conclusion than the original draft claimed.",
+    "Sapiver Forge: Mapping the Rise of AI-Driven Solo Enterprise"
+  ],
+  "selection_reason": "These stories highlight the critical shift from simple chatbots to autonomous, long-horizon agents and the corresponding institutional shifts in how society integrates these tools.",
+  "word_count": 350,
+  "estimated_duration_minutes": 2.4,
+  "narration_file": "PODCAST_NARRATION_SCRIPT.txt",
+  "legacy_tts_input_alias": "COPY_PASTE_INTO_ELEVENLABS.txt",
+  "source_notes": "source-notes.md",
+  "validation_warnings": []
+}

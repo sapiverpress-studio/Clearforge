@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "edition": "2026-08-03",
+  "records": [
+    {
+      "source_index": 0,
+      "acquisition_id": "exa-8a392cb8b401",
+      "requested_url": "https://www.labormarketmatters.com/p/ai-and-independent-work-in-7-charts",
+      "final_url": "https://www.labormarketmatters.com/p/ai-and-independent-work-in-7-charts",
+      "canonical_url": "https://www.labormarketmatters.com/p/ai-and-independent-work-in-7-charts",
+      "page_title": "AI and Independent Work in 7 Charts",
+      "publication_date": "2026-07-27T20:57:13+00:00",
+      "usable_source_text": "AI and Independent Work in 7 Charts - by Liya Palagashvili\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAI and Independent Work in 7 Charts\nEarly evidence from U.S. business formation and labor-market data\n\n\nLiya Palagashvili\nJul 27, 2026\n\n\n\n\nLast week, the Mercatus Center released my new study, “ Artificial Intelligence and the Rise of Independent Work .”\nI also wrote about the findings in the Wall Street Journal , and yesterday the Washington Post editorial board featured the study in its discussion of AI, independent work, and the workforce. I’ll also testify about the study before the Senate HELP Committee this Wednesday at 2:00 p.m. The hearing will be livestreamed here .\nMost debates about AI and work focus on one question: Will AI replace workers?\nMy study asks a different one: Is AI already making it easier for more people to work for themselves?\nAI may allow one person to perform tasks that once required a team, support staff, or firm-based infrastructure. Back in February, I drew on Ronald Coase’s work on transaction costs to explain why AI could shift more work outside traditional firms . The result may not be unemployment. It may be more independent consulting, freelancing, self-employment, and one-person businesses.\nThe evidence is preliminary, descriptive, and not causal. But across two independent U.S. datasets—the Census Bureau’s Business Formation Statistics and the Current Population Survey—the same pattern appears: solo-type business applications and solo self-employment are rising most in sectors and occupations with greater AI exposure.\nHere is the argument in seven charts.\n1. Two datasets point in the same direction\n\n\nThis chart summarizes the study’s central finding.\nFrom Q1 2024 to Q1 2026, solo-type business applications in AI-exposed sectors rose 26.8 percent . In the comparison group, they were essentially flat at −0.4 percent.\nIn a separate analysis of actual workers using Current Population Survey data, solo self-employment in the 10 most AI-exposed occupations rose 20 percent from the 2022–2023 baseline to 2025. In the 10 least AI-exposed occupations, it remained essentially unchanged.\nThese datasets measure different things. The Census Bureau’s Business Formation Statistics capture applications for Employer Identification Numbers. The CPS captures workers and their employment arrangements.\nThe measures are different, but the result is strikingly similar: independent work is growing fastest in sectors and occupations with greater AI exposure.\n\n2. Solo-type business applications diverged after 2024\n\n\nThe first part of the study uses Census Bureau Business Formation Statistics.\nI construct a proxy for solo-type applications by subtracting high-propensity business applications—applications displaying characteristics associated with becoming employer firms—from total business applications.\nThe resulting measure captures filings without the usual markers of near-term employer formation.\nThe AI-exposed group includes Professional Services, Information, Education, and Finance and Insurance. These groupings are informed by the Census Bureau’s Business Trends and Outlook Survey , which documents substantial differences in business AI use across industries.\nThe comparison group consists of Construction and Wholesale Trade, which have lower measured AI exposure and fewer of the major pandemic-era distortions present in some other sectors.\nThe two groups moved broadly together through 2023.\nThen they diverged.\nBy 2025, solo-type applications in AI-exposed sectors were rising sharply while the comparison group remained broadly flat.\n\n3. The gap widened from the same starting point\n\n\nIndexing both groups to Q1 2022 = 100 makes the difference easier to see.\nBy Q1 2026, the AI-exposed group had reached 139.2 , compared with 110.7 for the comparison group.\nThat is a gap of roughly 28 index points from the same starting baseline.\nThis does not prove that AI caused the divergence. Other sector-specific forces may also be at work. But the timing is notable: the gap becomes clearest during the period when generative AI tools became broadly accessible.\n\n4. The growth came entirely from filings without signs of hiring intent\n\n\nThis is the sharpest result in the business-formation data.\nFrom Q1 2024 to Q1 2026:\nTotal business applications in AI-exposed sectors rose 18.0 percent\nEmployer-type applications fell 6.4 percent\nSolo-type applications rose 26.8 percent\nIn other words, the increase did not come from more applications that looked like future employer firms. It came entirely from filings without signs of near-term hiring intent.\nThat pattern is consistent with a decline in the minimum scale required to operate a business. If AI allows one person to perform work that once required employees, contractors, or internal support, more new businesses may begin—and remain—as one-person operations.\nA preliminary event study reinforces the timing. Relative to the 2023 baseline, the study finds no statistically significant difference between AI-exposed and comparison sectors in 2022. The 2024 estimate is positive but not statistically significant, while the 2025 estimate is positive, large, and statistically significant.\nThe 2025 coefficient implies approximately 16 percent more growth in solo-type applications in AI-exposed sectors than in the comparison group, controlling for sector composition, common time trends, and seasonality. Because the analysis includes only seven sectors, these estimates should be treated as suggestive rather than definitive. Still, they are consistent with a gradual divergence that becomes clear in 2025. The full coefficient table and event-study plot appear on pages 11–12 of the study.\n\n5. The occupational comparison shows an even sharper divide\n\n\nThe rest of the analysis turns from business applications to workers. Using Current Population Survey (CPS) data, I examine whether the same pattern appears in workers’ employment arrangements.\nI rank occupations using the AI Occupational Exposure index developed by Edward Felten, Manav Raj, and Robert Seamans, and compare the 10 most AI-exposed occupations with the 10 least exposed.\nThe most exposed group includes occupations such as financial examiners, actuaries, accountants and auditors, management analysts, economists, and lawyers. The least exposed group includes roofers, cement masons, brickmasons, landscaping workers, and dining room attendants.\nFrom the 2022–2023 baseline to 2025, average monthly solo self-employment in the most AI-exposed occupations rose 20 percent , from approximately 129,000 to 155,000 workers.\nIn the least AI-exposed occupations, average monthly solo self-employment remained essentially unchanged at about 204,000 workers .\nThe high-exposure group started smaller, but it grew while the low-exposure group remained flat.\n\n6. The worker-level data show a similar industry pattern\n\n\nThe industry-level CPS results show a similar pattern. Looking at workers rather than business applications, solo self-employment rose in more AI-exposed industries while declining slightly in the comparison group.\nThe AI-exposed group includes Professional Services, Information, and Education, while the comparison group includes Construction and Wholesale Trade.\nFrom the 2022–2023 baseline to 2025:\nTotal self-employment in AI-exposed industries rose 7.4 percent\nTotal self-employment in the comparison group rose 1.8 percent\nSolo self-employment in AI-exposed industries rose 7.9 percent\nSolo self-employment in the comparison group declined 2.1 percent\nThe solo measure is especially relevant because it excludes self-employed people with paid employees. It gets closer to the phenomenon at the heart of the paper: people operating independently, without building a traditional employer firm around themselves.\nSolo self-employment in both industry groups was broadly flat through 2024. The divergence is concentrated in 2025, suggesting a gradual transition rather than an immediate break.\n\n7. Among management analysts, solo work grew far faster than overall employment\n\n\nManagement analysts offer a useful test case.\nThey are a large, highly AI-exposed occupation and a useful case study of independent consulting. Their work often involves research, analysis, drafting, presentation preparation, and document review—precisely the kinds of support functions AI may help one person perform more efficiently.\nFrom the 2022–2023 baseline to Q1 2026:\nOverall employment among management analysts rose 11.1 percent\nSolo self-employment rose 40.3 percent\nSolo self-employment therefore grew approximately 3.6 times as fast as overall employment.\nOverall employment also increased over the period. The occupation was not disappearing. But some of the work appears to be shifting toward independent arrangements.\n\nAI may be changing the boundary between workers and firms\n\nMost debates about AI and work still focus on whether jobs will disappear.\nBut these charts point to another possibility: AI may also be making it easier for more people to work outside traditional firms.\nThis is still early, descriptive evidence—not proof of causation. Even so, both datasets point in the same direction: solo-type business applications and solo self-employment are growing faster in sectors and occupations with greater AI exposure.\nThat matters because our labor-market institutions were built for a world of one employer, W-2 wages, and benefits tied to a job. They fit much less well with a world in which more people earn income through clients, contracts, freelancing, and one-person businesses.\nIf AI is expanding independent work, then benefits and income security will need to become more portable .\nThe first labor-market effects of AI may not show up in unemployment claims. They may already be showing up in business applications—and in the growing number of people working for themselves.\nThanks for reading Labor Market Matters! Subscribe for free to receive new posts and support my work.\n\n\n\n\n\n\n\nDiscussion about this post\n\n\n\n\n\n\n\n\n\n\nNo posts\n\nReady for more?\n\n\n\n© 2026 Substack Inc · Privacy ∙ Terms ∙ Collection notice\nStart your Substack Get the app\nSubstack is the home for great culture",
+      "retrieval_status": "retrieved",
+      "retrieval_provider": "direct",
+      "retrieval_timestamp": "2026-08-03T14:06:58.398Z",
+      "verified_claims": [
+        {
+          "id": "source-1-claim-1",
+          "atomic_claim": "Solo-type business applications in AI-exposed sectors rose 26.",
+          "source_url": "https://www.labormarketmatters.com/p/ai-and-independent-work-in-7-charts",
+          "evidence_passage": "datasets—the Census Bureau’s Business Formation Statistics and the Current Population Survey—the same pattern appears: solo-type business applications and solo self-employment are rising most in sectors and occupations with greater AI exposure.",
+          "evidence_location": {
+            "type": "character_offsets",
+            "start": 1464,
+            "end": 1708
+          },
+          "verification_checks": {
+            "numbers": [
+              {
+                "value": "26",
+                "supported": true
+              }
+            ],
+            "dates": [],
+            "entities": [
+              {
+                "value": "Solo-type",
+                "supported": true
+              },
+              {
+                "value": "AI-exposed",
+                "supported": true
+              }
+            ],
+            "comparisons": [],
+            "quotes": []
+          },
+          "supported_numbers": [
+            "26"
+          ],
+          "supported_entities": [
+            "Solo-type",
+            "AI-exposed"
+          ],
+          "verification_status": "verified",
+          "qualification": "",
+          "fact_type": "supported_fact"
+        }
+      ],
+      "unsupported_claims": [
+        {
+          "atomic_claim": "8% from Q1 2024 to Q1 2026, compared to flat growth in non-exposed sectors.",
+          "verification_status": "unsupported",
+          "failed_checks": [
+            "numbers:8%",
+            "entailment:token-overlap-0.29"
+          ]
+        }
+      ]
+    },
+    {
+      "source_index": 1,
+      "acquisition_id": "exa-acd146cd4a70",
+      "requested_url": "https://the-decoder.com/alibabas-open-weight-qwen3-8-max-takes-on-long-horizon-ai-tasks-with-2-4-trillion-parameters/",
+      "final_url": "https://the-decoder.com/alibabas-open-weight-qwen3-8-max-takes-on-long-horizon-ai-tasks-with-2-4-trillion-parameters/",
+      "canonical_url": "https://the-decoder.com/alibabas-open-weight-qwen3-8-max-takes-on-long-horizon-ai-tasks-with-2-4-trillion-parameters/",
+      "page_title": "Alibaba’s open-weight Qwen3.8-Max takes on long-horizon AI tasks with 2.4 trillion parameters",
+      "publication_date": "2026-08-03T10:48:50+00:00",
+      "usable_source_text": "Alibaba’s open-weight Qwen3.8-Max takes on long-horizon AI tasks with 2.4 trillion parameters\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAd\n\n\n\nSkip to content\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAlibaba’s open-weight Qwen3.8-Max takes on long-horizon AI tasks with 2.4 trillion parameters\n\n\n\n\n\n\nJonathan Kemper\n\nView the LinkedIn Profile of Jonathan Kemper\n\n\n\nAug 3, 2026\n\n\n\n\n\n\n\n\n\n\n\nKey Points\n\r\nAlibaba has unveiled Qwen3.8-Max, a 2.4-trillion-parameter language model designed to complete complex tasks on its own over multiple days.\n\r\nIn testing, the model autonomously built software, reproduced and improved on a research paper's results, and successfully ran a simulated e-commerce business.\n\r\nInternal benchmarks put its performance on par with top Western models. Qwen3.8-Max is available now, with weights set to drop next week.\n\r\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAlibaba's new flagship model Qwen3.8-Max is built to handle complex tasks on its own over days at a time, from reproducing research papers to designing chips autonomously. The team plans to release the weights next week.\nAlibaba's Qwen team has unveiled Qwen3.8-Max, its most capable language model to date. The model scales to 2.4 trillion total parameters, with 95 billion active per query. Qwen3.8-Max builds on the  Qwen3.5  architecture, and the team says the focus is on completing complex tasks independently over extended periods rather than just answering one-off prompts.\nAlibaba first announced the model in mid-July as a preview version available through Alibaba's Token Plan, Qoder, and QoderWork at ten percent of the standard price. Even then, the team  cited 2.4 trillion parameters and ranked the model just behind Fable 5 , but didn't share benchmarks. Qwen3.8-Max is the first model in the Qwen-Max class whose weights will be made publicly available. Ad\n\n\nThree autonomous coding runs put the model through its paces\nTo show off Qwen3.8-Max's coding chops, the team presented three case studies in which the model worked without any human help. Ad\nDEC_D_Incontent-1\nIn the first, Qwen3.8-Max spent 16 days building the command-line tool oh-my-cli. The model took incoming user requests, turned them into GitHub issues, assigned them to itself, wrote the code, ran tests, and improved the results iteratively. By July 30, 2026, it had racked up 265 commits, 127 pull requests, and 151 issues, all without a single human touch.\nIn the second case, the model received the research paper \"Unified Data Selection for LLM Reasoning\" but no starter code. Its job was to reproduce the paper's results and then improve on them. Over roughly five days and about 125 hours of compute time, Qwen3.8-Max wrote 7,600 lines of code and ran 33 GPU training jobs, according to the team. It first reproduced all six of the paper's main results. Then it tested 18 of its own ideas across four rounds and beat the paper's method on the AIME24 math benchmark by 2.7 points. Ad\n\nThe third case involved the WWW2025 Multimodal Dialogue Intent Recognition Challenge on Alibaba's Tianchi platform, where 526 human teams competed. Within 24 hours, the model fine-tuned several Chinese language models along with  Qwen2.5-VL-7B  for product screenshots and combined them into a voting system. Across 45 submissions, accuracy climbed from 0.60 to 0.853. That put Qwen3.8-Max ahead of 458 of the 526 human teams.\n\nChip design and a simulated fiscal year test long-horizon planning\nTwo more case studies target tasks that stretch across hundreds of interaction rounds. In the first, Qwen3.8-Max had to design a cryptographic building block for encryption schemes. The key efficiency metric for such a circuit is the number of logic gates it needs, the basic elements on a chip. Fewer gates mean a smaller, more efficient chip. The model started with a working but bloated design using 8,298 gates and whittled it down to 678 gates over roughly 500 iterations. Ad\nDEC_D_Incontent-2\nAfter an automated layout pass with the open-source tool OpenROAD, the physical chip area shrank from 106x106 to 46x46 micrometers, an 81 percent reduction. The Qwen team says the model kept making deep structural changes even after hundreds of iterations instead of settling for surface-level tweaks. Ad\n\nThe second case study is E-Commerce-Bench, a simulation of an entire fiscal year in online retail based on anonymized data from Taobao and Tmall. The model starts with 100,000 yuan in capital and has to run multiple online stores in parallel for a full year. That means buying products, negotiating with suppliers in natural language, adjusting prices, managing returns, and dealing with crises like typhoons or supply chain disruptions.\nHidden in the supplier pool are 152 scammers that the model has to spot. Qwen3.8-Max ended up with a balance of 416,252 yuan, quadrupling its starting capital. That's 38 percent more than the runner-up GLM 5.2 and more than 2.5 times what its predecessor Qwen3.7-Max managed. The model invested aggressively early in the year and pulled in a net profit of over 100,000 yuan during the holiday season.\nMultimodal skills and app reconstruction without source code\nFor multimodal tasks, Qwen3.8-Max can process documents with over 200 pages and videos longer than 100 hours, the team says. They're also introducing RecreationBench, a new benchmark that requires the model to rebuild running applications without access to source code.\nThe model can only observe the target app through interaction, meaning clicks and keyboard input. Testing covers Ubuntu, macOS, Windows, Android, and the web. Alongside this, the team is releasing Qwen-MM-Plugins, an extension library that adds image and video processing, visual tool use, and multimodal memory to existing agent systems.\nAlibaba's benchmark results for Qwen3.8-Max across coding, agentic work, reasoning, and multimodal tasks compared to other frontier models. | Image: Alibaba\nIn the benchmark tables the Qwen team published, the model lands near or above Claude Opus 4.8, Claude Fable 5, and GPT-5.6 Sol across many categories. On PaperBench, Qwen3.8-Max hits 93, the highest score in the comparison. On TerminalBench 2.1, it scores 86.6, trailing GPT-5.6 Sol's 88.8. As is typical with self-reported numbers from model makers, these results come from internal runs. Independent verification is still pending.\nThe Qwen team attributes the model's ability to sustain such long-running tasks to a major expansion of training environments during reinforcement learning. Training no longer focused on single tasks alone but also covered multi-day workflows, nested directory structures instead of individual files, and a variety of agent harnesses.\nThe team's internal score index across more than ten benchmarks rose from 0.474 to 0.725. The model performed best at around 4,000 environments, after which scores dipped slightly.\nAs the number of RL training environments and compute time grows, Qwen3.8-Max's scores rise steadily across dozens of internal and public benchmarks, according to the Qwen team.\nChina's open-model race heats up\nQwen3.8-Max's most direct rival also comes from China. Moonshot AI  released Kimi K3 with open weights on Hugging Face on July 27 , a multimodal mixture-of-experts model with  2.8 trillion parameters and a one-million-token context window . Along with the weights, Moonshot also published parts of its own infrastructure, including attention kernels, an MoE communication library, and tools for running agents at scale. Independent testing tempered the company's claims, though. K3 fell well short of top Western models in both  cyber capabilities  and  complex math .\nQwen3.8-Max is available now through QwenCloud. The weights are set to go live on Hugging Face and ModelScope next week. The model supports both OpenAI's Chat Completions format and Anthropic's API protocol, so it plugs directly into Claude Code, Codex, Qoder CLI, Qwen Code, and OpenClaw. A parameter called  reasoning_effort  lets users choose between three levels that trade speed for thoroughness.\nQwen says the model performs similarly across different agent harnesses and isn't tuned specifically for its own environment. | Image: Alibaba\nQwen3.8-Max isn't the only piece Alibaba has added recently. A few weeks ago, the team introduced  Qwen-Image-3.0, an image generator for information-dense layouts  that handles inputs up to 4,500 tokens and renders readable text as small as ten pixels. At the other end of the scale, Alibaba continues to push small open models like  Qwen3.6-35B-A3B , which has 35 billion total parameters but only activates three billion at a time.\n\n\n\nAI News Without the Hype – Curated by Humans\n\nSubscribe to THE DECODER for ad-free reading, a weekly AI newsletter, our exclusive \"AI Radar\" frontier report six times a year, full archive access, and access to our comment section.\n\nSubscribe now\n\n\n\n\n\nSource: Qwen\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBETA-TEST\n\n\n\n\n\n\n\n\n\n\n\n\nwpDiscuz\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBETA-TEST\n\n\n\n\n\n\n\n\n\nwpDiscuz",
+      "retrieval_status": "retrieved",
+      "retrieval_provider": "direct",
+      "retrieval_timestamp": "2026-08-03T14:07:00.004Z",
+      "verified_claims": [
+        {
+          "id": "source-2-claim-1",
+          "atomic_claim": "8-Max, a 2.",
+          "source_url": "https://the-decoder.com/alibabas-open-weight-qwen3-8-max-takes-on-long-horizon-ai-tasks-with-2-4-trillion-parameters/",
+          "evidence_passage": "8-Max is available now, with weights set to drop next week.",
+          "evidence_location": {
+            "type": "character_offsets",
+            "start": 787,
+            "end": 846
+          },
+          "verification_checks": {
+            "numbers": [
+              {
+                "value": "8",
+                "supported": true
+              },
+              {
+                "value": "2",
+                "supported": true
+              }
+            ],
+            "dates": [],
+            "entities": [
+              {
+                "value": "Max",
+                "supported": true
+              }
+            ],
+            "comparisons": [],
+            "quotes": []
+          },
+          "supported_numbers": [
+            "8",
+            "2"
+          ],
+          "supported_entities": [
+            "Max"
+          ],
+          "verification_status": "verified",
+          "qualification": "",
+          "fact_type": "supported_fact"
+        }
+      ],
+      "unsupported_claims": [
+        {
+          "atomic_claim": "Alibaba released Qwen3.",
+          "verification_status": "unsupported",
+          "failed_checks": [
+            "entailment:token-overlap-0.67"
+          ]
+        },
+        {
+          "atomic_claim": "4-trillion-parameter model capable of autonomous multi-day task execution, including software development and e-commerce management.",
+          "verification_status": "unsupported",
+          "failed_checks": [
+            "entailment:token-overlap-0.08"
+          ]
+        }
+      ]
+    },
+    {
+      "source_index": 2,
+      "acquisition_id": "exa-6611f552634c",
+      "requested_url": "https://www.thinkchina.sg/technology/why-chinas-universities-stopped-fighting-ai",
+      "final_url": "https://www.thinkchina.sg/technology/why-chinas-universities-stopped-fighting-ai",
+      "canonical_url": "https://www.thinkchina.sg/technology/why-chinas-universities-stopped-fighting-ai",
+      "page_title": "Why China’s universities stopped fighting AI",
+      "publication_date": "2026-08-03T10:28:59.000Z",
+      "usable_source_text": "Why China’s universities stopped fighting AI | ThinkChina\n\n\n\n\nRegional\n\nDongbei\nFujian\nJiangZheHu\nShandong\nSichuan\n\nPolitics\n\nASEAN\nChina-US Relations\nChinese Communist Party\nCross-Strait Relations\nGovernance\nInternational Relations\nMilitary\nSoft Power\n\nEconomy\n\nBelt and Road Initiative\nChina-US Trade War\nDigital Currency\nDomestic Consumption\nManufacturing\nProperty Market\nStock Market\nSupply Chain\nTariffs\nTransport\n\nTechnology\n\nArtificial Intelligence\nChina-US Tech War\nCybersecurity\nEnergy\nHi-Tech Manufacturing\nInnovation\nSemiconductors\nSpace\n\nHistory\n\nCold War\nColonialism\nCultural Revolution\nMemories\nNanyang\nSecond Sino-Japanese War\nWorld War II\n\nSociety\n\nChina workplace\nChina youths\nEducation\nEntertainment\nFamily\nGender\nInvolution\nMarriage\nPopulation\nSocial Media\n\nCulture\n\nArchitecture\nArts\nDeath\nFestival\nFood\nHeritage & Tradition\nLanguage\nMusic\nNature\nPhilosophy\n\nCartoon\n\nVideos\n\nExplainers\nShorts\nThinkChina Conversations\nThinkChina Forum\nVox Pops\n\n\nWhy China’s universities stopped fighting AI\nHaving initially sought to restrict the use of generative AI, Chinese universities are increasingly incorporating it into teaching and research. However, institutions are also grappling with difficult questions over authorship, accountability and how to preserve academic integrity in the age of AI, notes Lianhe Zaobao correspondent Liu Liu.\n3 Aug 2026\nTechnology\n\n\n\n\nBy Liu Liu\nCorrespondent, Lianhe Zaobao\n\n\nStudents at Fudan University, March 2026. ( Fudan University/Facebook ) (Edited and refined by Candice Chan, with the assistance of AI translation.)\nZhao Junming, a postgraduate student at Chongqing Technology and Business University, recently completed a master’s thesis on sports brand communication. In writing his 60,000-word dissertation, he used Google’s Gemini and Alibaba’s Tongyi Qianwen as AI assistants to develop the overall structure, while relying on Tongyi Qianwen to handle formatting.\nSpeaking to Lianhe Zaobao (LHZB), Zhao compared AI to a scholar with an encyclopaedic command of the literature.\n“AI is like someone who has read a huge amount of literature,” he said. “Where a person might draw a few related ideas from one example, an AI model can generate many more. Its efficiency gains are even more apparent in tasks such as formatting.”\n\nZhao admitted that he barely used AI for his undergraduate dissertation two years earlier, but now, most of his fellow postgraduate students use AI to write their dissertations.\n\nFudan University students, March 2026. ( Fudan University/Facebook )\nZhao’s experience is far from unique. According to the results of a survey released in February last year by MyCOS, a higher education data and consulting organisation in China, nearly 60% of university faculty and students in China use generative AI either daily or multiple times a week. Among students, nearly 30% primarily use it for writing papers or assignments.\nA report on university students’ mindset on using AI, jointly released last September by China Youth Daily, China Youth Campus Media and social networking platform Soul App, also found that 99.2% of university students surveyed had already used AI; about 65.9% said they would “instinctively turn to AI first” whenever they had a problem; and nearly half admitted they “cannot live without AI”.\nThe report found that AI tools had overtaken traditional search engines and social media as university students’ preferred source of information.\nFrom outright bans to incorporating AI\nAs AI becomes an increasingly important tool for learning and research among university students, Chinese universities are also adjusting their approach to managing its use.\nWhen ChatGPT sparked a global wave of interest in generative AI in 2023, Chinese universities initially adopted a cautious stance. During the 2024 graduation season, many institutions introduced regulations governing the use of AI.\n\nFuzhou University, Hubei University and Tianjin University of Science and Technology introduced AI checks for graduation theses, making the results part of the assessment. The Communication University of China required students who used AI to fully disclose the model, version, usage and content generation process.\nFudan University also specified six prohibited uses of AI in academic papers, including using AI tools to design research proposals, generate or alter original research data, and for language polishing and translation.\nHowever, the explosive rise of generative AI has forced Chinese universities to rethink their stance. Over the past year, many have shifted from trying to curb its use to actively exploring how it can enhance teaching and research without compromising academic integrity.\nIn February last year, the Shenzhen University’s National Engineering Laboratory for Big Data System Computing Technology partnered with Tencent Cloud to launch a general AI course based on DeepSeek. The course covers fundamental knowledge, technical principles and practical applications, including AI-generated content.\nWuhan University, Beihang University and Shaanxi Normal University have also introduced related courses, incorporating AI literacy into their undergraduate talent development programmes.\n\nWuhan University students at a career fair, including companies such as Huawei, Xiaomi and Unitree Robotics, March 2026. ( Wuhan University/Facebook )\nChen Xunwei, a senior engineer at Wuhan University who teaches courses including the programming language Python, told LHZB that AI education extends far beyond coding. It encompasses everything from foundational courses that build AI literacy to technical and application-oriented training, attracting students across the humanities, sciences and engineering.\n“AI has become a productive force, and educators have a responsibility to expose students to the most advanced productive force available,” he said. “If you don’t use it, you will be overtaken by those who do. And that competitive advantage grows exponentially.”\nEconomist Ye Xiaoyang and Shen Meng, a director of Chanson & Co, both said the shift in universities’ attitude towards AI is inevitable.\nYe said universities initially adopted a cautious approach to protect academic integrity. But once a technology becomes ubiquitous, he argued, relying on outright bans is neither practical nor an effective way to govern its use.\nShen shared a similar view. “AI will play an increasingly important role in academic research, regardless of the wishes of any institution or individual,” he said. The more contentious question, he added, is not whether AI should be used, but whether it should remain an assistant or take the lead in the research process.\nExperiments in AI-generated papers\nWhile promoting the integration of AI into teaching, some universities have gone a step further, exploring AI in more pioneering ways.\nAccording to information published on its official website, East China Normal University launched a large-scale social experiment entitled “AI as the First Author” in September last year. Using a quasi-field experimental approach, the initiative called for AI to be listed as the first author of academic papers, with humans as collaborators and gatekeepers.\n\nIn March this year, Nanjing University joined Tsinghua University, Fudan University, Zhejiang University and several other institutions in launching a competition titled “I Write History With AI”.\nChen Xunwei said the backdrop to these competitions was the dramatic leap in the capabilities of generative AI over the past six months.\n“In the past, using AI to write a paper required a great deal of interaction. Now AI can work continuously on a project over an extended period, making it a genuine research assistant.”\nGet the ThinkChina Weekly Newsletter\nInsights on China, right in your mailbox. Sign up now.\n\n\nWhen the universities published the findings of their respective experiments in March and June this year, they arrived at a similar conclusion: if an academic paper merely presents ideas and logical arguments, it is increasingly difficult to demonstrate genuine scholarly value. As a result, academic papers are gradually losing their traditional role as a measure of academic achievement.\nYe Xiaoyang expressed support for the experiments.\n“This has reframed the debate. The question is no longer whether AI should be used, but whether institutions should acknowledge its role and develop better frameworks to govern it.’”\n\nNew graduates of Tsinghua University, 27 June 2026. ( Tsinghua University/Facebook )\nWang Shengyu, a research assistant at the Centre for China Analysis under the Asia Society Policy Institute, expressed a similar view, noting that these experiments are consistent with the explorations and practices currently under way at the world’s leading research universities.\nGuidelines issued in recent years by Harvard University, Cornell University and Northwestern University on the use of generative AI in research generally allow researchers to use tools such as ChatGPT in academic work, but attach conditions including the disclosure of AI involvement, human verification of AI-generated content, and researchers assuming ultimate responsibility for AI-generated material.\n\nHowever, East China Normal University’s experiment went a step further by publishing several papers listing AI as the first author in the Journal of East China Normal University, which has considerable academic influence. The aim was to extend the discussion from principles governing AI use to the norms surrounding academic authorship, but the move sparked considerable controversy, and the relevant papers are no longer accessible on the journal’s website.\nCritics argue that the essence of academic authorship lies in having someone who can be held accountable. AI may serve as an auxiliary tool, but it cannot replace human beings as the main academic agent or bearer of liability.\nIn a commentary, the Beijing Youth Daily argued that the experiment marks the beginning of an era of human-AI co-governance in academia and represents an attempt to break new ground. Its greatest value, the commentary said, lies in clarifying the boundary of responsibilities between humans and AI in the research process.\n\nChatGPT, Claude, and Gemini app icons in this illustration taken 5 June 2026. ( Dado Ruvic/Reuters )\nChen believes this will be a common challenge that the academic community must face in the future.\n“AI models are evolving too quickly. Most regulations inevitably lag behind technological developments to some extent, but such exploration is necessary.”\nShen Meng, however, said that universities exist primarily to cultivate students’ professional capabilities. If AI is allowed to undertake leading roles such as first authorship, faculty members and students will not receive sufficient training and their abilities will not improve.\n“That runs counter to the mission of universities.”\n‘AI checking AI’ distorts industry chain\nWhile the role of AI in academic research remains under discussion, universities have widely introduced AI-generated content detection as part of the thesis review process, which leads to a new set of problems.\nChinese universities use AI detection systems to determine whether students’ writing overlaps linguistically or substantively with AI-generated text. However, AI detection platforms apply different standards and frequently misidentify original work as AI-generated. As a result, students are forced to spend additional time repeatedly revising their dissertations to reduce their AI detection scores, trapping them in a vicious cycle of “AI checking AI, and then using AI to evade AI”.\n\nAccording to reports by the National Business Daily, the Economic Observer and other Chinese media outlets, some students have turned to online services that promise to “reduce AI detection rates” in order to meet the thresholds set by their universities. As a result, a distorted industry chain has emerged on platforms such as Taobao, Pinduoduo and RedNote (Xiaohongshu).\nYe Xiaoyang said it was understandable why universities had adopted AI to detect AI, but the outcome had become absurd.\n“Students should be spending their time improving their research questions, evidence, arguments and expression. Instead, they are forced to learn how to satisfy the detector.”\nHe believes universities should distinguish between different forms of AI use.\n\nStudents at Peking University. ( Peking University/Facebook )\n“Using AI to correct grammar is not the same thing as using AI to fabricate references. A good system should not ask only one crude question, but rather ask more precise ones.”\nFrom a technical perspective, Chen Xunwei said: “Using one probabilistic system to detect another probabilistic system simply doesn’t work.”\nWang Shengyu, meanwhile, argued that the current situation reflected bureaucratic inertia in university administration. If it is to be changed in the future, he said, the Ministry of Education will probably need to conduct systematic research and introduce policies to drive reform.\nThis article was first published in Lianhe Zaobao as “从严防死守到探索边界 中国大学AI攻防战转向？” .\nRelated: [Big read] China’s young workers pay the price of AI before reaping the gains | How Chinese talent powers US AI dominance\n\nPopular This Month\nCulture\nDid Louis Vuitton trademark an ancient Chinese motif?\n\nSociety\n[Video] ‘Bullying our ancestors’: Why Chinese netizens are boycotting LV\n\nPolitics\nAmerica’s 250-year strategy meets China’s rise\n\nPolitics\nThe hidden divide: Why China’s vice-ministers rarely reach the top\n\nSociety\nHow Dear You ignited a debate over Chinese identity\n\n\nBy Liu Liu\nCorrespondent, Lianhe Zaobao\n\nGet the ThinkChina Weekly Newsletter\nInsights on China, right in your mailbox. Sign up now.\n\n\nPopular This Month\nCulture\nDid Louis Vuitton trademark an ancient Chinese motif?\n\nSociety\n[Video] ‘Bullying our ancestors’: Why Chinese netizens are boycotting LV\n\nPolitics\nAmerica’s 250-year strategy meets China’s rise\n\nPolitics\nThe hidden divide: Why China’s vice-ministers rarely reach the top\n\nSociety\nHow Dear You ignited a debate over Chinese identity\n\n\n1.2.0",
+      "retrieval_status": "retrieved",
+      "retrieval_provider": "direct",
+      "retrieval_timestamp": "2026-08-03T14:07:00.124Z",
+      "verified_claims": [
+        {
+          "id": "source-3-claim-1",
+          "atomic_claim": "From outright bans to incorporating AI As AI becomes an increasingly important tool for learning and research among university students, Chinese universities are also adjusting their approach to managing its use.",
+          "source_url": "https://www.thinkchina.sg/technology/why-chinas-universities-stopped-fighting-ai",
+          "evidence_passage": "From outright bans to incorporating AI As AI becomes an increasingly important tool for learning and research among university students, Chinese universities are also adjusting their approach to managing its use.",
+          "evidence_location": {
+            "type": "unavailable",
+            "start": null,
+            "end": null
+          },
+          "verification_checks": {
+            "numbers": [],
+            "dates": [],
+            "entities": [
+              {
+                "value": "AI As AI",
+                "supported": true
+              },
+              {
+                "value": "Chinese",
+                "supported": true
+              }
+            ],
+            "comparisons": [],
+            "quotes": []
+          },
+          "supported_numbers": [],
+          "supported_entities": [
+            "AI As AI",
+            "Chinese"
+          ],
+          "verification_status": "verified",
+          "qualification": "Narrowed to wording stated directly in the retrieved source because the proposed confirmed fact was unsupported.",
+          "fact_type": "supported_fact"
+        }
+      ],
+      "unsupported_claims": [
+        {
+          "atomic_claim": "Nearly 60% of university faculty and students in China use generative AI weekly, leading institutions to shift from bans to integrating AI literacy into curricula.",
+          "verification_status": "unsupported",
+          "failed_checks": [
+            "entailment:token-overlap-0.50"
+          ]
+        }
+      ]
+    },
+    {
+      "source_index": 3,
+      "acquisition_id": "exa-234633ad6670",
+      "requested_url": "https://www.alibabacloud.com/blog/alibaba-launches-qwenwork-an-all-in-one-workplace-ai-agent-platform_603419",
+      "final_url": "https://www.alibabacloud.com/blog/alibaba-launches-qwenwork-an-all-in-one-workplace-ai-agent-platform_603419",
+      "canonical_url": "",
+      "page_title": "Alibaba Launches \"QwenWork,\" an All-in-One Workplace AI Agent Platform",
+      "publication_date": "2026-08-03T00:00:00.000Z",
+      "usable_source_text": "Alibaba Launches \"QwenWork,\" an All-in-One Workplace AI Agent Platform - Alibaba Cloud Community\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCommunity\n\n\n\nBlog\n\n\n\nEvents\n\n\nWebinars\n\n\n\nTutorials\n\n\nForum\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog\n\n\nEvents\n\n\n\n\nWebinars\n\n\n\n\nTutorials\n\n\n\n\nForum\n\n\n\n\n\nCreate Account\n\n\nLog In\n\n\n\n\n\n\n\n\n×\n\n\n\n\n\n\n\n\nCommunity\n\nBlog\n\nAlibaba Launches \"QwenWork,\" an All-in-One Workplace AI Agent Platform\n\n\n\n\n\nAlibaba Launches \"QwenWork,\" an All-in-One Workplace AI Agent Platform\n\n\n\nAlibaba today unveiled the beta version of QwenWork, its latest all-in-one workplace AI agent platform designed to boost productivity for individuals .\n\n\n\n• Public beta testing starts in China to boost workplace productivity\n• Flagship Qwen3.8 Max model to experience on QwenWork starting Aug 3\n\nAlibaba today unveiled the beta version of QwenWork, its latest all-in-one workplace AI agent platform designed to boost productivity for individuals and enterprises with advanced AI models and outstanding agentic capabilities.\nQwenWork is currently available for public beta testing in China via its official website. Users can access it through a cloud-based web interface, or download a desktop client with direct access to local computers. QwenWork will soon be fully accessible as an embedded AI agent within DingTalk desktop and mobile versions, Alibaba’s enterprise collaboration platform, which serves more than 20 million enterprises and organizations.\n\nAlibaba launches \"QwenWork,\" an all-in-one workplace AI agent platform, for public beta testing\nBuilt on the core capabilities of Alibaba's existing AI agent platforms: Qoderwork, Mulerun, and Wukong, the new QwenWork is among the industry's first solutions to unify desktop, cloud, and enterprise collaboration agents in a single platform, dedicated to enhancing workplace productivity for individuals and enterprises.\nThe new platform pairs autonomous agent capabilities with powerful web development and built-in multimodal generation. It can create high-quality HTML pages with integrated domain and database services, enabling users to turn ideas into fully functional and ready-to-use web applications. With native multimodal capabilities for image, video, and audio generation, QwenWork streamlines creative workflows by eliminating the need to switch between multiple AI tools.\nBeyond serving as a standalone AI agent platform both on web and desktop, QwenWork will be deeply embedded in the DingTalk ecosystem, allowing users to use natural language to create documents, summarize group chats, schedule events, and send messages and emails, without leaving the platform. It will seamlessly integrate enterprise databases and business systems, helping businesses and individual users improve productivity across a wide range of workplace scenarios such as saving an expert workflow as a reusable skill, or keeping projects moving across time zones with always-on agents.\nThe platform adopts a subscription-based pricing model combined with a credit system, and offers two editions for individual and enterprise users to meet diverse needs. In addition, QwenWork offers four model tiers, Economy, Basic, Advanced, and Flagship, allowing users to choose from the industry's latest and advanced AI models based on the complexity of their tasks. Subscribed users can experience Economy model tier free of charge in a limited time. Separately, individual users are able to experience Qwen3.8, Alibaba's latest flagship large language model as a highlighted model option on QwenWork starting Aug 3.\nLooking ahead, QwenWork will also launch a standalone mobile app and an international edition, enabling seamless cross-platform synergy to address a broader range of workplace scenarios.\n\nThis article was originally published on Alizila written by Gabbie Fu and Karen Zhang.\n\n\nAI\nArtificial Intelligence\nAI Agent\nAgentic AI\nQwenWork\nWorkplace AI\nDesktop AI Agent\nQwen3.8\nQwen3.8-Max\n\n\n\n\n\n0\n\n\n\n0\n\n\n\n0\n\n\n\nShare on\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRead previous post:\n\n\n\nAlibaba Cloud Research Reveals Asian Enterprises Accelerating AI Adoption but Calls for Secure, End‑to‑End Solutions\n\n\n\n\n\nRead next post:\n\n\n\nAlibaba Unveils Qwen3.8-Max: Its Largest and Most Capable Flagship Model to Date\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAlibaba Cloud Community\n\n\n\n1,486 posts | 505 followers\n\nFollow\n\n\n\n\nYou may also like\n\n\n\n\n\nAlibaba Unveils Qwen3.8-Max: Its Largest and Most Capable Flagship Model to Date\n\n\nAlibaba Cloud Community - August 3, 2026\n\n\n\n\n\nAlibaba Cloud Launches New Enterprise Solutions for the Next-Gen Workforce\n\n\nAlibaba Cloud Community - October 21, 2021\n\n\n\n\n\nNext-Gen Workplace Innovations Unveiled at Alibaba&#039;s Apsara Conference\n\n\nAlibaba Cloud Community - October 27, 2021\n\n\n\n\n\nAlibaba’s Dingtalk Launches AI Agent Marketplace, Upgrades AI Assistant\n\n\nAlibaba Cloud Community - April 26, 2024\n\n\n\n\n\nAlibaba Cloud Launches Cloud Computer in Singapore to Power Secure, Efficient and Flexible Future Workplace\n\n\nAlibaba Cloud Community - March 15, 2022\n\n\n\n\n\nAliViews: Eddie Wu on Alibaba&#039;s Q4 Earnings\n\n\nAlibaba Cloud Community - May 14, 2026\n\n\n\n\nComments\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAlibaba Cloud Community\n\n\n\n1,486 posts | 505 followers\n\nFollow\n\n\n\n\n\nRelated Products\n\n\n\n\n\n\nAlibaba Cloud Model Studio\n\n\n\nA one-stop generative AI platform to build intelligent applications that understand your business, based on Qwen model series such as Qwen-Max and other popular models\n\n\nLearn More\n\n\n\n\n\n\nQwen\n\n\n\nFull-range, open-source, multimodal, and multi-functional\n\n\nLearn More\n\n\n\n\n\n\nAgentBay\n\n\n\nMultimodal cloud-based operating environment and expert agent platform, supporting automation and remote control across browsers, desktops, mobile devices, and code.\n\n\nLearn More\n\n\n\n\n\n\nAI Acceleration Solution\n\n\n\nAccelerate AI-driven business and AI model training and inference with Alibaba Cloud GPU technology\n\n\nLearn More\n\n\n\n\n\n\n\n\nMore Posts\n\n\nby Alibaba Cloud Community\n\n\n\n\nSee All\n\n\n\n\n\n\nQwen3.8-Max: A New Bar for Coding and Cowork\n\n\nAlibaba Unveils Qwen3.8-Max: Its Largest and Most Capable Flagship Model to Date\n\n\nAlibaba Cloud Research Reveals Asian Enterprises Accelerating AI Adoption but Calls for Secure, End‑to‑End Solutions\n\n\nAn LLM-Driven Self-Iterating Knowledge Engine for Software Engineering\n\n\nHow Qoder 1.0 Rebuilds the Task Execution Environment\n\n\nAgentic Search: Agent-Driven Code Retrieval\n\n\nInside Qoder Experts Mode\n\n\n/canvas: Beyond Better Output, Toward the Next Generation of Collaboration\n\n\nAI Coding Enters the \"Agent Teamwork\" Era: Introducing Qoder Experts Mode",
+      "retrieval_status": "retrieved",
+      "retrieval_provider": "direct",
+      "retrieval_timestamp": "2026-08-03T14:07:01.341Z",
+      "verified_claims": [
+        {
+          "id": "source-4-claim-1",
+          "atomic_claim": "Alibaba launched QwenWork, a platform integrating desktop, cloud",
+          "source_url": "https://www.alibabacloud.com/blog/alibaba-launches-qwenwork-an-all-in-one-workplace-ai-agent-platform_603419",
+          "evidence_passage": "Alibaba launches \"QwenWork,\" an all-in-one workplace AI agent platform, for public beta testing Built on the core capabilities of Alibaba's existing AI agent platforms: Qoderwork, Mulerun, and Wukong, the new QwenWork is among the industry's first solutions to unify desktop, cloud, and enterprise collaboration agents in a single platform, dedicated to enhancing workplace productivity for individuals and enterprises.",
+          "evidence_location": {
+            "type": "unavailable",
+            "start": null,
+            "end": null
+          },
+          "verification_checks": {
+            "numbers": [],
+            "dates": [],
+            "entities": [
+              {
+                "value": "Alibaba",
+                "supported": true
+              },
+              {
+                "value": "QwenWork",
+                "supported": true
+              }
+            ],
+            "comparisons": [],
+            "quotes": []
+          },
+          "supported_numbers": [],
+          "supported_entities": [
+            "Alibaba",
+            "QwenWork"
+          ],
+          "verification_status": "verified",
+          "qualification": "",
+          "fact_type": "supported_fact"
+        },
+        {
+          "id": "source-4-claim-2",
+          "atomic_claim": "and enterprise collaboration agents, currently in public beta in China.",
+          "source_url": "https://www.alibabacloud.com/blog/alibaba-launches-qwenwork-an-all-in-one-workplace-ai-agent-platform_603419",
+          "evidence_passage": "Alibaba launches \"QwenWork,\" an all-in-one workplace AI agent platform, for public beta testing Built on the core capabilities of Alibaba's existing AI agent platforms: Qoderwork, Mulerun, and Wukong, the new QwenWork is among the industry's first solutions to unify desktop, cloud, and enterprise collaboration agents in a single platform, dedicated to enhancing workplace productivity for individuals and enterprises.",
+          "evidence_location": {
+            "type": "unavailable",
+            "start": null,
+            "end": null
+          },
+          "verification_checks": {
+            "numbers": [],
+            "dates": [],
+            "entities": [
+              {
+                "value": "China",
+                "supported": true
+              }
+            ],
+            "comparisons": [],
+            "quotes": []
+          },
+          "supported_numbers": [],
+          "supported_entities": [
+            "China"
+          ],
+          "verification_status": "verified",
+          "qualification": "",
+          "fact_type": "supported_fact"
+        }
+      ],
+      "unsupported_claims": []
+    }
+  ]
+}

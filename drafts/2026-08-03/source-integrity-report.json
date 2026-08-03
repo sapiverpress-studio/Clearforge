@@ -1,0 +1,74 @@
+{
+  "schema_version": 6,
+  "edition": "2026-08-03",
+  "generated_at": "2026-08-03T14:07:01.341Z",
+  "passed": true,
+  "degraded": false,
+  "source_count": 4,
+  "survivor_count": 4,
+  "policy": "A source survives only when usable body text supports at least one atomic material claim. Missing numbers, entities, dates and comparisons are blocking for those claim components.",
+  "results": [
+    {
+      "index": 1,
+      "original_index": 0,
+      "recorded_title": "AI and Independent Work in 7 Charts - by Liya Palagashvili",
+      "requested_url": "https://www.labormarketmatters.com/p/ai-and-independent-work-in-7-charts",
+      "final_url": "https://www.labormarketmatters.com/p/ai-and-independent-work-in-7-charts",
+      "http_status": 200,
+      "retrieval_status": "retrieved",
+      "verified_claim_count": 1,
+      "unsupported_claim_count": 1,
+      "passed": true,
+      "warnings": [
+        "1 proposed atomic claim(s) lacked source evidence and were excluded."
+      ],
+      "failures": []
+    },
+    {
+      "index": 2,
+      "original_index": 1,
+      "recorded_title": "Alibaba’s open-weight Qwen3.8-Max takes on long-horizon AI tasks with 2.4 trillion parameters",
+      "requested_url": "https://the-decoder.com/alibabas-open-weight-qwen3-8-max-takes-on-long-horizon-ai-tasks-with-2-4-trillion-parameters/",
+      "final_url": "https://the-decoder.com/alibabas-open-weight-qwen3-8-max-takes-on-long-horizon-ai-tasks-with-2-4-trillion-parameters/",
+      "http_status": 200,
+      "retrieval_status": "retrieved",
+      "verified_claim_count": 1,
+      "unsupported_claim_count": 2,
+      "passed": true,
+      "warnings": [
+        "2 proposed atomic claim(s) lacked source evidence and were excluded."
+      ],
+      "failures": []
+    },
+    {
+      "index": 3,
+      "original_index": 2,
+      "recorded_title": "Why China's universities stopped fighting AI",
+      "requested_url": "https://www.thinkchina.sg/technology/why-chinas-universities-stopped-fighting-ai",
+      "final_url": "https://www.thinkchina.sg/technology/why-chinas-universities-stopped-fighting-ai",
+      "http_status": 200,
+      "retrieval_status": "retrieved",
+      "verified_claim_count": 1,
+      "unsupported_claim_count": 1,
+      "passed": true,
+      "warnings": [
+        "1 proposed atomic claim(s) lacked source evidence and were excluded."
+      ],
+      "failures": []
+    },
+    {
+      "index": 4,
+      "original_index": 3,
+      "recorded_title": "Alibaba Launches \"QwenWork,\" an All-in-One Workplace AI Agent Platform - Alibaba Cloud Community",
+      "requested_url": "https://www.alibabacloud.com/blog/alibaba-launches-qwenwork-an-all-in-one-workplace-ai-agent-platform_603419",
+      "final_url": "https://www.alibabacloud.com/blog/alibaba-launches-qwenwork-an-all-in-one-workplace-ai-agent-platform_603419",
+      "http_status": 200,
+      "retrieval_status": "retrieved",
+      "verified_claim_count": 2,
+      "unsupported_claim_count": 0,
+      "passed": true,
+      "warnings": [],
+      "failures": []
+    }
+  ]
+}

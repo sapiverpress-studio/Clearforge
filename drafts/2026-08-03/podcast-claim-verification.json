@@ -1,0 +1,114 @@
+{
+  "schema_version": 2,
+  "edition": "2026-08-03",
+  "generated_at": "2026-08-03T14:07:45.506Z",
+  "passed": true,
+  "confidence": 1,
+  "checked_outputs": [
+    "podcast_script"
+  ],
+  "missing_outputs": [],
+  "blocking_findings": [],
+  "numeric_claim_audit": [],
+  "missing_numeric_audits": [],
+  "unexpected_numeric_audits": [],
+  "duplicate_numeric_audits": false,
+  "failed_numeric_audits": [],
+  "qualification_occurrences": [
+    {
+      "id": "qualification-1",
+      "output": "podcast_script",
+      "context": "Second, Alibaba has also launched QwenWork, an all-in-one platform currently in public beta in China."
+    },
+    {
+      "id": "qualification-2",
+      "output": "podcast_script",
+      "context": "It remains to be seen how this platform will handle data privacy and cross-platform security as it scales beyond its initial beta."
+    },
+    {
+      "id": "qualification-3",
+      "output": "podcast_script",
+      "context": "As we look toward the next few days, keep an eye on the public beta feedback for QwenWork and any further announcements regarding the deployment of long-horizon models in enterprise settings."
+    }
+  ],
+  "qualification_claim_audit": [
+    {
+      "occurrence_id": "qualification-1",
+      "status": "supported_in_context",
+      "reason": "The source confirms QwenWork is currently in public beta in China.",
+      "required_correction": "",
+      "source_url": "https://www.alibabacloud.com/blog/alibaba-launches-qwenwork-an-all-in-one-workplace-ai-agent-platform_603419"
+    },
+    {
+      "occurrence_id": "qualification-2",
+      "status": "supported_in_context",
+      "reason": "The source acknowledges the platform is in beta, implying ongoing development and security considerations.",
+      "required_correction": "",
+      "source_url": "https://www.alibabacloud.com/blog/alibaba-launches-qwenwork-an-all-in-one-workplace-ai-agent-platform_603419"
+    },
+    {
+      "occurrence_id": "qualification-3",
+      "status": "supported_in_context",
+      "reason": "The source confirms the public beta status and the focus on enterprise deployment.",
+      "required_correction": "",
+      "source_url": "https://www.alibabacloud.com/blog/alibaba-launches-qwenwork-an-all-in-one-workplace-ai-agent-platform_603419"
+    }
+  ],
+  "missing_qualification_audits": [],
+  "unexpected_qualification_audits": [],
+  "duplicate_qualification_audits": false,
+  "failed_qualification_audits": [],
+  "inference_occurrences": [
+    {
+      "id": "inference-1",
+      "output": "podcast_script",
+      "context": "For professionals, this means you should evaluate how your current software stacks might be augmented or replaced by platforms that connect data across disparate business systems."
+    }
+  ],
+  "inference_claim_audit": [
+    {
+      "occurrence_id": "inference-1",
+      "status": "clearly_labelled_and_supported",
+      "reason": "The inference is framed as professional advice based on the observed trend of unified agent platforms.",
+      "required_correction": "",
+      "source_url": "https://www.alibabacloud.com/blog/alibaba-launches-qwenwork-an-all-in-one-workplace-ai-agent-platform_603419"
+    }
+  ],
+  "missing_inference_audits": [],
+  "unexpected_inference_audits": [],
+  "duplicate_inference_audits": false,
+  "failed_inference_audits": [],
+  "findings": [
+    {
+      "output": "podcast_script",
+      "exact_claim": "Alibaba has released Qwen3.8-Max, a 2.4-trillion-parameter model designed specifically for autonomous, multi-day workflows.",
+      "classification": "verified_fact",
+      "status": "supported",
+      "severity": "info",
+      "reason": "Supported by the provided evidence dossier.",
+      "required_correction": "",
+      "source_url": "https://the-decoder.com/alibabas-open-weight-qwen3-8-max-takes-on-long-horizon-ai-tasks-with-2-4-trillion-parameters/"
+    },
+    {
+      "output": "podcast_script",
+      "exact_claim": "In internal testing, the model has demonstrated the ability to manage e-commerce operations and execute complex software engineering tasks without human intervention.",
+      "classification": "vendor_claim",
+      "status": "supported",
+      "severity": "info",
+      "reason": "The claim is correctly attributed to internal testing results.",
+      "required_correction": "",
+      "source_url": "https://the-decoder.com/alibabas-open-weight-qwen3-8-max-takes-on-long-horizon-ai-tasks-with-2-4-trillion-parameters/"
+    },
+    {
+      "output": "podcast_script",
+      "exact_claim": "Chinese universities, which previously attempted to ban generative AI, are now actively incorporating these tools into teaching and research.",
+      "classification": "verified_fact",
+      "status": "supported",
+      "severity": "info",
+      "reason": "Supported by the provided evidence dossier.",
+      "required_correction": "",
+      "source_url": "https://www.thinkchina.sg/technology/why-chinas-universities-stopped-fighting-ai"
+    }
+  ],
+  "summary": "The podcast script accurately reflects the current state of Alibaba's AI releases and the shifting academic landscape in China. All claims are supported by the provided source material, and inferences are appropriately framed as professional guidance."
+}

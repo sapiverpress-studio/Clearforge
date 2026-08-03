@@ -1,0 +1,17 @@
+{
+  "edition": "2026-08-03",
+  "passed": true,
+  "restored_verified_fallback": true,
+  "checks": {
+    "article_words": 217,
+    "tiktok_words": 114,
+    "tiktok_caption_words": 102,
+    "youtube_words": 114,
+    "facebook_words": 194,
+    "pinterest_title_words": 15,
+    "pinterest_description_words": 41,
+    "linkedin_words": 115,
+    "quote_card_count": 5
+  },
+  "failures": []
+}

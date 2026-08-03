@@ -1,0 +1,282 @@
+{
+  "schema_version": 2,
+  "edition": "2026-08-03",
+  "generated_at": "2026-08-03T14:12:02.795Z",
+  "workflow_run_url": "https://github.com/sapiverpress-studio/SapiverForge/actions/runs/30820922863",
+  "source_commit": "e2fc9df2e49c398f86b865d7e1ecc161011ac2fa",
+  "human_approval_required": true,
+  "deleted_paths": [],
+  "files": [
+    {
+      "path": "drafts/2026-08-03/approval.json",
+      "bytes": 271,
+      "sha256": "417a44e244cd77f0773e128e523cff289ae630dc7a414b96123907c13beb79c1"
+    },
+    {
+      "path": "drafts/2026-08-03/audience_fit_report.json",
+      "bytes": 7895,
+      "sha256": "b1dfe3fb978d93ede83c5e1b7e262f969713511d4e85224ddb6faed255a217c1"
+    },
+    {
+      "path": "drafts/2026-08-03/audience_fit_report.md",
+      "bytes": 4983,
+      "sha256": "b720bb5c72031f39a43be3dc86c6122fedf6c54169e330bc11d724450ad582a0"
+    },
+    {
+      "path": "drafts/2026-08-03/claims_to_verify.md",
+      "bytes": 200,
+      "sha256": "783c49f61d89b13a551f14f1a3fad5211b9986f4896a1407a121ed90419beff7"
+    },
+    {
+      "path": "drafts/2026-08-03/commercial-validation-record.json",
+      "bytes": 713,
+      "sha256": "fd776b6eb20db14b88973639802a1eef28d5d7f8b5cab439e44691c04dd55769"
+    },
+    {
+      "path": "drafts/2026-08-03/daily_brief.md",
+      "bytes": 3196,
+      "sha256": "9153fcad666320d523967d662f1f7c4616512cb37d89eae01a0d296163c02e30"
+    },
+    {
+      "path": "drafts/2026-08-03/editor_checklist.md",
+      "bytes": 455,
+      "sha256": "6e5d158e429d8c50f0dc87379755e84c3c1963accb38686315b2a6585419f414"
+    },
+    {
+      "path": "drafts/2026-08-03/editorial_theme.json",
+      "bytes": 429,
+      "sha256": "4923c1322838bac15e01be9be5370f9d458ec931fc17960cc7050a9f38baf625"
+    },
+    {
+      "path": "drafts/2026-08-03/event_novelty_report.json",
+      "bytes": 140,
+      "sha256": "67917d2d7da1381261e92961a195a329167c91f40a62533cebcf7f0bb31e8234"
+    },
+    {
+      "path": "drafts/2026-08-03/fact-discipline-report.json",
+      "bytes": 226,
+      "sha256": "7c77c51a7ce625ce93fca012faad01023003e069602e39fba3ee040a1525360d"
+    },
+    {
+      "path": "drafts/2026-08-03/locked-facts.json",
+      "bytes": 8288,
+      "sha256": "0d551e3d2aa789fb2734428bf3bee6ab517cf4f5453cd849a06a8151b107818b"
+    },
+    {
+      "path": "drafts/2026-08-03/narrowed-edition-rebuild.json",
+      "bytes": 165,
+      "sha256": "28f7e993488e223f5bf487a8104f64b1c06291620402fdf3af88e79f7270398f"
+    },
+    {
+      "path": "drafts/2026-08-03/novelty_report.json",
+      "bytes": 1039,
+      "sha256": "3b6ebc48069f7cc562ab32073781bcfa21967262a1158b7a3e02842daf2b9e5c"
+    },
+    {
+      "path": "drafts/2026-08-03/output-usability-report.json",
+      "bytes": 385,
+      "sha256": "05fa0a9ccc655d96289cb8be6bb8fa4aa6af46ea36c7e86c3b41ad3efaa9e2c9"
+    },
+    {
+      "path": "drafts/2026-08-03/podcast-claim-verification.json",
+      "bytes": 5221,
+      "sha256": "a854cce4dc48f7467921f1b2b04f6f9b5399d6dbbd91f8dafdb84824bbeb4617"
+    },
+    {
+      "path": "drafts/2026-08-03/podcast/clearforge-daily-podcast-2026-08-03.mp3",
+      "bytes": 2221485,
+      "sha256": "fa7251495b8f845105053655defbe6a2049f16af1afb9697124990b39ec4007d"
+    },
+    {
+      "path": "drafts/2026-08-03/podcast/clearforge-daily-podcast-2026-08-03.mp3.source-sha256",
+      "bytes": 65,
+      "sha256": "09700a37b3fae13faa3739d446dc21d223d4ae4397df78373c0882b2a6fb08b6"
+    },
+    {
+      "path": "drafts/2026-08-03/podcast/clearforge-daily-podcast-2026-08-03.mp4",
+      "bytes": 8746414,
+      "sha256": "e11d131a5cbe200315d12e6973c4d9e0602103c4f94b9fdad597a5185b5f0e2c"
+    },
+    {
+      "path": "drafts/2026-08-03/podcast/COPY_PASTE_INTO_ELEVENLABS.txt",
+      "bytes": 2024,
+      "sha256": "9477259a0f2d88769e87376c6f131f4c8a4198ca3ef97ee5bff82d493679521c"
+    },
+    {
+      "path": "drafts/2026-08-03/podcast/episode-metadata.json",
+      "bytes": 1111,
+      "sha256": "5d06bb45296ea38293847a7c48ea3743ad5fddf76d802182789d3b0541412f74"
+    },
+    {
+      "path": "drafts/2026-08-03/podcast/PODCAST_NARRATION_SCRIPT.txt",
+      "bytes": 2446,
+      "sha256": "b2b380d76da550a4a3bcbc9064df4f69ef8da2519d8f07cd9df1e8aebd6d201f"
+    },
+    {
+      "path": "drafts/2026-08-03/podcast/podcast-script.md",
+      "bytes": 3429,
+      "sha256": "4e69ac905a29747d519987659d8fec19324732253dd07208fa5e271bb5d8cc79"
+    },
+    {
+      "path": "drafts/2026-08-03/podcast/source-notes.md",
+      "bytes": 2188,
+      "sha256": "f36f1ebae99bc1ae7b158fa6fdf570adc60a2567c0a4b7b87cbf0f95ebbb48d5"
+    },
+    {
+      "path": "drafts/2026-08-03/social_interest_report.json",
+      "bytes": 1244,
+      "sha256": "66a6df20f105e119704484d83484fae3e5e6c6c253666a5f1f88985c1d74077b"
+    },
+    {
+      "path": "drafts/2026-08-03/social_pack.md",
+      "bytes": 5555,
+      "sha256": "5e01f660704178b0ed54def36abaf4823ef47b2735c35eafcca471a6c1915c65"
+    },
+    {
+      "path": "drafts/2026-08-03/source-acquisition.json",
+      "bytes": 239823,
+      "sha256": "76a6d85a56725310a0a62a64cbcb9b11561251d9adcf5a231b547022be176b9f"
+    },
+    {
+      "path": "drafts/2026-08-03/source-evidence.json",
+      "bytes": 53063,
+      "sha256": "cae19bb942bf7e5dadf526f63bc985ff5d73fdd05ab121d96e32e030474f23db"
+    },
+    {
+      "path": "drafts/2026-08-03/source-integrity-report.json",
+      "bytes": 3043,
+      "sha256": "2fc1a50b587b78c48fbde916ef4170e61dfeadb48c0c61d0a52871f980753f2e"
+    },
+    {
+      "path": "drafts/2026-08-03/sources.json",
+      "bytes": 3628,
+      "sha256": "9d5965dcc668d5ae37b0f522af8c6af4e77a5475f55257be206aee46746772c8"
+    },
+    {
+      "path": "drafts/2026-08-03/structured_output.json",
+      "bytes": 25343,
+      "sha256": "726754ad23b8e5f0586e17ee928749fd9416b96f613d4abf6b49a02ac8256a0c"
+    },
+    {
+      "path": "drafts/2026-08-03/validation.json",
+      "bytes": 614,
+      "sha256": "f913e5e4b5e63a745d3d6c119afa5344717e3cb40531c0ca57baf9bb494dca64"
+    },
+    {
+      "path": "media/2026-08-03/media-manifest.json",
+      "bytes": 7253,
+      "sha256": "fb243876a96b5934c08c602c6445be35e24bdb87962f47cef4be083ec3c73699"
+    },
+    {
+      "path": "media/2026-08-03/story-1.png",
+      "bytes": 2166835,
+      "sha256": "06f4e32ce0eadd2e6308f454b1800b4ef11892578bb0d573fa8b07221dc837e6"
+    },
+    {
+      "path": "media/2026-08-03/tiktok-narration.mp3",
+      "bytes": 899492,
+      "sha256": "3ce562a616f19dd423adb94601baff3eb0eb4a6da64430b19aa2242d846bff50"
+    },
+    {
+      "path": "media/2026-08-03/tiktok.mp4",
+      "bytes": 3021306,
+      "sha256": "b1512eb8526d2f182e5a09af2cc4f49bedd858af3b890465ca3880857e4c85d2"
+    },
+    {
+      "path": "public/index.html",
+      "bytes": 21797,
+      "sha256": "d2b04e560bffa9a48534b4829250e54eeb27f15ec27c24af2b6eafa9889991a8"
+    },
+    {
+      "path": "public/media/2026-08-03/tiktok-narration.mp3",
+      "bytes": 899492,
+      "sha256": "3ce562a616f19dd423adb94601baff3eb0eb4a6da64430b19aa2242d846bff50"
+    },
+    {
+      "path": "public/media/2026-08-03/tiktok.mp4",
+      "bytes": 3021306,
+      "sha256": "b1512eb8526d2f182e5a09af2cc4f49bedd858af3b890465ca3880857e4c85d2"
+    },
+    {
+      "path": "public/podcast/episodes.json",
+      "bytes": 40454,
+      "sha256": "558b2443cb8130452ebc9b7dc1ebded8abb760794396c1e536046718475c99bb"
+    },
+    {
+      "path": "public/podcast/episodes/2026-08-03.html",
+      "bytes": 8893,
+      "sha256": "90551628c75366968b8537bf17849e8451e7962ae3a736a7805595bd75fd3a04"
+    },
+    {
+      "path": "public/podcast/episodes/2026-08-03.mp3",
+      "bytes": 2221485,
+      "sha256": "fa7251495b8f845105053655defbe6a2049f16af1afb9697124990b39ec4007d"
+    },
+    {
+      "path": "public/podcast/episodes/2026-08-03.mp4",
+      "bytes": 8746414,
+      "sha256": "e11d131a5cbe200315d12e6973c4d9e0602103c4f94b9fdad597a5185b5f0e2c"
+    },
+    {
+      "path": "public/podcast/episodes/2026-08-03.txt",
+      "bytes": 2024,
+      "sha256": "9477259a0f2d88769e87376c6f131f4c8a4198ca3ef97ee5bff82d493679521c"
+    },
+    {
+      "path": "public/podcast/feed.xml",
+      "bytes": 62428,
+      "sha256": "d05886a6247d4cc1ae0162775eeefe4b09889e3e490971f8d14fd0652073a477"
+    },
+    {
+      "path": "public/podcast/index.html",
+      "bytes": 35264,
+      "sha256": "02a90a52e20ae681135ac344a1c2a9dde9490e524a2e9c773a0adcb514fd94b3"
+    },
+    {
+      "path": "public/posts/2026-08-02.html",
+      "bytes": 15178,
+      "sha256": "2f3b3b91104b329ebbf14ed7d565798c8227776475348b7ff4bd3579032c373b"
+    },
+    {
+      "path": "public/posts/2026-08-03.html",
+      "bytes": 11467,
+      "sha256": "b179e77a98f3ff5575bacfd7bbbd64ab1153e70792c0612c405f49fee1d406f6"
+    },
+    {
+      "path": "public/sitemap.xml",
+      "bytes": 10359,
+      "sha256": "c8c1fd3cce04538e93c2497aae4e7a94c1e5625f843bcbf231f4a0eacdc64651"
+    },
+    {
+      "path": "public/topics/ai-adoption/index.html",
+      "bytes": 35517,
+      "sha256": "c8eb6133704a141637231044a0d071669fb7401c9e31cc51865925a7f4905e62"
+    },
+    {
+      "path": "public/topics/creators-small-business/index.html",
+      "bytes": 36615,
+      "sha256": "e65817c3f95bcbc3b29f9e664e21f97079188443cfcdcf201d159b9cc280e899"
+    },
+    {
+      "path": "public/topics/index.html",
+      "bytes": 5081,
+      "sha256": "4516bfb032ec51db6f52935b2b6d28470788d5dcc9c8a13dafa9f40119ca9efc"
+    },
+    {
+      "path": "public/topics/models-research/index.html",
+      "bytes": 36646,
+      "sha256": "22556a9c342a44025ab948d2290c046014cbd5d9d5bd6cf5e510a7b5a8d175b4"
+    },
+    {
+      "path": "public/topics/safety-accountability/index.html",
+      "bytes": 35750,
+      "sha256": "d2c92d18b87c8b1df0ab8bdb6e52f9f1a4536880ab7e3bc04d36c4bcba1d1dd1"
+    },
+    {
+      "path": "public/topics/systems-automation/index.html",
+      "bytes": 36560,
+      "sha256": "915366b844b319b741bfc3445c8cbb2f555b6c4ae8b7fd08924eab86a9d395e1"
+    }
+  ],
+  "candidate_id": "c858972c32b9ab1e7066e1083b6ea7a64924f65938213851847a0e2bd912c44d"
+}

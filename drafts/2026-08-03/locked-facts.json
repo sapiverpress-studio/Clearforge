@@ -1,0 +1,217 @@
+{
+  "schema_version": 2,
+  "edition": "2026-08-03",
+  "production_model": "retrieved source evidence -> atomic claims -> deterministic checks -> verified locked facts -> constrained outputs -> human review",
+  "facts": [
+    {
+      "atomic_claim": "Solo-type business applications in AI-exposed sectors rose 26.",
+      "source_url": "https://www.labormarketmatters.com/p/ai-and-independent-work-in-7-charts",
+      "exact_supporting_evidence_passage": "datasets—the Census Bureau’s Business Formation Statistics and the Current Population Survey—the same pattern appears: solo-type business applications and solo self-employment are rising most in sectors and occupations with greater AI exposure.",
+      "evidence_location": {
+        "type": "character_offsets",
+        "start": 1464,
+        "end": 1708
+      },
+      "verification_checks_performed": {
+        "numbers": [
+          {
+            "value": "26",
+            "supported": true
+          }
+        ],
+        "dates": [],
+        "entities": [
+          {
+            "value": "Solo-type",
+            "supported": true
+          },
+          {
+            "value": "AI-exposed",
+            "supported": true
+          }
+        ],
+        "comparisons": [],
+        "quotes": []
+      },
+      "supported_numbers": [
+        "26"
+      ],
+      "supported_entities": [
+        "Solo-type",
+        "AI-exposed"
+      ],
+      "verification_status": "verified",
+      "qualification": "",
+      "fact_type": "supported_fact"
+    },
+    {
+      "atomic_claim": "8-Max, a 2.",
+      "source_url": "https://the-decoder.com/alibabas-open-weight-qwen3-8-max-takes-on-long-horizon-ai-tasks-with-2-4-trillion-parameters/",
+      "exact_supporting_evidence_passage": "8-Max is available now, with weights set to drop next week.",
+      "evidence_location": {
+        "type": "character_offsets",
+        "start": 787,
+        "end": 846
+      },
+      "verification_checks_performed": {
+        "numbers": [
+          {
+            "value": "8",
+            "supported": true
+          },
+          {
+            "value": "2",
+            "supported": true
+          }
+        ],
+        "dates": [],
+        "entities": [
+          {
+            "value": "Max",
+            "supported": true
+          }
+        ],
+        "comparisons": [],
+        "quotes": []
+      },
+      "supported_numbers": [
+        "8",
+        "2"
+      ],
+      "supported_entities": [
+        "Max"
+      ],
+      "verification_status": "verified",
+      "qualification": "",
+      "fact_type": "supported_fact"
+    },
+    {
+      "atomic_claim": "From outright bans to incorporating AI As AI becomes an increasingly important tool for learning and research among university students, Chinese universities are also adjusting their approach to managing its use.",
+      "source_url": "https://www.thinkchina.sg/technology/why-chinas-universities-stopped-fighting-ai",
+      "exact_supporting_evidence_passage": "From outright bans to incorporating AI As AI becomes an increasingly important tool for learning and research among university students, Chinese universities are also adjusting their approach to managing its use.",
+      "evidence_location": {
+        "type": "unavailable",
+        "start": null,
+        "end": null
+      },
+      "verification_checks_performed": {
+        "numbers": [],
+        "dates": [],
+        "entities": [
+          {
+            "value": "AI As AI",
+            "supported": true
+          },
+          {
+            "value": "Chinese",
+            "supported": true
+          }
+        ],
+        "comparisons": [],
+        "quotes": []
+      },
+      "supported_numbers": [],
+      "supported_entities": [
+        "AI As AI",
+        "Chinese"
+      ],
+      "verification_status": "verified",
+      "qualification": "Narrowed to wording stated directly in the retrieved source because the proposed confirmed fact was unsupported.",
+      "fact_type": "supported_fact"
+    },
+    {
+      "atomic_claim": "Alibaba launched QwenWork, a platform integrating desktop, cloud",
+      "source_url": "https://www.alibabacloud.com/blog/alibaba-launches-qwenwork-an-all-in-one-workplace-ai-agent-platform_603419",
+      "exact_supporting_evidence_passage": "Alibaba launches \"QwenWork,\" an all-in-one workplace AI agent platform, for public beta testing Built on the core capabilities of Alibaba's existing AI agent platforms: Qoderwork, Mulerun, and Wukong, the new QwenWork is among the industry's first solutions to unify desktop, cloud, and enterprise collaboration agents in a single platform, dedicated to enhancing workplace productivity for individuals and enterprises.",
+      "evidence_location": {
+        "type": "unavailable",
+        "start": null,
+        "end": null
+      },
+      "verification_checks_performed": {
+        "numbers": [],
+        "dates": [],
+        "entities": [
+          {
+            "value": "Alibaba",
+            "supported": true
+          },
+          {
+            "value": "QwenWork",
+            "supported": true
+          }
+        ],
+        "comparisons": [],
+        "quotes": []
+      },
+      "supported_numbers": [],
+      "supported_entities": [
+        "Alibaba",
+        "QwenWork"
+      ],
+      "verification_status": "verified",
+      "qualification": "",
+      "fact_type": "supported_fact"
+    },
+    {
+      "atomic_claim": "and enterprise collaboration agents, currently in public beta in China.",
+      "source_url": "https://www.alibabacloud.com/blog/alibaba-launches-qwenwork-an-all-in-one-workplace-ai-agent-platform_603419",
+      "exact_supporting_evidence_passage": "Alibaba launches \"QwenWork,\" an all-in-one workplace AI agent platform, for public beta testing Built on the core capabilities of Alibaba's existing AI agent platforms: Qoderwork, Mulerun, and Wukong, the new QwenWork is among the industry's first solutions to unify desktop, cloud, and enterprise collaboration agents in a single platform, dedicated to enhancing workplace productivity for individuals and enterprises.",
+      "evidence_location": {
+        "type": "unavailable",
+        "start": null,
+        "end": null
+      },
+      "verification_checks_performed": {
+        "numbers": [],
+        "dates": [],
+        "entities": [
+          {
+            "value": "China",
+            "supported": true
+          }
+        ],
+        "comparisons": [],
+        "quotes": []
+      },
+      "supported_numbers": [],
+      "supported_entities": [
+        "China"
+      ],
+      "verification_status": "verified",
+      "qualification": "",
+      "fact_type": "supported_fact"
+    }
+  ],
+  "interpretations": [
+    {
+      "source_index": 0,
+      "text": "Sapiver Forge interpretation: this development makes workflow design, clear boundaries and human review practical areas to examine before expanding AI use.",
+      "fact_type": "sapiver_forge_interpretation",
+      "required_label": "Sapiver Forge interpretation"
+    },
+    {
+      "source_index": 1,
+      "text": "Sapiver Forge interpretation: this development makes workflow design, clear boundaries and human review practical areas to examine before expanding AI use.",
+      "fact_type": "sapiver_forge_interpretation",
+      "required_label": "Sapiver Forge interpretation"
+    },
+    {
+      "source_index": 2,
+      "text": "Sapiver Forge interpretation: this development makes workflow design, clear boundaries and human review practical areas to examine before expanding AI use.",
+      "fact_type": "sapiver_forge_interpretation",
+      "required_label": "Sapiver Forge interpretation"
+    },
+    {
+      "source_index": 3,
+      "text": "Sapiver Forge interpretation: this development makes workflow design, clear boundaries and human review practical areas to examine before expanding AI use.",
+      "fact_type": "sapiver_forge_interpretation",
+      "required_label": "Sapiver Forge interpretation"
+    }
+  ],
+  "prohibited_behaviour": [
+    "Do not use a number, date, entity, comparison, quotation, legal obligation, technology, survey description or methodology absent from a verified atomic claim.",
+    "Do not present Sapiver Forge interpretation as a source finding.",
+    "Do not use publisher metadata or a search snippet as evidence for a detailed material claim."
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "generated_at": "2026-08-03T14:07:54.456Z",
+  "story_assessments": [
+    {
+      "story_index": 0,
+      "story_title": "Solo-type business applications in AI-exposed sectors",
+      "target_audience": "Freelancers and solo entrepreneurs",
+      "audience_problem_or_desire": "Understanding if AI tools are actually helping solo businesses scale",
+      "interest_signal": "Rising application rates in AI-exposed sectors",
+      "stop_reason": "Too many disparate data points in one summary",
+      "promised_payoff": "Context on why solo business is surging",
+      "proof_point": "26 percent rise in solo-type business applications",
+      "search_phrases": [
+        "AI solo business trends",
+        "freelance AI tools",
+        "solo entrepreneurship growth 2026"
+      ],
+      "scores": {
+        "audience_fit": 9,
+        "practical_consequence": 8,
+        "searchability": 7,
+        "stranger_usefulness": 8,
+        "novelty": 7,
+        "visual_potential": 6,
+        "discussion_potential": 8,
+        "short_form_clarity": 5
+      },
+      "overall_score": 7,
+      "score_reason": "Highly relevant to the target audience but the summary is currently too dense for a quick micro-explainer."
+    },
+    {
+      "story_index": 1,
+      "story_title": "Qwen3.8-Max autonomous workflow capabilities",
+      "target_audience": "Small agencies and technical creators",
+      "audience_problem_or_desire": "Automating complex, multi-day tasks without errors",
+      "interest_signal": "Autonomous management of e-commerce and engineering tasks",
+      "stop_reason": "Risk of over-promising on autonomous capabilities",
+      "promised_payoff": "Understanding how to balance speed and thoroughness",
+      "proof_point": "2.4 trillion parameters designed for long-horizon tasks",
+      "search_phrases": [
+        "Qwen3.8-Max capabilities",
+        "autonomous AI workflows",
+        "AI agent task management"
+      ],
+      "scores": {
+        "audience_fit": 8,
+        "practical_consequence": 9,
+        "searchability": 8,
+        "stranger_usefulness": 7,
+        "novelty": 9,
+        "visual_potential": 7,
+        "discussion_potential": 9,
+        "short_form_clarity": 7
+      },
+      "overall_score": 8,
+      "score_reason": "Strong technical interest for agencies, though requires careful framing to avoid 'AI hype' traps."
+    },
+    {
+      "story_index": 2,
+      "story_title": "Chinese universities shifting from AI bans to integration",
+      "target_audience": "Educators and professional researchers",
+      "audience_problem_or_desire": "Adapting to AI in professional research environments",
+      "interest_signal": "Institutional shift from prohibition to active incorporation",
+      "stop_reason": "Less immediate impact on solo business workflows",
+      "promised_payoff": "Learning how to use AI as a research assistant",
+      "proof_point": "Universities moving from outright bans to active integration",
+      "search_phrases": [
+        "AI in education trends",
+        "AI research assistant best practices",
+        "university AI policy shift"
+      ],
+      "scores": {
+        "audience_fit": 6,
+        "practical_consequence": 7,
+        "searchability": 6,
+        "stranger_usefulness": 7,
+        "novelty": 8,
+        "visual_potential": 5,
+        "discussion_potential": 7,
+        "short_form_clarity": 8
+      },
+      "overall_score": 7,
+      "score_reason": "Good for professional development but less actionable for immediate business output."
+    },
+    {
+      "story_index": 3,
+      "story_title": "QwenWork platform launch",
+      "target_audience": "Small agencies and freelancers",
+      "audience_problem_or_desire": "Unifying fragmented software stacks",
+      "interest_signal": "Integration of desktop, cloud, and enterprise agents",
+      "stop_reason": "Platform-specific focus",
+      "promised_payoff": "Connecting data across different business systems",
+      "proof_point": "Public beta launch of all-in-one workplace AI agent platform",
+      "search_phrases": [
+        "QwenWork platform review",
+        "AI agent workplace integration",
+        "unified AI business tools"
+      ],
+      "scores": {
+        "audience_fit": 9,
+        "practical_consequence": 9,
+        "searchability": 8,
+        "stranger_usefulness": 9,
+        "novelty": 8,
+        "visual_potential": 8,
+        "discussion_potential": 8,
+        "short_form_clarity": 9
+      },
+      "overall_score": 9,
+      "score_reason": "Highly actionable and fits the 'micro-explainer' format perfectly for the target audience."
+    }
+  ],
+  "platform_selections": {
+    "tiktok": {
+      "story_index": 3,
+      "story_title": "Sapiver Forge interpretation: the retrieved evidence supports a narrower conclusion than the original draft claimed.",
+      "target_audience": "Freelancers and small agencies",
+      "format": "Micro-explainer",
+      "opening": "You've checked the AI output—but did you check the right things?",
+      "payoff": "Reading AI work twice is not the same as knowing what to check.",
+      "selection_reason": "Directly addresses the need for verification in new integrated agent platforms.",
+      "platform_fit_score": 9
+    },
+    "youtube": {
+      "story_index": 3,
+      "story_title": "Sapiver Forge interpretation: the retrieved evidence supports a narrower conclusion than the original draft claimed.",
+      "target_audience": "Small agencies",
+      "format": "Short-form explainer",
+      "opening": "Are your AI agents actually talking to each other?",
+      "payoff": "QwenWork integrates desktop and cloud agents, but you must verify the output.",
+      "selection_reason": "High utility for agencies managing multiple software stacks.",
+      "platform_fit_score": 9
+    },
+    "facebook": {
+      "story_index": 3,
+      "story_title": "Sapiver Forge interpretation: the retrieved evidence supports a narrower conclusion than the original draft claimed.",
+      "target_audience": "Small business owners",
+      "format": "Educational post",
+      "opening": "How do you manage data across your different business tools?",
+      "payoff": "New platforms like QwenWork unify agents, but human review remains essential.",
+      "selection_reason": "Relevant to business owners looking to streamline operations.",
+      "platform_fit_score": 8
+    },
+    "pinterest": {
+      "story_index": 3,
+      "story_title": "Sapiver Forge interpretation: the retrieved evidence supports a narrower conclusion than the original draft claimed.",
+      "target_audience": "Freelancers",
+      "format": "Checklist/Guide",
+      "opening": "How to verify AI output in unified agent platforms?",
+      "payoff": "A guide to checking the right things before publishing AI-assisted work.",
+      "selection_reason": "Searchable and visual potential for workflow guides.",
+      "platform_fit_score": 8
+    },
+    "linkedin": {
+      "story_index": 3,
+      "story_title": "Sapiver Forge interpretation: the retrieved evidence supports a narrower conclusion than the original draft claimed.",
+      "target_audience": "Small agency owners",
+      "format": "Professional insight",
+      "opening": "Does your current AI workflow actually save you time?",
+      "payoff": "Integrated platforms like QwenWork change how we work, but require new verification steps.",
+      "selection_reason": "Professional tone fits the LinkedIn audience.",
+      "platform_fit_score": 9
+    }
+  },
+  "overall_reasoning": "The content focuses on the QwenWork launch as a catalyst for a practical lesson on verification. By framing the 'check' as a necessary step for freelancers and agencies, the content moves away from abstract AI governance and toward a concrete, actionable workflow improvement. The TikTok script is kept under 30 seconds and follows the required structure to address the previous distribution issues."
+}

@@ -1,0 +1,41 @@
+{
+  "date": "2026-08-03",
+  "principle": "Sapiver Forge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "TikTok",
+      "opening": "Solo-type business applications in AI-exposed sectors rose 26.",
+      "words": 114,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "YouTube Shorts",
+      "opening": "Solo-type business applications in AI-exposed sectors rose 26.",
+      "words": 114,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "Facebook",
+      "opening": "Solo-type business applications in AI-exposed sectors rose 26.",
+      "words": 195,
+      "generic_opening": false,
+      "passed": true
+    },
+    {
+      "platform": "LinkedIn",
+      "opening": "Solo-type business applications in AI-exposed sectors rose 26.",
+      "words": 116,
+      "generic_opening": false,
+      "passed": true
+    }
+  ],
+  "pinterest": {
+    "title": "Sapiver Forge interpretation: the retrieved evidence supports a narrower conclusion than the original draft claimed.",
+    "title_words": 15,
+    "description_words": 42
+  },
+  "warnings": []
+}

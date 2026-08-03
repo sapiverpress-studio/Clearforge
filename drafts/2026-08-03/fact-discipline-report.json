@@ -1,0 +1,9 @@
+{
+  "schema_version": 2,
+  "edition": "2026-08-03",
+  "locked_fact_count": 5,
+  "unsupported_atomic_claim_count": 4,
+  "change_count": 0,
+  "changes": [],
+  "status": "all scanned material remained within verified evidence"
+}

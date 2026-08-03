@@ -1,0 +1,50 @@
+[
+  {
+    "acquisition_id": "exa-8a392cb8b401",
+    "source_name": "labormarketmatters.com",
+    "title": "AI and Independent Work in 7 Charts - by Liya Palagashvili",
+    "url": "https://www.labormarketmatters.com/p/ai-and-independent-work-in-7-charts",
+    "published_date": "2026-07-27",
+    "coverage_lane": "human_impact",
+    "topic_category": "education_employment_and_society",
+    "evidence_basis": "Retrieved by Exa and preflighted with HTTP 200; evidence stored in source-acquisition.json.",
+    "confirmed_fact": "Solo-type business applications in AI-exposed sectors rose 26.8% from Q1 2024 to Q1 2026, compared to flat growth in non-exposed sectors.",
+    "interpretation": "AI is lowering the minimum scale required to operate a business, enabling individuals to perform tasks that previously required teams or firm-based infrastructure."
+  },
+  {
+    "acquisition_id": "exa-acd146cd4a70",
+    "source_name": "the-decoder.com",
+    "title": "Alibaba’s open-weight Qwen3.8-Max takes on long-horizon AI tasks with 2.4 trillion parameters",
+    "url": "https://the-decoder.com/alibabas-open-weight-qwen3-8-max-takes-on-long-horizon-ai-tasks-with-2-4-trillion-parameters/",
+    "published_date": "2026-08-03",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "models_and_infrastructure",
+    "evidence_basis": "Retrieved by Exa and preflighted with HTTP 200; evidence stored in source-acquisition.json.",
+    "confirmed_fact": "Alibaba released Qwen3.8-Max, a 2.4-trillion-parameter model capable of autonomous multi-day task execution, including software development and e-commerce management.",
+    "interpretation": "The model's ability to sustain long-running, multi-step tasks suggests a shift in AI utility from single-prompt responses to autonomous, long-horizon agentic workflows."
+  },
+  {
+    "acquisition_id": "exa-6611f552634c",
+    "source_name": "thinkchina.sg",
+    "title": "Why China's universities stopped fighting AI",
+    "url": "https://www.thinkchina.sg/technology/why-chinas-universities-stopped-fighting-ai",
+    "published_date": "2026-08-03",
+    "coverage_lane": "human_impact",
+    "topic_category": "education_employment_and_society",
+    "evidence_basis": "Retrieved by Exa and preflighted with HTTP 200; evidence stored in source-acquisition.json.",
+    "confirmed_fact": "Nearly 60% of university faculty and students in China use generative AI weekly, leading institutions to shift from bans to integrating AI literacy into curricula.",
+    "interpretation": "Outright bans are becoming ineffective as AI becomes a ubiquitous 'productive force,' forcing universities to focus on governance and authorship norms instead."
+  },
+  {
+    "acquisition_id": "exa-234633ad6670",
+    "source_name": "alibabacloud.com",
+    "title": "Alibaba Launches \"QwenWork,\" an All-in-One Workplace AI Agent Platform - Alibaba Cloud Community",
+    "url": "https://www.alibabacloud.com/blog/alibaba-launches-qwenwork-an-all-in-one-workplace-ai-agent-platform_603419",
+    "published_date": "2026-08-03",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "workplace_and_business",
+    "evidence_basis": "Retrieved by Exa and preflighted with HTTP 200; evidence stored in source-acquisition.json.",
+    "confirmed_fact": "Alibaba launched QwenWork, a platform integrating desktop, cloud, and enterprise collaboration agents, currently in public beta in China.",
+    "interpretation": "The platform aims to unify fragmented AI tools into a single interface, allowing users to automate end-to-end business workflows like document creation and event scheduling."
+  }
+]

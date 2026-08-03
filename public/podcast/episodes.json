@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-08-03",
+    "kind": "daily",
+    "title": "The Rise of Autonomous Agents and the Academic Pivot",
+    "description": "These stories highlight the critical shift from simple chatbots to autonomous, long-horizon agents and the corresponding institutional shifts in how society integrates these tools.",
+    "published": "2026-08-03T07:00:00+01:00",
+    "duration": "00:02:24",
+    "size": 2221485,
+    "video_size": 8746414,
+    "audio_url": "https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-03.mp3",
+    "video_url": "https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-03.mp4",
+    "episode_url": "https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-03.html",
+    "transcript_url": "https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-03.txt",
+    "related_article_url": "https://sapiverforge-daily-brief.netlify.app/posts/2026-08-03.html",
+    "related_feature_url": "https://sapiverforge-daily-brief.netlify.app/features/2026-08-03.html",
+    "source_dir": "drafts/2026-08-03/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-08-01",
     "kind": "daily",
     "title": "The Shift to Self-Hosted Intelligence",

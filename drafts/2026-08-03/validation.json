@@ -1,0 +1,20 @@
+{
+  "date": "2026-08-03",
+  "passed": true,
+  "policy": "Only factual, sourcing, safety and minimum-content failures block publication. Editorial and formatting issues are warnings.",
+  "failures": [],
+  "warnings": [
+    "Article is shorter than the preferred 650 words (217)",
+    "Missing full feature piece; daily article and social channels may still publish"
+  ],
+  "stats": {
+    "source_count": 4,
+    "story_count": 4,
+    "article_words": 217,
+    "feature_words": 0,
+    "unique_source_domains": 4,
+    "unresolved_claim_count": 0,
+    "social_channels_present": 4,
+    "social_channels_total": 4
+  }
+}

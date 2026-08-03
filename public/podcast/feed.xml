@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Sapiver Forge)</managingEditor>
     <copyright>Sapiver Forge by Sapiver Press</copyright>
     <generator>Sapiver Forge hosted podcast feed</generator>
-    <lastBuildDate>Sat, 01 Aug 2026 07:55:02 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 03 Aug 2026 14:11:59 GMT</lastBuildDate>
     <atom:link href="https://sapiverforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Sapiver Forge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://sapiverforge-daily-brief.netlify.app/podcast/cover.png"/>
+    <item>
+      <title>The Rise of Autonomous Agents and the Academic Pivot</title>
+      <description>These stories highlight the critical shift from simple chatbots to autonomous, long-horizon agents and the corresponding institutional shifts in how society integrates these tools.</description>
+      <content:encoded><![CDATA[<p>These stories highlight the critical shift from simple chatbots to autonomous, long-horizon agents and the corresponding institutional shifts in how society integrates these tools.</p><p><strong>Read alongside this episode:</strong> <a href="https://sapiverforge-daily-brief.netlify.app/posts/2026-08-03.html">daily briefing</a> · <a href="https://sapiverforge-daily-brief.netlify.app/features/2026-08-03.html">feature analysis</a></p><p><a href="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-03.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-03.html</link>
+      <guid isPermaLink="false">clearforge:2026-08-03</guid>
+      <pubDate>Mon, 03 Aug 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-03.mp3" length="2221485" type="audio/mpeg"/>
+      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:02:24</itunes:duration>
+      <podcast:transcript url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-03.txt" type="text/plain"/>
+    </item>
     <item>
       <title>The Shift to Self-Hosted Intelligence</title>
       <description>This story represents a fundamental shift in infrastructure, moving from reliance on external APIs to sovereign, self-hosted enterprise models, which is the most significant development for long-term business strategy.</description>

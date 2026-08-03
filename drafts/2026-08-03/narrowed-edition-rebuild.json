@@ -1,0 +1,8 @@
+{
+  "edition": "2026-08-03",
+  "rebuilt": true,
+  "method": "deterministic_fallback",
+  "model_error": "",
+  "verified_fact_count": 5,
+  "excluded_claim_count": 4
+}

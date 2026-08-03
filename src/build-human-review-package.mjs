@@ -77,6 +77,9 @@ function assertNoLegacyBrandReferences(files) {
 
 const structured = readJson(path.join(draftDir, "structured_output.json"));
 const validation = readJson(path.join(draftDir, "validation.json"));
+const lockedFacts = readJson(path.join(draftDir, "locked-facts.json"), { facts: [], interpretations: [] });
+const sourceEvidence = readJson(path.join(draftDir, "source-evidence.json"), { records: [] });
+const disciplineReport = readJson(path.join(draftDir, "fact-discipline-report.json"), { changes: [] });
 const podcastMeta = readJson(path.join(draftDir, "podcast", "episode-metadata.json"));
 const article = readText(path.join(draftDir, "daily_brief.md"));
 const feature = readText(path.join(draftDir, "feature.md"));
@@ -116,12 +119,21 @@ const manifest = { ...payload, candidate_id: candidateId };
 const manifestPath = path.join(draftDir, "candidate-manifest.json");
 fs.writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
 
-const sourceRows = sources.map((source, index) => `<tr>
-  <td>${index + 1}</td>
-  <td><a href="${esc(source.url || "")}">${esc(source.source_name || source.title || "Source")}</a><br><small>${esc(source.published_date || "Date not recorded")}</small></td>
-  <td>${esc(source.confirmed_fact || "Not recorded")}</td>
-  <td>${esc(source.interpretation || "Not recorded")}</td>
-</tr>`).join("");
+const verifiedFacts = Array.isArray(lockedFacts.facts) ? lockedFacts.facts : [];
+const interpretations = Array.isArray(lockedFacts.interpretations) ? lockedFacts.interpretations : [];
+const unsupportedClaims = (sourceEvidence.records || []).flatMap((record) => record.unsupported_claims || []);
+const sourceRows = [
+  ...verifiedFacts.map((fact, index) => `<tr>
+    <td>${index + 1}</td><td><strong>Fact</strong><br><a href="${esc(fact.source_url)}">Open supporting source</a></td>
+    <td>${esc(fact.atomic_claim)}</td><td><blockquote>${esc(fact.exact_supporting_evidence_passage)}</blockquote><small>${esc(JSON.stringify(fact.evidence_location))}</small></td>
+    <td><strong>${esc(fact.verification_status)}</strong><br><small>${esc(JSON.stringify(fact.verification_checks_performed))}</small></td>
+  </tr>`),
+  ...interpretations.map((item, index) => `<tr>
+    <td>I${index + 1}</td><td><strong>Interpretation</strong></td><td>${esc(item.text)}</td>
+    <td>Derived from the verified source set; not presented as a source finding.</td><td><strong>Sapiver Forge interpretation</strong></td>
+  </tr>`)
+].join("");
+const unsupportedRows = unsupportedClaims.map((item) => `<li><strong>${esc(item.atomic_claim)}</strong><br>${esc((item.failed_checks || []).join(", "))}</li>`).join("");
 
 const socialSections = [
   ["TikTok narration", social.tiktok_script],
@@ -152,6 +164,7 @@ const mediaCards = files
 
 const validationFailures = Array.isArray(validation.failures) ? validation.failures : [];
 const validationWarnings = Array.isArray(validation.warnings) ? validation.warnings : [];
+const allMaterialVerified = verifiedFacts.length > 0 && unsupportedClaims.length === 0 && Number(disciplineReport.change_count || 0) === 0;
 const htmlPath = path.join(draftDir, `human-review-${EDITION}-${candidateId.slice(0, 12)}.html`);
 const html = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -182,9 +195,14 @@ header{background:var(--navy);color:#fff;padding:24px}header div,main{max-width:
   <h3>Failures</h3>${validationFailures.length ? `<ul class="warning">${validationFailures.map((item) => `<li>${esc(item)}</li>`).join("")}</ul>` : "<p>None recorded.</p>"}
   <h3>Warnings</h3>${validationWarnings.length ? `<ul>${validationWarnings.map((item) => `<li>${esc(item)}</li>`).join("")}</ul>` : "<p>None recorded.</p>"}
 </section>
+<section class="panel ${allMaterialVerified ? "" : "warning"}"><h2>Material-claim verification result</h2>
+  <p><strong>${allMaterialVerified ? "All retained material claims mapped to verified evidence." : "Unsupported proposed material was found. Check the exclusions and corrected outputs below."}</strong></p>
+  ${unsupportedRows ? `<h3>Claims excluded from locked facts</h3><ul>${unsupportedRows}</ul>` : "<p>No unsupported proposed atomic claims were recorded.</p>"}
+  <p>Output sentences removed or rewritten before sealing: ${Number(disciplineReport.change_count || 0)}</p>
+</section>
 ${markdownBlock("Daily brief", article)}
 ${markdownBlock("Long-form feature", feature)}
-<section class="panel"><h2>Evidence and interpretation</h2><div class="scroll"><table><thead><tr><th>#</th><th>Source</th><th>Confirmed fact</th><th>Sapiver Forge interpretation</th></tr></thead><tbody>${sourceRows || "<tr><td colspan=\"4\">No sources recorded.</td></tr>"}</tbody></table></div></section>
+<section class="panel"><h2>Evidence and interpretation ledger</h2><div class="scroll"><table><thead><tr><th>#</th><th>Type/source</th><th>Atomic claim</th><th>Exact evidence passage/location</th><th>Verification</th></tr></thead><tbody>${sourceRows || "<tr><td colspan=\"5\">No verified claims recorded — do not approve.</td></tr>"}</tbody></table></div></section>
 <section class="panel"><h2>Social materials</h2><div class="grid">${socialSections}</div>${socialPack ? `<details><summary>Open complete generated social pack</summary><pre>${esc(socialPack)}</pre></details>` : ""}</section>
 ${markdownBlock("Podcast script", podcastScript)}
 <section class="panel"><h2>Podcast metadata</h2><pre>${esc(JSON.stringify(podcastMeta, null, 2))}</pre></section>

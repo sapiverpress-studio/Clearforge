@@ -1,100 +1,154 @@
 import fs from "node:fs";
 import path from "node:path";
+import { buildVerifiedClaims, decodeEntities, evidenceLocation, extractUsableText, normalizeText } from "./evidence-verification.mjs";
 
 const ROOT = process.cwd();
-const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+const DATE = process.env.SAPIVER_FORGE_DATE || process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
+  timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
+}).format(new Date());
 const draftDir = path.join(ROOT, "drafts", DATE);
 const structuredPath = path.join(draftDir, "structured_output.json");
 const reportPath = path.join(draftDir, "source-integrity-report.json");
-const resolutionPath = path.join(draftDir, "source-resolution-report.json");
+const evidencePath = path.join(draftDir, "source-evidence.json");
 const pruneStatePath = path.join(draftDir, "source-prune-state.json");
 
-const normalize = (value) => String(value || "").toLowerCase().replace(/&[a-z0-9#]+;/g, " ").replace(/[^a-z0-9%]+/g, " ").replace(/\s+/g, " ").trim();
-const tokenSet = (value) => new Set(normalize(value).split(" ").filter((token) => token.length > 2));
-function similarity(a, b) { const A = tokenSet(a), B = tokenSet(b); if (!A.size || !B.size) return 0; let n = 0; for (const x of A) if (B.has(x)) n += 1; return n / Math.min(A.size, B.size); }
-function decodeEntities(value) { return String(value || "").replace(/&amp;/gi, "&").replace(/&quot;/gi, '"').replace(/&#39;|&apos;/gi, "'").replace(/&lt;/gi, "<").replace(/&gt;/gi, ">"); }
-function extractMeta(html, key) { for (const pattern of [new RegExp(`<meta[^>]+(?:property|name)=["']${key}["'][^>]+content=["']([^"']+)["']`, "i"), new RegExp(`<meta[^>]+content=["']([^"']+)["'][^>]+(?:property|name)=["']${key}["']`, "i")]) { const m = html.match(pattern); if (m) return decodeEntities(m[1]).trim(); } return ""; }
-function extractTitle(html) { return extractMeta(html, "og:title") || extractMeta(html, "twitter:title") || decodeEntities(html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || "").replace(/\s+/g, " ").trim(); }
-function extractCanonical(html) { return html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i)?.[1] || html.match(/<link[^>]+href=["']([^"']+)["'][^>]+rel=["']canonical["']/i)?.[1] || ""; }
-function visibleText(html) { return decodeEntities(String(html || "").replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<style[\s\S]*?<\/style>/gi, " ").replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim(); }
-function materialNumbers(value) { return [...new Set(String(value || "").match(/\b\d+(?:[,.]\d+)*(?:%|B|M|K|bn|million|billion)?\b/gi) || [])].filter((item) => !/^20\d{2}$/.test(item)); }
-function importantTerms(source) { const found = `${source.title || ""} ${source.confirmed_fact || ""}`.match(/\b[A-Z][A-Za-z0-9.-]{2,}(?:\s+[A-Z][A-Za-z0-9.-]{2,}){0,3}\b/g) || []; return [...new Set(found.map(normalize).filter((x) => x.length > 3))].slice(0, 8); }
-function hasCompleteResearchEvidence(source) {
-  return Boolean(
-    String(source?.title || "").trim()
-    && String(source?.url || "").trim()
-    && String(source?.confirmed_fact || "").trim()
-    && String(source?.published_date || "").trim()
-  );
+function extractMeta(html, key) {
+  for (const pattern of [
+    new RegExp(`<meta[^>]+(?:property|name)=["']${key}["'][^>]+content=["']([^"']+)["']`, "i"),
+    new RegExp(`<meta[^>]+content=["']([^"']+)["'][^>]+(?:property|name)=["']${key}["']`, "i")
+  ]) { const match = String(html).match(pattern); if (match) return decodeEntities(match[1]).trim(); }
+  return "";
 }
-async function fetchPage(url) { const controller = new AbortController(); const timer = setTimeout(() => controller.abort(), Number(process.env.SOURCE_FETCH_TIMEOUT_MS || 15000)); try { return await fetch(url, { redirect: "follow", signal: controller.signal, headers: { "user-agent": "Mozilla/5.0 (compatible; SapiverForgeSourceVerifier/1.0; +https://sapiverforge-daily-brief.netlify.app)", accept: "text/html,application/xhtml+xml" } }); } finally { clearTimeout(timer); } }
+function extractTitle(html) {
+  return extractMeta(html, "og:title") || extractMeta(html, "twitter:title")
+    || decodeEntities(String(html).match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || "").replace(/\s+/g, " ").trim();
+}
+function extractPublicationDate(html) {
+  return extractMeta(html, "article:published_time") || extractMeta(html, "datePublished")
+    || String(html).match(/"datePublished"\s*:\s*"([^"]+)"/i)?.[1] || "";
+}
+function extractCanonical(html) {
+  return String(html).match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i)?.[1]
+    || String(html).match(/<link[^>]+href=["']([^"']+)["'][^>]+rel=["']canonical["']/i)?.[1] || "";
+}
+function titleSimilarity(a, b) {
+  const left = new Set(normalizeText(a).split(" ").filter((item) => item.length > 2));
+  const right = new Set(normalizeText(b).split(" ").filter((item) => item.length > 2));
+  if (!left.size || !right.size) return 0;
+  return [...left].filter((item) => right.has(item)).length / Math.min(left.size, right.size);
+}
+async function fetchPage(url) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), Number(process.env.SOURCE_FETCH_TIMEOUT_MS || 15000));
+  try {
+    return await fetch(url, { redirect: "follow", signal: controller.signal, headers: {
+      "user-agent": "Mozilla/5.0 (compatible; SapiverForgeSourceVerifier/2.0; +https://sapiverforge-daily-brief.netlify.app)",
+      accept: "text/html,application/xhtml+xml"
+    } });
+  } finally { clearTimeout(timer); }
+}
 
 if (!fs.existsSync(structuredPath)) throw new Error(`Missing ${structuredPath}`);
 const structured = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
 const sources = Array.isArray(structured.sources) ? structured.sources : [];
 const stories = Array.isArray(structured.story_summaries) ? structured.story_summaries : [];
-if (sources.length < 1) throw new Error("Source integrity requires at least one source.");
+if (!sources.length) throw new Error("Source integrity requires at least one source.");
 if (stories.length !== sources.length) throw new Error("Source and story arrays must remain aligned.");
-const resolution = fs.existsSync(resolutionPath) ? JSON.parse(fs.readFileSync(resolutionPath, "utf8")) : { replacements: [] };
-const grounded = new Map((resolution.replacements || []).filter((x) => x.evidence_grounded).map((x) => [x.new_url, x]));
 
 const results = [];
+const records = [];
 for (let index = 0; index < sources.length; index += 1) {
-  const source = sources[index], failures = [], warnings = [];
+  const source = sources[index];
   const requestedUrl = String(source.url || "").trim();
-  const groundedEvidence = grounded.get(requestedUrl);
-  const completeResearchEvidence = hasCompleteResearchEvidence(source);
-  let finalUrl = "", canonicalUrl = "", pageTitle = "", body = "", status = 0, publisherBlocked = false;
-  try { const parsed = new URL(requestedUrl); if (parsed.protocol !== "https:") failures.push("Source URL must use HTTPS."); if (!parsed.hostname.includes(".")) failures.push("Source URL has no valid hostname."); } catch { failures.push("Source URL is not a valid absolute URL."); }
+  const failures = [], warnings = [];
+  let response, html = "", finalUrl = "", status = 0, retrievalStatus = "not_attempted";
+  try {
+    const parsed = new URL(requestedUrl);
+    if (parsed.protocol !== "https:") failures.push("Source URL must use HTTPS.");
+  } catch { failures.push("Source URL is not a valid absolute URL."); }
   if (!failures.length) {
     try {
-      const response = await fetchPage(requestedUrl); status = response.status; finalUrl = response.url;
-      publisherBlocked = [401, 403, 429].includes(response.status) && completeResearchEvidence;
-      if (response.status === 404 || response.status === 410) failures.push(`Source returned HTTP ${response.status}.`);
-      else if (!response.ok && !publisherBlocked) failures.push(`Source returned HTTP ${response.status}.`);
-      if (publisherBlocked) warnings.push(`Publisher blocked direct verification with HTTP ${response.status}; complete research evidence retained for human review.`);
-      const contentType = response.headers.get("content-type") || "";
-      if (response.ok && !contentType.includes("text/html")) failures.push(`Source returned unsupported content type: ${contentType || "unknown"}.`);
-      if (response.ok) { body = await response.text(); pageTitle = extractTitle(body); canonicalUrl = extractCanonical(body); if (!pageTitle) warnings.push("No page title could be read; retain for human review."); }
+      response = await fetchPage(requestedUrl); status = response.status; finalUrl = response.url;
+      if ([401, 403, 429].includes(status)) {
+        retrievalStatus = "publisher_blocked";
+        failures.push(`Publisher blocked evidence retrieval with HTTP ${status}; detailed claims cannot be verified.`);
+      } else if (!response.ok) {
+        retrievalStatus = "http_error"; failures.push(`Source returned HTTP ${status}.`);
+      } else if (!(response.headers.get("content-type") || "").includes("text/html")) {
+        retrievalStatus = "unsupported_content_type"; failures.push("Source did not return usable HTML body text.");
+      } else {
+        html = await response.text(); retrievalStatus = "retrieved";
+      }
     } catch (error) {
-      if (completeResearchEvidence) warnings.push(`Direct source verification was unavailable (${error?.message || error}); complete research evidence retained for human review.`);
-      else failures.push(`Source could not be opened: ${error?.message || error}`);
+      retrievalStatus = "retrieval_error"; failures.push(`Source could not be opened: ${error?.message || error}`);
     }
   }
-  const pageText = visibleText(body);
-  const evidenceTitle = groundedEvidence?.evidence_title || "";
-  const titleScore = pageTitle ? similarity(source.title, pageTitle) : similarity(source.title, evidenceTitle);
-  if ((pageTitle || evidenceTitle) && titleScore < 0.35) warnings.push(`Recorded title differs from resolved/search-evidence title (similarity ${titleScore.toFixed(2)}); human reviewer should confirm.`);
-  const missingNumbers = publisherBlocked || !pageText ? [] : materialNumbers(source.confirmed_fact).filter((number) => !normalize(pageText).includes(normalize(number)));
-  if (missingNumbers.length) warnings.push(`Confirmed-fact numbers were not found verbatim on the fetched page: ${missingNumbers.join(", ")}.`);
-  const terms = importantTerms(source); const matchedTerms = publisherBlocked || !pageText ? [] : terms.filter((term) => normalize(pageText).includes(term));
-  if (!publisherBlocked && pageText && terms.length >= 2 && matchedTerms.length === 0) warnings.push("Central named entities were not found verbatim on the fetched page; human reviewer should confirm the page context.");
-  results.push({ index: index + 1, original_index: index, source_name: source.source_name || "", recorded_title: source.title || "", requested_url: requestedUrl, final_url: finalUrl, canonical_url: canonicalUrl, resolved_title: pageTitle || evidenceTitle, http_status: status, publisher_blocked: publisherBlocked, complete_research_evidence: completeResearchEvidence, search_evidence_grounded: Boolean(groundedEvidence), title_similarity: Number(titleScore.toFixed(3)), checked_numbers: materialNumbers(source.confirmed_fact), matched_named_terms: matchedTerms, passed: failures.length === 0, warnings, failures });
+  const sourceText = extractUsableText(html);
+  if (retrievalStatus === "retrieved" && sourceText.length < 120) {
+    retrievalStatus = "no_usable_body"; failures.push("Source returned no usable body text for claim verification.");
+  }
+  const proposedFact = String(source.confirmed_fact || "").trim();
+  const fallbackContext = [source.title, stories[index]?.title, stories[index]?.summary, stories[index]?.why_it_matters].filter(Boolean).join(" ");
+  const verification = failures.length ? { atomic: [], verified: [] } : buildVerifiedClaims(proposedFact, sourceText, fallbackContext);
+  const unsupported = verification.atomic.filter((item) => !item.supported);
+  if (unsupported.length) warnings.push(`${unsupported.length} proposed atomic claim(s) lacked source evidence and were excluded.`);
+  if (!verification.verified.length) failures.push("No meaningful factual core could be verified from the retrieved source text.");
+  const pageTitle = extractTitle(html);
+  const recordedDate = String(source.published_date || "").trim();
+  const pageDate = extractPublicationDate(html);
+  if (pageTitle && titleSimilarity(source.title, pageTitle) < 0.35) warnings.push("Recorded and retrieved titles differ materially.");
+  if (recordedDate && pageDate && !normalizeText(pageDate).includes(normalizeText(recordedDate))) warnings.push("Recorded publication date differs from retrieved metadata.");
+  const verifiedClaims = verification.verified.map((item, claimIndex) => ({
+    id: `source-${index + 1}-claim-${claimIndex + 1}`,
+    atomic_claim: item.claim,
+    source_url: finalUrl || requestedUrl,
+    evidence_passage: item.evidence.passage,
+    evidence_location: evidenceLocation(item.evidence),
+    verification_checks: item.checks,
+    supported_numbers: (item.checks.numbers || []).filter((check) => check.supported).map((check) => check.value),
+    supported_entities: (item.checks.entities || []).filter((check) => check.supported).map((check) => check.value),
+    verification_status: "verified",
+    qualification: item.qualification || "",
+    fact_type: "supported_fact"
+  }));
+  const unsupportedClaims = verification.atomic.filter((item) => !item.supported).map((item) => ({
+    atomic_claim: item.claim, verification_status: "unsupported", failed_checks: item.failed_checks
+  }));
+  const passed = failures.length === 0;
+  records.push({
+    source_index: index, requested_url: requestedUrl, final_url: finalUrl || requestedUrl,
+    canonical_url: extractCanonical(html), page_title: pageTitle, publication_date: pageDate || recordedDate,
+    usable_source_text: sourceText, retrieval_status: retrievalStatus, retrieval_timestamp: new Date().toISOString(),
+    verified_claims: verifiedClaims, unsupported_claims: unsupportedClaims
+  });
+  results.push({ index: index + 1, original_index: index, recorded_title: source.title || "", requested_url: requestedUrl,
+    final_url: finalUrl, http_status: status, retrieval_status: retrievalStatus,
+    verified_claim_count: verifiedClaims.length, unsupported_claim_count: unsupportedClaims.length,
+    passed, warnings, failures });
 }
 
 const passedIndexes = results.filter((item) => item.passed).map((item) => item.original_index);
-const failed = results.filter((item) => !item.passed);
-const enoughSurvivors = passedIndexes.length >= 1;
-const report = { schema_version: 5, edition: DATE, generated_at: new Date().toISOString(), passed: enoughSurvivors, degraded: failed.length > 0 && enoughSurvivors, source_count: results.length, survivor_count: passedIndexes.length, failed_source_count: failed.length, policy: "Hard-block invalid URLs, 404/410 pages and unsupported responses. Retain reachable sources and publisher-blocked 401/403/429 sources with complete research evidence for explicit human review. Continue when at least one candidate survives.", results };
-fs.writeFileSync(reportPath, `${JSON.stringify(report, null, 2)}\n`, "utf8");
+const report = { schema_version: 6, edition: DATE, generated_at: new Date().toISOString(),
+  passed: passedIndexes.length >= 1, degraded: passedIndexes.length < results.length && passedIndexes.length >= 1,
+  source_count: results.length, survivor_count: passedIndexes.length,
+  policy: "A source survives only when usable body text supports at least one atomic material claim. Missing numbers, entities, dates and comparisons are blocking for those claim components.", results };
+fs.writeFileSync(reportPath, `${JSON.stringify(report, null, 2)}\n`);
+fs.writeFileSync(evidencePath, `${JSON.stringify({ schema_version: 1, edition: DATE, records }, null, 2)}\n`);
 
 for (const item of results) {
-  const label = item.passed ? "SOURCE KEEP" : "SOURCE BLOCK";
-  console[item.passed ? "log" : "error"](`${label} ${item.index}: ${item.recorded_title}`);
-  for (const warning of item.warnings) console.warn(`  - WARNING: ${warning}`);
-  for (const failure of item.failures) console.error(`  - ${failure}`);
+  console[item.passed ? "log" : "error"](`${item.passed ? "SOURCE KEEP" : "SOURCE BLOCK"} ${item.index}: ${item.recorded_title}`);
+  item.warnings.forEach((warning) => console.warn(`  - WARNING: ${warning}`));
+  item.failures.forEach((failure) => console.error(`  - ${failure}`));
 }
-if (!enoughSurvivors) throw new Error("No source candidates passed integrity validation.");
+if (!passedIndexes.length) throw new Error("No source candidates retained a usable verified factual core.");
 
-if (failed.length) {
-  const previousState = fs.existsSync(pruneStatePath) ? JSON.parse(fs.readFileSync(pruneStatePath, "utf8")) : { edition: DATE, initial_count: sources.length, dropped: [] };
-  const droppedNow = failed.map((item) => ({ title: item.recorded_title, url: item.requested_url, reason: item.failures.join(" ") }));
+if (passedIndexes.length !== sources.length) {
+  const dropped = results.filter((item) => !item.passed).map((item) => ({ title: item.recorded_title, url: item.requested_url, reason: item.failures.join(" ") }));
   structured.sources = passedIndexes.map((index) => sources[index]);
   structured.story_summaries = passedIndexes.map((index) => stories[index]);
-  fs.writeFileSync(structuredPath, `${JSON.stringify(structured, null, 2)}\n`, "utf8");
-  fs.writeFileSync(path.join(draftDir, "sources.json"), `${JSON.stringify(structured.sources, null, 2)}\n`, "utf8");
-  fs.writeFileSync(pruneStatePath, `${JSON.stringify({ ...previousState, survivor_count: structured.sources.length, dropped: [...(previousState.dropped || []), ...droppedNow], rebuilt_at: null }, null, 2)}\n`, "utf8");
-  console.log(`Integrity validation discarded ${failed.length} candidate(s) and retained ${structured.sources.length}.`);
-} else {
-  console.log(`All ${sources.length} source records passed integrity validation.`);
+  const survivorRecords = passedIndexes.map((index) => records[index]);
+  fs.writeFileSync(structuredPath, `${JSON.stringify(structured, null, 2)}\n`);
+  fs.writeFileSync(path.join(draftDir, "sources.json"), `${JSON.stringify(structured.sources, null, 2)}\n`);
+  fs.writeFileSync(evidencePath, `${JSON.stringify({ schema_version: 1, edition: DATE, records: survivorRecords }, null, 2)}\n`);
+  fs.writeFileSync(pruneStatePath, `${JSON.stringify({ edition: DATE, initial_count: sources.length, survivor_count: passedIndexes.length, dropped, rebuilt_at: null }, null, 2)}\n`);
 }

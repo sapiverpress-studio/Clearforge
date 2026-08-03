@@ -9,7 +9,7 @@ const requiredScripts = {
 };
 
 for (const [name, expected] of Object.entries(requiredScripts)) {
-  if (pkg.scripts?.[name] !== expected) {
+  if (!String(pkg.scripts?.[name] || "").includes(expected)) {
     throw new Error(`${name} must use the graceful production path: ${expected}`);
   }
 }

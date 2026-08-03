@@ -13,11 +13,13 @@ for (const name of requiredScriptRoutes) {
 const requiredProtections = [
   "locked-facts.json",
   "fact-discipline-report.json",
-  "100%",
-  "mandatory for all AI interactions in the EU",
-  "C2PA metadata",
-  "supported_fact",
-  "labelled_interpretation"
+  "source-evidence.json",
+  "verified atomic claim",
+  "exact_supporting_evidence_passage",
+  "verification_checks_performed",
+  "sapiver_forge_interpretation",
+  "Unsupported number",
+  "Unsupported named entity"
 ];
 for (const marker of requiredProtections) {
   if (!source.includes(marker)) throw new Error(`Fact-lock protection missing: ${marker}`);

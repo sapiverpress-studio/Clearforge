@@ -1,6 +1,6 @@
 {
   "name": "sapiver-forge-daily-ai-brief-builder",
-  "version": "0.17.0",
+  "version": "0.17.1",
   "private": true,
   "type": "module",
   "description": "Sapiver Forge automated daily AI news research, validation, depth-first reporting, social production, media and distribution system.",
@@ -27,7 +27,7 @@
     "media:ai": "node src/run-optional-media.mjs",
     "syndicate:dev": "node src/post-feature-to-dev.mjs",
     "export:approved": "node src/export-approved-bundle.mjs",
-    "build:site": "node scripts/build-sapiver-forge-site.mjs && node src/build-evergreen-guides.mjs && node scripts/hide-podcast-rss-link.mjs && npm run build:publishing && node scripts/rebrand-public-sapiver-forge.mjs && node scripts/build-sales-discoverability.mjs && node scripts/finalise-sapiver-selectors.mjs",
+    "build:site": "node scripts/build-sapiver-forge-site.mjs && node scripts/add-tiktok-publishing-packs.mjs && node src/build-evergreen-guides.mjs && node scripts/hide-podcast-rss-link.mjs && npm run build:publishing && node scripts/rebrand-public-sapiver-forge.mjs && node scripts/build-sales-discoverability.mjs && node scripts/finalise-sapiver-selectors.mjs",
     "release:desk": "node src/build-release-desk.mjs",
     "release:approve": "node src/approve-release.mjs",
     "review:human": "npm run facts:enforce && npm run brand:current && node src/build-human-review-package.mjs",
@@ -39,6 +39,7 @@
     "test:production-source-path": "node test/production-source-path-contract.mjs",
     "test:graceful-production": "node test/graceful-production-contract.mjs",
     "test:fact-lock": "node test/fact-lock-contract.mjs",
+    "test:tiktok-pack": "node test/tiktok-publishing-pack-contract.mjs",
     "build:publishing": "node src/build-publishing-dashboard.mjs",
     "test:gemini": "node test/gemini-provider-contract.mjs",
     "validate:public-brand": "node scripts/validate-sapiver-forge-public.mjs"

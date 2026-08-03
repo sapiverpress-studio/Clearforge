@@ -3,7 +3,7 @@ import path from "node:path";
 
 const ROOT = process.cwd();
 const requestedBase = String(process.env.PODCAST_BASE_URL || "").replace(/\/$/, "");
-const LEGACY_BASE = "https://clearforge-daily-brief.netlify.app";
+const LEGACY_BASE = "https://sapiver-forge-daily-brief.netlify.app";
 const SAPIVER_FORGE_BASE = "https://sapiverforge-daily-brief.netlify.app";
 const BASE = !requestedBase || requestedBase === LEGACY_BASE ? SAPIVER_FORGE_BASE : requestedBase;
 const sourceMp3 = process.env.SOURCE_MP3;
@@ -130,7 +130,7 @@ const items = episodes.map((item) => `    <item>
       <description>${esc(item.description)}</description>
       <content:encoded><![CDATA[${episodeNotesHtml(item)}]]></content:encoded>
       <link>${esc(item.episode_url)}</link>
-      <guid isPermaLink="false">clearforge:${esc(item.slug)}</guid>
+      <guid isPermaLink="false">sapiver-forge:${esc(item.slug)}</guid>
       <pubDate>${rfc822(item.published)}</pubDate>
       <enclosure url="${esc(item.audio_url)}" length="${item.size}" type="audio/mpeg"/>
       <itunes:author>Sapiver Forge</itunes:author>
@@ -151,7 +151,7 @@ const feed = `<?xml version="1.0" encoding="UTF-8"?>
     <link>${BASE}/podcast/</link>
     <description>AI news is noisy. Sapiver Forge explains what changed, who is adopting it, why it matters and what is worth testing next.</description>
     <language>en-gb</language>
-    <managingEditor>clearforge@sapiverpress.co.uk (Sapiver Forge)</managingEditor>
+    <managingEditor>sapiver-forge@sapiverpress.co.uk (Sapiver Forge)</managingEditor>
     <copyright>Sapiver Forge by Sapiver Press</copyright>
     <generator>Sapiver Forge hosted podcast feed</generator>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
@@ -159,7 +159,7 @@ const feed = `<?xml version="1.0" encoding="UTF-8"?>
     <itunes:author>Sapiver Forge</itunes:author>
     <itunes:owner>
       <itunes:name>Sapiver Forge</itunes:name>
-      <itunes:email>clearforge@sapiverpress.co.uk</itunes:email>
+      <itunes:email>sapiver-forge@sapiverpress.co.uk</itunes:email>
     </itunes:owner>
     <itunes:summary>Human-led, practical AI learning without the hype. Daily briefings, weekly learning editions and focused research into real-world AI adoption.</itunes:summary>
     <itunes:type>episodic</itunes:type>
@@ -171,10 +171,10 @@ ${items}
 </rss>
 `;
 
-const platforms = `<nav class="platforms" aria-label="Listen on podcast platforms"><a href="https://open.spotify.com/show/033OE4kukRlRAdyj9thlIW">Spotify</a><a href="https://www.youtube.com/playlist?list=PLAfD5uKmtbYA">YouTube Podcasts</a><a href="https://tunein.com/radio/p4767014">TuneIn</a><a href="https://music.amazon.co.uk/podcasts/8d3316de-09fa-4934-8bfe-28b4a5b576a7/clearforge-ai-briefing">Amazon Music</a><a href="/podcast/feed.xml">RSS feed</a></nav>`;
+const platforms = `<nav class="platforms" aria-label="Listen on podcast platforms"><a href="https://open.spotify.com/show/033OE4kukRlRAdyj9thlIW">Spotify</a><a href="https://www.youtube.com/playlist?list=PLAfD5uKmtbYA">YouTube Podcasts</a><a href="https://tunein.com/radio/p4767014">TuneIn</a><a href="https://music.amazon.co.uk/podcasts/8d3316de-09fa-4934-8bfe-28b4a5b576a7/sapiver-forge-ai-briefing">Amazon Music</a><a href="/podcast/feed.xml">RSS feed</a></nav>`;
 const cards = episodes.map((item) => `<article><p class="kind">${htmlEsc(item.kind)}${item.archived ? " · archived" : ""}</p><h2><a href="/podcast/episodes/${encodeURIComponent(item.slug)}.html">${htmlEsc(item.title)}</a></h2><p>${htmlEsc(item.description)}</p><audio controls preload="none" src="${htmlEsc(item.audio_url)}"></audio><p><a href="${htmlEsc(item.episode_url)}">Show notes</a> · <a href="${htmlEsc(item.related_article_url)}">Daily briefing</a> · ${item.archived && item.archive_url ? `<a href="${htmlEsc(item.archive_url)}">Complete ZIP archive</a>` : `<a href="${htmlEsc(item.audio_url)}">MP3</a>${item.video_url ? ` · <a href="${htmlEsc(item.video_url)}">MP4</a>` : ""}`}</p></article>`).join("\n");
 const podcastSchema = JSON.stringify({ "@context": "https://schema.org", "@type": "PodcastSeries", name: "Sapiver Forge AI Briefing", description: "Practical AI news, adoption analysis and workflow learning without the hype.", url: `${BASE}/podcast/`, webFeed: `${BASE}/podcast/feed.xml`, image: `${BASE}/podcast/cover.png`, author: { "@type": "Organization", name: "Sapiver Forge" } }).replace(/</g, "\\u003c");
-const index = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sapiver Forge AI Briefing Podcast</title><meta name="description" content="Practical AI news, real-world adoption analysis and useful workflow learning without the hype."><link rel="canonical" href="${BASE}/podcast/"><meta property="og:type" content="website"><meta property="og:title" content="Sapiver Forge AI Briefing Podcast"><meta property="og:description" content="What changed, who is adopting it, why it matters and what is worth testing next."><meta property="og:image" content="${BASE}/podcast/cover.png"><link rel="alternate" type="application/rss+xml" title="Sapiver Forge AI Briefing" href="/podcast/feed.xml"><script type="application/ld+json">${podcastSchema}</script><style>body{margin:0;background:#07111f;color:#eef4ff;font:17px/1.6 system-ui}main{max-width:900px;margin:auto;padding:48px 20px}a{color:#66a7ff}.platforms{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 34px}.platforms a{display:inline-block;padding:10px 14px;border:1px solid #345274;border-radius:999px;background:#101d30;text-decoration:none;font-weight:650}.platforms a:hover{background:#172a43}article,.latest-short{background:#101d30;border:1px solid #263b59;border-radius:18px;padding:24px;margin:24px 0}audio{width:100%}.kind,.eyebrow{text-transform:uppercase;letter-spacing:.12em;color:#78aef5;font-size:.75rem}h1,h2{line-height:1.15}</style></head><body><main><p><a href="/">Sapiver Forge</a> · Human-led. AI-empowered.</p><h1>Sapiver Forge AI Briefing</h1><p>Practical AI learning without the hype. Each episode explains what changed, who is adopting it, why it matters and what is worth testing.</p>${platforms}<section class="latest-short" data-clearforge-latest-short hidden><p class="eyebrow">Ready to post</p><h2>Latest TikTok video and caption</h2><div data-short-content></div></section>${cards || "<p>The first hosted episode is being prepared.</p>"}<p><a href="/topics/">Explore Sapiver Forge topics</a> · <a href="/newsletter/">Join the weekly digest</a></p></main><script src="/podcast/latest-short.js"></script></body></html>`;
+const index = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sapiver Forge AI Briefing Podcast</title><meta name="description" content="Practical AI news, real-world adoption analysis and useful workflow learning without the hype."><link rel="canonical" href="${BASE}/podcast/"><meta property="og:type" content="website"><meta property="og:title" content="Sapiver Forge AI Briefing Podcast"><meta property="og:description" content="What changed, who is adopting it, why it matters and what is worth testing next."><meta property="og:image" content="${BASE}/podcast/cover.png"><link rel="alternate" type="application/rss+xml" title="Sapiver Forge AI Briefing" href="/podcast/feed.xml"><script type="application/ld+json">${podcastSchema}</script><style>body{margin:0;background:#07111f;color:#eef4ff;font:17px/1.6 system-ui}main{max-width:900px;margin:auto;padding:48px 20px}a{color:#66a7ff}.platforms{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 34px}.platforms a{display:inline-block;padding:10px 14px;border:1px solid #345274;border-radius:999px;background:#101d30;text-decoration:none;font-weight:650}.platforms a:hover{background:#172a43}article,.latest-short{background:#101d30;border:1px solid #263b59;border-radius:18px;padding:24px;margin:24px 0}audio{width:100%}.kind,.eyebrow{text-transform:uppercase;letter-spacing:.12em;color:#78aef5;font-size:.75rem}h1,h2{line-height:1.15}</style></head><body><main><p><a href="/">Sapiver Forge</a> · Human-led. AI-empowered.</p><h1>Sapiver Forge AI Briefing</h1><p>Practical AI learning without the hype. Each episode explains what changed, who is adopting it, why it matters and what is worth testing.</p>${platforms}<section class="latest-short" data-sapiver-forge-latest-short hidden><p class="eyebrow">Ready to post</p><h2>Latest TikTok video and caption</h2><div data-short-content></div></section>${cards || "<p>The first hosted episode is being prepared.</p>"}<p><a href="/topics/">Explore Sapiver Forge topics</a> · <a href="/newsletter/">Join the weekly digest</a></p></main><script src="/podcast/latest-short.js"></script></body></html>`;
 
 const currentIndex = episodes.findIndex((item) => item.slug === slug);
 const newer = currentIndex > 0 ? episodes[currentIndex - 1] : null;

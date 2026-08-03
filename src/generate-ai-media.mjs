@@ -5,7 +5,7 @@ import OpenAI from "./gemini-openai-compat.mjs";
 import { campaignIsActive, writeCampaignRecord } from "./commercial-campaign.mjs";
 
 const ROOT = process.cwd();
-const DATE = process.env.SAPIVER_FORGE_DATE || process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
+const DATE = process.env.SAPIVER_FORGE_DATE || process.env.SAPIVER_FORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
 const draftDir = path.join(ROOT, "drafts", DATE);

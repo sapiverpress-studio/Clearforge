@@ -77,9 +77,9 @@ if (fs.existsSync(validationPath)) {
 }
 
 for (const obsolete of [
-  path.join(podcastDir, `clearforge-daily-podcast-${edition}.mp3`),
-  path.join(podcastDir, `clearforge-daily-podcast-${edition}.mp3.source-sha256`),
-  path.join(podcastDir, `clearforge-daily-podcast-${edition}.mp4`),
+  path.join(podcastDir, `sapiver-forge-daily-podcast-${edition}.mp3`),
+  path.join(podcastDir, `sapiver-forge-daily-podcast-${edition}.mp3.source-sha256`),
+  path.join(podcastDir, `sapiver-forge-daily-podcast-${edition}.mp4`),
   path.join("media", edition, "narration.mp3"),
   path.join("media", edition, "tiktok-narration.mp3"),
   path.join("drafts", edition, "candidate-manifest.json")

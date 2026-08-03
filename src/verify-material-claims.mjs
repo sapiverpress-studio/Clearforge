@@ -8,7 +8,7 @@ import {
 } from "./deterministic-claim-guards.mjs";
 
 const ROOT = process.cwd();
-const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
+const DATE = process.env.SAPIVER_FORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
 const draftDir = path.join(ROOT, "drafts", DATE);
@@ -226,7 +226,7 @@ Return exactly one audit entry for every supplied occurrence_id in all three aud
   text: {
     format: {
       type: "json_schema",
-      name: "clearforge_material_claim_verification",
+      name: "sapiver-forge_material_claim_verification",
       strict: true,
       schema
     }

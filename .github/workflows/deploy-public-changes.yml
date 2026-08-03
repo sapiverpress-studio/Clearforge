@@ -44,11 +44,11 @@ jobs:
           const file = 'src/build-site.mjs';
           let source = fs.readFileSync(file, 'utf8');
           source = source
-            .replaceAll('https://clearforge-daily-brief.netlify.app', 'https://sapiverforge-daily-brief.netlify.app')
-            .replaceAll('Clearforge', 'Sapiver Forge');
+            .replaceAll('https://sapiver-forge-daily-brief.netlify.app', 'https://sapiverforge-daily-brief.netlify.app')
+            .replaceAll('Sapiver Forge', 'Sapiver Forge');
           fs.writeFileSync(file, source, 'utf8');
-          if (source.includes('https://clearforge-daily-brief.netlify.app') || /\bClearforge\b/.test(source)) {
-            throw new Error('Active website generator still contains Clearforge branding.');
+          if (source.includes('https://sapiver-forge-daily-brief.netlify.app') || /\bSapiver Forge\b/.test(source)) {
+            throw new Error('Active website generator still contains Sapiver Forge branding.');
           }
           console.log('Active website generator now uses Sapiver Forge branding.');
           NODE
@@ -67,8 +67,8 @@ jobs:
           set -euo pipefail
           if grep -RInE --include='*.html' --include='*.xml' --include='*.json' --include='*.js' --include='*.txt' --include='*.md' \
             'Clearforge|ClearForge|CLEARFORGE|clearforge-daily-brief\.netlify\.app' public \
-            | grep -vE '<guid isPermaLink="false">clearforge:'; then
-            echo "::error::Active Clearforge branding remains in the public deployment."
+            | grep -vE '<guid isPermaLink="false">sapiver-forge:'; then
+            echo "::error::Active Sapiver Forge branding remains in the public deployment."
             exit 1
           fi
 

@@ -12,7 +12,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  CLEARFORGE_DATE: "2026-08-02"
+  SAPIVER_FORGE_DATE: "2026-08-02"
   ORIGINAL_ARTIFACT_ID: "8830323452"
 
 jobs:
@@ -42,7 +42,7 @@ jobs:
           gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ORIGINAL_ARTIFACT_ID}/zip" > "$archive"
           mkdir -p "$stage"
           unzip -q "$archive" -d "$stage"
-          test -f "$stage/drafts/${CLEARFORGE_DATE}/candidate-manifest.json"
+          test -f "$stage/drafts/${SAPIVER_FORGE_DATE}/candidate-manifest.json"
           cp -a "$stage/." .
 
       - name: Apply deterministic factual and commercial repair
@@ -53,15 +53,15 @@ jobs:
         run: |
           set -euo pipefail
           rm -f \
-            "drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp3" \
-            "drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp3.source-sha256" \
-            "drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp4" \
-            "media/${CLEARFORGE_DATE}/narration.mp3" \
-            "media/${CLEARFORGE_DATE}/tiktok-narration.mp3" \
-            "public/podcast/episodes/${CLEARFORGE_DATE}.mp3" \
-            "public/podcast/episodes/${CLEARFORGE_DATE}.mp4" \
-            "public/podcast/episodes/${CLEARFORGE_DATE}.html" \
-            "public/podcast/episodes/${CLEARFORGE_DATE}.txt"
+            "drafts/${SAPIVER_FORGE_DATE}/podcast/sapiver-forge-daily-podcast-${SAPIVER_FORGE_DATE}.mp3" \
+            "drafts/${SAPIVER_FORGE_DATE}/podcast/sapiver-forge-daily-podcast-${SAPIVER_FORGE_DATE}.mp3.source-sha256" \
+            "drafts/${SAPIVER_FORGE_DATE}/podcast/sapiver-forge-daily-podcast-${SAPIVER_FORGE_DATE}.mp4" \
+            "media/${SAPIVER_FORGE_DATE}/narration.mp3" \
+            "media/${SAPIVER_FORGE_DATE}/tiktok-narration.mp3" \
+            "public/podcast/episodes/${SAPIVER_FORGE_DATE}.mp3" \
+            "public/podcast/episodes/${SAPIVER_FORGE_DATE}.mp4" \
+            "public/podcast/episodes/${SAPIVER_FORGE_DATE}.html" \
+            "public/podcast/episodes/${SAPIVER_FORGE_DATE}.txt"
           node <<'NODE'
           const fs = require('fs');
           const path = require('path');
@@ -81,14 +81,14 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          ! grep -R -n -E '38% of (U\.S\. )?workers|hardware-level isolation is required|requires disclosure for all AI interactions and synthetic media|visit for our release gate guide|COPY_PASTE_INTO_ELEVENLABS' "drafts/${CLEARFORGE_DATE}" public --include='*.md' --include='*.txt' --include='*.json' --include='*.html' --include='*.xml'
-          test ! -e "public/podcast/episodes/${CLEARFORGE_DATE}.mp3"
-          test ! -e "public/podcast/episodes/${CLEARFORGE_DATE}.mp4"
+          ! grep -R -n -E '38% of (U\.S\. )?workers|hardware-level isolation is required|requires disclosure for all AI interactions and synthetic media|visit for our release gate guide|COPY_PASTE_INTO_ELEVENLABS' "drafts/${SAPIVER_FORGE_DATE}" public --include='*.md' --include='*.txt' --include='*.json' --include='*.html' --include='*.xml'
+          test ! -e "public/podcast/episodes/${SAPIVER_FORGE_DATE}.mp3"
+          test ! -e "public/podcast/episodes/${SAPIVER_FORGE_DATE}.mp4"
 
       - name: Build and seal replacement human-review candidate
         env:
-          CLEARFORGE_WORKFLOW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          CLEARFORGE_SOURCE_COMMIT: ${{ github.sha }}
+          SAPIVER_FORGE_WORKFLOW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          SAPIVER_FORGE_SOURCE_COMMIT: ${{ github.sha }}
         run: npm run review:human
 
       - name: Read replacement candidate identity
@@ -96,9 +96,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          manifest="drafts/${CLEARFORGE_DATE}/candidate-manifest.json"
+          manifest="drafts/${SAPIVER_FORGE_DATE}/candidate-manifest.json"
           candidate_id="$(jq -r '.candidate_id' "$manifest")"
-          review_file="$(find "drafts/${CLEARFORGE_DATE}" -maxdepth 1 -name 'human-review-*.html' -type f | head -1)"
+          review_file="$(find "drafts/${SAPIVER_FORGE_DATE}" -maxdepth 1 -name 'human-review-*.html' -type f | head -1)"
           test "${#candidate_id}" -eq 64
           test -f "$review_file"
           echo "candidate_id=$candidate_id" >> "$GITHUB_OUTPUT"
@@ -107,7 +107,7 @@ jobs:
       - name: Upload replacement sealed candidate
         uses: actions/upload-artifact@v4
         with:
-          name: clearforge-candidate-2026-08-02-${{ steps.candidate.outputs.candidate_id }}
+          name: sapiver-forge-candidate-2026-08-02-${{ steps.candidate.outputs.candidate_id }}
           path: |
             drafts/2026-08-02/
             media/2026-08-02/
@@ -136,7 +136,7 @@ jobs:
           {
             echo "## Text-only replacement candidate ready"
             echo
-            echo "- Edition: ${CLEARFORGE_DATE}"
+            echo "- Edition: ${SAPIVER_FORGE_DATE}"
             echo "- Replacement candidate: ${{ steps.candidate.outputs.candidate_id }}"
             echo "- Original candidate must not be released."
             echo "- Research and artwork were reused."

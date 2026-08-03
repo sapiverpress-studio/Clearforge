@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const base = "https://clearforge-daily-brief.netlify.app";
+const base = "https://sapiver-forge-daily-brief.netlify.app";
 const root = path.join(process.cwd(), "public", "podcast");
 const episodesDir = path.join(root, "episodes");
 fs.mkdirSync(episodesDir, { recursive: true });

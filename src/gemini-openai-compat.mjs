@@ -3,9 +3,9 @@ import path from "node:path";
 import { generateGroundedEvidence, generateImage, generateSpeechWav, generateStructured } from "./gemini-provider.mjs";
 
 const ROOT = process.cwd();
-const FALLBACK_ART_BASE64_PATH = process.env.CLEARFORGE_FALLBACK_ART_BASE64_PATH
-  ? path.resolve(ROOT, process.env.CLEARFORGE_FALLBACK_ART_BASE64_PATH)
-  : path.join(ROOT, "assets", "clearforge-fallback-art.jpg.base64");
+const FALLBACK_ART_BASE64_PATH = process.env.SAPIVER_FORGE_FALLBACK_ART_BASE64_PATH
+  ? path.resolve(ROOT, process.env.SAPIVER_FORGE_FALLBACK_ART_BASE64_PATH)
+  : path.join(ROOT, "assets", "sapiver-forge-fallback-art.jpg.base64");
 
 function fallbackArtworkBase64() {
   if (!fs.existsSync(FALLBACK_ART_BASE64_PATH)) {

@@ -17,7 +17,7 @@ fs.writeFileSync(path.join(draft, "approval.json"), JSON.stringify({
 const result = spawnSync(process.execPath, [path.join(repo, "src/post-feature-to-dev.mjs")], {
   cwd: root,
   encoding: "utf8",
-  env: { ...process.env, CLEARFORGE_DATE: edition, DEV_API_KEY: "unused" }
+  env: { ...process.env, SAPIVER_FORGE_DATE: edition, DEV_API_KEY: "unused" }
 });
 
 assert.equal(result.status, 0, result.stderr);

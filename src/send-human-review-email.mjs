@@ -3,15 +3,15 @@ import path from "node:path";
 
 const ROOT = process.cwd();
 const apiKey = process.env.BREVO_API_KEY;
-const recipientEmail = process.env.CLEARFORGE_REVIEW_EMAIL;
-const senderEmail = process.env.BREVO_SENDER_EMAIL || "clearforge@sapiverpress.co.uk";
+const recipientEmail = process.env.SAPIVER_FORGE_REVIEW_EMAIL;
+const senderEmail = process.env.BREVO_SENDER_EMAIL || "sapiver-forge@sapiverpress.co.uk";
 const senderName = process.env.BREVO_SENDER_NAME || "Sapiver Forge";
-const edition = String(process.env.CLEARFORGE_DATE || "").trim();
-const candidateId = String(process.env.CLEARFORGE_CANDIDATE_ID || "").trim();
-const runUrl = String(process.env.CLEARFORGE_RUN_URL || "").trim();
-const dryRun = String(process.env.CLEARFORGE_EMAIL_DRY_RUN || "false").toLowerCase() === "true";
+const edition = String(process.env.SAPIVER_FORGE_DATE || "").trim();
+const candidateId = String(process.env.SAPIVER_FORGE_CANDIDATE_ID || "").trim();
+const runUrl = String(process.env.SAPIVER_FORGE_RUN_URL || "").trim();
+const dryRun = String(process.env.SAPIVER_FORGE_EMAIL_DRY_RUN || "false").toLowerCase() === "true";
 if (!apiKey) throw new Error("Missing BREVO_API_KEY.");
-if (!recipientEmail) throw new Error("Missing CLEARFORGE_REVIEW_EMAIL.");
+if (!recipientEmail) throw new Error("Missing SAPIVER_FORGE_REVIEW_EMAIL.");
 if (!edition || !/^[a-f0-9]{64}$/.test(candidateId)) throw new Error("Missing edition or candidate ID.");
 
 const draftDir = path.join(ROOT, "drafts", edition);

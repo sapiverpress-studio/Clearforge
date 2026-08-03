@@ -18,7 +18,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: clearforge-production-deploy
+  group: sapiver-forge-production-deploy
   cancel-in-progress: true
 
 jobs:

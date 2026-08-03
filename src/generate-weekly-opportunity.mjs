@@ -3,7 +3,7 @@ import path from "node:path";
 import OpenAI from "./gemini-openai-compat.mjs";
 
 const ROOT = process.cwd();
-const weekEnd = process.env.CLEARFORGE_WEEK_END || new Intl.DateTimeFormat("sv-SE", {
+const weekEnd = process.env.SAPIVER_FORGE_WEEK_END || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
 const end = new Date(`${weekEnd}T12:00:00Z`);
@@ -65,7 +65,7 @@ const response = await client.responses.create({
     { role: "system", content: "You are Sapiver Forge's commercial editorial analyst. Analyse only the supplied approved research. The current flagship under validation is the £19 Sapiver Forge AI Output Release Gate. Its job is to help creators, freelancers and small teams check AI-assisted work before publication, client delivery or action, record a named human reviewer, and reach a Release, Revise or Stop decision. Do not invent a different paid product merely to fill a weekly plan. First test whether the week's evidence supports this flagship, a small update or extension to it, or a free diagnostic that leads naturally to it. Never force the flagship onto unrelated evidence. Recommend a new pack only when at least three distinct credible sources reveal a separate, urgent, repeatable problem that the Release Gate and Workflow Control Kit cannot reasonably solve. Never invent demand, statistics, testimonials, or facts." },
     { role: "user", content: `WEEK: ${weekStart} to ${weekEnd}\n\nAPPROVED EDITIONS:\n${JSON.stringify(editions)}\n\nCreate one weekly opportunity brief. Follow the locked Sapiver Forge editorial lanes in this exact order: Monday weekend roundup; Tuesday AI at work; Wednesday AI in everyday life; Thursday systems and automation; Friday new tools, stacks and workflows; Saturday prediction and outlook; Sunday recap and preparation. Use the seven content ideas to test and explain one genuine problem from different angles. Do not schedule an artificial Friday product launch: the Release Gate already exists. Choose the CTA from the reader's awareness level and the evidence. Use a save CTA when introducing a useful check, a simple response CTA when gathering audience language, and a direct Release Gate CTA only where the evidence naturally demonstrates a pre-send or pre-publication checking problem. Do not require a fixed number of product CTAs. Score the opportunity out of 35. A score below 22 should choose free_resource_only or an update/extension rather than a weak new pack. A new_pack route requires at least 30/35 and three distinct credible evidence items for a problem outside the scope of the Release Gate and Workflow Control Kit. Distinguish sourced evidence from inference. Avoid hype and income promises.` }
   ],
-  text: { format: { type: "json_schema", name: "clearforge_weekly_opportunity", strict: true, schema } }
+  text: { format: { type: "json_schema", name: "sapiver-forge_weekly_opportunity", strict: true, schema } }
 });
 
 if (!response.output_text) throw new Error("Gemini returned no weekly opportunity output.");

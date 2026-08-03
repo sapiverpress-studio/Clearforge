@@ -27,7 +27,7 @@ const imageHashesBefore = Object.fromEntries(fs.readdirSync(media).map((file) =>
 
 function run(script, extraEnv = {}) {
   const result = spawnSync(process.execPath, [path.join(repo, "src", script)], {
-    cwd: root, encoding: "utf8", env: { ...process.env, CLEARFORGE_DATE: "2026-08-03", ...extraEnv }
+    cwd: root, encoding: "utf8", env: { ...process.env, SAPIVER_FORGE_DATE: "2026-08-03", ...extraEnv }
   });
   assert.equal(result.status, 0, `${script} failed:\n${result.stdout}\n${result.stderr}`);
 }
@@ -76,7 +76,7 @@ spawnSync("git", ["init", "-q"], { cwd: root });
 spawnSync("git", ["config", "user.email", "replay@sapiverforge.invalid"], { cwd: root });
 spawnSync("git", ["config", "user.name", "Sapiver Forge Replay"], { cwd: root });
 spawnSync("git", ["commit", "--allow-empty", "-qm", "replay baseline"], { cwd: root });
-run("build-human-review-package.mjs", { CLEARFORGE_RUN_URL: "https://github.com/sapiverpress-studio/SapiverForge/actions/runs/30785673296", CLEARFORGE_SOURCE_SHA: "replay" });
+run("build-human-review-package.mjs", { SAPIVER_FORGE_RUN_URL: "https://github.com/sapiverpress-studio/SapiverForge/actions/runs/30785673296", SAPIVER_FORGE_SOURCE_SHA: "replay" });
 const review = fs.readFileSync(fs.readdirSync(draft).map((file) => path.join(draft, file)).find((file) => /human-review-/.test(file)), "utf8");
 assert.match(review, /Claims excluded from locked facts/);
 assert.doesNotMatch(review, /None — all material claims used in this edition were verified/);

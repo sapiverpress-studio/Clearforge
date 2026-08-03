@@ -17,7 +17,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: clearforge-organic-growth-rebuild
+  group: sapiver-forge-organic-growth-rebuild
   cancel-in-progress: false
 
 jobs:

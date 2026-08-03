@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const ROOT = process.cwd();
-const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
+const DATE = process.env.SAPIVER_FORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London",
   year: "numeric",
   month: "2-digit",
@@ -16,7 +16,7 @@ const approvalPath = path.join(draftDir, "approval.json");
 const structuredPath = path.join(draftDir, "structured_output.json");
 const articlePath = path.join(draftDir, "daily_brief.md");
 const socialPath = path.join(draftDir, "social_pack.md");
-const outDir = path.join(ROOT, "bridge", "clearforge", DATE);
+const outDir = path.join(ROOT, "bridge", "sapiver-forge", DATE);
 const socialHashtags = "#AINews #AIWorkflow #PracticalAI #SapiverForge #HumanLedAI";
 const cta = {
   spoken: "Read the full breakdown through the link in our bio, or search Sapiver Forge AI Briefing in your podcast app to listen on the go.",
@@ -60,7 +60,7 @@ function appendHashtags(text) {
     .replace(/#AITools\b/gi, "")
     .replace(/#FacelessContentCreator\b/gi, "")
     .replace(/#SapiverPress\b/gi, "")
-    .replace(/#Clearforge\b/gi, "")
+    .replace(/#Sapiver Forge\b/gi, "")
     .replace(/#Sapiver\s+Forge\b/gi, "")
     .replace(/#SapiverForge\b/gi, "")
     .replace(/#HumanLedAI\b/gi, "")
@@ -101,7 +101,7 @@ const manifest = {
   version: 5,
   brand: "Sapiver Forge",
   date: DATE,
-  type: "clearforge_daily_ai_brief",
+  type: "sapiver-forge_daily_ai_brief",
   approved: {
     article: approval.article_approved === true,
     facebook: approval.facebook_approved === true,
@@ -169,7 +169,7 @@ write("social_pack.md", fs.readFileSync(socialPath, "utf8"));
 write("structured_output.json", JSON.stringify(data, null, 2));
 write("approval.json", JSON.stringify(approval, null, 2));
 
-const latestDir = path.join(ROOT, "bridge", "clearforge", "latest");
+const latestDir = path.join(ROOT, "bridge", "sapiver-forge", "latest");
 fs.rmSync(latestDir, { recursive: true, force: true });
 copyDir(outDir, latestDir);
 

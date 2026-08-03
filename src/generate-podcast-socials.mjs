@@ -3,7 +3,7 @@ import path from "node:path";
 import OpenAI from "./gemini-openai-compat.mjs";
 
 const ROOT = process.cwd();
-const DATE = process.env.SAPIVER_FORGE_DATE || process.env.CLEARFORGE_DATE;
+const DATE = process.env.SAPIVER_FORGE_DATE || process.env.SAPIVER_FORGE_DATE;
 const dir = path.join(ROOT, "drafts", DATE);
 const structuredPath = path.join(dir, "structured_output.json");
 const podcastPath = path.join(dir, "podcast", "COPY_PASTE_INTO_ELEVENLABS.txt");

@@ -21,7 +21,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: clearforge-gemini-voice-test
+  group: sapiver-forge-gemini-voice-test
   cancel-in-progress: false
 
 jobs:
@@ -81,7 +81,7 @@ jobs:
         shell: bash
         run: |
           cat > voice-test/START_HERE.txt <<'EOF'
-          CLEARFORGE GEMINI VOICE TEST
+          SAPIVER FORGE GEMINI VOICE TEST
 
           1. Play the MP3 beginning LISTEN-GEMINI.
           2. Compare it with the published Irene version of the same edition.

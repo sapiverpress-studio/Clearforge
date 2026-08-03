@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const ROOT = process.cwd();
-const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
+const DATE = process.env.SAPIVER_FORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
 
@@ -96,7 +96,7 @@ const genericOpeningPatterns = [
   /^ai news is noisy\b/i,
   /^today in (practical )?ai\b/i,
   /^here(?:'s| is) the latest ai news\b/i,
-  /^clearforge\b/i,
+  /^sapiver-forge\b/i,
   /^in today(?:'s)? (?:ai )?(?:news|brief)\b/i
 ];
 

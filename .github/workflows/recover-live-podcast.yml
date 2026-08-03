@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: clearforge-podcast-recovery
+  group: sapiver-forge-podcast-recovery
   cancel-in-progress: false
 
 jobs:
@@ -34,7 +34,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          git config user.name "clearforge-audio-bot"
+          git config user.name "sapiver-forge-audio-bot"
           git config user.email "actions@users.noreply.github.com"
           git add -- public/podcast
           if git diff --cached --quiet; then

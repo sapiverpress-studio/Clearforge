@@ -6,8 +6,8 @@ const ROOT = process.cwd();
 const londonDate = new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
-const DATE = process.env.CLEARFORGE_DATE || `${londonDate}-alt`;
-const BASE_DATE = process.env.CLEARFORGE_BASE_DATE || DATE.replace(/-alt$/, "");
+const DATE = process.env.SAPIVER_FORGE_DATE || `${londonDate}-alt`;
+const BASE_DATE = process.env.SAPIVER_FORGE_BASE_DATE || DATE.replace(/-alt$/, "");
 const outDir = path.join(ROOT, "drafts", DATE);
 const baseDir = path.join(ROOT, "drafts", BASE_DATE);
 const runsDir = path.join(outDir, "runs");
@@ -15,7 +15,7 @@ const baseRunsDir = path.join(baseDir, "runs");
 const approvalPath = path.join(outDir, "approval.json");
 const structuredPath = path.join(outDir, "structured_output.json");
 const baseStructuredPath = path.join(baseDir, "structured_output.json");
-const angle = process.env.CLEARFORGE_ANGLE || "creator_workflow";
+const angle = process.env.SAPIVER_FORGE_ANGLE || "creator_workflow";
 
 function ensureDir(dir) { fs.mkdirSync(dir, { recursive: true }); }
 function readJson(file) { return JSON.parse(fs.readFileSync(file, "utf8")); }
@@ -36,7 +36,7 @@ function editorialTheme(dateValue) {
     Wednesday: { slug: "systems-automation", title: "Systems and automation", focus: "Systems, automation, agents, reliability, review loops, handoffs, repeatable processes, governance, failure points and human accountability.", instruction: "Emphasise what should and should not be automated, and where human review belongs." },
     Thursday: { slug: "stacks-workflows", title: "Stacks and workflows", focus: "Tool combinations: models, apps, APIs, image, video, voice, documents, databases, scheduling, publishing and creator pipelines.", instruction: "Explain how pieces fit together rather than treating tools as isolated announcements." },
     Friday: { slug: "new-to-scene-watchlist", title: "New to the scene / what to watch", focus: "Emerging tools, early releases, previews, newly visible trends and practical watchlist items.", instruction: "Make clear what is available now, what is staged, and what remains uncertain." },
-    Saturday: { slug: "clearforge-forecast", title: "Sapiver Forge forecast", focus: "Evidence-based forecast piece using the week’s confirmed developments.", instruction: "Label forecasts as forecasts. Ask what might reasonably follow and who may follow suit, without presenting predictions as facts." },
+    Saturday: { slug: "sapiver-forge-forecast", title: "Sapiver Forge forecast", focus: "Evidence-based forecast piece using the week’s confirmed developments.", instruction: "Label forecasts as forecasts. Ask what might reasonably follow and who may follow suit, without presenting predictions as facts." },
     Sunday: { slug: "weekly-recap-prediction-check", title: "Recap and prediction check", focus: "Recap the strongest developments of the week, check recent forecasts where evidence exists, and prepare the reader for the following week.", instruction: "Separate confirmed outcomes from still-open questions." }
   };
   return { day, date: datePart, ...themes[day] };
@@ -143,7 +143,7 @@ async function main() {
       { role: "system", content: "You are the Sapiver Forge alternate-angle editor. Reuse the supplied verified source material, but create a genuinely different editorial edition. Do not invent new source facts. Do not claim this is new reporting. Make the article, social post and video script feel meaningfully different from a standard news recap. Preserve the day’s editorial theme while applying the selected alternate lens. Do not introduce or amplify any claim that is unresolved in the source edition. Every story must retain support from the cited source material. A considered question is evidence-led scrutiny, not manufactured controversy: ask about a plausible consequence, trade-off, missing safeguard or affected group only when the supplied evidence supports raising that question." },
       { role: "user", content: `EDITION ID: ${DATE}\nSOURCE DATE: ${BASE_DATE}\nANGLE: ${angle}\nBASE RUN: ${base.name}\n\nWEEKDAY EDITORIAL THEME:\nDay: ${theme.day}\nTheme: ${theme.title}\nFocus: ${theme.focus}\nInstruction: ${theme.instruction}\n\nSOURCE MATERIAL:\n${JSON.stringify(base.data)}\n\nCreate a second daily edition from the same verified materials. Keep the same source URLs and confirmed facts, but change the angle. Preserve the weekday theme so the edition still fits the Sapiver Forge weekly rhythm. Angle guidance:\n- creator_workflow: explain what creators and small operators can practically test.\n- risk_control: focus on limits, review, safety, governance and what not to automate blindly.\n- beginner_learning: explain the story for AI learners without jargon.\n- business_systems: focus on workflows, cost, repeatability and process design.\n- considered_question: choose the morning edition's strongest development and examine one overlooked but evidence-supported practical consequence. Frame the edition around a natural question such as "Could this affect...?", "What happens if...?" or "Have they considered...?" Do not oppose the announcement merely to sound contrarian. Distinguish confirmed facts from the question being explored.\n\nRequirements:\n- main_article 700–1,000 words.\n- Full article must not read like the original news briefing.\n- Social and YouTube scripts must be new and useful for manual TikTok reposting.\n- For considered_question, TikTok, YouTube, Facebook and LinkedIn must open immediately with the specific considered question, explain the verified context, identify who could be affected and end with one easy concrete response prompt. Do not open with a news recap or "three updates".\n- For considered_question, keep TikTok focused on one story and one consequence. The question must be relatable and evidence-led, not vague fear, agreement bait or "What do you think?".\n- Same sources are allowed because this is an alternate-angle edition.\n- Do not add new URLs.\n- Do not invent new announcements, benchmarks, dates, prices or product availability.\n- Keep Sapiver Forge voice: practical, plain, no hype.\n- Set every story claim_to_verify to exactly "NONE — verified from cited sources." only when the reused source material supports every material claim used.\n- Keep claims_to_verify empty for publication. If the alternate framing creates an unsupported implication, record it there so validation blocks the edition.\n- For Saturday forecast editions, label forecasts as forecasts. For Sunday recap editions, separate confirmed outcomes from still-open questions.` }
     ],
-    text: { format: { type: "json_schema", name: "clearforge_alternate_angle_brief", strict: true, schema } }
+    text: { format: { type: "json_schema", name: "sapiver-forge_alternate_angle_brief", strict: true, schema } }
   });
 
   if (!response.output_text) throw new Error("Gemini returned no alternate-angle output.");

@@ -15,7 +15,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: clearforge-podcast-mp4-recovery
+  group: sapiver-forge-podcast-mp4-recovery
   cancel-in-progress: false
 
 jobs:
@@ -62,7 +62,7 @@ jobs:
           edition="${{ steps.edition.outputs.edition }}"
           folder="drafts/$edition/podcast"
           script="$folder/COPY_PASTE_INTO_ELEVENLABS.txt"
-          audio="$folder/clearforge-daily-podcast-$edition.mp3"
+          audio="$folder/sapiver-forge-daily-podcast-$edition.mp3"
           [[ -s "$script" ]] || { echo "Approved podcast script is missing: $script"; exit 1; }
           hash="$audio.source-sha256"
           source_hash="$(sha256sum "$script" | cut -d' ' -f1)"
@@ -70,7 +70,7 @@ jobs:
             echo "Existing Kore MP3 matches the narration; no Gemini request made."
           else
             [[ -n "${GEMINI_API_KEY:-}" ]] || { echo "Missing GEMINI_API_KEY repository secret."; exit 1; }
-            wav="$RUNNER_TEMP/clearforge-kore-$edition.wav"
+            wav="$RUNNER_TEMP/sapiver-forge-kore-$edition.wav"
             INPUT_PATH="$script" OUTPUT_PATH="$wav" node scripts/generate-gemini-podcast-wav.mjs
             ffmpeg -hide_banner -loglevel error -y -i "$wav" -codec:a libmp3lame -b:a 128k "$audio"
             [[ -s "$audio" ]] || { echo "MP3 conversion failed: $audio"; exit 1; }
@@ -83,8 +83,8 @@ jobs:
           set -euo pipefail
           edition="${{ steps.edition.outputs.edition }}"
           folder="drafts/$edition/podcast"
-          audio="$folder/clearforge-daily-podcast-$edition.mp3"
-          video="$folder/clearforge-daily-podcast-$edition.mp4"
+          audio="$folder/sapiver-forge-daily-podcast-$edition.mp3"
+          video="$folder/sapiver-forge-daily-podcast-$edition.mp4"
           [[ -s "$audio" ]] || { echo "Existing Kore MP3 is missing: $audio"; exit 1; }
           if [[ -s "$video" ]]; then
             echo "Existing MP4 found; reusing it while refreshing the episode page."
@@ -96,8 +96,8 @@ jobs:
         env:
           PODCAST_KIND: daily
           EPISODE_SLUG: ${{ steps.edition.outputs.edition }}
-          SOURCE_MP3: drafts/${{ steps.edition.outputs.edition }}/podcast/clearforge-daily-podcast-${{ steps.edition.outputs.edition }}.mp3
-          SOURCE_MP4: drafts/${{ steps.edition.outputs.edition }}/podcast/clearforge-daily-podcast-${{ steps.edition.outputs.edition }}.mp4
+          SOURCE_MP3: drafts/${{ steps.edition.outputs.edition }}/podcast/sapiver-forge-daily-podcast-${{ steps.edition.outputs.edition }}.mp3
+          SOURCE_MP4: drafts/${{ steps.edition.outputs.edition }}/podcast/sapiver-forge-daily-podcast-${{ steps.edition.outputs.edition }}.mp4
           METADATA_PATH: drafts/${{ steps.edition.outputs.edition }}/podcast/episode-metadata.json
           PODCAST_BASE_URL: https://sapiverforge-daily-brief.netlify.app
         run: node scripts/publish-podcast-feed.mjs
@@ -107,11 +107,11 @@ jobs:
         run: |
           set -euo pipefail
           edition="${{ steps.edition.outputs.edition }}"
-          git config user.name "clearforge-audio-bot"
+          git config user.name "sapiver-forge-audio-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add "drafts/$edition/podcast/clearforge-daily-podcast-$edition.mp3" \
-            "drafts/$edition/podcast/clearforge-daily-podcast-$edition.mp3.source-sha256" \
-            "drafts/$edition/podcast/clearforge-daily-podcast-$edition.mp4" \
+          git add "drafts/$edition/podcast/sapiver-forge-daily-podcast-$edition.mp3" \
+            "drafts/$edition/podcast/sapiver-forge-daily-podcast-$edition.mp3.source-sha256" \
+            "drafts/$edition/podcast/sapiver-forge-daily-podcast-$edition.mp4" \
             public/podcast
           git commit -m "Recover Sapiver Forge daily podcast MP3 and MP4 for $edition"
           git pull --rebase origin main

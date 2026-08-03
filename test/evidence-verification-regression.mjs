@@ -50,7 +50,7 @@ fs.writeFileSync(path.join(draft, "source-evidence.json"), JSON.stringify({ reco
 fs.writeFileSync(path.join(draft, "feature.md"), "# Feature\n\nMicrosoft describes redesigned workflows. Slack and Shopify use Python execution with live dashboards. The claimed result was 67%.\n");
 fs.writeFileSync(path.join(draft, "social_pack.md"), "# Social\n\nMicrosoft describes redesigned workflows. The result was 67%.\n");
 fs.writeFileSync(path.join(draft, "podcast", "COPY_PASTE_INTO_ELEVENLABS.txt"), "Microsoft describes redesigned workflows.\n");
-const enforce = spawnSync(process.execPath, [path.resolve("src/enforce-locked-facts.mjs")], { cwd: temp, env: { ...process.env, CLEARFORGE_DATE: edition }, encoding: "utf8" });
+const enforce = spawnSync(process.execPath, [path.resolve("src/enforce-locked-facts.mjs")], { cwd: temp, env: { ...process.env, SAPIVER_FORGE_DATE: edition }, encoding: "utf8" });
 assert.equal(enforce.status, 0, enforce.stderr);
 const locked = JSON.parse(fs.readFileSync(path.join(draft, "locked-facts.json"), "utf8"));
 assert.equal(locked.facts.some((item) => /67%|20,000|10 countries|twice/.test(item.atomic_claim)), false, "false claim must not enter locked-facts.json");

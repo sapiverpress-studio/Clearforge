@@ -3,7 +3,7 @@ import path from "node:path";
 import { campaignIsActive, loadCommercialCampaign, writeCampaignRecord } from "./commercial-campaign.mjs";
 
 const ROOT = process.cwd();
-const DATE = process.env.CLEARFORGE_DATE || process.env.SAPIVER_FORGE_DATE || "";
+const DATE = process.env.SAPIVER_FORGE_DATE || process.env.SAPIVER_FORGE_DATE || "";
 const draftDir = path.join(ROOT, "drafts", DATE);
 const reportPath = path.join(draftDir, "source-integrity-report.json");
 const campaign = loadCommercialCampaign();

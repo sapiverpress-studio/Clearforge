@@ -141,6 +141,6 @@ for (const product of products) {
   }
 }
 const customerFacing = requiredFiles.map((relative) => fs.readFileSync(path.join(PUBLIC, relative), "utf8")).join("\n");
-if (/Clear\s*forge/i.test(customerFacing)) throw new Error("Legacy Clearforge branding found in generated sales-discoverability output.");
+if (/Clear\s*forge/i.test(customerFacing)) throw new Error("Legacy Sapiver Forge branding found in generated sales-discoverability output.");
 if (warnings.length) console.warn(`Sales discoverability warnings:\n- ${warnings.join("\n- ")}`);
 console.log(`Published ${requiredFiles.length} Sapiver Forge sales-discoverability files and updated the sitemap.`);

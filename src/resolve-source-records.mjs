@@ -3,7 +3,7 @@ import path from "node:path";
 import OpenAI from "./gemini-openai-compat.mjs";
 
 const ROOT = process.cwd();
-const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+const DATE = process.env.SAPIVER_FORGE_DATE || new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
 const dir = path.join(ROOT, "drafts", DATE);
 const structuredPath = path.join(dir, "structured_output.json");
 const pruneStatePath = path.join(dir, "source-prune-state.json");

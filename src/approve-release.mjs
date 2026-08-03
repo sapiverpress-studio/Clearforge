@@ -2,11 +2,11 @@ import fs from "node:fs";
 import path from "node:path";
 
 const ROOT = process.cwd();
-const DATE = String(process.env.CLEARFORGE_DATE || "").trim();
-const APPROVER = String(process.env.CLEARFORGE_APPROVER || "").trim();
-const CONFIRMATION = String(process.env.CLEARFORGE_CONFIRMATION || "").trim();
-if (!DATE) throw new Error("CLEARFORGE_DATE is required.");
-if (!APPROVER) throw new Error("CLEARFORGE_APPROVER is required.");
+const DATE = String(process.env.SAPIVER_FORGE_DATE || "").trim();
+const APPROVER = String(process.env.SAPIVER_FORGE_APPROVER || "").trim();
+const CONFIRMATION = String(process.env.SAPIVER_FORGE_CONFIRMATION || "").trim();
+if (!DATE) throw new Error("SAPIVER_FORGE_DATE is required.");
+if (!APPROVER) throw new Error("SAPIVER_FORGE_APPROVER is required.");
 if (CONFIRMATION !== `APPROVE ${DATE}`) throw new Error(`Confirmation must exactly match: APPROVE ${DATE}`);
 
 const draftDir = path.join(ROOT, "drafts", DATE);

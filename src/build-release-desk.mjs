@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const ROOT = process.cwd();
-const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
+const DATE = process.env.SAPIVER_FORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
 const draftDir = path.join(ROOT, "drafts", DATE);
@@ -232,7 +232,7 @@ const html = `<!doctype html>
 :root{--navy:#071827;--blue:#163d5c;--gold:#e2b85b;--paper:#fff;--cream:#f7f4ed;--ink:#102437;--line:#d8e0e6;--red:#ad2d2d}
 *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.5 system-ui,sans-serif}header{background:var(--navy);color:#fff;padding:24px}header div,main{max-width:1080px;margin:auto}main{padding:18px 14px 60px}.panel,.item{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;margin:14px 0}.decision{border-left:8px solid var(--gold)}.decision.stop{border-color:var(--red)}.scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:9px}.score{display:flex;justify-content:space-between;background:#edf3f6;padding:10px;border-radius:9px}.score strong{text-transform:capitalize}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:9px}.scroll{overflow:auto}.copy{background:#eef5f8;padding:12px;border-radius:9px;white-space:pre-wrap;overflow-wrap:anywhere}.approve-button{display:inline-block;background:#176b45;color:#fff;padding:12px 18px;border-radius:9px;font-weight:700;text-decoration:none}small{color:#607080}a{color:#0c567f}@media(max-width:680px){th:nth-child(4),td:nth-child(4){display:none}}
 </style></head><body>
-<header><div><strong>CLEARFORGE</strong><h1>Daily Release Desk</h1><p>${esc(DATE)} - nothing publishes without Jim's approval.</p></div></header>
+<header><div><strong>SAPIVER FORGE</strong><h1>Daily Release Desk</h1><p>${esc(DATE)} - nothing publishes without Jim's approval.</p></div></header>
 <main>
 <section class="panel decision ${decision === "STOP" ? "stop" : ""}"><h2>${esc(decision)}</h2><p>${esc(reviewDepth)}</p></section>
 <section class="panel"><h2>What Jim must do</h2><ol><li>Read the stop conditions and advisory flags.</li><li>Check the claims table and open any source that looks weak or surprising.</li><li>Read every social opening and check that it matches the evidence.</li><li>Inspect the article, podcast or video in full only when this report flags it or something looks wrong.</li></ol><p><a class="approve-button" href="${esc(approvalWorkflowUrl)}">Open approval workflow</a></p><p><small>Only continue when this exact edition is factually correct. GitHub will select the newest completed Release Desk and record your authenticated approval.</small></p></section>
@@ -291,7 +291,7 @@ ${clean(social.pinterest_description || "Not generated")}
 
 ## What Jim must do
 1. Check the claims, source links, flags and social copy above.
-2. Download and open \`clearforge-release-desk-${DATE}.html\` only when you need the fuller report.
+2. Download and open \`sapiver-forge-release-desk-${DATE}.html\` only when you need the fuller report.
 3. Open full outputs only where flagged or questionable.
 4. If satisfied, open [Sapiver Forge Approve and Publish](${approvalWorkflowUrl}) and press **Run workflow**. GitHub will select the newest completed Release Desk.
 
@@ -300,6 +300,6 @@ Nothing publishes from this report automatically.
 
 fs.mkdirSync(draftDir, { recursive: true });
 fs.writeFileSync(path.join(draftDir, "release-desk.json"), JSON.stringify(report, null, 2) + "\n");
-fs.writeFileSync(path.join(draftDir, `clearforge-release-desk-${DATE}.html`), html);
+fs.writeFileSync(path.join(draftDir, `sapiver-forge-release-desk-${DATE}.html`), html);
 fs.writeFileSync(path.join(draftDir, "release-summary.md"), summary);
 console.log(`Built Sapiver Forge Release Desk for ${DATE}: ${decision}, assurance ${report.assurance_score.toFixed(3)}`);

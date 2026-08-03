@@ -5,9 +5,9 @@ import path from "node:path";
 import { containsVisibleLegacyBrand } from "./legacy-brand-guard.mjs";
 
 const ROOT = process.cwd();
-const EDITION = String(process.env.CLEARFORGE_DATE || "").trim();
-const RUN_URL = String(process.env.CLEARFORGE_RUN_URL || "").trim();
-const SOURCE_COMMIT = String(process.env.CLEARFORGE_SOURCE_SHA || "").trim();
+const EDITION = String(process.env.SAPIVER_FORGE_DATE || "").trim();
+const RUN_URL = String(process.env.SAPIVER_FORGE_RUN_URL || "").trim();
+const SOURCE_COMMIT = String(process.env.SAPIVER_FORGE_SOURCE_SHA || "").trim();
 if (!/^\d{4}-\d{2}-\d{2}(?:-[a-z0-9-]+)?$/.test(EDITION)) {
   throw new Error("The edition ID must be an exact Sapiver Forge edition ID.");
 }
@@ -71,7 +71,7 @@ function assertNoLegacyBrandReferences(files) {
     if (containsVisibleLegacyBrand(content) || containsVisibleLegacyBrand(file.path)) failures.push(file.path);
   }
   if (failures.length) {
-    throw new Error(`Legacy Clearforge branding remains in candidate files: ${failures.join(", ")}`);
+    throw new Error(`Legacy Sapiver Forge branding remains in candidate files: ${failures.join(", ")}`);
   }
 }
 

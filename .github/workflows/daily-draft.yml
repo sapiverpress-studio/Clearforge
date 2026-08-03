@@ -41,7 +41,7 @@ permissions:
   issues: write
 
 concurrency:
-  group: clearforge-daily-autopilot
+  group: sapiver-forge-daily-autopilot
   cancel-in-progress: false
 
 env:
@@ -119,14 +119,14 @@ jobs:
           if [ -z "${ANGLE_SLUG}" ]; then
             ANGLE_SLUG="angle"
           fi
-          echo "CLEARFORGE_BASE_DATE=${BASE_DATE}" >> "$GITHUB_ENV"
-          echo "CLEARFORGE_ANGLE=${ANGLE}" >> "$GITHUB_ENV"
-          echo "CLEARFORGE_ANGLE_SLUG=${ANGLE_SLUG}" >> "$GITHUB_ENV"
+          echo "SAPIVER_FORGE_BASE_DATE=${BASE_DATE}" >> "$GITHUB_ENV"
+          echo "SAPIVER_FORGE_ANGLE=${ANGLE}" >> "$GITHUB_ENV"
+          echo "SAPIVER_FORGE_ANGLE_SLUG=${ANGLE_SLUG}" >> "$GITHUB_ENV"
           if [ "${{ steps.gate.outputs.edition }}" = "alternate" ]; then
-            echo "CLEARFORGE_DATE=${BASE_DATE}-${ANGLE_SLUG}" >> "$GITHUB_ENV"
+            echo "SAPIVER_FORGE_DATE=${BASE_DATE}-${ANGLE_SLUG}" >> "$GITHUB_ENV"
             echo "Using alternate edition ID: ${BASE_DATE}-${ANGLE_SLUG} from source date ${BASE_DATE} using angle ${ANGLE}"
           else
-            echo "CLEARFORGE_DATE=${BASE_DATE}" >> "$GITHUB_ENV"
+            echo "SAPIVER_FORGE_DATE=${BASE_DATE}" >> "$GITHUB_ENV"
             echo "Using fresh edition ID: ${BASE_DATE}"
           fi
 
@@ -135,7 +135,7 @@ jobs:
         if: steps.gate.outputs.run == 'true'
         shell: bash
         run: |
-          active="$(node -e "const c=require('./config/output-release-validation-campaign.json'); const d=process.env.CLEARFORGE_BASE_DATE; process.stdout.write(String(c.enabled && d >= c.start_date && d <= c.end_date))")"
+          active="$(node -e "const c=require('./config/output-release-validation-campaign.json'); const d=process.env.SAPIVER_FORGE_BASE_DATE; process.stdout.write(String(c.enabled && d >= c.start_date && d <= c.end_date))")"
           echo "active=${active}" >> "$GITHUB_OUTPUT"
           if [ "${active}" = "true" ]; then
             echo "The Output Release Gate commercial validation campaign is active."
@@ -148,7 +148,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
-          PREFIX="clearforge-candidate-${CLEARFORGE_DATE}-"
+          PREFIX="sapiver-forge-candidate-${SAPIVER_FORGE_DATE}-"
           NAMES="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts" --paginate --jq '.artifacts[].name')"
           if printf '%s\n' "${NAMES}" | grep -q "^${PREFIX}"; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
@@ -183,9 +183,9 @@ jobs:
       - name: Generate alternate-angle edition from today's source base
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.edition == 'alternate' && steps.campaign.outputs.active != 'true'
         env:
-          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
-          CLEARFORGE_BASE_DATE: ${{ env.CLEARFORGE_BASE_DATE }}
-          CLEARFORGE_ANGLE: ${{ env.CLEARFORGE_ANGLE }}
+          SAPIVER_FORGE_DATE: ${{ env.SAPIVER_FORGE_DATE }}
+          SAPIVER_FORGE_BASE_DATE: ${{ env.SAPIVER_FORGE_BASE_DATE }}
+          SAPIVER_FORGE_ANGLE: ${{ env.SAPIVER_FORGE_ANGLE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
         run: npm run angle:alternate
@@ -195,19 +195,19 @@ jobs:
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         shell: bash
         run: |
-          if [ -f "drafts/${CLEARFORGE_DATE}/no-public-content.json" ]; then
+          if [ -f "drafts/${SAPIVER_FORGE_DATE}/no-public-content.json" ]; then
             echo "usable=false" >> "$GITHUB_OUTPUT"
             echo "## Clean skipped day" >> "$GITHUB_STEP_SUMMARY"
             echo "No suitable verified Output Release Gate story was found. No downstream generation, candidate, deployment or publication was started." >> "$GITHUB_STEP_SUMMARY"
           else
-            test -s "drafts/${CLEARFORGE_DATE}/structured_output.json"
+            test -s "drafts/${SAPIVER_FORGE_DATE}/structured_output.json"
             echo "usable=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Rebuild any narrowed verified edition before downstream production
         if: steps.content.outputs.usable == 'true'
         env:
-          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+          SAPIVER_FORGE_DATE: ${{ env.SAPIVER_FORGE_DATE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
         run: node src/rebuild-narrowed-edition.mjs
@@ -215,7 +215,7 @@ jobs:
       - name: Generate daily broad AI podcast script
         if: steps.content.outputs.usable == 'true'
         env:
-          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+          SAPIVER_FORGE_DATE: ${{ env.SAPIVER_FORGE_DATE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
         run: npm run podcast:daily
@@ -223,7 +223,7 @@ jobs:
       - name: Optimise social content for audience response
         if: steps.content.outputs.usable == 'true'
         env:
-          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+          SAPIVER_FORGE_DATE: ${{ env.SAPIVER_FORGE_DATE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
         run: npm run social:optimise
@@ -231,13 +231,13 @@ jobs:
       - name: Preserve a usable verified commercial pack after optimisation
         if: steps.content.outputs.usable == 'true'
         env:
-          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+          SAPIVER_FORGE_DATE: ${{ env.SAPIVER_FORGE_DATE }}
         run: node src/ensure-output-usability.mjs
 
       - name: Generate long-form feature from research pack
         if: steps.content.outputs.usable == 'true' && steps.campaign.outputs.active != 'true'
         env:
-          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+          SAPIVER_FORGE_DATE: ${{ env.SAPIVER_FORGE_DATE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
         run: npm run feature
@@ -246,7 +246,7 @@ jobs:
         id: automated_checks
         if: steps.content.outputs.usable == 'true'
         env:
-          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+          SAPIVER_FORGE_DATE: ${{ env.SAPIVER_FORGE_DATE }}
         run: npm run validate:auto
 
       - name: Install FFmpeg for Gemini audio
@@ -264,7 +264,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_TTS_MODEL: gemini-3.1-flash-tts-preview
           GEMINI_TTS_VOICE: Kore
-          INPUT_PATH: drafts/${{ env.CLEARFORGE_DATE }}/podcast/COPY_PASTE_INTO_ELEVENLABS.txt
+          INPUT_PATH: drafts/${{ env.SAPIVER_FORGE_DATE }}/podcast/COPY_PASTE_INTO_ELEVENLABS.txt
         shell: bash
         run: |
           set -euo pipefail
@@ -272,14 +272,14 @@ jobs:
             echo "Podcast narration script is unavailable; Gemini TTS was not attempted."
             exit 1
           fi
-          audio="drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp3"
+          audio="drafts/${SAPIVER_FORGE_DATE}/podcast/sapiver-forge-daily-podcast-${SAPIVER_FORGE_DATE}.mp3"
           hash="$audio.source-sha256"
           source_hash="$(sha256sum "$INPUT_PATH" | cut -d' ' -f1)"
           if [[ -s "$audio" && -s "$hash" && "$(tr -d '\r\n' < "$hash")" == "$source_hash" ]]; then
             echo "Existing Gemini Kore MP3 matches the narration; no Gemini request made."
             exit 0
           fi
-          wav="$RUNNER_TEMP/clearforge-kore-${CLEARFORGE_DATE}.wav"
+          wav="$RUNNER_TEMP/sapiver-forge-kore-${SAPIVER_FORGE_DATE}.wav"
           OUTPUT_PATH="$wav" node scripts/generate-gemini-podcast-wav.mjs
           ffmpeg -hide_banner -loglevel error -y -i "$wav" -codec:a libmp3lame -b:a 128k "$audio"
           [[ -s "$audio" ]] || { echo "MP3 conversion failed: $audio"; exit 1; }
@@ -294,7 +294,7 @@ jobs:
             echo
             echo "The narration script was unavailable or Gemini TTS failed. The podcast MP3 and RSS episode were skipped."
             echo "All other Sapiver Forge outputs will continue."
-            if [[ -s "drafts/${CLEARFORGE_DATE}/podcast/COPY_PASTE_INTO_ELEVENLABS.txt" ]]; then
+            if [[ -s "drafts/${SAPIVER_FORGE_DATE}/podcast/COPY_PASTE_INTO_ELEVENLABS.txt" ]]; then
               echo "The podcast production script remains available in the daily package."
             else
               echo "No podcast narration script was retained; Gemini TTS was not attempted."
@@ -305,16 +305,16 @@ jobs:
         if: steps.content.outputs.usable == 'true' && steps.gate.outputs.podcast_audio == 'true' && steps.full_podcast.outcome == 'success'
         env:
           PODCAST_KIND: daily
-          EPISODE_SLUG: ${{ env.CLEARFORGE_DATE }}
-          SOURCE_MP3: drafts/${{ env.CLEARFORGE_DATE }}/podcast/clearforge-daily-podcast-${{ env.CLEARFORGE_DATE }}.mp3
-          METADATA_PATH: drafts/${{ env.CLEARFORGE_DATE }}/podcast/episode-metadata.json
+          EPISODE_SLUG: ${{ env.SAPIVER_FORGE_DATE }}
+          SOURCE_MP3: drafts/${{ env.SAPIVER_FORGE_DATE }}/podcast/sapiver-forge-daily-podcast-${{ env.SAPIVER_FORGE_DATE }}.mp3
+          METADATA_PATH: drafts/${{ env.SAPIVER_FORGE_DATE }}/podcast/episode-metadata.json
           PODCAST_BASE_URL: https://sapiverforge-daily-brief.netlify.app
         run: node scripts/publish-podcast-feed.mjs
 
       - name: Generate story-specific AI visuals and narration
         if: steps.content.outputs.usable == 'true'
         env:
-          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+          SAPIVER_FORGE_DATE: ${{ env.SAPIVER_FORGE_DATE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_IMAGE_MODEL: ${{ vars.GEMINI_IMAGE_MODEL || 'gemini-3.1-flash-image' }}
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVENLAB_API }}
@@ -327,7 +327,7 @@ jobs:
         if: steps.content.outputs.usable == 'true'
         shell: bash
         run: |
-          audio="drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp3"
+          audio="drafts/${SAPIVER_FORGE_DATE}/podcast/sapiver-forge-daily-podcast-${SAPIVER_FORGE_DATE}.mp3"
           if [[ -s "$audio" ]]; then
             echo "available=true" >> "$GITHUB_OUTPUT"
             echo "Using available Gemini Kore audio: $audio"
@@ -343,18 +343,18 @@ jobs:
         shell: bash
         run: |
           bash scripts/generate-podcast-mp4.sh \
-            "drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp3" \
-            "drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp4" \
-            "media/${CLEARFORGE_DATE}/story-1.png"
+            "drafts/${SAPIVER_FORGE_DATE}/podcast/sapiver-forge-daily-podcast-${SAPIVER_FORGE_DATE}.mp3" \
+            "drafts/${SAPIVER_FORGE_DATE}/podcast/sapiver-forge-daily-podcast-${SAPIVER_FORGE_DATE}.mp4" \
+            "media/${SAPIVER_FORGE_DATE}/story-1.png"
 
       - name: Stage MP4 download inside the unpublished candidate
         if: steps.content.outputs.usable == 'true' && steps.podcast_video.outcome == 'success'
         env:
           PODCAST_KIND: daily
-          EPISODE_SLUG: ${{ env.CLEARFORGE_DATE }}
-          SOURCE_MP3: drafts/${{ env.CLEARFORGE_DATE }}/podcast/clearforge-daily-podcast-${{ env.CLEARFORGE_DATE }}.mp3
-          SOURCE_MP4: drafts/${{ env.CLEARFORGE_DATE }}/podcast/clearforge-daily-podcast-${{ env.CLEARFORGE_DATE }}.mp4
-          METADATA_PATH: drafts/${{ env.CLEARFORGE_DATE }}/podcast/episode-metadata.json
+          EPISODE_SLUG: ${{ env.SAPIVER_FORGE_DATE }}
+          SOURCE_MP3: drafts/${{ env.SAPIVER_FORGE_DATE }}/podcast/sapiver-forge-daily-podcast-${{ env.SAPIVER_FORGE_DATE }}.mp3
+          SOURCE_MP4: drafts/${{ env.SAPIVER_FORGE_DATE }}/podcast/sapiver-forge-daily-podcast-${{ env.SAPIVER_FORGE_DATE }}.mp4
+          METADATA_PATH: drafts/${{ env.SAPIVER_FORGE_DATE }}/podcast/episode-metadata.json
           PODCAST_BASE_URL: https://sapiverforge-daily-brief.netlify.app
         run: node scripts/publish-podcast-feed.mjs
 
@@ -362,10 +362,10 @@ jobs:
         if: steps.content.outputs.usable == 'true' && steps.podcast_video.outcome == 'success'
         uses: actions/upload-artifact@v4
         with:
-          name: clearforge-daily-podcast-${{ env.CLEARFORGE_DATE }}
+          name: sapiver-forge-daily-podcast-${{ env.SAPIVER_FORGE_DATE }}
           path: |
-            drafts/${{ env.CLEARFORGE_DATE }}/podcast/*.mp3
-            drafts/${{ env.CLEARFORGE_DATE }}/podcast/*.mp4
+            drafts/${{ env.SAPIVER_FORGE_DATE }}/podcast/*.mp3
+            drafts/${{ env.SAPIVER_FORGE_DATE }}/podcast/*.mp4
           if-no-files-found: error
           retention-days: 90
 
@@ -377,16 +377,16 @@ jobs:
         id: candidate
         if: steps.content.outputs.usable == 'true'
         env:
-          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
-          CLEARFORGE_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          CLEARFORGE_SOURCE_SHA: ${{ github.sha }}
+          SAPIVER_FORGE_DATE: ${{ env.SAPIVER_FORGE_DATE }}
+          SAPIVER_FORGE_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          SAPIVER_FORGE_SOURCE_SHA: ${{ github.sha }}
         run: npm run review:human
 
       - name: Upload exact pending candidate
         if: steps.content.outputs.usable == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: clearforge-candidate-${{ env.CLEARFORGE_DATE }}-${{ steps.candidate.outputs.candidate_id }}
+          name: sapiver-forge-candidate-${{ env.SAPIVER_FORGE_DATE }}-${{ steps.candidate.outputs.candidate_id }}
           path: candidate-package/**/*
           if-no-files-found: error
           retention-days: 30
@@ -395,12 +395,12 @@ jobs:
         if: steps.content.outputs.usable == 'true'
         env:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
-          CLEARFORGE_REVIEW_EMAIL: ${{ secrets.CLEARFORGE_REVIEW_EMAIL }}
-          BREVO_SENDER_EMAIL: clearforge@sapiverpress.co.uk
+          SAPIVER_FORGE_REVIEW_EMAIL: ${{ secrets.SAPIVER_FORGE_REVIEW_EMAIL || secrets.CLEARFORGE_REVIEW_EMAIL }}
+          BREVO_SENDER_EMAIL: sapiver-forge@sapiverpress.co.uk
           BREVO_SENDER_NAME: Sapiver Forge
-          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
-          CLEARFORGE_CANDIDATE_ID: ${{ steps.candidate.outputs.candidate_id }}
-          CLEARFORGE_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          SAPIVER_FORGE_DATE: ${{ env.SAPIVER_FORGE_DATE }}
+          SAPIVER_FORGE_CANDIDATE_ID: ${{ steps.candidate.outputs.candidate_id }}
+          SAPIVER_FORGE_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: npm run review:email
 
       - name: Candidate summary
@@ -410,7 +410,7 @@ jobs:
           {
             echo "## Awaiting Jim's human validation"
             echo
-            echo "- Edition: ${CLEARFORGE_DATE}"
+            echo "- Edition: ${SAPIVER_FORGE_DATE}"
             echo "- Candidate: ${{ steps.candidate.outputs.candidate_id }}"
             echo "- Website deployment: not run"
             echo "- Podcast publication: not run"
@@ -422,11 +422,11 @@ jobs:
         if: steps.content.outputs.usable == 'false'
         uses: actions/upload-artifact@v4
         with:
-          name: sapiver-forge-skipped-${{ env.CLEARFORGE_DATE }}
+          name: sapiver-forge-skipped-${{ env.SAPIVER_FORGE_DATE }}
           path: |
-            drafts/${{ env.CLEARFORGE_DATE }}/no-public-content.json
-            drafts/${{ env.CLEARFORGE_DATE }}/source-acquisition.json
-            drafts/${{ env.CLEARFORGE_DATE }}/commercial-validation-record.json
+            drafts/${{ env.SAPIVER_FORGE_DATE }}/no-public-content.json
+            drafts/${{ env.SAPIVER_FORGE_DATE }}/source-acquisition.json
+            drafts/${{ env.SAPIVER_FORGE_DATE }}/commercial-validation-record.json
           if-no-files-found: error
           retention-days: 30
 
@@ -434,16 +434,16 @@ jobs:
         if: failure() && steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: sapiver-forge-diagnostic-${{ env.CLEARFORGE_DATE }}-${{ github.run_id }}
+          name: sapiver-forge-diagnostic-${{ env.SAPIVER_FORGE_DATE }}-${{ github.run_id }}
           path: |
-            drafts/${{ env.CLEARFORGE_DATE }}/source-acquisition.json
-            drafts/${{ env.CLEARFORGE_DATE }}/source-evidence.json
-            drafts/${{ env.CLEARFORGE_DATE }}/source-integrity-report.json
-            drafts/${{ env.CLEARFORGE_DATE }}/source-prune-state.json
-            drafts/${{ env.CLEARFORGE_DATE }}/structured_output.json
-            drafts/${{ env.CLEARFORGE_DATE }}/narrowed-edition-rebuild.json
-            drafts/${{ env.CLEARFORGE_DATE }}/output-usability-report.json
-            drafts/${{ env.CLEARFORGE_DATE }}/fact-discipline-report.json
+            drafts/${{ env.SAPIVER_FORGE_DATE }}/source-acquisition.json
+            drafts/${{ env.SAPIVER_FORGE_DATE }}/source-evidence.json
+            drafts/${{ env.SAPIVER_FORGE_DATE }}/source-integrity-report.json
+            drafts/${{ env.SAPIVER_FORGE_DATE }}/source-prune-state.json
+            drafts/${{ env.SAPIVER_FORGE_DATE }}/structured_output.json
+            drafts/${{ env.SAPIVER_FORGE_DATE }}/narrowed-edition-rebuild.json
+            drafts/${{ env.SAPIVER_FORGE_DATE }}/output-usability-report.json
+            drafts/${{ env.SAPIVER_FORGE_DATE }}/fact-discipline-report.json
           if-no-files-found: warn
           retention-days: 14
 
@@ -453,7 +453,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
-          TITLE="Sapiver Forge autopilot failed ${CLEARFORGE_DATE}"
+          TITLE="Sapiver Forge autopilot failed ${SAPIVER_FORGE_DATE}"
           BODY="The automatic retry also failed. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           EXISTING="$(gh issue list --state open --search "${TITLE} in:title" --json number --jq '.[0].number // empty')"
           if [ -z "${EXISTING}" ]; then

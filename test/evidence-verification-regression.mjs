@@ -3,7 +3,14 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
-import { buildVerifiedClaims, extractUsableText, isMeaningfulEvidencePassage, verifyAtomicClaim } from "../src/evidence-verification.mjs";
+import { buildVerifiedClaims, extractUsableText, isMeaningfulEvidencePassage, splitAtomicClaims, splitSentences, verifyAtomicClaim } from "../src/evidence-verification.mjs";
+
+assert.deepEqual(splitSentences("Qwen3.8-Max is a 2.4-trillion-parameter model. It launched today."), [
+  "Qwen3.8-Max is a 2.4-trillion-parameter model.", "It launched today."
+], "decimal points and dotted model names must not be mistaken for sentence boundaries");
+assert.deepEqual(splitAtomicClaims("Solo-type applications rose 26.8%. Qwen3.8-Max has 2.4 trillion parameters."), [
+  "Solo-type applications rose 26.8%.", "Qwen3.8-Max has 2.4 trillion parameters."
+], "atomic claims must retain complete decimal statistics and model names");
 
 const microsoftText = `Microsoft describes the next measure of AI momentum as work transformed. Organizations are moving from individual assistance towards redesigned workflows and role-specific agents. Leaders should examine how work is redesigned across teams.`;
 const falseCompound = "Microsoft found that organizational readiness accounts for 67% of realised AI value, twice the impact of individual prompting skills, in a survey of 20,000 workers across 10 countries.";
@@ -15,6 +22,7 @@ for (const marker of ["67%", "20,000", "10 countries", "twice"]) {
 }
 
 assert.equal(verifyAtomicClaim("The trial reported 42% adoption.", "The trial reported 42% adoption among participating teams.").supported, true, "verbatim percentage should verify");
+assert.equal(verifyAtomicClaim("Solo-type business applications rose 26.8%.", "Solo-type business applications are rising most in AI-exposed sectors. A separate table contains 26.8% for another measure.").supported, false, "a number elsewhere on the page must not authenticate a claim whose evidence passage lacks it");
 assert.equal(verifyAtomicClaim('Microsoft called the change "work transformed".', "Microsoft called the change work redesigned.").supported, false, "quoted wording must appear in the source");
 assert.equal(verifyAtomicClaim("Teams redesigned workflows around role-specific agents.", "The programme enabled teams to redesign their workflows around agents built for specific roles.").supported, true, "directly entailed paraphrase should verify");
 

@@ -67,6 +67,8 @@ if (result.failures.length && fs.existsSync(path.join(dir, "narrowed-edition-reb
   if (rebuild.status !== 0) throw new Error("Deterministic narrowed-edition usability recovery failed.");
   const enforce = spawnSync(process.execPath, [path.join(CODE_ROOT, "src", "enforce-locked-facts.mjs")], { cwd: ROOT, stdio: "inherit", env: process.env });
   if (enforce.status !== 0) throw new Error("Evidence enforcement failed after usability recovery.");
+  const links = spawnSync(process.execPath, [path.join(CODE_ROOT, "src", "finalise-social-links.mjs")], { cwd: ROOT, stdio: "inherit", env: process.env });
+  if (links.status !== 0) throw new Error("Social CTA finalisation failed after usability recovery.");
   restored = true;
   result = inspect();
 }

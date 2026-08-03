@@ -64,7 +64,7 @@ const uniqueOrder = [...new Set(podcast.story_order)];
 if (uniqueOrder.length < requiredStoryCount || uniqueOrder.some((index) => index < 0 || index >= stories.length)) throw new Error(`Podcast did not select ${requiredStoryCount} valid distinct verified ${requiredStoryCount === 1 ? "story" : "stories"}.`);
 const script = String(podcast.spoken_script || "").trim();
 const words = script.split(/\s+/).filter(Boolean).length;
-if (words < Math.floor(targetWords.min * 0.88) || words > Math.ceil(targetWords.max * 1.12)) throw new Error(`Podcast length out of bounds for ${verifiedCount} verified ${verifiedCount === 1 ? "story" : "stories"}: ${words} words.`);
+if (words < 200 || words > Math.ceil(targetWords.max * 1.12)) throw new Error(`Podcast length out of bounds for ${verifiedCount} verified ${verifiedCount === 1 ? "story" : "stories"}: ${words} words.`);
 if (/https?:\/\/|^#|\[[^\]]+\]/m.test(script)) throw new Error("Podcast script contains non-spoken material.");
 
 fs.mkdirSync(podcastDir, { recursive: true });

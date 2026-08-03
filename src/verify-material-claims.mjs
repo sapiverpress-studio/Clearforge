@@ -14,6 +14,7 @@ const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
 const draftDir = path.join(ROOT, "drafts", DATE);
 const structuredPath = path.join(draftDir, "structured_output.json");
 const reportPath = path.join(draftDir, process.env.CLAIM_VERIFICATION_FILE || "claim-verification.json");
+const verificationScope = process.env.CLAIM_VERIFICATION_SCOPE || "all";
 
 if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required for claim verification.");
 if (!fs.existsSync(structuredPath)) throw new Error(`Missing ${structuredPath}`);
@@ -23,12 +24,15 @@ function readText(file) {
 }
 
 const structured = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
-const material = {
+const allMaterial = {
   structured_output: structured,
   daily_article: readText(path.join(draftDir, "daily_brief.md")),
   full_feature: readText(path.join(draftDir, "feature.md")),
   podcast_script: readText(path.join(draftDir, "podcast", "COPY_PASTE_INTO_ELEVENLABS.txt"))
 };
+const material = verificationScope === "podcast"
+  ? { podcast_script: allMaterial.podcast_script }
+  : allMaterial;
 
 function collectNumericOccurrences(value, output, occurrences) {
   const text = typeof value === "string" ? value : JSON.stringify(value);
@@ -61,6 +65,7 @@ function collectLanguageOccurrences(value, output, occurrences, pattern, prefix)
       if (!pattern.test(sentence)) continue;
       pattern.lastIndex = 0;
       const normalized = sentence.replace(/\s+/g, " ").slice(0, 700);
+      if (prefix === "inference" && /^(?:evaluate|identify|consider|test|review|ask|check|compare|decide)\b/i.test(normalized)) continue;
       if (seen.has(normalized)) continue;
       seen.add(normalized);
       occurrences.push({ id: `${prefix}-${occurrences.length + 1}`, output, context: normalized });
@@ -230,7 +235,9 @@ Return exactly one audit entry for every supplied occurrence_id in all three aud
 
 if (!response.output_text) throw new Error("Claim verifier returned no result.");
 const result = JSON.parse(response.output_text);
-const requiredOutputs = ["structured_output", "daily_article", "full_feature", "podcast_script"];
+const requiredOutputs = verificationScope === "podcast"
+  ? ["podcast_script"]
+  : ["structured_output", "daily_article", "full_feature", "podcast_script"];
 const checked = new Set(result.checked_outputs || []);
 const modelFindings = Array.isArray(result.findings) ? result.findings : [];
 const numericAudit = Array.isArray(result.numeric_claim_audit) ? result.numeric_claim_audit : [];

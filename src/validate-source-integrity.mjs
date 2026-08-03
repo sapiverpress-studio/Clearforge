@@ -10,6 +10,7 @@ const draftDir = path.join(ROOT, "drafts", DATE);
 const structuredPath = path.join(draftDir, "structured_output.json");
 const reportPath = path.join(draftDir, "source-integrity-report.json");
 const evidencePath = path.join(draftDir, "source-evidence.json");
+const acquisitionPath = path.join(draftDir, "source-acquisition.json");
 const pruneStatePath = path.join(draftDir, "source-prune-state.json");
 const fixtureDir = process.env.SAPIVER_FORGE_ALLOW_SOURCE_FIXTURES === "1" ? String(process.env.SOURCE_FIXTURE_DIR || "").trim() : "";
 
@@ -51,6 +52,11 @@ async function fetchPage(url) {
 
 if (!fs.existsSync(structuredPath)) throw new Error(`Missing ${structuredPath}`);
 const structured = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
+const acquisition = fs.existsSync(acquisitionPath) ? JSON.parse(fs.readFileSync(acquisitionPath, "utf8")) : { candidates: [] };
+const acquiredCandidates = Array.isArray(acquisition.candidates) ? acquisition.candidates : [];
+const acquiredById = new Map(acquiredCandidates.map((item) => [String(item.acquisition_id || ""), item]));
+const acquiredByUrl = new Map(acquiredCandidates.flatMap((item) => [item.requested_url, item.final_url]
+  .filter(Boolean).map((url) => [String(url), item])));
 const sources = Array.isArray(structured.sources) ? structured.sources : [];
 const stories = Array.isArray(structured.story_summaries) ? structured.story_summaries : [];
 if (!sources.length) throw new Error("Source integrity requires at least one source.");
@@ -61,6 +67,7 @@ const records = [];
 for (let index = 0; index < sources.length; index += 1) {
   const source = sources[index];
   const requestedUrl = String(source.url || "").trim();
+  const acquired = acquiredById.get(String(source.acquisition_id || "")) || acquiredByUrl.get(requestedUrl);
   const failures = [], warnings = [];
   let response, html = "", finalUrl = "", status = 0, retrievalStatus = "not_attempted";
   try {
@@ -77,7 +84,10 @@ for (let index = 0; index < sources.length; index += 1) {
         status = Number(fixtureMeta.status || 200);
         finalUrl = String(fixtureMeta.final_url || requestedUrl);
         retrievalStatus = String(fixtureMeta.retrieval_status || (status === 200 ? "retrieved_fixture" : "http_error"));
-        if (status !== 200) failures.push(`Source fixture returned HTTP ${status}.`);
+        if ([401, 403, 429].includes(status)) {
+          retrievalStatus = "publisher_blocked";
+          failures.push(`Publisher blocked evidence retrieval with HTTP ${status}; detailed claims cannot be verified.`);
+        } else if (status !== 200) failures.push(`Source fixture returned HTTP ${status}.`);
       } else {
         response = await fetchPage(requestedUrl); status = response.status; finalUrl = response.url;
       }
@@ -97,9 +107,22 @@ for (let index = 0; index < sources.length; index += 1) {
       retrievalStatus = "retrieval_error"; failures.push(`Source could not be opened: ${error?.message || error}`);
     }
   }
-  const sourceText = extractUsableText(html);
+  let sourceText = extractUsableText(html);
   if (["retrieved", "retrieved_fixture"].includes(retrievalStatus) && sourceText.length < 120) {
     retrievalStatus = "no_usable_body"; failures.push("Source returned no usable body text for claim verification.");
+  }
+  const acquiredStatus = Number(acquired?.direct_http_status || 0);
+  const acquiredText = String(acquired?.usable_source_text || "").trim();
+  const acquisitionCanSupplyEvidence = acquiredText.length >= 120
+    && ["preflight_passed_with_exa_text", "retrieved_by_exa_after_publisher_block"].includes(String(acquired?.retrieval_status || ""))
+    && ![0, 404, 410].includes(acquiredStatus) && !(acquiredStatus >= 500 && acquiredStatus <= 599);
+  const onlyRetrievalFailures = failures.length && failures.every((failure) => /Publisher blocked evidence retrieval|no usable body text|did not return usable HTML|could not be opened/i.test(failure));
+  if (acquisitionCanSupplyEvidence && onlyRetrievalFailures && ![404, 410].includes(status)) {
+    sourceText = acquiredText;
+    finalUrl = String(acquired.final_url || finalUrl || requestedUrl);
+    retrievalStatus = "retrieved_from_sealed_exa_acquisition";
+    failures.length = 0;
+    warnings.push(`Direct publisher retrieval was unavailable; verification used the sealed Exa source text acquired before generation (direct preflight HTTP ${acquiredStatus}).`);
   }
   const proposedFact = String(source.confirmed_fact || "").trim();
   const fallbackContext = [source.title, stories[index]?.title, stories[index]?.summary, stories[index]?.why_it_matters].filter(Boolean);
@@ -107,9 +130,9 @@ for (let index = 0; index < sources.length; index += 1) {
   const unsupported = verification.atomic.filter((item) => !item.supported);
   if (unsupported.length) warnings.push(`${unsupported.length} proposed atomic claim(s) lacked source evidence and were excluded.`);
   if (!verification.verified.length) failures.push("No meaningful factual core could be verified from the retrieved source text.");
-  const pageTitle = extractTitle(html);
+  const pageTitle = extractTitle(html) || String(acquired?.page_title || "");
   const recordedDate = String(source.published_date || "").trim();
-  const pageDate = extractPublicationDate(html);
+  const pageDate = extractPublicationDate(html) || String(acquired?.publication_date || "");
   if (pageTitle && titleSimilarity(source.title, pageTitle) < 0.35) warnings.push("Recorded and retrieved titles differ materially.");
   if (recordedDate && pageDate && !normalizeText(pageDate).includes(normalizeText(recordedDate))) warnings.push("Recorded publication date differs from retrieved metadata.");
   const verifiedClaims = verification.verified.map((item, claimIndex) => ({
@@ -130,9 +153,10 @@ for (let index = 0; index < sources.length; index += 1) {
   }));
   const passed = failures.length === 0;
   records.push({
-    source_index: index, requested_url: requestedUrl, final_url: finalUrl || requestedUrl,
+    source_index: index, acquisition_id: String(source.acquisition_id || acquired?.acquisition_id || ""), requested_url: requestedUrl, final_url: finalUrl || requestedUrl,
     canonical_url: extractCanonical(html), page_title: pageTitle, publication_date: pageDate || recordedDate,
-    usable_source_text: sourceText, retrieval_status: retrievalStatus, retrieval_timestamp: new Date().toISOString(),
+    usable_source_text: sourceText, retrieval_status: retrievalStatus, retrieval_provider: retrievalStatus === "retrieved_from_sealed_exa_acquisition" ? "exa" : "direct",
+    retrieval_timestamp: new Date().toISOString(),
     verified_claims: verifiedClaims, unsupported_claims: unsupportedClaims
   });
   results.push({ index: index + 1, original_index: index, recorded_title: source.title || "", requested_url: requestedUrl,

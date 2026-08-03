@@ -5,6 +5,7 @@
   "description": "A practical guide to AI features embedded in docs, search, design, support, project and meeting tools. It explains where the workflow gains come from, why review, disclosure and control matter, and what to check before rolling it out.",
   "search_question": "How do I integrate AI tools into my existing business workflows safely and effectively?",
   "topic_slugs": [
+    "ai-adoption",
     "ai-inside-products",
     "systems-automation"
   ],
@@ -32,7 +33,8 @@
     "2026-07-29",
     "2026-07-29-considered",
     "2026-07-30",
-    "2026-07-31"
+    "2026-07-31",
+    "2026-08-02"
   ],
   "source_urls": [
     "https://openai.com/products/release-notes/",
@@ -70,7 +72,8 @@
     "https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/",
     "https://www.salesforce.com/uk/news/stories/agentforce-help-agent-announcement/?bc=OTH",
     "https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html?m=1",
-    "https://www.caledonianrecord.com/news/national/nearly-2-in-5-us-workers-have-put-company-information-into-personal-ai-accounts/article_12345678.html"
+    "https://www.caledonianrecord.com/news/national/nearly-2-in-5-us-workers-have-put-company-information-into-personal-ai-accounts/article_12345678.html",
+    "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august"
   ],
   "revisions": [
     {
@@ -255,6 +258,14 @@
       "summary": "Updated the guide to reflect the shift from standalone AI tools to integrated, workflow-based AI features. Added sections on governance, human-in-the-loop review, and specific examples from Notion, Xero, and Google Workspace.",
       "source_editions": [
         "2026-07-16",
+        "2026-07-20"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "summary": "Updated the guide to reflect the shift from standalone AI tools to embedded workflow systems, incorporating new EU transparency requirements and examples of integrated finance and project management AI.",
+      "source_editions": [
+        "2026-08-02",
         "2026-07-20"
       ]
     }

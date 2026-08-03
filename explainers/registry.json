@@ -7,6 +7,7 @@
       "description": "A practical guide to AI features embedded in docs, search, design, support, project and meeting tools. It explains where the workflow gains come from, why review, disclosure and control matter, and what to check before rolling it out.",
       "search_question": "How do I integrate AI tools into my existing business workflows safely and effectively?",
       "topic_slugs": [
+        "ai-adoption",
         "ai-inside-products",
         "systems-automation"
       ],
@@ -34,7 +35,8 @@
         "2026-07-29",
         "2026-07-29",
         "2026-07-30",
-        "2026-07-31"
+        "2026-07-31",
+        "2026-08-02"
       ],
       "approved_for_publication": true
     }

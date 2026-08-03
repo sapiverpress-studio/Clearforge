@@ -62,3 +62,4 @@ Last checked: 2026-08-03
 - 2026-08-02: Updated the guide to emphasize the shift from standalone chat tools to integrated workflow layers, incorporating recent developments in project management (Notion), finance (Xero), and software development (GitHub) tools.
 - 2026-08-02: Updated the guide to reflect the shift from standalone AI tools to integrated workflow layers, incorporating new research on agentic coordination in Notion and the risks of shadow AI usage.
 - 2026-08-03: Updated the guide to reflect the shift from standalone AI tools to integrated, workflow-based AI features. Added sections on governance, human-in-the-loop review, and specific examples from Notion, Xero, and Google Workspace.
+- 2026-08-03: Updated the guide to reflect the shift from standalone AI tools to integrated, workflow-based AI systems, incorporating recent developments in finance, project management, and creative production.

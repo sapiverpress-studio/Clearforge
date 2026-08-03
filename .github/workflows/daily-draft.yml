@@ -176,6 +176,14 @@ jobs:
           GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
         run: npm run angle:alternate
 
+      - name: Rebuild any narrowed verified edition before downstream production
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        env:
+          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
+        run: node src/rebuild-narrowed-edition.mjs
+
       - name: Optimise social content for audience response
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         env:
@@ -183,6 +191,12 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
         run: npm run social:optimise
+
+      - name: Preserve a usable verified commercial pack after optimisation
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        env:
+          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+        run: node src/ensure-output-usability.mjs
 
       - name: Generate long-form feature from research pack
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'

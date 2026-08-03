@@ -114,11 +114,12 @@ export function verifyAtomicClaim(claim, sourceText) {
 export function buildVerifiedClaims(proposedFact, sourceText, fallbackContext = "") {
   const atomic = splitAtomicClaims(proposedFact).map((claim) => ({ claim, ...verifyAtomicClaim(claim, sourceText) }));
   const verified = atomic.filter((item) => item.supported);
-  if (!verified.length && sourceText.trim() && String(fallbackContext).trim()) {
-    const contextTokens = [...new Set(tokens(fallbackContext))];
+  const fallbackContexts = (Array.isArray(fallbackContext) ? fallbackContext : [fallbackContext]).map(String).filter((item) => item.trim());
+  if (!verified.length && sourceText.trim() && fallbackContexts.length) {
+    const contextTokenSets = fallbackContexts.map((context) => [...new Set(tokens(context))]).filter((items) => items.length);
     const ranked = evidenceCandidates(sourceText).map((sentence) => {
       const sentenceTokens = new Set(tokens(sentence));
-      const score = contextTokens.length ? contextTokens.filter((token) => sentenceTokens.has(token)).length / contextTokens.length : 0;
+      const score = Math.max(0, ...contextTokenSets.map((contextTokens) => contextTokens.filter((token) => sentenceTokens.has(token)).length / contextTokens.length));
       return { sentence, score };
     }).sort((a, b) => b.score - a.score);
     const fallback = ranked[0]?.score >= 0.3 ? ranked[0].sentence : "";

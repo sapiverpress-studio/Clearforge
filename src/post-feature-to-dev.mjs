@@ -12,11 +12,16 @@ const metaPath = path.join(draftDir, "feature.json");
 const statePath = path.join(draftDir, "dev-post-result.json");
 
 function requireFile(file) { if (!fs.existsSync(file)) throw new Error(`Missing ${file}`); }
-requireFile(approvalPath); requireFile(featurePath); requireFile(metaPath);
+requireFile(approvalPath);
 
 const approval = JSON.parse(fs.readFileSync(approvalPath, "utf8"));
 if (approval.dev_approved !== true || approval.feature_approved !== true) {
   console.log("DEV syndication skipped: feature is not approved.");
+  process.exit(0);
+}
+
+if (!fs.existsSync(featurePath) || !fs.existsSync(metaPath)) {
+  console.log("DEV syndication skipped: the approved edition has no optional feature package.");
   process.exit(0);
 }
 

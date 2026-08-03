@@ -13,11 +13,28 @@ export function decodeEntities(value) {
 export function extractUsableText(html) {
   return decodeEntities(String(html || "")
     .replace(/<!--([\s\S]*?)-->/g, " ")
-    .replace(/<(script|style|svg|noscript|template)[^>]*>[\s\S]*?<\/\1>/gi, " ")
+    .replace(/<(script|style|svg|noscript|template|nav|header|footer|aside|form|button)[^>]*>[\s\S]*?<\/\1>/gi, " ")
     .replace(/<\/(?:p|div|article|section|main|li|h[1-6]|blockquote)>/gi, "\n")
     .replace(/<br\s*\/?\s*>/gi, "\n")
     .replace(/<[^>]+>/g, " "))
     .replace(/[ \t]+/g, " ").replace(/ *\n+ */g, "\n").trim();
+}
+
+const BOILERPLATE_PATTERNS = [
+  /\bskip to content\b/i, /\b(?:log in|create account|sign in|sign up)\b/i,
+  /\badd reaction\b/i, /\b(?:like|unicorn|exploding head|raised hands|fire)\b/i,
+  /\bjump to comments\b/i, /\b(?:save|boost|copy link|copied to clipboard)\b/i,
+  /\bshare to (?:x|linkedin|facebook|mastodon)\b/i, /\breport abuse\b/i,
+  /\bsubscribe\b/i, /\bcode of conduct\b/i, /\bprivacy policy\b/i
+];
+
+export function isMeaningfulEvidencePassage(value) {
+  const text = String(value || "").replace(/\s+/g, " ").trim();
+  const wordCount = text.split(/\s+/).filter(Boolean).length;
+  const boilerplateHits = BOILERPLATE_PATTERNS.filter((pattern) => pattern.test(text)).length;
+  if (wordCount < 6 || text.length > 900 || boilerplateHits >= 2) return false;
+  if (/^(?:home|about|contact|menu|comments?|share|follow|advertise|more from)\b/i.test(text)) return false;
+  return /\b(?:is|are|was|were|has|have|had|requires?|must|should|found|reported|published|applies?|changed|reviewed|generated|disclosed?|describes?|states?|says?|announced|introduces?|uses?|moves?|moving|redesigned?|enabled?)\b/i.test(text);
 }
 
 export function normalizeText(value) {
@@ -75,7 +92,7 @@ function comparisonMarkers(value) {
 }
 
 function evidenceCandidates(sourceText) {
-  return splitSentences(sourceText).filter((sentence) => sentence.length >= 25 && sentence.length <= 1200);
+  return splitSentences(sourceText).filter((sentence) => sentence.length >= 25 && sentence.length <= 1200 && isMeaningfulEvidencePassage(sentence));
 }
 
 export function verifyAtomicClaim(claim, sourceText) {
@@ -122,7 +139,7 @@ export function buildVerifiedClaims(proposedFact, sourceText, fallbackContext = 
       const score = Math.max(0, ...contextTokenSets.map((contextTokens) => contextTokens.filter((token) => sentenceTokens.has(token)).length / contextTokens.length));
       return { sentence, score };
     }).sort((a, b) => b.score - a.score);
-    const fallback = ranked[0]?.score >= 0.3 ? ranked[0].sentence : "";
+    const fallback = ranked[0]?.score >= 0.3 && isMeaningfulEvidencePassage(ranked[0].sentence) ? ranked[0].sentence : "";
     if (fallback) {
       const start = sourceText.indexOf(fallback);
       const exactVerification = verifyAtomicClaim(fallback, sourceText);

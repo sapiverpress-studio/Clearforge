@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { campaignIsActive } from "./commercial-campaign.mjs";
 
 const ROOT = process.cwd();
 const CODE_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -11,6 +12,7 @@ const DATE = process.env.SAPIVER_FORGE_DATE || process.env.CLEARFORGE_DATE || ne
 const dir = path.join(ROOT, "drafts", DATE);
 const structuredPath = path.join(dir, "structured_output.json");
 const reportPath = path.join(dir, "output-usability-report.json");
+const campaignActive = campaignIsActive(DATE);
 if (!fs.existsSync(structuredPath)) throw new Error("Output usability requires structured_output.json.");
 if (!fs.existsSync(path.join(dir, "narrowed-edition-rebuild.json"))) {
   fs.writeFileSync(reportPath, `${JSON.stringify({ edition: DATE, passed: true, applicable: false, reason: "Edition was not narrowed by evidence verification." }, null, 2)}\n`);
@@ -43,6 +45,16 @@ function inspect() {
   if (checks.pinterest_description_words < 12) failures.push("Pinterest description below 12 words");
   if (checks.linkedin_words < 25) failures.push("LinkedIn-style post below 25 words");
   if (checks.quote_card_count !== 5) failures.push("quote-card pack does not contain exactly five lines");
+  const publicCopy = [data.main_article, social.tiktok_script, social.tiktok_caption, social.youtube_shorts_script,
+    social.facebook_post, social.pinterest_title, social.pinterest_description, social.linkedin_post].join("\n");
+  const boilerplateHits = ["skip to content", "log in", "create account", "add reaction", "jump to comments", "copy link", "share to facebook", "report abuse"]
+    .filter((phrase) => publicCopy.toLowerCase().includes(phrase));
+  if (boilerplateHits.length >= 2) failures.push(`retrieval boilerplate leaked into public output: ${boilerplateHits.join(", ")}`);
+  if (campaignActive) {
+    for (const [field, value] of Object.entries({ tiktok_caption: social.tiktok_caption, facebook_post: social.facebook_post, pinterest_description: social.pinterest_description, linkedin_post: social.linkedin_post })) {
+      if (!String(value || "").includes("https://payhip.com/b/pkSEY")) failures.push(`${field} is missing the Output Release Gate campaign link`);
+    }
+  }
   return { data, checks, failures };
 }
 

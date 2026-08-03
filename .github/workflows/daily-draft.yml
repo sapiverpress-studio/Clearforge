@@ -68,20 +68,23 @@ jobs:
 
           LOCAL_TIME="$(TZ=Europe/London date +%H:%M)"
           LOCAL_DAY="$(TZ=Europe/London date +%u)"
+          LOCAL_DATE="$(TZ=Europe/London date +%F)"
+          CAMPAIGN_ACTIVE=false
+          if [[ "${LOCAL_DATE}" > "2026-08-03" && "${LOCAL_DATE}" < "2026-09-03" ]]; then CAMPAIGN_ACTIVE=true; fi
           echo "Europe/London local time: ${LOCAL_TIME}; weekday: ${LOCAL_DAY}"
           if [ "${LOCAL_TIME}" = "04:30" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "retry=false" >> "$GITHUB_OUTPUT"
             echo "edition=fresh" >> "$GITHUB_OUTPUT"
             echo "angle=creator_workflow" >> "$GITHUB_OUTPUT"
-            if [ "${LOCAL_DAY}" = "4" ]; then echo "podcast_audio=true" >> "$GITHUB_OUTPUT"; else echo "podcast_audio=false" >> "$GITHUB_OUTPUT"; fi
-          elif [ "${LOCAL_TIME}" = "05:15" ]; then
+            if [ "${CAMPAIGN_ACTIVE}" = "true" ]; then echo "podcast_audio=false" >> "$GITHUB_OUTPUT"; elif [ "${LOCAL_DAY}" = "4" ]; then echo "podcast_audio=true" >> "$GITHUB_OUTPUT"; else echo "podcast_audio=false" >> "$GITHUB_OUTPUT"; fi
+          elif [ "${LOCAL_TIME}" = "05:15" ] && [ "${CAMPAIGN_ACTIVE}" != "true" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "retry=true" >> "$GITHUB_OUTPUT"
             echo "edition=fresh" >> "$GITHUB_OUTPUT"
             echo "angle=creator_workflow" >> "$GITHUB_OUTPUT"
             if [ "${LOCAL_DAY}" = "4" ]; then echo "podcast_audio=true" >> "$GITHUB_OUTPUT"; else echo "podcast_audio=false" >> "$GITHUB_OUTPUT"; fi
-          elif [ "${LOCAL_TIME}" = "16:30" ]; then
+          elif [ "${LOCAL_TIME}" = "16:30" ] && [ "${CAMPAIGN_ACTIVE}" != "true" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "retry=false" >> "$GITHUB_OUTPUT"
             echo "edition=alternate" >> "$GITHUB_OUTPUT"
@@ -116,7 +119,6 @@ jobs:
           if [ -z "${ANGLE_SLUG}" ]; then
             ANGLE_SLUG="angle"
           fi
-
           echo "CLEARFORGE_BASE_DATE=${BASE_DATE}" >> "$GITHUB_ENV"
           echo "CLEARFORGE_ANGLE=${ANGLE}" >> "$GITHUB_ENV"
           echo "CLEARFORGE_ANGLE_SLUG=${ANGLE_SLUG}" >> "$GITHUB_ENV"
@@ -126,6 +128,17 @@ jobs:
           else
             echo "CLEARFORGE_DATE=${BASE_DATE}" >> "$GITHUB_ENV"
             echo "Using fresh edition ID: ${BASE_DATE}"
+          fi
+
+      - name: Read commercial campaign status
+        id: campaign
+        if: steps.gate.outputs.run == 'true'
+        shell: bash
+        run: |
+          active="$(node -e "const c=require('./config/output-release-validation-campaign.json'); const d=process.env.CLEARFORGE_BASE_DATE; process.stdout.write(String(c.enabled && d >= c.start_date && d <= c.end_date))")"
+          echo "active=${active}" >> "$GITHUB_OUTPUT"
+          if [ "${active}" = "true" ]; then
+            echo "The Output Release Gate commercial validation campaign is active."
           fi
 
       - name: Skip retry when today's review candidate already exists
@@ -165,10 +178,10 @@ jobs:
           EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
           GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
           GEMINI_RESEARCH_MODEL: ${{ vars.GEMINI_RESEARCH_MODEL || 'gemini-3.6-flash' }}
-        run: npm run daily
+        run: bash scripts/run-commercial-daily.sh
 
       - name: Generate alternate-angle edition from today's source base
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.edition == 'alternate'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.edition == 'alternate' && steps.campaign.outputs.active != 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           CLEARFORGE_BASE_DATE: ${{ env.CLEARFORGE_BASE_DATE }}
@@ -177,8 +190,22 @@ jobs:
           GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
         run: npm run angle:alternate
 
-      - name: Rebuild any narrowed verified edition before downstream production
+      - name: Determine whether a usable package exists
+        id: content
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        shell: bash
+        run: |
+          if [ -f "drafts/${CLEARFORGE_DATE}/no-public-content.json" ]; then
+            echo "usable=false" >> "$GITHUB_OUTPUT"
+            echo "## Clean skipped day" >> "$GITHUB_STEP_SUMMARY"
+            echo "No suitable verified Output Release Gate story was found. No downstream generation, candidate, deployment or publication was started." >> "$GITHUB_STEP_SUMMARY"
+          else
+            test -s "drafts/${CLEARFORGE_DATE}/structured_output.json"
+            echo "usable=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Rebuild any narrowed verified edition before downstream production
+        if: steps.content.outputs.usable == 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -186,7 +213,7 @@ jobs:
         run: node src/rebuild-narrowed-edition.mjs
 
       - name: Optimise social content for audience response
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: steps.content.outputs.usable == 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -194,13 +221,13 @@ jobs:
         run: npm run social:optimise
 
       - name: Preserve a usable verified commercial pack after optimisation
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: steps.content.outputs.usable == 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
         run: node src/ensure-output-usability.mjs
 
       - name: Generate long-form feature from research pack
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: steps.content.outputs.usable == 'true' && steps.campaign.outputs.active != 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -208,7 +235,7 @@ jobs:
         run: npm run feature
 
       - name: Generate daily biggest-story podcast script
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: steps.content.outputs.usable == 'true' && steps.campaign.outputs.active != 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -217,13 +244,13 @@ jobs:
 
       - name: Run automated checks for the human reviewer
         id: automated_checks
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: steps.content.outputs.usable == 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
         run: npm run validate:auto
 
       - name: Install FFmpeg for Gemini audio
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: steps.content.outputs.usable == 'true'
         shell: bash
         run: |
           sudo apt-get update
@@ -231,7 +258,7 @@ jobs:
 
       - name: Generate full daily podcast MP3 with Gemini Kore
         id: full_podcast
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.podcast_audio == 'true'
+        if: steps.content.outputs.usable == 'true' && steps.campaign.outputs.active != 'true' && steps.gate.outputs.podcast_audio == 'true'
         continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -267,7 +294,7 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Stage Gemini Kore episode inside the unpublished candidate
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.podcast_audio == 'true' && steps.full_podcast.outcome == 'success'
+        if: steps.content.outputs.usable == 'true' && steps.campaign.outputs.active != 'true' && steps.gate.outputs.podcast_audio == 'true' && steps.full_podcast.outcome == 'success'
         env:
           PODCAST_KIND: daily
           EPISODE_SLUG: ${{ env.CLEARFORGE_DATE }}
@@ -277,7 +304,7 @@ jobs:
         run: node scripts/publish-podcast-feed.mjs
 
       - name: Generate story-specific AI visuals and narration
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: steps.content.outputs.usable == 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -289,7 +316,7 @@ jobs:
 
       - name: Detect available daily Gemini podcast MP3
         id: podcast_audio
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: steps.content.outputs.usable == 'true' && steps.campaign.outputs.active != 'true'
         shell: bash
         run: |
           audio="drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp3"
@@ -303,7 +330,7 @@ jobs:
 
       - name: Generate full daily podcast MP4
         id: podcast_video
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.podcast_audio.outputs.available == 'true'
+        if: steps.content.outputs.usable == 'true' && steps.campaign.outputs.active != 'true' && steps.podcast_audio.outputs.available == 'true'
         continue-on-error: true
         shell: bash
         run: |
@@ -313,7 +340,7 @@ jobs:
             "media/${CLEARFORGE_DATE}/story-1.png"
 
       - name: Stage MP4 download inside the unpublished candidate
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.podcast_video.outcome == 'success'
+        if: steps.content.outputs.usable == 'true' && steps.campaign.outputs.active != 'true' && steps.podcast_video.outcome == 'success'
         env:
           PODCAST_KIND: daily
           EPISODE_SLUG: ${{ env.CLEARFORGE_DATE }}
@@ -324,7 +351,7 @@ jobs:
         run: node scripts/publish-podcast-feed.mjs
 
       - name: Upload daily podcast MP3 and MP4 package
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.podcast_video.outcome == 'success'
+        if: steps.content.outputs.usable == 'true' && steps.campaign.outputs.active != 'true' && steps.podcast_video.outcome == 'success'
         uses: actions/upload-artifact@v4
         with:
           name: clearforge-daily-podcast-${{ env.CLEARFORGE_DATE }}
@@ -335,12 +362,12 @@ jobs:
           retention-days: 90
 
       - name: Build exact unpublished candidate site
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: steps.content.outputs.usable == 'true'
         run: npm run build:site
 
       - name: Build sealed human review package
         id: candidate
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: steps.content.outputs.usable == 'true'
         env:
           CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
           CLEARFORGE_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
@@ -348,7 +375,7 @@ jobs:
         run: npm run review:human
 
       - name: Upload exact pending candidate
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: steps.content.outputs.usable == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: clearforge-candidate-${{ env.CLEARFORGE_DATE }}-${{ steps.candidate.outputs.candidate_id }}
@@ -357,7 +384,7 @@ jobs:
           retention-days: 30
 
       - name: Email exact candidate HTML to Jim
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: steps.content.outputs.usable == 'true'
         env:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
           CLEARFORGE_REVIEW_EMAIL: ${{ secrets.CLEARFORGE_REVIEW_EMAIL }}
@@ -369,7 +396,7 @@ jobs:
         run: npm run review:email
 
       - name: Candidate summary
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        if: steps.content.outputs.usable == 'true'
         shell: bash
         run: |
           {
@@ -382,6 +409,18 @@ jobs:
             echo "- DEV syndication: not run"
             echo "- Social distribution: not run"
           } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload skipped-day evidence
+        if: steps.content.outputs.usable == 'false'
+        uses: actions/upload-artifact@v4
+        with:
+          name: sapiver-forge-skipped-${{ env.CLEARFORGE_DATE }}
+          path: |
+            drafts/${{ env.CLEARFORGE_DATE }}/no-public-content.json
+            drafts/${{ env.CLEARFORGE_DATE }}/source-acquisition.json
+            drafts/${{ env.CLEARFORGE_DATE }}/commercial-validation-record.json
+          if-no-files-found: error
+          retention-days: 30
 
       - name: Upload source-verification diagnostics after failure
         if: failure() && steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'

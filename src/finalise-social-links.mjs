@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { campaignIsActive, campaignLink, loadCommercialCampaign } from "./commercial-campaign.mjs";
 
 const ROOT = process.cwd();
 const DATE = process.env.SAPIVER_FORGE_DATE || process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
@@ -21,6 +22,8 @@ if (!fs.existsSync(structuredPath)) throw new Error(`Missing ${structuredPath}`)
 
 const structured = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
 const social = structured.social || {};
+const campaign = loadCommercialCampaign();
+const campaignActive = campaignIsActive(DATE, campaign);
 
 function cleanCommercialCopy(value) {
   return String(value || "")
@@ -44,6 +47,14 @@ function appendNotionCta(value) {
   return base ? `${base}\n\n${NOTION_CTA}` : NOTION_CTA;
 }
 
+function appendCampaignCta(value, platform) {
+  const base = cleanCommercialCopy(value)
+    .replaceAll("https://payhip.com/b/pkSEY", "")
+    .replace(/\s{2,}/g, " ").trim();
+  const cta = `${campaign.call_to_action} ${campaignLink(platform, DATE, campaign)}`;
+  return base ? `${base}\n\n${cta}` : cta;
+}
+
 function replaceMarkdownSection(markdown, heading, content) {
   const escapedHeading = heading.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const pattern = new RegExp(`## ${escapedHeading}\\s*\\n[\\s\\S]*?(?=\\n## |$)`, "i");
@@ -53,11 +64,12 @@ function replaceMarkdownSection(markdown, heading, content) {
 }
 
 const captionSource = social.tiktok_caption || social.tiktok_caption_prompt || "Which AI check would make you pause before sending client work?";
-social.tiktok_caption = appendNotionCta(captionSource);
+social.tiktok_caption = campaignActive ? appendCampaignCta(captionSource, "tiktok") : appendNotionCta(captionSource);
 social.tiktok_caption_prompt = social.tiktok_caption;
 
 for (const field of ["facebook_post", "pinterest_description", "linkedin_post"]) {
-  social[field] = appendNotionCta(social[field]);
+  const platform = field.replace(/_post$|_description$/g, "");
+  social[field] = campaignActive ? appendCampaignCta(social[field], platform) : appendNotionCta(social[field]);
 }
 
 if (social.youtube_shorts_script) {
@@ -93,7 +105,7 @@ const publicCopy = JSON.stringify({
 
 const failures = [];
 if (publicCopy.includes(OLD_PRODUCT_URL)) failures.push("retired Output Release Gate URL remains");
-if (/Sapiver Forge AI Output Release Gate/i.test(publicCopy)) failures.push("old Output Release Gate CTA wording remains");
+if (!campaignActive && /Sapiver Forge AI Output Release Gate/i.test(publicCopy)) failures.push("old Output Release Gate CTA wording remains");
 if (/:\s*[.!?](?:[\s\"}]|$)/.test(publicCopy)) failures.push("malformed empty CTA punctuation remains");
 for (const [field, value] of Object.entries({
   tiktok_caption: social.tiktok_caption,
@@ -101,6 +113,12 @@ for (const [field, value] of Object.entries({
   pinterest_description: social.pinterest_description,
   linkedin_post: social.linkedin_post
 })) {
+  if (campaignActive) {
+    if (!String(value || "").includes("https://payhip.com/b/pkSEY?")) failures.push(`${field} is missing the campaign product link`);
+    if (String(value || "").includes(FREE_NOTION_URL) || String(value || "").includes(PAID_NOTION_URL)) failures.push(`${field} contains an unrelated product link`);
+    if ((String(value || "").match(/https:\/\/payhip\.com\/b\/pkSEY/g) || []).length !== 1) failures.push(`${field} must contain the product link exactly once`);
+    continue;
+  }
   if (!String(value || "").includes(FREE_NOTION_URL)) failures.push(`${field} is missing the free Notion link`);
   if (!String(value || "").includes(PAID_NOTION_URL)) failures.push(`${field} is missing the paid Notion link`);
   if ((String(value || "").match(new RegExp(FREE_NOTION_URL.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g")) || []).length !== 1) failures.push(`${field} must contain the free Notion link exactly once`);
@@ -108,4 +126,4 @@ for (const [field, value] of Object.entries({
 }
 if (failures.length) throw new Error(`Social CTA finalisation failed: ${failures.join("; ")}`);
 
-console.log(`Finalised and validated public-ready Notion CTAs for ${DATE}.`);
+console.log(`Finalised and validated ${campaignActive ? "Output Release Gate campaign" : "Notion"} CTAs for ${DATE}.`);

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "id": "output-release-30-day-validation",
+  "enabled": true,
+  "start_date": "2026-08-04",
+  "end_date": "2026-09-02",
+  "product_name": "Sapiver Forge AI Output Release Gate",
+  "product_url": "https://payhip.com/b/pkSEY",
+  "audience": "Freelancers, creators and small agencies releasing AI-assisted client-facing or public work.",
+  "customer_question": "I have used AI to create this. What exactly should I check before I send or publish it?",
+  "call_to_action": "Before you send or publish AI-assisted work, run the exact output through the Sapiver Forge AI Output Release Gate.",
+  "max_public_packages_per_day": 1,
+  "max_generation_attempts": 2,
+  "exa_query_count": 2,
+  "feature_enabled": false,
+  "podcast_enabled": false,
+  "alternate_edition_enabled": false,
+  "media": {
+    "vertical_images": 1,
+    "tiktok_narration": true,
+    "tiktok_mp4": true,
+    "general_social_narration": false
+  },
+  "themes": {
+    "unsupported_claims": ["hallucination", "fabricated source", "invented citation", "false claim", "inaccurate summary", "retraction", "correction", "misinformation"],
+    "confidentiality": ["confidential information", "personal data", "privacy", "data leak", "sensitive information", "wrong recipient"],
+    "rights_and_disclosure": ["copyright", "ownership", "licensing", "attribution", "permission", "AI disclosure", "consent"],
+    "wrong_version_or_destination": ["wrong version", "earlier draft", "wrong file", "wrong client", "wrong audience", "published by mistake"],
+    "automated_actions": ["human review", "human approval", "automated publishing", "automated email", "agent action", "automation acted"],
+    "suitability_and_judgement": ["inappropriate output", "misleading context", "unsuitable", "tone", "human judgement", "human judgment"]
+  }
+}

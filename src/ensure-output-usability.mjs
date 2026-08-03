@@ -50,7 +50,7 @@ function inspect() {
   const boilerplateHits = ["skip to content", "log in", "create account", "add reaction", "jump to comments", "copy link", "share to facebook", "report abuse"]
     .filter((phrase) => publicCopy.toLowerCase().includes(phrase));
   if (boilerplateHits.length >= 2) failures.push(`retrieval boilerplate leaked into public output: ${boilerplateHits.join(", ")}`);
-  if (campaignActive) {
+  if (campaignActive && data.social_mode !== "podcast_general") {
     for (const [field, value] of Object.entries({ tiktok_caption: social.tiktok_caption, facebook_post: social.facebook_post, pinterest_description: social.pinterest_description, linkedin_post: social.linkedin_post })) {
       if (!String(value || "").includes("https://payhip.com/b/pkSEY")) failures.push(`${field} is missing the Output Release Gate campaign link`);
     }

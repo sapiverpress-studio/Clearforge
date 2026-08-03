@@ -32,7 +32,11 @@ function discardPodcast(reason) {
   console.warn(`Podcast skipped without failing the Sapiver Forge production run: ${reason}`);
 }
 
-const generate = run(process.execPath, ["src/generate-broad-ai-news-podcast.mjs"]);
+let generate = run(process.execPath, ["src/generate-broad-ai-news-podcast.mjs"]);
+if (generate.status !== 0) {
+  console.warn("Initial daily podcast generation failed; making one bounded retry from the same verified source set.");
+  generate = run(process.execPath, ["src/generate-broad-ai-news-podcast.mjs"]);
+}
 if (generate.status !== 0) {
   discardPodcast(`Podcast generation exited with status ${generate.status ?? "unknown"}.`);
   process.exit(0);

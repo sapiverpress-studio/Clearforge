@@ -25,7 +25,7 @@ on:
       generate_podcast_audio:
         description: "Generate the full Gemini Kore podcast MP3 for this manual run"
         required: true
-        default: false
+        default: true
         type: boolean
   schedule:
     - cron: "30 3 * * *"
@@ -77,7 +77,7 @@ jobs:
             echo "retry=false" >> "$GITHUB_OUTPUT"
             echo "edition=fresh" >> "$GITHUB_OUTPUT"
             echo "angle=creator_workflow" >> "$GITHUB_OUTPUT"
-            if [ "${CAMPAIGN_ACTIVE}" = "true" ]; then echo "podcast_audio=false" >> "$GITHUB_OUTPUT"; elif [ "${LOCAL_DAY}" = "4" ]; then echo "podcast_audio=true" >> "$GITHUB_OUTPUT"; else echo "podcast_audio=false" >> "$GITHUB_OUTPUT"; fi
+            echo "podcast_audio=true" >> "$GITHUB_OUTPUT"
           elif [ "${LOCAL_TIME}" = "05:15" ] && [ "${CAMPAIGN_ACTIVE}" != "true" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "retry=true" >> "$GITHUB_OUTPUT"
@@ -212,6 +212,14 @@ jobs:
           GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
         run: node src/rebuild-narrowed-edition.mjs
 
+      - name: Generate daily broad AI podcast script
+        if: steps.content.outputs.usable == 'true'
+        env:
+          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
+        run: npm run podcast:daily
+
       - name: Optimise social content for audience response
         if: steps.content.outputs.usable == 'true'
         env:
@@ -234,14 +242,6 @@ jobs:
           GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
         run: npm run feature
 
-      - name: Generate daily biggest-story podcast script
-        if: steps.content.outputs.usable == 'true' && steps.campaign.outputs.active != 'true'
-        env:
-          CLEARFORGE_DATE: ${{ env.CLEARFORGE_DATE }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
-        run: npm run podcast:daily
-
       - name: Run automated checks for the human reviewer
         id: automated_checks
         if: steps.content.outputs.usable == 'true'
@@ -258,7 +258,7 @@ jobs:
 
       - name: Generate full daily podcast MP3 with Gemini Kore
         id: full_podcast
-        if: steps.content.outputs.usable == 'true' && steps.campaign.outputs.active != 'true' && steps.gate.outputs.podcast_audio == 'true'
+        if: steps.content.outputs.usable == 'true' && steps.gate.outputs.podcast_audio == 'true'
         continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -294,7 +294,7 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Stage Gemini Kore episode inside the unpublished candidate
-        if: steps.content.outputs.usable == 'true' && steps.campaign.outputs.active != 'true' && steps.gate.outputs.podcast_audio == 'true' && steps.full_podcast.outcome == 'success'
+        if: steps.content.outputs.usable == 'true' && steps.gate.outputs.podcast_audio == 'true' && steps.full_podcast.outcome == 'success'
         env:
           PODCAST_KIND: daily
           EPISODE_SLUG: ${{ env.CLEARFORGE_DATE }}
@@ -316,7 +316,7 @@ jobs:
 
       - name: Detect available daily Gemini podcast MP3
         id: podcast_audio
-        if: steps.content.outputs.usable == 'true' && steps.campaign.outputs.active != 'true'
+        if: steps.content.outputs.usable == 'true'
         shell: bash
         run: |
           audio="drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp3"
@@ -330,7 +330,7 @@ jobs:
 
       - name: Generate full daily podcast MP4
         id: podcast_video
-        if: steps.content.outputs.usable == 'true' && steps.campaign.outputs.active != 'true' && steps.podcast_audio.outputs.available == 'true'
+        if: steps.content.outputs.usable == 'true' && steps.podcast_audio.outputs.available == 'true'
         continue-on-error: true
         shell: bash
         run: |
@@ -340,7 +340,7 @@ jobs:
             "media/${CLEARFORGE_DATE}/story-1.png"
 
       - name: Stage MP4 download inside the unpublished candidate
-        if: steps.content.outputs.usable == 'true' && steps.campaign.outputs.active != 'true' && steps.podcast_video.outcome == 'success'
+        if: steps.content.outputs.usable == 'true' && steps.podcast_video.outcome == 'success'
         env:
           PODCAST_KIND: daily
           EPISODE_SLUG: ${{ env.CLEARFORGE_DATE }}
@@ -351,7 +351,7 @@ jobs:
         run: node scripts/publish-podcast-feed.mjs
 
       - name: Upload daily podcast MP3 and MP4 package
-        if: steps.content.outputs.usable == 'true' && steps.campaign.outputs.active != 'true' && steps.podcast_video.outcome == 'success'
+        if: steps.content.outputs.usable == 'true' && steps.podcast_video.outcome == 'success'
         uses: actions/upload-artifact@v4
         with:
           name: clearforge-daily-podcast-${{ env.CLEARFORGE_DATE }}

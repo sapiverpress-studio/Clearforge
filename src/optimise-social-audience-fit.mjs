@@ -128,7 +128,7 @@ const response = await client.responses.create({
     },
     {
       role: "system",
-      content: "Binding commercial override: assess stories only for whether they support a truthful pre-send lesson for freelancers, creators or small agencies using AI for client-facing or public work. Relevant problems are invented sources, incorrect names or figures, unsupported claims, privacy leaks, unclear rights, misleading context, wrong versions or destinations, wrong automated actions and polished work that is not suitable to send. Use one problem per asset. If no source directly supports one, write a clearly labelled hypothetical ordinary client-work example and do not imply that the source proves it. Every asset must teach one concrete check. Use only the Output Release Gate call to action and https://payhip.com/b/pkSEY; the deterministic finaliser adds platform campaign parameters. Use ordinary customer language; never use AI governance, compliance framework, operational control or responsible-AI system. The product explanation is: reading AI work twice is not the same as knowing what to check."
+      content: "Binding commercial override: assess stories only for whether they directly support a truthful pre-send lesson for freelancers, creators or small agencies using AI for client-facing or public work. Relevant problems are invented sources, incorrect names or figures, unsupported claims, privacy leaks, unclear rights, misleading context, wrong versions or destinations, wrong automated actions and polished work that is not suitable to send. Use one directly supported problem per asset. Do not add a hypothetical product angle or imply that a source proves something it does not. Every asset must teach one concrete check. Use only the Output Release Gate call to action and https://payhip.com/b/pkSEY; the deterministic finaliser adds platform campaign parameters. Use ordinary customer language; never use AI governance, compliance framework, operational control or responsible-AI system. The product explanation is: reading AI work twice is not the same as knowing what to check."
     },
     {
       role: "system",
@@ -184,6 +184,8 @@ for (const [platform, selection] of Object.entries(result.platform_selections)) 
 const enriched = {
   ...source,
   social: result.social,
+  social_mode: "product_campaign",
+  social_source: "verified_release_problem_story",
   audience_fit: {
     generated_at: new Date().toISOString(),
     story_assessments: result.story_assessments,

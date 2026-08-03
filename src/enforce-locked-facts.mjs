@@ -64,7 +64,7 @@ const allowedEntities = new Set([
 const changes = [];
 
 function sentenceUnsafe(sentence, location) {
-  if (/https:\/\/payhip\.com\/b\/pkSEY|Before you send or publish AI-assisted work, run the exact output through the Sapiver Forge AI Output Release Gate/i.test(sentence)) return "";
+  if (/https:\/\/payhip\.com\/b\/pkSEY|Before you send or publish AI-assisted work, run the exact output through the Sapiver Forge AI Output Release Gate|https:\/\/sapiverforge-daily-brief\.netlify\.app\/podcast\/|Hear the full Sapiver Forge AI Briefing/i.test(sentence)) return "";
   const normalized = normalizeText(sentence);
   const unsupportedOutputNumber = extractMaterialNumbers(sentence).find((number) => !supportedCorpus.includes(normalizeText(number)));
   if (unsupportedOutputNumber) return `Output number has no verified locked-fact mapping: ${unsupportedOutputNumber}`;

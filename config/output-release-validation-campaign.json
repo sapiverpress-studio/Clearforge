@@ -13,7 +13,7 @@
   "max_generation_attempts": 2,
   "exa_query_count": 2,
   "feature_enabled": false,
-  "podcast_enabled": false,
+  "podcast_enabled": true,
   "alternate_edition_enabled": false,
   "media": {
     "vertical_images": 1,

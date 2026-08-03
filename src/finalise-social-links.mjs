@@ -13,6 +13,7 @@ const DATE = process.env.SAPIVER_FORGE_DATE || process.env.CLEARFORGE_DATE || ne
 const FREE_NOTION_URL = "https://sapiver-press.kit.com/5147ce2817";
 const PAID_NOTION_URL = "https://payhip.com/b/o8iQA";
 const OLD_PRODUCT_URL = "https://payhip.com/b/vGks8";
+const PODCAST_URL = "https://sapiverforge-daily-brief.netlify.app/podcast/";
 const NOTION_CTA = `Get the Sapiver Forge Notion Workspace free by email: ${FREE_NOTION_URL}\nBuy it directly: ${PAID_NOTION_URL}`;
 const draftDir = path.join(ROOT, "drafts", DATE);
 const structuredPath = path.join(draftDir, "structured_output.json");
@@ -24,6 +25,7 @@ const structured = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
 const social = structured.social || {};
 const campaign = loadCommercialCampaign();
 const campaignActive = campaignIsActive(DATE, campaign);
+const podcastGeneral = structured.social_mode === "podcast_general";
 
 function cleanCommercialCopy(value) {
   return String(value || "")
@@ -55,6 +57,12 @@ function appendCampaignCta(value, platform) {
   return base ? `${base}\n\n${cta}` : cta;
 }
 
+function appendPodcastCta(value) {
+  const base = cleanCommercialCopy(value).replaceAll(PODCAST_URL, "").replace(/\s{2,}/g, " ").trim();
+  const cta = `Hear the full Sapiver Forge AI Briefing: ${PODCAST_URL}`;
+  return base ? `${base}\n\n${cta}` : cta;
+}
+
 function replaceMarkdownSection(markdown, heading, content) {
   const escapedHeading = heading.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const pattern = new RegExp(`## ${escapedHeading}\\s*\\n[\\s\\S]*?(?=\\n## |$)`, "i");
@@ -64,12 +72,12 @@ function replaceMarkdownSection(markdown, heading, content) {
 }
 
 const captionSource = social.tiktok_caption || social.tiktok_caption_prompt || "Which AI check would make you pause before sending client work?";
-social.tiktok_caption = campaignActive ? appendCampaignCta(captionSource, "tiktok") : appendNotionCta(captionSource);
+social.tiktok_caption = podcastGeneral ? appendPodcastCta(captionSource) : campaignActive ? appendCampaignCta(captionSource, "tiktok") : appendNotionCta(captionSource);
 social.tiktok_caption_prompt = social.tiktok_caption;
 
 for (const field of ["facebook_post", "pinterest_description", "linkedin_post"]) {
   const platform = field.replace(/_post$|_description$/g, "");
-  social[field] = campaignActive ? appendCampaignCta(social[field], platform) : appendNotionCta(social[field]);
+  social[field] = podcastGeneral ? appendPodcastCta(social[field]) : campaignActive ? appendCampaignCta(social[field], platform) : appendNotionCta(social[field]);
 }
 
 if (social.youtube_shorts_script) {
@@ -113,6 +121,11 @@ for (const [field, value] of Object.entries({
   pinterest_description: social.pinterest_description,
   linkedin_post: social.linkedin_post
 })) {
+  if (podcastGeneral) {
+    if ((String(value || "").match(/https:\/\/sapiverforge-daily-brief\.netlify\.app\/podcast\//g) || []).length !== 1) failures.push(`${field} must contain the podcast link exactly once`);
+    if (String(value || "").includes("https://payhip.com/b/pkSEY")) failures.push(`${field} must not force the product link into podcast-derived copy`);
+    continue;
+  }
   if (campaignActive) {
     if (!String(value || "").includes("https://payhip.com/b/pkSEY?")) failures.push(`${field} is missing the campaign product link`);
     if (String(value || "").includes(FREE_NOTION_URL) || String(value || "").includes(PAID_NOTION_URL)) failures.push(`${field} contains an unrelated product link`);
@@ -126,4 +139,4 @@ for (const [field, value] of Object.entries({
 }
 if (failures.length) throw new Error(`Social CTA finalisation failed: ${failures.join("; ")}`);
 
-console.log(`Finalised and validated ${campaignActive ? "Output Release Gate campaign" : "Notion"} CTAs for ${DATE}.`);
+console.log(`Finalised and validated ${podcastGeneral ? "podcast" : campaignActive ? "Output Release Gate campaign" : "Notion"} CTAs for ${DATE}.`);

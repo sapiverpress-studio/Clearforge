@@ -19,17 +19,11 @@ const data = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
 const stories = Array.isArray(data.story_summaries) ? data.story_summaries : [];
 const sources = Array.isArray(data.sources) ? data.sources : [];
 
-if (stories.length < 3 || sources.length < 3) {
-  fs.mkdirSync(podcastDir, { recursive: true });
-  fs.writeFileSync(path.join(podcastDir, "podcast-skipped.json"), `${JSON.stringify({
-    date: DATE,
-    skipped: true,
-    verified_story_count: Math.min(stories.length, sources.length),
-    reason: "Broad podcast requires at least three verified stories. The detailed report and social pack remain available."
-  }, null, 2)}\n`, "utf8");
-  console.log(`Podcast skipped without failing the run: only ${Math.min(stories.length, sources.length)} verified ${Math.min(stories.length, sources.length) === 1 ? "story" : "stories"}; socials and report continue.`);
-  process.exit(0);
-}
+const verifiedCount = Math.min(stories.length, sources.length);
+if (verifiedCount < 1) throw new Error("Podcast requires at least one verified story.");
+const requiredStoryCount = Math.min(3, verifiedCount);
+const targetWords = verifiedCount === 1 ? { min: 650, max: 1000 } : verifiedCount === 2 ? { min: 900, max: 1300 } : { min: 1250, max: 1650 };
+const formatName = verifiedCount >= 3 ? "broad AI news briefing" : verifiedCount === 2 ? "two-story AI briefing" : "verified AI deep dive";
 
 if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required for podcast generation.");
 const schema = {
@@ -37,7 +31,7 @@ const schema = {
   required: ["episode_title", "story_order", "selection_reason", "spoken_script", "human_review_checks", "production_notes"],
   properties: {
     episode_title: { type: "string" },
-    story_order: { type: "array", minItems: 3, maxItems: 5, items: { type: "integer", minimum: 0, maximum: 4 } },
+    story_order: { type: "array", minItems: requiredStoryCount, maxItems: Math.min(5, verifiedCount), items: { type: "integer", minimum: 0, maximum: Math.max(0, verifiedCount - 1) } },
     selection_reason: { type: "string" },
     spoken_script: { type: "string" },
     human_review_checks: { type: "array", minItems: 6, items: { type: "string" } },
@@ -56,7 +50,7 @@ const response = await client.responses.create({
     },
     {
       role: "user",
-      content: `EDITION: ${DATE}\n\nVERIFIED STORIES:\n${JSON.stringify(stories, null, 2)}\n\nVERIFIED SOURCES:\n${JSON.stringify(sources, null, 2)}\n\nWrite one engaging broad AI news briefing covering at least three supplied stories. Open with a concise overview, then move through stories in descending importance. For each story: state only the confirmed facts, label interpretation, explain the practical consequence, and state what remains unknown. End with a short watchlist for the next few days. Aim for 1,250-1,650 spoken words. The spoken_script must contain only words to be spoken: no headings, markdown, URLs, stage directions or sales pitch. Use calm, precise, non-hyped language. Avoid generic filler and repeated phrasing.`
+      content: `EDITION: ${DATE}\n\nVERIFIED STORIES:\n${JSON.stringify(stories, null, 2)}\n\nVERIFIED SOURCES:\n${JSON.stringify(sources, null, 2)}\n\nWrite one engaging ${formatName} covering ${requiredStoryCount === 1 ? "the supplied verified story in useful depth" : `at least ${requiredStoryCount} supplied stories`}. Open with a concise overview, then move through stories in descending importance. For each story: state only the confirmed facts, label interpretation, explain the practical consequence, and state what remains unknown. End with a short watchlist for the next few days. Aim for ${targetWords.min.toLocaleString("en-GB")}-${targetWords.max.toLocaleString("en-GB")} spoken words. The spoken_script must contain only words to be spoken: no headings, markdown, URLs, stage directions or sales pitch. Use calm, precise, non-hyped language. Avoid generic filler and repeated phrasing.`
     }
   ],
   text: { format: { type: "json_schema", name: "sapiver_forge_broad_ai_news_podcast", strict: true, schema } }
@@ -65,17 +59,17 @@ const response = await client.responses.create({
 if (!response.output_text) throw new Error("Gemini returned no broad podcast output.");
 const podcast = JSON.parse(response.output_text);
 const uniqueOrder = [...new Set(podcast.story_order)];
-if (uniqueOrder.length < 3 || uniqueOrder.some((index) => index < 0 || index >= stories.length)) throw new Error("Podcast did not select at least three valid distinct stories.");
+if (uniqueOrder.length < requiredStoryCount || uniqueOrder.some((index) => index < 0 || index >= stories.length)) throw new Error(`Podcast did not select ${requiredStoryCount} valid distinct verified ${requiredStoryCount === 1 ? "story" : "stories"}.`);
 const script = String(podcast.spoken_script || "").trim();
 const words = script.split(/\s+/).filter(Boolean).length;
-if (words < 1100 || words > 1850) throw new Error(`Broad podcast length out of bounds: ${words} words.`);
+if (words < Math.floor(targetWords.min * 0.88) || words > Math.ceil(targetWords.max * 1.12)) throw new Error(`Podcast length out of bounds for ${verifiedCount} verified ${verifiedCount === 1 ? "story" : "stories"}: ${words} words.`);
 if (/https?:\/\/|^#|\[[^\]]+\]/m.test(script)) throw new Error("Podcast script contains non-spoken material.");
 
 fs.mkdirSync(podcastDir, { recursive: true });
 const write = (name, content) => fs.writeFileSync(path.join(podcastDir, name), content.endsWith("\n") ? content : `${content}\n`, "utf8");
 write("PODCAST_NARRATION_SCRIPT.txt", script);
 write("COPY_PASTE_INTO_ELEVENLABS.txt", script);
-write("podcast-script.md", `# ${podcast.episode_title}\n\nDate: ${DATE}\nFormat: broad AI news briefing\nNarrator: Kore\nVoice provider: Gemini\nHuman review required: yes\nWord count: ${words}\n\n## Stories covered\n\n${uniqueOrder.map((index) => `- ${stories[index].title}`).join("\n")}\n\n## Spoken script\n\n${script}\n\n## Human-review checks\n\n${podcast.human_review_checks.map((item) => `- [ ] ${item}`).join("\n")}\n`);
+write("podcast-script.md", `# ${podcast.episode_title}\n\nDate: ${DATE}\nFormat: ${formatName}\nNarrator: Kore\nVoice provider: Gemini\nHuman review required: yes\nWord count: ${words}\n\n## Stories covered\n\n${uniqueOrder.map((index) => `- ${stories[index].title}`).join("\n")}\n\n## Spoken script\n\n${script}\n\n## Human-review checks\n\n${podcast.human_review_checks.map((item) => `- [ ] ${item}`).join("\n")}\n`);
 write("source-notes.md", `# Verified source notes — ${DATE}\n\n${sources.map((source, index) => `## ${index + 1}. ${source.title}\n\n- Publisher: ${source.source_name}\n- URL: ${source.url}\n- Published: ${source.published_date}\n- Confirmed fact: ${source.confirmed_fact}\n- Interpretation: ${source.interpretation}\n`).join("\n")}`);
 write("episode-metadata.json", JSON.stringify({
   version: 2,

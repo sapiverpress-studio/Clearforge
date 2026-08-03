@@ -24,7 +24,7 @@ if (verifiedCount < 1) throw new Error("Podcast requires at least one verified s
 const requiredStoryCount = Math.min(3, verifiedCount);
 // Keep the requested depth proportional to the amount of verified material. Inflating a
 // small evidence set to a long fixed runtime encourages filler or unsupported claims.
-const targetWords = verifiedCount === 1 ? { min: 350, max: 650 } : verifiedCount === 2 ? { min: 500, max: 800 } : { min: 550, max: 1000 };
+const targetWords = verifiedCount === 1 ? { min: 300, max: 650 } : verifiedCount === 2 ? { min: 350, max: 800 } : { min: 400, max: 1000 };
 const formatName = verifiedCount >= 3 ? "broad AI news briefing" : verifiedCount === 2 ? "two-story AI briefing" : "verified AI deep dive";
 
 if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required for podcast generation.");

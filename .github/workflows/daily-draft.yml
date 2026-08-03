@@ -268,6 +268,10 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          if [[ ! -s "$INPUT_PATH" ]]; then
+            echo "Podcast narration script is unavailable; Gemini TTS was not attempted."
+            exit 1
+          fi
           audio="drafts/${CLEARFORGE_DATE}/podcast/clearforge-daily-podcast-${CLEARFORGE_DATE}.mp3"
           hash="$audio.source-sha256"
           source_hash="$(sha256sum "$INPUT_PATH" | cut -d' ' -f1)"
@@ -286,11 +290,15 @@ jobs:
         shell: bash
         run: |
           {
-            echo "## Gemini Kore podcast MP3 not generated"
+            echo "## Podcast MP3 not generated"
             echo
-            echo "Gemini TTS failed or was unavailable. The podcast MP3 and RSS episode were skipped."
+            echo "The narration script was unavailable or Gemini TTS failed. The podcast MP3 and RSS episode were skipped."
             echo "All other Sapiver Forge outputs will continue."
-            echo "The podcast production script remains available in the daily package."
+            if [[ -s "drafts/${CLEARFORGE_DATE}/podcast/COPY_PASTE_INTO_ELEVENLABS.txt" ]]; then
+              echo "The podcast production script remains available in the daily package."
+            else
+              echo "No podcast narration script was retained; Gemini TTS was not attempted."
+            fi
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Stage Gemini Kore episode inside the unpublished candidate

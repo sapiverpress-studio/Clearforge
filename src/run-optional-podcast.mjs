@@ -13,10 +13,10 @@ const draftDir = path.join(ROOT, "drafts", DATE);
 const podcastDir = path.join(draftDir, "podcast");
 const warningPath = path.join(draftDir, "podcast-warning.txt");
 
-function run(command, args) {
+function run(command, args, extraEnv = {}) {
   return spawnSync(command, args, {
     cwd: ROOT,
-    env: process.env,
+    env: { ...process.env, ...extraEnv },
     stdio: "inherit",
     shell: false
   });
@@ -48,7 +48,10 @@ if (brand.status !== 0) {
   process.exit(0);
 }
 
-const verify = run("npm", ["run", "verify:claims"]);
+const verify = run("npm", ["run", "verify:claims"], {
+  CLAIM_VERIFICATION_SCOPE: "podcast",
+  CLAIM_VERIFICATION_FILE: "podcast-claim-verification.json"
+});
 if (verify.status !== 0) {
   discardPodcast("Podcast claim verification found blocking issues.");
   process.exit(0);

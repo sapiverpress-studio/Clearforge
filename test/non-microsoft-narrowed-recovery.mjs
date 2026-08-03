@@ -23,7 +23,7 @@ fs.writeFileSync(path.join(draft, "source-evidence.json"), JSON.stringify({ reco
   unsupported_claims: [{ atomic_claim: "Adoption reached 91%.", verification_status: "unsupported", failed_checks: ["numbers:91%"] }]
 }] }, null, 2));
 
-const env = { ...process.env, CLEARFORGE_DATE: edition, NARROWED_REBUILD_DISABLE_MODEL: "1" };
+const env = { ...process.env, SAPIVER_FORGE_DATE: edition, NARROWED_REBUILD_DISABLE_MODEL: "1" };
 for (const script of ["src/rebuild-narrowed-edition.mjs", "src/enforce-locked-facts.mjs", "src/ensure-output-usability.mjs"]) {
   const run = spawnSync(process.execPath, [path.resolve(script)], { cwd: root, env, encoding: "utf8" });
   assert.equal(run.status, 0, `${script} failed:\n${run.stdout}\n${run.stderr}`);

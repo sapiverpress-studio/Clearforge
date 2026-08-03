@@ -15,7 +15,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: clearforge-evergreen-guide
+  group: sapiver-forge-evergreen-guide
   cancel-in-progress: false
 
 jobs:

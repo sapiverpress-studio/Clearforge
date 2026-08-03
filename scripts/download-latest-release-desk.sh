@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-prefix="clearforge-pending-edition-"
+prefix="sapiver-forge-pending-edition-"
 selected_edition=""
 selected_run=""
 candidates="$(mktemp)"
 trap 'rm -f "$candidates"' EXIT
 
 gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts?per_page=100" \
-  --jq '.artifacts | map(select(.expired == false and (.name | startswith("clearforge-pending-edition-")))) | sort_by(.created_at) | reverse | .[] | "\(.id) \(.name) \(.workflow_run.id)"' \
+  --jq '.artifacts | map(select(.expired == false and (.name | startswith("sapiver-forge-pending-edition-")))) | sort_by(.created_at) | reverse | .[] | "\(.id) \(.name) \(.workflow_run.id)"' \
   > "$candidates"
 
 while read -r artifact_id artifact_name run_id; do
@@ -44,6 +44,6 @@ if [ -z "$selected_edition" ]; then
   exit 1
 fi
 
-echo "CLEARFORGE_DATE=$selected_edition" >> "$GITHUB_ENV"
-echo "CLEARFORGE_CONFIRMATION=APPROVE $selected_edition" >> "$GITHUB_ENV"
+echo "SAPIVER_FORGE_DATE=$selected_edition" >> "$GITHUB_ENV"
+echo "SAPIVER_FORGE_CONFIRMATION=APPROVE $selected_edition" >> "$GITHUB_ENV"
 echo "Selected newest completed edition $selected_edition from workflow run $selected_run."

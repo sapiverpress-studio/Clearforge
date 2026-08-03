@@ -19,7 +19,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: clearforge-weekly-newsletter
+  group: sapiver-forge-weekly-newsletter
   cancel-in-progress: false
 
 jobs:
@@ -42,9 +42,9 @@ jobs:
           INPUT_DATE: ${{ inputs.week_end }}
         run: |
           if [ -n "${INPUT_DATE:-}" ]; then
-            echo "CLEARFORGE_WEEK_END=${INPUT_DATE}" >> "$GITHUB_ENV"
+            echo "SAPIVER_FORGE_WEEK_END=${INPUT_DATE}" >> "$GITHUB_ENV"
           else
-            echo "CLEARFORGE_WEEK_END=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
+            echo "SAPIVER_FORGE_WEEK_END=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
           fi
 
       - name: Generate Saturday newsletter
@@ -56,7 +56,7 @@ jobs:
         env:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
           BREVO_LIST_ID: ${{ secrets.BREVO_LIST_ID }}
-          BREVO_SENDER_EMAIL: clearforge@sapiverpress.co.uk
+          BREVO_SENDER_EMAIL: sapiver-forge@sapiverpress.co.uk
           BREVO_SENDER_NAME: Sapiver Forge
           BREVO_TEST_ONLY: ${{ github.event_name == 'workflow_dispatch' && inputs.test_send || 'false' }}
         run: node src/send-weekly-newsletter-brevo.mjs
@@ -67,11 +67,11 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898242+github-actions[bot]@users.noreply.github.com"
-          git add "newsletters/${CLEARFORGE_WEEK_END}"
+          git add "newsletters/${SAPIVER_FORGE_WEEK_END}"
           if git diff --cached --quiet; then
             echo "No newsletter record changes to commit."
             exit 0
           fi
-          git commit -m "Send Sapiver Forge weekly newsletter ${CLEARFORGE_WEEK_END}"
+          git commit -m "Send Sapiver Forge weekly newsletter ${SAPIVER_FORGE_WEEK_END}"
           git pull --rebase origin main
           git push origin HEAD:main

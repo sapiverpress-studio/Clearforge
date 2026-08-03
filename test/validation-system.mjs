@@ -5,7 +5,7 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 
 const repo = process.cwd();
-const root = fs.mkdtempSync(path.join(os.tmpdir(), "clearforge-validation-"));
+const root = fs.mkdtempSync(path.join(os.tmpdir(), "sapiver-forge-validation-"));
 const date = "2099-01-01";
 const draftDir = path.join(root, "drafts", date);
 const mediaDir = path.join(root, "media", date);
@@ -69,7 +69,7 @@ function writeJson(file, value) {
 function run(script, extraEnv = {}) {
   return spawnSync(process.execPath, [path.join(repo, script)], {
     cwd: root,
-    env: { ...process.env, CLEARFORGE_DATE: date, ...extraEnv },
+    env: { ...process.env, SAPIVER_FORGE_DATE: date, ...extraEnv },
     encoding: "utf8"
   });
 }
@@ -114,7 +114,7 @@ assert.equal(result.status, 0, result.stderr);
 result = run("src/build-release-desk.mjs");
 assert.equal(result.status, 0, result.stderr);
 let report = JSON.parse(fs.readFileSync(path.join(draftDir, "release-desk.json"), "utf8"));
-let html = fs.readFileSync(path.join(draftDir, `clearforge-release-desk-${date}.html`), "utf8");
+let html = fs.readFileSync(path.join(draftDir, `sapiver-forge-release-desk-${date}.html`), "utf8");
 assert.equal(report.decision, "HUMAN REVIEW");
 assert.equal(report.claim_verification.passed, true);
 assert.match(html, new RegExp(articleTail));
@@ -136,8 +136,8 @@ report = JSON.parse(fs.readFileSync(path.join(draftDir, "release-desk.json"), "u
 assert.equal(report.decision, "HUMAN REVIEW");
 
 result = run("src/approve-release.mjs", {
-  CLEARFORGE_APPROVER: "test-reviewer",
-  CLEARFORGE_CONFIRMATION: `APPROVE ${date}`
+  SAPIVER_FORGE_APPROVER: "test-reviewer",
+  SAPIVER_FORGE_CONFIRMATION: `APPROVE ${date}`
 });
 assert.equal(result.status, 0, result.stderr);
 
@@ -160,8 +160,8 @@ assert.equal(report.decision, "STOP");
 assert.ok(report.hard_stops.some((item) => item.includes("61% verify outputs")));
 
 result = run("src/approve-release.mjs", {
-  CLEARFORGE_APPROVER: "test-reviewer",
-  CLEARFORGE_CONFIRMATION: `APPROVE ${date}`
+  SAPIVER_FORGE_APPROVER: "test-reviewer",
+  SAPIVER_FORGE_CONFIRMATION: `APPROVE ${date}`
 });
 assert.notEqual(result.status, 0, "STOP edition must not be approvable");
 

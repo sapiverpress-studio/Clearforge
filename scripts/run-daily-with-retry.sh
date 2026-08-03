@@ -5,7 +5,7 @@ set -uo pipefail
 # The final attempt changes strategy instead of repeating the same timed-out search.
 max_attempts=2
 attempt=1
-total_timeout_seconds="${CLEARFORGE_RESEARCH_TIMEOUT_SECONDS:-360}"
+total_timeout_seconds="${SAPIVER_FORGE_RESEARCH_TIMEOUT_SECONDS:-360}"
 kill_grace_seconds=10
 usable_timeout_seconds=$(( total_timeout_seconds - (kill_grace_seconds * max_attempts) ))
 if [ "$usable_timeout_seconds" -le 0 ]; then
@@ -28,7 +28,7 @@ while [ "$attempt" -le "$max_attempts" ]; do
   echo "Sapiver Forge research attempt ${attempt}/${max_attempts}: ${research_mode} (hard limit ${attempt_timeout_seconds}s; total budget ${total_timeout_seconds}s)"
 
   set +e
-  CLEARFORGE_RESEARCH_MODE="$research_mode" \
+  SAPIVER_FORGE_RESEARCH_MODE="$research_mode" \
     timeout --signal=TERM --kill-after="${kill_grace_seconds}s" "${attempt_timeout_seconds}s" \
     node src/run-daily.mjs 2>&1 | tee "$log_file"
   status=${PIPESTATUS[0]}

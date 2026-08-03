@@ -4,7 +4,7 @@ import { spawnSync } from "node:child_process";
 import { campaignIsActive } from "./commercial-campaign.mjs";
 
 const ROOT = process.cwd();
-const DATE = process.env.SAPIVER_FORGE_DATE || process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
+const DATE = process.env.SAPIVER_FORGE_DATE || process.env.SAPIVER_FORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London",
   year: "numeric",
   month: "2-digit",

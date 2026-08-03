@@ -3,7 +3,7 @@ import path from "node:path";
 
 const ROOT = process.cwd();
 const BASE = String(process.env.BLOG_BASE_URL || "https://sapiverforge-daily-brief.netlify.app").replace(/\/$/, "");
-const today = process.env.CLEARFORGE_WEEK_END || new Intl.DateTimeFormat("sv-SE", {
+const today = process.env.SAPIVER_FORGE_WEEK_END || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
 const end = new Date(`${today}T12:00:00Z`);

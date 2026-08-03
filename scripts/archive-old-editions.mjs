@@ -37,7 +37,7 @@ for (const episode of episodes) {
   console.log(`${DRY_RUN ? "Would archive" : "Archiving"} ${slug} -> public/archive/${zipName}`);
   if (DRY_RUN) continue;
 
-  const staging = fs.mkdtempSync(path.join(os.tmpdir(), `clearforge-${slug}-`));
+  const staging = fs.mkdtempSync(path.join(os.tmpdir(), `sapiver-forge-${slug}-`));
   const bundle = path.join(staging, `Sapiver Forge_${slug}`);
   fs.mkdirSync(bundle);
   copyIfPresent(path.join(episodeDir, `${slug}.mp3`), bundle);

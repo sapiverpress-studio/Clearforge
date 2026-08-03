@@ -91,7 +91,7 @@ const response = await client.responses.create({
       content: `TODAY: ${today}\n\nEXISTING GUIDES:\n${JSON.stringify(existingSummaries)}\n\nAPPROVED RESEARCH PACKS:\n${JSON.stringify(packs)}\n\nChoose one durable question normal creators, employees, managers, practical AI learners or small businesses may search for months from now. Create a new guide only when it is genuinely distinct; otherwise update the closest existing guide. The guide must be 1,200-2,000 words and use this structure:\n# Title\nShort direct answer\n## What it means\n## How it works in practice\n## Why organisations are adopting it\n## What changes for people and workflows\n## Limits, risks and what remains uncertain\n## Practical questions to ask before using it\n## Current examples\n## Sources and further reading\n\nRequirements:\n- Use only facts and URLs present in the approved research packs.\n- Include at least two different source editions and two source URLs.\n- State when rollout scale, timing or outcomes are not disclosed.\n- Separate projected benefits from measured outcomes.\n- Do not write a news recap or include date-sensitive wording in the title.\n- Use a stable lowercase hyphenated slug.\n- If action is update, the slug must exactly match an existing guide.\n- Do not claim independent reporting.\n- Keep the tone calm, plain-English and practical.`
     }
   ],
-  text: { format: { type: "json_schema", name: "clearforge_evergreen_explainer", strict: true, schema } }
+  text: { format: { type: "json_schema", name: "sapiver-forge_evergreen_explainer", strict: true, schema } }
 });
 
 if (!response.output_text) throw new Error("Gemini returned no evergreen explainer output.");

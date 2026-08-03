@@ -4,7 +4,7 @@ import path from "node:path";
 const indexPath = path.join(process.cwd(), "public", "index.html");
 const releaseGateUrl = "https://payhip.com/b/vGks8";
 const controlKitUrl = "https://payhip.com/b/VK2yl";
-const marker = "<!-- CLEARFORGE_PRODUCTS -->";
+const marker = "<!-- SAPIVER_FORGE_PRODUCTS -->";
 
 if (!fs.existsSync(indexPath)) {
   throw new Error(`Homepage not found: ${indexPath}`);

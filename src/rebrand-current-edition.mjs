@@ -3,7 +3,7 @@ import path from "node:path";
 
 const ROOT = process.cwd();
 const edition = String(
-  process.env.SAPIVER_FORGE_DATE || process.env.CLEARFORGE_DATE || "",
+  process.env.SAPIVER_FORGE_DATE || process.env.SAPIVER_FORGE_DATE || "",
 ).trim();
 
 if (!/^\d{4}-\d{2}-\d{2}(?:-[a-z0-9-]+)?$/.test(edition)) {
@@ -37,7 +37,7 @@ function rebrandText(value) {
   const { protectedText, tokens } = protectExternalTokens(value);
   const changed = protectedText
     .replace(/\bclear\s+forge\b/gi, "Sapiver Forge")
-    .replace(/\bclearforge\b/gi, "Sapiver Forge");
+    .replace(/\bsapiver-forge\b/gi, "Sapiver Forge");
   return restoreExternalTokens(changed, tokens);
 }
 
@@ -77,7 +77,7 @@ for (const file of files) {
 }
 
 if (remaining.length) {
-  throw new Error(`Legacy Clearforge branding remains in current edition files: ${remaining.join(", ")}`);
+  throw new Error(`Legacy Sapiver Forge branding remains in current edition files: ${remaining.join(", ")}`);
 }
 
 console.log(`Sapiver Forge rebrand pass complete for ${edition}: ${replacements} replacements across ${changedFiles} files.`);

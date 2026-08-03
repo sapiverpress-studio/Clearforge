@@ -41,8 +41,8 @@ jobs:
           const before = source;
 
           source = source
-            .replaceAll('https://clearforge-daily-brief.netlify.app', 'https://sapiverforge-daily-brief.netlify.app')
-            .replaceAll('Clearforge', 'Sapiver Forge');
+            .replaceAll('https://sapiver-forge-daily-brief.netlify.app', 'https://sapiverforge-daily-brief.netlify.app')
+            .replaceAll('Sapiver Forge', 'Sapiver Forge');
 
           if (source === before) {
             console.log('No source replacements were required.');
@@ -52,8 +52,8 @@ jobs:
           }
 
           const forbidden = [
-            'https://clearforge-daily-brief.netlify.app',
-            'Clearforge'
+            'https://sapiver-forge-daily-brief.netlify.app',
+            'Sapiver Forge'
           ];
           const remaining = forbidden.filter((term) => source.includes(term));
           if (remaining.length) {
@@ -90,9 +90,9 @@ jobs:
           for (const file of roots) {
             if (!fs.existsSync(file)) continue;
             const text = fs.readFileSync(file, 'utf8');
-            if (text.includes('https://clearforge-daily-brief.netlify.app')) failures.push(`${file}: old domain`);
-            const withoutLegacyGuids = text.replaceAll(/clearforge:[A-Za-z0-9._:-]+/g, '');
-            if (/\bClearforge\b/.test(withoutLegacyGuids)) failures.push(`${file}: old visible brand`);
+            if (text.includes('https://sapiver-forge-daily-brief.netlify.app')) failures.push(`${file}: old domain`);
+            const withoutLegacyGuids = text.replaceAll(/sapiver-forge:[A-Za-z0-9._:-]+/g, '');
+            if (/\bSapiver Forge\b/.test(withoutLegacyGuids)) failures.push(`${file}: old visible brand`);
           }
           if (failures.length) throw new Error(`Brand leakage remains:\n${failures.join('\n')}`);
           console.log('Active site pages contain Sapiver Forge branding and the new canonical URL.');

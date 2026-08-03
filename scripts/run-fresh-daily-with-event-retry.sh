@@ -10,7 +10,7 @@ node src/prune-unpublished-run-history.mjs
 max_attempts=1
 attempt=1
 start_epoch=$(date +%s)
-wall_limit_seconds="${CLEARFORGE_FRESH_WALL_LIMIT_SECONDS:-600}"
+wall_limit_seconds="${SAPIVER_FORGE_FRESH_WALL_LIMIT_SECONDS:-600}"
 
 echo "Sapiver Forge fresh-story loop starting (one bounded story set; wall limit ${wall_limit_seconds}s)."
 
@@ -33,7 +33,7 @@ while [ "$attempt" -le "$max_attempts" ]; do
     exit "$research_status"
   fi
 
-  if [ -f "drafts/${CLEARFORGE_DATE}/no-public-content.json" ]; then
+  if [ -f "drafts/${SAPIVER_FORGE_DATE}/no-public-content.json" ]; then
     echo "No suitable verified campaign story was found. This is a successful skipped day."
     exit 0
   fi

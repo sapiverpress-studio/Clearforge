@@ -4,9 +4,9 @@ import path from "node:path";
 const ROOT = process.cwd();
 const apiKey = process.env.BREVO_API_KEY;
 const listId = Number(process.env.BREVO_LIST_ID);
-const senderEmail = process.env.BREVO_SENDER_EMAIL || "clearforge@sapiverpress.co.uk";
+const senderEmail = process.env.BREVO_SENDER_EMAIL || "sapiver-forge@sapiverpress.co.uk";
 const senderName = process.env.BREVO_SENDER_NAME || "Sapiver Forge";
-const weekEnd = process.env.CLEARFORGE_WEEK_END || new Intl.DateTimeFormat("sv-SE", {
+const weekEnd = process.env.SAPIVER_FORGE_WEEK_END || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
 const testOnly = String(process.env.BREVO_TEST_ONLY || "false").toLowerCase() === "true";

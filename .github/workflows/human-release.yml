@@ -21,7 +21,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: clearforge-human-release
+  group: sapiver-forge-human-release
   cancel-in-progress: false
 
 env:
@@ -56,9 +56,9 @@ jobs:
             echo "::error::Confirmation must exactly match: APPROVE ${EDITION}"
             exit 1
           fi
-          echo "CLEARFORGE_DATE=${EDITION}" >> "$GITHUB_ENV"
-          echo "CLEARFORGE_CANDIDATE_ID=${CANDIDATE_ID}" >> "$GITHUB_ENV"
-          echo "CLEARFORGE_CONFIRMATION=${CONFIRMATION}" >> "$GITHUB_ENV"
+          echo "SAPIVER_FORGE_DATE=${EDITION}" >> "$GITHUB_ENV"
+          echo "SAPIVER_FORGE_CANDIDATE_ID=${CANDIDATE_ID}" >> "$GITHUB_ENV"
+          echo "SAPIVER_FORGE_CONFIRMATION=${CONFIRMATION}" >> "$GITHUB_ENV"
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -74,25 +74,25 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          ARTIFACT_NAME="clearforge-candidate-${CLEARFORGE_DATE}-${CLEARFORGE_CANDIDATE_ID}"
+          ARTIFACT_NAME="sapiver-forge-candidate-${SAPIVER_FORGE_DATE}-${SAPIVER_FORGE_CANDIDATE_ID}"
           ARTIFACT_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts?name=${ARTIFACT_NAME}" --jq '.artifacts | sort_by(.created_at) | reverse | .[0].id // empty')"
           if [ -z "${ARTIFACT_ID}" ]; then
             echo "::error::No sealed artifact matches that edition and candidate ID."
             exit 1
           fi
-          ARCHIVE="${RUNNER_TEMP}/clearforge-candidate.zip"
-          STAGE="${RUNNER_TEMP}/clearforge-candidate"
+          ARCHIVE="${RUNNER_TEMP}/sapiver-forge-candidate.zip"
+          STAGE="${RUNNER_TEMP}/sapiver-forge-candidate"
           gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > "${ARCHIVE}"
           mkdir -p "${STAGE}"
           unzip -q "${ARCHIVE}" -d "${STAGE}"
-          test -f "${STAGE}/drafts/${CLEARFORGE_DATE}/candidate-manifest.json"
-          echo "CLEARFORGE_CANDIDATE_STAGE=${STAGE}" >> "$GITHUB_ENV"
+          test -f "${STAGE}/drafts/${SAPIVER_FORGE_DATE}/candidate-manifest.json"
+          echo "SAPIVER_FORGE_CANDIDATE_STAGE=${STAGE}" >> "$GITHUB_ENV"
 
       - name: Refuse conflicting production changes
         shell: bash
         run: |
           set -euo pipefail
-          MANIFEST="${CLEARFORGE_CANDIDATE_STAGE}/drafts/${CLEARFORGE_DATE}/candidate-manifest.json"
+          MANIFEST="${SAPIVER_FORGE_CANDIDATE_STAGE}/drafts/${SAPIVER_FORGE_DATE}/candidate-manifest.json"
           SOURCE_COMMIT="$(jq -r '.source_commit // empty' "${MANIFEST}")"
           CURRENT_COMMIT="$(git rev-parse HEAD)"
 
@@ -139,12 +139,12 @@ jobs:
             fi
             rm -f -- "${deleted}"
           done < <(jq -r '.deleted_paths[]?' "${MANIFEST}")
-          rm -rf "drafts/${CLEARFORGE_DATE}" "media/${CLEARFORGE_DATE}"
-          cp -a "${CLEARFORGE_CANDIDATE_STAGE}/." .
+          rm -rf "drafts/${SAPIVER_FORGE_DATE}" "media/${SAPIVER_FORGE_DATE}"
+          cp -a "${SAPIVER_FORGE_CANDIDATE_STAGE}/." .
 
       - name: Verify file hashes and record human approval
         env:
-          CLEARFORGE_APPROVER: ${{ github.actor }}
+          SAPIVER_FORGE_APPROVER: ${{ github.actor }}
         run: npm run release:human
 
       - name: Export the approved distribution bundle
@@ -156,11 +156,11 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898242+github-actions[bot]@users.noreply.github.com"
-          git add -- "drafts/${CLEARFORGE_DATE}" "media/${CLEARFORGE_DATE}" bridge public
+          git add -- "drafts/${SAPIVER_FORGE_DATE}" "media/${SAPIVER_FORGE_DATE}" bridge public
           if git diff --cached --quiet; then
             echo "No publication files changed."
           else
-            git commit -m "Release human-validated Sapiver Forge edition ${CLEARFORGE_DATE}"
+            git commit -m "Release human-validated Sapiver Forge edition ${SAPIVER_FORGE_DATE}"
             git push origin HEAD:main
           fi
 
@@ -179,7 +179,7 @@ jobs:
             --dir=public \
             --site="${NETLIFY_SITE_ID}" \
             --auth="${NETLIFY_AUTH_TOKEN}" \
-            --message="Human-validated Sapiver Forge ${CLEARFORGE_DATE} ${CLEARFORGE_CANDIDATE_ID}"
+            --message="Human-validated Sapiver Forge ${SAPIVER_FORGE_DATE} ${SAPIVER_FORGE_CANDIDATE_ID}"
 
       - name: Syndicate the approved feature to DEV
         env:
@@ -196,7 +196,7 @@ jobs:
             echo "::error::Missing CROSS_REPO_GITHUB_TOKEN repository secret."
             exit 1
           fi
-          PAYLOAD="{\"event_type\":\"clearforge_publish\",\"client_payload\":{\"date\":\"${CLEARFORGE_DATE}\",\"candidate_id\":\"${CLEARFORGE_CANDIDATE_ID}\",\"human_approved\":true,\"approved_by\":\"${{ github.actor }}\"}}"
+          PAYLOAD="{\"event_type\":\"sapiver_forge_publish\",\"client_payload\":{\"date\":\"${SAPIVER_FORGE_DATE}\",\"candidate_id\":\"${SAPIVER_FORGE_CANDIDATE_ID}\",\"human_approved\":true,\"approved_by\":\"${{ github.actor }}\"}}"
           gh api repos/sapiverpress-studio/SapiverPress_comic_public/dispatches --method POST --input - <<< "${PAYLOAD}"
 
       - name: Human release summary
@@ -206,8 +206,8 @@ jobs:
           {
             echo "## Sapiver Forge human release"
             echo
-            echo "- Edition: ${CLEARFORGE_DATE}"
-            echo "- Candidate: ${CLEARFORGE_CANDIDATE_ID}"
+            echo "- Edition: ${SAPIVER_FORGE_DATE}"
+            echo "- Candidate: ${SAPIVER_FORGE_CANDIDATE_ID}"
             echo "- Approver: ${{ github.actor }}"
             echo "- File identity: verified before release"
             echo "- Disclosure: Produced with AI assistance and released with human approval by Sapiver Forge."

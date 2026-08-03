@@ -26,7 +26,7 @@ jobs:
           sudo apt-get install -y ffmpeg
       - name: Generate AI visuals and narration
         env:
-          CLEARFORGE_DATE: ${{ github.event.inputs.date_override }}
+          SAPIVER_FORGE_DATE: ${{ github.event.inputs.date_override }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_IMAGE_MODEL: gemini-3.1-flash-image
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVENLAB_API }}
@@ -35,7 +35,7 @@ jobs:
         run: npm run media:ai
       - name: Export reviewed bundle
         env:
-          CLEARFORGE_DATE: ${{ github.event.inputs.date_override }}
+          SAPIVER_FORGE_DATE: ${{ github.event.inputs.date_override }}
           BLOG_BASE_URL: ${{ vars.BLOG_BASE_URL }}
         run: npm run export:approved
       - name: Commit generated media

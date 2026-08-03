@@ -32,7 +32,7 @@ fs.mkdirSync(path.join(temp, "drafts", "2026-08-04"), { recursive: true });
 fs.copyFileSync(path.join(root, "config/output-release-validation-campaign.json"), path.join(temp, "config/output-release-validation-campaign.json"));
 const structured = { social: { tiktok_caption: "Open the source first.", facebook_post: "Check the draft.", pinterest_description: "A useful checklist.", linkedin_post: "Review the exact output.", youtube_shorts_script: "Would you send this?" } };
 fs.writeFileSync(path.join(temp, "drafts", "2026-08-04", "structured_output.json"), JSON.stringify(structured));
-const result = spawnSync(process.execPath, [path.join(root, "src/finalise-social-links.mjs")], { cwd: temp, env: { ...process.env, CLEARFORGE_DATE: "2026-08-04" }, encoding: "utf8" });
+const result = spawnSync(process.execPath, [path.join(root, "src/finalise-social-links.mjs")], { cwd: temp, env: { ...process.env, SAPIVER_FORGE_DATE: "2026-08-04" }, encoding: "utf8" });
 assert.equal(result.status, 0, result.stderr);
 const finalised = JSON.parse(fs.readFileSync(path.join(temp, "drafts", "2026-08-04", "structured_output.json"), "utf8"));
 for (const field of ["tiktok_caption", "facebook_post", "pinterest_description", "linkedin_post"]) {
@@ -54,7 +54,7 @@ fs.mkdirSync(path.join(podcastTemp, "config"), { recursive: true });
 fs.mkdirSync(path.join(podcastTemp, "drafts", "2026-08-04"), { recursive: true });
 fs.copyFileSync(path.join(root, "config/output-release-validation-campaign.json"), path.join(podcastTemp, "config/output-release-validation-campaign.json"));
 fs.writeFileSync(path.join(podcastTemp, "drafts", "2026-08-04", "structured_output.json"), JSON.stringify({ social_mode: "podcast_general", social: structured.social }));
-const podcastLinks = spawnSync(process.execPath, [path.join(root, "src/finalise-social-links.mjs")], { cwd: podcastTemp, env: { ...process.env, CLEARFORGE_DATE: "2026-08-04" }, encoding: "utf8" });
+const podcastLinks = spawnSync(process.execPath, [path.join(root, "src/finalise-social-links.mjs")], { cwd: podcastTemp, env: { ...process.env, SAPIVER_FORGE_DATE: "2026-08-04" }, encoding: "utf8" });
 assert.equal(podcastLinks.status, 0, podcastLinks.stderr);
 const podcastFinal = JSON.parse(fs.readFileSync(path.join(podcastTemp, "drafts", "2026-08-04", "structured_output.json"), "utf8"));
 for (const field of ["tiktok_caption", "facebook_post", "pinterest_description", "linkedin_post"]) {

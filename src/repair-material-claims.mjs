@@ -3,7 +3,7 @@ import path from "node:path";
 import OpenAI from "./gemini-openai-compat.mjs";
 
 const ROOT = process.cwd();
-const DATE = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
+const DATE = process.env.SAPIVER_FORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
 const dir = path.join(ROOT, "drafts", DATE);
@@ -48,7 +48,7 @@ const response = await client.responses.create({
     role: "user",
     content: `EDITION: ${DATE}\n\nVERIFICATION REPORT:\n${JSON.stringify(verification)}\n\nFILES:\n${JSON.stringify(files)}`
   }],
-  text: { format: { type: "json_schema", name: "clearforge_factual_repair", strict: true, schema } }
+  text: { format: { type: "json_schema", name: "sapiver-forge_factual_repair", strict: true, schema } }
 });
 if (!response.output_text) throw new Error("Factual repair returned no result.");
 const repaired = JSON.parse(response.output_text);

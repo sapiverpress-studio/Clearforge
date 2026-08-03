@@ -3,21 +3,21 @@ import path from "node:path";
 
 const ROOT = process.cwd();
 const apiKey = process.env.BREVO_API_KEY;
-const recipientEmail = process.env.CLEARFORGE_REVIEW_EMAIL;
-const senderEmail = process.env.BREVO_SENDER_EMAIL || "clearforge@sapiverpress.co.uk";
+const recipientEmail = process.env.SAPIVER_FORGE_REVIEW_EMAIL;
+const senderEmail = process.env.BREVO_SENDER_EMAIL || "sapiver-forge@sapiverpress.co.uk";
 const senderName = process.env.BREVO_SENDER_NAME || "Sapiver Forge";
-const edition = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
+const edition = process.env.SAPIVER_FORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
-const runUrl = process.env.CLEARFORGE_RUN_URL || "";
-const dryRun = String(process.env.CLEARFORGE_EMAIL_DRY_RUN || "false").toLowerCase() === "true";
+const runUrl = process.env.SAPIVER_FORGE_RUN_URL || "";
+const dryRun = String(process.env.SAPIVER_FORGE_EMAIL_DRY_RUN || "false").toLowerCase() === "true";
 const draftDir = path.join(ROOT, "drafts", edition);
 const summaryPath = path.join(draftDir, "release-summary.md");
 const reportPath = path.join(draftDir, "release-desk.json");
-const htmlPath = path.join(draftDir, `clearforge-release-desk-${edition}.html`);
+const htmlPath = path.join(draftDir, `sapiver-forge-release-desk-${edition}.html`);
 
 if (!apiKey) throw new Error("Missing BREVO_API_KEY.");
-if (!recipientEmail) throw new Error("Missing CLEARFORGE_REVIEW_EMAIL.");
+if (!recipientEmail) throw new Error("Missing SAPIVER_FORGE_REVIEW_EMAIL.");
 
 function readText(file, fallback = "") {
   try { return fs.readFileSync(file, "utf8").trim(); } catch { return fallback; }

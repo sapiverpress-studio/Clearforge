@@ -25,7 +25,7 @@ fs.writeFileSync(path.join(fixtures, "source-1.html"), "");
 fs.writeFileSync(path.join(fixtures, "source-1.json"), JSON.stringify({ status: 403, final_url: url }));
 
 const run = spawnSync(process.execPath, [path.resolve("src/validate-source-integrity.mjs")], {
-  cwd: root, encoding: "utf8", env: { ...process.env, CLEARFORGE_DATE: edition, SAPIVER_FORGE_ALLOW_SOURCE_FIXTURES: "1", SOURCE_FIXTURE_DIR: fixtures }
+  cwd: root, encoding: "utf8", env: { ...process.env, SAPIVER_FORGE_DATE: edition, SAPIVER_FORGE_ALLOW_SOURCE_FIXTURES: "1", SOURCE_FIXTURE_DIR: fixtures }
 });
 assert.equal(run.status, 0, `${run.stdout}\n${run.stderr}`);
 const report = JSON.parse(fs.readFileSync(path.join(draft, "source-integrity-report.json"), "utf8"));

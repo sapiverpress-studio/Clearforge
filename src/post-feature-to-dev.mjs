@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const ROOT = process.cwd();
-const DATE = process.env.SAPIVER_FORGE_DATE || process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
+const DATE = process.env.SAPIVER_FORGE_DATE || process.env.SAPIVER_FORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
 const draftDir = path.join(ROOT, "drafts", DATE);
@@ -12,11 +12,16 @@ const metaPath = path.join(draftDir, "feature.json");
 const statePath = path.join(draftDir, "dev-post-result.json");
 
 function requireFile(file) { if (!fs.existsSync(file)) throw new Error(`Missing ${file}`); }
-requireFile(approvalPath); requireFile(featurePath); requireFile(metaPath);
+requireFile(approvalPath);
 
 const approval = JSON.parse(fs.readFileSync(approvalPath, "utf8"));
 if (approval.dev_approved !== true || approval.feature_approved !== true) {
   console.log("DEV syndication skipped: feature is not approved.");
+  process.exit(0);
+}
+
+if (!fs.existsSync(featurePath) || !fs.existsSync(metaPath)) {
+  console.log("DEV syndication skipped: the approved edition has no optional feature package.");
   process.exit(0);
 }
 

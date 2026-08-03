@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const today = process.env.CLEARFORGE_DATE || new Date().toISOString().slice(0, 10);
+const today = process.env.SAPIVER_FORGE_DATE || new Date().toISOString().slice(0, 10);
 const approvalPath = path.join(process.cwd(), "drafts", today, "approval.json");
 const target = process.argv[2] || "article";
 

@@ -3,12 +3,12 @@ import fs from "node:fs";
 import path from "node:path";
 
 const ROOT = process.cwd();
-const edition = String(process.env.CLEARFORGE_DATE || "").trim();
-const expectedId = String(process.env.CLEARFORGE_CANDIDATE_ID || "").trim();
-const approver = String(process.env.CLEARFORGE_APPROVER || "").trim();
-const confirmation = String(process.env.CLEARFORGE_CONFIRMATION || "").trim();
+const edition = String(process.env.SAPIVER_FORGE_DATE || "").trim();
+const expectedId = String(process.env.SAPIVER_FORGE_CANDIDATE_ID || "").trim();
+const approver = String(process.env.SAPIVER_FORGE_APPROVER || "").trim();
+const confirmation = String(process.env.SAPIVER_FORGE_CONFIRMATION || "").trim();
 if (!edition || !/^[a-f0-9]{64}$/.test(expectedId)) throw new Error("Missing edition or candidate ID.");
-if (!approver) throw new Error("CLEARFORGE_APPROVER is required.");
+if (!approver) throw new Error("SAPIVER_FORGE_APPROVER is required.");
 if (confirmation !== `APPROVE ${edition}`) throw new Error(`Confirmation must exactly match: APPROVE ${edition}`);
 
 const manifestPath = path.join(ROOT, "drafts", edition, "candidate-manifest.json");

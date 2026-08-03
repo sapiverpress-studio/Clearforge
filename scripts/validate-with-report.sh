@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -uo pipefail
 
-if [ -n "${CLEARFORGE_DATE:-}" ]; then
-  edition="$CLEARFORGE_DATE"
+if [ -n "${SAPIVER_FORGE_DATE:-}" ]; then
+  edition="$SAPIVER_FORGE_DATE"
 else
   edition="$(TZ=Europe/London date +%F)"
 fi
@@ -17,7 +17,7 @@ interest="drafts/${edition}/social_interest_report.json"
 
 if [ "$status" -ne 0 ]; then
   echo
-  echo "===== CLEARFORGE VALIDATION FAILURE DETAILS ====="
+  echo "===== SAPIVER FORGE VALIDATION FAILURE DETAILS ====="
   if [ -f "$report" ]; then
     node -e '
       const fs = require("fs");

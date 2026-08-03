@@ -7,7 +7,7 @@ const netlifyToken = process.env.NETLIFY_AUTH_TOKEN;
 const brevoKey = process.env.BREVO_API_KEY;
 const listId = Number(process.env.BREVO_LIST_ID);
 const siteId = process.env.NETLIFY_SITE_ID;
-const targetForm = process.env.NETLIFY_FORM_NAME || "clearforge-weekly-digest";
+const targetForm = process.env.NETLIFY_FORM_NAME || "sapiver-forge-weekly-digest";
 
 if (!Number.isInteger(listId) || listId <= 0) throw new Error("BREVO_LIST_ID must be a positive integer.");
 

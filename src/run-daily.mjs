@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import OpenAI from "./gemini-openai-compat.mjs";
+import { acquireExaSources } from "./exa-source-acquisition.mjs";
 
 const ROOT = process.cwd();
 const today = process.env.CLEARFORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
@@ -217,8 +218,8 @@ const schema = {
   required: ["headline", "dek", "sources", "story_summaries", "main_article", "practical_takeaway", "what_to_test_next", "claims_to_verify", "social", "headline_options"],
   properties: {
     headline: { type: "string" }, dek: { type: "string" },
-    sources: { type: "array", minItems: 3, maxItems: 5, items: { type: "object", additionalProperties: false, required: ["source_name", "title", "url", "published_date", "coverage_lane", "topic_category", "evidence_basis", "confirmed_fact", "interpretation"], properties: { source_name: { type: "string" }, title: { type: "string" }, url: { type: "string" }, published_date: { type: "string" }, coverage_lane: { type: "string", enum: ["confirmed_development", "human_impact"] }, topic_category: { type: "string", enum: ["creator_tools_and_media", "coding_and_building", "workplace_and_business", "models_and_infrastructure", "research_and_science", "policy_safety_and_security", "education_employment_and_society"] }, evidence_basis: { type: "string" }, confirmed_fact: { type: "string" }, interpretation: { type: "string" } } } },
-    story_summaries: { type: "array", minItems: 3, maxItems: 5, items: { type: "object", additionalProperties: false, required: ["title", "coverage_lane", "topic_category", "summary", "why_it_matters", "practical_angle", "claim_to_verify"], properties: { title: { type: "string" }, coverage_lane: { type: "string", enum: ["confirmed_development", "human_impact"] }, topic_category: { type: "string", enum: ["creator_tools_and_media", "coding_and_building", "workplace_and_business", "models_and_infrastructure", "research_and_science", "policy_safety_and_security", "education_employment_and_society"] }, summary: { type: "string" }, why_it_matters: { type: "string" }, practical_angle: { type: "string" }, claim_to_verify: { type: "string" } } } },
+    sources: { type: "array", minItems: 1, maxItems: 5, items: { type: "object", additionalProperties: false, required: ["acquisition_id", "source_name", "title", "url", "published_date", "coverage_lane", "topic_category", "evidence_basis", "confirmed_fact", "interpretation"], properties: { acquisition_id: { type: "string" }, source_name: { type: "string" }, title: { type: "string" }, url: { type: "string" }, published_date: { type: "string" }, coverage_lane: { type: "string", enum: ["confirmed_development", "human_impact"] }, topic_category: { type: "string", enum: ["creator_tools_and_media", "coding_and_building", "workplace_and_business", "models_and_infrastructure", "research_and_science", "policy_safety_and_security", "education_employment_and_society"] }, evidence_basis: { type: "string" }, confirmed_fact: { type: "string" }, interpretation: { type: "string" } } } },
+    story_summaries: { type: "array", minItems: 1, maxItems: 5, items: { type: "object", additionalProperties: false, required: ["title", "coverage_lane", "topic_category", "summary", "why_it_matters", "practical_angle", "claim_to_verify"], properties: { title: { type: "string" }, coverage_lane: { type: "string", enum: ["confirmed_development", "human_impact"] }, topic_category: { type: "string", enum: ["creator_tools_and_media", "coding_and_building", "workplace_and_business", "models_and_infrastructure", "research_and_science", "policy_safety_and_security", "education_employment_and_society"] }, summary: { type: "string" }, why_it_matters: { type: "string" }, practical_angle: { type: "string" }, claim_to_verify: { type: "string" } } } },
     main_article: { type: "string" }, practical_takeaway: { type: "string" }, what_to_test_next: { type: "string" }, claims_to_verify: { type: "array", items: { type: "string" } },
     social: { type: "object", additionalProperties: false, required: ["tiktok_script", "youtube_shorts_script", "facebook_post", "pinterest_title", "pinterest_description", "linkedin_post", "quote_card_lines"], properties: { tiktok_script: { type: "string" }, youtube_shorts_script: { type: "string" }, facebook_post: { type: "string" }, pinterest_title: { type: "string" }, pinterest_description: { type: "string" }, linkedin_post: { type: "string" }, quote_card_lines: { type: "array", minItems: 5, maxItems: 5, items: { type: "string" } } } },
     headline_options: { type: "array", minItems: 5, maxItems: 5, items: { type: "string" } }
@@ -230,13 +231,14 @@ function validateCoverageMix(candidate) {
   const sources = Array.isArray(candidate?.sources) ? candidate.sources : [];
   const stories = Array.isArray(candidate?.story_summaries) ? candidate.story_summaries : [];
   const count = (items, lane) => items.filter((item) => item.coverage_lane === lane).length;
-  if (count(sources, "confirmed_development") < 2 || count(stories, "confirmed_development") < 2) {
+  if (!sources.length || sources.length !== stories.length) failures.push("At least one aligned source and story is required.");
+  if (sources.length >= 3 && (count(sources, "confirmed_development") < 2 || count(stories, "confirmed_development") < 2)) {
     failures.push("Research mix requires at least two confirmed AI developments.");
   }
-  if (count(sources, "human_impact") < 1 || count(stories, "human_impact") < 1) {
+  if (sources.length >= 3 && (count(sources, "human_impact") < 1 || count(stories, "human_impact") < 1)) {
     failures.push("Research mix requires at least one evidence-based human-impact story.");
   }
-  if (new Set(stories.map((item) => item.topic_category)).size < 3) {
+  if (sources.length >= 3 && new Set(stories.map((item) => item.topic_category)).size < 3) {
     failures.push("Research mix requires at least three distinct topic categories.");
   }
   for (const source of sources) {
@@ -254,6 +256,7 @@ function validateCoverageMix(candidate) {
 
 async function main() {
   if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required for automated daily research.");
+  if (!process.env.EXA_API_KEY) throw new Error("EXA_API_KEY is required for evidence acquisition before automated production.");
   ensureDir(outDir);
   archiveCurrentRun();
   const history = collectHistoricalUsage();
@@ -262,8 +265,20 @@ async function main() {
 
   const config = readJson(configPath);
   const preferredSources = config.sources.map(({ name, type, url, use_for }) => ({ name, type, url, use_for }));
-  const prompt = fs.readFileSync(promptPath, "utf8");
+  let prompt = fs.readFileSync(promptPath, "utf8");
   const theme = editorialTheme(today);
+  const acquisition = await acquireExaSources({
+    apiKey: process.env.EXA_API_KEY, date: today, theme, excludedUrls: history.usedUrls
+  });
+  write(path.join(outDir, "source-acquisition.json"), JSON.stringify(acquisition, null, 2));
+  const acquisitionById = new Map(acquisition.candidates.map((item) => [item.acquisition_id, item]));
+  const acquisitionDossier = acquisition.candidates.map((item) => ({
+    acquisition_id: item.acquisition_id, title: item.page_title, url: item.final_url,
+    publication_date: item.publication_date, publisher_domain: item.publisher_domain,
+    retrieval_status: item.retrieval_status, evidence_passages: item.evidence_passages,
+    usable_source_text: item.usable_source_text
+  }));
+  prompt += `\n\nEXA-RETRIEVED SOURCE DOSSIER — THESE ARE THE ONLY PERMITTED SOURCES:\n${JSON.stringify(acquisitionDossier)}\n\nSelect only acquisition_id values from this dossier. The corresponding URL is immutable.`;
   const client = new OpenAI();
   const model = process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite";
 
@@ -280,11 +295,9 @@ async function main() {
     const response = await client.responses.create({
       model,
       reasoning: { effort: attempt === 1 ? "low" : "medium" },
-      tools: [{ type: "web_search", user_location: { type: "approximate", country: "GB", city: "London" } }],
-      include: ["web_search_call.action.sources"],
       input: [
         { role: "system", content: "Before selecting stories, actively sweep all seven discovery categories: creator tools and media (including image, video, audio, design, editing, publishing, vibe editing and vibe directing); coding and building (agents, app creation, no-code, vibe coding and automation); workplace and business; models and infrastructure; research and science; policy, safety and security; and education, employment and society. Do not stop after finding major-company announcements. Select 3–5 stories spanning at least three genuinely distinct topic categories; several companies discussing the same underlying subject do not constitute breadth. Set topic_category on every source and matching story summary." },
-        { role: "system", content: "You are the Sapiver Forge Daily AI Brief Builder. Research first. Use the broad allowed source pool. Prefer primary sources for facts and reputable journalism for discovery/context. Distinguish confirmed facts from interpretation. Never copy article wording. A rerun must be genuinely new, not a reframing of earlier stories. Follow the supplied weekday editorial theme so the output has a distinct daily purpose. Resolve every material claim against cited evidence. A supplier announcement confirms what was announced, not a customer outcome. Drop any story whose material access, timing, pricing, scale, deployment or outcome claims remain unresolved. TikTok and other short-form creator posts may alert you to a possible story, but TikTok must never appear as a cited source or evidence. Trace the claim to the original speech, interview, transcript, survey, methodology, organisation, filing, research paper or credible reporting before using it." },
+        { role: "system", content: "You are the Sapiver Forge Daily AI Brief Builder. Use only the supplied Exa-retrieved evidence dossier. Every selected source must use an acquisition_id from that dossier. Do not invent, edit, shorten, redirect or replace any source URL. Use only claims directly supported by the supplied source text or evidence passages. Prefer primary sources for facts and reputable journalism for context. Distinguish confirmed facts from Sapiver Forge interpretation. A supplier announcement confirms what was announced, not a customer outcome. One meaningful source is sufficient when fewer sources support a trustworthy edition." },
         { role: "user", content: `${prompt}\n\nTODAY: ${today}\n\nCLEARFORGE WEEKDAY EDITORIAL THEME:\nDay: ${theme.day}\nTheme: ${theme.title}\nFocus: ${theme.focus}\nInstruction: ${theme.instruction}\n\nFor Saturday forecast editions, label forecasts as forecasts and do not present predictions as confirmed facts. For Sunday recap editions, separate confirmed outcomes from open questions and prepare the reader for the following week.\n\nFRESH-TOPIC ROTATION EVIDENCE — PREVIOUS SEVEN FRESH EDITIONS:\n${JSON.stringify(recentFreshTopicEvidence)}\n\nFRESH-TOPIC ROTATION RULE:\nInfer the dominant recurring subject from these previous seven fresh editions. A subject is dominant when it materially shaped multiple editions or most of one week's coverage; treat close semantic variants as the same subject. Do not choose that dominant subject again for today's fresh edition, even if it is still prominent in the news. For example, price versus performance, model value, inference cost and cheaper-model comparisons are one topic family. Select a materially different subject supported by genuinely fresh reporting. The same dominant fresh topic may run for no more than one week and must then have at least one full week out. This topic exclusion overrides popularity, but it does not override factual quality or the weekday editorial theme. If the evidence is too mixed to identify one dominant subject, avoid the two most repeated subject families.\n\nEXCLUSIONS FROM EARLIER RUNS:\n${JSON.stringify(exclusions)}\n\nPREFERRED DISCOVERY SOURCES (starting points, not a closed allow-list):\n${JSON.stringify(preferredSources)}\n\nREQUIRED RESEARCH MIX:\n- Select 3 to 5 distinct stories.\n- At least two must be confirmed_development stories: verified AI releases, research, policy, infrastructure, adoption, deployments or other concrete developments. Prefer the last 48 hours.\n- At least one must be a human_impact story: evidence about workplace adoption, education, employment, public reaction, creator experience, changing skills, surveys, speeches, interviews or documented case studies.\n- For the human-impact lane, search the last 48 hours first. If no strong candidate exists, expand only that lane to the previous seven days rather than forcing a weak or speculative story.\n- A human-impact story needs traceable evidence: the original speech/interview/transcript, original survey and methodology, named adopting organisation or case study, research paper, government/statistical source, or credible reporting that identifies its evidence. Record this in evidence_basis.\n- TikTok or another creator video may be a discovery lead, but do not cite it, repeat its interpretation as fact or include its URL. Trace every usable claim to the underlying evidence.\n- Set coverage_lane on every source and story summary to confirmed_development or human_impact. Use matching lanes for the source and story it supports.\n\nResearch the most useful AI developments filtered through today’s editorial theme. You may search outside the preferred pool when needed to reach the original speaker, survey, adopting organisation, official documentation, regulators, filings, research, statistical evidence or credible independent corroboration. Do not use any excluded URL. Do not select a story substantially similar to any excluded story title, even from a different publication. Prefer developments not covered in earlier runs. Maintain a mix of companies, research, policy, infrastructure, open-source, creator tools, business use, safety and real human consequences. The main article must be 700 to 1000 words and practical for creators, small businesses, and AI learners. For every story, set claim_to_verify to exactly "NONE — verified from cited sources." only after all material claims used are supported. Otherwise record the unresolved claim and allow validation to block the edition. claims_to_verify must be empty for publication.` }
       ],
       text: { format: { type: "json_schema", name: "clearforge_daily_brief", strict: true, schema } }
@@ -292,7 +305,21 @@ async function main() {
 
     if (!response.output_text) throw new Error("Gemini returned no structured output.");
     const candidate = JSON.parse(response.output_text);
+    const bindingFailures = [];
+    const selectedIds = new Set();
+    candidate.sources = (candidate.sources || []).map((source) => {
+      const acquired = acquisitionById.get(source.acquisition_id);
+      if (!acquired) { bindingFailures.push(`Unknown acquisition_id: ${source.acquisition_id}`); return source; }
+      if (selectedIds.has(source.acquisition_id)) bindingFailures.push(`Duplicate acquisition_id: ${source.acquisition_id}`);
+      selectedIds.add(source.acquisition_id);
+      return {
+        ...source, source_name: acquired.publisher_domain, title: acquired.page_title,
+        url: acquired.final_url, published_date: acquired.publication_date,
+        evidence_basis: `Retrieved by Exa and preflighted with HTTP ${acquired.direct_http_status}; evidence stored in source-acquisition.json.`
+      };
+    });
     lastNoveltyFailures = [
+      ...bindingFailures,
       ...validateNovelty(candidate, history),
       ...validateCoverageMix(candidate)
     ];

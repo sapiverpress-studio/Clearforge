@@ -33,22 +33,22 @@ const commercialLinks = urls.filter((url) => /sapiver-press\.kit\.com|payhip\.co
 const interpretation = "Sapiver Forge interpretation: this development makes workflow design, clear boundaries and human review practical areas to examine before expanding AI use.";
 
 function fallbackEdition() {
-  const article = `${factText}\n\nThe retrieved source supports a narrower story than the original draft proposed. It describes AI moving beyond isolated assistance and into redesigned workflows. It does not support the rejected statistics, sample description or comparison, so those claims have been removed.\n\n${interpretation} The useful question is not whether one prompting technique wins. It is where AI enters a real process, what information it can access, which step it performs and where a person checks the result.\n\nFor a creator, freelancer or small team, choose one repeated task and map it from input to final approval. Record what the AI may do, what it must never do automatically and who owns the decision to send, publish or act. Run a limited test and compare correction time as well as apparent speed.\n\nThe Sapiver Forge gate system is designed for that sequence: decide whether AI belongs in the task, define workflow controls, review the specific output before release and then check whether the workflow delivered worthwhile results. This is a practical application of the source-supported workflow shift, not a claim made by the source.\n\nSource: ${sourceUrl}`;
-  const tiktok = `${factText} The unsupported statistics in the original angle are not in the source, so the useful story is narrower: AI is moving into redesigned workflows. Sapiver Forge interpretation: map the task, set the boundaries and keep a human release check. That is more useful than chasing a dramatic number the evidence does not support.`;
-  const caption = `The source supports a workflow-transformation story, not the rejected statistics. Before AI becomes part of a repeated task, map its access, boundaries and human review point.\n\n${commercialLinks}`.trim();
+  const article = `${factText}\n\nSapiver Forge interpretation: this verified development is worth testing against one real task instead of treating it as a reason to automate an entire operation. Start with a bounded use, define the input and decide what a useful result would look like.\n\nSapiver Forge interpretation: creators, freelancers and small teams may benefit from writing down what the AI can access, what it may change and which action remains reserved for a person. That turns a broad development into a controlled experiment.\n\nSapiver Forge interpretation: review should happen at a named release point. Check factual accuracy, tone, permissions, privacy and whether the result still serves the original purpose before it is sent, published or used.\n\nSapiver Forge interpretation: speed alone may not show whether the experiment worked. Record correction time, avoidable errors, useful output and the effort required from the reviewer. Keep, adjust or stop the workflow from that evidence.\n\nSapiver Forge interpretation: the Applied AI Gate System provides a structure for this sequence—assess the opportunity, set workflow controls, review the output and examine the outcome. The cited source does not endorse Sapiver Forge; this is our practical application of the verified fact above.\n\nSource: ${sourceUrl}`;
+  const tiktok = `${factText} Sapiver Forge interpretation: test this development on one bounded task before expanding it. Define what the AI may access, where a person reviews the result and who makes the final release decision. Then measure correction time and useful output, not speed alone. The source does not endorse Sapiver Forge; this is our practical application.`;
+  const caption = `${factText}\n\nSapiver Forge interpretation: test one bounded task, define the AI boundary and keep a named human release decision before expanding the workflow.\n\n${commercialLinks}`.trim();
   return {
-    headline: "The verified shift is from AI assistance to redesigned workflows",
-    dek: "A narrower, source-supported Sapiver Forge briefing on workflow design, boundaries and human review.",
+    headline: "A verified AI development worth testing carefully",
+    dek: "A narrower, source-supported Sapiver Forge briefing with unsupported claim components removed.",
     main_article: article,
     practical_takeaway: "Map one repeated workflow, name the AI boundary and require a human decision before anything is sent, published or allowed to act.",
     what_to_test_next: "Test one low-risk workflow and record time saved, corrections required, access granted and the person responsible for release.",
     claims_to_verify: [],
     headline_options: [
-      "The verified shift is from AI assistance to redesigned workflows",
-      "AI workflow design matters more than another unsupported statistic",
-      "What Microsoft actually says about AI and redesigned work",
-      "A narrower, verified lesson about AI workflow transformation",
-      "Before AI enters the workflow, define the human release point"
+      "A verified AI development worth testing carefully",
+      "What the retrieved evidence supports",
+      "Turn this AI development into a bounded test",
+      "Define the human release point before expanding AI",
+      "A narrower AI briefing built from verified evidence"
     ],
     social: {
       tiktok_script: tiktok,
@@ -56,15 +56,15 @@ function fallbackEdition() {
       tiktok_caption_prompt: caption,
       youtube_shorts_script: tiktok,
       facebook_post: `${article.split("\n\n").slice(0, 4).join("\n\n")}\n\n${commercialLinks}`.trim(),
-      pinterest_title: "AI workflow design needs a human release point",
+      pinterest_title: "Test AI with a human release point",
       pinterest_description: `${interpretation} Map the task, permissions, boundaries and approval step before scaling it.\n\n${commercialLinks}`.trim(),
       linkedin_post: `${factText}\n\n${interpretation}\n\nThe practical move is to map one workflow and name the human release decision.\n\n${commercialLinks}`.trim(),
       quote_card_lines: [
-        "AI is moving from assistance into redesigned workflows.",
-        "A real source is not proof of every claim attached to it.",
-        "Map the workflow before you automate the task.",
-        "Define what AI may do and where a person decides.",
-        "Human review is a release decision, not a vague intention."
+        "Sapiver Forge interpretation: test one bounded task first.",
+        "Sapiver Forge interpretation: define what AI may access.",
+        "Sapiver Forge interpretation: name the human release decision.",
+        "Sapiver Forge interpretation: measure corrections as well as speed.",
+        "Sapiver Forge interpretation: expand only after reviewing the outcome."
       ]
     }
   };

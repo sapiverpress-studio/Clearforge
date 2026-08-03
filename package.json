@@ -1,6 +1,6 @@
 {
   "name": "sapiver-forge-daily-ai-brief-builder",
-  "version": "0.17.3",
+  "version": "0.17.4",
   "private": true,
   "type": "module",
   "description": "Sapiver Forge automated daily AI news research, validation, depth-first reporting, social production, media and distribution system.",
@@ -37,6 +37,9 @@
     "test:validation-system": "node test/validation-system.mjs",
     "test:source-integrity": "node test/source-integrity-validator.mjs",
     "test:production-source-path": "node test/production-source-path-contract.mjs",
+    "test:source-acquisition": "node test/exa-source-acquisition.mjs",
+    "test:narrowed-recovery": "node test/non-microsoft-narrowed-recovery.mjs",
+    "test:exa-secondary": "node test/exa-secondary-verification.mjs",
     "test:graceful-production": "node test/graceful-production-contract.mjs",
     "test:fact-lock": "node test/fact-lock-contract.mjs",
     "test:tiktok-pack": "node test/tiktok-publishing-pack-contract.mjs",

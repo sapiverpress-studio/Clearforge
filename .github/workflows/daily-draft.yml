@@ -162,6 +162,7 @@ jobs:
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.edition == 'fresh'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
           GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
           GEMINI_RESEARCH_MODEL: ${{ vars.GEMINI_RESEARCH_MODEL || 'gemini-3.6-flash' }}
         run: npm run daily
@@ -381,6 +382,23 @@ jobs:
             echo "- DEV syndication: not run"
             echo "- Social distribution: not run"
           } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload source-verification diagnostics after failure
+        if: failure() && steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: sapiver-forge-diagnostic-${{ env.CLEARFORGE_DATE }}-${{ github.run_id }}
+          path: |
+            drafts/${{ env.CLEARFORGE_DATE }}/source-acquisition.json
+            drafts/${{ env.CLEARFORGE_DATE }}/source-evidence.json
+            drafts/${{ env.CLEARFORGE_DATE }}/source-integrity-report.json
+            drafts/${{ env.CLEARFORGE_DATE }}/source-prune-state.json
+            drafts/${{ env.CLEARFORGE_DATE }}/structured_output.json
+            drafts/${{ env.CLEARFORGE_DATE }}/narrowed-edition-rebuild.json
+            drafts/${{ env.CLEARFORGE_DATE }}/output-usability-report.json
+            drafts/${{ env.CLEARFORGE_DATE }}/fact-discipline-report.json
+          if-no-files-found: warn
+          retention-days: 14
 
       - name: Open final failure issue after retry
         if: failure() && steps.gate.outputs.retry == 'true'

@@ -4,7 +4,7 @@ import path from "node:path";
 const root = process.cwd();
 const homepagePath = path.join(root, "public", "index.html");
 const latestShortPath = path.join(root, "public", "podcast", "latest-short.js");
-const legacySelector = "data-sapiver-forge-latest-short";
+const legacySelector = "data-clearforge-latest-short";
 const currentSelector = "data-sapiver-forge-latest-short";
 
 for (const file of [homepagePath, latestShortPath]) {

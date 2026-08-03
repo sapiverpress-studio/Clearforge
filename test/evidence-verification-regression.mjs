@@ -3,7 +3,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
-import { buildVerifiedClaims, extractUsableText, verifyAtomicClaim } from "../src/evidence-verification.mjs";
+import { buildVerifiedClaims, extractUsableText, isMeaningfulEvidencePassage, verifyAtomicClaim } from "../src/evidence-verification.mjs";
 
 const microsoftText = `Microsoft describes the next measure of AI momentum as work transformed. Organizations are moving from individual assistance towards redesigned workflows and role-specific agents. Leaders should examine how work is redesigned across teams.`;
 const falseCompound = "Microsoft found that organizational readiness accounts for 67% of realised AI value, twice the impact of individual prompting skills, in a survey of 20,000 workers across 10 countries.";
@@ -23,6 +23,10 @@ assert.ok(partial.verified.some((item) => /500/.test(item.claim)), "supported co
 assert.equal(partial.verified.some((item) => /38%/.test(item.claim)), false, "unsupported component should be excluded");
 
 assert.equal(buildVerifiedClaims("Publisher claim 88%.", "").verified.length, 0, "publisher-blocked/no-body source cannot verify detailed claims");
+
+const devBoilerplate = "EU AI Act Article 50: What My Agent Workspace Changed - DEV Community Skip to content Powered by Algolia Log in Create account DEV Community Add reaction Like Unicorn Exploding Head Raised Hands Fire Jump to Comments Save Boost Copy link Copied to Clipboard Share to X Share to LinkedIn Share to Facebook Report Abuse.";
+assert.equal(isMeaningfulEvidencePassage(devBoilerplate), false, "navigation and reaction furniture must never become evidence");
+assert.equal(buildVerifiedClaims("A detailed legal claim that is absent.", devBoilerplate, "EU AI Act Article 50").verified.length, 0, "boilerplate fallback must not create a verified core");
 assert.equal(extractUsableText("<html><script>fake 99%</script><body><main>Usable report text.</main></body></html>"), "Usable report text.", "scripts and metadata are not usable source evidence");
 
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), "sapiver-evidence-regression-"));

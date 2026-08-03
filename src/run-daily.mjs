@@ -334,7 +334,7 @@ async function main() {
       selectedIds.add(source.acquisition_id);
       return {
         ...source, source_name: acquired.publisher_domain, title: acquired.page_title,
-        url: acquired.final_url, published_date: acquired.publication_date,
+        url: acquired.final_url, published_date: String(acquired.publication_date || "").slice(0, 10),
         evidence_basis: `Retrieved by Exa and preflighted with HTTP ${acquired.direct_http_status}; evidence stored in source-acquisition.json.`
       };
     });

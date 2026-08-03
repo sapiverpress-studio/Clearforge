@@ -39,6 +39,14 @@ function titleSimilarity(a, b) {
   if (!left.size || !right.size) return 0;
   return [...left].filter((item) => right.has(item)).length / Math.min(left.size, right.size);
 }
+function authoritativeForLegalClaim(url) {
+  try {
+    const hostname = new URL(url).hostname.toLowerCase();
+    return hostname === "eur-lex.europa.eu" || hostname.endsWith(".europa.eu")
+      || hostname.endsWith(".gov.uk") || hostname.endsWith(".gov")
+      || ["ico.org.uk", "fca.org.uk", "ofcom.org.uk", "asa.org.uk"].includes(hostname);
+  } catch { return false; }
+}
 async function fetchPage(url) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), Number(process.env.SOURCE_FETCH_TIMEOUT_MS || 15000));
@@ -125,6 +133,12 @@ for (let index = 0; index < sources.length; index += 1) {
     warnings.push(`Direct publisher retrieval was unavailable; verification used the sealed Exa source text acquired before generation (direct preflight HTTP ${acquiredStatus}).`);
   }
   const proposedFact = String(source.confirmed_fact || "").trim();
+  const describesLegalRule = /\b(?:law|act|article\s+\d+|regulation|legal|compliance)\b/i.test(proposedFact)
+    && /\b(?:requires?|must|obligation|prohibits?|illegal|permitted|mandatory)\b/i.test(proposedFact);
+  if (describesLegalRule
+    && !authoritativeForLegalClaim(finalUrl || requestedUrl)) {
+    failures.push("A detailed legal or regulatory claim requires an official or authoritative source.");
+  }
   const fallbackContext = [source.title, stories[index]?.title, stories[index]?.summary, stories[index]?.why_it_matters].filter(Boolean);
   const verification = failures.length ? { atomic: [], verified: [] } : buildVerifiedClaims(proposedFact, sourceText, fallbackContext);
   const unsupported = verification.atomic.filter((item) => !item.supported);

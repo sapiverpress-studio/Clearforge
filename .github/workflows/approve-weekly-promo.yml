@@ -1,0 +1,27 @@
+name: Approve Sapiver Forge Weekly Promo Pack
+on:
+  workflow_dispatch:
+    inputs:
+      candidate_id:
+        description: Exact 64-character candidate ID
+        required: true
+permissions:
+  actions: read
+  contents: read
+jobs:
+  approve:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo '${{ inputs.candidate_id }}'|grep -Eq '^[a-f0-9]{64}$'
+      - name: Download and verify candidate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CID: ${{ inputs.candidate_id }}
+        run: |
+          set -euo pipefail
+          row="$(gh api "repos/$GITHUB_REPOSITORY/actions/artifacts?per_page=100" --jq ".artifacts[]|select(.name|endswith(\"-$CID\"))|[.id,.name]|@tsv"|head -n1)"; test -n "$row"; aid="${row%%$'\t'*}"; name="${row#*$'\t'}"; gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$aid/zip">candidate.zip; mkdir approved; unzip -q candidate.zip -d approved; test "$(cat approved/candidate-id.txt)" = "$CID"; (cd approved && sha256sum -c file-hashes.sha256); echo "APPROVED_NAME=${name/candidate/approved}" >> "$GITHUB_ENV"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.APPROVED_NAME }}
+          path: approved/
+          retention-days: 30

@@ -1,0 +1,13 @@
+{
+  "brand": "Sapiver Forge",
+  "principles": ["AI must not approve its own work.","A named human remains responsible for the decision.","Automation may pause until human approval is recorded.","Structured review is more reliable than an informal second read."],
+  "products": [
+    {"slug":"opportunity","name":"Sapiver Forge AI Opportunity Gate","purpose":"Assess whether AI should be used for a particular task.","url":"https://payhip.com/b/4rcSt"},
+    {"slug":"workflow-control","name":"Sapiver Forge AI Workflow Control Gate","purpose":"Define boundaries, risks, controls, ownership and testing before an AI-assisted workflow operates.","url":"https://payhip.com/b/qBPip"},
+    {"slug":"output-release","name":"Sapiver Forge AI Output Release Gate","purpose":"Review AI-assisted output before it is sent, published or handed over.","url":"https://payhip.com/b/pkSEY"},
+    {"slug":"outcome-review","name":"Sapiver Forge AI Outcome Review Gate","purpose":"Review whether an AI-assisted workflow remains useful and worthwhile.","url":"https://payhip.com/b/rgFXP"},
+    {"slug":"bundle","name":"Sapiver Forge Applied AI Gate System Bundle","purpose":"Cover the complete four-stage human decision lifecycle.","url":"https://payhip.com/b/cmklU"},
+    {"slug":"notion","name":"Sapiver Forge Applied AI Gate System — Notion Workspace","purpose":"Record assessments, evidence, ownership and human decisions in one workspace.","url":"https://payhip.com/b/gq89f"}
+  ],
+  "free_workspace_url":"https://sapiver-press.kit.com/5147ce2817"
+}

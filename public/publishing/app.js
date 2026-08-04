@@ -21,7 +21,7 @@ async function renderVersion(label, entry) {
   card.append(actions); return card;
 }
 try {
-  const response = await fetch(fresh("social/clearforge/latest.json"), { cache: "no-store" });
+  const response = await fetch(fresh("social/sapiver-forge/latest.json"), { cache: "no-store" });
   if (!response.ok) throw new Error("The first public publishing pack has not been generated yet.");
   const manifest = await response.json();
   const cards = [];

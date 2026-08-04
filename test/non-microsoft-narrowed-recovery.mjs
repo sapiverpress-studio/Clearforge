@@ -37,5 +37,8 @@ assert.ok(output.main_article.trim().split(/\s+/).length >= 150);
 assert.ok(output.social.tiktok_caption.trim().split(/\s+/).length >= 12);
 assert.ok(output.social.tiktok_script.trim().split(/\s+/).length <= 60, "fallback TikTok must remain a usable single-story script");
 assert.equal(output.social.tiktok_script.includes("91%"), false);
+assert.match(output.social.tiktok_script, /^Intuit announced/);
+assert.equal(output.social.pinterest_title, "Sapiver Forge: test one bounded AI task");
+assert.doesNotMatch(output.social.pinterest_title, /retrieved evidence|original draft/i);
 assert.equal(output.social.quote_card_lines.length, 5);
 console.log("Source-neutral narrowed-edition recovery passed for a non-Microsoft story.");

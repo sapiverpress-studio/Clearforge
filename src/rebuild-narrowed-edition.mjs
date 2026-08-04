@@ -56,10 +56,16 @@ const existingSocial = data.social || {};
 const urls = [...new Set(JSON.stringify(existingSocial).match(/https:\/\/[^\s"\\]+/g) || [])];
 const commercialLinks = urls.filter((url) => /sapiver-press\.kit\.com|payhip\.com/.test(url)).join("\n");
 const interpretation = "Sapiver Forge interpretation: this development makes workflow design, clear boundaries and human review practical areas to examine before expanding AI use.";
+const wordCount = (value) => String(value || "").trim().split(/\s+/).filter(Boolean).length;
+
+function buildTikTokScript() {
+  if (wordCount(primaryFactText) >= 18) return primaryFactText;
+  return `${primaryFactText} Sapiver Forge interpretation: test one bounded use, define the AI boundary and keep a named human release decision.`;
+}
 
 function fallbackEdition() {
   const article = `${factText}\n\nSapiver Forge interpretation: this verified development is worth testing against one real task instead of treating it as a reason to automate an entire operation. Start with a bounded use, define the input and decide what a useful result would look like.\n\nSapiver Forge interpretation: creators, freelancers and small teams may benefit from writing down what the AI can access, what it may change and which action remains reserved for a person. That turns a broad development into a controlled experiment.\n\nSapiver Forge interpretation: review should happen at a named release point. Check factual accuracy, tone, permissions, privacy and whether the result still serves the original purpose before it is sent, published or used.\n\nSapiver Forge interpretation: speed alone may not show whether the experiment worked. Record correction time, avoidable errors, useful output and the effort required from the reviewer. Keep, adjust or stop the workflow from that evidence.\n\nSapiver Forge interpretation: the Applied AI Gate System provides a structure for this sequence—assess the opportunity, set workflow controls, review the output and examine the outcome. The cited source does not endorse Sapiver Forge; this is our practical application of the verified fact above.\n\nSource: ${sourceUrl}`;
-  const tiktok = `${primaryFactText} Sapiver Forge interpretation: test one bounded use, define the AI boundary and keep a named human release decision.`;
+  const tiktok = buildTikTokScript();
   const caption = `${primaryFactText}\n\nSapiver Forge interpretation: test one bounded task, define the AI boundary and keep a named human release decision before expanding the workflow.\n\n${commercialLinks}`.trim();
   return {
     headline: "A verified AI development worth testing carefully",

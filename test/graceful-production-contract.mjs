@@ -44,4 +44,14 @@ for (const phrase of ["Expected 1–5 sources", "Expected 1–5 stories", "No di
   if (!validator.includes(phrase)) throw new Error(`One-story production must be native in the validator: ${phrase}`);
 }
 
+const usability = fs.readFileSync("src/ensure-output-usability.mjs", "utf8");
+const publishability = fs.readFileSync("src/audit-publishability.mjs", "utf8");
+const narrowedRebuild = fs.readFileSync("src/rebuild-narrowed-edition.mjs", "utf8");
+if (!usability.includes("tiktok_words > 120") || !publishability.includes("tiktokWords > 120")) {
+  throw new Error("A 61–120 word TikTok narration must not destroy an otherwise usable verified edition.");
+}
+if (!narrowedRebuild.includes("if (wordCount(primaryFactText) >= 18) return primaryFactText")) {
+  throw new Error("Narrowed recovery must avoid lengthening an already usable verified TikTok fact.");
+}
+
 console.log("Graceful production contract passed.");

@@ -6,16 +6,33 @@ process.env.WEEK_ID = week;
 await import('../src/generate-weekly-promo-pack.mjs');
 
 const pack = JSON.parse(fs.readFileSync(`weekly-output/${week}/weekly-pack.json`, 'utf8'));
+const facts = JSON.parse(fs.readFileSync('data/sapiver-forge-products.json', 'utf8'));
 assert.equal(pack.brand, 'Sapiver Forge');
+assert.equal(pack.version, 2);
 assert.equal(pack.posts.length, 7);
 assert.equal(new Set(pack.posts.map((item) => item.day)).size, 7);
 assert.ok(pack.posts.every((item) => item.narration && item.tiktok_caption && item.youtube_title && item.youtube_description && item.product_url));
+assert.ok(pack.posts.every((item) => item.product_slug && item.product_image && item.isla_opener));
+assert.equal(pack.visual_system.approved_product_artwork, true);
+assert.equal(pack.visual_system.isla_source_repository, 'sapiverpress-studio/SapiverPress_comic_public');
 assert.equal(pack.research_used, false);
 assert.equal(pack.news_used, false);
 assert.ok(!/Clearforge|Clear Forge/i.test(JSON.stringify(pack)));
 
+for (const product of facts.products) {
+  assert.ok(product.image, `Product image mapping missing for ${product.slug}`);
+  assert.ok(fs.existsSync(product.image), `Approved product image missing: ${product.image}`);
+  assert.ok(fs.statSync(product.image).size > 0, `Approved product image is empty: ${product.image}`);
+}
+
 const workflow = fs.readFileSync('.github/workflows/weekly-promo-pack.yml', 'utf8');
 const renderer = fs.readFileSync('src/render-weekly-promo-video.mjs', 'utf8');
+const generator = fs.readFileSync('src/generate-weekly-promo-pack.mjs', 'utf8');
+assert.match(workflow, /repository: sapiverpress-studio\/SapiverPress_comic_public/);
+assert.match(workflow, /assets\/sapiver-forge\/isla-hook\.mp4/);
+assert.match(workflow, /public\/products\/gate-system\/output-release-gate\/01_Cover\.webp/);
+assert.match(workflow, /Verify visual assets before generation or paid calls/);
+assert.match(workflow, /test -s vendor\/isla-source\/assets\/sapiver-forge\/isla-hook\.mp4/);
 assert.match(workflow, /mkdir -p "\$OUT\/audio" "\$OUT\/video"/);
 assert.match(workflow, /test -s "\$audio"/);
 assert.match(workflow, /test -s "\$video"/);
@@ -25,9 +42,16 @@ assert.match(workflow, /sha256sum -c file-hashes\.sha256/);
 assert.doesNotMatch(workflow, /find \. -type f -print0\s*\|[^\n]*file-hashes\.sha256/);
 assert.match(renderer, /'-nostdin'/);
 assert.match(renderer, /function wrap\(/);
+assert.match(renderer, /human_motion_opener/);
+assert.match(renderer, /approved_product_artwork/);
+assert.match(renderer, /productImagePath/);
+assert.match(renderer, /openerPath/);
+assert.match(renderer, /zoompan=/);
 assert.match(renderer, /cards: 4/);
 assert.match(renderer, /1080x1920/);
 assert.match(renderer, /textfile=/);
-assert.match(renderer, /safe-area weekly vertical video renderer|HUMAN CONTROL FOR AI WORKFLOWS/);
+assert.match(generator, /<video controls preload="metadata"/);
+assert.match(generator, /product_image/);
+assert.match(generator, /isla_opener/);
 
 console.log('Weekly promotional pack contract passed.');

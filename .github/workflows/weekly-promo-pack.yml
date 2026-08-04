@@ -12,19 +12,52 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out weekly generator and approved product artwork
+        uses: actions/checkout@v4
         with:
           sparse-checkout: |
             package.json
             data
             src
             test
+            public/products/gate-system/opportunity-gate/01_Cover.webp
+            public/products/gate-system/workflow-control-gate/01_Cover.webp
+            public/products/gate-system/output-release-gate/01_Cover.webp
+            public/products/gate-system/outcome-review-gate/01_Cover.webp
+            public/products/gate-system/complete-bundle/01_Cover.webp
+            public/products/notion-workspace/01_Cover.webp
             .github/workflows/weekly-promo-pack.yml
           sparse-checkout-cone-mode: false
           fetch-depth: 1
+      - name: Check out the existing approved Isla movement opener
+        uses: actions/checkout@v4
+        with:
+          repository: sapiverpress-studio/SapiverPress_comic_public
+          ref: main
+          path: vendor/isla-source
+          sparse-checkout: |
+            assets/sapiver-forge/isla-hook.mp4
+          sparse-checkout-cone-mode: false
+          fetch-depth: 1
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - name: Verify visual assets before generation or paid calls
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s vendor/isla-source/assets/sapiver-forge/isla-hook.mp4
+          node <<'NODE'
+          const fs=require('fs');
+          const facts=JSON.parse(fs.readFileSync('data/sapiver-forge-products.json','utf8'));
+          for(const product of facts.products){
+            if(!product.image || !fs.existsSync(product.image) || fs.statSync(product.image).size===0){
+              throw new Error(`Missing approved product artwork: ${product.slug} -> ${product.image}`);
+            }
+          }
+          console.log(`Verified Isla opener and ${facts.products.length} approved product images.`);
+          NODE
       - run: echo "WEEK_ID=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
       - run: npm run promo:generate
       - run: npm run promo:validate
@@ -41,7 +74,7 @@ jobs:
             echo "::error::Less than 3 GB free before ElevenLabs calls; refusing to spend API credits."
             exit 1
           fi
-      - name: Generate seven narration MP3s and publishable vertical MP4s
+      - name: Generate seven narration MP3s and Isla-led product MP4s
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVENLAB_API }}
           ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID || 'w9xM4Spfmuw28ZXAirWK' }}

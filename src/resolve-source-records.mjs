@@ -100,14 +100,18 @@ for (let index = 0; index < originalSources.length; index += 1) {
   }
   const grounded = selectGroundedEvidence(resolved, source, evidence, evidenceByUrl);
   if (!grounded) {
-    dropped.push({ original_index: index, title: source.title || story.title || "", proposed_url: resolved.url || "", reason: "Could not match the candidate uniquely to grounded search evidence." });
+    dropped.push({ original_index: index, title: source.title || story.title || "", proposed_url: resolved.url || "", reason: "The proposed URL was not present in the web-search evidence and could not be matched uniquely by grounded title." });
     continue;
   }
   const evidenceItem = grounded.item;
+  if (!evidenceItem) throw new Error(`Grounded evidence disappeared for source candidate ${index + 1}.`);
   const canonicalTitle = String(evidenceItem.title || resolved.title || source.title || "").trim();
   if (!canonicalTitle) {
     dropped.push({ original_index: index, title: source.title || story.title || "", reason: "No grounded title was available." });
     continue;
+  }
+  if (normaliseText(resolved.title) !== normaliseText(canonicalTitle)) {
+    console.warn(`Resolver proposed a different title for source ${index + 1}; using the grounded title instead.`);
   }
   const resolvedSource = { ...source, source_name: resolved.source_name, title: canonicalTitle, url: evidenceItem.url, proposed_canonical_url: resolved.url, published_date: resolved.published_date, evidence_basis: `${source.evidence_basis || ""} Exact source resolution: ${resolved.resolution_basis}`.trim() };
   survivors.push({ original_index: index, source: resolvedSource, story });

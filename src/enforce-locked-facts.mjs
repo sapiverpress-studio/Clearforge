@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { extractEntities, extractMaterialNumbers, isMeaningfulEvidencePassage, normalizeText, splitSentences, verifyAtomicClaim } from "./evidence-verification.mjs";
+import { extractEntities, extractMaterialNumbers, hasUsableEvidenceLocation, isMeaningfulEvidencePassage, isUsableAtomicClaim, normalizeText, splitSentences, verifyAtomicClaim } from "./evidence-verification.mjs";
 
 const ROOT = process.cwd();
 const DATE = process.env.SAPIVER_FORGE_DATE || process.env.SAPIVER_FORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
@@ -20,11 +20,20 @@ const records = Array.isArray(evidence.records) ? evidence.records : [];
 const rejectedEvidenceClaims = [];
 const facts = records.flatMap((record) => (record.verified_claims || []).flatMap((claim) => {
   const passage = String(claim.evidence_passage || "");
-  if (!isMeaningfulEvidencePassage(passage)) {
+  const location = claim.evidence_location;
+  let publisher = "";
+  try { publisher = new URL(claim.source_url || record.final_url).hostname.split(".").find((part) => !/^(?:www|com|org|net|co|uk)$/i.test(part)) || ""; } catch {}
+  const mapping = verifyAtomicClaim(String(claim.atomic_claim || ""), `${publisher ? `${publisher} published this report. ` : ""}${record.page_title || ""} ${passage}`);
+  if (!isMeaningfulEvidencePassage(passage) || !isUsableAtomicClaim(claim.atomic_claim) || !hasUsableEvidenceLocation(location) || !mapping.supported) {
     rejectedEvidenceClaims.push({
       atomic_claim: claim.atomic_claim,
       verification_status: "rejected_before_lock",
-      failed_checks: ["evidence_passage:retrieval-furniture-or-unusable-text"]
+      failed_checks: [
+        !isMeaningfulEvidencePassage(passage) ? "evidence_passage:retrieval-furniture-or-unusable-text" : "",
+        !isUsableAtomicClaim(claim.atomic_claim) ? "claim:incomplete-or-publisher-furniture" : "",
+        !hasUsableEvidenceLocation(location) ? "evidence_location:unavailable" : "",
+        !mapping.supported ? "claim:evidence-mapping-failed" : ""
+      ].filter(Boolean)
     });
     return [];
   }
@@ -112,7 +121,7 @@ function sanitizeText(value, location) {
       return false;
     }).join(" ");
   }).join("\n").replace(/\n{3,}/g, "\n\n").trim();
-  return output || "Sapiver Forge interpretation: the retrieved evidence supports a narrower conclusion than the original draft claimed.";
+  return output;
 }
 function walk(value, location) {
   if (typeof value === "string") return sanitizeText(value, location);
@@ -121,17 +130,21 @@ function walk(value, location) {
   return value;
 }
 
-const protectedSourceFields = new Set(["sources"]);
+const publicOutputFields = new Set([
+  "headline", "dek", "main_article", "practical_takeaway", "what_to_test_next", "headline_options",
+  "story_summaries", "social", "claims_to_verify"
+]);
 for (const [key, value] of Object.entries(data)) {
-  if (!protectedSourceFields.has(key)) data[key] = walk(value, `structured_output.${key}`);
+  if (publicOutputFields.has(key)) data[key] = walk(value, `structured_output.${key}`);
 }
 data.sources = (data.sources || []).map((source, index) => {
-  const record = records.find((item) => Number(item.source_index) === index) || records[index];
+  const record = records.find((item) => item.final_url === source.url || item.requested_url === source.url || (source.acquisition_id && item.acquisition_id === source.acquisition_id))
+    || records.find((item) => Number(item.source_index) === index) || records[index];
   const verifiedText = (record?.verified_claims || [])
-    .filter((claim) => isMeaningfulEvidencePassage(claim.evidence_passage))
+    .filter((claim) => facts.some((fact) => fact.atomic_claim === claim.atomic_claim && fact.source_url === (claim.source_url || record?.final_url)))
     .map((claim) => claim.atomic_claim).join(" ").trim();
   return { ...source, confirmed_fact: verifiedText, verification_status: verifiedText ? "verified_from_retrieved_evidence" : "excluded_no_usable_evidence" };
-});
+}).filter((source) => source.confirmed_fact);
 fs.writeFileSync(structuredPath, `${JSON.stringify(data, null, 2)}\n`);
 for (const filename of ["daily_brief.md", "feature.md", "social_pack.md", "claims_to_verify.md", path.join("podcast", "COPY_PASTE_INTO_ELEVENLABS.txt")]) {
   const file = path.join(dir, filename);

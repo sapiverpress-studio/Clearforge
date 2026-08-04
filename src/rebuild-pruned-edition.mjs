@@ -37,7 +37,7 @@ const schema = {
 const survivorCount = data.sources.length;
 const preferredWords = survivorCount === 1 ? 900 : survivorCount === 2 ? 850 : 800;
 const formatInstruction = survivorCount === 1
-  ? "Create the strongest useful single-story report the verified evidence supports. Prefer depth, but do not pad, repeat or invent material merely to reach a fixed length."
+  ? "Create the strongest useful detailed single-story report the verified evidence supports. Prefer depth, but do not pad, repeat or invent material merely to reach a fixed length."
   : survivorCount === 2
     ? "Create the strongest useful two-story report the verified evidence supports, using a shared angle only when the evidence genuinely supports one."
     : "Create a useful depth-first multi-story report led by the strongest verified development rather than a thin roundup.";

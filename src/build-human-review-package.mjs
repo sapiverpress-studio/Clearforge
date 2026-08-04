@@ -3,6 +3,7 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { containsVisibleLegacyBrand } from "./legacy-brand-guard.mjs";
+import { auditPublishability } from "./audit-publishability.mjs";
 
 const ROOT = process.cwd();
 const EDITION = String(process.env.SAPIVER_FORGE_DATE || "").trim();
@@ -15,6 +16,8 @@ if (!/^\d{4}-\d{2}-\d{2}(?:-[a-z0-9-]+)?$/.test(EDITION)) {
 const draftDir = path.join(ROOT, "drafts", EDITION);
 const mediaDir = path.join(ROOT, "media", EDITION);
 if (!fs.existsSync(draftDir)) throw new Error(`Missing candidate directory: ${draftDir}`);
+const publishability = auditPublishability(ROOT, EDITION);
+if (!publishability.passed) throw new Error(`Candidate sealing blocked by publishability audit: ${publishability.failures.join("; ")}`);
 
 function readText(file) {
   try { return fs.readFileSync(file, "utf8").trim(); } catch { return ""; }

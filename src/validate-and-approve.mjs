@@ -32,8 +32,8 @@ const openClaims = Array.isArray(data.claims_to_verify)
 const articleWords = article.split(/\s+/).filter(Boolean).length;
 const featureWords = feature.split(/\s+/).filter(Boolean).length;
 
-if (sources.length < 3 || sources.length > 5) failures.push(`Expected 3–5 sources, got ${sources.length}`);
-if (stories.length < 3 || stories.length > 5) failures.push(`Expected 3–5 stories, got ${stories.length}`);
+if (sources.length < 1 || sources.length > 5) failures.push(`Expected 1–5 sources, got ${sources.length}`);
+if (stories.length < 1 || stories.length > 5) failures.push(`Expected 1–5 stories, got ${stories.length}`);
 if (!article) failures.push("Missing main article");
 if (article && articleWords < 500) warnings.push(`Article is shorter than the preferred 650 words (${articleWords})`);
 if (articleWords > 1400) warnings.push(`Article is longer than the preferred 1,200 words (${articleWords})`);
@@ -139,7 +139,7 @@ for (const [i, line] of quoteLines.entries()) {
 }
 
 const uniqueHosts = new Set(sources.map((s) => { try { return new URL(s.url).hostname; } catch { return ""; } }).filter(Boolean));
-if (uniqueHosts.size < 2) failures.push("Fewer than two distinct source domains");
+if (uniqueHosts.size < 1) failures.push("No distinct source domain remains");
 
 const coreApproved = failures.length === 0;
 const approval = {
@@ -151,7 +151,7 @@ const approval = {
   youtube_approved: coreApproved && Boolean(socialFields.youtube_shorts_script),
   dev_approved: coreApproved && Boolean(feature),
   notes: coreApproved
-    ? `Automatically approved with ${warnings.length} non-blocking quality warning${warnings.length === 1 ? "" : "s"}.`
+    ? `Automated checks passed with ${warnings.length} non-blocking quality warning${warnings.length === 1 ? "" : "s"}. Exact-candidate human approval is still required.`
     : `Automatically blocked for factual or safety reasons: ${failures.join("; ")}`
 };
 

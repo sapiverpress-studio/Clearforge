@@ -24,12 +24,18 @@ function run(command, args, extraEnv = {}) {
 
 function discardPodcast(reason) {
   fs.rmSync(podcastDir, { recursive: true, force: true });
+  fs.rmSync(path.join(draftDir, "podcast-claim-verification.json"), { force: true });
   fs.writeFileSync(
     warningPath,
     `Podcast skipped for ${DATE}. ${reason}\nThe verified report, social pack, feature and review workflow remain available.\n`,
     "utf8"
   );
   console.warn(`Podcast skipped without failing the Sapiver Forge production run: ${reason}`);
+}
+
+if (fs.existsSync(path.join(draftDir, "narrowed-edition-rebuild.json"))) {
+  discardPodcast("The edition required deterministic evidence narrowing, so the optional podcast was omitted rather than expanding a limited fact set.");
+  process.exit(0);
 }
 
 let generate = run(process.execPath, ["src/generate-broad-ai-news-podcast.mjs"]);

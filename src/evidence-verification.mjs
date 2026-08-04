@@ -55,7 +55,14 @@ export function isUsableAtomicClaim(value) {
   if (words.length < 5 || words.length > 90) return false;
   if (!/^(?:[A-Z0-9“"'(]|\[)/.test(text)) return false;
   if (/^(?:and|but|or|however|although|therefore|consequently|meanwhile|because|with|while)\b/i.test(text)) return false;
-  if (/https?:\/\/|&(?:#\d+|#x[0-9a-f]+|[a-z]+);|[|<>↗]|\b(?:share|sign in|log in|subscribe|try starlog|vibe-coding is fine|copy link)\b/i.test(text)) return false;
+  if (/https?:\/\/|&(?:#\d+|#x[0-9a-f]+|[a-z]+);|[#|<>↗]|\b(?:share|sign in|log in|subscribe|try starlog|vibe-coding is fine|copy link|smartphone reviews|latest gadget news)\b/i.test(text)) return false;
+  const normalizedWords = normalizeText(text).split(" ").filter(Boolean);
+  const phrases = new Set();
+  for (let index = 0; index <= normalizedWords.length - 6; index += 1) {
+    const phrase = normalizedWords.slice(index, index + 6).join(" ");
+    if (phrases.has(phrase)) return false;
+    phrases.add(phrase);
+  }
   if (!/[.!?]$/.test(text)) return false;
   if (!/\b(?:is|are|was|were|has|have|had|found|reported|published|announced|released|introduced|describes?|shows?|uses?|used|allows?|allowed|requires?|required|applies?|applied|leads?|led|declines?|declined|increases?|increased|decreases?|decreased|turns?|turned|offers?|offered|provides?|provided|moves?|moved|acts?|acted|integrates?|integrated|contains?|contained|includes?|included|accounts?|accounted|covered|measured|redesigned|demonstrates?|demonstrated|takes?|took|gives?|gave|becomes?|became|can|may|will)\b/i.test(text)) return false;
   return true;

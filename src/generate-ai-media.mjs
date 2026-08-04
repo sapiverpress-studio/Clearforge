@@ -132,7 +132,18 @@ function visualPrompt(story, index) {
   return `${pick(aiBriefingScenes, index * 3)}. ${pick(compositions, index * 5)}. ${pick(aiSignals, index * 7)}. ${pick(variationDevices, index * 11)}. Story context: ${story.title}. Practical angle: ${story.practical_angle}. Sapiver Forge brand feel: AI briefing podcast, human-led, practical, educational, precise, calm, professional, premium, not hyped. Palette: ${pick(palette, index * 13)}. The image must clearly belong to an AI news and learning project, but it must not look like a generic AI-generated stock image. Avoid: robots, android faces, glowing brains, hologram faces, random floating code, excessive neon, cyberpunk cityscapes, stock-photo handshakes, fake readable UI text, fake logos, misspelled words, watermarks, cluttered dashboards, medical/legal/financial symbolism. Do not include Sapiver Press, unrelated logos, or any other brand. Do not render readable typography; leave clean space for the video renderer to add text. Portrait composition for a vertical short. High-quality studio lighting, crisp objects, realistic materials, coherent perspective.`;
 }
 
-const stories = (data.story_summaries || []).slice(0, campaignActive ? 1 : 3);
+const tiktokNarrationText = String(data.social?.tiktok_script || "").replace(/\s+/g, " ").trim();
+const overlapScore = (left, right) => {
+  const tokens = (value) => new Set(String(value || "").toLowerCase().match(/[a-z0-9]{3,}/g) || []);
+  const a = tokens(left);
+  const b = tokens(right);
+  return a.size ? [...a].filter((token) => b.has(token)).length / a.size : 0;
+};
+const allStories = data.story_summaries || [];
+const matchedTikTokStoryIndex = allStories
+  .map((story, index) => ({ index, score: overlapScore(tiktokNarrationText, `${story.title || ""} ${story.summary || ""}`) }))
+  .sort((a, b) => b.score - a.score)[0]?.index || 0;
+const stories = campaignActive ? [allStories[matchedTikTokStoryIndex]].filter(Boolean) : allStories.slice(0, 3);
 if (stories.length < (campaignActive ? 1 : 3)) throw new Error(`Need at least ${campaignActive ? 1 : 3} story summaries for AI media generation.`);
 
 const images = [];
@@ -182,10 +193,9 @@ const narrationFile = path.join(outDir, "narration.mp3");
 if (!campaignActive) await createIreneSpeech(narrationText, narrationFile);
 
 const tiktokSelection = data.audience_fit?.platform_selections?.tiktok || {};
-const tiktokStoryIndex = Number.isInteger(tiktokSelection.story_index) && tiktokSelection.story_index >= 0 && tiktokSelection.story_index < stories.length
+const tiktokStoryIndex = campaignActive ? 0 : Number.isInteger(tiktokSelection.story_index) && tiktokSelection.story_index >= 0 && tiktokSelection.story_index < stories.length
   ? tiktokSelection.story_index
   : 0;
-const tiktokNarrationText = String(data.social?.tiktok_script || "").replace(/\s+/g, " ").trim();
 const tiktokWords = tiktokNarrationText.split(/\s+/).filter(Boolean);
 const tiktokSentences = tiktokNarrationText.match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map((part) => part.trim()).filter(Boolean) || [];
 if (!tiktokNarrationText) {
@@ -210,7 +220,7 @@ const manifest = {
   date: DATE,
   headline: data.headline,
   dek: data.dek,
-  hook: "Three AI updates that actually matter today",
+  hook: tiktokHook,
   spoken_cta: spokenCta,
   visual_system: "Sapiver Forge AI briefing podcast studio system",
   social_voice: {

@@ -37,7 +37,6 @@ const verifiedEntries = records.flatMap((record) => (record.verified_claims || [
 const verified = verifiedEntries.map((item) => item.claim);
 if (!verified.length) throw new Error("No verified factual core remains for a narrowed edition.");
 
-const factText = verified.map((claim) => claim.atomic_claim).join("\n\n").trim();
 function standaloneClaimScore(claim) {
   const text = String(claim.atomic_claim || "").trim();
   let score = 100 - Math.min(text.split(/\s+/).length, 70);
@@ -47,11 +46,24 @@ function standaloneClaimScore(claim) {
   return score;
 }
 const primaryClaim = [...verified].sort((a, b) => standaloneClaimScore(b) - standaloneClaimScore(a))[0];
-const primaryFactText = String(primaryClaim?.atomic_claim || factText).trim();
 const evidenceText = verified.map((claim) => claim.evidence_passage).join(" ").trim();
 const primaryEntry = verifiedEntries.find((item) => item.claim === primaryClaim) || verifiedEntries[0];
 const sourceUrl = primaryClaim?.source_url || primaryEntry?.record?.final_url || "";
 const sourceTitle = primaryEntry?.record?.page_title || "Verified AI development";
+function attributedClaim({ claim, record }) {
+  const original = String(claim?.atomic_claim || "").trim();
+  if (!/^Our results\b/i.test(original)) return original;
+  let publisher = "The cited article";
+  try {
+    const host = new URL(claim.source_url || record?.final_url).hostname.replace(/^www\./, "");
+    publisher = host.split(".")[0].replace(/(^|[-_])([a-z])/g, (_, prefix, letter) => `${prefix}${letter.toUpperCase()}`);
+  } catch {}
+  const candidate = `${publisher} reports: ${original}`;
+  const context = `${publisher} published this report. ${record?.page_title || ""} ${claim.evidence_passage || ""}`;
+  return verifyAtomicClaim(candidate, context).supported ? candidate : original;
+}
+const factText = verifiedEntries.map(attributedClaim).join("\n\n").trim();
+const primaryFactText = attributedClaim(primaryEntry) || String(primaryClaim?.atomic_claim || factText).trim();
 const existingSocial = data.social || {};
 const urls = [...new Set(JSON.stringify(existingSocial).match(/https:\/\/[^\s"\\]+/g) || [])];
 const commercialLinks = urls.filter((url) => /sapiver-press\.kit\.com|payhip\.com/.test(url)).join("\n");

@@ -45,6 +45,8 @@ const devBoilerplate = "EU AI Act Article 50: What My Agent Workspace Changed - 
 assert.equal(isMeaningfulEvidencePassage(devBoilerplate), false, "navigation and reaction furniture must never become evidence");
 const shareFurniture = "EU AI Act Article 50 Share Share on Twitter LinkedIn Email The disclosure duty applies to covered systems.";
 assert.equal(isMeaningfulEvidencePassage(shareFurniture), false, "share controls embedded in otherwise plausible prose must invalidate the evidence passage");
+const repeatedPublisherTitle = "Samsung Bespoke AI Appliances Review: The Future of Smart Home Automation - Phadera Tech : Smartphone Reviews & Latest Gadget News # Samsung Bespoke AI Appliances Review: The Future of Smart Home Automation In an era where artificial intelligence is transforming daily life, Samsung is pushing AI into living spaces.";
+assert.equal(verifyAtomicClaim(repeatedPublisherTitle, repeatedPublisherTitle).supported, false, "a repeated headline and publisher category block must not verify merely because it appears verbatim");
 assert.equal(buildVerifiedClaims("A detailed legal claim that is absent.", devBoilerplate, "EU AI Act Article 50").verified.length, 0, "boilerplate fallback must not create a verified core");
 assert.equal(extractUsableText("<html><script>fake 99%</script><body><main>Usable report text.</main></body></html>"), "Usable report text.", "scripts and metadata are not usable source evidence");
 

@@ -18,6 +18,8 @@ jobs:
             package.json
             data
             src
+            test
+            .github/workflows/weekly-promo-pack.yml
           sparse-checkout-cone-mode: false
           fetch-depth: 1
       - uses: actions/setup-node@v4

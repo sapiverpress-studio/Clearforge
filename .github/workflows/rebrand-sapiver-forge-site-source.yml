@@ -1,11 +1,6 @@
 name: Rebrand Sapiver Forge site source
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - ".github/workflows/rebrand-sapiver-forge-site-source.yml"
   workflow_dispatch:
 
 permissions:

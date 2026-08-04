@@ -1,16 +1,6 @@
 name: Deploy Sapiver Forge public changes
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "public/**"
-      - "src/build-site.mjs"
-      - "scripts/build-sapiver-forge-site.mjs"
-      - "scripts/rebrand-public-sapiver-forge.mjs"
-      - "package.json"
-      - ".github/workflows/deploy-public-changes.yml"
   workflow_dispatch:
 
 permissions:

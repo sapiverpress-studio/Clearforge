@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { extractEntities, extractMaterialNumbers, normalizeText, splitSentences, verifyAtomicClaim } from "./evidence-verification.mjs";
+import { extractEntities, extractMaterialNumbers, isMeaningfulEvidencePassage, normalizeText, splitSentences, verifyAtomicClaim } from "./evidence-verification.mjs";
 
 const ROOT = process.cwd();
 const DATE = process.env.SAPIVER_FORGE_DATE || process.env.SAPIVER_FORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
@@ -17,7 +17,18 @@ if (!fs.existsSync(evidencePath)) throw new Error("Cannot lock facts before sour
 const data = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
 const evidence = JSON.parse(fs.readFileSync(evidencePath, "utf8"));
 const records = Array.isArray(evidence.records) ? evidence.records : [];
-const facts = records.flatMap((record) => (record.verified_claims || []).map((claim) => ({
+const rejectedEvidenceClaims = [];
+const facts = records.flatMap((record) => (record.verified_claims || []).flatMap((claim) => {
+  const passage = String(claim.evidence_passage || "");
+  if (!isMeaningfulEvidencePassage(passage)) {
+    rejectedEvidenceClaims.push({
+      atomic_claim: claim.atomic_claim,
+      verification_status: "rejected_before_lock",
+      failed_checks: ["evidence_passage:retrieval-furniture-or-unusable-text"]
+    });
+    return [];
+  }
+  return [{
   atomic_claim: claim.atomic_claim,
   source_url: claim.source_url || record.final_url,
   exact_supporting_evidence_passage: claim.evidence_passage,
@@ -28,7 +39,8 @@ const facts = records.flatMap((record) => (record.verified_claims || []).map((cl
   verification_status: claim.verification_status,
   qualification: claim.qualification || "",
   fact_type: "supported_fact"
-})));
+  }];
+}));
 if (!facts.length || facts.some((fact) => fact.verification_status !== "verified" || !fact.exact_supporting_evidence_passage)) {
   throw new Error("Fact lock requires at least one verified atomic claim with an exact evidence passage.");
 }
@@ -54,7 +66,7 @@ fs.writeFileSync(lockPath, `${JSON.stringify(lock, null, 2)}\n`);
 const sourceMetadata = records.map((record) => `${record.page_title || ""} ${record.publication_date || ""} ${record.final_url || ""}`).join("\n");
 const supportedCorpus = normalizeText(`${facts.map((fact) => `${fact.atomic_claim} ${fact.exact_supporting_evidence_passage}`).join("\n")}\n${sourceMetadata}`);
 const supportingEvidenceText = facts.map((fact) => `${fact.atomic_claim}. ${fact.exact_supporting_evidence_passage}`).join("\n");
-const unsupported = records.flatMap((record) => record.unsupported_claims || []);
+const unsupported = [...records.flatMap((record) => record.unsupported_claims || []), ...rejectedEvidenceClaims];
 const unsupportedNumbers = [...new Set(unsupported.flatMap((item) => extractMaterialNumbers(item.atomic_claim)))].filter((item) => !supportedCorpus.includes(normalizeText(item)));
 const comparisonPattern = /\b(?:twice|double|half|more than|less than|higher than|lower than|faster than|slower than|most|least|largest|smallest)\b/i;
 const allowedEntities = new Set([
@@ -115,8 +127,10 @@ for (const [key, value] of Object.entries(data)) {
 }
 data.sources = (data.sources || []).map((source, index) => {
   const record = records.find((item) => Number(item.source_index) === index) || records[index];
-  const verifiedText = (record?.verified_claims || []).map((claim) => claim.atomic_claim).join(" ").trim();
-  return { ...source, confirmed_fact: verifiedText, verification_status: "verified_from_retrieved_evidence" };
+  const verifiedText = (record?.verified_claims || [])
+    .filter((claim) => isMeaningfulEvidencePassage(claim.evidence_passage))
+    .map((claim) => claim.atomic_claim).join(" ").trim();
+  return { ...source, confirmed_fact: verifiedText, verification_status: verifiedText ? "verified_from_retrieved_evidence" : "excluded_no_usable_evidence" };
 });
 fs.writeFileSync(structuredPath, `${JSON.stringify(data, null, 2)}\n`);
 for (const filename of ["daily_brief.md", "feature.md", "social_pack.md", "claims_to_verify.md", path.join("podcast", "COPY_PASTE_INTO_ELEVENLABS.txt")]) {

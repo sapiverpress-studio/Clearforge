@@ -79,33 +79,33 @@ export function rebuildNarrowedEdition(root, edition) {
   if (wordCount(article) < 650) throw new Error(`Depth-first narrowed rebuild produced only ${wordCount(article)} words.`);
 
   const interpretation = "Sapiver Forge interpretation: test the development through one bounded workflow, explicit access limits, a named human release decision and recorded evidence of whether the process improved.";
-  const practical = "Choose one repeated, low-risk task. Write down the current method, the information involved, what AI may and may not do, who reviews the result and the condition that would stop the trial. Measure useful output, correction time, avoidable errors and the reviewer effort before deciding whether to keep or expand it.";
-  const next = "Run the workflow on a small sample using real but non-sensitive material. Compare it with the current method, record every correction and confirm that the named reviewer can reliably decide whether each output is ready to use.";
-  const tiktok = `${primaryFact} The practical question is not whether to automate everything. Test one bounded task, limit access, measure corrections and keep a named person responsible for release.`;
-  const caption = `${primaryFact} Test the claim against one real workflow before expanding it.`;
+  const practical = "Sapiver Forge interpretation: choose one repeated, low-risk task. Write down the current method, the information involved, what AI may and may not do, who reviews the result and the condition that would stop the trial. Measure useful output, correction time, avoidable errors and the reviewer effort before deciding whether to keep or expand it.";
+  const next = "Sapiver Forge interpretation: run the workflow on a small sample using real but non-sensitive material. Compare it with the current method, record every correction and confirm that the named reviewer can reliably decide whether each output is ready to use.";
+  const tiktok = `${primaryFact} Sapiver Forge interpretation: the practical question is not whether to automate everything. Test one bounded task, limit access, measure corrections and keep a named person responsible for release.`;
+  const caption = `${primaryFact} Sapiver Forge interpretation: test the claim against one real workflow before expanding it.`;
 
   const rebuilt = {
     headline,
-    dek: "A source-backed Sapiver Forge briefing that separates the verified development from the decisions required before using it in a real workflow.",
+    dek: "Sapiver Forge interpretation: this briefing separates the verified development from the decisions required before using it in a real workflow.",
     main_article: article,
     practical_takeaway: practical,
     what_to_test_next: next,
     claims_to_verify: [],
-    headline_options: [headline, `What ${sourceTitle} means for a controlled AI test`, "How to test this AI development without over-automating", "Define the human decision before expanding this workflow", "Turn the evidence into a bounded operational trial"],
+    headline_options: [headline, `Sapiver Forge interpretation: what ${sourceTitle} means for a controlled AI test`, "Sapiver Forge interpretation: how to test this AI development without over-automating", "Sapiver Forge interpretation: define the human decision before expanding this workflow", "Sapiver Forge interpretation: turn the evidence into a bounded operational trial"],
     social: {
       tiktok_script: tiktok,
       tiktok_caption: caption,
       tiktok_caption_prompt: caption,
       youtube_shorts_script: tiktok,
-      facebook_post: `${primaryFact}\n\n${interpretation}\n\nWhich part of the workflow would still need a person to make the final decision?`,
-      pinterest_title: "Test this AI workflow before scaling",
-      pinterest_description: `${interpretation} Map the current method, permissions, review step, stop rule and evidence needed before expanding the workflow.`,
+      facebook_post: `${primaryFact}\n\n${interpretation}\n\nSapiver Forge interpretation: which part of the workflow would still need a person to make the final decision?`,
+      pinterest_title: "Sapiver Forge interpretation: test this AI workflow",
+      pinterest_description: `${interpretation} Sapiver Forge interpretation: map the current method, permissions, review step, stop rule and evidence needed before expanding the workflow.`,
       quote_card_lines: [
-        "Test one bounded workflow before expanding AI use.",
-        "Define what the system may access and change.",
-        "Keep a named person responsible for release.",
-        "Measure corrections as well as time saved.",
-        "Expand only after reviewing the actual outcome."
+        "Sapiver Forge interpretation: test one bounded workflow first.",
+        "Sapiver Forge interpretation: define permitted access and changes.",
+        "Sapiver Forge interpretation: keep a named person responsible.",
+        "Sapiver Forge interpretation: measure corrections and time saved.",
+        "Sapiver Forge interpretation: expand only after outcome review."
       ]
     }
   };

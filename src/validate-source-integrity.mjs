@@ -139,12 +139,17 @@ for (let index = 0; index < sources.length; index += 1) {
     && !authoritativeForLegalClaim(finalUrl || requestedUrl)) {
     failures.push("A detailed legal or regulatory claim requires an official or authoritative source.");
   }
+  const pageTitle = retrievalStatus === "retrieved_from_sealed_exa_acquisition"
+    ? String(acquired?.page_title || extractTitle(html) || "")
+    : extractTitle(html) || String(acquired?.page_title || "");
+  if (/^(?:one moment|just a moment|attention required|access denied|checking your browser|verify you are human|security check)/i.test(pageTitle.trim())) {
+    failures.push(`Publisher returned an interstitial page title instead of an article: ${pageTitle}`);
+  }
   const fallbackContext = [source.title, stories[index]?.title, stories[index]?.summary, stories[index]?.why_it_matters].filter(Boolean);
   const verification = failures.length ? { atomic: [], verified: [] } : buildVerifiedClaims(proposedFact, sourceText, fallbackContext);
   const unsupported = verification.atomic.filter((item) => !item.supported);
   if (unsupported.length) warnings.push(`${unsupported.length} proposed atomic claim(s) lacked source evidence and were excluded.`);
   if (!verification.verified.length) failures.push("No meaningful factual core could be verified from the retrieved source text.");
-  const pageTitle = extractTitle(html) || String(acquired?.page_title || "");
   const recordedDate = String(source.published_date || "").trim();
   const pageDate = extractPublicationDate(html) || String(acquired?.publication_date || "");
   if (pageTitle && titleSimilarity(source.title, pageTitle) < 0.35) warnings.push("Recorded and retrieved titles differ materially.");

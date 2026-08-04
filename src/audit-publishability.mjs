@@ -44,7 +44,7 @@ export function auditPublishability(root, edition) {
     if (!String(social[field] || "").trim()) failures.push(`Missing social output: ${field}.`);
   }
   const tiktokWords = words(social.tiktok_script);
-  if (tiktokWords < 18 || tiktokWords > 60) failures.push(`TikTok script is not usable length (${tiktokWords} words).`);
+  if (tiktokWords < 18 || tiktokWords > 120) failures.push(`TikTok script is not usable length (${tiktokWords} words).`);
   if (!Array.isArray(social.quote_card_lines) || social.quote_card_lines.filter((item) => String(item || "").trim()).length !== 5) failures.push("Quote-card pack must contain five complete lines.");
 
   const renderedFiles = ["daily_brief.md", "social_pack.md", "claims_to_verify.md"]

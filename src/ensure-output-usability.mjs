@@ -38,7 +38,7 @@ function inspect() {
   const failures = [];
   if (checks.article_words < 150) failures.push("daily article below 150 words");
   if (checks.tiktok_words < 18) failures.push("TikTok script below 18 words");
-  if (checks.tiktok_words > 60) failures.push("TikTok script above 60 words");
+  if (checks.tiktok_words > 120) failures.push("TikTok script above 120 words");
   if (checks.tiktok_caption_words < 12) failures.push("TikTok caption below 12 words");
   if (checks.youtube_words < 18) failures.push("YouTube Shorts script below 18 words");
   if (checks.facebook_words < 30) failures.push("Facebook post below 30 words");

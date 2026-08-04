@@ -13,6 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            package.json
+            data
+            src
+          sparse-checkout-cone-mode: false
+          fetch-depth: 1
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
@@ -22,6 +29,16 @@ jobs:
         env:
           WEEK_ID: contract-test
       - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Verify runner storage before paid calls
+        shell: bash
+        run: |
+          set -euo pipefail
+          df -h . "$RUNNER_TEMP"
+          available_kb="$(df -Pk "$RUNNER_TEMP" | awk 'NR==2 {print $4}')"
+          if [ "$available_kb" -lt 3145728 ]; then
+            echo "::error::Less than 3 GB free before ElevenLabs calls; refusing to spend API credits."
+            exit 1
+          fi
       - name: Generate seven narration MP3s and vertical MP4s
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVENLAB_API }}
@@ -36,10 +53,12 @@ jobs:
           const p=require('./weekly-output/'+process.env.WEEK_ID+'/weekly-pack.json');for(const x of p.posts)console.log([String(x.index).padStart(2,'0'),x.day.toLowerCase(),Buffer.from(x.narration).toString('base64'),Buffer.from(x.hook).toString('base64')].join('\t'));
           NODE
           while IFS=$'\t' read -r num day n64 h64; do
-            narration="$(printf '%s' "$n64"|base64 -d)"; hook="$(printf '%s' "$h64"|base64 -d)"; audio="$OUT/audio/$num-$day.mp3"; video="$OUT/video/$num-$day.mp4"
+            narration="$(printf '%s' "$n64"|base64 -d)"; hook="$(printf '%s' "$h64"|base64 -d)"; audio="$OUT/audio/$num-$day.mp3"; video="$OUT/video/$num-$day.mp4"; temp_audio="$RUNNER_TEMP/$num-$day.mp3.part"
+            rm -f "$temp_audio"
             payload="$(node -e 'console.log(JSON.stringify({text:process.argv[1],model_id:"eleven_multilingual_v2",voice_settings:{stability:.5,similarity_boost:.75}}))' "$narration")"
-            curl --fail --silent --show-error -X POST "https://api.elevenlabs.io/v1/text-to-speech/$ELEVENLABS_VOICE_ID" -H "xi-api-key: $ELEVENLABS_API_KEY" -H 'content-type: application/json' -d "$payload" -o "$audio"
-            test -s "$audio"
+            curl --fail --silent --show-error --retry 2 --retry-all-errors -X POST "https://api.elevenlabs.io/v1/text-to-speech/$ELEVENLABS_VOICE_ID" -H "xi-api-key: $ELEVENLABS_API_KEY" -H 'content-type: application/json' -d "$payload" -o "$temp_audio"
+            test -s "$temp_audio"
+            mv "$temp_audio" "$audio"
             duration="$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "$audio")"; safe="$(printf '%s' "$hook"|sed "s/'/’/g;s/:/\\:/g")"
             ffmpeg -hide_banner -loglevel error -y -f lavfi -i "color=c=0x071827:s=1080x1920:d=$duration" -i "$audio" -vf "drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='SAPIVER FORGE':fontcolor=white:fontsize=54:x=(w-text_w)/2:y=180,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='$safe':fontcolor=white:fontsize=52:x=(w-text_w)/2:y=(h-text_h)/2:box=1:boxcolor=black@0.35:boxborderw=28" -c:v libx264 -pix_fmt yuv420p -c:a aac -shortest "$video"
             test -s "$video"

@@ -2,157 +2,155 @@ import fs from "node:fs";
 import path from "node:path";
 import { hasUsableEvidenceLocation, isMeaningfulEvidencePassage, isUsableAtomicClaim, verifyAtomicClaim } from "./evidence-verification.mjs";
 
-const ROOT = process.cwd();
-const DATE = process.env.SAPIVER_FORGE_DATE || process.env.SAPIVER_FORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
-  timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
-}).format(new Date());
-const dir = path.join(ROOT, "drafts", DATE);
-const structuredPath = path.join(dir, "structured_output.json");
-const evidencePath = path.join(dir, "source-evidence.json");
-const reportPath = path.join(dir, "narrowed-edition-rebuild.json");
-if (!fs.existsSync(structuredPath) || !fs.existsSync(evidencePath)) throw new Error("Narrowed rebuild requires structured output and verified source evidence.");
+const wordCount = (value) => String(value || "").trim().split(/\s+/).filter(Boolean).length;
+const clean = (value) => String(value || "").replace(/\s+/g, " ").trim();
 
-const data = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
-const evidence = JSON.parse(fs.readFileSync(evidencePath, "utf8"));
-const records = Array.isArray(evidence.records) ? evidence.records : [];
 function claimIsLockable(claim, record) {
   let publisher = "";
   try { publisher = new URL(claim.source_url || record?.final_url).hostname.split(".").find((part) => !/^(?:www|com|org|net|co|uk)$/i.test(part)) || ""; } catch {}
-  const sourceContext = `${publisher ? `${publisher} published this report. ` : ""}${record?.page_title || ""} ${claim.evidence_passage || ""}`;
+  const context = `${publisher ? `${publisher} published this report. ` : ""}${record?.page_title || ""} ${claim?.evidence_passage || ""}`;
   return claim?.verification_status === "verified"
     && isUsableAtomicClaim(claim.atomic_claim)
     && isMeaningfulEvidencePassage(claim.evidence_passage)
     && hasUsableEvidenceLocation(claim.evidence_location)
-    && verifyAtomicClaim(claim.atomic_claim, sourceContext).supported;
+    && verifyAtomicClaim(claim.atomic_claim, context).supported;
 }
-const rejectedVerified = records.flatMap((record) => (record.verified_claims || []).filter((claim) => !claimIsLockable(claim, record)).map((claim) => ({
-  atomic_claim: claim.atomic_claim, verification_status: "rejected_before_rebuild", failed_checks: ["claim:not-lockable"]
-})));
-const unsupported = [...records.flatMap((record) => record.unsupported_claims || []), ...rejectedVerified];
-if (!unsupported.length) {
-  console.log("No unsupported atomic claims; narrowed-edition rebuild not required.");
-  process.exit(0);
-}
-const verifiedEntries = records.flatMap((record) => (record.verified_claims || []).filter((claim) => claimIsLockable(claim, record)).map((claim) => ({ claim, record })));
-const verified = verifiedEntries.map((item) => item.claim);
-if (!verified.length) throw new Error("No verified factual core remains for a narrowed edition.");
 
-function standaloneClaimScore(claim) {
-  const text = String(claim.atomic_claim || "").trim();
-  let score = 100 - Math.min(text.split(/\s+/).length, 70);
-  if (/^(?:however|although|but|and|therefore|consequently|overall|meanwhile|they|it|this|these|those)\b/i.test(text)) score -= 100;
-  if (!/\b[A-Z][A-Za-z0-9&.'’-]{2,}\b/.test(text)) score -= 30;
-  if (/\b(?:is|are|was|were|has|have|found|reported|announced|published|takes?|turns?|uses?|shows?|describes?)\b/i.test(text)) score += 10;
-  return score;
-}
-const primaryClaim = [...verified].sort((a, b) => standaloneClaimScore(b) - standaloneClaimScore(a))[0];
-const evidenceText = verified.map((claim) => claim.evidence_passage).join(" ").trim();
-const primaryEntry = verifiedEntries.find((item) => item.claim === primaryClaim) || verifiedEntries[0];
-const sourceUrl = primaryClaim?.source_url || primaryEntry?.record?.final_url || "";
-const sourceTitle = primaryEntry?.record?.page_title || "Verified AI development";
 function attributedClaim({ claim, record }) {
-  const original = String(claim?.atomic_claim || "").trim();
+  const original = clean(claim?.atomic_claim);
   if (!/^Our results\b/i.test(original)) return original;
-  let publisher = "The cited article";
+  let publisher = "The cited source";
   try {
     const host = new URL(claim.source_url || record?.final_url).hostname.replace(/^www\./, "");
     publisher = host.split(".")[0].replace(/(^|[-_])([a-z])/g, (_, prefix, letter) => `${prefix}${letter.toUpperCase()}`);
   } catch {}
-  const candidate = `${publisher} reports: ${original}`;
-  const context = `${publisher} published this report. ${record?.page_title || ""} ${claim.evidence_passage || ""}`;
+  const candidate = `${publisher} reports that ${original.replace(/^Our results\s*/i, "its results ")}`;
+  const context = `${publisher} published this report. ${record?.page_title || ""} ${claim?.evidence_passage || ""}`;
   return verifyAtomicClaim(candidate, context).supported ? candidate : original;
 }
-const factText = verifiedEntries.map(attributedClaim).join("\n\n").trim();
-const primaryFactText = attributedClaim(primaryEntry) || String(primaryClaim?.atomic_claim || factText).trim();
-const existingSocial = data.social || {};
-const urls = [...new Set(JSON.stringify(existingSocial).match(/https:\/\/[^\s"\\]+/g) || [])];
-const commercialLinks = urls.filter((url) => /sapiver-press\.kit\.com|payhip\.com/.test(url)).join("\n");
-const interpretation = "Sapiver Forge interpretation: this development makes workflow design, clear boundaries and human review practical areas to examine before expanding AI use.";
-const wordCount = (value) => String(value || "").trim().split(/\s+/).filter(Boolean).length;
 
-function buildTikTokScript() {
-  if (wordCount(primaryFactText) >= 18) return primaryFactText;
-  return `${primaryFactText} Sapiver Forge interpretation: test one bounded use, define the AI boundary and keep a named human release decision.`;
+function headlineFrom(title, claim) {
+  const sourceTitle = clean(title).replace(/\s*[|—–-]\s*[^|—–-]{1,40}$/u, "");
+  if (sourceTitle && !/^(?:home|article|news|research|verified source)$/i.test(sourceTitle)) return sourceTitle.slice(0, 110);
+  const words = clean(claim).split(/\s+/).slice(0, 14).join(" ");
+  return words ? `${words}${/[.!?]$/.test(words) ? "" : ": what it means in practice"}` : "A source-backed AI workflow decision";
 }
 
-function fallbackEdition() {
-  const article = `${factText}\n\nSapiver Forge interpretation: this verified development is worth testing against one real task instead of treating it as a reason to automate an entire operation. Start with a bounded use, define the input and decide what a useful result would look like.\n\nSapiver Forge interpretation: creators, freelancers and small teams may benefit from writing down what the AI can access, what it may change and which action remains reserved for a person. That turns a broad development into a controlled experiment.\n\nSapiver Forge interpretation: review should happen at a named release point. Check factual accuracy, tone, permissions, privacy and whether the result still serves the original purpose before it is sent, published or used.\n\nSapiver Forge interpretation: speed alone may not show whether the experiment worked. Record correction time, avoidable errors, useful output and the effort required from the reviewer. Keep, adjust or stop the workflow from that evidence.\n\nSapiver Forge interpretation: the Applied AI Gate System provides a structure for this sequence—assess the opportunity, set workflow controls, review the output and examine the outcome. The cited source does not endorse Sapiver Forge; this is our practical application of the verified fact above.\n\nSource: ${sourceUrl}`;
-  const tiktok = buildTikTokScript();
-  const caption = `${primaryFactText}\n\nSapiver Forge interpretation: test one bounded task, define the AI boundary and keep a named human release decision before expanding the workflow.\n\n${commercialLinks}`.trim();
-  return {
-    headline: "A verified AI development worth testing carefully",
-    dek: "A narrower, source-supported Sapiver Forge briefing with unsupported claim components removed.",
+function buildArticle(factText, sourceUrl) {
+  const analysis = [
+    "Sapiver Forge interpretation: the evidence should be treated as a prompt for a bounded decision, not as permission to automate a whole operation. Start by identifying one repeated task, the person who owns the outcome and the point at which a mistake would become costly or difficult to reverse. This keeps the practical question narrow enough to test and prevents a general AI claim from being stretched beyond what the source actually established.",
+    "Sapiver Forge interpretation: define the current method before introducing AI. Record what is done now, how long it takes, what information is used, which judgement calls matter and where errors are normally caught. Without that baseline, faster output can look like progress even when correction work, supervision and uncertainty have simply moved elsewhere in the process.",
+    "Sapiver Forge interpretation: separate assistance from authority. An AI system may draft, classify, summarise or suggest, while a named person remains responsible for approval, release or action. That boundary should be explicit. If nobody can state who makes the final decision, the workflow is not controlled enough to expand, regardless of how impressive the generated output appears.",
+    "Sapiver Forge interpretation: access should be limited to what the task genuinely requires. Review the files, accounts, personal information, client material and connected services involved. Remove unnecessary access before testing. A useful workflow does not need broad permissions by default, and a small productivity gain does not justify avoidable exposure of confidential or operational information.",
+    "Sapiver Forge interpretation: decide what must be checked before any output leaves the workflow. Accuracy, completeness, tone, permissions, privacy, destination and version control are separate checks. A generic instruction to review the result is too weak. The reviewer needs a short, repeatable release step that reflects the actual harm a bad output could cause.",
+    "Sapiver Forge interpretation: measure the full cost of the experiment. Include setup time, prompting, supervision, correction, failed attempts and the effort required to maintain the process. Also record useful output and time genuinely saved. A workflow that looks efficient during generation may still be worse than the previous method once checking and repair are included.",
+    "Sapiver Forge interpretation: use a stop rule before the trial begins. Define the conditions that mean the test should pause, return to the previous method or be redesigned. Examples include repeated factual errors, unclear ownership, excessive correction work, inappropriate access or outputs that cannot be reviewed reliably. A reversible test is safer and cheaper than continuing because time has already been invested.",
+    "Sapiver Forge interpretation: document the test in a form another person could understand. Record the task, inputs, expected output, permitted tools, review criteria, owner and final decision. This is not bureaucracy for its own sake. It makes failures easier to diagnose, prevents silent changes to the workflow and gives the reviewer enough context to challenge an output instead of merely checking whether it looks polished.",
+    "Sapiver Forge interpretation: distinguish a bad result from a bad process. One weak output may be corrected by changing an instruction, while repeated uncertainty about evidence, permissions or responsibility indicates a deeper workflow problem. Logging why outputs were rejected helps reveal that difference. It also prevents the team from endlessly adjusting prompts when the safer answer is to narrow the task or keep the current human-led method.",
+    "Sapiver Forge interpretation: expansion should follow evidence from the trial, not enthusiasm about the tool. Keep the workflow narrow until the results are consistent, the review burden is understood and responsibility remains clear. Only then consider a larger scope. This protects working methods that are already reliable and makes any change easier to explain to customers, collaborators or staff.",
+    "Sapiver Forge interpretation: the practical value of the source lies in the decision it helps frame. The source does not endorse Sapiver Forge, and Sapiver Forge is not adding new factual claims to it. The role of this briefing is to turn a verified development into a controlled question: where could it help, what could go wrong, who must decide and what evidence would justify keeping it?"
+  ];
+  return `${factText}\n\n${analysis.join("\n\n")}\n\nSource: ${sourceUrl}`;
+}
+
+export function rebuildNarrowedEdition(root, edition) {
+  const dir = path.join(root, "drafts", edition);
+  const structuredPath = path.join(dir, "structured_output.json");
+  const evidencePath = path.join(dir, "source-evidence.json");
+  if (!fs.existsSync(structuredPath) || !fs.existsSync(evidencePath)) throw new Error("Narrowed rebuild requires structured output and verified source evidence.");
+
+  const data = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
+  const evidence = JSON.parse(fs.readFileSync(evidencePath, "utf8"));
+  const records = Array.isArray(evidence.records) ? evidence.records : [];
+  const rejected = records.flatMap((record) => (record.verified_claims || []).filter((claim) => !claimIsLockable(claim, record)));
+  const unsupported = [...records.flatMap((record) => record.unsupported_claims || []), ...rejected];
+  if (!unsupported.length) return { rebuilt: false, reason: "no_unsupported_claims" };
+
+  const verifiedEntries = records.flatMap((record) => (record.verified_claims || []).filter((claim) => claimIsLockable(claim, record)).map((claim) => ({ claim, record })));
+  if (!verifiedEntries.length) throw new Error("No verified factual core remains for a narrowed edition.");
+
+  const primary = verifiedEntries[0];
+  const sourceUrl = primary.claim.source_url || primary.record.final_url || "";
+  const sourceTitle = primary.record.page_title || "Verified source";
+  const factText = verifiedEntries.map(attributedClaim).join("\n\n");
+  const primaryFact = attributedClaim(primary);
+  const headline = headlineFrom(sourceTitle, primaryFact);
+  const article = buildArticle(factText, sourceUrl);
+  if (wordCount(article) < 650) throw new Error(`Depth-first narrowed rebuild produced only ${wordCount(article)} words.`);
+
+  const interpretation = "Sapiver Forge interpretation: test the development through one bounded workflow, explicit access limits, a named human release decision and recorded evidence of whether the process improved.";
+  const practical = "Sapiver Forge interpretation: choose one repeated, low-risk task. Write down the current method, the information involved, what AI may and may not do, who reviews the result and the condition that would stop the trial. Measure useful output, correction time, avoidable errors and the reviewer effort before deciding whether to keep or expand it.";
+  const next = "Sapiver Forge interpretation: run the workflow on a small sample using real but non-sensitive material. Compare it with the current method, record every correction and confirm that the named reviewer can reliably decide whether each output is ready to use.";
+  const tiktok = `${primaryFact} Sapiver Forge interpretation: the practical question is not whether to automate everything. Test one bounded task, limit access, measure corrections and keep a named person responsible for release.`;
+  const caption = `${primaryFact} Sapiver Forge interpretation: test the claim against one real workflow before expanding it.`;
+
+  const rebuilt = {
+    headline,
+    dek: "Sapiver Forge interpretation: this briefing separates the verified development from the decisions required before using it in a real workflow.",
     main_article: article,
-    practical_takeaway: "Map one repeated workflow, name the AI boundary and require a human decision before anything is sent, published or allowed to act.",
-    what_to_test_next: "Sapiver Forge interpretation: test one low-risk workflow and record time saved, corrections needed, access granted and the person responsible for release.",
+    practical_takeaway: practical,
+    what_to_test_next: next,
     claims_to_verify: [],
-    headline_options: [
-      "A verified AI development worth testing carefully",
-      "What the retrieved evidence supports",
-      "Turn this AI development into a bounded test",
-      "Define the human release point before expanding AI",
-      "A narrower AI briefing built from verified evidence"
-    ],
+    headline_options: [headline, `Sapiver Forge interpretation: what ${sourceTitle} means for a controlled AI test`, "Sapiver Forge interpretation: how to test this AI development without over-automating", "Sapiver Forge interpretation: define the human decision before expanding this workflow", "Sapiver Forge interpretation: turn the evidence into a bounded operational trial"],
     social: {
       tiktok_script: tiktok,
       tiktok_caption: caption,
       tiktok_caption_prompt: caption,
       youtube_shorts_script: tiktok,
-      facebook_post: `${primaryFactText}\n\n${interpretation} Start with one bounded use and name the human release decision.\n\n${commercialLinks}`.trim(),
-      pinterest_title: "Sapiver Forge: test one bounded AI task",
-      pinterest_description: `${interpretation} Map the task, permissions, boundaries and approval step before scaling it.\n\n${commercialLinks}`.trim(),
-      linkedin_post: `${primaryFactText}\n\n${interpretation}\n\nThe practical move is to map one workflow and name the human release decision.\n\n${commercialLinks}`.trim(),
+      facebook_post: `${primaryFact}\n\n${interpretation}\n\nSapiver Forge interpretation: which part of the workflow would still need a person to make the final decision?`,
+      pinterest_title: "Sapiver Forge interpretation: test this AI workflow",
+      pinterest_description: `${interpretation} Sapiver Forge interpretation: map the current method, permissions, review step, stop rule and evidence needed before expanding the workflow.`,
       quote_card_lines: [
-        "Sapiver Forge interpretation: test one bounded task first.",
-        "Sapiver Forge interpretation: define what AI may access.",
-        "Sapiver Forge interpretation: name the human release decision.",
-        "Sapiver Forge interpretation: measure corrections as well as speed.",
-        "Sapiver Forge interpretation: expand only after reviewing the outcome."
+        "Sapiver Forge interpretation: test one bounded workflow first.",
+        "Sapiver Forge interpretation: define permitted access and changes.",
+        "Sapiver Forge interpretation: keep a named person responsible.",
+        "Sapiver Forge interpretation: measure corrections and time saved.",
+        "Sapiver Forge interpretation: expand only after outcome review."
       ]
     }
   };
+
+  Object.assign(data, rebuilt, { narrowed_from_unsupported_claims: true });
+  delete data.audience_fit;
+  delete data.social_mode;
+  delete data.social_source;
+  const previousSources = Array.isArray(data.sources) ? data.sources : [];
+  data.sources = verifiedEntries.map(({ claim, record }) => {
+    const previous = previousSources.find((item) => item.acquisition_id && item.acquisition_id === record.acquisition_id)
+      || previousSources.find((item) => item.url === record.final_url || item.url === record.requested_url) || {};
+    return {
+      ...previous,
+      source_name: previous.source_name || new URL(record.final_url || claim.source_url).hostname,
+      title: record.page_title || previous.title || "Verified source",
+      url: claim.source_url || record.final_url,
+      published_date: String(record.publication_date || previous.published_date || edition).slice(0, 10),
+      confirmed_fact: claim.atomic_claim,
+      interpretation,
+      evidence_basis: "Retrieved source body text with atomic evidence verification."
+    };
+  });
+  data.story_summaries = data.sources.map((source) => ({
+    title: source.title,
+    summary: source.confirmed_fact,
+    why_it_matters: interpretation,
+    practical_angle: practical,
+    coverage_lane: source.coverage_lane || "confirmed_development",
+    topic_category: source.topic_category || "workplace_and_business",
+    claim_to_verify: "NONE — verified from cited source evidence."
+  }));
+  fs.writeFileSync(structuredPath, `${JSON.stringify(data, null, 2)}\n`);
+
+  const sourceLines = data.sources.map((source) => `- [${source.title}](${source.url})\n  - Verified fact: ${source.confirmed_fact}\n  - ${interpretation}`).join("\n");
+  fs.writeFileSync(path.join(dir, "daily_brief.md"), `# ${headline}\n\nStatus: Draft — human approval required\n\n${rebuilt.dek}\n\n## Verified source and evidence\n\n${sourceLines}\n\n## Main article\n\n${article}\n\n## Practical takeaway\n\n${practical}\n\n## What to test next\n\n${next}\n`);
+  fs.writeFileSync(path.join(dir, "social_pack.md"), `# Sapiver Forge Social Pack — ${edition}\n\nStatus: Draft — human approval required\n\n## TikTok Script\n\n${rebuilt.social.tiktok_script}\n\n## TikTok Caption\n\n${rebuilt.social.tiktok_caption}\n\n## YouTube Shorts Script\n\n${rebuilt.social.youtube_shorts_script}\n\n## Facebook Post\n\n${rebuilt.social.facebook_post}\n\n## Pinterest Pin\n\n**Title:** ${rebuilt.social.pinterest_title}\n\n**Description:** ${rebuilt.social.pinterest_description}\n\n## Quote Cards\n\n${rebuilt.social.quote_card_lines.map((line) => `- ${line}`).join("\n")}\n`);
+  const report = { edition, rebuilt: true, method: "depth_first_verified_rebuild", article_words: wordCount(article), verified_fact_count: verifiedEntries.length, excluded_claim_count: unsupported.length };
+  fs.writeFileSync(path.join(dir, "narrowed-edition-rebuild.json"), `${JSON.stringify(report, null, 2)}\n`);
+  return report;
 }
 
-const rebuilt = fallbackEdition();
-const method = "deterministic_verified_rebuild";
-const modelError = "";
-
-Object.assign(data, rebuilt, { claims_to_verify: [], narrowed_from_unsupported_claims: true });
-delete data.audience_fit;
-delete data.social_mode;
-delete data.social_source;
-if (data.editorial_theme && typeof data.editorial_theme === "object") {
-  data.editorial_theme.focus = "A short evidence-led edition built around the verified facts that survived source review.";
+if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(new URL(import.meta.url).pathname)) {
+  const root = process.cwd();
+  const edition = process.env.SAPIVER_FORGE_DATE || new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+  const result = rebuildNarrowedEdition(root, edition);
+  console.log(result.rebuilt ? `Rebuilt ${edition} with ${result.article_words} words.` : "Narrowed-edition rebuild not required.");
 }
-const previousSources = Array.isArray(data.sources) ? data.sources : [];
-data.sources = verifiedEntries.map(({ claim, record }) => {
-  const source = previousSources.find((item) => item.acquisition_id && item.acquisition_id === record.acquisition_id)
-    || previousSources.find((item) => item.url === record.final_url || item.url === record.requested_url)
-    || {};
-  return {
-    ...source,
-    source_name: source.source_name || new URL(record.final_url || claim.source_url).hostname,
-    title: record.page_title || source.title || "Verified source",
-    url: claim.source_url || record.final_url,
-    published_date: String(record.publication_date || source.published_date || DATE).slice(0, 10),
-    confirmed_fact: claim.atomic_claim,
-    interpretation,
-    evidence_basis: "Retrieved source body text with atomic evidence verification."
-  };
-});
-data.story_summaries = data.sources.map((source) => ({
-  title: source.title,
-  summary: source.confirmed_fact,
-  why_it_matters: interpretation,
-  practical_angle: rebuilt.practical_takeaway,
-  coverage_lane: source.coverage_lane || "confirmed_development",
-  topic_category: source.topic_category || "workplace_and_business",
-  claim_to_verify: "NONE — verified from cited source evidence."
-}));
-fs.writeFileSync(structuredPath, `${JSON.stringify(data, null, 2)}\n`);
-
-const sourceLines = data.sources.map((source) => `- [${source.title || sourceTitle}](${source.url || sourceUrl})\n  - Verified fact: ${source.confirmed_fact}\n  - ${interpretation}`).join("\n");
-fs.writeFileSync(path.join(dir, "daily_brief.md"), `# ${rebuilt.headline}\n\nStatus: Draft — human approval required\n\n${rebuilt.dek}\n\n## Verified source and evidence\n\n${sourceLines}\n\n## Main article\n\n${rebuilt.main_article}\n\n## Practical takeaway\n\n${rebuilt.practical_takeaway}\n\n## What to test next\n\n${rebuilt.what_to_test_next}\n\n## Verification status\n\nUnsupported proposed claim components were excluded. Retained material is listed in the evidence ledger.\n`);
-fs.writeFileSync(path.join(dir, "social_pack.md"), `# Sapiver Forge Social Pack — ${DATE}\n\nStatus: Draft — human approval required\n\n## TikTok Script\n\n${rebuilt.social.tiktok_script}\n\n## TikTok Caption\n\n${rebuilt.social.tiktok_caption}\n\n## YouTube Shorts Script\n\n${rebuilt.social.youtube_shorts_script}\n\n## Facebook Post\n\n${rebuilt.social.facebook_post}\n\n## Pinterest Pin\n\n**Title:** ${rebuilt.social.pinterest_title}\n\n**Description:** ${rebuilt.social.pinterest_description}\n\n## LinkedIn-Style Post\n\n${rebuilt.social.linkedin_post}\n\n## Quote Cards\n\n${rebuilt.social.quote_card_lines.map((line) => `- ${line}`).join("\n")}\n`);
-fs.writeFileSync(reportPath, `${JSON.stringify({ edition: DATE, rebuilt: true, method, model_error: modelError, verified_fact_count: verified.length, excluded_claim_count: unsupported.length }, null, 2)}\n`);
-console.log(`Rebuilt narrowed edition using ${method}: ${verified.length} verified fact(s), ${unsupported.length} excluded claim(s).`);

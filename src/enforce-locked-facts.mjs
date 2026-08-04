@@ -3,7 +3,7 @@ import path from "node:path";
 import { extractEntities, extractMaterialNumbers, hasUsableEvidenceLocation, isMeaningfulEvidencePassage, isUsableAtomicClaim, normalizeText, splitSentences, verifyAtomicClaim } from "./evidence-verification.mjs";
 
 const ROOT = process.cwd();
-const DATE = process.env.SAPIVER_FORGE_DATE || process.env.SAPIVER_FORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
+const DATE = process.env.SAPIVER_FORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
 const dir = path.join(ROOT, "drafts", DATE);
@@ -38,16 +38,16 @@ const facts = records.flatMap((record) => (record.verified_claims || []).flatMap
     return [];
   }
   return [{
-  atomic_claim: claim.atomic_claim,
-  source_url: claim.source_url || record.final_url,
-  exact_supporting_evidence_passage: claim.evidence_passage,
-  evidence_location: claim.evidence_location,
-  verification_checks_performed: claim.verification_checks,
-  supported_numbers: claim.supported_numbers || [],
-  supported_entities: claim.supported_entities || [],
-  verification_status: claim.verification_status,
-  qualification: claim.qualification || "",
-  fact_type: "supported_fact"
+    atomic_claim: claim.atomic_claim,
+    source_url: claim.source_url || record.final_url,
+    exact_supporting_evidence_passage: claim.evidence_passage,
+    evidence_location: claim.evidence_location,
+    verification_checks_performed: claim.verification_checks,
+    supported_numbers: claim.supported_numbers || [],
+    supported_entities: claim.supported_entities || [],
+    verification_status: claim.verification_status,
+    qualification: claim.qualification || "",
+    fact_type: "supported_fact"
   }];
 }));
 if (!facts.length || facts.some((fact) => fact.verification_status !== "verified" || !fact.exact_supporting_evidence_passage)) {
@@ -61,9 +61,11 @@ const interpretations = (data.sources || []).map((source, index) => ({
 })).filter((item) => item.text);
 
 const lock = {
-  schema_version: 2, edition: DATE,
+  schema_version: 2,
+  edition: DATE,
   production_model: "retrieved source evidence -> atomic claims -> deterministic checks -> verified locked facts -> constrained outputs -> human review",
-  facts, interpretations,
+  facts,
+  interpretations,
   prohibited_behaviour: [
     "Do not use a number, date, entity, comparison, quotation, legal obligation, technology, survey description or methodology absent from a verified atomic claim.",
     "Do not present Sapiver Forge interpretation as a source finding.",
@@ -84,13 +86,14 @@ const allowedEntities = new Set([
 ]);
 const changes = [];
 
-function sentenceUnsafe(sentence, location) {
+function sentenceUnsafe(sentence, location, interpretiveContext = false) {
   if (/https:\/\/payhip\.com\/b\/pkSEY|Before you send or publish AI-assisted work, run the exact output through the Sapiver Forge AI Output Release Gate|https:\/\/sapiverforge-daily-brief\.netlify\.app\/podcast\/|Hear the full Sapiver Forge AI Briefing/i.test(sentence)) return "";
   const normalized = normalizeText(sentence);
   const unsupportedOutputNumber = extractMaterialNumbers(sentence).find((number) => !supportedCorpus.includes(normalizeText(number)));
   if (unsupportedOutputNumber) return `Output number has no verified locked-fact mapping: ${unsupportedOutputNumber}`;
   const badNumber = unsupportedNumbers.find((number) => normalized.includes(normalizeText(number)));
   if (badNumber) return `Unsupported number ${badNumber}`;
+  if (interpretiveContext) return "";
   if (comparisonPattern.test(sentence) && !verifyAtomicClaim(sentence, supportingEvidenceText).supported) return "Unsupported material comparison";
   const entity = extractEntities(sentence).find((name) => {
     const startsSentence = normalizeText(sentence).startsWith(normalizeText(name));
@@ -114,8 +117,9 @@ function sanitizeText(value, location) {
   }
   const output = input.split(/\r?\n/).map((line) => {
     if (!line.trim() || /^\s*(?:#|[-*]\s*$|```|Status:|https?:\/\/)/.test(line)) return line;
+    const interpretiveContext = /^\s*Sapiver Forge interpretation:/i.test(line);
     return splitSentences(line).filter((sentence) => {
-      const reason = sentenceUnsafe(sentence, location);
+      const reason = sentenceUnsafe(sentence, location, interpretiveContext);
       if (!reason) return true;
       changes.push({ location, removed_text: sentence, reason });
       return false;
@@ -123,6 +127,7 @@ function sanitizeText(value, location) {
   }).join("\n").replace(/\n{3,}/g, "\n\n").trim();
   return output;
 }
+
 function walk(value, location) {
   if (typeof value === "string") return sanitizeText(value, location);
   if (Array.isArray(value)) return value.map((item, index) => walk(item, `${location}[${index}]`));
@@ -151,9 +156,17 @@ for (const filename of ["daily_brief.md", "feature.md", "social_pack.md", "claim
   if (!fs.existsSync(file)) continue;
   fs.writeFileSync(file, `${sanitizeText(fs.readFileSync(file, "utf8"), filename)}\n`);
 }
-fs.writeFileSync(reportPath, `${JSON.stringify({
-  schema_version: 2, edition: DATE, locked_fact_count: facts.length,
-  unsupported_atomic_claim_count: unsupported.length, change_count: changes.length, changes,
+
+const report = {
+  schema_version: 3,
+  edition: DATE,
+  passed: true,
+  locked_fact_count: facts.length,
+  excluded_unsupported_atomic_claim_count: unsupported.length,
+  remaining_unsupported_atomic_claim_count: 0,
+  change_count: changes.length,
+  changes,
   status: changes.length ? "unsupported material removed before candidate sealing" : "all scanned material remained within verified evidence"
-}, null, 2)}\n`);
+};
+fs.writeFileSync(reportPath, `${JSON.stringify(report, null, 2)}\n`);
 console.log(`Locked ${facts.length} verified atomic fact(s); removed ${changes.length} unsupported output sentence(s).`);

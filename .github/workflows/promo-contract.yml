@@ -10,6 +10,7 @@ on:
       - 'public/products/**'
       - '.github/workflows/weekly-promo-pack.yml'
       - '.github/workflows/approve-weekly-promo.yml'
+      - '.github/workflows/repair-weekly-promo-videos.yml'
       - '.github/workflows/youtube-daily-short.yml'
       - '.github/workflows/promo-contract.yml'
       - 'package.json'
@@ -35,6 +36,7 @@ jobs:
             public/products/notion-workspace/01_Cover.webp
             .github/workflows/weekly-promo-pack.yml
             .github/workflows/approve-weekly-promo.yml
+            .github/workflows/repair-weekly-promo-videos.yml
           sparse-checkout-cone-mode: false
           fetch-depth: 1
       - uses: actions/setup-node@v4

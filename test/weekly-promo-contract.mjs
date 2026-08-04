@@ -37,6 +37,7 @@ const workflow = fs.readFileSync('.github/workflows/weekly-promo-pack.yml', 'utf
 const renderer = fs.readFileSync('src/render-weekly-promo-video.mjs', 'utf8');
 const generator = fs.readFileSync('src/generate-weekly-promo-pack.mjs', 'utf8');
 const approval = fs.readFileSync('.github/workflows/approve-weekly-promo.yml', 'utf8');
+const repair = fs.readFileSync('.github/workflows/repair-weekly-promo-videos.yml', 'utf8');
 assert.match(workflow, /repository: sapiverpress-studio\/SapiverPress_comic_public/);
 assert.match(workflow, /assets\/sapiver-forge\/isla-hook\.mp4/);
 assert.match(workflow, /public\/products\/gate-system\/output-release-gate\/01_Cover\.webp/);
@@ -77,5 +78,10 @@ assert.match(generator, /isla_opener/);
 assert.match(approval, /social_comment:p\.social_comment/);
 assert.match(approval, /p\.hashtags\.join\(' '\)/);
 assert.doesNotMatch(approval, /p\.product}: \$\{p\.product_url/);
+assert.match(repair, /Rerender seven videos using existing narration/);
+assert.match(repair, /Sanitize public copy for no-link distribution/);
+assert.match(repair, /repaired_without_new_audio:true/);
+assert.match(repair, /Visible link remains/);
+assert.doesNotMatch(repair, /ELEVENLABS_API_KEY|api\.elevenlabs\.io/);
 
 console.log('Weekly promotional pack contract passed.');

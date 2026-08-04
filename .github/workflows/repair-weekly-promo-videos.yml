@@ -76,6 +76,41 @@ jobs:
           echo "SOURCE_ARTIFACT=$source_name" >> "$GITHUB_ENV"
           echo "WEEK_ID=$(node -p "require('./repaired/weekly-pack.json').week")" >> "$GITHUB_ENV"
 
+      - name: Sanitize public copy for no-link distribution
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs=require('fs');
+          const file='repaired/weekly-pack.json';
+          const pack=JSON.parse(fs.readFileSync(file,'utf8'));
+          const fallback=['#SapiverForge','#HumanInTheLoop','#AIGovernance','#ResponsibleAI'];
+          const strip=s=>String(s||'')
+            .replace(/https?:\/\/\S+/gi,'')
+            .replace(/\b(?:www\.)?[a-z0-9-]+(?:\.[a-z0-9-]+)+(?:\/\S*)?/gi,'')
+            .replace(/[ \t]+\n/g,'\n')
+            .replace(/\n{3,}/g,'\n\n')
+            .trim();
+          for(const post of pack.posts){
+            const tags=Array.isArray(post.hashtags)&&post.hashtags.length?post.hashtags:fallback;
+            const tagText=tags.join(' ');
+            post.hashtags=tags;
+            post.link_in_bio_text='Link in bio.';
+            post.social_comment=`Link in bio. ${tagText}`;
+            post.facebook_post=`${strip(post.facebook_post)}\n\nLink in bio.\n\n${tagText}`;
+            post.tiktok_caption=`${strip(post.tiktok_caption)}\n\nLink in bio.\n\n${tagText}`;
+            post.youtube_description=`${strip(post.youtube_description)}\n\nLink in bio.\n\n${tagText} #Shorts`;
+          }
+          pack.version=Math.max(Number(pack.version)||0,3);
+          pack.visual_system={...(pack.visual_system||{}),link_in_bio_cta:true,visible_url:false,repaired_without_new_audio:true};
+          fs.writeFileSync(file,JSON.stringify(pack,null,2)+'\n');
+          for(const post of pack.posts){
+            for(const field of ['facebook_post','tiktok_caption','youtube_description','social_comment']){
+              if(/https?:\/\//i.test(post[field]) || /\b(?:www\.)?[a-z0-9-]+(?:\.[a-z0-9-]+)+/i.test(post[field])) throw new Error(`Visible link remains in ${field} for day ${post.index}`);
+            }
+          }
+          NODE
+
       - name: Verify visual assets
         shell: bash
         run: |
@@ -118,9 +153,6 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          rm -f repaired/file-hashes.sha256
-          (cd repaired && find . -type f ! -name 'file-hashes.sha256' -print0 | sort -z | xargs -0 sha256sum > file-hashes.sha256)
-          (cd repaired && sha256sum -c file-hashes.sha256)
           echo "Repair source: $SOURCE_ARTIFACT" >> repaired/README.txt
           echo "Repair: existing narration reused; videos rerendered with no visible URL and LINK IN BIO CTA." >> repaired/README.txt
           rm -f repaired/file-hashes.sha256

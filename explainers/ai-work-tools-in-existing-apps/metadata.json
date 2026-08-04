@@ -3,13 +3,14 @@
   "slug": "ai-work-tools-in-existing-apps",
   "title": "How to adopt AI tools that work inside the apps your team already uses",
   "description": "A practical guide to AI features embedded in docs, search, design, support, project and meeting tools. It explains where the workflow gains come from, why review, disclosure and control matter, and what to check before rolling it out.",
-  "search_question": "How do I integrate AI tools into my existing team workflows safely and effectively?",
+  "search_question": "How do I safely integrate AI agents into my existing business workflows?",
   "topic_slugs": [
+    "ai-adoption",
     "ai-inside-products",
     "systems-automation"
   ],
   "created": "2026-07-14",
-  "last_updated": "2026-08-03",
+  "last_updated": "2026-08-04",
   "source_editions": [
     "2026-07-09",
     "2026-07-10",
@@ -32,7 +33,9 @@
     "2026-07-29",
     "2026-07-29-considered",
     "2026-07-30",
-    "2026-07-31"
+    "2026-07-31",
+    "2026-08-02",
+    "2026-08-03"
   ],
   "source_urls": [
     "https://openai.com/products/release-notes/",
@@ -70,7 +73,8 @@
     "https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/",
     "https://www.salesforce.com/uk/news/stories/agentforce-help-agent-announcement/?bc=OTH",
     "https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html?m=1",
-    "https://www.caledonianrecord.com/news/national/nearly-2-in-5-us-workers-have-put-company-information-into-personal-ai-accounts/article_12345678.html"
+    "https://www.caledonianrecord.com/news/national/nearly-2-in-5-us-workers-have-put-company-information-into-personal-ai-accounts/article_12345678.html",
+    "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august"
   ],
   "revisions": [
     {
@@ -264,6 +268,14 @@
       "source_editions": [
         "2026-07-20",
         "2026-07-16"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "summary": "Updated the guide to incorporate new research on agentic platforms, the enforcement of EU AI Act transparency rules, and the shift toward workflow-based metrics for AI adoption.",
+      "source_editions": [
+        "2026-08-03",
+        "2026-08-02"
       ]
     }
   ],

@@ -1,60 +1,51 @@
 # How to adopt AI tools that work inside the apps your team already uses
 
-Adopting AI is most effective when it is integrated directly into the software your team already uses, rather than treating AI as a separate, isolated destination. By embedding AI into existing workflows—such as project management, design, bookkeeping, and communication—teams can reduce context switching and automate repetitive data-handling tasks. However, this shift requires moving from casual experimentation to governed, repeatable processes where human review and clear handoffs remain central.
+AI tools are increasingly embedded directly into the software platforms teams use daily, such as project management boards, document editors, and communication channels. Adopting these tools effectively requires shifting from a mindset of "using a chatbot" to "redesigning a workflow." The most successful implementations focus on automating repetitive data-handling tasks while maintaining clear human-in-the-loop checkpoints for quality, compliance, and final approval.
 
 ## What it means
 
-Integrating AI into existing apps means using features that connect to your current data sources—like CRM records, project boards, or accounting software—to perform specific tasks. Instead of copying and pasting information into a public chatbot, you use tools that operate within your company's security perimeter. This approach shifts the focus from "prompt engineering" to "workflow design," where the goal is to automate the movement of information between tools while maintaining human oversight.
+Adopting AI inside existing apps means moving away from isolated, browser-based chat interfaces and toward integrated agentic platforms. These tools connect to your company's data, such as inventory systems, project tickets, or document repositories. The goal is to reduce context switching—the time lost moving information between different apps—by allowing AI to perform tasks like summarizing meeting notes, drafting responses, or updating project statuses within the environment where the work already lives.
 
 ## How it works in practice
 
-Effective AI integration follows a structured handoff model:
-1. **Input:** The AI accesses existing data (e.g., a document, a support ticket, or a project brief).
-2. **Processing:** The AI performs a specific, bounded task (e.g., summarizing, categorizing, or drafting a response).
-3. **Review:** A human inspects the output before it is finalized, sent, or published.
-4. **Action:** The human approves the output, and the system completes the task.
+Integration typically follows a pattern of triage, drafting, and review. For example, in a project management tool like Notion or Jira, an AI agent might be assigned to monitor a thread, draft a technical specification based on previous documentation, or flag missing information in a ticket. The AI does not replace the human; it acts as a participant that prepares the work for human verification. 
 
-For example, in finance, tools like Xero JAX automate document capture and data entry, leaving the human to approve the final posting. In project management, platforms like Notion allow teams to assign tasks to agents while keeping the brief, the agent's output, and the final review in one shared board.
+Practical steps include:
+1. **Mapping the workflow:** Identify a repetitive task, such as invoice processing or meeting follow-ups.
+2. **Defining the boundary:** Clearly state what the AI can draft (e.g., a summary) and what it cannot do (e.g., send an email to a client without a human signature).
+3. **Establishing the review gate:** Require a human to verify the output against source material before it is published or sent.
 
 ## Why organisations are adopting it
 
-Organisations are moving toward embedded AI to solve three primary bottlenecks:
-* **Context Switching:** By keeping work inside one interface, teams avoid the time lost moving between apps.
-* **Data Integrity:** Using integrated tools helps keep sensitive information within the company's security perimeter, reducing the risk of data leakage associated with personal AI accounts.
-* **Operational Scaling:** Integrated AI allows teams to handle higher volumes of routine tasks—such as support triage or contract review—without needing to increase headcount proportionally.
+Organisations are moving toward integrated AI to improve operational efficiency and data consistency. By using platforms like QwenWork or integrated agentic tools in Jira and Salesforce, companies can ensure that AI operates within established security perimeters. This approach reduces the risk of "shadow AI," where employees use unapproved personal accounts to process sensitive company data. Furthermore, as inference costs for models like GPT-5.6 Luna drop, it becomes economically viable to route routine tasks to low-cost models while reserving more capable models for complex reasoning.
 
 ## What changes for people and workflows
 
-For employees, the role shifts from "doing the task" to "governing the task." You become an auditor of AI-generated work. This requires:
-* **Defining Boundaries:** Clearly stating what the AI can and cannot do (e.g., "Draft this email, but do not send it").
-* **Establishing Review Gates:** Ensuring every AI-generated output that reaches a client or production system is checked by a human.
-* **Managing Exceptions:** Creating a process for when the AI fails or encounters data it does not understand.
+For employees, the role shifts from "doing the task" to "governing the agent." This requires new skills in workflow design and verification. Instead of writing simple prompts, workers must learn to manage the "harness"—the repository instructions, permission boundaries, and review gates that keep AI output reliable. For managers, the focus shifts to defining clear security boundaries and permission inheritance, ensuring that team members can innovate within safe, pre-approved limits.
 
 ## Limits, risks and what remains uncertain
 
-Even with integrated tools, risks persist:
-* **Automation Bottlenecks:** If AI discovers issues (like bugs or contract errors) faster than humans can fix them, you create a backlog rather than a solution.
-* **Shadow AI:** If enterprise tools are too slow or restrictive, employees will continue to use unapproved personal accounts, creating governance gaps.
-* **Reliability:** AI agents can still make errors. Without a human-in-the-loop, these errors can propagate through your systems automatically.
+- **Discovery vs. Remediation:** A significant risk is that AI can identify issues (such as software bugs or contract errors) faster than human teams can fix them. Without an automated triage system, this creates a bottleneck rather than a solution.
+- **Security and Egress:** As agents gain the ability to browse the web or execute shell commands, they require strict network-level zero-trust controls. Prompt-based guardrails are insufficient to prevent unauthorized system access.
+- **Compliance:** With the EU AI Act transparency rules now in effect, organisations must ensure that AI-generated content is properly labeled and that metadata is preserved. The long-term impact of these regulations on software design is still evolving.
 
 ## Practical questions to ask before using it
 
-Before enabling an AI feature in your workflow, ask:
-* **Where is the human review step?** If the AI can send or publish, where does a person sign off?
-* **What data does it access?** Does the tool have access to sensitive customer or financial data, and is that access restricted?
-* **How do we handle failures?** If the AI produces an incorrect result, what is the process for catching and correcting it?
-* **Is it a service or a project?** Are we buying a repeatable, supported service, or are we building a custom project that requires ongoing maintenance?
+- **Where does the data live?** Does the AI tool process data within our existing security perimeter, or does it send information to an external vendor?
+- **What is the human checkpoint?** At what point in this workflow does a human review the output, and what happens if the AI makes a mistake?
+- **Who owns the failure?** If the AI agent performs an incorrect action, is there a clear log of the decision-making process that we can audit?
+- **Is there an automated triage queue?** If we are automating discovery, do we have a system to prioritize findings for human remediation?
 
 ## Current examples
 
-* **Finance:** Xero JAX automates document capture and data entry for small businesses.
-* **Project Management:** Notion 3.6 allows teams to assign tasks to external agents from a shared board, keeping the entire workflow visible.
-* **Support:** Salesforce Agentforce provides prepackaged help agents with pay-per-resolution pricing, moving support automation toward a service-based model.
-* **Creative:** Canva AI 2.0 integrates research, design, and scheduling into one loop, allowing teams to manage a campaign from idea to publication.
+- **Integrated Workspaces:** Platforms like Notion 3.6 allow teams to assign tasks to external agents directly from shared boards, keeping the context of the work attached to the project record.
+- **Finance Automation:** Tools like Xero's JAX platform automate document capture and workflow steps for bookkeeping, reducing manual data entry while keeping the accountant in control of the final posting.
+- **Customer Support:** Salesforce's Agentforce provides prepackaged help agents with pay-per-resolution pricing, allowing support teams to scale capacity without building custom AI infrastructure.
+- **Video Production:** Google Vids integrates Gemini Omni to allow users to generate and edit clips with built-in SynthID watermarking, ensuring that provenance is tracked from the draft stage.
 
 ## Sources and further reading
 
-* [Xero UK: Xero Announces New AI Innovations at Xerocon London](https://www.xero.com/uk/media-releases/xero-announces-new-ai-innovations-xerocon-london/)
-* [Notion: Notion 3.6 Release Notes](https://www.notion.com/releases/2026-07-01)
-* [Salesforce: Salesforce Announces Prepackaged Agentforce Help Agent](https://www.salesforce.com/uk/news/stories/agentforce-help-agent-announcement/?bc=OTH)
-* [Canva: Introducing Canva AI 2.0](https://www.canva.com/newsroom/news/canva-create-2026-ai/)
+- [OpenAI: A scorecard for the AI age](https://openai.com/index/a-scorecard-for-the-ai-age/)
+- [Atlassian: How we’re evolving Jira for AI-native software development](https://www.atlassian.com/blog/company-news/ai-sdlc)
+- [European Commission: Commission starts enforcing AI Act rules and new transparency requirements](https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august)
+- [Anthropic: Investigating three real-world incidents in our cybersecurity evaluations](https://www.anthropic.com/news/investigating-three-real-world-incidents-in-our-cybersecurity-evaluations)

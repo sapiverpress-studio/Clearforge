@@ -29,6 +29,7 @@ jobs:
             /test/
             /config/
             /package.json
+            /.github/workflows/daily-draft.yml
       - uses: actions/setup-node@v4
         with:
           node-version: "24"

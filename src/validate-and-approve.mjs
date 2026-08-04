@@ -12,56 +12,58 @@ const featurePath = path.join(draftDir, "feature.md");
 const approvalPath = path.join(draftDir, "approval.json");
 const validationPath = path.join(draftDir, "validation.json");
 const socialInterestPath = path.join(draftDir, "social_interest_report.json");
+const factReportPath = path.join(draftDir, "fact-discipline-report.json");
 
 if (!fs.existsSync(structuredPath)) throw new Error(`Missing ${structuredPath}`);
 const data = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
+const feature = fs.existsSync(featurePath) ? fs.readFileSync(featurePath, "utf8").trim() : "";
+const factReport = fs.existsSync(factReportPath) ? JSON.parse(fs.readFileSync(factReportPath, "utf8")) : null;
 
-// Hard failures protect factual accuracy, safety and basic publishability.
-// Editorial and formatting imperfections are warnings so a usable edition can publish.
 const failures = [];
 const warnings = [];
-
+const words = (value) => String(value || "").trim().split(/\s+/).filter(Boolean).length;
 const sources = Array.isArray(data.sources) ? data.sources : [];
 const stories = Array.isArray(data.story_summaries) ? data.story_summaries : [];
 const article = String(data.main_article || "").trim();
-const feature = fs.existsSync(featurePath) ? fs.readFileSync(featurePath, "utf8").trim() : "";
 const social = data.social || {};
-const openClaims = Array.isArray(data.claims_to_verify)
-  ? data.claims_to_verify.map((claim) => String(claim || "").trim()).filter(Boolean)
-  : [];
-const articleWords = article.split(/\s+/).filter(Boolean).length;
-const featureWords = feature.split(/\s+/).filter(Boolean).length;
+const articleWords = words(article);
+const featureWords = words(feature);
+const openClaims = Array.isArray(data.claims_to_verify) ? data.claims_to_verify.map(String).map((x) => x.trim()).filter(Boolean) : [];
 
-if (sources.length < 1 || sources.length > 5) failures.push(`Expected 1–5 sources, got ${sources.length}`);
-if (stories.length < 1 || stories.length > 5) failures.push(`Expected 1–5 stories, got ${stories.length}`);
+if (sources.length < 1 || sources.length > 5) failures.push(`Expected 1–5 verified sources, got ${sources.length}`);
+if (stories.length < 1 || stories.length > 5) failures.push(`Expected 1–5 verified stories, got ${stories.length}`);
 if (!article) failures.push("Missing main article");
-if (article && articleWords < 500) warnings.push(`Article is shorter than the preferred 650 words (${articleWords})`);
-if (articleWords > 1400) warnings.push(`Article is longer than the preferred 1,200 words (${articleWords})`);
-if (!feature) warnings.push("Missing full feature piece; daily article and social channels may still publish");
-if (feature && featureWords < 1200) warnings.push(`Full feature is shorter than the preferred 1,400 words (${featureWords})`);
-if (featureWords > 3000) warnings.push(`Full feature is longer than the preferred 2,800 words (${featureWords})`);
-if (feature && !/^#\s+/m.test(feature)) warnings.push("Full feature has no H1 headline");
-if (feature && !/##\s+Sources/i.test(feature)) warnings.push("Full feature has no exact Sources section heading");
+
+const minimumArticleWords = sources.length >= 3 ? 450 : 650;
+if (article && articleWords < minimumArticleWords) {
+  failures.push(`Article is commercially insufficient for ${sources.length} verified source${sources.length === 1 ? "" : "s"}: ${articleWords} words; minimum ${minimumArticleWords}`);
+}
+if (articleWords > 1600) warnings.push(`Article is unusually long (${articleWords} words)`);
+if (!feature) warnings.push("Optional feature omitted");
+if (feature && featureWords < 1000) warnings.push(`Optional feature is short (${featureWords} words)`);
 if (openClaims.length) failures.push(`Unresolved claims remain: ${openClaims.join(" | ")}`);
+
+const genericHeadline = /^(?:a verified ai development|today in ai|ai news|an ai update|what happened in ai)\b/i;
+if (genericHeadline.test(String(data.headline || "").trim())) failures.push("Headline is generic and does not identify the actual story");
+if (words(data.headline) < 5) failures.push("Headline is too vague to identify the story");
+if (words(data.practical_takeaway) < 35) failures.push("Practical takeaway is too thin to be useful");
+if (words(data.what_to_test_next) < 25) failures.push("What-to-test-next section is too thin to be actionable");
 
 for (const [i, story] of stories.entries()) {
   const check = String(story?.claim_to_verify || "").trim();
-  if (!/^none\b/i.test(check)) {
-    failures.push(`Story ${i + 1} still has an unresolved verification check: ${check || "missing claim_to_verify"}`);
-  }
+  if (!/^none\b/i.test(check)) failures.push(`Story ${i + 1} still has an unresolved verification check: ${check || "missing claim_to_verify"}`);
 }
 
 const urls = new Set();
 const editionDate = new Date(`${String(DATE).slice(0, 10)}T23:59:59Z`);
 for (const [i, source] of sources.entries()) {
   if (!source?.url || !/^https:\/\//i.test(source.url)) failures.push(`Source ${i + 1} has no valid HTTPS URL`);
-  if (!source?.published_date || !/^\d{4}-\d{2}-\d{2}$/.test(source.published_date)) {
-    failures.push(`Source ${i + 1} has invalid date`);
-  } else {
+  if (!source?.published_date || !/^\d{4}-\d{2}-\d{2}$/.test(source.published_date)) failures.push(`Source ${i + 1} has invalid date`);
+  else {
     const published = new Date(`${source.published_date}T00:00:00Z`);
     if (published > editionDate) failures.push(`Source ${i + 1} has a future publication date: ${source.published_date}`);
     const ageDays = Math.floor((editionDate - published) / 86400000);
-    if (ageDays > 7) warnings.push(`Source ${i + 1} is ${ageDays} days old; confirm it is background rather than current news`);
+    if (ageDays > 14) warnings.push(`Source ${i + 1} is ${ageDays} days old`);
   }
   if (!source?.confirmed_fact) failures.push(`Source ${i + 1} missing confirmed_fact`);
   if (!source?.interpretation) failures.push(`Source ${i + 1} missing interpretation`);
@@ -69,74 +71,37 @@ for (const [i, source] of sources.entries()) {
   urls.add(source.url);
 }
 
-const bannedPatterns = [
-  /guaranteed income/i,
-  /guaranteed profit/i,
-  /replace everyone/i,
-  /100% accurate/i,
-  /no risk/i
-];
-const joined = `${JSON.stringify(data)}\n${feature}`;
-for (const pattern of bannedPatterns) if (pattern.test(joined)) failures.push(`Blocked wording matched ${pattern}`);
+if (factReport) {
+  const unsupported = Number(factReport.unsupported_atomic_claim_count ?? factReport.unsupported_claim_count ?? 0);
+  if (unsupported > 0) failures.push(`Fact-discipline report contains ${unsupported} unsupported atomic claim${unsupported === 1 ? "" : "s"}`);
+  if (factReport.passed === false) failures.push("Fact-discipline report failed");
+}
 
-const socialFields = {
-  tiktok_script: String(social.tiktok_script || "").trim(),
-  youtube_shorts_script: String(social.youtube_shorts_script || "").trim(),
-  facebook_post: String(social.facebook_post || "").trim(),
-  pinterest_title: String(social.pinterest_title || "").trim(),
-  pinterest_description: String(social.pinterest_description || "").trim(),
-  linkedin_post: String(social.linkedin_post || "").trim()
+const publicCorpus = JSON.stringify(data);
+if (/output-release-30-day-validation|payhip\.com\/b\/pkSEY/i.test(publicCorpus)) failures.push("Abandoned Output Release campaign leaked into current edition");
+if (/\bClear\s*Forge\b/i.test(publicCorpus)) failures.push("Old Clearforge branding leaked into current edition");
+
+const requiredSocial = {
+  tiktok_script: [18, 120],
+  tiktok_caption: [8, 100],
+  youtube_shorts_script: [18, 140],
+  facebook_post: [25, 220],
+  pinterest_title: [4, 18],
+  pinterest_description: [20, 120]
 };
-
-for (const [name, value] of Object.entries(socialFields)) {
-  if (!value) warnings.push(`Missing ${name.replaceAll("_", " ")}; that channel will be skipped`);
-}
-
-const genericOpeningPatterns = [
-  /^ai news is noisy\b/i,
-  /^today in (practical )?ai\b/i,
-  /^here(?:'s| is) the latest ai news\b/i,
-  /^sapiver-forge\b/i,
-  /^in today(?:'s)? (?:ai )?(?:news|brief)\b/i
-];
-
-function firstSentence(value) {
-  return String(value || "").split(/(?<=[.!?])\s+|\n+/)[0].trim();
-}
-
-const shortFormChecks = [
-  ["TikTok", socialFields.tiktok_script, 45],
-  ["YouTube Shorts", socialFields.youtube_shorts_script, 45],
-  ["Facebook", socialFields.facebook_post, 35],
-  ["LinkedIn", socialFields.linkedin_post, 35]
-];
-
 const socialChecks = [];
-for (const [platform, value, minimumWords] of shortFormChecks) {
-  const opening = firstSentence(value);
-  const words = value.split(/\s+/).filter(Boolean).length;
-  const generic = genericOpeningPatterns.some((pattern) => pattern.test(opening));
-  if (value && generic) warnings.push(`${platform} opens with generic brand/news language rather than an audience interest`);
-  if (value && words < minimumWords) warnings.push(`${platform} content is shorter than preferred (${words} words)`);
-  if (value && opening.split(/\s+/).filter(Boolean).length < 5) warnings.push(`${platform} opening may be too vague to identify the subject`);
-  socialChecks.push({ platform, opening, words, generic_opening: generic, passed: Boolean(value) });
+for (const [field, [min, max]] of Object.entries(requiredSocial)) {
+  const value = String(social[field] || "").trim();
+  const count = words(value);
+  if (!value) failures.push(`Missing required social output: ${field}`);
+  else if (count < min || count > max) failures.push(`${field} has unusable length (${count} words; expected ${min}–${max})`);
+  socialChecks.push({ platform: field, words: count, passed: Boolean(value) && count >= min && count <= max });
 }
+if (social.linkedin_post) warnings.push("LinkedIn copy was generated but LinkedIn is not a required active channel");
+if (!Array.isArray(social.quote_card_lines) || social.quote_card_lines.filter((x) => String(x || "").trim()).length !== 5) failures.push("Quote-card pack must contain five complete lines");
 
-if (socialFields.pinterest_title && socialFields.pinterest_title.split(/\s+/).filter(Boolean).length < 4) {
-  warnings.push("Pinterest title may be too vague to express a searchable problem or useful promise");
-}
-if (socialFields.pinterest_description && socialFields.pinterest_description.split(/\s+/).filter(Boolean).length < 20) {
-  warnings.push("Pinterest description may be too short to explain the searchable payoff");
-}
-if (socialFields.facebook_post && !/[?]/.test(socialFields.facebook_post)) {
-  warnings.push("Facebook post has no meaningful audience question");
-}
-
-const quoteLines = Array.isArray(social.quote_card_lines) ? social.quote_card_lines.map((x) => String(x || "").trim()) : [];
-if (quoteLines.length !== 5) warnings.push(`Expected 5 quote/card lines, got ${quoteLines.length}`);
-for (const [i, line] of quoteLines.entries()) {
-  if (line && line.split(/\s+/).filter(Boolean).length < 5) warnings.push(`Quote/card line ${i + 1} may be too vague`);
-}
+const bannedPatterns = [/guaranteed income/i, /guaranteed profit/i, /replace everyone/i, /100% accurate/i, /no risk/i];
+for (const pattern of bannedPatterns) if (pattern.test(publicCorpus)) failures.push(`Blocked wording matched ${pattern}`);
 
 const uniqueHosts = new Set(sources.map((s) => { try { return new URL(s.url).hostname; } catch { return ""; } }).filter(Boolean));
 if (uniqueHosts.size < 1) failures.push("No distinct source domain remains");
@@ -146,25 +111,24 @@ const approval = {
   date: DATE,
   article_approved: coreApproved && Boolean(article),
   feature_approved: coreApproved && Boolean(feature),
-  facebook_approved: coreApproved && Boolean(socialFields.facebook_post),
-  pinterest_approved: coreApproved && Boolean(socialFields.pinterest_title) && Boolean(socialFields.pinterest_description),
-  youtube_approved: coreApproved && Boolean(socialFields.youtube_shorts_script),
+  facebook_approved: coreApproved && Boolean(social.facebook_post),
+  pinterest_approved: coreApproved && Boolean(social.pinterest_title) && Boolean(social.pinterest_description),
+  youtube_approved: coreApproved && Boolean(social.youtube_shorts_script),
   dev_approved: coreApproved && Boolean(feature),
-  notes: coreApproved
-    ? `Automated checks passed with ${warnings.length} non-blocking quality warning${warnings.length === 1 ? "" : "s"}. Exact-candidate human approval is still required.`
-    : `Automatically blocked for factual or safety reasons: ${failures.join("; ")}`
+  notes: coreApproved ? `Automated factual, editorial and channel checks passed with ${warnings.length} warning${warnings.length === 1 ? "" : "s"}. Exact-candidate human approval is still required.` : `Automatically blocked: ${failures.join("; ")}`
 };
 
 const validation = {
   date: DATE,
   passed: coreApproved,
-  policy: "Only factual, sourcing, safety and minimum-content failures block publication. Editorial and formatting issues are warnings.",
-  failures,
-  warnings,
+  policy: "Publication requires factual integrity, editorial sufficiency and usable outputs for every active channel. Optional podcast, feature and LinkedIn output do not block publication.",
+  failures: [...new Set(failures)],
+  warnings: [...new Set(warnings)],
   stats: {
     source_count: sources.length,
     story_count: stories.length,
     article_words: articleWords,
+    minimum_article_words: minimumArticleWords,
     feature_words: featureWords,
     unique_source_domains: uniqueHosts.size,
     unresolved_claim_count: openClaims.length,
@@ -175,20 +139,14 @@ const validation = {
 
 const socialInterestReport = {
   date: DATE,
-  principle: "Sapiver Forge social assets should clearly signal a subject and payoff, but quality imperfections do not block otherwise safe publication.",
+  principle: "Every active-channel asset must be complete, identify the subject and offer a clear audience payoff.",
   passed: socialChecks.every((item) => item.passed),
   checks: socialChecks,
-  pinterest: {
-    title: socialFields.pinterest_title,
-    title_words: socialFields.pinterest_title.split(/\s+/).filter(Boolean).length,
-    description_words: socialFields.pinterest_description.split(/\s+/).filter(Boolean).length
-  },
-  warnings: warnings.filter((item) => /Facebook|opening|audience|Pinterest|TikTok|YouTube|LinkedIn|Quote/i.test(item))
+  warnings: warnings.filter((item) => /Facebook|Pinterest|TikTok|YouTube|LinkedIn|Quote/i.test(item))
 };
 
 fs.writeFileSync(approvalPath, JSON.stringify(approval, null, 2) + "\n");
 fs.writeFileSync(validationPath, JSON.stringify(validation, null, 2) + "\n");
 fs.writeFileSync(socialInterestPath, JSON.stringify(socialInterestReport, null, 2) + "\n");
-
 console.log(`Validation ${coreApproved ? "passed" : "failed"} for ${DATE}`);
 if (!coreApproved) process.exit(2);

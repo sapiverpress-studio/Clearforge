@@ -34,6 +34,7 @@ jobs:
             public/products/gate-system/complete-bundle/01_Cover.webp
             public/products/notion-workspace/01_Cover.webp
             .github/workflows/weekly-promo-pack.yml
+            .github/workflows/approve-weekly-promo.yml
           sparse-checkout-cone-mode: false
           fetch-depth: 1
       - uses: actions/setup-node@v4

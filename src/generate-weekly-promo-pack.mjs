@@ -19,10 +19,23 @@ const plans = [
   ['Sunday', 'system-promotion', 'bundle', 'Human control should cover the whole AI workflow.', 'Sapiver Forge structures four decisions: whether AI should be used, how the workflow is controlled, whether an output is ready to leave and whether the workflow remains worthwhile. Each decision stays with a named human.'],
 ];
 
+const hashtagMap = {
+  'output-release': ['#SapiverForge', '#AIQuality', '#HumanInTheLoop', '#AIGovernance'],
+  'workflow-control': ['#SapiverForge', '#AIWorkflow', '#HumanInTheLoop', '#ResponsibleAI'],
+  opportunity: ['#SapiverForge', '#AIStrategy', '#ResponsibleAI', '#SmallBusinessAI'],
+  'outcome-review': ['#SapiverForge', '#AIReview', '#AIGovernance', '#ResponsibleAI'],
+  bundle: ['#SapiverForge', '#HumanInTheLoop', '#AIGovernance', '#ResponsibleAI'],
+};
+
 const posts = plans.map(([day, angle, slug, hook, body], index) => {
   const product = by[slug];
   if (!product?.image) throw new Error(`Missing approved product artwork mapping for ${slug}.`);
-  const narration = `${hook} ${body} ${index === 6 ? 'Explore the complete Sapiver Forge gate system.' : `See the ${product.name}.`}`;
+  const hashtags = hashtagMap[slug] || ['#SapiverForge', '#HumanInTheLoop', '#AIGovernance'];
+  const hashtagText = hashtags.join(' ');
+  const spokenCta = index === 6
+    ? 'Explore the complete Sapiver Forge gate system through the link in bio.'
+    : `See the ${product.name} through the link in bio.`;
+  const narration = `${hook} ${body} ${spokenCta}`;
   return {
     index: index + 1,
     day,
@@ -34,16 +47,19 @@ const posts = plans.map(([day, angle, slug, hook, body], index) => {
     isla_opener: facts.weekly_video.isla_opener,
     hook,
     narration,
-    tiktok_caption: `${hook}\n\n${body}\n\n${product.url}\n#SapiverForge #HumanInTheLoop #AIGovernance`,
+    hashtags,
+    link_in_bio_text: 'Link in bio.',
+    tiktok_caption: `${hook}\n\n${body}\n\nLink in bio.\n\n${hashtagText}`,
     youtube_title: `${hook.replace(/[.?]$/, '')} | Sapiver Forge #Shorts`,
-    youtube_description: `${body}\n\n${product.name}: ${product.url}\n\n#SapiverForge #HumanInTheLoop #AIGovernance`,
-    facebook_post: `${hook}\n\n${body}\n\n${product.name}: ${product.url}`,
+    youtube_description: `${body}\n\n${product.name}\nLink in bio.\n\n${hashtagText} #Shorts`,
+    facebook_post: `${hook}\n\n${body}\n\nLink in bio.\n\n${hashtagText}`,
+    social_comment: `Link in bio. ${hashtagText}`,
     visual_cards: [hook, product.purpose, 'A named human decides', product.name],
   };
 });
 
 const core = {
-  version: 2,
+  version: 3,
   brand: facts.brand,
   week,
   generated_at: new Date().toISOString(),
@@ -53,6 +69,7 @@ const core = {
     isla_source_repository: facts.weekly_video.isla_source_repository,
     isla_opener: facts.weekly_video.isla_opener,
     approved_product_artwork: true,
+    link_in_bio_cta: true,
   },
   posts,
 };
@@ -60,7 +77,7 @@ const candidate_id = crypto.createHash('sha256').update(JSON.stringify(core)).di
 const pack = { ...core, candidate_id };
 fs.writeFileSync(path.join(out, 'weekly-pack.json'), `${JSON.stringify(pack, null, 2)}\n`);
 fs.writeFileSync(path.join(out, 'candidate-id.txt'), `${candidate_id}\n`);
-fs.writeFileSync(path.join(out, 'README.txt'), `Sapiver Forge weekly promotional pack\nWeek: ${week}\nCandidate ID: ${candidate_id}\nVisual system: Isla human-motion opener plus existing approved product artwork.\nNothing is approved until the approval workflow is run with this exact ID.\n`);
+fs.writeFileSync(path.join(out, 'README.txt'), `Sapiver Forge weekly promotional pack\nWeek: ${week}\nCandidate ID: ${candidate_id}\nVisual system: Isla human-motion opener plus existing approved product artwork.\nCTA policy: no direct product links in social comments; relevant hashtags and link-in-bio wording are included in text, visuals and narration.\nNothing is approved until the approval workflow is run with this exact ID.\n`);
 
 const esc = (value) => String(value).replace(/[&<>\"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[char]);
 const cards = posts.map((post) => `<article>
@@ -71,7 +88,9 @@ const cards = posts.map((post) => `<article>
   <video controls preload="metadata" width="360" src="video/${String(post.index).padStart(2, '0')}-${post.day.toLowerCase()}.mp4"></video>
   <h3>Narration</h3><p>${esc(post.narration)}</p>
   <h3>TikTok caption</h3><pre>${esc(post.tiktok_caption)}</pre>
+  <h3>Facebook post</h3><pre>${esc(post.facebook_post)}</pre>
+  <h3>Social comment</h3><pre>${esc(post.social_comment)}</pre>
   <h3>YouTube</h3><p><strong>${esc(post.youtube_title)}</strong></p><pre>${esc(post.youtube_description)}</pre>
 </article>`).join('');
-fs.writeFileSync(path.join(out, 'human-review.html'), `<!doctype html><meta charset="utf-8"><title>Sapiver Forge weekly review</title><style>body{font:16px/1.5 system-ui;max-width:1000px;margin:auto;padding:24px;background:#f5f2ea;color:#102437}header,article{background:white;border:1px solid #d8e0e6;border-radius:12px;padding:18px;margin:14px 0}header{background:#071827;color:white}pre{white-space:pre-wrap}video{max-width:100%;background:#071827;border-radius:10px}code{overflow-wrap:anywhere}</style><header><h1>Sapiver Forge weekly promotional pack</h1><p>Week ${week}</p><p>Candidate ID: <code>${candidate_id}</code></p><p><strong>Visual standard:</strong> human-motion Isla opener, approved product artwork, wrapped safe-area captions and branded close.</p><p><strong>AWAITING HUMAN APPROVAL — nothing has been published.</strong></p></header>${cards}`);
+fs.writeFileSync(path.join(out, 'human-review.html'), `<!doctype html><meta charset="utf-8"><title>Sapiver Forge weekly review</title><style>body{font:16px/1.5 system-ui;max-width:1000px;margin:auto;padding:24px;background:#f5f2ea;color:#102437}header,article{background:white;border:1px solid #d8e0e6;border-radius:12px;padding:18px;margin:14px 0}header{background:#071827;color:white}pre{white-space:pre-wrap}video{max-width:100%;background:#071827;border-radius:10px}code{overflow-wrap:anywhere}</style><header><h1>Sapiver Forge weekly promotional pack</h1><p>Week ${week}</p><p>Candidate ID: <code>${candidate_id}</code></p><p><strong>Visual standard:</strong> human-motion Isla opener, approved product artwork, wrapped safe-area captions and branded close.</p><p><strong>CTA standard:</strong> relevant hashtags and “Link in bio” in written copy, on-screen close and narration; no direct product URLs in social comments.</p><p><strong>AWAITING HUMAN APPROVAL — nothing has been published.</strong></p></header>${cards}`);
 console.log(JSON.stringify({ week, candidate_id, out, posts: 7, visual_system: core.visual_system }));

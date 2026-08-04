@@ -37,7 +37,6 @@ fs.writeFileSync(path.join(draft, "source-evidence.json"), `${JSON.stringify({ r
   { source_index: 3, acquisition_id: "brookings", final_url: "https://www.brookings.edu/example", page_title: "When people think AI did the creative work", publication_date: edition, verified_claims: [{ atomic_claim: brookings, source_url: "https://www.brookings.edu/example", evidence_passage: brookingsEvidence, evidence_location: { type: "character_offsets", start: 100, end: 100 + brookingsEvidence.length }, verification_checks: { numbers: [{ value: "3.4 percent", supported: true }], entities: [], dates: [], comparisons: [], quotes: [] }, supported_numbers: ["3.4 percent"], supported_entities: [], verification_status: "verified" }], unsupported_claims: [] }
 ] }, null, 2)}\n`);
 fs.writeFileSync(path.join(draft, "source-integrity-report.json"), JSON.stringify({ passed: true }));
-fs.writeFileSync(path.join(draft, "narrowed-edition-rebuild.json"), JSON.stringify({ rebuilt: true }));
 fs.writeFileSync(path.join(draft, "podcast", "COPY_PASTE_INTO_ELEVENLABS.txt"), "LifeOS gives coding assistants unsupported persistent memory.");
 fs.writeFileSync(path.join(draft, "podcast-claim-verification.json"), JSON.stringify({ passed: true }));
 
@@ -50,15 +49,25 @@ for (const script of ["rebuild-narrowed-edition.mjs", "run-optional-podcast.mjs"
 const output = JSON.parse(fs.readFileSync(path.join(draft, "structured_output.json"), "utf8"));
 const lock = JSON.parse(fs.readFileSync(path.join(draft, "locked-facts.json"), "utf8"));
 const report = JSON.parse(fs.readFileSync(path.join(draft, "publishability-report.json"), "utf8"));
-const corpus = `${JSON.stringify(output)}\n${fs.readFileSync(path.join(draft, "social_pack.md"), "utf8")}`;
+const rebuild = JSON.parse(fs.readFileSync(path.join(draft, "narrowed-edition-rebuild.json"), "utf8"));
+const socialPack = fs.readFileSync(path.join(draft, "social_pack.md"), "utf8");
+const corpus = `${JSON.stringify(output)}\n${socialPack}`;
 assert.equal(report.passed, true);
 assert.deepEqual(lock.facts.map((fact) => fact.atomic_claim), [brookings]);
 assert.equal(output.sources.length, 1);
 assert.equal(output.story_summaries.length, 1);
-assert.ok(output.main_article.split(/\s+/).length >= 150);
-assert.ok(output.social.tiktok_script.split(/\s+/).length <= 60);
-assert.match(output.social.tiktok_caption, /pkSEY\?utm_source=tiktok&/);
+assert.ok(output.main_article.split(/\s+/).length >= 650);
+assert.ok(rebuild.article_words >= 650);
+assert.doesNotMatch(output.headline, /^(?:a verified ai development|today in ai|ai news|an ai update|what happened in ai)/i);
+assert.ok(output.practical_takeaway.split(/\s+/).length >= 35);
+assert.ok(output.what_to_test_next.split(/\s+/).length >= 25);
+assert.ok(output.social.tiktok_script.split(/\s+/).length >= 18);
+assert.ok(output.social.tiktok_script.split(/\s+/).length <= 120);
+assert.equal("linkedin_post" in output.social, false);
+assert.doesNotMatch(socialPack, /LinkedIn/i);
 assert.equal(fs.existsSync(path.join(draft, "podcast")), false);
 assert.equal(fs.existsSync(path.join(draft, "podcast-claim-verification.json")), false);
-for (const marker of ["and energy management", "try starlog", "vibe-coding", "retrieved evidence supports", "original draft claimed", "pkSEY?\""]) assert.equal(corpus.includes(marker), false, `${marker} survived the replay`);
-console.log("Failed-candidate publishability replay passed with one clean Brookings story and no podcast expansion.");
+for (const marker of ["and energy management", "try starlog", "vibe-coding", "retrieved evidence supports", "original draft claimed", "output-release-30-day-validation", "payhip.com/b/pkSEY", "Clearforge"]) {
+  assert.equal(corpus.toLowerCase().includes(marker.toLowerCase()), false, `${marker} survived the replay`);
+}
+console.log("End-to-end failed-candidate replay passed: one verified source, depth-first article, active social channels, no obsolete campaign or podcast contamination.");

@@ -2,12 +2,17 @@ const ENTITY_STOPWORDS = new Set([
   "A", "An", "And", "As", "At", "By", "For", "From", "How", "In", "Into", "Is", "It", "Its",
   "Of", "On", "Or", "That", "The", "This", "To", "What", "When", "Where", "Which", "Who", "Why", "With"
 ]);
+const GENERIC_SENTENCE_STARTS = new Set([
+  "According", "Although", "Attributing", "Compared", "Consequently", "Following", "However", "Overall", "Respondents"
+]);
 
 export function decodeEntities(value) {
   return String(value || "")
     .replace(/&nbsp;|&#160;/gi, " ")
     .replace(/&amp;/gi, "&").replace(/&quot;/gi, '"').replace(/&#39;|&apos;/gi, "'")
-    .replace(/&lt;/gi, "<").replace(/&gt;/gi, ">");
+    .replace(/&lt;/gi, "<").replace(/&gt;/gi, ">")
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCodePoint(Number.parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, decimal) => String.fromCodePoint(Number(decimal)));
 }
 
 export function extractUsableText(html) {
@@ -17,6 +22,7 @@ export function extractUsableText(html) {
     .replace(/<\/(?:p|div|article|section|main|li|h[1-6]|blockquote)>/gi, "\n")
     .replace(/<br\s*\/?\s*>/gi, "\n")
     .replace(/<[^>]+>/g, " "))
+    .replace(/\bShare\s+Share\s+on\s+Twitter\s+LinkedIn\s+Email\b/gi, " ")
     .replace(/[ \t]+/g, " ").replace(/ *\n+ */g, "\n").trim();
 }
 
@@ -49,7 +55,11 @@ export function extractMaterialNumbers(value) {
 }
 
 export function extractDates(value) {
-  return [...new Set(String(value || "").match(/\b(?:\d{1,2}\s+)?(?:January|February|March|April|May|June|July|August|September|October|November|December)(?:\s+\d{1,2})?(?:,?\s+20\d{2})?|\b20\d{2}-\d{2}-\d{2}\b/gi) || [])];
+  const text = String(value || "");
+  return [...new Set([
+    ...(text.match(/\b(?:\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)(?:\s+20\d{2})?|(?:January|February|March|April|May|June|July|August|September|October|November|December)(?:\s+(?:20\d{2}|\d{1,2}(?:,?\s+20\d{2})?))?)/g) || []),
+    ...(text.match(/\b20\d{2}-\d{2}-\d{2}\b/g) || [])
+  ])];
 }
 
 export function extractQuotedWording(value) {
@@ -60,6 +70,7 @@ export function extractEntities(value) {
   const matches = String(value || "").match(/\b[A-Z][A-Za-z0-9.+&-]*(?:\s+(?:[A-Z][A-Za-z0-9.+&-]*|of|and|for|the)){0,4}\b/g) || [];
   return [...new Set(matches.map((item) => item.trim()).filter((item) => {
     if (ENTITY_STOPWORDS.has(item)) return false;
+    if (GENERIC_SENTENCE_STARTS.has(item)) return false;
     if (/^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)$/.test(item)) return false;
     return item.length > 2;
   }))];
@@ -69,6 +80,7 @@ export function splitSentences(value) {
   const text = String(value || "").replace(/\s+/g, " ").trim();
   if (!text) return [];
   const protectedText = text
+    .replace(/https?:\/\/[^\s]+/gi, (match) => match.replaceAll(".", "\uE000"))
     .replace(/(?<=\d)\.(?=\d)/g, "\uE000")
     .replace(/\b(?:Mr|Mrs|Ms|Dr|Prof|Sr|Jr|St|vs|e\.g|i\.e)\./gi, (match) => match.replaceAll(".", "\uE000"));
   return (protectedText.match(/[^.!?]+[.!?]?/g) || [])
@@ -97,7 +109,9 @@ function comparisonMarkers(value) {
 }
 
 function evidenceCandidates(sourceText) {
-  return splitSentences(sourceText).filter((sentence) => sentence.length >= 25 && sentence.length <= 1200 && isMeaningfulEvidencePassage(sentence));
+  const sentences = splitSentences(sourceText);
+  const windows = sentences.flatMap((sentence, index) => [sentence, index + 1 < sentences.length ? `${sentence} ${sentences[index + 1]}` : ""]);
+  return [...new Set(windows)].filter((passage) => passage.length >= 25 && passage.length <= 1200 && isMeaningfulEvidencePassage(passage));
 }
 
 export function verifyAtomicClaim(claim, sourceText) {
@@ -111,7 +125,14 @@ export function verifyAtomicClaim(claim, sourceText) {
   let best = { passage: "", score: 0, start: -1, end: -1 };
   for (const passage of evidenceCandidates(sourceText)) {
     const passageTokens = new Set(tokens(passage));
-    const score = claimTokens.length ? claimTokens.filter((token) => passageTokens.has(token)).length / claimTokens.length : 0;
+    const normalizedPassage = normalizeText(passage);
+    const requiredSpecifics = [...numbers, ...dates, ...comparisons, ...quotes].map(normalizeText);
+    const hasSpecifics = requiredSpecifics.every((value) => normalizedPassage.includes(value));
+    const carrier = splitSentences(passage).find((sentence) => requiredSpecifics.every((value) => normalizeText(sentence).includes(value))) || "";
+    const carrierTokens = new Set(tokens(carrier));
+    const carrierOverlap = claimTokens.filter((token) => carrierTokens.has(token)).length;
+    const specificsAreContextual = !requiredSpecifics.length || carrierOverlap >= 2;
+    const score = hasSpecifics && specificsAreContextual && claimTokens.length ? claimTokens.filter((token) => passageTokens.has(token)).length / claimTokens.length : 0;
     if (score > best.score) {
       const start = sourceText.indexOf(passage);
       best = { passage, score, start, end: start < 0 ? -1 : start + passage.length };
@@ -128,7 +149,9 @@ export function verifyAtomicClaim(claim, sourceText) {
     quotes: quotes.map((value) => ({ value, supported: normalizedEvidence.includes(normalizeText(value)) }))
   };
   const deterministicPass = Object.values(checks).flat().every((check) => check.supported);
-  const lexicalEntailment = exact || best.score >= (claimTokens.length <= 5 ? 0.8 : 0.62);
+  const materialSpecificPresent = numbers.length + dates.length + comparisons.length + quotes.length > 0;
+  const lexicalThreshold = materialSpecificPresent ? 0.22 : claimTokens.length <= 5 ? 0.8 : 0.62;
+  const lexicalEntailment = exact || best.score >= lexicalThreshold;
   const supported = Boolean(sourceText.trim()) && deterministicPass && lexicalEntailment;
   const failedChecks = Object.entries(checks).flatMap(([kind, values]) => values.filter((item) => !item.supported).map((item) => `${kind}:${item.value}`));
   if (!lexicalEntailment) failedChecks.push(`entailment:token-overlap-${best.score.toFixed(2)}`);

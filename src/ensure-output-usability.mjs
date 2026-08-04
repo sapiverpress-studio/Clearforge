@@ -38,6 +38,7 @@ function inspect() {
   const failures = [];
   if (checks.article_words < 150) failures.push("daily article below 150 words");
   if (checks.tiktok_words < 18) failures.push("TikTok script below 18 words");
+  if (checks.tiktok_words > 60) failures.push("TikTok script above 60 words");
   if (checks.tiktok_caption_words < 12) failures.push("TikTok caption below 12 words");
   if (checks.youtube_words < 18) failures.push("YouTube Shorts script below 18 words");
   if (checks.facebook_words < 30) failures.push("Facebook post below 30 words");
@@ -47,9 +48,10 @@ function inspect() {
   if (checks.quote_card_count !== 5) failures.push("quote-card pack does not contain exactly five lines");
   const publicCopy = [data.main_article, social.tiktok_script, social.tiktok_caption, social.youtube_shorts_script,
     social.facebook_post, social.pinterest_title, social.pinterest_description, social.linkedin_post].join("\n");
-  const boilerplateHits = ["skip to content", "log in", "create account", "add reaction", "jump to comments", "copy link", "share to facebook", "report abuse"]
+  const boilerplateHits = ["skip to content", "log in", "create account", "add reaction", "jump to comments", "copy link", "share to facebook", "share share on twitter", "twitter linkedin email", "report abuse"]
     .filter((phrase) => publicCopy.toLowerCase().includes(phrase));
   if (boilerplateHits.length >= 2) failures.push(`retrieval boilerplate leaked into public output: ${boilerplateHits.join(", ")}`);
+  if (/https?:\/\/[^\s]+\.\s+[^\s]+/i.test(publicCopy)) failures.push("URL contains whitespace after the domain dot");
   if (campaignActive && data.social_mode !== "podcast_general") {
     for (const [field, value] of Object.entries({ tiktok_caption: social.tiktok_caption, facebook_post: social.facebook_post, pinterest_description: social.pinterest_description, linkedin_post: social.linkedin_post })) {
       if (!String(value || "").includes("https://payhip.com/b/pkSEY")) failures.push(`${field} is missing the Output Release Gate campaign link`);

@@ -191,8 +191,8 @@ const tiktokSentences = tiktokNarrationText.match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.ma
 if (!tiktokNarrationText) {
   throw new Error("TikTok script is required.");
 }
-if (tiktokWords.length < 18 || tiktokWords.length > 30) {
-  console.warn(`TikTok script is outside the preferred 18–30-word range (${tiktokWords.length} words). The video will match the rendered narration instead of discarding the media pack.`);
+if (tiktokWords.length < 18 || tiktokWords.length > 60) {
+  console.warn(`TikTok script is outside the preferred 18–60-word range (${tiktokWords.length} words). The video will match the rendered narration instead of discarding the media pack.`);
 }
 if (/three ai updates|today in ai|latest ai news|sapiver forge/i.test(tiktokSentences[0] || "")) {
   throw new Error("TikTok opening repeats the failed generic briefing format.");

@@ -35,7 +35,7 @@ jobs:
           name: ${{ env.APPROVED_NAME }}
           path: approved/
           retention-days: 30
-      - name: Build approved Facebook and Pinterest bridge
+      - name: Build approved distribution bridge
         shell: bash
         run: |
           set -euo pipefail
@@ -43,7 +43,7 @@ jobs:
           sudo apt-get install -y ffmpeg >/dev/null
           BRIDGE="bridge/sapiver-forge-weekly/latest"
           rm -rf "$BRIDGE"
-          mkdir -p "$BRIDGE/images"
+          mkdir -p "$BRIDGE/images" "$BRIDGE/video"
           cp approved/weekly-pack.json "$BRIDGE/weekly-pack.json"
           cp approved/candidate-id.txt "$BRIDGE/candidate-id.txt"
           node <<'NODE'
@@ -51,7 +51,7 @@ jobs:
           const pack=JSON.parse(fs.readFileSync('approved/weekly-pack.json','utf8'));
           if(!Array.isArray(pack.posts)||pack.posts.length!==7) throw new Error('Approved weekly pack must contain seven posts.');
           fs.writeFileSync('bridge/sapiver-forge-weekly/latest/approved-manifest.json',JSON.stringify({
-            schema_version:1,
+            schema_version:2,
             approved:true,
             candidate_id:pack.candidate_id,
             week:pack.week,
@@ -63,18 +63,25 @@ jobs:
               facebook_post:p.facebook_post,
               pinterest_title:p.hook.replace(/[.?]$/,''),
               pinterest_description:`${p.narration}\n\n${p.product}: ${p.product_url}`,
+              youtube_title:p.youtube_title,
+              youtube_description:p.youtube_description,
               product_url:p.product_url,
-              image:`images/${String(p.index).padStart(2,'0')}-${p.day.toLowerCase()}.png`
+              image:`images/${String(p.index).padStart(2,'0')}-${p.day.toLowerCase()}.png`,
+              video:`video/${String(p.index).padStart(2,'0')}-${p.day.toLowerCase()}.mp4`
             }))
           },null,2)+'\n');
           NODE
           for video in approved/video/*.mp4; do
             base="$(basename "$video" .mp4)"
-            ffmpeg -hide_banner -loglevel error -y -ss 0.2 -i "$video" -frames:v 1 "$BRIDGE/images/$base.png"
+            cp "$video" "$BRIDGE/video/$base.mp4"
+            test -s "$BRIDGE/video/$base.mp4"
+            ffmpeg -nostdin -hide_banner -loglevel error -y -ss 0.2 -i "$video" -frames:v 1 "$BRIDGE/images/$base.png"
             test -s "$BRIDGE/images/$base.png"
           done
           test "$(find "$BRIDGE/images" -type f -name '*.png' | wc -l)" -eq 7
+          test "$(find "$BRIDGE/video" -type f -name '*.mp4' | wc -l)" -eq 7
           (cd "$BRIDGE" && find . -type f ! -name file-hashes.sha256 -print0 | sort -z | xargs -0 sha256sum > file-hashes.sha256)
+          (cd "$BRIDGE" && sha256sum -c file-hashes.sha256)
       - name: Publish approved bridge to repository
         shell: bash
         run: |
@@ -86,7 +93,7 @@ jobs:
             echo "Approved bridge already matches this candidate."
             exit 0
           fi
-          git commit -m "Publish approved Sapiver Forge weekly social bridge [skip ci]"
+          git commit -m "Publish approved Sapiver Forge weekly distribution bridge [skip ci]"
           for attempt in 1 2 3; do
             if git push; then exit 0; fi
             git pull --rebase origin main

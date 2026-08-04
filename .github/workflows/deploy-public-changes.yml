@@ -2,6 +2,15 @@ name: Deploy Sapiver Forge public changes
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "public/**"
+      - "src/build-site.mjs"
+      - "scripts/build-sapiver-forge-site.mjs"
+      - "scripts/rebrand-public-sapiver-forge.mjs"
+      - "netlify.toml"
 
 permissions:
   contents: write
@@ -62,17 +71,17 @@ jobs:
             exit 1
           fi
 
-      - name: Save rebranded source and generated site
+      - name: Save rebuilt website files
         shell: bash
         run: |
           set -euo pipefail
           if git diff --quiet -- src/build-site.mjs public; then
-            echo "No source or generated-site changes to commit."
+            echo "No generated website changes to commit."
           else
             git config user.name "sapiver-forge-site-bot"
             git config user.email "actions@users.noreply.github.com"
             git add src/build-site.mjs public
-            git commit -m "Rebrand website source and generated content to Sapiver Forge"
+            git commit -m "Update Sapiver Forge website [skip ci]"
             git push
           fi
 

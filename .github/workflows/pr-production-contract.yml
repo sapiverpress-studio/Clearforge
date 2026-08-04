@@ -6,6 +6,7 @@ on:
       - "src/**"
       - "scripts/**"
       - "test/**"
+      - "config/**"
       - "package.json"
       - ".github/workflows/daily-draft.yml"
       - ".github/workflows/pr-production-contract.yml"
@@ -19,6 +20,15 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /src/
+            /scripts/
+            /test/
+            /config/
+            /package.json
       - uses: actions/setup-node@v4
         with:
           node-version: "24"

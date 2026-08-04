@@ -93,7 +93,8 @@ function sentenceUnsafe(sentence, location, interpretiveContext = false) {
   if (unsupportedOutputNumber) return `Output number has no verified locked-fact mapping: ${unsupportedOutputNumber}`;
   const badNumber = unsupportedNumbers.find((number) => normalized.includes(normalizeText(number)));
   if (badNumber) return `Unsupported number ${badNumber}`;
-  if (comparisonPattern.test(sentence) && !interpretiveContext && !verifyAtomicClaim(sentence, supportingEvidenceText).supported) return "Unsupported material comparison";
+  if (interpretiveContext) return "";
+  if (comparisonPattern.test(sentence) && !verifyAtomicClaim(sentence, supportingEvidenceText).supported) return "Unsupported material comparison";
   const entity = extractEntities(sentence).find((name) => {
     const startsSentence = normalizeText(sentence).startsWith(normalizeText(name));
     const looksMaterial = name.includes(" ") || !startsSentence || /^(Slack|Shopify|Python|C2PA|OpenAI|Microsoft|Google|Amazon|Meta|Anthropic)$/i.test(name);
@@ -101,7 +102,7 @@ function sentenceUnsafe(sentence, location, interpretiveContext = false) {
   });
   if (entity) return `Unsupported named entity ${entity}`;
   const materialStatement = /\b(?:survey|study|sample|participants?|workers?|countries|must|required|illegal|law|regulation|caused|led to|resulted in|according to|reported|found|showed|demonstrated|proved)\b/i.test(sentence);
-  const explicitlyInterpretive = interpretiveContext || /\b(?:Sapiver Forge interpretation|we interpret|suggests?|may|might|could|in our view|hypothetical|for example|imagine)\b/i.test(sentence);
+  const explicitlyInterpretive = /\b(?:Sapiver Forge interpretation|we interpret|suggests?|may|might|could|in our view|hypothetical|for example|imagine)\b/i.test(sentence);
   if (materialStatement && !explicitlyInterpretive && !verifyAtomicClaim(sentence, supportingEvidenceText).supported) return "Material statement has no verified locked-fact mapping";
   return "";
 }

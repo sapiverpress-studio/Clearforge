@@ -9,15 +9,36 @@ const DATE = process.env.SAPIVER_FORGE_DATE || process.env.SAPIVER_FORGE_DATE ||
 const draftDir = path.join(ROOT, "drafts", DATE);
 const structuredPath = path.join(draftDir, "structured_output.json");
 const sourceReportPath = path.join(draftDir, "source-integrity-report.json");
+const lockedFactsPath = path.join(draftDir, "locked-facts.json");
 const podcastDir = path.join(draftDir, "podcast");
 
 if (!fs.existsSync(structuredPath)) throw new Error(`Missing ${structuredPath}`);
 if (!fs.existsSync(sourceReportPath)) throw new Error("Podcast generation is blocked until source integrity has passed.");
+if (!fs.existsSync(lockedFactsPath)) throw new Error("Podcast generation is blocked until verified facts have been locked.");
 const sourceReport = JSON.parse(fs.readFileSync(sourceReportPath, "utf8"));
 if (sourceReport.passed !== true) throw new Error("Podcast generation is blocked because source integrity failed.");
 const data = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
-const stories = Array.isArray(data.story_summaries) ? data.story_summaries : [];
-const sources = Array.isArray(data.sources) ? data.sources : [];
+const lock = JSON.parse(fs.readFileSync(lockedFactsPath, "utf8"));
+const sourceRecords = Array.isArray(data.sources) ? data.sources : [];
+const lockedFacts = Array.isArray(lock.facts) ? lock.facts.filter((fact) => fact.verification_status === "verified" && fact.fact_type === "supported_fact") : [];
+const sources = lockedFacts.map((fact) => {
+  const source = sourceRecords.find((item) => item.url === fact.source_url) || {};
+  return {
+    source_name: source.source_name || new URL(fact.source_url).hostname,
+    title: source.title || "Verified AI development",
+    url: fact.source_url,
+    published_date: source.published_date || DATE,
+    confirmed_fact: fact.atomic_claim,
+    exact_evidence: fact.exact_supporting_evidence_passage,
+    interpretation: "Any analysis beyond this confirmed fact must be explicitly introduced as Sapiver Forge interpretation."
+  };
+});
+const stories = sources.map((source) => ({
+  title: source.title,
+  summary: source.confirmed_fact,
+  why_it_matters: source.interpretation,
+  claim_to_verify: "NONE — verified from locked source evidence."
+}));
 
 const verifiedCount = Math.min(stories.length, sources.length);
 if (verifiedCount < 1) throw new Error("Podcast requires at least one verified story.");

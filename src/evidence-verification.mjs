@@ -49,6 +49,24 @@ export function normalizeText(value) {
     .replace(/[^a-z0-9%£$€.'-]+/g, " ").replace(/\s+/g, " ").trim();
 }
 
+export function isUsableAtomicClaim(value) {
+  const text = String(value || "").replace(/\s+/g, " ").trim();
+  const words = text.split(/\s+/).filter(Boolean);
+  if (words.length < 5 || words.length > 90) return false;
+  if (!/^(?:[A-Z0-9“"'(]|\[)/.test(text)) return false;
+  if (/^(?:and|but|or|however|although|therefore|consequently|meanwhile|because|with|while)\b/i.test(text)) return false;
+  if (/https?:\/\/|&(?:#\d+|#x[0-9a-f]+|[a-z]+);|[|<>↗]|\b(?:share|sign in|log in|subscribe|try starlog|vibe-coding is fine|copy link)\b/i.test(text)) return false;
+  if (!/[.!?]$/.test(text)) return false;
+  if (!/\b(?:is|are|was|were|has|have|had|found|reported|published|announced|released|introduced|describes?|shows?|uses?|used|allows?|allowed|requires?|required|applies?|applied|leads?|led|declines?|declined|increases?|increased|decreases?|decreased|turns?|turned|offers?|offered|provides?|provided|moves?|moved|acts?|acted|integrates?|integrated|contains?|contained|includes?|included|accounts?|accounted|covered|measured|redesigned|demonstrates?|demonstrated|takes?|took|gives?|gave|becomes?|became|can|may|will)\b/i.test(text)) return false;
+  return true;
+}
+
+export function hasUsableEvidenceLocation(location) {
+  return location?.type === "character_offsets"
+    && Number.isInteger(location.start) && Number.isInteger(location.end)
+    && location.start >= 0 && location.end > location.start;
+}
+
 export function extractMaterialNumbers(value) {
   return [...new Set(String(value || "").match(/(?<![\w])\d+(?:[,.]\d+)*(?:\s?(?:%|percent|million|billion|thousand|bn|m|k))?/gi) || [])]
     .map((item) => normalizeText(item).replace(/,/g, ""))
@@ -81,11 +99,11 @@ export function splitSentences(value) {
   const text = String(value || "").replace(/\s+/g, " ").trim();
   if (!text) return [];
   const protectedText = text
-    .replace(/https?:\/\/[^\s]+/gi, (match) => match.replaceAll(".", "\uE000"))
+    .replace(/https?:\/\/[^\s]+/gi, (match) => match.replace(/[.?!]/g, (character) => ({ ".": "\uE000", "?": "\uE001", "!": "\uE002" })[character]))
     .replace(/(?<=\d)\.(?=\d)/g, "\uE000")
     .replace(/\b(?:Mr|Mrs|Ms|Dr|Prof|Sr|Jr|St|vs|e\.g|i\.e)\./gi, (match) => match.replaceAll(".", "\uE000"));
   return (protectedText.match(/[^.!?]+[.!?]?/g) || [])
-    .map((item) => item.replaceAll("\uE000", ".").trim())
+    .map((item) => item.replaceAll("\uE000", ".").replaceAll("\uE001", "?").replaceAll("\uE002", "!").trim())
     .filter(Boolean);
 }
 
@@ -94,7 +112,9 @@ export function splitAtomicClaims(value) {
   for (const sentence of splitSentences(value)) {
     const pieces = sentence
       .split(/\s*(?:;|,(?=\s+(?:and|but|while|with|across|in a|based on))|\band\s+(?=(?:the|this|that|it|was|were|is|are|covered|included|accounted|represented|measured|found|reported|showed|compared))|\bwhile\b|\bwhereas\b)\s*/i)
-      .map((item) => item.trim().replace(/^[,;]\s*/, "")).filter((item) => item.length > 8);
+      .map((item) => item.trim().replace(/^[,;]\s*/, ""))
+      .map((item) => /[.!?]$/.test(item) ? item : `${item}.`)
+      .filter((item) => item.length > 8);
     claims.push(...(pieces.length ? pieces : [sentence]));
   }
   return [...new Set(claims)];
@@ -153,9 +173,11 @@ export function verifyAtomicClaim(claim, sourceText) {
   const materialSpecificPresent = numbers.length + dates.length + comparisons.length + quotes.length > 0;
   const lexicalThreshold = materialSpecificPresent ? 0.22 : claimTokens.length <= 5 ? 0.8 : 0.62;
   const lexicalEntailment = exact || best.score >= lexicalThreshold;
-  const supported = Boolean(sourceText.trim()) && deterministicPass && lexicalEntailment;
+  const usableClaim = isUsableAtomicClaim(claim);
+  const supported = Boolean(sourceText.trim()) && usableClaim && deterministicPass && lexicalEntailment;
   const failedChecks = Object.entries(checks).flatMap(([kind, values]) => values.filter((item) => !item.supported).map((item) => `${kind}:${item.value}`));
   if (!lexicalEntailment) failedChecks.push(`entailment:token-overlap-${best.score.toFixed(2)}`);
+  if (!usableClaim) failedChecks.push("claim:incomplete-or-publisher-furniture");
   return { supported, exact, evidence: best, checks, failed_checks: failedChecks };
 }
 
@@ -170,9 +192,10 @@ export function buildVerifiedClaims(proposedFact, sourceText, fallbackContext = 
       const score = Math.max(0, ...contextTokenSets.map((contextTokens) => contextTokens.filter((token) => sentenceTokens.has(token)).length / contextTokens.length));
       return { sentence, score };
     }).sort((a, b) => b.score - a.score);
-    const fallback = ranked[0]?.score >= 0.3 && isMeaningfulEvidencePassage(ranked[0].sentence) ? ranked[0].sentence : "";
+    const fallback = ranked[0]?.score >= 0.3 && isMeaningfulEvidencePassage(ranked[0].sentence) && isUsableAtomicClaim(ranked[0].sentence) ? ranked[0].sentence : "";
     if (fallback) {
       const start = sourceText.indexOf(fallback);
+      if (start < 0) return { atomic, verified };
       const exactVerification = verifyAtomicClaim(fallback, sourceText);
       verified.push({
         claim: fallback, supported: true, exact: true,

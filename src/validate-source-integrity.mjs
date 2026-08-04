@@ -149,7 +149,10 @@ for (let index = 0; index < sources.length; index += 1) {
   const pageDate = extractPublicationDate(html) || String(acquired?.publication_date || "");
   if (pageTitle && titleSimilarity(source.title, pageTitle) < 0.35) warnings.push("Recorded and retrieved titles differ materially.");
   if (recordedDate && pageDate && !normalizeText(pageDate).includes(normalizeText(recordedDate))) warnings.push("Recorded publication date differs from retrieved metadata.");
-  const verifiedClaims = verification.verified.map((item, claimIndex) => ({
+  const locatedVerified = verification.verified.filter((item) => item.evidence?.start >= 0 && item.evidence?.end > item.evidence?.start);
+  if (locatedVerified.length !== verification.verified.length) warnings.push("A proposed verified claim lacked a stable evidence location and was excluded.");
+  if (!locatedVerified.length && verification.verified.length) failures.push("No verified claim retained a stable evidence location.");
+  const verifiedClaims = locatedVerified.map((item, claimIndex) => ({
     id: `source-${index + 1}-claim-${claimIndex + 1}`,
     atomic_claim: item.claim,
     source_url: finalUrl || requestedUrl,

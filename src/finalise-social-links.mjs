@@ -29,6 +29,7 @@ const podcastGeneral = structured.social_mode === "podcast_general";
 
 function cleanCommercialCopy(value) {
   return String(value || "")
+    .replace(/https:\/\/payhip\.com\/b\/(?:pkSEY|o8iQA|vGks8)(?:\?[^\s]*)?/gi, "")
     .replace(/Get the Sapiver Forge Notion Workspace free by email:\s*https:\/\/sapiver-press\.kit\.com\/5147ce2817\s*Buy it directly:\s*https:\/\/payhip\.com\/b\/o8iQA/gi, "")
     .replace(/Get the Sapiver Forge Notion Workspace free by email:\s*/gi, "")
     .replace(/Buy it directly:\s*/gi, "")
@@ -37,6 +38,7 @@ function cleanCommercialCopy(value) {
     .replaceAll(OLD_PRODUCT_URL, "")
     .replace(/[^.!?\n]*\bSapiver Forge AI Output Release Gate\b[^.!?\n]*[.!?]?/gi, "")
     .replace(/\b(?:here|at|via)\s*:\s*[.!?]?/gi, "")
+    .replace(/(?:^|\s)\?(?=\s|$)/g, " ")
     .replace(/\s+([,.;:!?])/g, "$1")
     .replace(/([.!?])\1+/g, "$1")
     .replace(/[ \t]+\n/g, "\n")

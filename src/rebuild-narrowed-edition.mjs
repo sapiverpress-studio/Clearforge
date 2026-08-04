@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import OpenAI from "./gemini-openai-compat.mjs";
+import { hasUsableEvidenceLocation, isMeaningfulEvidencePassage, isUsableAtomicClaim, verifyAtomicClaim } from "./evidence-verification.mjs";
 
 const ROOT = process.cwd();
 const DATE = process.env.SAPIVER_FORGE_DATE || process.env.SAPIVER_FORGE_DATE || new Intl.DateTimeFormat("sv-SE", {
@@ -15,15 +15,29 @@ if (!fs.existsSync(structuredPath) || !fs.existsSync(evidencePath)) throw new Er
 const data = JSON.parse(fs.readFileSync(structuredPath, "utf8"));
 const evidence = JSON.parse(fs.readFileSync(evidencePath, "utf8"));
 const records = Array.isArray(evidence.records) ? evidence.records : [];
-const unsupported = records.flatMap((record) => record.unsupported_claims || []);
+function claimIsLockable(claim, record) {
+  let publisher = "";
+  try { publisher = new URL(claim.source_url || record?.final_url).hostname.split(".").find((part) => !/^(?:www|com|org|net|co|uk)$/i.test(part)) || ""; } catch {}
+  const sourceContext = `${publisher ? `${publisher} published this report. ` : ""}${record?.page_title || ""} ${claim.evidence_passage || ""}`;
+  return claim?.verification_status === "verified"
+    && isUsableAtomicClaim(claim.atomic_claim)
+    && isMeaningfulEvidencePassage(claim.evidence_passage)
+    && hasUsableEvidenceLocation(claim.evidence_location)
+    && verifyAtomicClaim(claim.atomic_claim, sourceContext).supported;
+}
+const rejectedVerified = records.flatMap((record) => (record.verified_claims || []).filter((claim) => !claimIsLockable(claim, record)).map((claim) => ({
+  atomic_claim: claim.atomic_claim, verification_status: "rejected_before_rebuild", failed_checks: ["claim:not-lockable"]
+})));
+const unsupported = [...records.flatMap((record) => record.unsupported_claims || []), ...rejectedVerified];
 if (!unsupported.length) {
   console.log("No unsupported atomic claims; narrowed-edition rebuild not required.");
   process.exit(0);
 }
-const verified = records.flatMap((record) => record.verified_claims || []);
+const verifiedEntries = records.flatMap((record) => (record.verified_claims || []).filter((claim) => claimIsLockable(claim, record)).map((claim) => ({ claim, record })));
+const verified = verifiedEntries.map((item) => item.claim);
 if (!verified.length) throw new Error("No verified factual core remains for a narrowed edition.");
 
-const factText = verified.map((claim) => claim.atomic_claim).join(" ").trim();
+const factText = verified.map((claim) => claim.atomic_claim).join("\n\n").trim();
 function standaloneClaimScore(claim) {
   const text = String(claim.atomic_claim || "").trim();
   let score = 100 - Math.min(text.split(/\s+/).length, 70);
@@ -35,8 +49,9 @@ function standaloneClaimScore(claim) {
 const primaryClaim = [...verified].sort((a, b) => standaloneClaimScore(b) - standaloneClaimScore(a))[0];
 const primaryFactText = String(primaryClaim?.atomic_claim || factText).trim();
 const evidenceText = verified.map((claim) => claim.evidence_passage).join(" ").trim();
-const sourceUrl = verified[0].source_url || records[0]?.final_url || data.sources?.[0]?.url || "";
-const sourceTitle = records[0]?.page_title || data.sources?.[0]?.title || "Verified AI development";
+const primaryEntry = verifiedEntries.find((item) => item.claim === primaryClaim) || verifiedEntries[0];
+const sourceUrl = primaryClaim?.source_url || primaryEntry?.record?.final_url || "";
+const sourceTitle = primaryEntry?.record?.page_title || "Verified AI development";
 const existingSocial = data.social || {};
 const urls = [...new Set(JSON.stringify(existingSocial).match(/https:\/\/[^\s"\\]+/g) || [])];
 const commercialLinks = urls.filter((url) => /sapiver-press\.kit\.com|payhip\.com/.test(url)).join("\n");
@@ -51,7 +66,7 @@ function fallbackEdition() {
     dek: "A narrower, source-supported Sapiver Forge briefing with unsupported claim components removed.",
     main_article: article,
     practical_takeaway: "Map one repeated workflow, name the AI boundary and require a human decision before anything is sent, published or allowed to act.",
-    what_to_test_next: "Test one low-risk workflow and record time saved, corrections required, access granted and the person responsible for release.",
+    what_to_test_next: "Sapiver Forge interpretation: test one low-risk workflow and record time saved, corrections needed, access granted and the person responsible for release.",
     claims_to_verify: [],
     headline_options: [
       "A verified AI development worth testing carefully",
@@ -80,58 +95,46 @@ function fallbackEdition() {
   };
 }
 
-const schema = {
-  type: "object", additionalProperties: false,
-  required: ["headline", "dek", "main_article", "practical_takeaway", "what_to_test_next", "headline_options", "social"],
-  properties: {
-    headline: { type: "string" }, dek: { type: "string" }, main_article: { type: "string" },
-    practical_takeaway: { type: "string" }, what_to_test_next: { type: "string" },
-    headline_options: { type: "array", minItems: 5, maxItems: 5, items: { type: "string" } },
-    social: { type: "object", additionalProperties: false,
-      required: ["tiktok_script", "tiktok_caption", "tiktok_caption_prompt", "youtube_shorts_script", "facebook_post", "pinterest_title", "pinterest_description", "linkedin_post", "quote_card_lines"],
-      properties: {
-        tiktok_script: { type: "string" }, tiktok_caption: { type: "string" }, tiktok_caption_prompt: { type: "string" },
-        youtube_shorts_script: { type: "string" }, facebook_post: { type: "string" }, pinterest_title: { type: "string" },
-        pinterest_description: { type: "string" }, linkedin_post: { type: "string" },
-        quote_card_lines: { type: "array", minItems: 5, maxItems: 5, items: { type: "string" } }
-      }
-    }
-  }
-};
-
-let rebuilt = null;
-let method = "deterministic_fallback";
-let modelError = "";
-if (process.env.GEMINI_API_KEY && process.env.NARROWED_REBUILD_DISABLE_MODEL !== "1") {
-  try {
-    const client = new OpenAI();
-    const response = await client.responses.create({
-      model: process.env.GEMINI_TEXT_MODEL || "gemini-3.1-flash-lite",
-      reasoning: { effort: "high" },
-      input: [{ role: "system", content: `Rebuild a complete, commercially useful Sapiver Forge edition using only the supplied verified atomic facts and exact evidence. Unsupported proposed claims have already been rejected. Do not reintroduce them or add any number, company, product, technology, comparison, study description, quotation, legal claim or causal conclusion absent from the verified evidence. Clearly label Sapiver Forge interpretation. Produce a useful short edition rather than padding. Connect the practical workflow lesson to the Sapiver Forge gate system without claiming the source endorses the product. Preserve the supplied commercial links exactly.` },
-        { role: "user", content: `EDITION: ${DATE}\nSOURCE TITLE: ${sourceTitle}\nSOURCE URL: ${sourceUrl}\nVERIFIED ATOMIC FACTS:\n${factText}\nEXACT EVIDENCE:\n${evidenceText}\nCOMMERCIAL LINKS:\n${commercialLinks}` }],
-      text: { format: { type: "json_schema", name: "sapiver_narrowed_edition", strict: true, schema } }
-    });
-    rebuilt = JSON.parse(response.output_text);
-    method = "gemini_constrained_rebuild";
-  } catch (error) { modelError = String(error?.message || error); }
-}
-if (!rebuilt) rebuilt = fallbackEdition();
+const rebuilt = fallbackEdition();
+const method = "deterministic_verified_rebuild";
+const modelError = "";
 
 Object.assign(data, rebuilt, { claims_to_verify: [], narrowed_from_unsupported_claims: true });
-data.sources = (data.sources || []).map((source, index) => ({
-  ...source,
-  confirmed_fact: (records[index]?.verified_claims || []).map((claim) => claim.atomic_claim).join(" "),
-  interpretation,
-  evidence_basis: "Retrieved source body text with atomic evidence verification."
-}));
-if (Array.isArray(data.story_summaries) && data.story_summaries[0]) {
-  data.story_summaries[0] = { ...data.story_summaries[0], title: rebuilt.headline, summary: factText, why_it_matters: interpretation, practical_angle: rebuilt.practical_takeaway };
+delete data.audience_fit;
+delete data.social_mode;
+delete data.social_source;
+if (data.editorial_theme && typeof data.editorial_theme === "object") {
+  data.editorial_theme.focus = "A short evidence-led edition built around the verified facts that survived source review.";
 }
+const previousSources = Array.isArray(data.sources) ? data.sources : [];
+data.sources = verifiedEntries.map(({ claim, record }) => {
+  const source = previousSources.find((item) => item.acquisition_id && item.acquisition_id === record.acquisition_id)
+    || previousSources.find((item) => item.url === record.final_url || item.url === record.requested_url)
+    || {};
+  return {
+    ...source,
+    source_name: source.source_name || new URL(record.final_url || claim.source_url).hostname,
+    title: record.page_title || source.title || "Verified source",
+    url: claim.source_url || record.final_url,
+    published_date: String(record.publication_date || source.published_date || DATE).slice(0, 10),
+    confirmed_fact: claim.atomic_claim,
+    interpretation,
+    evidence_basis: "Retrieved source body text with atomic evidence verification."
+  };
+});
+data.story_summaries = data.sources.map((source) => ({
+  title: source.title,
+  summary: source.confirmed_fact,
+  why_it_matters: interpretation,
+  practical_angle: rebuilt.practical_takeaway,
+  coverage_lane: source.coverage_lane || "confirmed_development",
+  topic_category: source.topic_category || "workplace_and_business",
+  claim_to_verify: "NONE — verified from cited source evidence."
+}));
 fs.writeFileSync(structuredPath, `${JSON.stringify(data, null, 2)}\n`);
 
 const sourceLines = data.sources.map((source) => `- [${source.title || sourceTitle}](${source.url || sourceUrl})\n  - Verified fact: ${source.confirmed_fact}\n  - ${interpretation}`).join("\n");
 fs.writeFileSync(path.join(dir, "daily_brief.md"), `# ${rebuilt.headline}\n\nStatus: Draft — human approval required\n\n${rebuilt.dek}\n\n## Verified source and evidence\n\n${sourceLines}\n\n## Main article\n\n${rebuilt.main_article}\n\n## Practical takeaway\n\n${rebuilt.practical_takeaway}\n\n## What to test next\n\n${rebuilt.what_to_test_next}\n\n## Verification status\n\nUnsupported proposed claim components were excluded. Retained material is listed in the evidence ledger.\n`);
-fs.writeFileSync(path.join(dir, "social_pack.md"), `# Sapiver Forge Social Pack — ${DATE}\n\nStatus: Draft — human approval required\n\n## TikTok Script\n\n${rebuilt.social.tiktok_script}\n\n## TikTok Caption\n\n${rebuilt.social.tiktok_caption}\n\n## YouTube Shorts Script\n\n${rebuilt.social.youtube_shorts_script}\n\n## Facebook Post\n\n${rebuilt.social.facebook_post}\n\n## Pinterest\n\n**Title:** ${rebuilt.social.pinterest_title}\n\n**Description:** ${rebuilt.social.pinterest_description}\n\n## LinkedIn-Style Post\n\n${rebuilt.social.linkedin_post}\n\n## Quote Cards\n\n${rebuilt.social.quote_card_lines.map((line) => `- ${line}`).join("\n")}\n`);
+fs.writeFileSync(path.join(dir, "social_pack.md"), `# Sapiver Forge Social Pack — ${DATE}\n\nStatus: Draft — human approval required\n\n## TikTok Script\n\n${rebuilt.social.tiktok_script}\n\n## TikTok Caption\n\n${rebuilt.social.tiktok_caption}\n\n## YouTube Shorts Script\n\n${rebuilt.social.youtube_shorts_script}\n\n## Facebook Post\n\n${rebuilt.social.facebook_post}\n\n## Pinterest Pin\n\n**Title:** ${rebuilt.social.pinterest_title}\n\n**Description:** ${rebuilt.social.pinterest_description}\n\n## LinkedIn-Style Post\n\n${rebuilt.social.linkedin_post}\n\n## Quote Cards\n\n${rebuilt.social.quote_card_lines.map((line) => `- ${line}`).join("\n")}\n`);
 fs.writeFileSync(reportPath, `${JSON.stringify({ edition: DATE, rebuilt: true, method, model_error: modelError, verified_fact_count: verified.length, excluded_claim_count: unsupported.length }, null, 2)}\n`);
 console.log(`Rebuilt narrowed edition using ${method}: ${verified.length} verified fact(s), ${unsupported.length} excluded claim(s).`);

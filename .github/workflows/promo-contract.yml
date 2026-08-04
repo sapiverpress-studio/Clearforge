@@ -4,11 +4,13 @@ on:
     paths:
       - 'data/sapiver-forge-products.json'
       - 'src/generate-weekly-promo-pack.mjs'
+      - 'src/render-weekly-promo-video.mjs'
       - 'src/upload-youtube-short.mjs'
       - 'test/weekly-promo-contract.mjs'
       - '.github/workflows/weekly-promo-pack.yml'
       - '.github/workflows/approve-weekly-promo.yml'
       - '.github/workflows/youtube-daily-short.yml'
+      - '.github/workflows/promo-contract.yml'
       - 'package.json'
 permissions:
   contents: read

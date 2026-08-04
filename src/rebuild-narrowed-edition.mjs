@@ -24,6 +24,8 @@ const verified = records.flatMap((record) => record.verified_claims || []);
 if (!verified.length) throw new Error("No verified factual core remains for a narrowed edition.");
 
 const factText = verified.map((claim) => claim.atomic_claim).join(" ").trim();
+const primaryClaim = [...verified].sort((a, b) => String(a.atomic_claim).length - String(b.atomic_claim).length)[0];
+const primaryFactText = String(primaryClaim?.atomic_claim || factText).trim();
 const evidenceText = verified.map((claim) => claim.evidence_passage).join(" ").trim();
 const sourceUrl = verified[0].source_url || records[0]?.final_url || data.sources?.[0]?.url || "";
 const sourceTitle = records[0]?.page_title || data.sources?.[0]?.title || "Verified AI development";
@@ -34,8 +36,8 @@ const interpretation = "Sapiver Forge interpretation: this development makes wor
 
 function fallbackEdition() {
   const article = `${factText}\n\nSapiver Forge interpretation: this verified development is worth testing against one real task instead of treating it as a reason to automate an entire operation. Start with a bounded use, define the input and decide what a useful result would look like.\n\nSapiver Forge interpretation: creators, freelancers and small teams may benefit from writing down what the AI can access, what it may change and which action remains reserved for a person. That turns a broad development into a controlled experiment.\n\nSapiver Forge interpretation: review should happen at a named release point. Check factual accuracy, tone, permissions, privacy and whether the result still serves the original purpose before it is sent, published or used.\n\nSapiver Forge interpretation: speed alone may not show whether the experiment worked. Record correction time, avoidable errors, useful output and the effort required from the reviewer. Keep, adjust or stop the workflow from that evidence.\n\nSapiver Forge interpretation: the Applied AI Gate System provides a structure for this sequence—assess the opportunity, set workflow controls, review the output and examine the outcome. The cited source does not endorse Sapiver Forge; this is our practical application of the verified fact above.\n\nSource: ${sourceUrl}`;
-  const tiktok = `${factText} Sapiver Forge interpretation: test this development on one bounded task before expanding it. Define what the AI may access, where a person reviews the result and who makes the final release decision. Then measure correction time and useful output, not speed alone. The source does not endorse Sapiver Forge; this is our practical application.`;
-  const caption = `${factText}\n\nSapiver Forge interpretation: test one bounded task, define the AI boundary and keep a named human release decision before expanding the workflow.\n\n${commercialLinks}`.trim();
+  const tiktok = `${primaryFactText} Sapiver Forge interpretation: test one bounded use, define the AI boundary and keep a named human release decision.`;
+  const caption = `${primaryFactText}\n\nSapiver Forge interpretation: test one bounded task, define the AI boundary and keep a named human release decision before expanding the workflow.\n\n${commercialLinks}`.trim();
   return {
     headline: "A verified AI development worth testing carefully",
     dek: "A narrower, source-supported Sapiver Forge briefing with unsupported claim components removed.",
@@ -55,10 +57,10 @@ function fallbackEdition() {
       tiktok_caption: caption,
       tiktok_caption_prompt: caption,
       youtube_shorts_script: tiktok,
-      facebook_post: `${article.split("\n\n").slice(0, 4).join("\n\n")}\n\n${commercialLinks}`.trim(),
+      facebook_post: `${primaryFactText}\n\n${interpretation} Start with one bounded use and name the human release decision.\n\n${commercialLinks}`.trim(),
       pinterest_title: "Test AI with a human release point",
       pinterest_description: `${interpretation} Map the task, permissions, boundaries and approval step before scaling it.\n\n${commercialLinks}`.trim(),
-      linkedin_post: `${factText}\n\n${interpretation}\n\nThe practical move is to map one workflow and name the human release decision.\n\n${commercialLinks}`.trim(),
+      linkedin_post: `${primaryFactText}\n\n${interpretation}\n\nThe practical move is to map one workflow and name the human release decision.\n\n${commercialLinks}`.trim(),
       quote_card_lines: [
         "Sapiver Forge interpretation: test one bounded task first.",
         "Sapiver Forge interpretation: define what AI may access.",

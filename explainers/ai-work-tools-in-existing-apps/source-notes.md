@@ -1,6 +1,6 @@
 # Source notes — How to adopt AI tools that work inside the apps your team already uses
 
-Last checked: 2026-08-03
+Last checked: 2026-08-04
 
 - https://openai.com/products/release-notes/
 - https://openai.com/index/chatgpt-for-your-most-ambitious-work/
@@ -63,3 +63,4 @@ Last checked: 2026-08-03
 - 2026-08-02: Updated the guide to reflect the shift from standalone AI tools to integrated workflow layers, incorporating new research on agentic coordination in Notion and the risks of shadow AI usage.
 - 2026-08-03: Updated the guide to reflect the shift from standalone AI tools to integrated, workflow-based AI features. Added sections on governance, human-in-the-loop review, and specific examples from Notion, Xero, and Google Workspace.
 - 2026-08-03: Updated the guide to reflect the shift from standalone AI tools to integrated, workflow-based AI systems, incorporating recent developments in finance, project management, and creative production.
+- 2026-08-04: Updated the guide to reflect the shift from standalone AI tools to integrated, agentic workflows within existing enterprise platforms, emphasizing the importance of human review gates and auditability.

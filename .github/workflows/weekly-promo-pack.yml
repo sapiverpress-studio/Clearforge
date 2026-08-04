@@ -31,6 +31,7 @@ jobs:
           set -euo pipefail
           test -n "$ELEVENLABS_API_KEY"
           OUT="weekly-output/$WEEK_ID"
+          mkdir -p "$OUT/audio" "$OUT/video"
           node - <<'NODE' > "$RUNNER_TEMP/items.tsv"
           const p=require('./weekly-output/'+process.env.WEEK_ID+'/weekly-pack.json');for(const x of p.posts)console.log([String(x.index).padStart(2,'0'),x.day.toLowerCase(),Buffer.from(x.narration).toString('base64'),Buffer.from(x.hook).toString('base64')].join('\t'));
           NODE
@@ -38,8 +39,10 @@ jobs:
             narration="$(printf '%s' "$n64"|base64 -d)"; hook="$(printf '%s' "$h64"|base64 -d)"; audio="$OUT/audio/$num-$day.mp3"; video="$OUT/video/$num-$day.mp4"
             payload="$(node -e 'console.log(JSON.stringify({text:process.argv[1],model_id:"eleven_multilingual_v2",voice_settings:{stability:.5,similarity_boost:.75}}))' "$narration")"
             curl --fail --silent --show-error -X POST "https://api.elevenlabs.io/v1/text-to-speech/$ELEVENLABS_VOICE_ID" -H "xi-api-key: $ELEVENLABS_API_KEY" -H 'content-type: application/json' -d "$payload" -o "$audio"
+            test -s "$audio"
             duration="$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "$audio")"; safe="$(printf '%s' "$hook"|sed "s/'/’/g;s/:/\\:/g")"
             ffmpeg -hide_banner -loglevel error -y -f lavfi -i "color=c=0x071827:s=1080x1920:d=$duration" -i "$audio" -vf "drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='SAPIVER FORGE':fontcolor=white:fontsize=54:x=(w-text_w)/2:y=180,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='$safe':fontcolor=white:fontsize=52:x=(w-text_w)/2:y=(h-text_h)/2:box=1:boxcolor=black@0.35:boxborderw=28" -c:v libx264 -pix_fmt yuv420p -c:a aac -shortest "$video"
+            test -s "$video"
           done < "$RUNNER_TEMP/items.tsv"
       - name: Seal candidate
         run: |

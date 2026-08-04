@@ -31,6 +31,7 @@ const BOILERPLATE_PATTERNS = [
   /\badd reaction\b/i, /\b(?:like|unicorn|exploding head|raised hands|fire)\b/i,
   /\bjump to comments\b/i, /\b(?:save|boost|copy link|copied to clipboard)\b/i,
   /\bshare to (?:x|linkedin|facebook|mastodon)\b/i, /\breport abuse\b/i,
+  /\bshare\s+share\s+on\s+twitter\b/i, /\btwitter\s+linkedin\s+email\b/i,
   /\bsubscribe\b/i, /\bcode of conduct\b/i, /\bprivacy policy\b/i
 ];
 

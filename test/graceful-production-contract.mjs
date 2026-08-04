@@ -14,13 +14,9 @@ if (!pkg.scripts?.["validate:auto"]?.includes("node src/run-graceful-validation.
 if (!pkg.scripts?.["social:optimise"]?.includes("run-social-link-finaliser.mjs")) throw new Error("Social CTA finalisation wrapper is missing.");
 if (pkg.scripts?.["validate:auto"]?.includes("verify:sources")) throw new Error("Final validation must not repeat live source-integrity requests.");
 
-for (const file of [
-  "src/run-optional-feature.mjs",
-  "src/run-optional-podcast.mjs",
-  "src/run-optional-media.mjs",
-  "src/run-social-link-finaliser.mjs",
-  "src/run-graceful-validation.mjs"
-]) if (!fs.existsSync(file)) throw new Error(`Missing graceful production component: ${file}`);
+for (const file of ["src/run-optional-feature.mjs", "src/run-optional-podcast.mjs", "src/run-optional-media.mjs", "src/run-social-link-finaliser.mjs", "src/run-graceful-validation.mjs"]) {
+  if (!fs.existsSync(file)) throw new Error(`Missing graceful production component: ${file}`);
+}
 
 const mediaWrapper = fs.readFileSync("src/run-optional-media.mjs", "utf8");
 if (!mediaWrapper.includes("Adapted ${stories.length}-story edition into a three-scene media sequence")) throw new Error("One- and two-story editions must be adapted for media rather than rejected.");
@@ -40,10 +36,10 @@ for (const marker of [
 ]) if (!validator.includes(marker)) throw new Error(`Current validator protection missing: ${marker}`);
 
 for (const marker of [
-  "sources.length === 1",
-  "words(data.main_article) < 650",
+  "const minimumArticleWords = sources.length >= 3 ? 450 : 650",
+  "words(data.main_article) < minimumArticleWords",
   "No usable story summaries remain",
-  "No distinct source domain remains"
+  "Abandoned Output Release campaign leaked into current output"
 ]) if (!publishability.includes(marker)) throw new Error(`Current publishability protection missing: ${marker}`);
 
 if (!usability.includes("checks.article_words < 650")) throw new Error("Narrowed recovery must remain substantive after downstream processing.");

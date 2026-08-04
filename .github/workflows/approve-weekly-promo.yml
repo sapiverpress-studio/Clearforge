@@ -14,13 +14,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: echo '${{ inputs.candidate_id }}'|grep -Eq '^[a-f0-9]{64}$'
-      - name: Download and verify candidate
+      - name: Download and verify newest candidate
         env:
           GH_TOKEN: ${{ github.token }}
           CID: ${{ inputs.candidate_id }}
         run: |
           set -euo pipefail
-          row="$(gh api "repos/$GITHUB_REPOSITORY/actions/artifacts?per_page=100" --jq ".artifacts[]|select(.name|endswith(\"-$CID\"))|[.id,.name]|@tsv"|head -n1)"
+          row="$(gh api "repos/$GITHUB_REPOSITORY/actions/artifacts?per_page=100" --jq ".artifacts|map(select(.name|contains(\"weekly-candidate\"))|select(.name|endswith(\"-$CID\")))|sort_by(.created_at)|reverse|.[0]|[.id,.name]|@tsv")"
           test -n "$row"
           aid="${row%%$'\t'*}"
           name="${row#*$'\t'}"
@@ -29,6 +29,7 @@ jobs:
           unzip -q candidate.zip -d approved
           test "$(cat approved/candidate-id.txt)" = "$CID"
           (cd approved && sha256sum -c file-hashes.sha256)
+          echo "Selected candidate artifact: $name"
           echo "APPROVED_NAME=${name/candidate/approved}" >> "$GITHUB_ENV"
       - uses: actions/upload-artifact@v4
         with:

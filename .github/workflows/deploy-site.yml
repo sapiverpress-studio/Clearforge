@@ -2,17 +2,6 @@ name: Deploy Sapiver Forge Site
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - "public/**"
-      - "netlify/functions/**"
-      - "src/build-publishing-dashboard.mjs"
-      - "src/publishing-dashboard-client.mjs"
-      - "package.json"
-      - "netlify.toml"
-      - ".github/workflows/deploy-site.yml"
 
 permissions:
   contents: read

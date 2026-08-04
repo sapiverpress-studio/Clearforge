@@ -7,8 +7,18 @@ const workflow = fs.readFileSync(".github/workflows/daily-draft.yml", "utf8");
 for (const scriptName of ["daily", "angle:alternate"]) {
   const script = String(pkg.scripts?.[scriptName] || "");
   if (script.includes("resolve:sources")) throw new Error(`${scriptName} must not run the paid source resolver as a production gate.`);
-  if (!script.includes("verify:sources")) throw new Error(`${scriptName} must retain independent source integrity validation.`);
-  if (!script.includes("rebuild:pruned")) throw new Error(`${scriptName} must rebuild from any surviving verified stories.`);
+  const prepareIndex = script.indexOf("evidence:prepare");
+  const verifyIndex = script.indexOf("verify:sources");
+  const rebuildIndex = script.indexOf("rebuild:pruned");
+  if (prepareIndex < 0) throw new Error(`${scriptName} must prepare deterministic evidence-bound factual cores.`);
+  if (verifyIndex < 0) throw new Error(`${scriptName} must retain independent source integrity validation.`);
+  if (rebuildIndex < 0) throw new Error(`${scriptName} must rebuild from surviving verified stories.`);
+  if (!(prepareIndex < verifyIndex && verifyIndex < rebuildIndex)) {
+    throw new Error(`${scriptName} must prepare evidence before verification and rebuild only after verification.`);
+  }
+}
+if (!String(pkg.scripts?.["test:end-to-end-production"] || "").includes("test:live-evidence-bound")) {
+  throw new Error("The exact live source-selection regression must be part of the mandatory production contract.");
 }
 if (!runDaily.includes("acquireExaSources") || !runDaily.includes("source-acquisition.json")) throw new Error("Fresh production must acquire and seal source evidence before Gemini generation.");
 if (runDaily.includes('tools: [{ type: "web_search"')) throw new Error("Gemini web discovery must not supply production source URLs.");
@@ -30,4 +40,4 @@ const contractIndex = workflow.indexOf("Verify production contracts before paid 
 const paidGenerationIndex = workflow.indexOf("Generate fresh research edition");
 if (contractIndex < 0 || paidGenerationIndex < 0 || contractIndex > paidGenerationIndex) throw new Error("Offline production contracts must run before paid generation.");
 
-console.log("Production source path contract passed: evidence acquisition precedes generation, verification precedes optimisation and failures preserve diagnostics.");
+console.log("Production source path contract passed: acquisition is sealed, factual cores are evidence-bound before verification, and failures preserve diagnostics.");

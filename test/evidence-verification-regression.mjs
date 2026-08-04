@@ -43,6 +43,8 @@ assert.equal(buildVerifiedClaims("Publisher claim 88%.", "").verified.length, 0,
 
 const devBoilerplate = "EU AI Act Article 50: What My Agent Workspace Changed - DEV Community Skip to content Powered by Algolia Log in Create account DEV Community Add reaction Like Unicorn Exploding Head Raised Hands Fire Jump to Comments Save Boost Copy link Copied to Clipboard Share to X Share to LinkedIn Share to Facebook Report Abuse.";
 assert.equal(isMeaningfulEvidencePassage(devBoilerplate), false, "navigation and reaction furniture must never become evidence");
+const shareFurniture = "EU AI Act Article 50 Share Share on Twitter LinkedIn Email The disclosure duty applies to covered systems.";
+assert.equal(isMeaningfulEvidencePassage(shareFurniture), false, "share controls embedded in otherwise plausible prose must invalidate the evidence passage");
 assert.equal(buildVerifiedClaims("A detailed legal claim that is absent.", devBoilerplate, "EU AI Act Article 50").verified.length, 0, "boilerplate fallback must not create a verified core");
 assert.equal(extractUsableText("<html><script>fake 99%</script><body><main>Usable report text.</main></body></html>"), "Usable report text.", "scripts and metadata are not usable source evidence");
 
@@ -52,8 +54,8 @@ const draft = path.join(temp, "drafts", edition);
 fs.mkdirSync(path.join(draft, "podcast"), { recursive: true });
 fs.writeFileSync(path.join(draft, "structured_output.json"), JSON.stringify({
   headline: "Microsoft describes redesigned workflows.",
-  main_article: "Microsoft describes redesigned workflows. The result was 67%.",
-  social: { tiktok_script: "Microsoft describes redesigned workflows. Adoption reached 67%.", facebook_post: "Microsoft describes redesigned workflows." },
+  main_article: "Microsoft describes redesigned workflows. The result was 67%. EU AI Act Article 50 Share Share on Twitter LinkedIn Email requires disclosure.",
+  social: { tiktok_script: "Microsoft describes redesigned workflows. Adoption reached 67%.", facebook_post: "Microsoft describes redesigned workflows.", pinterest_title: "Sapiver Forge: test one bounded AI task" },
   sources: [{ source_name: "Microsoft", confirmed_fact: falseCompound, interpretation: "Workflow design may matter more commercially than isolated prompt training." }]
 }));
 fs.writeFileSync(path.join(draft, "source-evidence.json"), JSON.stringify({ records: [{
@@ -62,6 +64,11 @@ fs.writeFileSync(path.join(draft, "source-evidence.json"), JSON.stringify({ reco
     source_url: "https://www.microsoft.com/example", evidence_passage: "Organizations are moving from individual assistance towards redesigned workflows and role-specific agents.",
     evidence_location: { type: "character_offsets", start: 55, end: 160 }, verification_checks: { numbers: [], entities: [{ value: "Microsoft", supported: true }], dates: [], comparisons: [] },
     supported_numbers: [], supported_entities: ["Microsoft"], verification_status: "verified", qualification: ""
+  }, {
+    atomic_claim: "EU AI Act Article 50 requires disclosure.", source_url: "https://www.microsoft.com/example",
+    evidence_passage: "EU AI Act Article 50 Share Share on Twitter LinkedIn Email requires disclosure.",
+    evidence_location: { type: "character_offsets", start: 170, end: 245 }, verification_checks: { numbers: [], entities: [], dates: [], comparisons: [] },
+    supported_numbers: [], supported_entities: ["EU AI Act"], verification_status: "verified", qualification: ""
   }], unsupported_claims: [{ atomic_claim: falseCompound, verification_status: "unsupported", failed_checks: ["numbers:67%", "numbers:20000", "comparison:twice"] }]
 }] }));
 fs.writeFileSync(path.join(draft, "feature.md"), "# Feature\n\nMicrosoft describes redesigned workflows. Slack and Shopify use Python execution with live dashboards. The claimed result was 67%.\n");
@@ -71,8 +78,9 @@ const enforce = spawnSync(process.execPath, [path.resolve("src/enforce-locked-fa
 assert.equal(enforce.status, 0, enforce.stderr);
 const locked = JSON.parse(fs.readFileSync(path.join(draft, "locked-facts.json"), "utf8"));
 assert.equal(locked.facts.some((item) => /67%|20,000|10 countries|twice/.test(item.atomic_claim)), false, "false claim must not enter locked-facts.json");
+assert.equal(locked.facts.some((item) => /Article 50/.test(item.atomic_claim)), false, "a claim backed by contaminated evidence must not enter locked-facts.json");
 const allOutputs = ["structured_output.json", "feature.md", "social_pack.md"].map((file) => fs.readFileSync(path.join(draft, file), "utf8")).join("\n");
-for (const marker of ["67%", "Slack", "Shopify", "Python", "dashboards"]) assert.equal(allOutputs.includes(marker), false, `${marker} must be removed from generated outputs`);
+for (const marker of ["67%", "Slack", "Shopify", "Python", "dashboards", "Share Share on Twitter", "Twitter LinkedIn Email"]) assert.equal(allOutputs.includes(marker), false, `${marker} must be removed from generated outputs`);
 const discipline = JSON.parse(fs.readFileSync(path.join(draft, "fact-discipline-report.json"), "utf8"));
 assert.ok(discipline.change_count >= 2, "candidate review must not claim there were no verification concerns");
 

@@ -1,0 +1,25 @@
+name: Weekly Promo Contract
+on:
+  pull_request:
+    paths:
+      - 'data/sapiver-forge-products.json'
+      - 'src/generate-weekly-promo-pack.mjs'
+      - 'src/upload-youtube-short.mjs'
+      - 'test/weekly-promo-contract.mjs'
+      - '.github/workflows/weekly-promo-pack.yml'
+      - '.github/workflows/approve-weekly-promo.yml'
+      - '.github/workflows/youtube-daily-short.yml'
+      - 'package.json'
+permissions:
+  contents: read
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm run promo:validate
+        env:
+          WEEK_ID: contract-test

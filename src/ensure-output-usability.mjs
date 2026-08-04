@@ -43,6 +43,7 @@ function inspect() {
   if (checks.youtube_words < 18) failures.push("YouTube Shorts script below 18 words");
   if (checks.facebook_words < 30) failures.push("Facebook post below 30 words");
   if (checks.pinterest_title_words < 4) failures.push("Pinterest title below 4 words");
+  if (/retrieved evidence supports|original draft claimed/i.test(String(social.pinterest_title || ""))) failures.push("Pinterest title contains internal evidence-recovery wording");
   if (checks.pinterest_description_words < 12) failures.push("Pinterest description below 12 words");
   if (checks.linkedin_words < 25) failures.push("LinkedIn-style post below 25 words");
   if (checks.quote_card_count !== 5) failures.push("quote-card pack does not contain exactly five lines");

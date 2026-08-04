@@ -24,7 +24,15 @@ const verified = records.flatMap((record) => record.verified_claims || []);
 if (!verified.length) throw new Error("No verified factual core remains for a narrowed edition.");
 
 const factText = verified.map((claim) => claim.atomic_claim).join(" ").trim();
-const primaryClaim = [...verified].sort((a, b) => String(a.atomic_claim).length - String(b.atomic_claim).length)[0];
+function standaloneClaimScore(claim) {
+  const text = String(claim.atomic_claim || "").trim();
+  let score = 100 - Math.min(text.split(/\s+/).length, 70);
+  if (/^(?:however|although|but|and|therefore|consequently|overall|meanwhile|they|it|this|these|those)\b/i.test(text)) score -= 100;
+  if (!/\b[A-Z][A-Za-z0-9&.'’-]{2,}\b/.test(text)) score -= 30;
+  if (/\b(?:is|are|was|were|has|have|found|reported|announced|published|takes?|turns?|uses?|shows?|describes?)\b/i.test(text)) score += 10;
+  return score;
+}
+const primaryClaim = [...verified].sort((a, b) => standaloneClaimScore(b) - standaloneClaimScore(a))[0];
 const primaryFactText = String(primaryClaim?.atomic_claim || factText).trim();
 const evidenceText = verified.map((claim) => claim.evidence_passage).join(" ").trim();
 const sourceUrl = verified[0].source_url || records[0]?.final_url || data.sources?.[0]?.url || "";
@@ -58,7 +66,7 @@ function fallbackEdition() {
       tiktok_caption_prompt: caption,
       youtube_shorts_script: tiktok,
       facebook_post: `${primaryFactText}\n\n${interpretation} Start with one bounded use and name the human release decision.\n\n${commercialLinks}`.trim(),
-      pinterest_title: "Test AI with a human release point",
+      pinterest_title: "Sapiver Forge: test one bounded AI task",
       pinterest_description: `${interpretation} Map the task, permissions, boundaries and approval step before scaling it.\n\n${commercialLinks}`.trim(),
       linkedin_post: `${primaryFactText}\n\n${interpretation}\n\nThe practical move is to map one workflow and name the human release decision.\n\n${commercialLinks}`.trim(),
       quote_card_lines: [

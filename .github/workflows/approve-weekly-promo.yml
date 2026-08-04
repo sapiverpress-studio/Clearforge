@@ -51,7 +51,7 @@ jobs:
           const pack=JSON.parse(fs.readFileSync('approved/weekly-pack.json','utf8'));
           if(!Array.isArray(pack.posts)||pack.posts.length!==7) throw new Error('Approved weekly pack must contain seven posts.');
           fs.writeFileSync('bridge/sapiver-forge-weekly/latest/approved-manifest.json',JSON.stringify({
-            schema_version:2,
+            schema_version:3,
             approved:true,
             candidate_id:pack.candidate_id,
             week:pack.week,
@@ -61,8 +61,10 @@ jobs:
               day:p.day,
               hook:p.hook,
               facebook_post:p.facebook_post,
+              social_comment:p.social_comment,
+              hashtags:p.hashtags,
               pinterest_title:p.hook.replace(/[.?]$/,''),
-              pinterest_description:`${p.narration}\n\n${p.product}: ${p.product_url}`,
+              pinterest_description:`${p.narration}\n\nLink in bio.\n\n${p.hashtags.join(' ')}`,
               youtube_title:p.youtube_title,
               youtube_description:p.youtube_description,
               product_url:p.product_url,

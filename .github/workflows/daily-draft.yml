@@ -8,26 +8,20 @@ on:
         required: true
         default: "fresh"
         type: choice
-        options:
-          - fresh
-          - alternate
+        options: [fresh, alternate]
       angle:
         description: "Alternate-angle lens"
         required: false
         default: "creator_workflow"
         type: choice
-        options:
-          - creator_workflow
-          - risk_control
-          - beginner_learning
-          - business_systems
-          - considered_question
+        options: [creator_workflow, risk_control, beginner_learning, business_systems, considered_question]
       generate_podcast_audio:
         description: "Generate the full Gemini Kore podcast MP3 for this manual run"
         required: true
         default: true
         type: boolean
   schedule:
+    # Paired UTC times preserve the intended Europe/London windows across DST.
     - cron: "30 3 * * *"
     - cron: "30 4 * * *"
     - cron: "15 4 * * *"
@@ -51,6 +45,7 @@ env:
 jobs:
   autopilot:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
 
     steps:
       - name: Decide whether this is a UK run window
@@ -68,9 +63,6 @@ jobs:
 
           LOCAL_TIME="$(TZ=Europe/London date +%H:%M)"
           LOCAL_DAY="$(TZ=Europe/London date +%u)"
-          LOCAL_DATE="$(TZ=Europe/London date +%F)"
-          CAMPAIGN_ACTIVE=false
-          if [[ "${LOCAL_DATE}" > "2026-08-02" && "${LOCAL_DATE}" < "2026-09-02" ]]; then CAMPAIGN_ACTIVE=true; fi
           echo "Europe/London local time: ${LOCAL_TIME}; weekday: ${LOCAL_DAY}"
           if [ "${LOCAL_TIME}" = "04:30" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
@@ -78,13 +70,13 @@ jobs:
             echo "edition=fresh" >> "$GITHUB_OUTPUT"
             echo "angle=creator_workflow" >> "$GITHUB_OUTPUT"
             echo "podcast_audio=true" >> "$GITHUB_OUTPUT"
-          elif [ "${LOCAL_TIME}" = "05:15" ] && [ "${CAMPAIGN_ACTIVE}" != "true" ]; then
+          elif [ "${LOCAL_TIME}" = "05:15" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "retry=true" >> "$GITHUB_OUTPUT"
             echo "edition=fresh" >> "$GITHUB_OUTPUT"
             echo "angle=creator_workflow" >> "$GITHUB_OUTPUT"
             if [ "${LOCAL_DAY}" = "4" ]; then echo "podcast_audio=true" >> "$GITHUB_OUTPUT"; else echo "podcast_audio=false" >> "$GITHUB_OUTPUT"; fi
-          elif [ "${LOCAL_TIME}" = "16:30" ] && [ "${CAMPAIGN_ACTIVE}" != "true" ]; then
+          elif [ "${LOCAL_TIME}" = "16:30" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "retry=false" >> "$GITHUB_OUTPUT"
             echo "edition=alternate" >> "$GITHUB_OUTPUT"
@@ -116,29 +108,14 @@ jobs:
             considered_question) ANGLE_SLUG="considered" ;;
             *) ANGLE_SLUG="$(printf '%s' "${ANGLE}" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g')" ;;
           esac
-          if [ -z "${ANGLE_SLUG}" ]; then
-            ANGLE_SLUG="angle"
-          fi
+          [ -n "${ANGLE_SLUG}" ] || ANGLE_SLUG="angle"
           echo "SAPIVER_FORGE_BASE_DATE=${BASE_DATE}" >> "$GITHUB_ENV"
           echo "SAPIVER_FORGE_ANGLE=${ANGLE}" >> "$GITHUB_ENV"
           echo "SAPIVER_FORGE_ANGLE_SLUG=${ANGLE_SLUG}" >> "$GITHUB_ENV"
           if [ "${{ steps.gate.outputs.edition }}" = "alternate" ]; then
             echo "SAPIVER_FORGE_DATE=${BASE_DATE}-${ANGLE_SLUG}" >> "$GITHUB_ENV"
-            echo "Using alternate edition ID: ${BASE_DATE}-${ANGLE_SLUG} from source date ${BASE_DATE} using angle ${ANGLE}"
           else
             echo "SAPIVER_FORGE_DATE=${BASE_DATE}" >> "$GITHUB_ENV"
-            echo "Using fresh edition ID: ${BASE_DATE}"
-          fi
-
-      - name: Read commercial campaign status
-        id: campaign
-        if: steps.gate.outputs.run == 'true'
-        shell: bash
-        run: |
-          active="$(node -e "const c=require('./config/output-release-validation-campaign.json'); const d=process.env.SAPIVER_FORGE_BASE_DATE; process.stdout.write(String(c.enabled && d >= c.start_date && d <= c.end_date))")"
-          echo "active=${active}" >> "$GITHUB_OUTPUT"
-          if [ "${active}" = "true" ]; then
-            echo "The Output Release Gate commercial validation campaign is active."
           fi
 
       - name: Skip retry when today's review candidate already exists
@@ -165,11 +142,13 @@ jobs:
 
       - name: Install dependencies
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
-        run: npm install
+        run: npm install --ignore-scripts
 
-      - name: Verify Gemini provider contract
+      - name: Verify production contracts before paid generation
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
-        run: node test/gemini-provider-contract.mjs
+        run: |
+          npm run test:gemini
+          npm run test:end-to-end-production
 
       - name: Generate fresh research edition
         if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.edition == 'fresh'
@@ -181,7 +160,7 @@ jobs:
         run: bash scripts/run-commercial-daily.sh
 
       - name: Generate alternate-angle edition from today's source base
-        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.edition == 'alternate' && steps.campaign.outputs.active != 'true'
+        if: steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.edition == 'alternate'
         env:
           SAPIVER_FORGE_DATE: ${{ env.SAPIVER_FORGE_DATE }}
           SAPIVER_FORGE_BASE_DATE: ${{ env.SAPIVER_FORGE_BASE_DATE }}
@@ -198,7 +177,7 @@ jobs:
           if [ -f "drafts/${SAPIVER_FORGE_DATE}/no-public-content.json" ]; then
             echo "usable=false" >> "$GITHUB_OUTPUT"
             echo "## Clean skipped day" >> "$GITHUB_STEP_SUMMARY"
-            echo "No suitable verified Output Release Gate story was found. No downstream generation, candidate, deployment or publication was started." >> "$GITHUB_STEP_SUMMARY"
+            echo "No suitable verified AI development was found. No downstream generation, candidate, deployment or publication was started." >> "$GITHUB_STEP_SUMMARY"
           else
             test -s "drafts/${SAPIVER_FORGE_DATE}/structured_output.json"
             echo "usable=true" >> "$GITHUB_OUTPUT"
@@ -208,8 +187,6 @@ jobs:
         if: steps.content.outputs.usable == 'true'
         env:
           SAPIVER_FORGE_DATE: ${{ env.SAPIVER_FORGE_DATE }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
         run: node src/rebuild-narrowed-edition.mjs
 
       - name: Generate daily broad AI podcast script
@@ -228,14 +205,14 @@ jobs:
           GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.1-flash-lite' }}
         run: npm run social:optimise
 
-      - name: Preserve a usable verified commercial pack after optimisation
+      - name: Preserve a usable verified pack after optimisation
         if: steps.content.outputs.usable == 'true'
         env:
           SAPIVER_FORGE_DATE: ${{ env.SAPIVER_FORGE_DATE }}
         run: node src/ensure-output-usability.mjs
 
-      - name: Generate long-form feature from research pack
-        if: steps.content.outputs.usable == 'true' && steps.campaign.outputs.active != 'true'
+      - name: Generate optional long-form feature
+        if: steps.content.outputs.usable == 'true'
         env:
           SAPIVER_FORGE_DATE: ${{ env.SAPIVER_FORGE_DATE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -243,22 +220,24 @@ jobs:
         run: npm run feature
 
       - name: Run automated checks for the human reviewer
-        id: automated_checks
         if: steps.content.outputs.usable == 'true'
         env:
           SAPIVER_FORGE_DATE: ${{ env.SAPIVER_FORGE_DATE }}
         run: npm run validate:auto
 
-      - name: Install FFmpeg for Gemini audio
+      - name: Install FFmpeg for optional media
+        id: ffmpeg
         if: steps.content.outputs.usable == 'true'
+        continue-on-error: true
         shell: bash
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg
+          ffmpeg -version
 
       - name: Generate full daily podcast MP3 with Gemini Kore
         id: full_podcast
-        if: steps.content.outputs.usable == 'true' && steps.gate.outputs.podcast_audio == 'true'
+        if: steps.content.outputs.usable == 'true' && steps.gate.outputs.podcast_audio == 'true' && steps.ffmpeg.outcome == 'success'
         continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -268,41 +247,26 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if [[ ! -s "$INPUT_PATH" ]]; then
-            echo "Podcast narration script is unavailable; Gemini TTS was not attempted."
-            exit 1
-          fi
+          [ -s "$INPUT_PATH" ] || { echo "Podcast narration script is unavailable."; exit 1; }
           audio="drafts/${SAPIVER_FORGE_DATE}/podcast/sapiver-forge-daily-podcast-${SAPIVER_FORGE_DATE}.mp3"
           hash="$audio.source-sha256"
           source_hash="$(sha256sum "$INPUT_PATH" | cut -d' ' -f1)"
-          if [[ -s "$audio" && -s "$hash" && "$(tr -d '\r\n' < "$hash")" == "$source_hash" ]]; then
-            echo "Existing Gemini Kore MP3 matches the narration; no Gemini request made."
-            exit 0
-          fi
+          if [[ -s "$audio" && -s "$hash" && "$(tr -d '\r\n' < "$hash")" == "$source_hash" ]]; then exit 0; fi
           wav="$RUNNER_TEMP/sapiver-forge-kore-${SAPIVER_FORGE_DATE}.wav"
           OUTPUT_PATH="$wav" node scripts/generate-gemini-podcast-wav.mjs
           ffmpeg -hide_banner -loglevel error -y -i "$wav" -codec:a libmp3lame -b:a 128k "$audio"
-          [[ -s "$audio" ]] || { echo "MP3 conversion failed: $audio"; exit 1; }
+          [ -s "$audio" ]
           printf '%s\n' "$source_hash" > "$hash"
 
-      - name: Record Gemini podcast generation warning
-        if: always() && steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true' && steps.gate.outputs.podcast_audio == 'true' && steps.full_podcast.outcome == 'failure'
+      - name: Record optional podcast warning
+        if: always() && steps.content.outputs.usable == 'true' && steps.gate.outputs.podcast_audio == 'true' && steps.full_podcast.outcome != 'success'
         shell: bash
         run: |
-          {
-            echo "## Podcast MP3 not generated"
-            echo
-            echo "The narration script was unavailable or Gemini TTS failed. The podcast MP3 and RSS episode were skipped."
-            echo "All other Sapiver Forge outputs will continue."
-            if [[ -s "drafts/${SAPIVER_FORGE_DATE}/podcast/COPY_PASTE_INTO_ELEVENLABS.txt" ]]; then
-              echo "The podcast production script remains available in the daily package."
-            else
-              echo "No podcast narration script was retained; Gemini TTS was not attempted."
-            fi
-          } >> "$GITHUB_STEP_SUMMARY"
+          echo "## Optional podcast media omitted" >> "$GITHUB_STEP_SUMMARY"
+          echo "The article, social pack and human-review candidate continue without the podcast MP3." >> "$GITHUB_STEP_SUMMARY"
 
       - name: Stage Gemini Kore episode inside the unpublished candidate
-        if: steps.content.outputs.usable == 'true' && steps.gate.outputs.podcast_audio == 'true' && steps.full_podcast.outcome == 'success'
+        if: steps.content.outputs.usable == 'true' && steps.full_podcast.outcome == 'success'
         env:
           PODCAST_KIND: daily
           EPISODE_SLUG: ${{ env.SAPIVER_FORGE_DATE }}
@@ -311,8 +275,10 @@ jobs:
           PODCAST_BASE_URL: https://sapiverforge-daily-brief.netlify.app
         run: node scripts/publish-podcast-feed.mjs
 
-      - name: Generate story-specific AI visuals and narration
+      - name: Generate optional story-specific visuals and narration
+        id: media
         if: steps.content.outputs.usable == 'true'
+        continue-on-error: true
         env:
           SAPIVER_FORGE_DATE: ${{ env.SAPIVER_FORGE_DATE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -322,23 +288,23 @@ jobs:
           ELEVENLABS_MODEL_ID: eleven_multilingual_v2
         run: npm run media:ai
 
+      - name: Record optional short-form media warning
+        if: always() && steps.content.outputs.usable == 'true' && steps.media.outcome == 'failure'
+        run: |
+          echo "## Optional short-form media omitted" >> "$GITHUB_STEP_SUMMARY"
+          echo "The verified article and written social assets continue to the human-review candidate." >> "$GITHUB_STEP_SUMMARY"
+
       - name: Detect available daily Gemini podcast MP3
         id: podcast_audio
         if: steps.content.outputs.usable == 'true'
         shell: bash
         run: |
           audio="drafts/${SAPIVER_FORGE_DATE}/podcast/sapiver-forge-daily-podcast-${SAPIVER_FORGE_DATE}.mp3"
-          if [[ -s "$audio" ]]; then
-            echo "available=true" >> "$GITHUB_OUTPUT"
-            echo "Using available Gemini Kore audio: $audio"
-          else
-            echo "available=false" >> "$GITHUB_OUTPUT"
-            echo "No daily Gemini podcast MP3 is available; MP4 generation will be skipped without affecting other outputs."
-          fi
+          if [[ -s "$audio" ]]; then echo "available=true" >> "$GITHUB_OUTPUT"; else echo "available=false" >> "$GITHUB_OUTPUT"; fi
 
-      - name: Generate full daily podcast MP4
+      - name: Generate optional full daily podcast MP4
         id: podcast_video
-        if: steps.content.outputs.usable == 'true' && steps.podcast_audio.outputs.available == 'true'
+        if: steps.content.outputs.usable == 'true' && steps.podcast_audio.outputs.available == 'true' && steps.ffmpeg.outcome == 'success'
         continue-on-error: true
         shell: bash
         run: |
@@ -414,7 +380,6 @@ jobs:
             echo "- Candidate: ${{ steps.candidate.outputs.candidate_id }}"
             echo "- Website deployment: not run"
             echo "- Podcast publication: not run"
-            echo "- DEV syndication: not run"
             echo "- Social distribution: not run"
           } >> "$GITHUB_STEP_SUMMARY"
 
@@ -426,11 +391,10 @@ jobs:
           path: |
             drafts/${{ env.SAPIVER_FORGE_DATE }}/no-public-content.json
             drafts/${{ env.SAPIVER_FORGE_DATE }}/source-acquisition.json
-            drafts/${{ env.SAPIVER_FORGE_DATE }}/commercial-validation-record.json
           if-no-files-found: error
           retention-days: 30
 
-      - name: Upload source-verification diagnostics after failure
+      - name: Upload diagnostics after failure
         if: failure() && steps.gate.outputs.run == 'true' && steps.retrycheck.outputs.skip != 'true'
         uses: actions/upload-artifact@v4
         with:
@@ -444,6 +408,8 @@ jobs:
             drafts/${{ env.SAPIVER_FORGE_DATE }}/narrowed-edition-rebuild.json
             drafts/${{ env.SAPIVER_FORGE_DATE }}/output-usability-report.json
             drafts/${{ env.SAPIVER_FORGE_DATE }}/fact-discipline-report.json
+            drafts/${{ env.SAPIVER_FORGE_DATE }}/publishability-report.json
+            drafts/${{ env.SAPIVER_FORGE_DATE }}/validation.json
           if-no-files-found: warn
           retention-days: 14
 
@@ -456,8 +422,4 @@ jobs:
           TITLE="Sapiver Forge autopilot failed ${SAPIVER_FORGE_DATE}"
           BODY="The automatic retry also failed. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           EXISTING="$(gh issue list --state open --search "${TITLE} in:title" --json number --jq '.[0].number // empty')"
-          if [ -z "${EXISTING}" ]; then
-            gh issue create --title "${TITLE}" --body "${BODY}"
-          else
-            echo "Failure issue already exists: #${EXISTING}"
-          fi
+          if [ -z "${EXISTING}" ]; then gh issue create --title "${TITLE}" --body "${BODY}"; else echo "Failure issue already exists: #${EXISTING}"; fi

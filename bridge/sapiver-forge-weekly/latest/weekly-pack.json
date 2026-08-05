@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "brand": "Sapiver Forge",
   "week": "2026-08-04",
   "generated_at": "2026-08-04T16:06:21.390Z",
@@ -8,7 +8,10 @@
   "visual_system": {
     "isla_source_repository": "sapiverpress-studio/SapiverPress_comic_public",
     "isla_opener": "vendor/isla-source/assets/sapiver-forge/isla-hook.mp4",
-    "approved_product_artwork": true
+    "approved_product_artwork": true,
+    "link_in_bio_cta": true,
+    "visible_url": false,
+    "repaired_without_new_audio": true
   },
   "posts": [
     {
@@ -22,16 +25,24 @@
       "isla_opener": "vendor/isla-source/assets/sapiver-forge/isla-hook.mp4",
       "hook": "AI output can look finished before it is safe to release.",
       "narration": "AI output can look finished before it is safe to release. A polished answer can still contain incorrect facts, private information, missing permissions or the wrong destination. Sapiver Forge gives a named person a structured release decision before AI-assisted work leaves the business. See the Sapiver Forge AI Output Release Gate.",
-      "tiktok_caption": "AI output can look finished before it is safe to release.\n\nA polished answer can still contain incorrect facts, private information, missing permissions or the wrong destination. Sapiver Forge gives a named person a structured release decision before AI-assisted work leaves the business.\n\nhttps://payhip.com/b/pkSEY\n#SapiverForge #HumanInTheLoop #AIGovernance",
+      "tiktok_caption": "AI output can look finished before it is safe to release.\n\nA polished answer can still contain incorrect facts, private information, missing permissions or the wrong destination. Sapiver Forge gives a named person a structured release decision before AI-assisted work leaves the business.\n\n#SapiverForge #HumanInTheLoop #AIGovernance\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI",
       "youtube_title": "AI output can look finished before it is safe to release | Sapiver Forge #Shorts",
-      "youtube_description": "A polished answer can still contain incorrect facts, private information, missing permissions or the wrong destination. Sapiver Forge gives a named person a structured release decision before AI-assisted work leaves the business.\n\nSapiver Forge AI Output Release Gate: https://payhip.com/b/pkSEY\n\n#SapiverForge #HumanInTheLoop #AIGovernance",
-      "facebook_post": "AI output can look finished before it is safe to release.\n\nA polished answer can still contain incorrect facts, private information, missing permissions or the wrong destination. Sapiver Forge gives a named person a structured release decision before AI-assisted work leaves the business.\n\nSapiver Forge AI Output Release Gate: https://payhip.com/b/pkSEY",
+      "youtube_description": "A polished answer can still contain incorrect facts, private information, missing permissions or the wrong destination. Sapiver Forge gives a named person a structured release decision before AI-assisted work leaves the business.\n\nSapiver Forge AI Output Release Gate:\n\n#SapiverForge #HumanInTheLoop #AIGovernance\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI #Shorts",
+      "facebook_post": "AI output can look finished before it is safe to release.\n\nA polished answer can still contain incorrect facts, private information, missing permissions or the wrong destination. Sapiver Forge gives a named person a structured release decision before AI-assisted work leaves the business.\n\nSapiver Forge AI Output Release Gate:\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI",
       "visual_cards": [
         "AI output can look finished before it is safe to release.",
         "Review AI-assisted output before it is sent, published or handed over.",
         "A named human decides",
         "Sapiver Forge AI Output Release Gate"
-      ]
+      ],
+      "hashtags": [
+        "#SapiverForge",
+        "#HumanInTheLoop",
+        "#AIGovernance",
+        "#ResponsibleAI"
+      ],
+      "link_in_bio_text": "Link in bio.",
+      "social_comment": "Link in bio. #SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI"
     },
     {
       "index": 2,
@@ -44,16 +55,24 @@
       "isla_opener": "vendor/isla-source/assets/sapiver-forge/isla-hook.mp4",
       "hook": "Five checks before AI-assisted work leaves your business.",
       "narration": "Five checks before AI-assisted work leaves your business. Check the material facts, confidential information, ownership, intended recipient and the person responsible for approval. A quick reread is not the same as a recorded release decision. See the Sapiver Forge AI Output Release Gate.",
-      "tiktok_caption": "Five checks before AI-assisted work leaves your business.\n\nCheck the material facts, confidential information, ownership, intended recipient and the person responsible for approval. A quick reread is not the same as a recorded release decision.\n\nhttps://payhip.com/b/pkSEY\n#SapiverForge #HumanInTheLoop #AIGovernance",
+      "tiktok_caption": "Five checks before AI-assisted work leaves your business.\n\nCheck the material facts, confidential information, ownership, intended recipient and the person responsible for approval. A quick reread is not the same as a recorded release decision.\n\n#SapiverForge #HumanInTheLoop #AIGovernance\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI",
       "youtube_title": "Five checks before AI-assisted work leaves your business | Sapiver Forge #Shorts",
-      "youtube_description": "Check the material facts, confidential information, ownership, intended recipient and the person responsible for approval. A quick reread is not the same as a recorded release decision.\n\nSapiver Forge AI Output Release Gate: https://payhip.com/b/pkSEY\n\n#SapiverForge #HumanInTheLoop #AIGovernance",
-      "facebook_post": "Five checks before AI-assisted work leaves your business.\n\nCheck the material facts, confidential information, ownership, intended recipient and the person responsible for approval. A quick reread is not the same as a recorded release decision.\n\nSapiver Forge AI Output Release Gate: https://payhip.com/b/pkSEY",
+      "youtube_description": "Check the material facts, confidential information, ownership, intended recipient and the person responsible for approval. A quick reread is not the same as a recorded release decision.\n\nSapiver Forge AI Output Release Gate:\n\n#SapiverForge #HumanInTheLoop #AIGovernance\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI #Shorts",
+      "facebook_post": "Five checks before AI-assisted work leaves your business.\n\nCheck the material facts, confidential information, ownership, intended recipient and the person responsible for approval. A quick reread is not the same as a recorded release decision.\n\nSapiver Forge AI Output Release Gate:\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI",
       "visual_cards": [
         "Five checks before AI-assisted work leaves your business.",
         "Review AI-assisted output before it is sent, published or handed over.",
         "A named human decides",
         "Sapiver Forge AI Output Release Gate"
-      ]
+      ],
+      "hashtags": [
+        "#SapiverForge",
+        "#HumanInTheLoop",
+        "#AIGovernance",
+        "#ResponsibleAI"
+      ],
+      "link_in_bio_text": "Link in bio.",
+      "social_comment": "Link in bio. #SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI"
     },
     {
       "index": 3,
@@ -66,16 +85,24 @@
       "isla_opener": "vendor/isla-source/assets/sapiver-forge/isla-hook.mp4",
       "hook": "What does a human verification gate actually do?",
       "narration": "What does a human verification gate actually do? It pauses an automated workflow at a defined point, presents the evidence and requires a named person to decide whether the workflow may continue. The AI does not approve its own work. See the Sapiver Forge AI Workflow Control Gate.",
-      "tiktok_caption": "What does a human verification gate actually do?\n\nIt pauses an automated workflow at a defined point, presents the evidence and requires a named person to decide whether the workflow may continue. The AI does not approve its own work.\n\nhttps://payhip.com/b/qBPip\n#SapiverForge #HumanInTheLoop #AIGovernance",
+      "tiktok_caption": "What does a human verification gate actually do?\n\nIt pauses an automated workflow at a defined point, presents the evidence and requires a named person to decide whether the workflow may continue. The AI does not approve its own work.\n\n#SapiverForge #HumanInTheLoop #AIGovernance\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI",
       "youtube_title": "What does a human verification gate actually do | Sapiver Forge #Shorts",
-      "youtube_description": "It pauses an automated workflow at a defined point, presents the evidence and requires a named person to decide whether the workflow may continue. The AI does not approve its own work.\n\nSapiver Forge AI Workflow Control Gate: https://payhip.com/b/qBPip\n\n#SapiverForge #HumanInTheLoop #AIGovernance",
-      "facebook_post": "What does a human verification gate actually do?\n\nIt pauses an automated workflow at a defined point, presents the evidence and requires a named person to decide whether the workflow may continue. The AI does not approve its own work.\n\nSapiver Forge AI Workflow Control Gate: https://payhip.com/b/qBPip",
+      "youtube_description": "It pauses an automated workflow at a defined point, presents the evidence and requires a named person to decide whether the workflow may continue. The AI does not approve its own work.\n\nSapiver Forge AI Workflow Control Gate:\n\n#SapiverForge #HumanInTheLoop #AIGovernance\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI #Shorts",
+      "facebook_post": "What does a human verification gate actually do?\n\nIt pauses an automated workflow at a defined point, presents the evidence and requires a named person to decide whether the workflow may continue. The AI does not approve its own work.\n\nSapiver Forge AI Workflow Control Gate:\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI",
       "visual_cards": [
         "What does a human verification gate actually do?",
         "Define boundaries, risks, controls, ownership and testing before an AI-assisted workflow operates.",
         "A named human decides",
         "Sapiver Forge AI Workflow Control Gate"
-      ]
+      ],
+      "hashtags": [
+        "#SapiverForge",
+        "#HumanInTheLoop",
+        "#AIGovernance",
+        "#ResponsibleAI"
+      ],
+      "link_in_bio_text": "Link in bio.",
+      "social_comment": "Link in bio. #SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI"
     },
     {
       "index": 4,
@@ -88,16 +115,24 @@
       "isla_opener": "vendor/isla-source/assets/sapiver-forge/isla-hook.mp4",
       "hook": "Using AI because the tool is available is not a business case.",
       "narration": "Using AI because the tool is available is not a business case. Before building an AI workflow, compare it with the current method and the best non-AI alternative. The Opportunity Gate helps decide whether AI belongs in the task at all. See the Sapiver Forge AI Opportunity Gate.",
-      "tiktok_caption": "Using AI because the tool is available is not a business case.\n\nBefore building an AI workflow, compare it with the current method and the best non-AI alternative. The Opportunity Gate helps decide whether AI belongs in the task at all.\n\nhttps://payhip.com/b/4rcSt\n#SapiverForge #HumanInTheLoop #AIGovernance",
+      "tiktok_caption": "Using AI because the tool is available is not a business case.\n\nBefore building an AI workflow, compare it with the current method and the best non-AI alternative. The Opportunity Gate helps decide whether AI belongs in the task at all.\n\n#SapiverForge #HumanInTheLoop #AIGovernance\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI",
       "youtube_title": "Using AI because the tool is available is not a business case | Sapiver Forge #Shorts",
-      "youtube_description": "Before building an AI workflow, compare it with the current method and the best non-AI alternative. The Opportunity Gate helps decide whether AI belongs in the task at all.\n\nSapiver Forge AI Opportunity Gate: https://payhip.com/b/4rcSt\n\n#SapiverForge #HumanInTheLoop #AIGovernance",
-      "facebook_post": "Using AI because the tool is available is not a business case.\n\nBefore building an AI workflow, compare it with the current method and the best non-AI alternative. The Opportunity Gate helps decide whether AI belongs in the task at all.\n\nSapiver Forge AI Opportunity Gate: https://payhip.com/b/4rcSt",
+      "youtube_description": "Before building an AI workflow, compare it with the current method and the best non-AI alternative. The Opportunity Gate helps decide whether AI belongs in the task at all.\n\nSapiver Forge AI Opportunity Gate:\n\n#SapiverForge #HumanInTheLoop #AIGovernance\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI #Shorts",
+      "facebook_post": "Using AI because the tool is available is not a business case.\n\nBefore building an AI workflow, compare it with the current method and the best non-AI alternative. The Opportunity Gate helps decide whether AI belongs in the task at all.\n\nSapiver Forge AI Opportunity Gate:\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI",
       "visual_cards": [
         "Using AI because the tool is available is not a business case.",
         "Assess whether AI should be used for a particular task.",
         "A named human decides",
         "Sapiver Forge AI Opportunity Gate"
-      ]
+      ],
+      "hashtags": [
+        "#SapiverForge",
+        "#HumanInTheLoop",
+        "#AIGovernance",
+        "#ResponsibleAI"
+      ],
+      "link_in_bio_text": "Link in bio.",
+      "social_comment": "Link in bio. #SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI"
     },
     {
       "index": 5,
@@ -110,16 +145,24 @@
       "isla_opener": "vendor/isla-source/assets/sapiver-forge/isla-hook.mp4",
       "hook": "Client-facing AI work needs a release decision.",
       "narration": "Client-facing AI work needs a release decision. The Sapiver Forge AI Output Release Gate helps freelancers, creators and small teams review accuracy, privacy, ownership, destination and approval before work is sent or published. See the Sapiver Forge AI Output Release Gate.",
-      "tiktok_caption": "Client-facing AI work needs a release decision.\n\nThe Sapiver Forge AI Output Release Gate helps freelancers, creators and small teams review accuracy, privacy, ownership, destination and approval before work is sent or published.\n\nhttps://payhip.com/b/pkSEY\n#SapiverForge #HumanInTheLoop #AIGovernance",
+      "tiktok_caption": "Client-facing AI work needs a release decision.\n\nThe Sapiver Forge AI Output Release Gate helps freelancers, creators and small teams review accuracy, privacy, ownership, destination and approval before work is sent or published.\n\n#SapiverForge #HumanInTheLoop #AIGovernance\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI",
       "youtube_title": "Client-facing AI work needs a release decision | Sapiver Forge #Shorts",
-      "youtube_description": "The Sapiver Forge AI Output Release Gate helps freelancers, creators and small teams review accuracy, privacy, ownership, destination and approval before work is sent or published.\n\nSapiver Forge AI Output Release Gate: https://payhip.com/b/pkSEY\n\n#SapiverForge #HumanInTheLoop #AIGovernance",
-      "facebook_post": "Client-facing AI work needs a release decision.\n\nThe Sapiver Forge AI Output Release Gate helps freelancers, creators and small teams review accuracy, privacy, ownership, destination and approval before work is sent or published.\n\nSapiver Forge AI Output Release Gate: https://payhip.com/b/pkSEY",
+      "youtube_description": "The Sapiver Forge AI Output Release Gate helps freelancers, creators and small teams review accuracy, privacy, ownership, destination and approval before work is sent or published.\n\nSapiver Forge AI Output Release Gate:\n\n#SapiverForge #HumanInTheLoop #AIGovernance\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI #Shorts",
+      "facebook_post": "Client-facing AI work needs a release decision.\n\nThe Sapiver Forge AI Output Release Gate helps freelancers, creators and small teams review accuracy, privacy, ownership, destination and approval before work is sent or published.\n\nSapiver Forge AI Output Release Gate:\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI",
       "visual_cards": [
         "Client-facing AI work needs a release decision.",
         "Review AI-assisted output before it is sent, published or handed over.",
         "A named human decides",
         "Sapiver Forge AI Output Release Gate"
-      ]
+      ],
+      "hashtags": [
+        "#SapiverForge",
+        "#HumanInTheLoop",
+        "#AIGovernance",
+        "#ResponsibleAI"
+      ],
+      "link_in_bio_text": "Link in bio.",
+      "social_comment": "Link in bio. #SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI"
     },
     {
       "index": 6,
@@ -132,16 +175,24 @@
       "isla_opener": "vendor/isla-source/assets/sapiver-forge/isla-hook.mp4",
       "hook": "When did you last check whether your AI workflow still helps?",
       "narration": "When did you last check whether your AI workflow still helps? A workflow can remain active long after its costs, errors or risks outweigh the benefit. The Outcome Review Gate records whether to continue, change, pause or retire it. See the Sapiver Forge AI Outcome Review Gate.",
-      "tiktok_caption": "When did you last check whether your AI workflow still helps?\n\nA workflow can remain active long after its costs, errors or risks outweigh the benefit. The Outcome Review Gate records whether to continue, change, pause or retire it.\n\nhttps://payhip.com/b/rgFXP\n#SapiverForge #HumanInTheLoop #AIGovernance",
+      "tiktok_caption": "When did you last check whether your AI workflow still helps?\n\nA workflow can remain active long after its costs, errors or risks outweigh the benefit. The Outcome Review Gate records whether to continue, change, pause or retire it.\n\n#SapiverForge #HumanInTheLoop #AIGovernance\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI",
       "youtube_title": "When did you last check whether your AI workflow still helps | Sapiver Forge #Shorts",
-      "youtube_description": "A workflow can remain active long after its costs, errors or risks outweigh the benefit. The Outcome Review Gate records whether to continue, change, pause or retire it.\n\nSapiver Forge AI Outcome Review Gate: https://payhip.com/b/rgFXP\n\n#SapiverForge #HumanInTheLoop #AIGovernance",
-      "facebook_post": "When did you last check whether your AI workflow still helps?\n\nA workflow can remain active long after its costs, errors or risks outweigh the benefit. The Outcome Review Gate records whether to continue, change, pause or retire it.\n\nSapiver Forge AI Outcome Review Gate: https://payhip.com/b/rgFXP",
+      "youtube_description": "A workflow can remain active long after its costs, errors or risks outweigh the benefit. The Outcome Review Gate records whether to continue, change, pause or retire it.\n\nSapiver Forge AI Outcome Review Gate:\n\n#SapiverForge #HumanInTheLoop #AIGovernance\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI #Shorts",
+      "facebook_post": "When did you last check whether your AI workflow still helps?\n\nA workflow can remain active long after its costs, errors or risks outweigh the benefit. The Outcome Review Gate records whether to continue, change, pause or retire it.\n\nSapiver Forge AI Outcome Review Gate:\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI",
       "visual_cards": [
         "When did you last check whether your AI workflow still helps?",
         "Review whether an AI-assisted workflow remains useful and worthwhile.",
         "A named human decides",
         "Sapiver Forge AI Outcome Review Gate"
-      ]
+      ],
+      "hashtags": [
+        "#SapiverForge",
+        "#HumanInTheLoop",
+        "#AIGovernance",
+        "#ResponsibleAI"
+      ],
+      "link_in_bio_text": "Link in bio.",
+      "social_comment": "Link in bio. #SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI"
     },
     {
       "index": 7,
@@ -154,16 +205,24 @@
       "isla_opener": "vendor/isla-source/assets/sapiver-forge/isla-hook.mp4",
       "hook": "Human control should cover the whole AI workflow.",
       "narration": "Human control should cover the whole AI workflow. Sapiver Forge structures four decisions: whether AI should be used, how the workflow is controlled, whether an output is ready to leave and whether the workflow remains worthwhile. Each decision stays with a named human. Explore the complete Sapiver Forge gate system.",
-      "tiktok_caption": "Human control should cover the whole AI workflow.\n\nSapiver Forge structures four decisions: whether AI should be used, how the workflow is controlled, whether an output is ready to leave and whether the workflow remains worthwhile. Each decision stays with a named human.\n\nhttps://payhip.com/b/cmklU\n#SapiverForge #HumanInTheLoop #AIGovernance",
+      "tiktok_caption": "Human control should cover the whole AI workflow.\n\nSapiver Forge structures four decisions: whether AI should be used, how the workflow is controlled, whether an output is ready to leave and whether the workflow remains worthwhile. Each decision stays with a named human.\n\n#SapiverForge #HumanInTheLoop #AIGovernance\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI",
       "youtube_title": "Human control should cover the whole AI workflow | Sapiver Forge #Shorts",
-      "youtube_description": "Sapiver Forge structures four decisions: whether AI should be used, how the workflow is controlled, whether an output is ready to leave and whether the workflow remains worthwhile. Each decision stays with a named human.\n\nSapiver Forge Applied AI Gate System Bundle: https://payhip.com/b/cmklU\n\n#SapiverForge #HumanInTheLoop #AIGovernance",
-      "facebook_post": "Human control should cover the whole AI workflow.\n\nSapiver Forge structures four decisions: whether AI should be used, how the workflow is controlled, whether an output is ready to leave and whether the workflow remains worthwhile. Each decision stays with a named human.\n\nSapiver Forge Applied AI Gate System Bundle: https://payhip.com/b/cmklU",
+      "youtube_description": "Sapiver Forge structures four decisions: whether AI should be used, how the workflow is controlled, whether an output is ready to leave and whether the workflow remains worthwhile. Each decision stays with a named human.\n\nSapiver Forge Applied AI Gate System Bundle:\n\n#SapiverForge #HumanInTheLoop #AIGovernance\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI #Shorts",
+      "facebook_post": "Human control should cover the whole AI workflow.\n\nSapiver Forge structures four decisions: whether AI should be used, how the workflow is controlled, whether an output is ready to leave and whether the workflow remains worthwhile. Each decision stays with a named human.\n\nSapiver Forge Applied AI Gate System Bundle:\n\nLink in bio.\n\n#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI",
       "visual_cards": [
         "Human control should cover the whole AI workflow.",
         "Cover the complete four-stage human decision lifecycle.",
         "A named human decides",
         "Sapiver Forge Applied AI Gate System Bundle"
-      ]
+      ],
+      "hashtags": [
+        "#SapiverForge",
+        "#HumanInTheLoop",
+        "#AIGovernance",
+        "#ResponsibleAI"
+      ],
+      "link_in_bio_text": "Link in bio.",
+      "social_comment": "Link in bio. #SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI"
     }
   ],
   "candidate_id": "00c9bb5b66b33836eec2a9b25d5496cb7b152e8ad2589256ae44248825ff7159"

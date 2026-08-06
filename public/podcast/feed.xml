@@ -5,25 +5,25 @@
   xmlns:atom="http://www.w3.org/2005/Atom"
   xmlns:podcast="https://podcastindex.org/namespace/1.0">
   <channel>
-    <title>Sapiver Forge AI Briefing</title>
+    <title>Clearforge AI Briefing</title>
     <link>https://sapiverforge-daily-brief.netlify.app/podcast/</link>
-    <description>AI news is noisy. Sapiver Forge explains what changed, who is adopting it, why it matters and what is worth testing next.</description>
+    <description>AI news is noisy. Clearforge explains what changed, who is adopting it, why it matters and what is worth testing next.</description>
     <language>en-gb</language>
-    <managingEditor>clearforge@sapiverpress.co.uk (Sapiver Forge)</managingEditor>
-    <copyright>Sapiver Forge by Sapiver Press</copyright>
-    <generator>Sapiver Forge hosted podcast feed</generator>
+    <managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>
+    <copyright>Clearforge by Sapiver Press</copyright>
+    <generator>Clearforge hosted podcast feed</generator>
     <lastBuildDate>Sat, 01 Aug 2026 07:55:02 GMT</lastBuildDate>
     <atom:link href="https://sapiverforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
-    <itunes:author>Sapiver Forge</itunes:author>
+    <itunes:author>Clearforge</itunes:author>
     <itunes:owner>
-      <itunes:name>Sapiver Forge</itunes:name>
+      <itunes:name>Clearforge</itunes:name>
       <itunes:email>clearforge@sapiverpress.co.uk</itunes:email>
     </itunes:owner>
     <itunes:summary>Human-led, practical AI learning without the hype. Weekly briefings, practical learning editions and focused research into real-world AI adoption.</itunes:summary>
     <itunes:type>episodic</itunes:type>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
-    <itunes:image href="https://sapiverforge-daily-brief.netlify.app/podcast/sapiver-forge-ai-briefing-cover-v1.png"/>
+    <itunes:image href="https://sapiverforge-daily-brief.netlify.app/podcast/cover.png"/>
     <item>
       <title>The Shift to Self-Hosted Intelligence</title>
       <description>This story represents a fundamental shift in infrastructure, moving from reliance on external APIs to sovereign, self-hosted enterprise models, which is the most significant development for long-term business strategy.</description>
@@ -32,7 +32,7 @@
       <guid isPermaLink="false">clearforge:2026-08-01</guid>
       <pubDate>Sat, 01 Aug 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-01.mp3" length="4791213" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:05:12</itunes:duration>
@@ -46,7 +46,7 @@
       <guid isPermaLink="false">clearforge:2026-07-31</guid>
       <pubDate>Fri, 31 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-31.mp3" length="4948653" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:05:12</itunes:duration>
@@ -60,7 +60,7 @@
       <guid isPermaLink="false">clearforge:2026-07-30</guid>
       <pubDate>Thu, 30 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-30.mp3" length="4802733" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:05:24</itunes:duration>
@@ -74,7 +74,7 @@
       <guid isPermaLink="false">clearforge:2026-07-29-considered</guid>
       <pubDate>Wed, 29 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-29-considered.mp3" length="4728237" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:05:12</itunes:duration>
@@ -88,7 +88,7 @@
       <guid isPermaLink="false">clearforge:2026-07-29</guid>
       <pubDate>Wed, 29 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-29.mp3" length="4698285" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:05:12</itunes:duration>
@@ -102,7 +102,7 @@
       <guid isPermaLink="false">clearforge:2026-07-28</guid>
       <pubDate>Tue, 28 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-28.mp3" length="7530832" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:08:54</itunes:duration>
@@ -116,7 +116,7 @@
       <guid isPermaLink="false">clearforge:2026-07-27</guid>
       <pubDate>Mon, 27 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-27.mp3" length="8707805" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:09:06</itunes:duration>
@@ -130,7 +130,7 @@
       <guid isPermaLink="false">clearforge:2026-07-26-considered</guid>
       <pubDate>Sun, 26 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-26-considered.mp3" length="6967005" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:07:42</itunes:duration>
@@ -144,7 +144,7 @@
       <guid isPermaLink="false">clearforge:2026-07-26</guid>
       <pubDate>Sun, 26 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-26.mp3" length="5478653" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:06:18</itunes:duration>
@@ -158,7 +158,7 @@
       <guid isPermaLink="false">clearforge:2026-07-25-creator</guid>
       <pubDate>Sat, 25 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-25-creator.mp3" length="7984318" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:09:18</itunes:duration>
@@ -172,7 +172,7 @@
       <guid isPermaLink="false">clearforge:2026-07-25</guid>
       <pubDate>Sat, 25 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-25.mp3" length="7076928" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:08:06</itunes:duration>
@@ -186,7 +186,7 @@
       <guid isPermaLink="false">clearforge:2026-07-24-creator</guid>
       <pubDate>Fri, 24 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-24-creator.mp3" length="8354212" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:09:36</itunes:duration>
@@ -200,7 +200,7 @@
       <guid isPermaLink="false">clearforge:2026-07-24</guid>
       <pubDate>Fri, 24 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-24.mp3" length="7499067" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:09:00</itunes:duration>
@@ -214,7 +214,7 @@
       <guid isPermaLink="false">clearforge:2026-07-23-creator</guid>
       <pubDate>Thu, 23 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-23-creator.mp3" length="7296357" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:08:36</itunes:duration>
@@ -228,7 +228,7 @@
       <guid isPermaLink="false">clearforge:2026-07-23</guid>
       <pubDate>Thu, 23 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-23.mp3" length="7768651" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:09:18</itunes:duration>
@@ -242,7 +242,7 @@
       <guid isPermaLink="false">clearforge:2026-07-22-creator</guid>
       <pubDate>Wed, 22 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-22-creator.mp3" length="8470822" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:09:18</itunes:duration>
@@ -256,7 +256,7 @@
       <guid isPermaLink="false">clearforge:2026-07-22</guid>
       <pubDate>Wed, 22 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-22.mp3" length="7606901" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:08:24</itunes:duration>
@@ -270,7 +270,7 @@
       <guid isPermaLink="false">clearforge:2026-07-21-creator</guid>
       <pubDate>Tue, 21 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-21-creator.mp3" length="7887769" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:08:54</itunes:duration>
@@ -284,7 +284,7 @@
       <guid isPermaLink="false">clearforge:2026-07-21</guid>
       <pubDate>Tue, 21 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-21.mp3" length="8346688" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:09:24</itunes:duration>
@@ -298,7 +298,7 @@
       <guid isPermaLink="false">clearforge:2026-07-20</guid>
       <pubDate>Mon, 20 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-20.mp3" length="11357997" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:13:00</itunes:duration>
@@ -312,7 +312,7 @@
       <guid isPermaLink="false">clearforge:2026-07-20-systems</guid>
       <pubDate>Mon, 20 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-20-systems.mp3" length="7517457" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:08:54</itunes:duration>
@@ -326,7 +326,7 @@
       <guid isPermaLink="false">clearforge:2026-07-19-risk</guid>
       <pubDate>Sun, 19 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-19-risk.mp3" length="6567854" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:07:36</itunes:duration>
@@ -340,7 +340,7 @@
       <guid isPermaLink="false">clearforge:2026-07-19</guid>
       <pubDate>Sun, 19 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-19.mp3" length="8834865" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:10:12</itunes:duration>
@@ -354,7 +354,7 @@
       <guid isPermaLink="false">clearforge:2026-07-18-systems</guid>
       <pubDate>Sat, 18 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-18-systems.mp3" length="6484262" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:07:30</itunes:duration>
@@ -368,7 +368,7 @@
       <guid isPermaLink="false">clearforge:2026-07-18</guid>
       <pubDate>Sat, 18 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-18.mp3" length="6695750" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:08:00</itunes:duration>
@@ -382,7 +382,7 @@
       <guid isPermaLink="false">clearforge:2026-07-17-systems</guid>
       <pubDate>Fri, 17 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-17-systems.mp3" length="7333973" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:08:36</itunes:duration>
@@ -396,7 +396,7 @@
       <guid isPermaLink="false">clearforge:2026-07-17</guid>
       <pubDate>Fri, 17 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-17.mp3" length="7814208" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:08:48</itunes:duration>
@@ -410,7 +410,7 @@
       <guid isPermaLink="false">clearforge:2026-07-16-risk</guid>
       <pubDate>Thu, 16 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-16-risk.mp3" length="8373020" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:09:30</itunes:duration>
@@ -424,7 +424,7 @@
       <guid isPermaLink="false">clearforge:2026-07-16</guid>
       <pubDate>Thu, 16 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-16.mp3" length="6556987" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:07:42</itunes:duration>
@@ -438,7 +438,7 @@
       <guid isPermaLink="false">clearforge:2026-07-15</guid>
       <pubDate>Wed, 15 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-15.mp3" length="7156341" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:08:00</itunes:duration>
@@ -452,7 +452,7 @@
       <guid isPermaLink="false">clearforge:2026-07-14</guid>
       <pubDate>Tue, 14 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-14.mp3" length="6261908" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:07:48</itunes:duration>
@@ -466,7 +466,7 @@
       <guid isPermaLink="false">clearforge:2026-07-13</guid>
       <pubDate>Mon, 13 Jul 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-07-13.mp3" length="7621529" type="audio/mpeg"/>
-      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:author>Clearforge</itunes:author>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:duration>00:08:36</itunes:duration>

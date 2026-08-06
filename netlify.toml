@@ -1,9 +1,9 @@
 [build]
-  command = "npm run build:site"
+  command = "node src/build-site.mjs"
   publish = "public"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "24"
 
 [[headers]]
   for = "/*"

@@ -1,0 +1,104 @@
+name: Repair Sapiver Forge podcast branding
+
+on:
+  push:
+    branches:
+      - fix/podcast-branding-2026-08-06
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/podcast-branding-2026-08-06
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Generate cache-busting Sapiver Forge podcast cover
+        shell: bash
+        run: |
+          python -m pip install --quiet pillow
+          python - <<'PY'
+          from PIL import Image, ImageDraw, ImageFont
+          from pathlib import Path
+
+          size = 3000
+          image = Image.new('RGB', (size, size), '#07111f')
+          draw = ImageDraw.Draw(image)
+
+          # Warm forge glow without relying on external artwork or fonts.
+          for radius in range(1150, 80, -10):
+              strength = (1150 - radius) / 1070
+              r = int(28 + 150 * strength)
+              g = int(36 + 52 * strength)
+              b = int(56 - 35 * strength)
+              draw.ellipse((1500-radius, 840-radius, 1500+radius, 840+radius), fill=(r, g, b))
+
+          font_paths = [
+              '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf',
+              '/usr/share/fonts/truetype/liberation2/LiberationSans-Bold.ttf'
+          ]
+          regular_paths = [
+              '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
+              '/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf'
+          ]
+          bold = next(p for p in font_paths if Path(p).exists())
+          regular = next(p for p in regular_paths if Path(p).exists())
+          brand = ImageFont.truetype(bold, 205)
+          title = ImageFont.truetype(bold, 335)
+          strap = ImageFont.truetype(regular, 105)
+
+          amber = '#ff9d3d'
+          white = '#f5f7fb'
+          muted = '#b9c5d8'
+          draw.text((240, 270), 'SAPIVER FORGE', font=brand, fill=amber)
+          draw.rounded_rectangle((240, 600, 2760, 620), radius=10, fill=amber)
+          draw.multiline_text((240, 850), 'AI\nBRIEFING', font=title, fill=white, spacing=40)
+          draw.text((245, 2180), 'Weekly AI news, explained for practical use.', font=strap, fill=muted)
+          draw.text((245, 2400), 'Human-led. AI-empowered.', font=strap, fill=amber)
+          draw.rounded_rectangle((240, 2670, 2760, 2790), radius=60, outline=amber, width=10)
+          draw.text((590, 2680), 'SAPIVER PRESS', font=brand, fill=white)
+
+          out = Path('public/podcast/sapiver-forge-ai-briefing-cover-v1.png')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          image.save(out, 'PNG', optimize=True)
+          print(out, image.size)
+          PY
+
+      - name: Repair generated feed, pages and future publisher
+        run: node scripts/repair-podcast-branding.mjs
+
+      - name: Validate generated assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s public/podcast/sapiver-forge-ai-briefing-cover-v1.png
+          grep -q '<title>Sapiver Forge AI Briefing</title>' public/podcast/feed.xml
+          grep -q 'sapiver-forge-ai-briefing-cover-v1.png' public/podcast/feed.xml
+          ! grep -q 'clearforge-daily-brief.netlify.app' public/podcast/feed.xml
+          grep -q '<guid isPermaLink="false">clearforge:' public/podcast/feed.xml
+          node --check scripts/publish-podcast-feed.mjs
+          node --check scripts/repair-podcast-branding.mjs
+
+      - name: Commit repaired podcast branding to branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scripts/publish-podcast-feed.mjs scripts/repair-podcast-branding.mjs PODCAST_RSS_SETUP.md public/podcast .github/workflows/repair-podcast-branding.yml
+          if git diff --cached --quiet; then
+            echo 'No changes required.'
+            exit 0
+          fi
+          git commit -m 'Repair Sapiver Forge podcast branding and artwork'
+          git push origin HEAD:fix/podcast-branding-2026-08-06

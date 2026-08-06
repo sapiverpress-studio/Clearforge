@@ -1,0 +1,52 @@
+name: Apply temporary podcast migration bridge
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/apply-podcast-migration-bridge.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  bridge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply temporary Clearforge identity to new RSS URL
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('public/podcast/feed.xml')
+          s = p.read_text(encoding='utf-8')
+          replacements = {
+            '<title>Sapiver Forge AI Briefing</title>': '<title>Clearforge AI Briefing</title>',
+            'AI news is noisy. Sapiver Forge explains what changed, who is adopting it, why it matters and what is worth testing next.': 'AI news is noisy. Clearforge explains what changed, who is adopting it, why it matters and what is worth testing next.',
+            '<managingEditor>clearforge@sapiverpress.co.uk (Sapiver Forge)</managingEditor>': '<managingEditor>clearforge@sapiverpress.co.uk (Clearforge)</managingEditor>',
+            '<copyright>Sapiver Forge by Sapiver Press</copyright>': '<copyright>Clearforge by Sapiver Press</copyright>',
+            '<generator>Sapiver Forge hosted podcast feed</generator>': '<generator>Clearforge hosted podcast feed</generator>',
+            '<itunes:author>Sapiver Forge</itunes:author>': '<itunes:author>Clearforge</itunes:author>',
+            '<itunes:name>Sapiver Forge</itunes:name>': '<itunes:name>Clearforge</itunes:name>',
+            'https://sapiverforge-daily-brief.netlify.app/podcast/sapiver-forge-ai-briefing-cover-v1.png': 'https://sapiverforge-daily-brief.netlify.app/podcast/cover.png'
+          }
+          for old, new in replacements.items():
+              s = s.replace(old, new)
+          p.write_text(s, encoding='utf-8')
+          assert '<title>Clearforge AI Briefing</title>' in s
+          assert '<itunes:name>Clearforge</itunes:name>' in s
+          assert '<guid isPermaLink="false">clearforge:' in s
+          assert 'https://sapiverforge-daily-brief.netlify.app/podcast/feed.xml' in s
+          PY
+      - name: Commit migration bridge
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "sapiver-forge-migration-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add public/podcast/feed.xml
+          git commit -m "Apply temporary podcast RSS migration bridge"
+          git push

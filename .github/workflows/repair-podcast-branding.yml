@@ -17,7 +17,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: fix/podcast-branding-2026-08-06
-          fetch-depth: 0
+          fetch-depth: 1
+          sparse-checkout: |
+            scripts/publish-podcast-feed.mjs
+            scripts/repair-podcast-branding.mjs
+            PODCAST_RSS_SETUP.md
+            public/podcast
+            .github/workflows/repair-podcast-branding.yml
+          sparse-checkout-cone-mode: false
 
       - uses: actions/setup-node@v4
         with:
@@ -34,8 +41,6 @@ jobs:
           size = 3000
           image = Image.new('RGB', (size, size), '#07111f')
           draw = ImageDraw.Draw(image)
-
-          # Warm forge glow without relying on external artwork or fonts.
           for radius in range(1150, 80, -10):
               strength = (1150 - radius) / 1070
               r = int(28 + 150 * strength)
@@ -43,17 +48,17 @@ jobs:
               b = int(56 - 35 * strength)
               draw.ellipse((1500-radius, 840-radius, 1500+radius, 840+radius), fill=(r, g, b))
 
-          font_paths = [
+          bold_candidates = [
               '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf',
               '/usr/share/fonts/truetype/liberation2/LiberationSans-Bold.ttf'
           ]
-          regular_paths = [
+          regular_candidates = [
               '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
               '/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf'
           ]
-          bold = next(p for p in font_paths if Path(p).exists())
-          regular = next(p for p in regular_paths if Path(p).exists())
-          brand = ImageFont.truetype(bold, 205)
+          bold = next(p for p in bold_candidates if Path(p).exists())
+          regular = next(p for p in regular_candidates if Path(p).exists())
+          brand = ImageFont.truetype(bold, 180)
           title = ImageFont.truetype(bold, 335)
           strap = ImageFont.truetype(regular, 105)
 
@@ -65,8 +70,8 @@ jobs:
           draw.multiline_text((240, 850), 'AI\nBRIEFING', font=title, fill=white, spacing=40)
           draw.text((245, 2180), 'Weekly AI news, explained for practical use.', font=strap, fill=muted)
           draw.text((245, 2400), 'Human-led. AI-empowered.', font=strap, fill=amber)
-          draw.rounded_rectangle((240, 2670, 2760, 2790), radius=60, outline=amber, width=10)
-          draw.text((590, 2680), 'SAPIVER PRESS', font=brand, fill=white)
+          draw.rounded_rectangle((240, 2670, 2760, 2870), radius=80, outline=amber, width=10)
+          draw.text((680, 2690), 'SAPIVER PRESS', font=brand, fill=white)
 
           out = Path('public/podcast/sapiver-forge-ai-briefing-cover-v1.png')
           out.parent.mkdir(parents=True, exist_ok=True)

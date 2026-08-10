@@ -42,7 +42,7 @@ const currentRun=Number.parseInt(process.env.GITHUB_RUN_NUMBER||'100',10)||100;
 execFileSync(process.execPath,['src/generate-fresh-weekly-promo-pack.mjs'],{stdio:'pipe',env:{...process.env,WEEK_ID:nextWeek,GITHUB_RUN_NUMBER:String(currentRun+1),GITHUB_RUN_ATTEMPT:'1'}});
 const next=JSON.parse(fs.readFileSync(`weekly-output/${nextWeek}/weekly-pack.json`,'utf8'));
 const changed=pack.posts.filter((p,i)=>p.narration!==next.posts[i].narration).length;
-assert.ok(changed>=6,`Freshness regression: only ${changed}/7 posts changed on the next run`);
+assert.equal(changed,7,`Freshness regression: ${changed}/7 posts changed; all seven must change on the next run`);
 assert.notEqual(pack.candidate_id,next.candidate_id);
 fs.rmSync(`weekly-output/${nextWeek}`,{recursive:true,force:true});
 

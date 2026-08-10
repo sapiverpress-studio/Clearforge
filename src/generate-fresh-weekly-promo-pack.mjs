@@ -92,35 +92,76 @@ const ordered=core.map((_,i)=>core[(i+offset)%core.length]);
 const plan=[...ordered,core[(offset+1)%core.length],'notion','bundle'];
 const angles=['time-pressure','practical-example','common-mistake','decision-point','work-life-friction','record-and-resume','whole-system'];
 const tags={
- opportunity:['#SapiverForge','#AIStrategy','#SmallBusinessAI','#ResponsibleAI'],
- 'workflow-control':['#SapiverForge','#AIWorkflow','#HumanInTheLoop','#ResponsibleAI'],
- 'output-release':['#SapiverForge','#AIQuality','#HumanInTheLoop','#ResponsibleAI'],
- 'outcome-review':['#SapiverForge','#AIReview','#SmallBusinessAI','#ResponsibleAI'],
- notion:['#SapiverForge','#AIWorkflow','#Productivity','#HumanInTheLoop'],
- bundle:['#SapiverForge','#HumanInTheLoop','#AIGovernance','#ResponsibleAI']
+  opportunity:['#SapiverForge','#AIStrategy','#SmallBusinessAI','#ResponsibleAI'],
+  'workflow-control':['#SapiverForge','#AIWorkflow','#HumanInTheLoop','#ResponsibleAI'],
+  'output-release':['#SapiverForge','#AIQuality','#HumanInTheLoop','#ResponsibleAI'],
+  'outcome-review':['#SapiverForge','#AIReview','#SmallBusinessAI','#ResponsibleAI'],
+  notion:['#SapiverForge','#AIWorkflow','#Productivity','#HumanInTheLoop'],
+  bundle:['#SapiverForge','#HumanInTheLoop','#AIGovernance','#ResponsibleAI']
 };
 
 const seen=new Map();
 const posts=plan.map((slug,index)=>{
-  const product=by[slug]; if(!product?.image) throw new Error(`Missing approved product artwork mapping for ${slug}.`);
-  const p=profiles[slug]; const occurrence=seen.get(slug)||0; seen.set(slug,occurrence+1);
-  const hookIndex=(rotation+index*3+occurrence)%hooks.length;
+  const product=by[slug];
+  if(!product?.image) throw new Error(`Missing approved product artwork mapping for ${slug}.`);
+  const p=profiles[slug];
+  const occurrence=seen.get(slug)||0;
+  seen.set(slug,occurrence+1);
+  // Step 5 is coprime with the 12-hook bank, so the first seven positions are guaranteed unique.
+  const hookIndex=(rotation+index*5+occurrence)%hooks.length;
   const secondIndex=(rotation+index+occurrence)%p.seconds.length;
   const exampleIndex=(rotation*2+index*3+occurrence)%p.examples.length;
   const contextIndex=(rotation*3+index*5+occurrence)%contexts.length;
   const closeIndex=(rotation+index*2+occurrence)%closes.length;
-  const hook=hooks[hookIndex], second=p.seconds[secondIndex], example=p.examples[exampleIndex], context=contexts[contextIndex], close=closes[closeIndex];
+  const hook=hooks[hookIndex];
+  const second=p.seconds[secondIndex];
+  const example=p.examples[exampleIndex];
+  const context=contexts[contextIndex];
+  const close=closes[closeIndex];
   const bridge=slug==='notion'?`That is what the ${product.name} is there to support.`:`That is the role of the ${product.name}.`;
   const spokenCta=index===6?'You can find the complete system through the link in bio.':'';
   const narration=[hook,second,context,example,p.method,bridge,close,spokenCta].filter(Boolean).join(' ');
   const body=[second,context,example,p.method,bridge,close].join(' ');
-  const hashtags=tags[slug], hashtagText=hashtags.join(' ');
-  return {index:index+1,day:days[index],angle:angles[(rotation+index)%angles.length],product_slug:slug,product:product.name,product_url:product.url,product_image:product.image,isla_opener:facts.weekly_video.isla_opener,hook,second_hook:second,narration,hashtags,link_in_bio_text:'Link in bio.',tiktok_caption:`${hook}\n\n${body}\n\nLink in bio.\n\n${hashtagText}`,youtube_title:`${hook.replace(/[.?]$/,'')} | Sapiver Forge #Shorts`,youtube_description:`${body}\n\nLink in bio.\n\n${hashtagText} #Shorts`,facebook_post:`${hook}\n\n${body}\n\nLink in bio.\n\n${hashtagText}`,social_comment:`Link in bio. ${hashtagText}`,visual_cards:[hook,second,'A named human decides',product.name],content_variant:{hook:hookIndex,second:secondIndex,example:exampleIndex,context:contextIndex,close:closeIndex}};
+  const hashtags=tags[slug];
+  const hashtagText=hashtags.join(' ');
+  return {
+    index:index+1,
+    day:days[index],
+    angle:angles[(rotation+index)%angles.length],
+    product_slug:slug,
+    product:product.name,
+    product_url:product.url,
+    product_image:product.image,
+    isla_opener:facts.weekly_video.isla_opener,
+    hook,
+    second_hook:second,
+    narration,
+    hashtags,
+    link_in_bio_text:'Link in bio.',
+    tiktok_caption:`${hook}\n\n${body}\n\nLink in bio.\n\n${hashtagText}`,
+    youtube_title:`${hook.replace(/[.?]$/,'')} | Sapiver Forge #Shorts`,
+    youtube_description:`${body}\n\nLink in bio.\n\n${hashtagText} #Shorts`,
+    facebook_post:`${hook}\n\n${body}\n\nLink in bio.\n\n${hashtagText}`,
+    social_comment:`Link in bio. ${hashtagText}`,
+    visual_cards:[hook,second,'A named human decides',product.name],
+    content_variant:{hook:hookIndex,second:secondIndex,example:exampleIndex,context:contextIndex,close:closeIndex}
+  };
 });
+
 if(new Set(posts.map(p=>p.hook)).size!==7) throw new Error('Freshness guard: duplicate hooks in one pack.');
 if(new Set(posts.map(p=>p.narration)).size!==7) throw new Error('Freshness guard: duplicate narrations in one pack.');
 
-const corePack={version:3,brand:facts.brand,week,generated_at:new Date().toISOString(),research_used:false,news_used:false,content_rotation:{strategy:'workflow-run rotation',run_number:runNumber,run_attempt:runAttempt,rotation},visual_system:{isla_source_repository:facts.weekly_video.isla_source_repository,isla_opener:facts.weekly_video.isla_opener,approved_product_artwork:true,link_in_bio_cta:true},posts};
+const corePack={
+  version:3,
+  brand:facts.brand,
+  week,
+  generated_at:new Date().toISOString(),
+  research_used:false,
+  news_used:false,
+  content_rotation:{strategy:'workflow-run rotation',run_number:runNumber,run_attempt:runAttempt,rotation},
+  visual_system:{isla_source_repository:facts.weekly_video.isla_source_repository,isla_opener:facts.weekly_video.isla_opener,approved_product_artwork:true,link_in_bio_cta:true},
+  posts
+};
 const candidate_id=crypto.createHash('sha256').update(JSON.stringify(corePack)).digest('hex');
 const pack={...corePack,candidate_id};
 fs.writeFileSync(path.join(out,'weekly-pack.json'),`${JSON.stringify(pack,null,2)}\n`);

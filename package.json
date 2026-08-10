@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Generate, review and publish a seven-day Sapiver Forge promotional media pack.",
   "scripts": {
-    "promo:generate": "node src/generate-weekly-promo-pack.mjs",
+    "promo:generate": "node src/generate-fresh-weekly-promo-pack.mjs",
     "promo:validate": "node test/weekly-promo-contract.mjs",
     "youtube:upload": "node src/upload-youtube-short.mjs"
   }

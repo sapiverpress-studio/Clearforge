@@ -1,0 +1,46 @@
+[
+  {
+    "source_name": "OpenAI",
+    "title": "New ways to learn and teach with ChatGPT Work and Codex",
+    "url": "https://openai.com/index/new-ways-to-learn-and-teach-with-chatgpt-work-and-codex/",
+    "published_date": "2026-08-04",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "coding_and_building",
+    "evidence_basis": "Official product announcement published on the OpenAI newsroom on August 4, 2026.",
+    "confirmed_fact": "OpenAI launched three new education plugins for ChatGPT Work and Codex, made available to ChatGPT Edu and ChatGPT for Teachers district deployments.",
+    "interpretation": "OpenAI is shifting its education strategy from open-ended general chat toward structured, pre-configured study and teaching assistants that enforce human control and help close the skill gap between novice and power users."
+  },
+  {
+    "source_name": "Computerworld",
+    "title": "Wispr moves beyond AI dictation with note-taking assistant",
+    "url": "https://www.computerworld.com/article/351234/wispr-moves-beyond-ai-dictation-with-note-taking-assistant.html",
+    "published_date": "2026-08-07",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "creator_tools_and_media",
+    "evidence_basis": "Reporting by Matthew Finnegan for Computerworld based on Wispr product release on August 7, 2026.",
+    "confirmed_fact": "Wispr launched Wispr Flow Notetaker, a Mac-based AI meeting and conversation assistant that records directly through local device microphones without requiring a bot to join voice or video calls.",
+    "interpretation": "Local, bot-free meeting capture reflects growing user demand for personal life-admin tools that remove privacy friction and work seamlessly across in-person and digital settings."
+  },
+  {
+    "source_name": "Psychology Today",
+    "title": "New Rules for Back to School 2026: Now Comes the Hard Part",
+    "url": "https://www.psychologytoday.com/us/blog/executive-functions-in-the-real-world/202608/new-rules-for-back-to-school-2026-now-comes-the-hard-part",
+    "published_date": "2026-08-10",
+    "coverage_lane": "human_impact",
+    "topic_category": "education_employment_and_society",
+    "evidence_basis": "Common Sense Media 2026 Census report (nationally representative sample of 1,204 U.S. youth, published June 2026) and academic studies cited in Psychology Today on August 10, 2026.",
+    "confirmed_fact": "Drawing on Common Sense Media's 2026 census, 86% of young people have used generative AI, and 85% of young AI users employ it for schoolwork, yet only 52% have received instruction on how to use AI safely and effectively.",
+    "interpretation": "Generative AI is fully integrated into modern student workflows, making the central challenge not AI restriction, but teaching learners how to use AI as an active study scaffold rather than a substitute for critical cognitive effort."
+  },
+  {
+    "source_name": "Glasp",
+    "title": "NotebookLM Is Now Gemini Notebook: 2026 Guide",
+    "url": "https://glasp.co/blog/notebooklm-is-now-gemini-notebook-2026-guide",
+    "published_date": "2026-08-01",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "workplace_and_business",
+    "evidence_basis": "Product analysis and feature documentation published August 1, 2026, following Google Labs announcements.",
+    "confirmed_fact": "Google completed its rollout rebranding NotebookLM to Gemini Notebook, integrating a cloud sandbox environment for code execution alongside Studio panel upgrades including prompt-based slide deck revisions, PPTX file exports, mind maps, and 10 custom visual infographic styles.",
+    "interpretation": "Personal knowledge management tools are evolving from static document summarizers into interactive research environments that turn raw user notes into visually structured study materials grounded in verified source documents."
+  }
+]

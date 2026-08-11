@@ -1,0 +1,151 @@
+name: Publish Sapiver Forge Weekday Brief and Podcast
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 7 * * 1-5'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sapiver-forge-weekday-brief-podcast
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out Sapiver Forge
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Resolve London publication date
+        shell: bash
+        run: echo "EDITION_DATE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
+
+      - name: Protect existing episode and ElevenLabs quota
+        id: episode_guard
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -s "public/podcast/episodes/${EDITION_DATE}.mp3" ]; then
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+            echo "A published episode already exists for ${EDITION_DATE}; no generation call will be made."
+          else
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Generate fresh sourced Daily Brief
+        if: steps.episode_guard.outputs.publish == 'true'
+        env:
+          CLEARFORGE_DATE: ${{ env.EDITION_DATE }}
+          SAPIVER_FORGE_DATE: ${{ env.EDITION_DATE }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_TEXT_MODEL: gemini-3.1-flash-lite
+          CLEARFORGE_RESEARCH_TIMEOUT_SECONDS: '540'
+        run: bash scripts/run-daily-with-retry.sh
+
+      - name: Verify the article before audio generation
+        if: steps.episode_guard.outputs.publish == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('fs');
+          const date = process.env.EDITION_DATE;
+          const file = `drafts/${date}/structured_output.json`;
+          const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+          if (!Array.isArray(data.claims_to_verify) || data.claims_to_verify.length !== 0) throw new Error('Unresolved claims block publication.');
+          if (!Array.isArray(data.sources) || data.sources.length < 3) throw new Error('At least three sources are required.');
+          for (const source of data.sources) {
+            const url = new URL(source.url);
+            if (!/^https?:$/.test(url.protocol)) throw new Error(`Unsafe source URL: ${source.url}`);
+          }
+          if (!Array.isArray(data.story_summaries) || data.story_summaries.length < 3) throw new Error('At least three verified stories are required.');
+          NODE
+
+      - name: Write the weekday spoken edition
+        if: steps.episode_guard.outputs.publish == 'true'
+        env:
+          SAPIVER_FORGE_DATE: ${{ env.EDITION_DATE }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_TEXT_MODEL: gemini-3.1-flash-lite
+        run: node src/generate-daily-podcast-script.mjs
+
+      - name: Verify spoken-edition output
+        if: steps.episode_guard.outputs.publish == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('fs');
+          const date = process.env.EDITION_DATE;
+          const dir = `drafts/${date}/podcast`;
+          const metadata = JSON.parse(fs.readFileSync(`${dir}/episode-metadata.json`, 'utf8'));
+          if (!Array.isArray(metadata.validation_warnings) || metadata.validation_warnings.length !== 0) throw new Error(`Podcast validation warnings: ${metadata.validation_warnings?.join('; ')}`);
+          if (metadata.word_count < 1200 || metadata.word_count > 1900) throw new Error(`Unsafe podcast length: ${metadata.word_count} words.`);
+          const narration = fs.readFileSync(`${dir}/COPY_PASTE_INTO_ELEVENLABS.txt`, 'utf8').trim();
+          if (!narration || /https?:\/\//i.test(narration) || /\[[^\]]+\]/.test(narration)) throw new Error('Narration contains non-spoken material.');
+          NODE
+
+      - name: Generate Irene MP3 once
+        if: steps.episode_guard.outputs.publish == 'true'
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVENLAB_API }}
+          ELEVENLABS_VOICE_ID: w9xM4Spfmuw28ZXAirWK
+          INPUT_PATH: drafts/${{ env.EDITION_DATE }}/podcast/COPY_PASTE_INTO_ELEVENLABS.txt
+          OUTPUT_PATH: drafts/${{ env.EDITION_DATE }}/podcast/sapiver-forge-daily-${{ env.EDITION_DATE }}.mp3
+        run: node scripts/generate-elevenlabs-mp3.mjs
+
+      - name: Approve validated article for the public site
+        if: steps.episode_guard.outputs.publish == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('fs');
+          const path = `drafts/${process.env.EDITION_DATE}/approval.json`;
+          const approval = JSON.parse(fs.readFileSync(path, 'utf8'));
+          approval.article_approved = true;
+          approval.notes = 'Automatically released only after source, claim and podcast validation passed.';
+          fs.writeFileSync(path, JSON.stringify(approval, null, 2) + '\n');
+          NODE
+
+      - name: Publish MP3 and rebuild podcast RSS
+        if: steps.episode_guard.outputs.publish == 'true'
+        env:
+          SOURCE_MP3: drafts/${{ env.EDITION_DATE }}/podcast/sapiver-forge-daily-${{ env.EDITION_DATE }}.mp3
+          METADATA_PATH: drafts/${{ env.EDITION_DATE }}/podcast/episode-metadata.json
+          EPISODE_SLUG: ${{ env.EDITION_DATE }}
+          PODCAST_KIND: daily
+          PODCAST_BASE_URL: https://sapiverforge-daily-brief.netlify.app
+        run: node scripts/publish-podcast-feed.mjs
+
+      - name: Rebuild the Daily Brief website
+        if: steps.episode_guard.outputs.publish == 'true'
+        env:
+          BLOG_BASE_URL: https://sapiverforge-daily-brief.netlify.app
+        run: node src/build-site.mjs
+
+      - name: Commit validated public edition
+        if: steps.episode_guard.outputs.publish == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "sapiver-forge-automation"
+          git config user.email "actions@users.noreply.github.com"
+          git add "drafts/${EDITION_DATE}" public
+          if git diff --cached --quiet; then
+            echo "No new edition files to commit."
+            exit 0
+          fi
+          git commit -m "Publish Sapiver Forge weekday brief ${EDITION_DATE}"
+          git push

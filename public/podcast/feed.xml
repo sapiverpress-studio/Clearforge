@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Sapiver Forge)</managingEditor>
     <copyright>Sapiver Forge by Sapiver Press</copyright>
     <generator>Sapiver Forge hosted podcast feed</generator>
-    <lastBuildDate>Tue, 11 Aug 2026 11:54:30 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 05:59:11 GMT</lastBuildDate>
     <atom:link href="https://sapiverforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Sapiver Forge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://sapiverforge-daily-brief.netlify.app/podcast/sapiver-forge-ai-briefing-cover-v1.png"/>
+    <item>
+      <title>Systems, Not Shortcuts: Why Reliable AI Depends on Ephemeral Sandboxes and Persistent Rules</title>
+      <description>This story addresses the most critical bottleneck in AI adoption: the transition from chat-based experimentation to autonomous, agentic workflows that require robust security and containment.</description>
+      <content:encoded><![CDATA[<p>This story addresses the most critical bottleneck in AI adoption: the transition from chat-based experimentation to autonomous, agentic workflows that require robust security and containment.</p><p><strong>Read alongside this episode:</strong> <a href="https://sapiverforge-daily-brief.netlify.app/posts/2026-08-12.html">daily briefing</a> · <a href="https://sapiverforge-daily-brief.netlify.app/features/2026-08-12.html">feature analysis</a></p><p><a href="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-12.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-12.html</link>
+      <guid isPermaLink="false">clearforge:2026-08-12</guid>
+      <pubDate>Wed, 12 Aug 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-12.mp3" length="5062783" type="audio/mpeg"/>
+      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:05:48</itunes:duration>
+      <podcast:transcript url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-12.txt" type="text/plain"/>
+    </item>
     <item>
       <title>Scaffolds, Not Shortcuts: The Shift to Grounded AI Study</title>
       <description>This story represents the most significant shift in personal knowledge management, moving from simple summarization to active, grounded content creation that directly addresses the &apos;back-to-school&apos; theme of the edition.</description>

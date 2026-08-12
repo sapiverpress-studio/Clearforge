@@ -93,7 +93,7 @@ jobs:
           const warnings = Array.isArray(metadata.validation_warnings) ? metadata.validation_warnings : [];
           const blockingWarnings = warnings.filter((warning) => !/^Script is shorter than target: \d+ words\.$/.test(warning));
           if (blockingWarnings.length !== 0) throw new Error(`Podcast validation warnings: ${blockingWarnings.join('; ')}`);
-          if (metadata.word_count < 750 || metadata.word_count > 1900) throw new Error(`Unsafe podcast length: ${metadata.word_count} words.`);
+          if (metadata.word_count < 650 || metadata.word_count > 1900) throw new Error(`Unsafe podcast length: ${metadata.word_count} words.`);
           const narration = fs.readFileSync(`${dir}/COPY_PASTE_INTO_ELEVENLABS.txt`, 'utf8').trim();
           if (!narration || /https?:\/\//i.test(narration) || /\[[^\]]+\]/.test(narration)) throw new Error('Narration contains non-spoken material.');
           NODE

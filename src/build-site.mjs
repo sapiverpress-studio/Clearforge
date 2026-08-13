@@ -198,6 +198,12 @@ function gateSystemStorefront() {
     </div>
     ${productGallery("complete-bundle", ["01_Cover"], "Complete Applied AI Gate System")}
   </section>
+  <section class="posts gate-demo" id="interactive-demonstration" aria-labelledby="interactive-demo-title">
+    <p class="eyebrow">See the four Gates in practice</p>
+    <h2 id="interactive-demo-title">Try the Sapiver Forge interactive demonstration</h2>
+    <p>Work through a realistic AI project using four practical questions: Should AI be used here? What could go wrong? Who checks the result before it leaves? Did it actually improve the work?</p>
+    <p><a class="button" href="https://forge-gate-demo.replit.app" target="_blank" rel="noopener noreferrer">Try the interactive demonstration</a></p>
+  </section>
   <nav class="gate-rail" aria-label="The four Sapiver Forge Gates">${rail}<span class="gate-rail-bonus"><small>Bundle bonus</small><strong>Agent Connection Safety add-on</strong></span></nav>
   ${gateWorkspaceOffer()}
   <section class="posts gate-chooser" id="choose-a-gate">

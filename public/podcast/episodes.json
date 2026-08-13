@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-08-13",
+    "kind": "daily",
+    "title": "The Workflow Shift: Why Integration Beats Model Upgrades",
+    "description": "This story provides the most significant, data-backed evidence for the podcast's core thesis: that AI's true value lies in practical, integrated workplace utility rather than just raw model performance.",
+    "published": "2026-08-13T07:00:00+01:00",
+    "duration": "00:05:06",
+    "size": 4513585,
+    "video_size": 0,
+    "audio_url": "https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-13.mp3",
+    "video_url": "",
+    "episode_url": "https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-13.html",
+    "transcript_url": "https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-13.txt",
+    "related_article_url": "https://sapiverforge-daily-brief.netlify.app/posts/2026-08-13.html",
+    "related_feature_url": "https://sapiverforge-daily-brief.netlify.app/features/2026-08-13.html",
+    "source_dir": "drafts/2026-08-13/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-08-12",
     "kind": "daily",
     "title": "Systems, Not Shortcuts: Why Reliable AI Depends on Ephemeral Sandboxes and Persistent Rules",

@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Sapiver Forge)</managingEditor>
     <copyright>Sapiver Forge by Sapiver Press</copyright>
     <generator>Sapiver Forge hosted podcast feed</generator>
-    <lastBuildDate>Wed, 12 Aug 2026 05:59:11 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 06:30:58 GMT</lastBuildDate>
     <atom:link href="https://sapiverforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Sapiver Forge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://sapiverforge-daily-brief.netlify.app/podcast/sapiver-forge-ai-briefing-cover-v1.png"/>
+    <item>
+      <title>The Workflow Shift: Why Integration Beats Model Upgrades</title>
+      <description>This story provides the most significant, data-backed evidence for the podcast&apos;s core thesis: that AI&apos;s true value lies in practical, integrated workplace utility rather than just raw model performance.</description>
+      <content:encoded><![CDATA[<p>This story provides the most significant, data-backed evidence for the podcast&#039;s core thesis: that AI&#039;s true value lies in practical, integrated workplace utility rather than just raw model performance.</p><p><strong>Read alongside this episode:</strong> <a href="https://sapiverforge-daily-brief.netlify.app/posts/2026-08-13.html">daily briefing</a> · <a href="https://sapiverforge-daily-brief.netlify.app/features/2026-08-13.html">feature analysis</a></p><p><a href="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-13.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-13.html</link>
+      <guid isPermaLink="false">clearforge:2026-08-13</guid>
+      <pubDate>Thu, 13 Aug 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-13.mp3" length="4513585" type="audio/mpeg"/>
+      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:05:06</itunes:duration>
+      <podcast:transcript url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-13.txt" type="text/plain"/>
+    </item>
     <item>
       <title>Systems, Not Shortcuts: Why Reliable AI Depends on Ephemeral Sandboxes and Persistent Rules</title>
       <description>This story addresses the most critical bottleneck in AI adoption: the transition from chat-based experimentation to autonomous, agentic workflows that require robust security and containment.</description>

@@ -1,0 +1,10 @@
+{
+  "date": "2026-08-13",
+  "article_approved": true,
+  "feature_approved": false,
+  "facebook_approved": false,
+  "pinterest_approved": false,
+  "youtube_approved": false,
+  "dev_approved": false,
+  "notes": "Automatically released only after source, claim and podcast validation passed."
+}

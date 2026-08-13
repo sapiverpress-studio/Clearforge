@@ -1,6 +1,7 @@
 [build]
   command = "node src/build-site.mjs"
   publish = "public"
+  functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "24"

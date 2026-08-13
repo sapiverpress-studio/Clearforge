@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daily video archive | Sapiver Forge</title>
+  <meta name="description" content="Watch the latest 90 days of Sapiver Forge daily briefing videos.">
+  <link rel="canonical" href="https://sapiverforge-daily-brief.netlify.app/daily-brief/videos/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sapiver Forge">
+  <meta property="og:title" content="Daily video archive">
+  <meta property="og:description" content="Watch the latest 90 days of Sapiver Forge daily briefing videos.">
+  <meta property="og:url" content="https://sapiverforge-daily-brief.netlify.app/daily-brief/videos/">
+  <meta property="og:image" content="https://sapiverforge-daily-brief.netlify.app/podcast/cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Daily video archive">
+  <meta name="twitter:description" content="Watch the latest 90 days of Sapiver Forge daily briefing videos.">
+  <meta name="twitter:image" content="https://sapiverforge-daily-brief.netlify.app/podcast/cover.png">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="alternate" type="application/rss+xml" title="Sapiver Forge Features" href="/features.xml">
+  <link rel="alternate" type="application/rss+xml" title="Sapiver Forge AI Briefing Podcast" href="/podcast/feed.xml">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Daily video archive","description":"Watch the latest 90 days of Sapiver Forge daily briefing videos.","url":"https://sapiverforge-daily-brief.netlify.app/daily-brief/videos/","isPartOf":{"@type":"WebSite","name":"Sapiver Forge","url":"https://sapiverforge-daily-brief.netlify.app"}}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Sapiver Forge</a>
+    <p>Human-led. AI-empowered.</p>
+    <nav aria-label="Site links">
+      <a href="/#products">Products</a>
+      <a href="/#gate-workspace">Free workspace</a>
+      <a href="/#latest-guidance">Latest guidance</a>
+      <a href="/guides/">Guides</a>
+      <a href="/topics/">Topics</a>
+      <a href="/reports/">Reports</a>
+      <a href="/podcast/">Podcast</a>
+      <a href="/newsletter/">Weekly digest</a>
+    </nav>
+  </header>
+  <main class="content"><section class="hero"><p class="eyebrow">Sapiver Forge Daily Brief</p><h1>Daily video archive</h1><p>The most recent 90 days of captioned Sapiver Forge videos, published alongside the daily briefing.</p></section><section class="posts"><div class="daily-video-grid" data-daily-videos><p>Loading videos…</p></div></section><script>(()=>{const host=document.querySelector('[data-daily-videos]');if(!host)return;const esc=s=>String(s||'');fetch('/api/daily-video/list').then(r=>{if(!r.ok)throw Error('Video list unavailable');return r.json()}).then(data=>{const items=0 ? data.items.slice(0,0) : data.items;if(!items.length){host.textContent='No daily videos have been added yet.';return}host.replaceChildren(...items.map(item=>{const card=document.createElement('article');card.className='daily-video-card';const frame=document.createElement('iframe');frame.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(item.videoId);frame.title=esc(item.title);frame.loading='lazy';frame.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';frame.allowFullscreen=true;const h=document.createElement('h3');h.textContent=esc(item.title);const p=document.createElement('p');p.textContent=esc(item.date);const links=document.createElement('p');const youtube=document.createElement('a');youtube.href=item.youtubeUrl;youtube.textContent='Watch on YouTube';youtube.target='_blank';youtube.rel='noopener noreferrer';links.append(youtube);if(item.tiktokUrl){const sep=document.createTextNode(' · ');const tiktok=document.createElement('a');tiktok.href=item.tiktokUrl;tiktok.textContent='Open TikTok post';tiktok.target='_blank';tiktok.rel='noopener noreferrer';links.append(sep,tiktok)}card.append(frame,h,p,links);return card}))}).catch(()=>{host.textContent='The video archive is temporarily unavailable.'})})();</script><section class="newsletter-callout"><h2>Get the weekly Sapiver Forge digest</h2><p>One calm email covering what changed, why it matters and what is worth testing. No daily inbox noise.</p><p><a class="button" href="/newsletter/">Join the weekly digest</a></p></section></main>
+  <footer class="site-footer">
+    <p>Turning human input into clear, usable systems.</p>
+    <p>Produced with AI assistance and released with human approval by Sapiver Forge.</p>
+    <p><a href="/#products">Products</a> · <a href="/topics/">Browse topics</a> · <a href="/reports/">Reports</a> · <a href="/podcast/">Podcast</a> · <a href="/newsletter/">Weekly digest</a></p>
+  </footer>
+</body>
+</html>

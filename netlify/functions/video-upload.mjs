@@ -1,4 +1,5 @@
 import { getStore } from "@netlify/blobs";
+import { distributeUpload, SITE_BASE } from "./_social-distribute.mjs";
 
 const MAX_VIDEO_BYTES = 20_000_000;
 const json = (value, status = 200) => new Response(JSON.stringify(value), {
@@ -36,9 +37,25 @@ export default async (request, context) => {
   }
   const fileKey = `files/${id}.mp4`;
   await store.set(fileKey, bytes, { metadata: { contentType: "video/mp4", uploadedAt: item.uploadedAt } });
-  const saved = { ...item, status: "pending-youtube", fileKey, fileUrl: `/api/daily-video/file/${id}` };
+
+  const archiveUrl = `${SITE_BASE}/daily-brief/videos/`;
+  const distribution = await distributeUpload({
+    kind: "video",
+    title: item.title,
+    description: item.description,
+    itemUrl: archiveUrl
+  });
+
+  const saved = {
+    ...item,
+    status: "published-manual",
+    fileKey,
+    fileUrl: `/api/daily-video/file/${id}`,
+    youtubeManual: true,
+    distribution
+  };
   await store.setJSON(recordKey, saved, { metadata: { publishedAt: saved.publishedAt, status: saved.status } });
-  return json({ ok: true, item: saved });
+  return json({ ok: true, item: saved, distribution });
 };
 
 export const config = { path: "/api/daily-video/upload/:id" };

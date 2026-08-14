@@ -4,22 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Upload daily video | Sapiver Forge</title>
-  <meta name="description" content="Private Sapiver Forge publisher tool for adding the finished TikTok video to YouTube and the daily brief.">
+  <meta name="description" content="Private Sapiver Forge publisher tool for adding today’s finished TikTok video to the Daily Brief.">
   <link rel="canonical" href="https://sapiverforge-daily-brief.netlify.app/daily-brief/upload/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Sapiver Forge">
   <meta property="og:title" content="Upload daily video">
-  <meta property="og:description" content="Private Sapiver Forge publisher tool for adding the finished TikTok video to YouTube and the daily brief.">
+  <meta property="og:description" content="Private Sapiver Forge publisher tool for adding today’s finished TikTok video to the Daily Brief.">
   <meta property="og:url" content="https://sapiverforge-daily-brief.netlify.app/daily-brief/upload/">
   <meta property="og:image" content="https://sapiverforge-daily-brief.netlify.app/podcast/cover.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Upload daily video">
-  <meta name="twitter:description" content="Private Sapiver Forge publisher tool for adding the finished TikTok video to YouTube and the daily brief.">
+  <meta name="twitter:description" content="Private Sapiver Forge publisher tool for adding today’s finished TikTok video to the Daily Brief.">
   <meta name="twitter:image" content="https://sapiverforge-daily-brief.netlify.app/podcast/cover.png">
   <link rel="stylesheet" href="/styles.css">
   <link rel="alternate" type="application/rss+xml" title="Sapiver Forge Features" href="/features.xml">
   <link rel="alternate" type="application/rss+xml" title="Sapiver Forge AI Briefing Podcast" href="/podcast/feed.xml">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Upload daily video","description":"Private Sapiver Forge publisher tool for adding the finished TikTok video to YouTube and the daily brief.","url":"https://sapiverforge-daily-brief.netlify.app/daily-brief/upload/","isPartOf":{"@type":"WebSite","name":"Sapiver Forge","url":"https://sapiverforge-daily-brief.netlify.app"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Upload daily video","description":"Private Sapiver Forge publisher tool for adding today’s finished TikTok video to the Daily Brief.","url":"https://sapiverforge-daily-brief.netlify.app/daily-brief/upload/","isPartOf":{"@type":"WebSite","name":"Sapiver Forge","url":"https://sapiverforge-daily-brief.netlify.app"}}</script>
 </head>
 <body>
   <header class="site-header">
@@ -36,7 +36,7 @@
       <a href="/newsletter/">Weekly digest</a>
     </nav>
   </header>
-  <main class="content"><section class="hero"><p class="eyebrow">Publisher tool</p><h1>Upload today’s finished TikTok video</h1><p>Save the captioned video from TikTok, select that MP4 here, and it will upload directly to the Sapiver Forge YouTube channel. The file is not stored in GitHub.</p></section><section class="posts publisher-upload"><form data-video-upload><p><label>Publisher password<br><input name="password" type="password" autocomplete="current-password" required></label></p><p><label>Finished TikTok MP4<br><input name="video" type="file" accept="video/mp4,.mp4" required></label></p><p><label>YouTube title<br><input name="title" maxlength="100" required></label></p><p><label>YouTube description<br><textarea name="description" rows="7" maxlength="5000"></textarea></label></p><p><label>TikTok post link (optional)<br><input name="tiktokUrl" type="url" inputmode="url" placeholder="https://www.tiktok.com/…"></label></p><p><label>Visibility<br><select name="privacyStatus"><option value="public">Public</option><option value="unlisted">Unlisted</option><option value="private">Private</option></select></label></p><p><button class="button" type="submit">Upload to YouTube and daily brief</button></p><progress data-upload-progress max="100" value="0" hidden></progress><p data-upload-status role="status" aria-live="polite"></p></form></section><script src="/daily-brief/video-upload.js" defer></script></main>
+  <main class="content"><section class="hero"><p class="eyebrow">Publisher tool</p><h1>Upload today’s finished TikTok video</h1><p>Save the captioned MP4 from TikTok and add it to today’s Daily Brief. It will remain queued for YouTube until the following publication run.</p></section><section class="posts publisher-upload"><form data-video-upload><p><label>Publisher password<br><input name="password" type="password" autocomplete="current-password" required></label></p><p><label>Finished TikTok MP4 (maximum 20 MB)<br><input name="video" type="file" accept="video/mp4,.mp4" required></label></p><p><label>Video title<br><input name="title" maxlength="100" required></label></p><p><label>YouTube description for tomorrow<br><textarea name="description" rows="7" maxlength="5000"></textarea></label></p><p><label>TikTok post link (optional)<br><input name="tiktokUrl" type="url" inputmode="url" placeholder="https://www.tiktok.com/…"></label></p><p><label>Tomorrow’s YouTube visibility<br><select name="privacyStatus"><option value="public">Public</option><option value="unlisted">Unlisted</option><option value="private">Private</option></select></label></p><p><button class="button" type="submit">Add video to today’s Daily Brief</button></p><progress data-upload-progress max="100" value="0" hidden></progress><p data-upload-status role="status" aria-live="polite"></p></form></section><script src="/daily-brief/video-upload.js" defer></script></main>
   <footer class="site-footer">
     <p>Turning human input into clear, usable systems.</p>
     <p>Produced with AI assistance and released with human approval by Sapiver Forge.</p>

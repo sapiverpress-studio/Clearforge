@@ -350,7 +350,7 @@ function pageTemplate(title, description, body, options = {}) {
   <footer class="site-footer">
     <p>Turning human input into clear, usable systems.</p>
     <p>Produced with AI assistance and released with human approval by Sapiver Forge.</p>
-    <p><a href="/#products">Products</a> · <a href="/topics/">Browse topics</a> · <a href="/reports/">Reports</a> · <a href="${podcastPage}">Podcast</a> · <a href="/newsletter/">Weekly digest</a></p>
+    <p><a href="/">Sapiver Forge</a> · <a href="/daily-brief/">Daily Brief</a> · <a href="/resources/">Resources</a> · <a href="/newsletter/">Weekly digest</a></p>
   </footer>
 </body>
 </html>`;

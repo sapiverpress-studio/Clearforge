@@ -10,6 +10,8 @@
     "youtube:upload": "node src/upload-youtube-short.mjs"
   },
   "dependencies": {
-    "@netlify/blobs": "^10.7.13"
+    "@netlify/blobs": "^10.7.13",
+    "@ffmpeg/core": "0.12.10",
+    "@ffmpeg/ffmpeg": "0.12.10"
   }
 }

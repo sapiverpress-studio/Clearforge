@@ -1,4 +1,5 @@
 import { getStore } from "@netlify/blobs";
+import { distributeUpload, SITE_BASE } from "./_social-distribute.mjs";
 
 const MAX_AUDIO_BYTES = 5_500_000;
 const json = (value, status = 200) => new Response(JSON.stringify(value), {
@@ -41,20 +42,25 @@ export default async (request) => {
   }).format(now);
   const recordKey = `episodes/${uploadedAt.slice(0, 10)}/${id}`;
   const fileKey = `files/${id}.mp3`;
-  const item = {
+  const episodeUrl = `${SITE_BASE}/podcast/manual/${id}`;
+  let item = {
     id, title, description, duration, date, uploadedAt, publishedAt: uploadedAt,
     bytes: bytes.byteLength,
     fileKey,
     fileUrl: `/api/podcast/file/${id}`,
+    episodeUrl,
     status: "published-manual"
   };
 
   const store = getStore({ name: "manual-podcast-episodes", consistency: "strong" });
   await store.set(fileKey, bytes, { metadata: { contentType: "audio/mpeg", uploadedAt } });
-  await store.setJSON(recordKey, item, { metadata: { publishedAt: uploadedAt, status: item.status } });
   await store.set(`index/${id}`, recordKey);
 
-  return json({ ok: true, item, feedUrl: "/podcast/feed.xml" });
+  const distribution = await distributeUpload({ kind: "podcast", title, description, itemUrl: episodeUrl });
+  item = { ...item, distribution };
+  await store.setJSON(recordKey, item, { metadata: { publishedAt: uploadedAt, status: item.status } });
+
+  return json({ ok: true, item, feedUrl: "/podcast/feed.xml", distribution });
 };
 
 export const config = { path: "/api/podcast/upload" };

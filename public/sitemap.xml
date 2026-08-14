@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://sapiverforge-daily-brief.netlify.app/</loc></url>
+  <url><loc>https://sapiverforge-daily-brief.netlify.app/daily-brief/</loc></url>
+  <url><loc>https://sapiverforge-daily-brief.netlify.app/daily-brief/videos/</loc></url>
+  <url><loc>https://sapiverforge-daily-brief.netlify.app/resources/</loc></url>
   <url><loc>https://sapiverforge-daily-brief.netlify.app/topics/</loc></url>
   <url><loc>https://sapiverforge-daily-brief.netlify.app/reports/</loc></url>
   <url><loc>https://sapiverforge-daily-brief.netlify.app/podcast/</loc></url>

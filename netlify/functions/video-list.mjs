@@ -8,10 +8,13 @@ export default async () => {
   for (const blob of blobs) {
     const item = await store.get(blob.key, { type: "json" });
     if (!item) continue;
-    if (new Date(item.publishedAt).valueOf() < cutoff) {
+    if (new Date(item.publishedAt || item.uploadedAt).valueOf() < cutoff) {
       await store.delete(blob.key);
+      if (item.fileKey) await store.delete(item.fileKey);
+      if (item.id) await store.delete(`uploads/${item.id}`);
       continue;
     }
+    if (item.status === "awaiting-upload") continue;
     items.push(item);
   }
   items.sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt)));

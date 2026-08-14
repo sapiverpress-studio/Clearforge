@@ -12,7 +12,7 @@
     <managingEditor>clearforge@sapiverpress.co.uk (Sapiver Forge)</managingEditor>
     <copyright>Sapiver Forge by Sapiver Press</copyright>
     <generator>Sapiver Forge hosted podcast feed</generator>
-    <lastBuildDate>Thu, 13 Aug 2026 06:30:58 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2026 05:19:52 GMT</lastBuildDate>
     <atom:link href="https://sapiverforge-daily-brief.netlify.app/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Sapiver Forge</itunes:author>
     <itunes:owner>
@@ -24,6 +24,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education"><itunes:category text="How To"/></itunes:category>
     <itunes:image href="https://sapiverforge-daily-brief.netlify.app/podcast/sapiver-forge-ai-briefing-cover-v1.png"/>
+    <item>
+      <title>The Default Opt-In Reality: Twitch and Your Data</title>
+      <description>This story represents an immediate, actionable privacy concern for creators that requires urgent attention, aligning with the podcast&apos;s mission to provide practical, non-hyped guidance on AI impact.</description>
+      <content:encoded><![CDATA[<p>This story represents an immediate, actionable privacy concern for creators that requires urgent attention, aligning with the podcast&#039;s mission to provide practical, non-hyped guidance on AI impact.</p><p><strong>Read alongside this episode:</strong> <a href="https://sapiverforge-daily-brief.netlify.app/posts/2026-08-14.html">daily briefing</a> · <a href="https://sapiverforge-daily-brief.netlify.app/features/2026-08-14.html">feature analysis</a></p><p><a href="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-14.html">Episode page and sources</a></p>]]></content:encoded>
+      <link>https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-14.html</link>
+      <guid isPermaLink="false">clearforge:2026-08-14</guid>
+      <pubDate>Fri, 14 Aug 2026 06:00:00 GMT</pubDate>
+      <enclosure url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-14.mp3" length="5140106" type="audio/mpeg"/>
+      <itunes:author>Sapiver Forge</itunes:author>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>00:06:06</itunes:duration>
+      <podcast:transcript url="https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-14.txt" type="text/plain"/>
+    </item>
     <item>
       <title>The Workflow Shift: Why Integration Beats Model Upgrades</title>
       <description>This story provides the most significant, data-backed evidence for the podcast&apos;s core thesis: that AI&apos;s true value lies in practical, integrated workplace utility rather than just raw model performance.</description>

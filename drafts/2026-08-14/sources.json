@@ -1,0 +1,46 @@
+[
+  {
+    "source_name": "xAI / Cursor",
+    "title": "Introducing Grok 4.6",
+    "url": "https://cursor.com/blog/grok-4-6",
+    "published_date": "2026-08-12",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "models_and_infrastructure",
+    "evidence_basis": "Official xAI product release documentation and API pricing schedule.",
+    "confirmed_fact": "xAI released Grok 4.6 on August 12, 2026, featuring a 500,000-token context window and specific tiered pricing that doubles for requests exceeding 200,000 tokens.",
+    "interpretation": "xAI is positioning Grok 4.6 as an affordable frontier alternative for multi-step agent coding, though developers must manage context window size to avoid automated pricing spikes."
+  },
+  {
+    "source_name": "Zed Industries",
+    "title": "Introducing Delta — Zed's Blog",
+    "url": "https://zed.dev/blog/introducing-delta",
+    "published_date": "2026-08-12",
+    "coverage_lane": "confirmed_development",
+    "topic_category": "coding_and_building",
+    "evidence_basis": "Official product announcement and technical documentation for DeltaDB.",
+    "confirmed_fact": "Zed Industries launched the private beta for Delta, a collaborative coding environment using DeltaDB to track operation-level changes and link edits to agent transcripts.",
+    "interpretation": "Operation-level version control that anchors comments to stable code objects offers a viable solution to the human code-review bottleneck created by autonomous coding agents."
+  },
+  {
+    "source_name": "Twitch / PC Gamer",
+    "title": "Twitch Now Trains Amazon's Generative AI Models on Your Channel By Default",
+    "url": "https://www.pcgamer.com/hardware/twitch-under-fire-for-new-gen-ai-training-system-that-harvests-streamer-data-for-amazon-says-its-on-by-default-because-if-it-was-opt-in-nobody-would-opt-in/",
+    "published_date": "2026-08-12",
+    "coverage_lane": "human_impact",
+    "topic_category": "policy_safety_and_security",
+    "evidence_basis": "Twitch account security interface, official Twitch patch notes livestream recording with CPO Mike Minton.",
+    "confirmed_fact": "Twitch enabled a 'Training for Generative AI' setting by default on August 12, 2026, permitting Amazon to collect channel data for model training.",
+    "interpretation": "Platforms continue to rely on default opt-in policies for AI data harvesting, placing the burden of privacy and IP protection entirely on individual creators."
+  },
+  {
+    "source_name": "Drexel University / Transactions of the ACL",
+    "title": "What Do People Really Think About Generative AI?",
+    "url": "https://drexel.edu/news/archive/2026/august/generative-ai-trust-study",
+    "published_date": "2026-08-13",
+    "coverage_lane": "human_impact",
+    "topic_category": "research_and_science",
+    "evidence_basis": "Peer-reviewed study published in Transactions of the Association for Computational Linguistics (TACL).",
+    "confirmed_fact": "A study of 230,000 Reddit posts found that 31% of users trust generative AI, 26% distrust it, and 41% remain neutral.",
+    "interpretation": "Public sentiment toward generative AI remains fundamentally divided, indicating that user trust must be actively earned through reliable performance rather than assumed."
+  }
+]

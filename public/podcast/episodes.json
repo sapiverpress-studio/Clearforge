@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-08-14",
+    "kind": "daily",
+    "title": "The Default Opt-In Reality: Twitch and Your Data",
+    "description": "This story represents an immediate, actionable privacy concern for creators that requires urgent attention, aligning with the podcast's mission to provide practical, non-hyped guidance on AI impact.",
+    "published": "2026-08-14T07:00:00+01:00",
+    "duration": "00:06:06",
+    "size": 5140106,
+    "video_size": 0,
+    "audio_url": "https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-14.mp3",
+    "video_url": "",
+    "episode_url": "https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-14.html",
+    "transcript_url": "https://sapiverforge-daily-brief.netlify.app/podcast/episodes/2026-08-14.txt",
+    "related_article_url": "https://sapiverforge-daily-brief.netlify.app/posts/2026-08-14.html",
+    "related_feature_url": "https://sapiverforge-daily-brief.netlify.app/features/2026-08-14.html",
+    "source_dir": "drafts/2026-08-14/podcast",
+    "archived": false,
+    "archive_url": ""
+  },
+  {
     "slug": "2026-08-13",
     "kind": "daily",
     "title": "The Workflow Shift: Why Integration Beats Model Upgrades",

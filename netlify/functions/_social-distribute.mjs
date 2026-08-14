@@ -1,5 +1,6 @@
 const SITE_BASE = "https://sapiverforge-daily-brief.netlify.app";
 const PIN_IMAGE = `${SITE_BASE}/podcast/sapiver-forge-ai-briefing-cover-v1.png`;
+const DEFAULT_PINTEREST_BOARD_NAME = "Sapiver Forge";
 
 function firstEnv(...names) {
   for (const name of names) {
@@ -30,22 +31,62 @@ async function postFacebook({ message, link }) {
   return { ok: true, id: data.id || null };
 }
 
+async function pinterestAccessToken() {
+  const staticToken = firstEnv("PINTEREST_ACCESS_TOKEN", "PINTEREST_TOKEN", "PINTEREST_API_TOKEN", "PINTEREST_OAUTH_TOKEN");
+  if (staticToken) return staticToken;
+  const refreshToken = firstEnv("PINTEREST_REFRESH_TOKEN");
+  const clientId = firstEnv("PINTEREST_APP_ID", "PINTEREST_CLIENT_ID");
+  const clientSecret = firstEnv("PINTEREST_APP_SECRET", "PINTEREST_CLIENT_SECRET");
+  if (!refreshToken || !clientId || !clientSecret) return "";
+  const body = new URLSearchParams({ grant_type: "refresh_token", refresh_token: refreshToken });
+  const basic = Buffer.from(`${clientId}:${clientSecret}`).toString("base64");
+  const data = await jsonFetch("https://api.pinterest.com/v5/oauth/token", {
+    method: "POST",
+    headers: { Authorization: `Basic ${basic}`, "Content-Type": "application/x-www-form-urlencoded" },
+    body
+  });
+  return String(data.access_token || "");
+}
+
+async function pinterestBoard(token) {
+  const explicitId = firstEnv("PINTEREST_BOARD_ID");
+  if (explicitId) return { id: explicitId, source: "env" };
+  const boardName = firstEnv("PINTEREST_BOARD_NAME") || DEFAULT_PINTEREST_BOARD_NAME;
+  let bookmark = "";
+  do {
+    const url = new URL("https://api.pinterest.com/v5/boards");
+    url.searchParams.set("page_size", "100");
+    if (bookmark) url.searchParams.set("bookmark", bookmark);
+    const data = await jsonFetch(url.toString(), { headers: { Authorization: `Bearer ${token}` } });
+    const match = (data.items || []).find((board) => String(board.name || "").trim().toLowerCase() === boardName.toLowerCase());
+    if (match?.id) return { id: match.id, source: "board_name" };
+    bookmark = data.bookmark || "";
+  } while (bookmark);
+  const created = await jsonFetch("https://api.pinterest.com/v5/boards", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ name: boardName, description: "Sapiver Forge practical AI guidance and media." })
+  });
+  if (!created?.id) throw new Error("Pinterest board creation returned no id.");
+  return { id: created.id, source: "created" };
+}
+
 async function postPinterest({ title, description, link }) {
-  const token = firstEnv("PINTEREST_ACCESS_TOKEN", "PINTEREST_TOKEN", "PINTEREST_API_TOKEN", "PINTEREST_OAUTH_TOKEN");
-  const boardId = firstEnv("PINTEREST_BOARD_ID");
-  if (!token || !boardId) return { skipped: true, reason: "missing_netlify_pinterest_credentials" };
+  const token = await pinterestAccessToken();
+  if (!token) return { skipped: true, reason: "missing_netlify_pinterest_token" };
+  const board = await pinterestBoard(token);
   const data = await jsonFetch("https://api.pinterest.com/v5/pins", {
     method: "POST",
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
     body: JSON.stringify({
-      board_id: boardId,
+      board_id: board.id,
       title: String(title || "Sapiver Forge").slice(0, 100),
       description: String(description || "").slice(0, 800),
       link,
       media_source: { source_type: "image_url", url: PIN_IMAGE, is_standard: true }
     })
   });
-  return { ok: true, id: data.id || null };
+  return { ok: true, id: data.id || null, boardSource: board.source };
 }
 
 async function safe(fn) {
@@ -61,7 +102,8 @@ export async function distributeUpload({ kind, title, description, itemUrl }) {
     safe(() => postFacebook({ message, link: itemUrl })),
     safe(() => postPinterest({ title, description: pinterestDescription, link: itemUrl }))
   ]);
-  return { attemptedAt: new Date().toISOString(), facebook, pinterest, youtube: { manual: true } };
+  const distributed = Boolean(facebook?.ok || pinterest?.ok);
+  return { attemptedAt: new Date().toISOString(), distributed, facebook, pinterest, youtube: { manual: true } };
 }
 
 export { SITE_BASE };

@@ -23,7 +23,9 @@ jobs:
       - name: Build site
         env:
           BLOG_BASE_URL: https://sapiverforge-daily-brief.netlify.app
-        run: node src/build-site.mjs
+        run: |
+          node src/build-site.mjs
+          node scripts/inject-podcast-upload-link.mjs
       - name: Deploy production
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}

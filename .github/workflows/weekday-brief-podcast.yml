@@ -27,6 +27,18 @@ jobs:
         with:
           node-version: '24'
 
+      - name: Install publishing dependencies
+        run: npm install
+
+      - name: Publish yesterday's queued video to YouTube
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: 8e72a4fc-5ad6-4377-8f4a-399d4c936060
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: node scripts/publish-pending-daily-videos.mjs
+
       - name: Resolve London publication date
         shell: bash
         run: echo "EDITION_DATE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"

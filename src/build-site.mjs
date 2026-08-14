@@ -340,13 +340,9 @@ function pageTemplate(title, description, body, options = {}) {
     <a class="brand" href="/">Sapiver Forge</a>
     <p>Human-led. AI-empowered.</p>
     <nav aria-label="Site links">
-      <a href="/#products">Products</a>
-      <a href="/#gate-workspace">Free workspace</a>
-      <a href="/#latest-guidance">Latest guidance</a>
-      <a href="/guides/">Guides</a>
-      <a href="/topics/">Topics</a>
-      <a href="/reports/">Reports</a>
-      <a href="${podcastPage}">Podcast</a>
+      <a href="/">Sapiver Forge</a>
+      <a href="/daily-brief/">Daily Brief</a>
+      <a href="/resources/">Resources</a>
       <a href="/newsletter/">Weekly digest</a>
     </nav>
   </header>
@@ -411,7 +407,7 @@ function buildTopics(entries) {
 }
 
 function buildDiscoveryFiles(entries) {
-  const staticPaths = ["/", "/topics/", "/reports/", "/podcast/", "/newsletter/"];
+  const staticPaths = ["/", "/daily-brief/", "/daily-brief/videos/", "/resources/", "/topics/", "/reports/", "/podcast/", "/newsletter/"];
   const topicPaths = topicDefinitions.map((topic) => `/topics/${topic.slug}/`);
   const urls = [...new Set([...staticPaths, ...topicPaths, ...entries.map((entry) => entry.url)])];
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((pathname) => `  <url><loc>${xmlEscape(canonical(pathname))}</loc></url>`).join("\n")}\n</urlset>\n`;
@@ -476,7 +472,11 @@ function main() {
     : "";
   const listenSection = `<section class="posts"><p class="eyebrow">Listen on the go</p><h2>Sapiver Forge AI Briefing</h2><p>Hear the practical breakdown in your podcast app. Search for <strong>Sapiver Forge AI Briefing</strong>, or open the Sapiver Forge podcast page.</p><p><a class="button" href="${podcastPage}">Open the podcast</a></p></section><section class="posts daily-video-section"><p class="eyebrow">Daily briefing videos</p><h2>Watch the latest Sapiver Forge videos</h2><p>Finished captioned videos published after TikTok and kept here as a rolling 90-day collection.</p><div class="daily-video-grid" data-daily-videos><p>Loading videos…</p></div><div class="report-actions"><a class="button" href="/daily-brief/videos/">Open the 90-day video archive</a><a class="button button-secondary" href="/daily-brief/upload/">Upload today’s video</a></div></section>${dailyVideoClientScript({ limit: 3 })}<section class="posts" data-clearforge-latest-short hidden><p class="eyebrow">Ready to post</p><h2>Latest TikTok video and caption</h2><div data-short-content></div></section><script src="/podcast/latest-short.js" defer></script>`;
   const featureSection = `<section class="posts"><p class="eyebrow">Analysis behind the tools</p><h2>Recent Sapiver Forge articles</h2>${features.length ? `<ul>${features.slice(0, 3).map((entry) => `<li><a href="${entry.url}">${escapeHtml(entry.title)}</a><span> — ${escapeHtml(datePart(entry.date))}</span><p>${escapeHtml(entry.description)}</p></li>`).join("")}</ul>${latestFeature ? `<p><a class="button button-secondary" href="${latestFeature.url}">Read the latest feature</a></p>` : ""}` : "<p>No approved features yet.</p>"}</section>`;
-  const indexBody = `${gateSystemStorefront()}${latestSection}${featureSection}${listenSection}<section class="posts"><h2>Explore the wider Sapiver Forge library</h2><p>Use the topic archive and evergreen guides to understand the changing AI problems behind the Gates.</p><div class="report-actions"><a class="button" href="/topics/">Browse topics</a><a class="button button-secondary" href="/guides/">Read evergreen guides</a><a class="button button-secondary" href="/reports/">Open reports</a></div></section>${newsletterCallout()}`;
+  const dailyBriefHubBody = `<section class="hero"><p class="eyebrow">Sapiver Forge Daily Brief</p><h1>Daily AI publishing, organised in one place.</h1><p>Open the latest briefing, watch recent videos, listen to the podcast or browse the report archive.</p><div class="report-actions"><a class="button" href="/daily-brief/videos/">Video archive</a><a class="button button-secondary" href="${podcastPage}">Podcast</a><a class="button button-secondary" href="/reports/">Reports</a></div></section>${latestSection}${featureSection}${listenSection}<section class="posts"><p class="eyebrow">More from the briefing</p><h2>Reports and the weekly digest</h2><p>Use the reports library for checked learning briefs, or receive one calm summary each week.</p><div class="report-actions"><a class="button" href="/reports/">Open reports</a><a class="button button-secondary" href="/newsletter/">Weekly digest</a></div></section>`;
+  write(path.join(publicDir, "daily-brief", "index.html"), pageTemplate("Sapiver Forge Daily Brief", "Sapiver Forge briefings, daily videos, podcast episodes and reports in one organised publishing hub.", dailyBriefHubBody, { pathname: "/daily-brief/", structuredData: { "@context": "https://schema.org", "@type": "CollectionPage", name: "Sapiver Forge Daily Brief", description: "Sapiver Forge briefings, videos, podcast episodes and reports.", url: canonical("/daily-brief/") } }));
+  const resourcesHubBody = `<section class="hero"><p class="eyebrow">Sapiver Forge Resources</p><h1>Guides, topics and practical working resources.</h1><p>Use the resource library when you want the lasting guidance behind the daily publishing.</p></section><section class="posts"><div class="gate-chooser"><ul><li><a href="/guides/"><strong>Evergreen guides</strong><span>Practical guidance designed to remain useful beyond the daily headline.</span></a></li><li><a href="/topics/"><strong>Topic library</strong><span>Browse AI adoption, automation, models, accountability and small-business use.</span></a></li><li><a href="/#gate-workspace"><strong>Free Gate workspace</strong><span>Open the Sapiver Forge workspace included with the Applied AI Gate System funnel.</span></a></li></ul></div></section>`;
+  write(path.join(publicDir, "resources", "index.html"), pageTemplate("Sapiver Forge Resources", "Browse Sapiver Forge guides, topic collections and the free Applied AI Gate workspace.", resourcesHubBody, { pathname: "/resources/", structuredData: { "@context": "https://schema.org", "@type": "CollectionPage", name: "Sapiver Forge Resources", description: "Sapiver Forge guides, topic collections and practical working resources.", url: canonical("/resources/") } }));
+  const indexBody = `${gateSystemStorefront()}`;
   write(path.join(publicDir, "index.html"), pageTemplate("Sapiver Forge Applied AI Gate System", "Human-led AI checkpoints, practical guidance and Sapiver Forge analysis for controlling AI-assisted work.", indexBody, { pathname: "/", structuredData: { "@context": "https://schema.org", "@graph": [{ "@type": "WebSite", name: "Sapiver Forge", url: blogBase, description: "Human-led AI checkpoints, practical guidance and analysis for controlling AI-assisted work." }, { "@type": "Product", name: "Sapiver Forge Applied AI Gate System — Complete Four-Gate Bundle", description: "Four practical human checkpoints for AI-assisted work, with a bundle-only agent connection safety add-on.", image: canonical("/products/gate-system/complete-bundle/01_Cover.webp"), brand: { "@type": "Brand", name: "Sapiver Forge" }, offers: { "@type": "Offer", priceCurrency: "GBP", price: "58.80", url: "https://payhip.com/b/cmklU", availability: "https://schema.org/InStock" } }] } }));
   const rss = `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Sapiver Forge Features</title><link>${xmlEscape(blogBase)}</link><description>Long-form practical AI analysis from Sapiver Forge.</description>${feedItems.join("")}</channel></rss>`;
   write(path.join(publicDir, "features.xml"), rss);

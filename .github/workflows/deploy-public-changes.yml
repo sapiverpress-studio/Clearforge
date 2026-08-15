@@ -11,6 +11,7 @@ on:
       - "scripts/build-sapiver-forge-site.mjs"
       - "scripts/rebrand-public-sapiver-forge.mjs"
       - "scripts/inject-podcast-upload-link.mjs"
+      - "scripts/inject-app-privacy-link.mjs"
       - "netlify/functions/**"
       - "netlify.toml"
 
@@ -60,6 +61,7 @@ jobs:
         run: |
           node src/build-site.mjs
           node scripts/inject-podcast-upload-link.mjs
+          node scripts/inject-app-privacy-link.mjs
 
       - name: Apply Sapiver Forge public branding guard
         run: node scripts/rebrand-public-sapiver-forge.mjs

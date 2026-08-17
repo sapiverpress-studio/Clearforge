@@ -1,10 +1,12 @@
 {
-  "name": "sapiver-forge-weekly-promo",
-  "version": "1.0.0",
+  "name": "sapiver-forge-weekly-content",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
-  "description": "Generate, review and publish a seven-day Sapiver Forge promotional media pack.",
+  "description": "Generate and review a seven-day Sapiver Forge content kit aligned with the 12-month execution plan, without automated audio or video generation.",
   "scripts": {
+    "content:generate": "node src/generate-fresh-weekly-promo-pack.mjs",
+    "content:validate": "node test/weekly-promo-contract.mjs",
     "promo:generate": "node src/generate-fresh-weekly-promo-pack.mjs",
     "promo:validate": "node test/weekly-promo-contract.mjs",
     "youtube:upload": "node src/upload-youtube-short.mjs"

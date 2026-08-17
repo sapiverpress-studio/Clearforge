@@ -1,0 +1,97 @@
+name: Generate Sapiver Forge Weekly Content Kit
+
+on:
+  workflow_dispatch:
+    inputs:
+      week_id:
+        description: Optional week label (YYYY-MM-DD). Leave blank to use today.
+        required: false
+        type: string
+  schedule:
+    - cron: '5 5 * * 1'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/weekly-content-kit.yml'
+      - 'src/generate-fresh-weekly-promo-pack.mjs'
+      - 'test/weekly-promo-contract.mjs'
+      - 'data/sapiver-forge-products.json'
+      - 'package.json'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sapiver-forge-weekly-content-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out Sapiver Forge
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Resolve week ID
+        id: week
+        shell: bash
+        env:
+          REQUESTED_WEEK: ${{ inputs.week_id }}
+        run: |
+          set -euo pipefail
+          if [ -n "${REQUESTED_WEEK:-}" ]; then
+            WEEK_ID="$REQUESTED_WEEK"
+          else
+            WEEK_ID="$(date -u +%F)"
+          fi
+          if ! echo "$WEEK_ID" | grep -Eq '^[0-9]{4}-[0-9]{2}-[0-9]{2}$'; then
+            echo "week_id must use YYYY-MM-DD" >&2
+            exit 1
+          fi
+          echo "week_id=$WEEK_ID" >> "$GITHUB_OUTPUT"
+
+      - name: Validate content-only contract
+        env:
+          WEEK_ID: contract-test
+        run: node test/weekly-promo-contract.mjs
+
+      - name: Generate fresh weekly content kit
+        env:
+          WEEK_ID: ${{ steps.week.outputs.week_id }}
+        run: node src/generate-fresh-weekly-promo-pack.mjs
+
+      - name: Verify no generated media
+        env:
+          WEEK_ID: ${{ steps.week.outputs.week_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT="weekly-output/$WEEK_ID"
+          test -s "$OUT/weekly-content-kit.md"
+          test -s "$OUT/human-review.html"
+          test -s "$OUT/weekly-pack.json"
+          test ! -d "$OUT/audio"
+          test ! -d "$OUT/video"
+          node - <<'NODE'
+          const fs = require('fs');
+          const week = process.env.WEEK_ID;
+          const p = JSON.parse(fs.readFileSync(`weekly-output/${week}/weekly-pack.json`, 'utf8'));
+          if (p.generation.paid_media_calls !== 0) throw new Error('Paid media calls must remain zero.');
+          if (p.generation.automated_audio || p.generation.automated_video) throw new Error('Automated media generation must remain disabled.');
+          if (p.posts.filter(x => x.purpose === 'paid-offer-promotion').length !== 1) throw new Error('Expected exactly one direct paid promotion.');
+          if (p.posts.filter(x => /Notion/i.test(x.destination_name)).length !== 6) throw new Error('Expected six free Notion/list-growth routes.');
+          NODE
+
+      - name: Upload weekly content kit
+        uses: actions/upload-artifact@v4
+        with:
+          name: sapiver-forge-weekly-content-${{ steps.week.outputs.week_id }}-${{ github.run_number }}
+          path: weekly-output/${{ steps.week.outputs.week_id }}/
+          retention-days: 30
+          if-no-files-found: error

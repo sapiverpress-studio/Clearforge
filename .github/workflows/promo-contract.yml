@@ -1,47 +1,38 @@
-name: Weekly Promo Contract
+name: Weekly Content Kit Contract
+
 on:
   pull_request:
     paths:
       - 'data/sapiver-forge-products.json'
-      - 'src/generate-weekly-promo-pack.mjs'
-      - 'src/render-weekly-promo-video.mjs'
-      - 'src/upload-youtube-short.mjs'
+      - 'src/generate-fresh-weekly-promo-pack.mjs'
       - 'test/weekly-promo-contract.mjs'
-      - 'public/products/**'
-      - '.github/workflows/weekly-promo-pack.yml'
-      - '.github/workflows/approve-weekly-promo.yml'
-      - '.github/workflows/repair-weekly-promo-videos.yml'
-      - '.github/workflows/youtube-daily-short.yml'
+      - '.github/workflows/weekly-content-kit.yml'
       - '.github/workflows/promo-contract.yml'
       - 'package.json'
+  push:
+    branches: [main]
+    paths:
+      - 'src/generate-fresh-weekly-promo-pack.mjs'
+      - 'test/weekly-promo-contract.mjs'
+      - '.github/workflows/promo-contract.yml'
+
 permissions:
   contents: read
+
 jobs:
   contract:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
-        with:
-          sparse-checkout: |
-            package.json
-            data/sapiver-forge-products.json
-            src/generate-weekly-promo-pack.mjs
-            src/render-weekly-promo-video.mjs
-            test/weekly-promo-contract.mjs
-            public/products/gate-system/opportunity-gate/01_Cover.webp
-            public/products/gate-system/workflow-control-gate/01_Cover.webp
-            public/products/gate-system/output-release-gate/01_Cover.webp
-            public/products/gate-system/outcome-review-gate/01_Cover.webp
-            public/products/gate-system/complete-bundle/01_Cover.webp
-            public/products/notion-workspace/01_Cover.webp
-            .github/workflows/weekly-promo-pack.yml
-            .github/workflows/approve-weekly-promo.yml
-            .github/workflows/repair-weekly-promo-videos.yml
-          sparse-checkout-cone-mode: false
-          fetch-depth: 1
-      - uses: actions/setup-node@v4
+      - name: Check out Sapiver Forge
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - run: npm run promo:validate
+
+      - name: Validate weekly content kit
+        run: node test/weekly-promo-contract.mjs
         env:
           WEEK_ID: contract-test

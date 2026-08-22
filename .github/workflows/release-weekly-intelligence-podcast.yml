@@ -56,6 +56,7 @@ jobs:
           const manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
           if(manifest.candidate_id!==requested) throw new Error('Candidate ID mismatch. Review the current weekly package and try again.');
           if(manifest.human_approval_required!==true || manifest.approved_for_automatic_publication!==false) throw new Error('Podcast approval contract changed unexpectedly.');
+          if(!manifest.file_hashes?.['weekly-article.html']) throw new Error('Reviewed weekly article is not sealed into the candidate.');
           for(const [name,expected] of Object.entries(manifest.file_hashes||{})){
             const file=path.join(dir,name);
             if(!fs.existsSync(file)) throw new Error(`Sealed file missing: ${name}`);
@@ -65,6 +66,14 @@ jobs:
           NODE
           echo "PODCAST_WEEK_END=$WEEK" >> "$GITHUB_ENV"
           echo "PODCAST_SLUG=${WEEK}-weekly-intelligence" >> "$GITHUB_ENV"
+
+      - name: Release reviewed weekly article into public source
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public/posts public/features
+          cp "reports/weekly-intelligence/${PODCAST_WEEK_END}/weekly-article.html" "public/posts/${PODCAST_SLUG}.html"
+          cp "reports/weekly-intelligence/${PODCAST_WEEK_END}/weekly-article.html" "public/features/${PODCAST_SLUG}.html"
 
       - name: Generate MP3 with the existing podcast voice
         env:
@@ -105,7 +114,8 @@ jobs:
           NODE
           git config user.name "sapiver-forge-intelligence-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add "reports/weekly-intelligence/${PODCAST_WEEK_END}" public/podcast
+          git add "reports/weekly-intelligence/${PODCAST_WEEK_END}" public/podcast \
+                  "public/posts/${PODCAST_SLUG}.html" "public/features/${PODCAST_SLUG}.html"
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Release weekly intelligence podcast ${PODCAST_WEEK_END} [skip ci]"
           git push

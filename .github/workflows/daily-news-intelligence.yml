@@ -84,6 +84,7 @@ jobs:
         run: node src/generate-news-intelligence.mjs
 
       - name: Validate intelligence contract
+        id: contract
         if: github.event_name != 'push'
         shell: bash
         run: |
@@ -98,7 +99,9 @@ jobs:
           if (manifest.approved_for_automatic_distribution !== false) throw new Error('Current news must not be auto-approved for social distribution.');
           if (!Array.isArray(manifest.stories) || manifest.stories.length < 1) throw new Error('No intelligence stories were produced.');
           if (!fs.existsSync(`news-intelligence/${date}/human-review.html`)) throw new Error('Human review file missing.');
-          console.log(`Validated ${date}: ${manifest.healthy_source_count}/5 sources healthy; newsletter-ready=${manifest.newsletter_ready_for_human_approval}.`);
+          const ready = manifest.newsletter_ready_for_human_approval === true;
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `ready=${ready}\n`);
+          console.log(`Validated ${date}: ${manifest.healthy_source_count}/5 sources healthy; newsletter-ready=${ready}.`);
           NODE
 
       - name: Sync new Daily Brief subscribers to the separate Brevo list
@@ -113,7 +116,7 @@ jobs:
         run: node scripts/sync-netlify-subscribers-to-brevo.mjs
 
       - name: Create Brevo draft campaign
-        if: github.event_name != 'push'
+        if: github.event_name != 'push' && steps.contract.outputs.ready == 'true'
         env:
           BREVO_SEND_MODE: draft
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}

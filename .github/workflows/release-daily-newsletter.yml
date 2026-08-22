@@ -35,6 +35,7 @@ jobs:
           node-version: '24'
 
       - name: Verify human release request
+        id: release
         shell: bash
         env:
           DATE: ${{ inputs.edition_date }}
@@ -59,10 +60,10 @@ jobs:
           if (Number(manifest.overall_confidence || 0) < 0.78) throw new Error('Candidate is below the release confidence threshold.');
           NODE
           echo "NEWS_INTELLIGENCE_DATE=$DATE" >> "$GITHUB_ENV"
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
 
       - name: Send reviewed campaign through Brevo
         env:
-          NEWS_INTELLIGENCE_DATE: ${{ env.NEWS_INTELLIGENCE_DATE }}
           BREVO_SEND_MODE: send
           NEWSLETTER_APPROVED: 'true'
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}

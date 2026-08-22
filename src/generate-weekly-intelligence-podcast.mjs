@@ -35,7 +35,8 @@ function loadDailyEditions() {
     const manifest = readJson(file);
     if (manifest.type !== "sapiver_forge_news_intelligence") continue;
     if (!Array.isArray(manifest.stories) || manifest.stories.length < 1) continue;
-    if (Number(manifest.overall_confidence || 0) < 0.72) continue;
+    if (manifest.newsletter_ready_for_human_approval !== true) continue;
+    if (Number(manifest.overall_confidence || 0) < 0.78) continue;
     editions.push(manifest);
   }
   return editions;
@@ -80,7 +81,7 @@ function makeTranscript(podcast) {
   return text;
 }
 
-function publicWeeklyHtml(podcast, editions, sources) {
+function weeklyArticleHtml(podcast, editions, sources) {
   const highlights = editions.flatMap((edition) => edition.stories.map((story) => ({ ...story, date: edition.date })))
     .sort((a, b) => Number(b.confidence || 0) - Number(a.confidence || 0))
     .slice(0, 8);
@@ -89,7 +90,7 @@ function publicWeeklyHtml(podcast, editions, sources) {
 
 async function main() {
   const editions = loadDailyEditions();
-  if (editions.length < 3) throw new Error(`Need at least three verified daily intelligence editions between ${WEEK_START} and ${WEEK_END}; found ${editions.length}.`);
+  if (editions.length < 3) throw new Error(`Need at least three verification-ready Daily Brief editions between ${WEEK_START} and ${WEEK_END}; found ${editions.length}.`);
   if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required to synthesise the weekly podcast.");
 
   const podcast = await generateStructured({
@@ -117,7 +118,7 @@ async function main() {
       allSources.push({ source: story.source, title: story.source_title || story.headline, url: story.url, date: edition.date });
     }
   }
-  const sourceNotes = `# Sources for ${podcast.episode_title}\n\nThis episode synthesises verified Sapiver Forge Daily Brief editions from ${WEEK_START} to ${WEEK_END}.\n\n${allSources.map((source) => `- ${source.date} — [${source.source}: ${source.title}](${source.url})`).join("\n")}`;
+  const sourceNotes = `# Sources for ${podcast.episode_title}\n\nThis episode synthesises verification-ready Sapiver Forge Daily Brief editions from ${WEEK_START} to ${WEEK_END}.\n\n${allSources.map((source) => `- ${source.date} — [${source.source}: ${source.title}](${source.url})`).join("\n")}`;
   const metadataCore = {
     episode: {
       episode_title: clean(podcast.episode_title),
@@ -125,7 +126,7 @@ async function main() {
       date: WEEK_END,
       published_at: `${WEEK_END}T09:00:00Z`,
       estimated_duration_minutes: Math.max(8, Math.min(16, Number(podcast.estimated_duration_minutes || wordCount / 145))),
-      selection_reason: `Weekly synthesis of ${editions.length} verified Sapiver Forge Daily Brief editions.`,
+      selection_reason: `Weekly synthesis of ${editions.length} verification-ready Sapiver Forge Daily Brief editions.`,
       related_article_url: `${BASE}/posts/${slug}.html`,
       related_feature_url: `${BASE}/features/${slug}.html`
     },
@@ -143,12 +144,14 @@ async function main() {
     .digest("hex");
   const metadata = { ...metadataCore, candidate_id: candidateId };
   const scriptMd = `# ${podcast.episode_title}\n\n${podcast.episode_description}\n\n## Opening\n\n${podcast.opening}\n\n${podcast.sections.map((section) => `## ${section.heading}\n\n${section.narration}`).join("\n\n")}\n\n## Closing\n\n${podcast.closing}\n`;
+  const articleHtml = weeklyArticleHtml(podcast, editions, allSources);
 
   fs.writeFileSync(path.join(OUT, "COPY_PASTE_INTO_ELEVENLABS.txt"), transcript + "\n", "utf8");
   fs.writeFileSync(path.join(OUT, "podcast-script.md"), scriptMd, "utf8");
   fs.writeFileSync(path.join(OUT, "episode-metadata.json"), JSON.stringify(metadata, null, 2) + "\n", "utf8");
   fs.writeFileSync(path.join(OUT, "source-notes.md"), sourceNotes + "\n", "utf8");
-  const sealedFiles = ["COPY_PASTE_INTO_ELEVENLABS.txt", "podcast-script.md", "episode-metadata.json", "source-notes.md"];
+  fs.writeFileSync(path.join(OUT, "weekly-article.html"), articleHtml, "utf8");
+  const sealedFiles = ["COPY_PASTE_INTO_ELEVENLABS.txt", "podcast-script.md", "episode-metadata.json", "source-notes.md", "weekly-article.html"];
   const fileHashes = Object.fromEntries(sealedFiles.map((name) => [
     name,
     crypto.createHash("sha256").update(fs.readFileSync(path.join(OUT, name))).digest("hex")
@@ -164,19 +167,13 @@ async function main() {
     file_hashes: fileHashes
   }, null, 2) + "\n", "utf8");
 
-  const weeklyHtml = publicWeeklyHtml(podcast, editions, allSources);
-  fs.mkdirSync(path.join(ROOT, "public", "posts"), { recursive: true });
-  fs.mkdirSync(path.join(ROOT, "public", "features"), { recursive: true });
-  fs.writeFileSync(path.join(ROOT, "public", "posts", `${slug}.html`), weeklyHtml, "utf8");
-  fs.writeFileSync(path.join(ROOT, "public", "features", `${slug}.html`), weeklyHtml, "utf8");
-
   if (process.env.GITHUB_OUTPUT) {
     fs.appendFileSync(process.env.GITHUB_OUTPUT, `week_end=${WEEK_END}\n`);
     fs.appendFileSync(process.env.GITHUB_OUTPUT, `slug=${slug}\n`);
     fs.appendFileSync(process.env.GITHUB_OUTPUT, `report_dir=${path.relative(ROOT, OUT).replaceAll("\\", "/")}\n`);
     fs.appendFileSync(process.env.GITHUB_OUTPUT, `candidate_id=${candidateId}\n`);
   }
-  console.log(`Generated weekly intelligence podcast candidate ${candidateId}: ${wordCount} words from ${editions.length} daily editions.`);
+  console.log(`Generated sealed weekly intelligence podcast candidate ${candidateId}: ${wordCount} words from ${editions.length} daily editions.`);
 }
 
 main().catch((error) => {

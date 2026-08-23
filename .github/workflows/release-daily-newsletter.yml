@@ -12,7 +12,7 @@ on:
         required: true
         type: string
       confirm:
-        description: Type SEND to release this exact newsletter
+        description: Type SEND to release this exact newsletter and website edition
         required: true
         type: string
 
@@ -26,7 +26,7 @@ concurrency:
 jobs:
   release:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
 
@@ -60,6 +60,7 @@ jobs:
           if (Number(manifest.overall_confidence || 0) < 0.78) throw new Error('Candidate is below the release confidence threshold.');
           NODE
           echo "NEWS_INTELLIGENCE_DATE=$DATE" >> "$GITHUB_ENV"
+          echo "NEWS_INTELLIGENCE_CANDIDATE_ID=$CANDIDATE" >> "$GITHUB_ENV"
           echo "date=$DATE" >> "$GITHUB_OUTPUT"
 
       - name: Send reviewed campaign through Brevo
@@ -71,13 +72,23 @@ jobs:
           BREVO_TARGET_LIST_NAME: Sapiver Forge Daily Brief
         run: node src/send-daily-newsletter-brevo.mjs
 
-      - name: Commit send receipt
+      - name: Publish the same approved candidate into the website source
+        env:
+          BLOG_BASE_URL: https://sapiverforge-daily-brief.netlify.app
+        run: |
+          node src/publish-news-intelligence-site.mjs
+          node scripts/inject-news-intelligence-site.mjs
+
+      - name: Commit release receipt and website edition
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "sapiver-forge-intelligence-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add "news-intelligence/${NEWS_INTELLIGENCE_DATE}/newsletter-metadata.json"
+          git add "news-intelligence/${NEWS_INTELLIGENCE_DATE}/newsletter-metadata.json" \
+                  "news-intelligence/${NEWS_INTELLIGENCE_DATE}/site-release.json" \
+                  public/daily-brief/intelligence \
+                  public/daily-brief/index.html
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Record Daily Brief send ${NEWS_INTELLIGENCE_DATE} [skip ci]"
+          git commit -m "Release Daily Brief ${NEWS_INTELLIGENCE_DATE} to email and website [skip ci]"
           git push

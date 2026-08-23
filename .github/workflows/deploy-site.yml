@@ -26,6 +26,7 @@ jobs:
         run: |
           node src/build-site.mjs
           node scripts/inject-podcast-upload-link.mjs
+          node scripts/inject-news-intelligence-site.mjs
       - name: Deploy production
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}

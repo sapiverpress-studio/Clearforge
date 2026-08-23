@@ -26,7 +26,7 @@ concurrency:
 jobs:
   release:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 7
     steps:
       - uses: actions/checkout@v4
 
@@ -72,6 +72,21 @@ jobs:
           BREVO_TARGET_LIST_NAME: Sapiver Forge Daily Brief
         run: node src/send-daily-newsletter-brevo.mjs
 
+      - name: Persist Brevo send receipt immediately
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "sapiver-forge-intelligence-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add "news-intelligence/${NEWS_INTELLIGENCE_DATE}/newsletter-metadata.json"
+          if ! git diff --cached --quiet; then
+            git commit -m "Record Daily Brief send ${NEWS_INTELLIGENCE_DATE} [skip ci]"
+            for attempt in 1 2 3; do
+              if git push; then break; fi
+              git pull --rebase origin main
+            done
+          fi
+
       - name: Publish the same approved candidate into the website source
         env:
           BLOG_BASE_URL: https://sapiverforge-daily-brief.netlify.app
@@ -79,16 +94,17 @@ jobs:
           node src/publish-news-intelligence-site.mjs
           node scripts/inject-news-intelligence-site.mjs
 
-      - name: Commit release receipt and website edition
+      - name: Commit website edition
         shell: bash
         run: |
           set -euo pipefail
-          git config user.name "sapiver-forge-intelligence-bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add "news-intelligence/${NEWS_INTELLIGENCE_DATE}/newsletter-metadata.json" \
-                  "news-intelligence/${NEWS_INTELLIGENCE_DATE}/site-release.json" \
+          git add "news-intelligence/${NEWS_INTELLIGENCE_DATE}/site-release.json" \
                   public/daily-brief/intelligence \
                   public/daily-brief/index.html
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Release Daily Brief ${NEWS_INTELLIGENCE_DATE} to email and website [skip ci]"
+          git commit -m "Publish Daily Brief ${NEWS_INTELLIGENCE_DATE} website edition [skip ci]"
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase origin main
+          done
           git push

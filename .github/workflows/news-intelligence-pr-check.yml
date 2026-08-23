@@ -1,0 +1,93 @@
+name: News Intelligence PR Check
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/daily-news-intelligence.yml'
+      - '.github/workflows/release-daily-newsletter.yml'
+      - '.github/workflows/weekly-intelligence-podcast.yml'
+      - '.github/workflows/release-weekly-intelligence-podcast.yml'
+      - '.github/workflows/deploy-site.yml'
+      - '.github/workflows/news-intelligence-pr-check.yml'
+      - 'src/news-intelligence-sources.mjs'
+      - 'src/generate-news-intelligence.mjs'
+      - 'src/generate-weekly-intelligence-podcast.mjs'
+      - 'src/send-daily-newsletter-brevo.mjs'
+      - 'src/brevo-list-resolver.mjs'
+      - 'src/publish-news-intelligence-site.mjs'
+      - 'scripts/inject-news-intelligence-site.mjs'
+      - 'scripts/sync-netlify-subscribers-to-brevo.mjs'
+      - 'test/news-intelligence-sources-contract.mjs'
+      - 'public/newsletter/**'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Syntax and deterministic contracts
+        run: |
+          node --check src/news-intelligence-sources.mjs
+          node --check src/generate-news-intelligence.mjs
+          node --check src/generate-weekly-intelligence-podcast.mjs
+          node --check src/send-daily-newsletter-brevo.mjs
+          node --check src/brevo-list-resolver.mjs
+          node --check src/publish-news-intelligence-site.mjs
+          node --check scripts/inject-news-intelligence-site.mjs
+          node --check scripts/sync-netlify-subscribers-to-brevo.mjs
+          node test/news-intelligence-sources-contract.mjs
+
+      - name: Exercise approved website publication path
+        shell: bash
+        run: |
+          set -euo pipefail
+          TEST_DATE=2099-01-01
+          TEST_ID=pr-check-candidate
+          mkdir -p "news-intelligence/$TEST_DATE"
+          cat > "news-intelligence/$TEST_DATE/manifest.json" <<'JSON'
+          {
+            "schema_version": 1,
+            "type": "sapiver_forge_news_intelligence",
+            "date": "2099-01-01",
+            "candidate_id": "pr-check-candidate",
+            "newsletter_subject": "Sapiver Forge Daily Brief — PR check",
+            "newsletter_ready_for_human_approval": true,
+            "overall_confidence": 0.91,
+            "stories": [{
+              "category": "technology",
+              "headline": "Test verified intelligence story",
+              "confirmed_fact": "This is a deterministic fixture used only by CI.",
+              "why_it_matters": "It proves the approved website publication path renders correctly.",
+              "interpretation": "Our read: the release path is structurally intact.",
+              "source": "CI fixture",
+              "url": "https://example.com/source"
+            }],
+            "practical_takeaway": "The release path can create a public edition without external services.",
+            "watch_next": "Production runs still require human approval."
+          }
+          JSON
+          NEWS_INTELLIGENCE_DATE="$TEST_DATE" NEWS_INTELLIGENCE_CANDIDATE_ID="$TEST_ID" node src/publish-news-intelligence-site.mjs
+          node scripts/inject-news-intelligence-site.mjs
+          test -f "public/daily-brief/intelligence/$TEST_DATE/index.html"
+          test -f "public/daily-brief/intelligence/index.html"
+          test -f "news-intelligence/$TEST_DATE/site-release.json"
+          grep -q "Test verified intelligence story" "public/daily-brief/intelligence/$TEST_DATE/index.html"
+          grep -q "Latest verified intelligence" "public/daily-brief/index.html"
+
+      - name: Smoke test the five discovery sources
+        run: |
+          node --input-type=module <<'NODE'
+          import { collectNewsSources } from './src/news-intelligence-sources.mjs';
+          const result = await collectNewsSources();
+          console.log(JSON.stringify(result.source_status, null, 2));
+          if (result.healthy_source_count < 3) throw new Error(`Only ${result.healthy_source_count}/5 discovery sources healthy.`);
+          if (result.candidates.length < 8) throw new Error(`Only ${result.candidates.length} usable candidates collected.`);
+          NODE

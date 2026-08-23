@@ -1,0 +1,110 @@
+name: Release Sapiver Forge Daily Newsletter
+
+on:
+  workflow_dispatch:
+    inputs:
+      edition_date:
+        description: Exact Daily Brief date (YYYY-MM-DD)
+        required: true
+        type: string
+      candidate_id:
+        description: Exact candidate ID shown in the human-review package
+        required: true
+        type: string
+      confirm:
+        description: Type SEND to release this exact newsletter and website edition
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sapiver-forge-daily-newsletter-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Verify human release request
+        id: release
+        shell: bash
+        env:
+          DATE: ${{ inputs.edition_date }}
+          CANDIDATE: ${{ inputs.candidate_id }}
+          CONFIRM: ${{ inputs.confirm }}
+        run: |
+          set -euo pipefail
+          [ "$CONFIRM" = "SEND" ] || { echo "Confirmation must be exactly SEND" >&2; exit 1; }
+          echo "$DATE" | grep -Eq '^[0-9]{4}-[0-9]{2}-[0-9]{2}$'
+          node <<'NODE'
+          const fs = require('fs');
+          const date = process.env.DATE;
+          const requested = process.env.CANDIDATE;
+          const manifestPath = `news-intelligence/${date}/manifest.json`;
+          const metaPath = `news-intelligence/${date}/newsletter-metadata.json`;
+          if (!fs.existsSync(manifestPath) || !fs.existsSync(metaPath)) throw new Error(`No committed intelligence candidate for ${date}.`);
+          const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+          const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+          if (manifest.candidate_id !== requested) throw new Error('Candidate ID mismatch. Review the current candidate and try again.');
+          if (meta.candidate_id !== requested) throw new Error('Newsletter metadata does not match the reviewed candidate.');
+          if (manifest.newsletter_ready_for_human_approval !== true) throw new Error('This candidate is not verification-ready.');
+          if (Number(manifest.overall_confidence || 0) < 0.78) throw new Error('Candidate is below the release confidence threshold.');
+          NODE
+          echo "NEWS_INTELLIGENCE_DATE=$DATE" >> "$GITHUB_ENV"
+          echo "NEWS_INTELLIGENCE_CANDIDATE_ID=$CANDIDATE" >> "$GITHUB_ENV"
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+
+      - name: Send reviewed campaign through Brevo
+        env:
+          BREVO_SEND_MODE: send
+          NEWSLETTER_APPROVED: 'true'
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          BREVO_LIST_ID: ${{ secrets.BREVO_LIST_ID }}
+          BREVO_TARGET_LIST_NAME: Sapiver Forge Daily Brief
+        run: node src/send-daily-newsletter-brevo.mjs
+
+      - name: Persist Brevo send receipt immediately
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "sapiver-forge-intelligence-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add "news-intelligence/${NEWS_INTELLIGENCE_DATE}/newsletter-metadata.json"
+          if ! git diff --cached --quiet; then
+            git commit -m "Record Daily Brief send ${NEWS_INTELLIGENCE_DATE} [skip ci]"
+            for attempt in 1 2 3; do
+              if git push; then break; fi
+              git pull --rebase origin main
+            done
+          fi
+
+      - name: Publish the same approved candidate into the website source
+        env:
+          BLOG_BASE_URL: https://sapiverforge-daily-brief.netlify.app
+        run: |
+          node src/publish-news-intelligence-site.mjs
+          node scripts/inject-news-intelligence-site.mjs
+
+      - name: Commit website edition
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add "news-intelligence/${NEWS_INTELLIGENCE_DATE}/site-release.json" \
+                  public/daily-brief/intelligence \
+                  public/daily-brief/index.html
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Publish Daily Brief ${NEWS_INTELLIGENCE_DATE} website edition [skip ci]"
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase origin main
+          done
+          git push

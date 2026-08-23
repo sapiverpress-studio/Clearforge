@@ -1,3 +1,5 @@
+import { resolveBrevoListId } from "../src/brevo-list-resolver.mjs";
+
 const required = ["NETLIFY_AUTH_TOKEN", "BREVO_API_KEY", "BREVO_LIST_ID", "NETLIFY_SITE_ID"];
 for (const name of required) {
   if (!process.env[name]) throw new Error(`Missing required environment variable: ${name}`);
@@ -5,11 +7,12 @@ for (const name of required) {
 
 const netlifyToken = process.env.NETLIFY_AUTH_TOKEN;
 const brevoKey = process.env.BREVO_API_KEY;
-const listId = Number(process.env.BREVO_LIST_ID);
+const fallbackListId = Number(process.env.BREVO_LIST_ID);
 const siteId = process.env.NETLIFY_SITE_ID;
 const targetForm = process.env.NETLIFY_FORM_NAME || "clearforge-weekly-digest";
+const targetListName = String(process.env.BREVO_TARGET_LIST_NAME || "").trim();
 
-if (!Number.isInteger(listId) || listId <= 0) throw new Error("BREVO_LIST_ID must be a positive integer.");
+if (!Number.isInteger(fallbackListId) || fallbackListId <= 0) throw new Error("BREVO_LIST_ID must be a positive integer.");
 
 async function jsonRequest(url, options = {}) {
   const response = await fetch(url, options);
@@ -23,6 +26,10 @@ async function jsonRequest(url, options = {}) {
   }
   return body;
 }
+
+const listId = targetListName
+  ? await resolveBrevoListId({ apiKey: brevoKey, fallbackListId, targetListName })
+  : fallbackListId;
 
 const submissions = await jsonRequest(`https://api.netlify.com/api/v1/sites/${encodeURIComponent(siteId)}/submissions`, {
   headers: { Authorization: `Bearer ${netlifyToken}` }
@@ -58,7 +65,7 @@ for (const [email] of unique) {
     })
   });
   synced += 1;
-  console.log(`Synced ${email} to Brevo list ${listId}.`);
+  console.log(`Synced ${email} to Brevo list ${listId}${targetListName ? ` (${targetListName})` : ""}.`);
 }
 
 console.log(`Finished: ${synced} consented subscriber${synced === 1 ? "" : "s"} synced from Netlify form ${targetForm}.`);

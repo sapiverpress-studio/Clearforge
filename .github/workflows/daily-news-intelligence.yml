@@ -1,0 +1,151 @@
+name: Sapiver Forge Daily News Intelligence
+
+on:
+  workflow_dispatch:
+    inputs:
+      edition_date:
+        description: Optional edition date (YYYY-MM-DD). Leave blank for today in Europe/London.
+        required: false
+        type: string
+  schedule:
+    - cron: '10 6 * * 1-5'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/daily-news-intelligence.yml'
+      - 'src/news-intelligence-sources.mjs'
+      - 'src/generate-news-intelligence.mjs'
+      - 'src/send-daily-newsletter-brevo.mjs'
+      - 'src/brevo-list-resolver.mjs'
+      - 'scripts/sync-netlify-subscribers-to-brevo.mjs'
+      - 'test/news-intelligence-sources-contract.mjs'
+      - 'src/gemini-provider.mjs'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sapiver-forge-daily-news-intelligence-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Resolve edition date
+        id: edition
+        shell: bash
+        env:
+          REQUESTED_DATE: ${{ inputs.edition_date }}
+        run: |
+          set -euo pipefail
+          if [ -n "${REQUESTED_DATE:-}" ]; then
+            DATE="$REQUESTED_DATE"
+          else
+            DATE="$(TZ=Europe/London date +%F)"
+          fi
+          echo "$DATE" | grep -Eq '^[0-9]{4}-[0-9]{2}-[0-9]{2}$'
+          echo "NEWS_INTELLIGENCE_DATE=$DATE" >> "$GITHUB_ENV"
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+
+      - name: Syntax checks
+        run: |
+          node --check src/news-intelligence-sources.mjs
+          node --check src/generate-news-intelligence.mjs
+          node --check src/send-daily-newsletter-brevo.mjs
+          node --check src/brevo-list-resolver.mjs
+          node --check scripts/sync-netlify-subscribers-to-brevo.mjs
+          node test/news-intelligence-sources-contract.mjs
+
+      - name: Smoke test five discovery sources
+        if: github.event_name == 'pull_request'
+        run: |
+          node --input-type=module <<'NODE'
+          import { collectNewsSources } from './src/news-intelligence-sources.mjs';
+          const result = await collectNewsSources();
+          console.log(JSON.stringify(result.source_status, null, 2));
+          if (result.healthy_source_count < 3) throw new Error(`Only ${result.healthy_source_count}/5 discovery sources healthy.`);
+          if (result.candidates.length < 8) throw new Error(`Only ${result.candidates.length} news candidates collected.`);
+          NODE
+
+      - name: Build verified daily intelligence candidate
+        if: github.event_name != 'pull_request'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          BLOG_BASE_URL: https://sapiverforge-daily-brief.netlify.app
+        run: node src/generate-news-intelligence.mjs
+
+      - name: Validate intelligence contract
+        id: contract
+        if: github.event_name != 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('fs');
+          const date = process.env.NEWS_INTELLIGENCE_DATE;
+          const manifest = JSON.parse(fs.readFileSync(`news-intelligence/${date}/manifest.json`, 'utf8'));
+          if (manifest.schema_version !== 1) throw new Error('Unexpected news intelligence schema.');
+          if (manifest.type !== 'sapiver_forge_news_intelligence') throw new Error('Unexpected intelligence type.');
+          if (!Array.isArray(manifest.source_set) || manifest.source_set.length !== 5) throw new Error('Expected the five-source discovery set.');
+          if (manifest.approved_for_automatic_distribution !== false) throw new Error('Current news must not be auto-approved for social distribution.');
+          if (!Array.isArray(manifest.stories) || manifest.stories.length < 1) throw new Error('No intelligence stories were produced.');
+          if (!fs.existsSync(`news-intelligence/${date}/human-review.html`)) throw new Error('Human review file missing.');
+          const ready = manifest.newsletter_ready_for_human_approval === true;
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `ready=${ready}\n`);
+          console.log(`Validated ${date}: ${manifest.healthy_source_count}/5 sources healthy; newsletter-ready=${ready}.`);
+          NODE
+
+      - name: Sync new Daily Brief subscribers to the separate Brevo list
+        if: github.event_name != 'pull_request'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: '8e72a4fc-5ad6-4377-8f4a-399d4c936060'
+          NETLIFY_FORM_NAME: sapiver-daily-brief
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          BREVO_LIST_ID: ${{ secrets.BREVO_LIST_ID }}
+          BREVO_TARGET_LIST_NAME: Sapiver Forge Daily Brief
+        run: node scripts/sync-netlify-subscribers-to-brevo.mjs
+
+      - name: Create Brevo draft campaign
+        if: github.event_name != 'pull_request' && steps.contract.outputs.ready == 'true'
+        env:
+          BREVO_SEND_MODE: draft
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          BREVO_LIST_ID: ${{ secrets.BREVO_LIST_ID }}
+          BREVO_TARGET_LIST_NAME: Sapiver Forge Daily Brief
+        run: node src/send-daily-newsletter-brevo.mjs
+
+      - name: Commit daily intelligence and bridge
+        if: always() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        shell: bash
+        run: |
+          set -euo pipefail
+          DATE="${NEWS_INTELLIGENCE_DATE}"
+          test -d "news-intelligence/$DATE" || exit 0
+          git config user.name "sapiver-forge-intelligence-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add "news-intelligence/$DATE" bridge/news-intelligence/latest
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Publish Sapiver Forge intelligence candidate $DATE [skip ci]"
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase origin main
+          done
+          git push
+
+      - name: Upload human review package
+        if: always() && github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: sapiver-forge-daily-intelligence-${{ steps.edition.outputs.date }}-${{ github.run_number }}
+          path: news-intelligence/${{ steps.edition.outputs.date }}/
+          retention-days: 14
+          if-no-files-found: warn

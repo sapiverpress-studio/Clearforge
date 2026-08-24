@@ -17,8 +17,10 @@ on:
       - 'src/generate-news-intelligence.mjs'
       - 'src/send-daily-newsletter-brevo.mjs'
       - 'src/brevo-list-resolver.mjs'
+      - 'src/brevo-campaign-errors.mjs'
       - 'scripts/sync-netlify-subscribers-to-brevo.mjs'
       - 'test/news-intelligence-sources-contract.mjs'
+      - 'test/brevo-empty-list-contract.mjs'
       - 'src/gemini-provider.mjs'
 
 permissions:
@@ -61,8 +63,10 @@ jobs:
           node --check src/generate-news-intelligence.mjs
           node --check src/send-daily-newsletter-brevo.mjs
           node --check src/brevo-list-resolver.mjs
+          node --check src/brevo-campaign-errors.mjs
           node --check scripts/sync-netlify-subscribers-to-brevo.mjs
           node test/news-intelligence-sources-contract.mjs
+          node test/brevo-empty-list-contract.mjs
 
       - name: Smoke test five discovery sources
         if: github.event_name == 'pull_request'
@@ -103,7 +107,7 @@ jobs:
           console.log(`Validated ${date}: ${manifest.healthy_source_count}/5 sources healthy; newsletter-ready=${ready}.`);
           NODE
 
-      - name: Sync new Daily Brief subscribers to the separate Brevo list
+      - name: Sync new Daily Brief subscribers to the established Brevo list
         if: github.event_name != 'pull_request'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -111,16 +115,14 @@ jobs:
           NETLIFY_FORM_NAME: sapiver-daily-brief
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
           BREVO_LIST_ID: ${{ secrets.BREVO_LIST_ID }}
-          BREVO_TARGET_LIST_NAME: Sapiver Forge Daily Brief
         run: node scripts/sync-netlify-subscribers-to-brevo.mjs
 
-      - name: Create Brevo draft campaign
+      - name: Create Brevo draft campaign on the established list
         if: github.event_name != 'pull_request' && steps.contract.outputs.ready == 'true'
         env:
           BREVO_SEND_MODE: draft
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
           BREVO_LIST_ID: ${{ secrets.BREVO_LIST_ID }}
-          BREVO_TARGET_LIST_NAME: Sapiver Forge Daily Brief
         run: node src/send-daily-newsletter-brevo.mjs
 
       - name: Commit daily intelligence and bridge

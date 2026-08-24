@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { resolveBrevoListId } from "./brevo-list-resolver.mjs";
+import { isBrevoEmptyRecipientsError } from "./brevo-campaign-errors.mjs";
 
 const ROOT = process.cwd();
 const date = String(process.env.NEWS_INTELLIGENCE_DATE || new Intl.DateTimeFormat("sv-SE", {
@@ -10,7 +11,7 @@ const mode = String(process.env.BREVO_SEND_MODE || "draft").toLowerCase();
 const approved = String(process.env.NEWSLETTER_APPROVED || "false").toLowerCase() === "true";
 const apiKey = process.env.BREVO_API_KEY;
 const fallbackListId = Number(process.env.BREVO_LIST_ID);
-const targetListName = process.env.BREVO_TARGET_LIST_NAME || "Sapiver Forge Daily Brief";
+const targetListName = String(process.env.BREVO_TARGET_LIST_NAME || "").trim();
 const senderEmail = process.env.BREVO_SENDER_EMAIL || "clearforge@sapiverpress.co.uk";
 const senderName = process.env.BREVO_SENDER_NAME || "Sapiver Forge";
 const dir = path.join(ROOT, "news-intelligence", date);
@@ -35,7 +36,10 @@ if (metadata.status === "sent") {
   process.exit(0);
 }
 
-const listId = await resolveBrevoListId({ apiKey, fallbackListId, targetListName });
+const listId = targetListName
+  ? await resolveBrevoListId({ apiKey, fallbackListId, targetListName })
+  : fallbackListId;
+const listLabel = targetListName || `existing Brevo list ${listId}`;
 const htmlContent = fs.readFileSync(htmlPath, "utf8");
 const headers = { "api-key": apiKey, "content-type": "application/json", accept: "application/json" };
 let campaignId = Number(metadata.brevo_campaign_id || 0) || null;
@@ -53,10 +57,24 @@ if (!campaignId) {
       recipients: { listIds: [listId] },
       inlineImageActivation: false,
       mirrorActive: true,
-      footer: "You received this because you subscribed to the Sapiver Forge Daily Brief."
+      footer: "You received this because you subscribed to Sapiver Forge."
     })
   });
   const createText = await createResponse.text();
+
+  if (!createResponse.ok && isBrevoEmptyRecipientsError(createResponse.status, createText)) {
+    Object.assign(metadata, {
+      status: "ready_no_subscribers",
+      brevo_campaign_id: null,
+      recipient_list_id: listId,
+      email_skipped_reason: "no_subscribers_in_target_list",
+      email_skipped_at: new Date().toISOString()
+    });
+    fs.writeFileSync(metaPath, JSON.stringify(metadata, null, 2) + "\n");
+    console.log(`No contacts are currently in ${listLabel}; Brevo draft/send skipped without failing the Daily Brief run.`);
+    process.exit(0);
+  }
+
   if (!createResponse.ok) throw new Error(`Brevo campaign creation failed (${createResponse.status}): ${createText}`);
   const campaign = JSON.parse(createText);
   if (!campaign.id) throw new Error("Brevo did not return a campaign id.");
@@ -65,10 +83,12 @@ if (!campaignId) {
     status: "brevo_draft",
     brevo_campaign_id: campaignId,
     recipient_list_id: listId,
-    campaign_created_at: new Date().toISOString()
+    campaign_created_at: new Date().toISOString(),
+    email_skipped_reason: null,
+    email_skipped_at: null
   });
   fs.writeFileSync(metaPath, JSON.stringify(metadata, null, 2) + "\n");
-  console.log(`Created Brevo draft campaign ${campaignId} for Sapiver Forge Daily Brief ${date}.`);
+  console.log(`Created Brevo draft campaign ${campaignId} for Sapiver Forge Daily Brief ${date} using ${listLabel}.`);
 }
 
 if (mode === "draft") {
@@ -88,7 +108,9 @@ Object.assign(metadata, {
   approved: true,
   sent_at: new Date().toISOString(),
   brevo_campaign_id: campaignId,
-  recipient_list_id: listId
+  recipient_list_id: listId,
+  email_skipped_reason: null,
+  email_skipped_at: null
 });
 fs.writeFileSync(metaPath, JSON.stringify(metadata, null, 2) + "\n");
-console.log(`Sent Sapiver Forge Daily Brief ${date} through Brevo campaign ${campaignId}.`);
+console.log(`Sent Sapiver Forge Daily Brief ${date} through Brevo campaign ${campaignId} using ${listLabel}.`);

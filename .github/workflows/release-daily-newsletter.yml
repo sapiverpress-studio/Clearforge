@@ -63,13 +63,12 @@ jobs:
           echo "NEWS_INTELLIGENCE_CANDIDATE_ID=$CANDIDATE" >> "$GITHUB_ENV"
           echo "date=$DATE" >> "$GITHUB_OUTPUT"
 
-      - name: Send reviewed campaign through Brevo
+      - name: Send reviewed campaign through established Brevo list
         env:
           BREVO_SEND_MODE: send
           NEWSLETTER_APPROVED: 'true'
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
           BREVO_LIST_ID: ${{ secrets.BREVO_LIST_ID }}
-          BREVO_TARGET_LIST_NAME: Sapiver Forge Daily Brief
         run: node src/send-daily-newsletter-brevo.mjs
 
       - name: Persist Brevo send receipt immediately

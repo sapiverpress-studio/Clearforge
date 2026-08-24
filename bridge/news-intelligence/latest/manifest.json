@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "type": "sapiver_forge_news_intelligence",
+  "date": "2026-08-24",
+  "generated_at": "2026-08-24T06:27:00.579Z",
+  "source_set": [
+    "Techmeme",
+    "Reuters",
+    "Hacker News",
+    "Hugging Face",
+    "Sifted"
+  ],
+  "source_status": [
+    {
+      "name": "Techmeme",
+      "ok": true,
+      "item_count": 12,
+      "elapsed_ms": 133
+    },
+    {
+      "name": "Reuters",
+      "ok": false,
+      "item_count": 0,
+      "elapsed_ms": 83,
+      "error": "401 HTTP Forbidden"
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "item_count": 10,
+      "elapsed_ms": 384
+    },
+    {
+      "name": "Hugging Face",
+      "ok": true,
+      "item_count": 12,
+      "elapsed_ms": 188
+    },
+    {
+      "name": "Sifted",
+      "ok": true,
+      "item_count": 12,
+      "elapsed_ms": 1079
+    }
+  ],
+  "healthy_source_count": 4,
+  "human_approval_required": true,
+  "approved_for_automatic_distribution": false,
+  "newsletter_ready_for_human_approval": true,
+  "newsletter_subject": "Sapiver Forge Daily Brief — 2026-08-24",
+  "overall_confidence": 0.875,
+  "stories": [
+    {
+      "category": "lead",
+      "headline": "US-Europe AI investment gap widens",
+      "confirmed_fact": "Oxford Economics projects US corporate spending on equipment and facilities will rise 40% between 2021 and 2027, compared to 12% in the Eurozone. This growth is primarily driven by massive AI data center investments from major US tech firms.",
+      "why_it_matters": "The disparity suggests a potential long-term productivity and infrastructure advantage for the US, as European markets struggle to match the scale of AI-focused capital expenditure.",
+      "interpretation": "Our read is that this trend signals a deepening divergence in industrial competitiveness, potentially forcing European policymakers to reconsider their approach to tech-sector incentives.",
+      "confidence": 0.95,
+      "source": "Techmeme",
+      "source_title": "Oxford Economics: US corporate spending on equipment and facilities is set to rise 40% between 2021 and 2027, over 3x faster than Europe, driven by the AI race (Financial Times)",
+      "url": "https://www.techmeme.com/260824/p3",
+      "published_at": "2026-08-24T06:01:30.000Z",
+      "discovery_score": 7.833
+    },
+    {
+      "category": "business",
+      "headline": "Enterprise adoption of Anthropic tools plateaus",
+      "confirmed_fact": "Data from 70,000 companies via Ramp shows enterprise spending on Anthropic's Fable 5 model has plateaued at 11% of total AI tool spend. Meanwhile, Anthropic's annualized revenue reached $65 billion in July.",
+      "why_it_matters": "While revenue is growing, the plateau in enterprise share suggests that Anthropic faces stiff competition in securing long-term corporate loyalty against incumbents like OpenAI.",
+      "interpretation": "Our read is that the enterprise market is becoming increasingly fragmented, with companies testing multiple frontier models rather than standardising on a single provider.",
+      "confidence": 0.85,
+      "source": "Hacker News",
+      "source_title": "Anthropic's best AI model struggles to attract users as cheaper tools thrive",
+      "url": "https://www.ft.com/content/5ee49718-c258-4f01-aa32-7e5b76ae5245",
+      "published_at": "2026-08-23T18:16:37.000Z",
+      "discovery_score": 7.933
+    },
+    {
+      "category": "business",
+      "headline": "Nvidia in talks to back Perplexity AI",
+      "confirmed_fact": "Nvidia is in active discussions to join a new equity round for Perplexity AI, which would value the search startup at over $30 billion. Perplexity recently reported annualized revenue exceeding $750 million.",
+      "why_it_matters": "This move highlights Nvidia's strategy of deepening its influence across the AI stack by investing in high-growth application layers beyond its core hardware business.",
+      "interpretation": "Our read is that Nvidia is positioning itself to capture value from the 'search-to-answer' shift in AI, ensuring its hardware remains the backbone of the most popular AI interfaces.",
+      "confidence": 0.8,
+      "source": "Techmeme",
+      "source_title": "Sources: Nvidia is in talks to invest in Perplexity's new equity round valuing it at $30B+; Nvidia considered a tech licensing deal and hiring some of its staff (The Information)",
+      "url": "https://www.techmeme.com/260823/p18",
+      "published_at": "2026-08-24T03:50:00.000Z",
+      "discovery_score": 7.501
+    },
+    {
+      "category": "technology",
+      "headline": "New Zealand proposes social media ban for under-16s",
+      "confirmed_fact": "The New Zealand government has introduced the Online Safety Bill, which would ban under-16s from high-risk social media platforms and impose fines of up to 10% of global turnover for non-compliance.",
+      "why_it_matters": "The bill represents a significant regulatory attempt to curb online harm, though its passage is uncertain as coalition partners have publicly stated they will vote against it.",
+      "interpretation": "Our read is that this is a high-profile political signal rather than a near-term legislative certainty, reflecting global tensions between tech platforms and child safety advocates.",
+      "confidence": 0.9,
+      "source": "Techmeme",
+      "source_title": "New Zealand plans a bill to ban social media for under-16s, requiring \"high risk\" platforms to check user ages or face penalties of up to 10% of global revenue (Tracy Withers/Bloomberg)",
+      "url": "https://www.techmeme.com/260824/p2",
+      "published_at": "2026-08-24T05:01:38.000Z",
+      "discovery_score": 7.711
+    }
+  ],
+  "practical_takeaway": "Monitor the divergence in US and European capital expenditure, as this will likely dictate the availability and cost of AI-driven infrastructure for your business over the next three years.",
+  "watch_next": "Watch for the outcome of the New Zealand social media bill and any official confirmation of the Nvidia-Perplexity deal, which could signal a shift in AI search market dynamics.",
+  "social": {
+    "date": "2026-08-24",
+    "lead_headline": "US-Europe AI investment gap widens",
+    "facebook_post": "US-Europe AI investment gap widens\n\nThe disparity suggests a potential long-term productivity and infrastructure advantage for the US, as European markets struggle to match the scale of AI-focused capital expenditure.\n\nToday's Sapiver Forge Daily Brief covers 4 developments across AI, technology and business.\n\nhttps://sapiverforge-daily-brief.netlify.app/daily-brief/",
+    "pinterest_title": "US-Europe AI investment gap widens",
+    "pinterest_description": "The disparity suggests a potential long-term productivity and infrastructure advantage for the US, as European markets struggle to match the scale of AI-focused capital expenditure.\n\nRead today's Sapiver Forge Daily Brief: https://sapiverforge-daily-brief.netlify.app/daily-brief/",
+    "tiktok_caption": "US-Europe AI investment gap widens. Today's Sapiver Forge Daily Brief separates what is confirmed from what it might mean. #SapiverForge #AI #Technology #Business",
+    "spoken_script": "US-Europe AI investment gap widens. Oxford Economics projects US corporate spending on equipment and facilities will rise 40% between 2021 and 2027, compared to 12% in the Eurozone. This growth is primarily driven by massive AI data center investments from major US tech firms. Why it matters: The disparity suggests a potential long-term productivity and infrastructure advantage for the US, as European markets struggle to match the scale of AI-focused capital expenditure. That's one of today's stories in the Sapiver Forge Daily Brief."
+  },
+  "candidate_id": "08187f5973f44268334405b43caebc5452e744ea4dafb144801bb07503cdfba3"
+}

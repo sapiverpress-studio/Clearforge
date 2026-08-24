@@ -1,0 +1,410 @@
+{
+  "collected_at": "2026-08-24T06:26:28.031Z",
+  "expected_sources": [
+    "Techmeme",
+    "Reuters",
+    "Hacker News",
+    "Hugging Face",
+    "Sifted"
+  ],
+  "healthy_source_count": 4,
+  "source_status": [
+    {
+      "name": "Techmeme",
+      "ok": true,
+      "item_count": 12,
+      "elapsed_ms": 133
+    },
+    {
+      "name": "Reuters",
+      "ok": false,
+      "item_count": 0,
+      "elapsed_ms": 83,
+      "error": "401 HTTP Forbidden"
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "item_count": 10,
+      "elapsed_ms": 384
+    },
+    {
+      "name": "Hugging Face",
+      "ok": true,
+      "item_count": 12,
+      "elapsed_ms": 188
+    },
+    {
+      "name": "Sifted",
+      "ok": true,
+      "item_count": 12,
+      "elapsed_ms": 1079
+    }
+  ],
+  "candidates": [
+    {
+      "source": "Hacker News",
+      "source_home": "https://news.ycombinator.com/",
+      "source_rank": 1,
+      "title": "Everything I own, owned",
+      "url": "https://schlarp.com/posts/everything-i-own-owned/",
+      "discussion_url": "https://news.ycombinator.com/item?id=49413320",
+      "summary": "https://web.archive.org/web/20260823225933/https://schlarp.c...",
+      "published_at": "2026-08-23T22:41:04.000Z",
+      "engagement": {
+        "score": 593,
+        "comments": 184
+      },
+      "score": 8.277
+    },
+    {
+      "source": "Hacker News",
+      "source_home": "https://news.ycombinator.com/",
+      "source_rank": 3,
+      "title": "Anthropic's best AI model struggles to attract users as cheaper tools thrive",
+      "url": "https://www.ft.com/content/5ee49718-c258-4f01-aa32-7e5b76ae5245",
+      "discussion_url": "https://news.ycombinator.com/item?id=49411102",
+      "summary": "",
+      "published_at": "2026-08-23T18:16:37.000Z",
+      "engagement": {
+        "score": 409,
+        "comments": 354
+      },
+      "score": 7.933
+    },
+    {
+      "title": "Oxford Economics: US corporate spending on equipment and facilities is set to rise 40% between 2021 and 2027, over 3x faster than Europe, driven by the AI race (Financial Times)",
+      "url": "https://www.techmeme.com/260824/p3",
+      "summary": "Financial Times : Oxford Economics: US corporate spending on equipment and facilities is set to rise 40% between 2021 and 2027, over 3x faster than Europe, driven by the AI race &mdash; The bloc struggles to keep up with US spending on high-tech equipment and facilities",
+      "published_at": "2026-08-24T06:01:30.000Z",
+      "source": "Techmeme",
+      "source_home": "https://www.techmeme.com/",
+      "source_rank": 1,
+      "score": 7.833
+    },
+    {
+      "source": "Hacker News",
+      "source_home": "https://news.ycombinator.com/",
+      "source_rank": 5,
+      "title": "How I find problems to solve as a staff engineer",
+      "url": "https://lalitm.com/post/find-problems-staff-engineer/",
+      "discussion_url": "https://news.ycombinator.com/item?id=49411643",
+      "summary": "",
+      "published_at": "2026-08-23T19:23:29.000Z",
+      "engagement": {
+        "score": 369,
+        "comments": 123
+      },
+      "score": 7.82
+    },
+    {
+      "title": "New Zealand plans a bill to ban social media for under-16s, requiring \"high risk\" platforms to check user ages or face penalties of up to 10% of global revenue (Tracy Withers/Bloomberg)",
+      "url": "https://www.techmeme.com/260824/p2",
+      "summary": "Tracy Withers / Bloomberg : New Zealand plans a bill to ban social media for under-16s, requiring &ldquo;high risk&rdquo; platforms to check user ages or face penalties of up to 10% of global revenue &mdash; New Zealand plans to ban under-16s from social media, joining a throng of countries worldwide seeking to limit online harm to children.",
+      "published_at": "2026-08-24T05:01:38.000Z",
+      "source": "Techmeme",
+      "source_home": "https://www.techmeme.com/",
+      "source_rank": 2,
+      "score": 7.711
+    },
+    {
+      "source": "Hacker News",
+      "source_home": "https://news.ycombinator.com/",
+      "source_rank": 4,
+      "title": "What Is a Harness?",
+      "url": "https://earendil.com/posts/what-is-a-harness/",
+      "discussion_url": "https://news.ycombinator.com/item?id=49409092",
+      "summary": "",
+      "published_at": "2026-08-23T14:24:21.000Z",
+      "engagement": {
+        "score": 398,
+        "comments": 145
+      },
+      "score": 7.692
+    },
+    {
+      "source": "Hacker News",
+      "source_home": "https://news.ycombinator.com/",
+      "source_rank": 6,
+      "title": "A website for debloated open source alternatives",
+      "url": "https://debloat.dev/",
+      "discussion_url": "https://news.ycombinator.com/item?id=49410362",
+      "summary": "",
+      "published_at": "2026-08-23T16:54:10.000Z",
+      "engagement": {
+        "score": 310,
+        "comments": 96
+      },
+      "score": 7.633
+    },
+    {
+      "title": "Source: AI researcher Luke Metz, who returned to OpenAI from TML earlier this year, joins Meta's Superintelligence Labs and will report to Alexandr Wang (Ina Fried/Axios)",
+      "url": "https://www.techmeme.com/260824/p1",
+      "summary": "Ina Fried / Axios : Source: AI researcher Luke Metz, who returned to OpenAI from TML earlier this year, joins Meta's Superintelligence Labs and will report to Alexandr Wang &mdash; Prominent AI researcher Luke Metz has joined Meta's Superintelligence Labs, a source familiar with the matter confirmed to Axios.",
+      "published_at": "2026-08-24T04:15:47.000Z",
+      "source": "Techmeme",
+      "source_home": "https://www.techmeme.com/",
+      "source_rank": 3,
+      "score": 7.599
+    },
+    {
+      "source": "Hacker News",
+      "source_home": "https://news.ycombinator.com/",
+      "source_rank": 8,
+      "title": "My agent.md to improve LLM-assisted code quality",
+      "url": "https://fabiensanglard.net/agent.md/index.html",
+      "discussion_url": "https://news.ycombinator.com/item?id=49410932",
+      "summary": "",
+      "published_at": "2026-08-23T17:59:52.000Z",
+      "engagement": {
+        "score": 270,
+        "comments": 102
+      },
+      "score": 7.522
+    },
+    {
+      "title": "Sources: Nvidia is in talks to invest in Perplexity's new equity round valuing it at $30B+; Nvidia considered a tech licensing deal and hiring some of its staff (The Information)",
+      "url": "https://www.techmeme.com/260823/p18",
+      "summary": "The Information : Sources: Nvidia is in talks to invest in Perplexity's new equity round valuing it at $30B+; Nvidia considered a tech licensing deal and hiring some of its staff &mdash; Nvidia is discussing investing in Perplexity as part of an equity round that would value the AI startup at more than $30 billion &hellip;",
+      "published_at": "2026-08-24T03:50:00.000Z",
+      "source": "Techmeme",
+      "source_home": "https://www.techmeme.com/",
+      "source_rank": 4,
+      "score": 7.501
+    },
+    {
+      "source": "Hacker News",
+      "source_home": "https://news.ycombinator.com/",
+      "source_rank": 9,
+      "title": "Google Workspace thinks my domain is an email provider (2025)",
+      "url": "https://blog.elis.cc/articles/google-workspace-thinks-my-domain-is-an-email-provider/",
+      "discussion_url": "https://news.ycombinator.com/item?id=49411717",
+      "summary": "",
+      "published_at": "2026-08-23T19:29:32.000Z",
+      "engagement": {
+        "score": 256,
+        "comments": 74
+      },
+      "score": 7.473
+    },
+    {
+      "source": "Hacker News",
+      "source_home": "https://news.ycombinator.com/",
+      "source_rank": 7,
+      "title": "How Complex Systems Fail (1998)",
+      "url": "https://how.complexsystems.fail/",
+      "discussion_url": "https://news.ycombinator.com/item?id=49409473",
+      "summary": "",
+      "published_at": "2026-08-23T15:13:31.000Z",
+      "engagement": {
+        "score": 291,
+        "comments": 66
+      },
+      "score": 7.443
+    },
+    {
+      "title": "Sources: Shein voluntarily sought the US Treasury's CFIUS national security review of its $80M deal to buy US clothing retailer Everlane, an unusual move (Kate O'Keeffe/Bloomberg)",
+      "url": "https://www.techmeme.com/260823/p17",
+      "summary": "Kate O'Keeffe / Bloomberg : Sources: Shein voluntarily sought the US Treasury's CFIUS national security review of its $80M deal to buy US clothing retailer Everlane, an unusual move &mdash; US authorities are conducting a national security review of Shein Global Holdings Ltd.'s purchase of American clothing retailer Everlane &hellip;",
+      "published_at": "2026-08-24T03:40:00.000Z",
+      "source": "Techmeme",
+      "source_home": "https://www.techmeme.com/",
+      "source_rank": 5,
+      "score": 7.414
+    },
+    {
+      "title": "At Beijing's World Humanoid Robot Games, a robot made by Honor ran 100m in 9.39s, and another Chinese robot finished 400m in 38.16s, both beating human records (Telegraph)",
+      "url": "https://www.techmeme.com/260823/p16",
+      "summary": "Telegraph : At Beijing's World Humanoid Robot Games, a robot made by Honor ran 100m in 9.39s, and another Chinese robot finished 400m in 38.16s, both beating human records &mdash; Chinese humanoid called Tiangong Ultra nearly five seconds faster than 2016 Rio Olympic time &mdash; It may have stumpy arms &hellip;",
+      "published_at": "2026-08-24T03:10:00.000Z",
+      "source": "Techmeme",
+      "source_home": "https://www.techmeme.com/",
+      "source_rank": 6,
+      "score": 7.314
+    },
+    {
+      "title": "SoftBank plans a $6.3B retail bond sale, a record for any Japanese issuer and its third this year, as the conglomerate raises funds for its OpenAI commitments (Bloomberg)",
+      "url": "https://www.techmeme.com/260823/p15",
+      "summary": "Bloomberg : SoftBank plans a $6.3B retail bond sale, a record for any Japanese issuer and its third this year, as the conglomerate raises funds for its OpenAI commitments &mdash; SoftBank Group Corp. plans a record &yen;1 trillion ($6.3 billion) retail bond sale, the biggest by any issuer in Japan &hellip;",
+      "published_at": "2026-08-24T02:20:01.000Z",
+      "source": "Techmeme",
+      "source_home": "https://www.techmeme.com/",
+      "source_rank": 7,
+      "score": 7.199
+    },
+    {
+      "title": "A look at the playbook tech giants like Google, Microsoft, and OpenAI use to shape American schools to their benefit, and the pushback against unproven AI tools (Natasha Singer/New York Times)",
+      "url": "https://www.techmeme.com/260823/p14",
+      "summary": "Natasha Singer / New York Times : A look at the playbook tech giants like Google, Microsoft, and OpenAI use to shape American schools to their benefit, and the pushback against unproven AI tools &mdash; One humid afternoon in the summer of 2025, representatives from Microsoft were waiting as some 200 teachers trooped into a conference hall in downtown Manhattan.",
+      "published_at": "2026-08-24T02:05:01.000Z",
+      "source": "Techmeme",
+      "source_home": "https://www.techmeme.com/",
+      "source_rank": 8,
+      "score": 7.108
+    },
+    {
+      "source": "Hugging Face",
+      "source_home": "https://huggingface.co/papers",
+      "source_rank": 3,
+      "title": "Let's Scale Step by Step: Compute-Efficient Hyperparameter Transfer for Large-Scale Mixture-of-Experts",
+      "url": "https://huggingface.co/papers/2608.20061",
+      "summary": "Mixture-of-Experts (MoE) architectures significantly expand model capacity without a proportional increase in computational cost. However, optimizing their hyperparameters---particularly the learning rate---at extreme scales of both model size and token budget via sweeping remains computationally prohibitive. In this paper, we propose a compute-efficient, two-step hyperparameter transfer framework that estimates optimal learning rates for training large MoE models by transferring them across scaling model widths, and subsequently extrapolating to trillion-token horizons. First, we formulate a Maximal Update Parameterization (μP) adaptation for MoE architectures utilizing Multi-head Latent Attention (MLA) and the Muon optimizer, demonstrating that optimal learning rates transfer consistently across width-scaled models. Second, we extend this transferability along the token dimension by establishing a predictive scaling law. By applying linear regression to the optimal values derived from small proxy models on limited budgets, we successfully extrapolate the ideal learning rate to massive training horizons (e.g., 10 trillion tokens) with high fidelity (R^2=0.95). Consequently, this i",
+      "published_at": "2026-08-20T09:57:43.000Z",
+      "engagement": {
+        "upvotes": 18
+      },
+      "score": 6.129
+    },
+    {
+      "source": "Hugging Face",
+      "source_home": "https://huggingface.co/papers",
+      "source_rank": 1,
+      "title": "EviRank: Structured Relevance Evidence for Multimodal Image Re-ranking",
+      "url": "https://huggingface.co/papers/2608.20886",
+      "summary": "Real-world image search queries are multimodal and compositional: ``find this shirt in pink'' specifies an entity to retain, an attribute to modify, and context to ignore. Yet existing re-rankers either compress such multifaceted relevance into an opaque embedding or rely on free-form chain-of-thought that easily omits or hallucinates fine-grained constraints. Drawing on rubric- and checklist-based evaluation from NLP, we recast multimodal image re-ranking as a semantic constraint satisfaction problem and propose EviRank, which parses any query - text-only, image-only, or composed - into a unified evidence package: typed criteria across six semantic slots (e.g., entities, attributes, relations), each labelled required, forbidden, or ignorable. Re-ranking then reduces to evidence-conditioned verification, combining deterministic rubric scoring and evidence-grounded listwise comparison in a single training-free procedure. The explicit evidence can further serve as structured supervision for optionally distilling a lightweight student. Across five benchmarks spanning text-to-image, image-to-image, and composed image retrieval, EviRank achieves state-of-the-art performance, and the dis",
+      "published_at": "2026-08-20T20:00:00.000Z",
+      "engagement": {
+        "upvotes": 8
+      },
+      "score": 6.127
+    },
+    {
+      "source": "Hugging Face",
+      "source_home": "https://huggingface.co/papers",
+      "source_rank": 2,
+      "title": "Every Coin Has Two Sides: On the Dual Nature of Generalization in On-Policy Distillation of Large Language Models",
+      "url": "https://huggingface.co/papers/2608.16647",
+      "summary": "On-policy distillation (OPD) transfers teacher capabilities by supervising trajectories sampled from the student's own policy, yet its generalization behavior remains poorly understood, as most studies evaluate OPD on a single domain and on benchmarks close to the training data. We present a controlled study that varies one generalization factor at a time, from in-domain distribution shifts to cross-domain transfer and the multi-teacher setting. We find that OPD transfers a teacher's reasoning behavior rather than its answers to particular problems: training difficulty barely matters, and even problems the teacher never solves are useful. Transfer depends strongly on the origin relationship between teacher and student: same-origin pairs bring the student close to the teacher across languages, reasoning horizons, and even other domains, whereas cross-origin pairs mostly fit the trained distribution. This broad reach is a double-edged sword: since routing prompts to domain experts cannot confine each teacher's influence, combining them yields a mixture-dependent seesaw among their capabilities. These results clarify when OPD generalizes and offer a useful perspective for diagnosing m",
+      "published_at": "2026-08-16T20:00:00.000Z",
+      "engagement": {
+        "upvotes": 8
+      },
+      "score": 6.047
+    },
+    {
+      "source": "Hugging Face",
+      "source_home": "https://huggingface.co/papers",
+      "source_rank": 4,
+      "title": "OmniAssistBench: Assistant-style Interaction Benchmark for Omni-LLMs",
+      "url": "https://huggingface.co/papers/2608.21360",
+      "summary": "Recent omni-modal large language models (Omni-LLMs) show great potential as real-time video assistants, which continuously perceive environments and guide users to achieve specific goals. Unlike traditional passive video understanding, interactive assistants should actively combine visual states, user goals, and prior knowledge to provide effective help. Evaluating this is rather challenging, as the model's unpredictable response dynamically changes the user's subsequent actions, which static offline datasets cannot accommodate. To address this bottleneck, we introduce OmniAssistBench. To solve the issue of diverging interaction paths where the same user goal can be achieved through various methods, we provide models with predefined priors derived from the source video, requiring them to guide users along the exact same routes. Since real interaction videos are rare, we construct the dataset by reverse-engineering existing Internet videos. We deduce logical user goals and segment the videos into multi-turn clips to simulate continuous interactions. This rigorous pipeline required over 1000 expert person-hours to build the dataset. Results show that the proprietary Gemini-3-Pro reac",
+      "published_at": "2026-08-20T20:00:00.000Z",
+      "engagement": {
+        "upvotes": 17
+      },
+      "score": 6.038
+    },
+    {
+      "title": "Do you bet on the startup jockey or horse? Try the third option New research suggests a third factor deserves far more attention",
+      "url": "https://sifted.eu/articles/venture-capital-jockey-horse-investment-thesis/",
+      "published_at": null,
+      "summary": "",
+      "source": "Sifted",
+      "source_home": "https://sifted.eu/",
+      "source_rank": 1,
+      "score": 5.7
+    },
+    {
+      "source": "Hugging Face",
+      "source_home": "https://huggingface.co/papers",
+      "source_rank": 8,
+      "title": "Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence",
+      "url": "https://huggingface.co/papers/2608.21156",
+      "summary": "LLMs have evolved from language generators to autonomous agents capable of complex, long-horizon tasks. This evolution has produced paradigms including Prompt Engineering to elicit model capabilities, Context Engineering to manage information access, Harness Engineering to organize external tools and resources, and Loop Engineering to support continual reflection and self-improvement. Yet as tasks grow more complex, individual intelligence faces a fundamental limit: many tasks require heterogeneous expertise, interdependent subtasks, parallel execution, independent verification, and persistent state, exceeding any single agent's organizational capacity. Augmenting one agent's capabilities or context cannot resolve this architectural mismatch; intelligence must instead be distributed across specialized agents and organized at the system level. We call this System Intelligence: an agent system's ability to organize and coordinate multiple intelligent components into a coherent, adaptive whole pursuing a shared objective. Achieving it requires more than adding agents; it demands explicit structures to organize work, coordinate heterogeneous agents, and maintain evolving execution stat",
+      "published_at": "2026-08-20T20:00:00.000Z",
+      "engagement": {
+        "upvotes": 13
+      },
+      "score": 5.663
+    },
+    {
+      "source": "Hugging Face",
+      "source_home": "https://huggingface.co/papers",
+      "source_rank": 5,
+      "title": "AgentMercury: Your Agent Can Synthesize Verifiable Environments for Business Scenarios at scale",
+      "url": "https://huggingface.co/papers/2608.20634",
+      "summary": "Agents learn to act through interaction with environments, yet the environments used for training are often manually constructed or synthesized around predefined tasks and benchmarks. This task-centric paradigm makes it difficult to scale environments that reflect realistic and evolving workflows where diverse tasks can naturally emerge from the underlying world. We introduce AgentMercury, a scalable framework for synthesizing executable environments from high-level business scenarios. Rather than constructing an environment for a specific task, AgentMercury first instantiates a persistent world with entities, services, tools, state, and executable cross-service invariants, from which diverse tasks and interaction trajectories can subsequently emerge. We construct 4,783 executable environments spanning 14 industries and 50 countries, and use them as training substrates for reinforcement learning. Despite being generated without targeting the evaluation benchmarks, policies trained on these business-oriented environments improve substantially on both enterprise workflows and out-of-domain benchmarks spanning reasoning, coding, scientific computing, and tool use. In our experiments,",
+      "published_at": "2026-08-20T20:00:00.000Z",
+      "engagement": {
+        "upvotes": 3
+      },
+      "score": 5.631
+    },
+    {
+      "title": "VCs pick out 19 startups to watch making AI more efficient The AI boom means compute resources are struggling to keep up with demand. These startups are working to reduce the cost and energy requirements of models",
+      "url": "https://sifted.eu/articles/ai-efficiency-startups-to-watch/",
+      "published_at": null,
+      "summary": "",
+      "source": "Sifted",
+      "source_home": "https://sifted.eu/",
+      "source_rank": 2,
+      "score": 5.62
+    },
+    {
+      "title": "15 startup hotspots in Copenhagen Sifted asked local operators for their best spots in the city",
+      "url": "https://sifted.eu/articles/15-startup-hotspots-in-copenhagen/",
+      "published_at": null,
+      "summary": "",
+      "source": "Sifted",
+      "source_home": "https://sifted.eu/",
+      "source_rank": 3,
+      "score": 5.54
+    },
+    {
+      "title": "All the decacorns in Europe: listed",
+      "url": "https://sifted.eu/articles/all-the-decacorns-in-europe-listed/",
+      "published_at": null,
+      "summary": "",
+      "source": "Sifted",
+      "source_home": "https://sifted.eu/",
+      "source_rank": 4,
+      "score": 5.46
+    },
+    {
+      "source": "Hugging Face",
+      "source_home": "https://huggingface.co/papers",
+      "source_rank": 7,
+      "title": "Towards Faithful Simulation of Human Shopping Behavior",
+      "url": "https://huggingface.co/papers/2608.20707",
+      "summary": "Simulating realistic user shopping behavior underpins offline evaluation and reinforcement learning in e-commerce scenarios. While recent LLM- and VLM-based simulators have made encouraging progress, reproducing a real browsing session remains difficult for two reasons. (i) Memory Challenge: a shopping session spans dozens of pages, yet existing agents either discard long-range observation histories, losing the evolving user state, or naively concatenate them, overwhelming the context window and even degrading simulation quality. (ii) Optimization Challenge: current user simulators are typically supervised to match each logged action via imitation or step-level rewards; the resulting sessions often display unrealistic patterns, such as over-exploration or excessive passivity, which per-step supervision can neither detect nor correct. To address the above challenges, we present RecVerse, a GUI-grounded simulation agent that perceives pages through screenshots and produces faithful multi-turn trajectories. For the memory challenge, RecVerse adopts a cognitive-inspired hierarchical memory: Working Memory for short-term focus, Episodic Memory for in-session traces, and Preference Memor",
+      "published_at": "2026-08-20T20:00:00.000Z",
+      "engagement": {
+        "upvotes": 2
+      },
+      "score": 5.409
+    },
+    {
+      "source": "Hugging Face",
+      "source_home": "https://huggingface.co/papers",
+      "source_rank": 10,
+      "title": "InfinityEdit: Infinite Video Editing with a Lightweight Edit-Ignition Adapter",
+      "url": "https://huggingface.co/papers/2608.20910",
+      "summary": "With large pretrained models, existing methods have effectively improved instruction-based video editing. However, most of them rely on an in-place editing assumption. They align the edited video with the given source clip frame by frame over a fixed time span. This pattern fails for open-ended streams, e.g., restyling a live game or applying a camera move to an ongoing shot. In such cases, edits must extend to future frames as they arrive, rather than be applied to a static input clip. In this paper, we study this setting and name it infinite video editing: given a preceding segment and an edit request, a model must generate the next segment that continues the stream while applying the requested edit. This process repeats as an unbounded sequence of edit instructions arrives. This task brings two challenges: the edit must be a faithful continuation rather than a frame-wise rewrite, and generation quality must remain stable as edits accumulate. To address them, we first design a data-collection pipeline for infinite video editing. Based on the collected data, we propose InfinityEdit, a lightweight edit adapter that equips a streaming video generator with unbounded editing ability.",
+      "published_at": "2026-08-20T20:00:00.000Z",
+      "engagement": {
+        "upvotes": 8
+      },
+      "score": 5.407
+    },
+    {
+      "title": "Who are Europe’s ‘top’ VCs? Claude and ChatGPT have some left-field picks",
+      "url": "https://sifted.eu/articles/who-are-europes-top-vcs-claude-and-chatgpt-have-some-quirky-picks/",
+      "published_at": null,
+      "summary": "",
+      "source": "Sifted",
+      "source_home": "https://sifted.eu/",
+      "source_rank": 5,
+      "score": 5.38
+    },
+    {
+      "title": "Exclusive: Legal dispute emerges at Monzo cofounder's Monaco banking venture",
+      "url": "https://sifted.eu/articles/legal-dispute-monaco-bank/",
+      "published_at": null,
+      "summary": "",
+      "source": "Sifted",
+      "source_home": "https://sifted.eu/",
+      "source_rank": 6,
+      "score": 5.3
+    }
+  ]
+}

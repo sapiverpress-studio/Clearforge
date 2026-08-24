@@ -1,0 +1,63 @@
+Here are the evidence verification notes for today’s news briefing candidates, compiled on **24 August 2026**.
+
+---
+
+### **Candidate [1]: Anthropic’s best AI model struggles to attract corporate users**
+* **Confirmed:** A *Financial Times* report published on 23 August 2026 reveals that enterprise spending on Anthropic’s flagship model, Fable 5, has plateaued at approximately 11% of total customer spend on Anthropic tools. The finding is based on spending data across 70,000 companies collected by corporate payment provider Ramp. The report also notes Anthropic’s annualized revenue reached $65 billion in July (up from $47 billion in May), while OpenAI’s annualized revenue reached $40 billion following the launch of GPT 5.6.
+* **Caveats:** Ramp data represents a specific subset of corporate credit card spend, not total global enterprise contracts. Fable 5 experienced short-term availability disruptions in June following regulatory reviews. 
+* **Publication status:** **Suitable for publication today.** High-value analysis of AI unit economics and shifting enterprise adoption.
+
+---
+
+### **Candidate [2]: US corporate capex surge vs Europe driven by AI (Oxford Economics / FT)**
+* **Confirmed:** According to an Oxford Economics report covered by the *Financial Times* on 24 August 2026, real US corporate spending on equipment and facilities is projected to rise 40% between 2021 and 2027. This rate is over three times faster than the Eurozone (projected at 12%) and Germany (near-stagnant). The study cites hyper-scale AI data center investments—with Alphabet, Meta, Microsoft, and Amazon combined tracking over $725 billion in capex in 2026 alone—as the primary growth driver.
+* **Caveats:** Figures are based on economic forecast modeling rather than audited historic spend. Analysts caution regarding potential risks of overcapacity or an investment slowdown.
+* **Publication status:** **Suitable for publication today.** Major macroeconomic and industrial narrative for transatlantic tech policy.
+
+---
+
+### **Candidate [4]: New Zealand proposes under-16 social media ban bill**
+* **Confirmed:** New Zealand Prime Minister Christopher Luxon announced that his government will introduce the *Online Safety (Minimum Age and Child Safety Risk Assessment) Bill*. The proposed law would ban under-16s from high-risk social media platforms and impose fines up to 10% of global turnover on non-compliant tech platforms.
+* **Caveats:** **Critical political caveat:** Luxon’s ruling coalition partners—New Zealand First (led by Foreign Minister Winston Peters) and the ACT Party—publicly announced they will vote against the legislation, making its passage in parliament unlikely without opposition support.
+* **Publication status:** **Suitable for publication today.** Significant international tech regulation story, provided the coalition opposition is explicitly reported.
+
+---
+
+### **Candidate [7]: AI researcher Luke Metz joins Meta's Superintelligence Labs**
+* **Confirmed:** Reported by *Axios* on 24 August 2026, prominent researcher Luke Metz (formerly of OpenAI and co-founder of Thinking Machines) has joined Meta’s Superintelligence Labs. He will report directly to Alexandr Wang.
+* **Caveats:** Sourced via a person familiar with the matter rather than an official corporate press release, though independently confirmed by industry sources.
+* **Publication status:** **Suitable for publication today.** Illustrates ongoing talent churn and executive hiring in frontier AI labs.
+
+---
+
+### **Candidate [9]: Nvidia in talks to invest in Perplexity at $30B+ valuation**
+* **Confirmed:** *The Information* and *Reuters* report that Nvidia is in discussions to join a new multi-billion-dollar equity financing round for Perplexity AI that would value the startup at over $30 billion (up over 50% year-on-year). The reports note Perplexity’s annualized revenue recently crossed $750 million.
+* **Caveats:** Discussions are active and ongoing; no final agreement has been signed, and neither Nvidia nor Perplexity has formally commented on the record.
+* **Publication status:** **Suitable for publication today.** Major venture capital and semiconductor integration story.
+
+---
+
+### **Candidate [12]: Shein voluntarily seeks CFIUS review for Everlane deal**
+* **Confirmed:** *Bloomberg* reported on 24 August 2026 that Shein voluntarily submitted its acquisition of US apparel brand Everlane to the US Treasury’s Committee on Foreign Investment in the United States (CFIUS) for national security review. Concurrently, Shein published its prospectus to debut on the Hong Kong Stock Exchange on 1 September, seeking up to $1.77 billion at a $27 billion valuation.
+* **Caveats:** Voluntarily seeking CFIUS review *after* closing a transaction is highly unusual; sources note the filing was driven by Everlane’s financial distress requiring a quick closing rather than regulatory enforcement.
+* **Publication status:** **Suitable for publication today.** Important cross-border trade, regulatory, and capital markets report.
+
+---
+
+### **Candidate [13]: Humanoid robots clock sub-10s times at Beijing Robot Games**
+* **Confirmed:** At the 2nd World Humanoid Robot Games in Beijing (22–26 August 2026), Chinese humanoid robots recorded sprint times exceeding human world records. *Tiangong Ultra* ran a 100-meter heat in 9.39 seconds, while a robot by Honor recorded 9.32 seconds in a trial run.
+* **Caveats:** These are specialized exhibition demonstrations in controlled environments, not accredited athletic events. Robots still rely on physical crash pads or tethering teams to safely decelerate after crossing the finish line.
+* **Publication status:** **Suitable for publication today.** Strong tech showcase feature with appropriate context regarding test conditions.
+
+---
+
+### **Candidate [14]: SoftBank plans record $6.3B (¥1T) retail bond issuance**
+* **Confirmed:** *Bloomberg* reports SoftBank Group Corp. is preparing a ¥1 trillion ($6.3 billion) retail bond sale in Japan—its largest ever and third issuance this year. The proceeds are targeted toward funding SoftBank's capital commitments to OpenAI and AI infrastructure projects.
+* **Caveats:** Debt market conditions and yield pricing remain subject to market execution.
+* **Publication status:** **Suitable for publication today.** Major financial story regarding how mega-cap holding companies are financing AI capital commitments.
+
+---
+
+### **Summary / Excluded Candidates**
+* **Candidates [0], [3], [5], [6], [8], [10], [11]:** Developer blogs, personal essays, architectural definitions, or archived posts (e.g., 1998, 2025). Good discussion signals for developer communities, but not primary news candidates for a general briefing.
+* **Candidates [16]–[19]:** Uncorroborated preprint research papers from Hugging Face/arXiv; treated strictly as single-paper claims unless validated by deployment or broad peer review.

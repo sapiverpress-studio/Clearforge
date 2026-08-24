@@ -14,10 +14,12 @@ on:
       - 'src/generate-weekly-intelligence-podcast.mjs'
       - 'src/send-daily-newsletter-brevo.mjs'
       - 'src/brevo-list-resolver.mjs'
+      - 'src/brevo-campaign-errors.mjs'
       - 'src/publish-news-intelligence-site.mjs'
       - 'scripts/inject-news-intelligence-site.mjs'
       - 'scripts/sync-netlify-subscribers-to-brevo.mjs'
       - 'test/news-intelligence-sources-contract.mjs'
+      - 'test/brevo-empty-list-contract.mjs'
       - 'public/newsletter/**'
 
 permissions:
@@ -40,10 +42,12 @@ jobs:
           node --check src/generate-weekly-intelligence-podcast.mjs
           node --check src/send-daily-newsletter-brevo.mjs
           node --check src/brevo-list-resolver.mjs
+          node --check src/brevo-campaign-errors.mjs
           node --check src/publish-news-intelligence-site.mjs
           node --check scripts/inject-news-intelligence-site.mjs
           node --check scripts/sync-netlify-subscribers-to-brevo.mjs
           node test/news-intelligence-sources-contract.mjs
+          node test/brevo-empty-list-contract.mjs
 
       - name: Exercise approved website publication path
         shell: bash

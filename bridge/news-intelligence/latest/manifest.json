@@ -2,7 +2,7 @@
   "schema_version": 1,
   "type": "sapiver_forge_news_intelligence",
   "date": "2026-08-24",
-  "generated_at": "2026-08-24T06:27:00.579Z",
+  "generated_at": "2026-08-24T07:16:30.422Z",
   "source_set": [
     "Techmeme",
     "Reuters",
@@ -15,32 +15,32 @@
       "name": "Techmeme",
       "ok": true,
       "item_count": 12,
-      "elapsed_ms": 133
+      "elapsed_ms": 704
     },
     {
       "name": "Reuters",
       "ok": false,
       "item_count": 0,
-      "elapsed_ms": 83,
+      "elapsed_ms": 267,
       "error": "401 HTTP Forbidden"
     },
     {
       "name": "Hacker News",
       "ok": true,
       "item_count": 10,
-      "elapsed_ms": 384
+      "elapsed_ms": 428
     },
     {
       "name": "Hugging Face",
       "ok": true,
       "item_count": 12,
-      "elapsed_ms": 188
+      "elapsed_ms": 284
     },
     {
       "name": "Sifted",
       "ok": true,
       "item_count": 12,
-      "elapsed_ms": 1079
+      "elapsed_ms": 631
     }
   ],
   "healthy_source_count": 4,
@@ -48,71 +48,84 @@
   "approved_for_automatic_distribution": false,
   "newsletter_ready_for_human_approval": true,
   "newsletter_subject": "Sapiver Forge Daily Brief — 2026-08-24",
-  "overall_confidence": 0.875,
+  "overall_confidence": 0.88,
   "stories": [
     {
-      "category": "lead",
-      "headline": "US-Europe AI investment gap widens",
-      "confirmed_fact": "Oxford Economics projects US corporate spending on equipment and facilities will rise 40% between 2021 and 2027, compared to 12% in the Eurozone. This growth is primarily driven by massive AI data center investments from major US tech firms.",
-      "why_it_matters": "The disparity suggests a potential long-term productivity and infrastructure advantage for the US, as European markets struggle to match the scale of AI-focused capital expenditure.",
-      "interpretation": "Our read is that this trend signals a deepening divergence in industrial competitiveness, potentially forcing European policymakers to reconsider their approach to tech-sector incentives.",
-      "confidence": 0.95,
-      "source": "Techmeme",
-      "source_title": "Oxford Economics: US corporate spending on equipment and facilities is set to rise 40% between 2021 and 2027, over 3x faster than Europe, driven by the AI race (Financial Times)",
-      "url": "https://www.techmeme.com/260824/p3",
-      "published_at": "2026-08-24T06:01:30.000Z",
-      "discovery_score": 7.833
-    },
-    {
       "category": "business",
-      "headline": "Enterprise adoption of Anthropic tools plateaus",
-      "confirmed_fact": "Data from 70,000 companies via Ramp shows enterprise spending on Anthropic's Fable 5 model has plateaued at 11% of total AI tool spend. Meanwhile, Anthropic's annualized revenue reached $65 billion in July.",
-      "why_it_matters": "While revenue is growing, the plateau in enterprise share suggests that Anthropic faces stiff competition in securing long-term corporate loyalty against incumbents like OpenAI.",
-      "interpretation": "Our read is that the enterprise market is becoming increasingly fragmented, with companies testing multiple frontier models rather than standardising on a single provider.",
-      "confidence": 0.85,
+      "headline": "Anthropic faces enterprise spending headwinds",
+      "confirmed_fact": "Corporate spending on Anthropic’s flagship Fable 5 model has plateaued at 11% of total outlay on Anthropic tools, as businesses increasingly pivot to cheaper alternatives.",
+      "why_it_matters": "It highlights a growing price sensitivity among enterprise customers, suggesting that performance alone may not sustain premium pricing in a maturing AI market.",
+      "interpretation": "Our read is that the 'AI gold rush' phase is transitioning into a 'cost-optimization' phase, where businesses are prioritizing budget efficiency over top-tier model capabilities.",
+      "confidence": 0.95,
       "source": "Hacker News",
       "source_title": "Anthropic's best AI model struggles to attract users as cheaper tools thrive",
       "url": "https://www.ft.com/content/5ee49718-c258-4f01-aa32-7e5b76ae5245",
       "published_at": "2026-08-23T18:16:37.000Z",
-      "discovery_score": 7.933
+      "discovery_score": 7.979
     },
     {
       "category": "business",
-      "headline": "Nvidia in talks to back Perplexity AI",
-      "confirmed_fact": "Nvidia is in active discussions to join a new equity round for Perplexity AI, which would value the search startup at over $30 billion. Perplexity recently reported annualized revenue exceeding $750 million.",
-      "why_it_matters": "This move highlights Nvidia's strategy of deepening its influence across the AI stack by investing in high-growth application layers beyond its core hardware business.",
-      "interpretation": "Our read is that Nvidia is positioning itself to capture value from the 'search-to-answer' shift in AI, ensuring its hardware remains the backbone of the most popular AI interfaces.",
+      "headline": "US AI infrastructure investment outpaces Europe 3x",
+      "confirmed_fact": "Oxford Economics projects US corporate spending on equipment and facilities will rise 40% between 2021 and 2027, a rate more than three times faster than European growth.",
+      "why_it_matters": "This divergence in capital expenditure indicates a widening gap in the foundational infrastructure required to support large-scale AI deployment between the two regions.",
+      "interpretation": "Our read is that the US is aggressively front-loading its AI transition, potentially creating a long-term competitive advantage in compute and data center capacity that Europe may struggle to bridge.",
+      "confidence": 0.85,
+      "source": "Techmeme",
+      "source_title": "Oxford Economics: US corporate spending on equipment and facilities is set to rise 40% between 2021 and 2027, over 3x faster than Europe, driven by the AI race (Financial Times)",
+      "url": "https://www.techmeme.com/260824/p3",
+      "published_at": "2026-08-24T06:01:30.000Z",
+      "discovery_score": 7.798
+    },
+    {
+      "category": "ai",
+      "headline": "Meta recruits OpenAI researcher Luke Metz",
+      "confirmed_fact": "AI researcher Luke Metz has departed OpenAI to join Meta’s Superintelligence Labs, where he will report to Alexandr Wang.",
+      "why_it_matters": "The move underscores the intense competition for top-tier AI talent, as major labs continue to shuffle key personnel to bolster their frontier research capabilities.",
+      "interpretation": "Our read is that Meta is doubling down on its internal research efforts, signaling that the race for AGI remains a primary focus despite broader market volatility.",
+      "confidence": 0.9,
+      "source": "Techmeme",
+      "source_title": "Source: AI researcher Luke Metz, who returned to OpenAI from TML earlier this year, joins Meta's Superintelligence Labs and will report to Alexandr Wang (Ina Fried/Axios)",
+      "url": "https://www.techmeme.com/260824/p1",
+      "published_at": "2026-08-24T04:15:47.000Z",
+      "discovery_score": 7.565
+    },
+    {
+      "category": "business",
+      "headline": "Nvidia in talks to invest in Perplexity at $30B+ valuation",
+      "confirmed_fact": "Nvidia is reportedly in discussions to participate in an equity funding round for AI search engine Perplexity, which would value the company at over $30 billion.",
+      "why_it_matters": "This investment would deepen the strategic alignment between hardware providers and AI-native application platforms, further consolidating the AI ecosystem.",
+      "interpretation": "Our read is that Nvidia is actively seeking to secure its position in the AI search and information retrieval space, likely to ensure its hardware remains the preferred infrastructure for high-growth AI startups.",
       "confidence": 0.8,
       "source": "Techmeme",
       "source_title": "Sources: Nvidia is in talks to invest in Perplexity's new equity round valuing it at $30B+; Nvidia considered a tech licensing deal and hiring some of its staff (The Information)",
       "url": "https://www.techmeme.com/260823/p18",
       "published_at": "2026-08-24T03:50:00.000Z",
-      "discovery_score": 7.501
+      "discovery_score": 7.467
     },
     {
-      "category": "technology",
-      "headline": "New Zealand proposes social media ban for under-16s",
-      "confirmed_fact": "The New Zealand government has introduced the Online Safety Bill, which would ban under-16s from high-risk social media platforms and impose fines of up to 10% of global turnover for non-compliance.",
-      "why_it_matters": "The bill represents a significant regulatory attempt to curb online harm, though its passage is uncertain as coalition partners have publicly stated they will vote against it.",
-      "interpretation": "Our read is that this is a high-profile political signal rather than a near-term legislative certainty, reflecting global tensions between tech platforms and child safety advocates.",
+      "category": "business",
+      "headline": "SoftBank targets record $6.3B retail bond sale",
+      "confirmed_fact": "SoftBank Group Corp. has filed for a ¥1 trillion ($6.3 billion) retail bond issue in Japan to support its ongoing investment commitments to OpenAI and data center expansion.",
+      "why_it_matters": "The scale of this retail-focused debt issuance highlights the massive capital requirements needed to sustain current AI investment strategies.",
+      "interpretation": "Our read is that SoftBank is betting heavily on retail investor appetite to fund its AI ambitions, reflecting a high-stakes strategy that relies on continued market confidence in its portfolio companies.",
       "confidence": 0.9,
       "source": "Techmeme",
-      "source_title": "New Zealand plans a bill to ban social media for under-16s, requiring \"high risk\" platforms to check user ages or face penalties of up to 10% of global revenue (Tracy Withers/Bloomberg)",
-      "url": "https://www.techmeme.com/260824/p2",
-      "published_at": "2026-08-24T05:01:38.000Z",
-      "discovery_score": 7.711
+      "source_title": "SoftBank plans a $6.3B retail bond sale, a record for any Japanese issuer and its third this year, as the conglomerate raises funds for its OpenAI commitments (Bloomberg)",
+      "url": "https://www.techmeme.com/260823/p15",
+      "published_at": "2026-08-24T02:20:01.000Z",
+      "discovery_score": 7.165
     }
   ],
-  "practical_takeaway": "Monitor the divergence in US and European capital expenditure, as this will likely dictate the availability and cost of AI-driven infrastructure for your business over the next three years.",
-  "watch_next": "Watch for the outcome of the New Zealand social media bill and any official confirmation of the Nvidia-Perplexity deal, which could signal a shift in AI search market dynamics.",
+  "practical_takeaway": "Monitor the shift from 'AI experimentation' to 'AI cost-efficiency' in your own procurement processes; the market is increasingly favoring cost-effective, fit-for-purpose models over the most expensive frontier options.",
+  "watch_next": "Keep an eye on the New Zealand social media bill (Source 6) as a bellwether for how coalition-led governments handle restrictive tech regulation when faced with internal political opposition.",
   "social": {
     "date": "2026-08-24",
-    "lead_headline": "US-Europe AI investment gap widens",
-    "facebook_post": "US-Europe AI investment gap widens\n\nThe disparity suggests a potential long-term productivity and infrastructure advantage for the US, as European markets struggle to match the scale of AI-focused capital expenditure.\n\nToday's Sapiver Forge Daily Brief covers 4 developments across AI, technology and business.\n\nhttps://sapiverforge-daily-brief.netlify.app/daily-brief/",
-    "pinterest_title": "US-Europe AI investment gap widens",
-    "pinterest_description": "The disparity suggests a potential long-term productivity and infrastructure advantage for the US, as European markets struggle to match the scale of AI-focused capital expenditure.\n\nRead today's Sapiver Forge Daily Brief: https://sapiverforge-daily-brief.netlify.app/daily-brief/",
-    "tiktok_caption": "US-Europe AI investment gap widens. Today's Sapiver Forge Daily Brief separates what is confirmed from what it might mean. #SapiverForge #AI #Technology #Business",
-    "spoken_script": "US-Europe AI investment gap widens. Oxford Economics projects US corporate spending on equipment and facilities will rise 40% between 2021 and 2027, compared to 12% in the Eurozone. This growth is primarily driven by massive AI data center investments from major US tech firms. Why it matters: The disparity suggests a potential long-term productivity and infrastructure advantage for the US, as European markets struggle to match the scale of AI-focused capital expenditure. That's one of today's stories in the Sapiver Forge Daily Brief."
+    "lead_headline": "Anthropic faces enterprise spending headwinds",
+    "facebook_post": "Anthropic faces enterprise spending headwinds\n\nIt highlights a growing price sensitivity among enterprise customers, suggesting that performance alone may not sustain premium pricing in a maturing AI market.\n\nToday's Sapiver Forge Daily Brief covers 5 developments across AI, technology and business.\n\nhttps://sapiverforge-daily-brief.netlify.app/daily-brief/",
+    "pinterest_title": "Anthropic faces enterprise spending headwinds",
+    "pinterest_description": "It highlights a growing price sensitivity among enterprise customers, suggesting that performance alone may not sustain premium pricing in a maturing AI market.\n\nRead today's Sapiver Forge Daily Brief: https://sapiverforge-daily-brief.netlify.app/daily-brief/",
+    "tiktok_caption": "Anthropic faces enterprise spending headwinds. Today's Sapiver Forge Daily Brief separates what is confirmed from what it might mean. #SapiverForge #AI #Technology #Business",
+    "spoken_script": "Anthropic faces enterprise spending headwinds. Corporate spending on Anthropic’s flagship Fable 5 model has plateaued at 11% of total outlay on Anthropic tools, as businesses increasingly pivot to cheaper alternatives. Why it matters: It highlights a growing price sensitivity among enterprise customers, suggesting that performance alone may not sustain premium pricing in a maturing AI market. That's one of today's stories in the Sapiver Forge Daily Brief."
   },
-  "candidate_id": "08187f5973f44268334405b43caebc5452e744ea4dafb144801bb07503cdfba3"
+  "candidate_id": "f75effc841fa79501d3f46e87d9d2ba064dfbf7f86b030eae7c1f3b86d84e6ff"
 }

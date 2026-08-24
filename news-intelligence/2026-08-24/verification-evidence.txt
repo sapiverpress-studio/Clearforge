@@ -1,63 +1,68 @@
-Here are the evidence verification notes for today’s news briefing candidates, compiled on **24 August 2026**.
+Here are the evidence notes and verification assessments for the 2026-08-24 morning briefing candidates:
 
 ---
 
-### **Candidate [1]: Anthropic’s best AI model struggles to attract corporate users**
-* **Confirmed:** A *Financial Times* report published on 23 August 2026 reveals that enterprise spending on Anthropic’s flagship model, Fable 5, has plateaued at approximately 11% of total customer spend on Anthropic tools. The finding is based on spending data across 70,000 companies collected by corporate payment provider Ramp. The report also notes Anthropic’s annualized revenue reached $65 billion in July (up from $47 billion in May), while OpenAI’s annualized revenue reached $40 billion following the launch of GPT 5.6.
-* **Caveats:** Ramp data represents a specific subset of corporate credit card spend, not total global enterprise contracts. Fable 5 experienced short-term availability disruptions in June following regulatory reviews. 
-* **Publication status:** **Suitable for publication today.** High-value analysis of AI unit economics and shifting enterprise adoption.
+### **Strongest Candidates (Recommended for Publication)**
+
+#### **[1] Anthropic’s flagship AI model struggles to attract corporate users amid cheaper alternatives**
+* **Confirmed:** Reporting by the *Financial Times* (citing corporate billing data from payment platform Ramp covering ~70,000 businesses) shows that enterprise spending on Anthropic’s top-tier model, **Fable 5**, has plateaued at approximately 11% of total outlay on Anthropic tools. Corporate clients are increasingly opting for cheaper models (such as older Claude versions, open-weight models, or competitors) due to high costs. FT sources note Anthropic’s July annualized revenue reached $65 billion.
+* **Caveats:** Ramp data reflects credit card and software invoicing via Ramp, not all direct custom enterprise contracts billed directly by Anthropic.
+* **Publication status:** **Suitable for publication today.** Excellent corporate tech/macro trend story.
 
 ---
 
-### **Candidate [2]: US corporate capex surge vs Europe driven by AI (Oxford Economics / FT)**
-* **Confirmed:** According to an Oxford Economics report covered by the *Financial Times* on 24 August 2026, real US corporate spending on equipment and facilities is projected to rise 40% between 2021 and 2027. This rate is over three times faster than the Eurozone (projected at 12%) and Germany (near-stagnant). The study cites hyper-scale AI data center investments—with Alphabet, Meta, Microsoft, and Amazon combined tracking over $725 billion in capex in 2026 alone—as the primary growth driver.
-* **Caveats:** Figures are based on economic forecast modeling rather than audited historic spend. Analysts caution regarding potential risks of overcapacity or an investment slowdown.
-* **Publication status:** **Suitable for publication today.** Major macroeconomic and industrial narrative for transatlantic tech policy.
+#### **[3] US corporate spending on equipment and infrastructure outpacing Europe 3x due to AI race**
+* **Confirmed:** An Oxford Economics analysis reported by the *Financial Times* projects US corporate spending on equipment and facilities to rise 40% between 2021 and 2027. This rate is more than three times faster than European expenditure growth, driven primarily by investments in data centers, chips, and power infrastructure for AI.
+* **Caveats:** It is an economic forecast model subject to macro assumptions and policy shifts, rather than realized accounting.
+* **Publication status:** **Suitable for publication today.** Strong transatlantic economic analysis.
 
 ---
 
-### **Candidate [4]: New Zealand proposes under-16 social media ban bill**
-* **Confirmed:** New Zealand Prime Minister Christopher Luxon announced that his government will introduce the *Online Safety (Minimum Age and Child Safety Risk Assessment) Bill*. The proposed law would ban under-16s from high-risk social media platforms and impose fines up to 10% of global turnover on non-compliant tech platforms.
-* **Caveats:** **Critical political caveat:** Luxon’s ruling coalition partners—New Zealand First (led by Foreign Minister Winston Peters) and the ACT Party—publicly announced they will vote against the legislation, making its passage in parliament unlikely without opposition support.
-* **Publication status:** **Suitable for publication today.** Significant international tech regulation story, provided the coalition opposition is explicitly reported.
+#### **[6] New Zealand proposes social media ban for under-16s, but faces internal coalition opposition**
+* **Confirmed:** Prime Minister Christopher Luxon announced that New Zealand will introduce the *Online Safety (Minimum Age and Child Safety Risk Assessment) Bill*, requiring platforms like Instagram, TikTok, Snapchat, and Facebook to verify user age or face fines up to 10% of global turnover.
+* **Caveats:** **Crucial political context:** Coalition partners ACT and New Zealand First (including Deputy PM Winston Peters) announced they will vote against the bill, meaning it currently lacks the parliamentary votes required to pass into law.
+* **Publication status:** **Suitable for publication today**, provided the lack of parliamentary support/coalition rift is explicitly highlighted.
 
 ---
 
-### **Candidate [7]: AI researcher Luke Metz joins Meta's Superintelligence Labs**
-* **Confirmed:** Reported by *Axios* on 24 August 2026, prominent researcher Luke Metz (formerly of OpenAI and co-founder of Thinking Machines) has joined Meta’s Superintelligence Labs. He will report directly to Alexandr Wang.
-* **Caveats:** Sourced via a person familiar with the matter rather than an official corporate press release, though independently confirmed by industry sources.
-* **Publication status:** **Suitable for publication today.** Illustrates ongoing talent churn and executive hiring in frontier AI labs.
+#### **[8] AI researcher Luke Metz leaves OpenAI for Meta's Superintelligence Labs**
+* **Confirmed:** *Axios* confirmed through sources familiar with the matter that researcher Luke Metz (a former OpenAI researcher who co-founded Thinking Machines Lab before rejoining OpenAI earlier in 2026) has joined Meta’s Superintelligence Labs. He will report to Alexandr Wang.
+* **Caveats:** Relying on insider sources; Meta and OpenAI have not issued formal public statements.
+* **Publication status:** **Suitable for publication today.** Clear evidence of ongoing talent mobility in frontier AI labs.
 
 ---
 
-### **Candidate [9]: Nvidia in talks to invest in Perplexity at $30B+ valuation**
-* **Confirmed:** *The Information* and *Reuters* report that Nvidia is in discussions to join a new multi-billion-dollar equity financing round for Perplexity AI that would value the startup at over $30 billion (up over 50% year-on-year). The reports note Perplexity’s annualized revenue recently crossed $750 million.
-* **Caveats:** Discussions are active and ongoing; no final agreement has been signed, and neither Nvidia nor Perplexity has formally commented on the record.
-* **Publication status:** **Suitable for publication today.** Major venture capital and semiconductor integration story.
+#### **[10] Nvidia in discussions to invest in Perplexity at $30B+ valuation**
+* **Confirmed:** *The Information* (and confirmed via Reuters) reported that Nvidia is in discussions to participate in an equity funding round for AI search engine Perplexity at a valuation exceeding $30 billion. Reports also state Perplexity’s annualized revenue has grown from under $250 million to over $750 million this year.
+* **Caveats:** Based on anonymous source reporting. Talks are ongoing and investment terms could change or fall through before closing; neither company has officially confirmed the transaction on the record.
+* **Publication status:** **Suitable for publication today**, characterized strictly as reported investment discussions.
 
 ---
 
-### **Candidate [12]: Shein voluntarily seeks CFIUS review for Everlane deal**
-* **Confirmed:** *Bloomberg* reported on 24 August 2026 that Shein voluntarily submitted its acquisition of US apparel brand Everlane to the US Treasury’s Committee on Foreign Investment in the United States (CFIUS) for national security review. Concurrently, Shein published its prospectus to debut on the Hong Kong Stock Exchange on 1 September, seeking up to $1.77 billion at a $27 billion valuation.
-* **Caveats:** Voluntarily seeking CFIUS review *after* closing a transaction is highly unusual; sources note the filing was driven by Everlane’s financial distress requiring a quick closing rather than regulatory enforcement.
-* **Publication status:** **Suitable for publication today.** Important cross-border trade, regulatory, and capital markets report.
+#### **[12] Shein seeks voluntary US CFIUS review over $80M Everlane purchase**
+* **Confirmed:** *Bloomberg* reported that the Committee on Foreign Investment in the United States (CFIUS) is reviewing fast-fashion retailer Shein’s $80 million acquisition of US clothing brand Everlane (completed in May), after Shein voluntarily submitted the transaction for post-closing national security review. The news coincides with Shein filing for a $1.8 billion Hong Kong IPO at a $27 billion valuation.
+* **Caveats:** CFIUS deliberations are legally confidential; details come from sources familiar with the review process.
+* **Publication status:** **Suitable for publication today.** Important regulatory and cross-border M&A context.
 
 ---
 
-### **Candidate [13]: Humanoid robots clock sub-10s times at Beijing Robot Games**
-* **Confirmed:** At the 2nd World Humanoid Robot Games in Beijing (22–26 August 2026), Chinese humanoid robots recorded sprint times exceeding human world records. *Tiangong Ultra* ran a 100-meter heat in 9.39 seconds, while a robot by Honor recorded 9.32 seconds in a trial run.
-* **Caveats:** These are specialized exhibition demonstrations in controlled environments, not accredited athletic events. Robots still rely on physical crash pads or tethering teams to safely decelerate after crossing the finish line.
-* **Publication status:** **Suitable for publication today.** Strong tech showcase feature with appropriate context regarding test conditions.
+#### **[13] Chinese humanoid robots record sub-9.4s 100m sprint times at Beijing games**
+* **Confirmed:** At the 2nd World Humanoid Robot Games in Beijing, the *Tiangong Ultra* robot (developed by Beijing Centre for Humanoid Robotics) ran 100m in 9.39 seconds. A trial run by Honor’s *Lightning* robot clocked 9.32 seconds.
+* **Caveats:** These metrics represent controlled, single-purpose straight-line track tests where machines ran directly into crash mats or collapsed post-finish line. Roboticists note that sprint times on flat tracks do not correlate to real-world dexterity, adaptability, or task execution.
+* **Publication status:** **Suitable for publication today**, but must include contextual caveats explaining the limitations of the demonstration.
 
 ---
 
-### **Candidate [14]: SoftBank plans record $6.3B (¥1T) retail bond issuance**
-* **Confirmed:** *Bloomberg* reports SoftBank Group Corp. is preparing a ¥1 trillion ($6.3 billion) retail bond sale in Japan—its largest ever and third issuance this year. The proceeds are targeted toward funding SoftBank's capital commitments to OpenAI and AI infrastructure projects.
-* **Caveats:** Debt market conditions and yield pricing remain subject to market execution.
-* **Publication status:** **Suitable for publication today.** Major financial story regarding how mega-cap holding companies are financing AI capital commitments.
+#### **[14] SoftBank targets record ¥1tn ($6.3B) retail bond issue in Japan for AI funding**
+* **Confirmed:** SoftBank Group Corp. filed for a 7-year, ¥1 trillion ($6.3 billion) retail bond sale in Japan expected to price on Sept 4, marking the largest retail corporate bond issue in Japanese history. Proceeds are slated to support its $60B+ investment commitments to OpenAI and ongoing data center expansion.
+* **Caveats:** Final pricing and yield (indicative 4.3%–4.9%) will be determined on September 4. Heavy reliance on retail investors reflects institutional caution toward unrated debt tied to speculative AI outlays.
+* **Publication status:** **Suitable for publication today.** Major capital-raising story for global tech.
 
 ---
 
-### **Summary / Excluded Candidates**
-* **Candidates [0], [3], [5], [6], [8], [10], [11]:** Developer blogs, personal essays, architectural definitions, or archived posts (e.g., 1998, 2025). Good discussion signals for developer communities, but not primary news candidates for a general briefing.
-* **Candidates [16]–[19]:** Uncorroborated preprint research papers from Hugging Face/arXiv; treated strictly as single-paper claims unless validated by deployment or broad peer review.
+### **Candidates Not Recommended for Briefing**
+
+* **[0], [2], [4], [7], [9], [11]:** Personal blog posts, opinion essays, or historical links (e.g., 1998 paper [11], 2025 post [9]). Unsuitable for a professional news briefing.
+* **[5] debloat.dev:** Directory launch. Unsuitable for news publication.
+* **[15] NYT AI in schools feature:** High-quality background feature by Natasha Singer, but lacks an immediate breaking news trigger compared to financial/regulatory developments.
+* **[16]–[19] Hugging Face papers:** Unverified academic preprints on arXiv [16, 17, 18, 19]. All claims originate solely from the paper authors without independent peer review or enterprise validation [16, 17, 18, 19]. Unsuitable as primary news items.

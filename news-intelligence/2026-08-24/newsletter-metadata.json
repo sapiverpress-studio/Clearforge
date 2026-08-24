@@ -1,11 +1,9 @@
 {
   "date": "2026-08-24",
   "subject": "Sapiver Forge Daily Brief — 2026-08-24",
-  "status": "brevo_draft",
+  "status": "ready_for_human_approval",
   "approved": false,
-  "brevo_campaign_id": 6,
+  "brevo_campaign_id": null,
   "sent_at": null,
-  "candidate_id": "f75effc841fa79501d3f46e87d9d2ba064dfbf7f86b030eae7c1f3b86d84e6ff",
-  "recipient_list_id": 4,
-  "campaign_created_at": "2026-08-24T07:16:31.645Z"
+  "candidate_id": "924c6992204f13478168d84e8ac631b3609514d902ddc2eeacc39e1143089da8"
 }

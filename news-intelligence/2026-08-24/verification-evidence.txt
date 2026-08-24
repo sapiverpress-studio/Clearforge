@@ -1,68 +1,59 @@
-Here are the evidence notes and verification assessments for the 2026-08-24 morning briefing candidates:
+Here is the evidence desk evaluation of the news candidates for the **2026-08-24 UK morning briefing**.
 
 ---
 
-### **Strongest Candidates (Recommended for Publication)**
+### Candidate Notes & Verification
 
-#### **[1] Anthropic’s flagship AI model struggles to attract corporate users amid cheaper alternatives**
-* **Confirmed:** Reporting by the *Financial Times* (citing corporate billing data from payment platform Ramp covering ~70,000 businesses) shows that enterprise spending on Anthropic’s top-tier model, **Fable 5**, has plateaued at approximately 11% of total outlay on Anthropic tools. Corporate clients are increasingly opting for cheaper models (such as older Claude versions, open-weight models, or competitors) due to high costs. FT sources note Anthropic’s July annualized revenue reached $65 billion.
-* **Caveats:** Ramp data reflects credit card and software invoicing via Ramp, not all direct custom enterprise contracts billed directly by Anthropic.
-* **Publication status:** **Suitable for publication today.** Excellent corporate tech/macro trend story.
-
----
-
-#### **[3] US corporate spending on equipment and infrastructure outpacing Europe 3x due to AI race**
-* **Confirmed:** An Oxford Economics analysis reported by the *Financial Times* projects US corporate spending on equipment and facilities to rise 40% between 2021 and 2027. This rate is more than three times faster than European expenditure growth, driven primarily by investments in data centers, chips, and power infrastructure for AI.
-* **Caveats:** It is an economic forecast model subject to macro assumptions and policy shifts, rather than realized accounting.
-* **Publication status:** **Suitable for publication today.** Strong transatlantic economic analysis.
+#### **Candidates [12] & [18]: New Zealand Proposes Under-16 Social Media Ban Bill**
+* **What is confirmed:** New Zealand Prime Minister Christopher Luxon and Education Minister Erica Stanford officially announced on August 24, 2026, the introduction of the *Online Safety (Minimum Age and Child Safety Risk Assessment) Bill*. The bill proposes banning under-16s from high-risk social media platforms (including Instagram, TikTok, Snapchat, and Facebook). It mandates age verification measures (such as facial age estimation, digital identity documents, or account data) and imposes non-compliance penalties on tech platforms of up to 10% of global revenue.
+* **Important caveats:** The bill does **not** currently have a guaranteed majority to pass into law. Luxon’s coalition partners—the libertarian ACT Party and Winston Peters’ New Zealand First—have announced they will vote against the measure. Its passage depends on whether the opposition Labour Party decides to support it.
+* **Publication status:** **Suitable for publication today.** (Major breaking international policy story).
 
 ---
 
-#### **[6] New Zealand proposes social media ban for under-16s, but faces internal coalition opposition**
-* **Confirmed:** Prime Minister Christopher Luxon announced that New Zealand will introduce the *Online Safety (Minimum Age and Child Safety Risk Assessment) Bill*, requiring platforms like Instagram, TikTok, Snapchat, and Facebook to verify user age or face fines up to 10% of global turnover.
-* **Caveats:** **Crucial political context:** Coalition partners ACT and New Zealand First (including Deputy PM Winston Peters) announced they will vote against the bill, meaning it currently lacks the parliamentary votes required to pass into law.
-* **Publication status:** **Suitable for publication today**, provided the lack of parliamentary support/coalition rift is explicitly highlighted.
+#### **Candidate [17]: Nvidia in Talks to Invest in Perplexity at $30B+ Valuation**
+* **What is confirmed:** *The Information* reported on August 23/24, 2026, that Nvidia is in talks to invest in a new funding round for AI search startup Perplexity at a valuation exceeding $30 billion. Perplexity’s annualized revenue has reportedly grown from under $250 million at the start of 2026 to over $750 million, driven in part by its "Perplexity Computer" enterprise agent. The report notes Nvidia previously considered tech licensing and talent deals with Perplexity before pivoting to equity investment talks.
+* **Important caveats:** Deal negotiations are unclosed and confidential. Neither Nvidia nor Perplexity has officially confirmed or commented on the report.
+* **Publication status:** **Suitable for publication today.** (High-impact business/tech scoop, corroborated across financial news outlets).
 
 ---
 
-#### **[8] AI researcher Luke Metz leaves OpenAI for Meta's Superintelligence Labs**
-* **Confirmed:** *Axios* confirmed through sources familiar with the matter that researcher Luke Metz (a former OpenAI researcher who co-founded Thinking Machines Lab before rejoining OpenAI earlier in 2026) has joined Meta’s Superintelligence Labs. He will report to Alexandr Wang.
-* **Caveats:** Relying on insider sources; Meta and OpenAI have not issued formal public statements.
-* **Publication status:** **Suitable for publication today.** Clear evidence of ongoing talent mobility in frontier AI labs.
+#### **Candidate [19]: Shein Seeks Post-Closing CFIUS Review for Everlane Acquisition**
+* **What is confirmed:** *Bloomberg News* reported that fast-fashion retailer Shein voluntarily requested a national security review from the Committee on Foreign Investment in the United States (CFIUS) regarding its $80 million acquisition of US apparel brand Everlane. The review focuses on data security risks relating to Americans' personal customer data.
+* **Important caveats:** It is highly unusual to submit a CFIUS filing *after* a deal closes (the transaction closed in May 2026). Sources indicate the parties accelerated the closing without prior CFIUS filing due to Everlane's urgent financial distress. The outcome of the review remains pending and confidential.
+* **Publication status:** **Suitable for publication today.** (Solid trade/regulatory report, coinciding with Shein launching its Hong Kong IPO prospectus).
 
 ---
 
-#### **[10] Nvidia in discussions to invest in Perplexity at $30B+ valuation**
-* **Confirmed:** *The Information* (and confirmed via Reuters) reported that Nvidia is in discussions to participate in an equity funding round for AI search engine Perplexity at a valuation exceeding $30 billion. Reports also state Perplexity’s annualized revenue has grown from under $250 million to over $750 million this year.
-* **Caveats:** Based on anonymous source reporting. Talks are ongoing and investment terms could change or fall through before closing; neither company has officially confirmed the transaction on the record.
-* **Publication status:** **Suitable for publication today**, characterized strictly as reported investment discussions.
+#### **Candidate [16]: Meta Hires OpenAI Researcher Luke Metz for Superintelligence Team**
+* **What is confirmed:** *Axios* reported on August 24, 2026, that prominent AI researcher Luke Metz (a key contributor to ChatGPT's initial launch) has left OpenAI to join Meta's Superintelligence Labs. He will report to Chief AI Officer Alexandr Wang.
+* **Important caveats:** Sourced from a person familiar with the move (though confirmed by *Axios*). Metz has moved repeatedly between frontier AI organizations in recent years (OpenAI → Thinking Machines Lab → OpenAI → Meta).
+* **Publication status:** **Suitable for publication today.** (Strong scoop on AI executive and talent movements).
 
 ---
 
-#### **[12] Shein seeks voluntary US CFIUS review over $80M Everlane purchase**
-* **Confirmed:** *Bloomberg* reported that the Committee on Foreign Investment in the United States (CFIUS) is reviewing fast-fashion retailer Shein’s $80 million acquisition of US clothing brand Everlane (completed in May), after Shein voluntarily submitted the transaction for post-closing national security review. The news coincides with Shein filing for a $1.8 billion Hong Kong IPO at a $27 billion valuation.
-* **Caveats:** CFIUS deliberations are legally confidential; details come from sources familiar with the review process.
-* **Publication status:** **Suitable for publication today.** Important regulatory and cross-border M&A context.
+#### **Candidate [1]: Anthropic’s Flagship Model Struggles as Enterprise Buyers Seek Lower Costs**
+* **What is confirmed:** The *Financial Times* reported on August 23, 2026, that spending on Anthropic's premier frontier model, Claude Fable 5, has plateaued at approximately 11% of total enterprise spend on Anthropic tools, based on corporate billing data from Ramp across 70,000 businesses. Enterprise customers are increasingly routing high-volume tasks to cheaper models (such as Claude Opus 5 or open-weight models) to manage operational costs.
+* **Important caveats:** Despite the shift toward cheaper tiers, Anthropic's overall top-line growth remains strong, with annualized revenue reported at $65 billion for July 2026.
+* **Publication status:** **Suitable for publication today.** (Significant business intelligence on AI enterprise adoption and pricing dynamics).
 
 ---
 
-#### **[13] Chinese humanoid robots record sub-9.4s 100m sprint times at Beijing games**
-* **Confirmed:** At the 2nd World Humanoid Robot Games in Beijing, the *Tiangong Ultra* robot (developed by Beijing Centre for Humanoid Robotics) ran 100m in 9.39 seconds. A trial run by Honor’s *Lightning* robot clocked 9.32 seconds.
-* **Caveats:** These metrics represent controlled, single-purpose straight-line track tests where machines ran directly into crash mats or collapsed post-finish line. Roboticists note that sprint times on flat tracks do not correlate to real-world dexterity, adaptability, or task execution.
-* **Publication status:** **Suitable for publication today**, but must include contextual caveats explaining the limitations of the demonstration.
+#### **Candidate [4]: NYT Details Collapse of Crypto Exchange Zondacrypto**
+* **What is confirmed:** *The New York Times* (Andrew Higgins) published an investigation into the collapse of Zondacrypto (formerly BitBay), Central and Eastern Europe's largest crypto platform. The exchange went dark in April 2026, locking up over $100M in customer funds, following money laundering probes, alleged links to illicit networks, and the disappearance of CEO Przemysław Kral.
+* **Important caveats:** The operational collapse occurred earlier in April 2026; the *NYT* piece is an investigative feature offering background details and new context rather than breaking spot news today.
+* **Publication status:** **Suitable for publication today.** (High-quality investigative feature).
 
 ---
 
-#### **[14] SoftBank targets record ¥1tn ($6.3B) retail bond issue in Japan for AI funding**
-* **Confirmed:** SoftBank Group Corp. filed for a 7-year, ¥1 trillion ($6.3 billion) retail bond sale in Japan expected to price on Sept 4, marking the largest retail corporate bond issue in Japanese history. Proceeds are slated to support its $60B+ investment commitments to OpenAI and ongoing data center expansion.
-* **Caveats:** Final pricing and yield (indicative 4.3%–4.9%) will be determined on September 4. Heavy reliance on retail investors reflects institutional caution toward unrated debt tied to speculative AI outlays.
-* **Publication status:** **Suitable for publication today.** Major capital-raising story for global tech.
+#### **Candidate [9]: US Capital Spending Outpaces Europe 3x Driven by AI (Oxford Economics / FT)**
+* **What is confirmed:** An Oxford Economics study reported by the *Financial Times* projects US corporate spending on equipment and facilities to rise 40% between 2021 and 2027—more than three times the growth rate of European capital expenditure—heavily propelled by US AI infrastructure investments.
+* **Important caveats:** Long-range economic forecasts are sensitive to macro shocks, interest rate movements, and trade policy changes.
+* **Publication status:** **Suitable for publication today.** (Solid economic briefing candidate).
 
 ---
 
-### **Candidates Not Recommended for Briefing**
+### Rejected / Not Recommended Candidates
 
-* **[0], [2], [4], [7], [9], [11]:** Personal blog posts, opinion essays, or historical links (e.g., 1998 paper [11], 2025 post [9]). Unsuitable for a professional news briefing.
-* **[5] debloat.dev:** Directory launch. Unsuitable for news publication.
-* **[15] NYT AI in schools feature:** High-quality background feature by Natasha Singer, but lacks an immediate breaking news trigger compared to financial/regulatory developments.
-* **[16]–[19] Hugging Face papers:** Unverified academic preprints on arXiv [16, 17, 18, 19]. All claims originate solely from the paper authors without independent peer review or enterprise validation [16, 17, 18, 19]. Unsuitable as primary news items.
+* **Candidate [14] (Slate / Microsoft Nonprofit Data):** While Microsoft did retire legacy free software grants leading to tenant unlicensing after grace periods, the headline framing ("lost all their data") is sensationalized. The story is also several days old (published mid-August). **Not recommended for publication today.**
+* **Candidates [0], [3], [5], [6], [8], [11] (Hacker News posts):** Personal blog posts, developer tools, or opinion pieces. Useful discovery signals, but not primary news items for a UK morning briefing.

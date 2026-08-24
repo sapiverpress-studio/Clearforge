@@ -1,159 +1,171 @@
 {
   "searchEntryPoint": {
-    "renderedContent": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22World+Humanoid+Robot+Games%22+Honor+%229.39%22+OR+%2238.16%22+Telegraph&client=app-vertex-grounding&safesearch=active\">&quot;World Humanoid Robot Games&quot; Honor &quot;9.39&quot; OR &quot;38.16&quot; Telegraph</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22New+Zealand+plans+a+bill+to+ban+social+media+for+under-16s%22+OR+%22Tracy+Withers%22+Bloomberg+New+Zealand+social+media+ban+16&client=app-vertex-grounding&safesearch=active\">&quot;New Zealand plans a bill to ban social media for under-16s&quot; OR &quot;Tracy Withers&quot; Bloomberg New Zealand social media ban 16</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Anthropic%22+%22cheaper+tools+thrive%22+OR+%22struggles+to+attract+users%22+FT+OR+Financial+Times&client=app-vertex-grounding&safesearch=active\">&quot;Anthropic&quot; &quot;cheaper tools thrive&quot; OR &quot;struggles to attract users&quot; FT OR Financial Times</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Oxford+Economics%22+%22corporate+spending+on+equipment+and+facilities%22+2021+2027+FT+OR+Financial+Times&client=app-vertex-grounding&safesearch=active\">&quot;Oxford Economics&quot; &quot;corporate spending on equipment and facilities&quot; 2021 2027 FT OR Financial Times</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Perplexity%22+%22Nvidia%22+%2230+billion%22+OR+%22%2430B%22+%22The+Information%22&client=app-vertex-grounding&safesearch=active\">&quot;Perplexity&quot; &quot;Nvidia&quot; &quot;30 billion&quot; OR &quot;$30B&quot; &quot;The Information&quot;</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Shein%22+%22Everlane%22+CFIUS+%22Bloomberg%22&client=app-vertex-grounding&safesearch=active\">&quot;Shein&quot; &quot;Everlane&quot; CFIUS &quot;Bloomberg&quot;</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Luke+Metz%22+Meta+%22Superintelligence+Labs%22+OR+%22Alexandr+Wang%22+Axios&client=app-vertex-grounding&safesearch=active\">&quot;Luke Metz&quot; Meta &quot;Superintelligence Labs&quot; OR &quot;Alexandr Wang&quot; Axios</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22SoftBank%22+%22retail+bond+sale%22+%22trillion%22+OR+%226.3+billion%22+Bloomberg+OpenAI&client=app-vertex-grounding&safesearch=active\">&quot;SoftBank&quot; &quot;retail bond sale&quot; &quot;trillion&quot; OR &quot;6.3 billion&quot; Bloomberg OpenAI</a>\n  </div>\n</div>"
+    "renderedContent": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Slate%22+170k+Nonprofits+Lost+All+Their+Data+Microsoft&client=app-vertex-grounding&safesearch=active\">&quot;Slate&quot; 170k Nonprofits Lost All Their Data Microsoft</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Anthropic%22+%22cheaper+tools%22+FT+OR+%22Financial+Times%22+August+2026&client=app-vertex-grounding&safesearch=active\">&quot;Anthropic&quot; &quot;cheaper tools&quot; FT OR &quot;Financial Times&quot; August 2026</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=Shein+Everlane+CFIUS+review+Bloomberg&client=app-vertex-grounding&safesearch=active\">Shein Everlane CFIUS review Bloomberg</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=New+Zealand+social+media+ban+under+16+bill+August+2026&client=app-vertex-grounding&safesearch=active\">New Zealand social media ban under 16 bill August 2026</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=Nvidia+Perplexity+investment+30+billion+valuation+The+Information&client=app-vertex-grounding&safesearch=active\">Nvidia Perplexity investment 30 billion valuation The Information</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Zondacrypto%22+Andrew+Higgins+New+York+Times&client=app-vertex-grounding&safesearch=active\">&quot;Zondacrypto&quot; Andrew Higgins New York Times</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Oxford+Economics%22+US+corporate+spending+equipment+facilities+40%25+FT&client=app-vertex-grounding&safesearch=active\">&quot;Oxford Economics&quot; US corporate spending equipment facilities 40% FT</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=Meta+Luke+Metz+Superintelligence+Labs+Alexandr+Wang+Axios&client=app-vertex-grounding&safesearch=active\">Meta Luke Metz Superintelligence Labs Alexandr Wang Axios</a>\n  </div>\n</div>"
   },
   "groundingChunks": [
     {
       "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9kMZ212e7bshaD6twxG3jXy8kT0C2azAsno1QNgWBFWf80tcFoZcTTAomWSpoTvAQtEZrAeXLNrxu1DJrgyMR7YZ97XZRRv3NdgWh6_IVzCu0HpN47A1-xTWYwoAbYLkXNMVsK2FOUi3EK6gtox5PISMcCrskaUQHe6Fg2SI9wlDKw70=",
-        "title": "ft.com"
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGURlrDGFvl4hHnzT79oTGPcVN7Nnvs4NhIg7VRD0jGbvHarL47zxOnRqchYP_yVsG3NCt7hSOIPRf2-e1ACVBAY7eadEbQpxEh92XsMEozV1ScKr9nB4IV8qhLn_u7nq3HBChxkwulv5a6eKWohwMYBYktvkScWtGphskEluAUh6gR5tJ6ABvEgrbhtOAg2lBqWINPqXj-Hs7N",
+        "title": "theguardian.com"
       }
     },
     {
       "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCStjkEbrPKROUC4xMpqa0WF08bPZ_92Wl6lC2pd1g41itCgkgSQsoF4-7U_9gnr1k5FIw808_VK0DFP7_Rt7Jocm70-9R_UeAHhXN-QTS8A==",
-        "title": "simonwillison.net"
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzOsD0EYC_119DTsl_c-X-H-sOnsb9kW-_uQgarAZR3cedJJ75h3c23LSM5cWxs8789MpeBBfGNEpxuwGxQTXpioHrjs4dUprymeL7lWDRKzXhAvLkZyHqpynsvU_YvYO4ac_v8TT_nZ8PADgKiB4X23VkF5i_RUci87lkcBqi",
+        "title": "beehive.govt.nz"
       }
     },
     {
       "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYsEZeuSQxTsMkFHPVRIJcfu6L4nnrttlLxkJaIpdG-lQ0dnS5ecIbHn_7zNK2luPRrf4OGwCJTTB251ga6Uth09k1JCSuz8P7JrVgAckFyeWOwIi_NCLzkZXvqCc5yQlTBxPOD9JbLsS2xDGkkVsJNNycqTMEQsGPYdBwHWRvak0Xo38d2P83ouQcMC7LuXXCAvoqwQ6O68ZMdrzi-kIs24PfNZE=",
-        "title": "dealroom.co"
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkKFMcpO0VgsiujBOqsBN0XzkTePWZmWuWHvRsSv_crCXvmAgVQ31Viz_BFdPkSf96fYss5dSRfS8xEOhltJT0_A1tr0SAYj1t-8arje8StGGqjnWkm1XxynCuMv2X4CWQcXHzSq9CtxVOenQJhKiUIrIQ_zucWVNxAVJbJKT8OOoX59sG-UMUbSOCVjboImutxj2UuTW8Mzu22tUmosTTQoRznf-44kb89Vvn1WVXcKm0vd5T0f-3NAANUzx3WUrEsh9FOOYqJssAyJ5Q98Ox7y1TCg7AF_Efyj4K8PKkZ5gmLP1I",
+        "title": "kvue.com"
       }
     },
     {
       "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFC1MZ6vwp0Bvhn4F42iprntBPqelStHG2JMZrbRbgO_on4GdjXEfNwbP-NVZzgygqgff1DMp7SkIxvlPwT9pz9xc79oeU_q5hqyFY1B1myhdGFtoXhO2lVtsQ=",
-        "title": "toolify.ai"
-      }
-    },
-    {
-      "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEO4LHAIiGjQWQbelFqG6Ld-xE3uFAPotIdA7NbFc1jWbAuPPiCu81XDD75fl7Cz7JZaz3TT2Ak6_4W9WU203qG5pQYqUkoNgwjSJWNUsZZ1-UmAyoZfy40NWcRKUKY9YdT8kk01_ncgomx3rT0aLHyVZH49BvFjj10-uHaZpmCXse4Bxx8iBqa9tc7zeHEAPvEkQSroegAsquBYw==",
-        "title": "thestar.com.my"
-      }
-    },
-    {
-      "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIniKAr53br8kSZSM2WD2GjhrbsATxSjzOJM8yuq7DL8uIBWBiBGnPulIBWcUjvCyUpocyGu2uhG_ba7zsKR63JjqWSOzW32FGBh_Tj_HX8s_ZmEz0euOh",
-        "title": "techmeme.com"
-      }
-    },
-    {
-      "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxQrBlfrKAtd3JZPx_5SYgGjG2SPyv7XbXKp2Nmrdl439iD-bJrkAU9BsKSdlHBMn6BqbnJwR8hLCvou3E1My5febjFBozb1LQESisOW6UJNiO7sppjRgFBukMA7HIC1ybXvRfcAKB8NkogY0Jb8CFIlA=",
-        "title": "axios.com"
-      }
-    },
-    {
-      "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPmYVC8R9citHILzoR0PTcA8k6t7-8QCoDskMthvVYQI6DbEaZG3ytybX2M0BXRuuaDrJRHK9kq3FApRa39xMhUVHKkGkYChIJZVl2SqqWDg0x4wZtO-Fpi6pZWYPXunySU7Z38UsFvMXmDC4UIpXP6_fcOyO5gaH4eZj6ec4sPV7Bdg9YMcvmytBtJ3NqkUZjbXpcQY10ugvXo1d3n9-ujnM=",
-        "title": "etnownews.com"
-      }
-    },
-    {
-      "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZvwVw2CBg21AE5LZqnLhVLTo2V5EWFXuFbzcazUvwF4WOlNFrhKc3hO1CVDBIcWAP3H0V7so8CD_Dn-6MwNnLop9DF25fmBHOfEarf7Wj_AKCSq1Eju1h9iRjU2OukAm1jHOmSbRsCCPhTyA7UEAaNnTVjBLCQWNoyyAQ-JWR4AXW8o40W6Hro-d14SrpEjkMyt8MSSXZ5OL4uXOQIoPUPG0qAW1k1Y7f6ANzH36H9eMFFq91Kkk4cbrR9A==",
-        "title": "investing.com"
-      }
-    },
-    {
-      "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEw5fNNjSthyp41DTPciQU4DIpHOpghvZ491OBwKBgi_p7l-mJ2noRwxoN-5Pa2OPZDvH2B6fv12rLeNjXvZGME7ZRc1aTtu92Wg3xCbJP7YMy6KE84z4EDcoDlhyXzoUH4lYacXBGPmg0ZD-ht3ugHqsPwNNOB_RX7Fbt9Bd0cVLV8JWRJqEaf9rzrqe6fBOCdri4g-HARb1sONb6PljNc1MN5lmqIs8rk1EdRnPRVsFN9",
-        "title": "wmbdradio.com"
-      }
-    },
-    {
-      "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLEp-X3nMPLQry_-m76z9MZAZZZWpEeLnWXCS4D9GbsgaNaiqzReHBNMDqiLGdnXQ1tLg9jiOu-IiT2sHvWCs-4aM1TvutEsn8N01YPeWGZnDJKW0x1h7rzf6scK7_qdYlMLwXAvR4Rnar72DjpKWg6oFLA4XFOhnNEgaY6wgFYiKabmTpvZ_nZJWA8gH8BFnWcEWVUWdO7VmbhD1GpQ_WsNUOKZtPudyIJ5Il4M7NZA==",
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0sA_axwBAcoRsjzTRRgzx_8IA4TYBHmsG0PPo1iOOWzcGUtnufvLw8_QOwn00b7euad0Yi3m2Vur-BLyYWxjkj6fB513VpYLGbvghRojytLFvhYumxYQWnKZZOhDxSF0LRu5UKutyGIUTJBkOEfIgedvUYnTYZdzIurxRtF6eGW9ChA2tClIsU9pQUU0nsAfLLqHP6VShKYPdBYPpZOmWi1VY76I6XaauzNk6QBMF7w==",
         "title": "seekingalpha.com"
       }
     },
     {
       "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnSfjxJxwnyu47AvjZWF9t4IFKHenWz1HqyC0DMu4EVjxasxZcqN6OpbhQpkJjPDDh-aoqReBmI6xZ509CilT-KbRxtRGwOAl9--xAiFis-2uMGfjtr-RLeu_Vayl1NNpDpGYyCUKAXWaU9JuK5IceGOWrMDVkOScoJmDnS45qPxM3dZbgV9-yQnbIbSJnFv0yHQE=",
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRWQbiuUQFg3tzcDtALlQo3HXDtcqa7AZpSGIkQSF_IlLx0JgmGldgtVEZJ04BixNGr2PzB3yU6SsA6tJBmElORyWtzt6624mljiKPprvGsfTGsXkBaJoRWhIh7tqqxvmIIM-qgqUCTLF0vQbpWOu-tRdf1oPl9ivufFFpXodn42Qod7VK-UlpQJPe2hK0-39uMK89H4aXSumzZZHapTnrpdwV4nYXwlQvPM8sz6E00lD-",
+        "title": "wmbdradio.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFz9imSDiiiGBMi3G6L5FmIL0DrH2t1xXaBqWT1y9D0IokCUOzZpQFPlJvNhLiz-qUjw2fNjXUeXgU5h8pqtJezodwTBr1ll8sZ423B-lK_eas9-2Hgw5XIo0hdQ0tZ1MYllTGeqDwFJikPR0SF_OyBFAJALE65Q81DXow=",
+        "title": "chosun.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWkXzhBJBwFqaGeSMCY4WGdSnT69896eLUUiz-bU5AcnYpFw6Q3gEIZ8C7KIn4YtdhfVkZ8cIzudP6W-QxGuBGPO-w28fPvcLENpo76h6Qh5pO1wPUu41wuygfDjJUuzuFrJyL6W6kAcHDiBG-dzJLbUuOojkAGkorZ8pATUGtHbnziyJCSp2EK_RIq9qcPfkvPG_dPHjm31RvIZ3EavUmIlZ9weQh-om__PYsY3SGYqorTjz_RpaWstt0H_veHDM3oAkGxgdZX-k6ChY=",
+        "title": "economictimes.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-oFw9dnoqXBxbnmLB4_Zqd-ncvYyNDSnKqHLk39UvSpzgYn6b_MeJntMLf2ruqTqCTDemN8XqV59CMH_v-3E-QYT11qg-kpO5xCPLJ2ernuZXNqwLoDqmONLyi-y5vH3vV3Sd-gjtFufAo_bRpsKzAnN9O6Ud8QBallYOefjO8S4fB6L9aI0FFf5TGSw-sypQ-g7G-7NaPXW50qmB9jv7AJBiC_cscgwIpV4GzXkgTZURldhTC2SvXe-a8Fg5S3qRKKV9aRsglfP8Vc-qWfcNy7VkIf4z",
+        "title": "thestandard.com.hk"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUGERlzl2ecB8VP9tm-_mioPrOMuPEswjpwRBBwcuMxXHZTN9bd3D6PNDKDW3aqkxTL5sNS4rbiBIOsR-derCPiioXjDSSvr9vySnwm5Jc-81iN4DcWZsryw-uZWDsO2mqVyNBHpnzg1CjhazA9YwAA7co1jIAlzPkq2KNCNKl_EJrSLK-n1mTYDW2K82yltP5Xe6W",
+        "title": "japantimes.co.jp"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPS_N450iW8k997HZVwfvzwKI2P6xBQCW2LmEuW46uO-kSn9uCZ92JmJCHzZ_E3nYOeYx5q5vJORu1xGa2mU-KqChCuTLuvhGq3CKFchL5CLqeKuUW0ufgM2Cbh_oRm8twoVyN80XXO7HddwoVSBIlYv18-j5e90k1TguJ-MhWKweTWEl3E-SPwKqFkEkirWlc1WhlECQ9-zYk",
+        "title": "ua.news"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhpmodLjjKcoFE6mYsYQ1wJ8TzPvm2COHIQvWZFB9vY3k_JgCYTImlrMsJjvh1w-XK6mBVTJKqT2vu8JWD6L0Uf0ElS-sf8kdTugVW8z5urNRCCRP3RGbwURrG52qCgPDU2y9g286fZHihRKo0t_jieMsINvzXLJOYIyVvBKOgrA==",
+        "title": "wkzo.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNPa6rHxlBtvK-F_AKYuC5ctRD4HzVTcpimvPoLsCIpzBVToi1abzgrBUuAQ3IoA3yfYQLi1qa6GSdNSmr9VLQej3PlImkAhFxBSbwVittUo7BJHVwXH8EHFjOEeaG6KUmYch8c5cDOY6mY_l_jXBzVQ==",
+        "title": "axios.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCHHVdfLUnP7JtJ8uT7U4u2KtDU2ykPGCJEDYwwlsonDjOfY9jArDqiCfbTb0meV_vIHeK6vFAnR5FNjTWkT98I65sX4GoCmkDceYsVYLneleQ5PRvTqaiq1sG_qVULMZZ67p_fcXJNod9ouW0vKEuDdKwM7AdU4H1B2tDbKs=",
+        "title": "cryptopolitan.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHq1geFLGgdxiYhs18cKi93S71MhJ_rL-mK-yXYt_8mqRpcopD1LYMn_O89OseaP2j6RyZg0_NAJD7_k8VTikYUHxEzLJLfy3m9n0tq-sjYruBKzxUgupiIro4507TpXIsbs1-Q7sRm9W4biHNtEmDdozzwBrZ-KKM5EVOtGxLNo9Fd_kmfHLmFzFkZdivrWLulb6TdMdf8OaxKEDSYCZ3wHfDyuw==",
+        "title": "dealroom.co"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1PDEvrdc3DYt71t7PKdBvbWRA42c8-ChGIfq8DqxnpigrPdlIjCc08hxWXxgjDKZrgrLPVxg6rngxwzEyNWYGM80-Q0KUmTSYu9Sav_iQSdl2SB6qjCeqJkcwa-BQtKEehORap4fVcfs_X_MT2kLwJlQQUaMZs-iLeaTrYfHrzuqibjcGWpETRRyHoZ1WGiXY-Rr9NXGu61zWnb8=",
+        "title": "simonwillison.net"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgB951n-_BvTlzUMRCyKX_HZ_IbDFhoDoQ-YtT_noabzCW7Y4RSeiIDyVLH9_CtVumolP_jN2GUVVxg4ng1N5UjiVSwUMX_oC9S_crVNW_qlJWsYmR5iOlUfxM5WgiZPf6I5OhKwfffFE0Uzb1qDt77S5TIHX9Z0Qo3j8qhIo0sJGZz9Mm6O53323IHlMLG5zBbZ6XgHqpyvpI",
         "title": "startupfortune.com"
       }
     },
     {
       "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWWyf9TBPsWh9ZZ4PtgcH0iSQRXhCje4xN1Q33PWaa-vRXenMuZdrcT1XdeuegL9b5GxD3QyunBJ9YwrhDh_ltyycNQtbCbP5IDRbO4vOlAxIBeLoMW4A4nfBHODtronMi2rUbboOdPKDZmYL41kXy2tMXRcOrjwWz_-sRzkh9njuBNf6ghjnxQvMzG53kEMZYJNpw",
-        "title": "japantimes.co.jp"
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlX4xlPAKsWwznfE8IfROSnffn6DGGpnCHJxjOXAA7oy_Z16kvHnG8KQ9lZ02FkBrOlgDJQVH5_3_H1Lvct4g_7InuDgFHhOnTUG52zlQbFxFyMaqtqfayNN0SIWk-kcBa2ZSokcTeBD1YO_W_4YFOMaAuGOoxYGgojYwQL9fV6V05PQ==",
+        "title": "ft.com"
       }
     },
     {
       "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxMv_jXnl8Je1AecedJZmI8yR4y8zqJiM-u-hky73t9faiYaTGWl4ZQlYWe_Yc6bf7WVJXFiiAbNzZN291vwubi-PLcxu1W_xta-i3t5y3b11Xi3oY7H_j0rrvNJGQs6kQfg0rfplO_dEBIQ==",
-        "title": "binance.com"
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFymJ4KH8VG7f7T0-3u_uR_Eu4E3YwywdduWWCwHrm2X0mFNPS5haOq1W622qfGn0thLWSRUhuADWPhhQ7TauMAdIjGYcjR8aBSQcLB7pSOoT3AxfdnPhA=",
+        "title": "techmeme.com"
       }
     },
     {
       "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEB4Tp7ol0ynGbTIPxYw5vEEGsUIampBK5wmr-kGaYTEsHSENnc5yXEne4dnQERIdMSeF1RC_uxTEqutVDDEM4Gqu-5z3QCucjnxKLWhurySRfDm0unTDpAladkAAkuzzsuwwVhoCXK1wQsrY6u1SqGqEyzPNbj_W0TqloKdEPJRqsHpHdMRauZFTElro3p1cwbtg2iEt1TqzZu4pWw9syAwsAK9nY=",
-        "title": "euronext.com"
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjudKCHyM2YCKQPIXf0Q0VH09_4nJcH9Hgwymu0SvUfCHoAjVqdA6gRLpmNlOEGjAXoBVV21EEXLVkVneZfj0b1M88YagEd_cKjwURx-dnDUXx-xfnjyQOMi5pGcdW",
+        "title": "wikipedia.org"
       }
     },
     {
       "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMH7AEV_knX4hR1l0YHH8xIFJuyVBG_k6fy5wrMfQ62oTf_C0Gzbjvc-obZKpjPxd7RnkxZjcHHiy-chA5lPvDeIwxbnPTnXlCemqqyckvei-draRZP6rgJxZVbxzncLGhzdBd5ho8yGybjyzDqdhvqHnNH6LWMaZeG2dNVwyZcX3igyWCH4mtN8-9bdTRf1yi-0QbnajfrcIlTAcOIoNksubaCHUr2Y8UO4ULyTUaxMI=",
-        "title": "scmp.com"
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLaEvvU49MecJeIGITEVWHB6PLDzKG9qMRjVfdD5hLOZ-I0EWaiXEXlltv7Fgnk09Ht3B3Ehr0JGes6LlznBdXAUWkYmmhyg63SaU_xZ5cm5j8Cw==",
+        "title": "techmeme.com"
       }
     },
     {
       "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIrul8D7APpJNN6Bk78loWAUFh68U7toHQVwRe2ynSvkL3LANVbvvQVZ_7Z-COSzZa9O0Sya0dN88RHdQoTvvVK_pBYndqaElo9ANJhqRTWkDkcxKYMhwv4HToLfYF_CwwmRly5snBkYkpdXEOEgiDZVzJ6UhoXZLT31fltVdjwnaOLe5ZhDDYa0TXpbW58RWz",
-        "title": "asiaone.com"
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9sxesMC-fqKy6du9uW3hMWJfCAHtQifjYhqecD9-Qmsx6M9CvUA4QiJ9lw_Urakqw7UcWN-kTaMguS434FBVlnvijJK8eQ2kpAfc6IwXw6UU3ff9LrLt6Kh2eRbn8af2oIbfiNwfg1GUgPWmQRNJ2pSqFOH3xwbVDnIo4Lg3qYLn17acNire2xAxSJVrVTCnfYKxPrEUliCGEuH6VE53ZviLpvMnC5s3QU38hcvC1HfJtfLJwViPoFjnaqypmhQ==",
+        "title": "facebook.com"
       }
     },
     {
       "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFT6-xbyhhKTsLHcwGVAhMqb6BqA6s770kJDftZFReFkoSyRAA4lGtCBUARSacOtCRjvUMPQq8-p3JMqGuZjMrsE4MqOlwzQLy4PC4dCxf0cFQ3h7de3A1h6_5JMbTnsW45cxoJGfCZB3zxQ1BeJnNw8BDXBiPA037SkuQ6_v3TGBXca_RBnCFQ2w==",
-        "title": "edgex.exchange"
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4teCjWg4uMrN1wPAEydGyvFz9VRHUBd4gNwvRemXqBGNWei5iE0mFTm4-Q1MNHwK0eU5Jh4W6hcwM6VwsvzKd4w11fF01VeQucTd0Qu-kMAUwIuTcQIpFL9guaciYih1d1XFniYL_2tGayUXKKdJXfsv-FW_X9MeMUM685HGvuRHi9YJCdV8cZ9AW8tE5-9Sc5LuVT2TSyEe82lp4xxK17kMyqcxjeVegO_8e_F1F6iBlBEPzTEqSJE0XeBvDakuDa_13Ytk=",
+        "title": "facebook.com"
       }
     },
     {
       "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkLVTiRBCYi--3BS7cmB0LNYpA0Y-fjnwIhajgR33WwwvulfiqYhc2RYAbc1pNmGJgMEcOxYyAJnx8LyAqLXbaJ46Ye87mD45DKUpndUcoVOSJe-WU-UzNwyETLusMC4-z2Q7drtJhtwMWbn3-l9ySZKv6vNTe-iAd-GYLw2GQIjegpLEWHYqQXe75luRb7ZNBxalNZyasi9rN_qbw-AzwCT-cKJbu3e0VNMmHSaGUmNfKII0Ys0HAmAgR2v8f9Y6TBEENXg==",
-        "title": "internazionale.it"
-      }
-    },
-    {
-      "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqEB4WBYXCvkOMh04Cbm3FR_wolBfXEZLQ1wBceWwIWys0s9tB_aMTUroYp6EaH3Kp32TavKodVsf0JVsSn9XlmYgtqdpwMn6NQOlY4mMOPFHPisJIwk5cxyPkTnikcYmcgkj3RPNxxxuTqR-Zgaz7LJPXH388ldPgpYX2lmsXldaKQ67Q",
-        "title": "thenextweb.com"
-      }
-    },
-    {
-      "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDyS2GX-psemQzI6St1YXKm8AaRjFstScVS_WyNhVBlp-HWTVVQiVxQFEz8BYEMsq6wQEExaVnQbrnyt2AMm7_ZpMdIBi0ED4ZUpj5QNtWvq-ImWAeVQPm8g640p7Xy9D7X_3C25wnL5inBhPt3o_xNAskAymnW8VjIGcpsVHdb9JLHhQHLoLv",
-        "title": "japantimes.co.jp"
-      }
-    },
-    {
-      "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeE1CRlA2cScr9H-2Woek9f5iPaP1LyFB9-zGeqykyGv9SxSpDEhXNaNvJ6-oBszvJseNoQb1vi4wt8-IAlWY5tjYgpFquLjc3qodZWgKUFBLwrTcF_NrK2vwQR-Oc-nPWJfVTQPytg0n6qrYk72efssXfNYemYmMuXNq96ituf9kLmwVKnD0WdhXH9OwVS8IDoHUD8Q==",
-        "title": "theedgesingapore.com"
-      }
-    },
-    {
-      "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVn9VXNcrzfbfJzsVhkCuaLSoIgGasJucuyHC5CQ1L72nmcOK4M4DRWnX7AXFWcWdBZ8v9WOyGcq2FtCNTmzmh3ZJuT7lIux2VumVZXihCYu5fs8XXFQdzgBv_U1zmWT7UWeL5AD4n_Bvj7OkDY8-17PJ9iXxJwct6WaQ5BKMjF5Ssp3nDRWbn-mz76QzfuA==",
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB1nElgSTjpGEjzTq522Hf2zGbAlCBnL-JL6hg5KYhLkKY1dlnR15Gv4mEYTPRnGeuxTk11DzpL96uOG-Z0FTrFBKJ5y2Wbdsj0jR1jO2Q6Yo8wEdKaGOqeD1JC_qzqMK5SY1a8OGWAHt922qnevvyKVE7KLchloO7AiGLY0LP5Gbo8ZNbjNL_cNC8KQGWSk9UDGGTIUE=",
         "title": "reddit.com"
       }
     },
     {
       "web": {
-        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHstgiEwzhifnspnnsTZ3obFteKipzbVfnu8rigO_B7QgD8wDk19iMuWxNTvdDzQGz2y7jQxmxfElOa_nc08hq6-YYNrgA7iG4WFDWIoBOm",
-        "title": "techmeme.com"
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKerQJ4mfIY9ZdZARQLtbKgH3hAgoCbVSvN24_BvO6AmbD2eM2Er3tQIzjVYi-T85wal07Iad2vIKnp-PYDUqW1IzLbW8GHBZUc5TcM4mUv7FQOY61LK7IISZPHEMg01yjw9yv6JRV0q7j6Xvnk7CPOxLfQNu_W2ucSOBY7UL4sq0e8eHG4w==",
+        "title": "facebook.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG347dLKntNvzO_OXETdg0tRaXh3pqyrOUYnYDMDRsnQZs8Y6S_U_8qbFCO8ZZLxLxqskp1lN6npb-LKv159ojvQy4Nr9TBw-kk9FiRd9_2GNSXQrSh8CLFO6jBmwrD3Mux7reo74xKYH1s0VI=",
+        "title": "lemmy.world"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6HX-KA_-TwGd3aLBnfEh_pUqkrv4VIOkx33IxvBBXzB1Zau2_cjpjmGHYgWMep-zyHl48Mli_Epr-rsp8JJgLimZ4n3-cMUgSY_l2ejUr66GMrW__ASnhlBK4Rqt5rNrLDg==",
+        "title": "ycombinator.com"
       }
     }
   ],
   "groundingSupports": [
     {
       "segment": {
-        "startIndex": 171,
-        "endIndex": 564,
-        "text": "#### **[1] Anthropic’s flagship AI model struggles to attract corporate users amid cheaper alternatives**\n* **Confirmed:** Reporting by the *Financial Times* (citing corporate billing data from payment platform Ramp covering ~70,000 businesses) shows that enterprise spending on Anthropic’s top-tier model, **Fable 5**, has plateaued at approximately 11% of total outlay on Anthropic tools"
+        "startIndex": 146,
+        "endIndex": 471,
+        "text": "#### **Candidates [12] & [18]: New Zealand Proposes Under-16 Social Media Ban Bill**\n* **What is confirmed:** New Zealand Prime Minister Christopher Luxon and Education Minister Erica Stanford officially announced on August 24, 2026, the introduction of the *Online Safety (Minimum Age and Child Safety Risk Assessment) Bill*"
       },
       "groundingChunkIndices": [
         0,
@@ -162,9 +174,30 @@
     },
     {
       "segment": {
-        "startIndex": 566,
-        "endIndex": 712,
-        "text": "Corporate clients are increasingly opting for cheaper models (such as older Claude versions, open-weight models, or competitors) due to high costs"
+        "startIndex": 473,
+        "endIndex": 600,
+        "text": "The bill proposes banning under-16s from high-risk social media platforms (including Instagram, TikTok, Snapchat, and Facebook)"
+      },
+      "groundingChunkIndices": [
+        1
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 602,
+        "endIndex": 802,
+        "text": "It mandates age verification measures (such as facial age estimation, digital identity documents, or account data) and imposes non-compliance penalties on tech platforms of up to 10% of global revenue"
+      },
+      "groundingChunkIndices": [
+        0,
+        1
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 804,
+        "endIndex": 904,
+        "text": "* **Important caveats:** The bill does **not** currently have a guaranteed majority to pass into law"
       },
       "groundingChunkIndices": [
         0,
@@ -173,50 +206,41 @@
     },
     {
       "segment": {
-        "startIndex": 714,
-        "endIndex": 787,
-        "text": "FT sources note Anthropic’s July annualized revenue reached $65 billion"
+        "startIndex": 906,
+        "endIndex": 1054,
+        "text": "Luxon’s coalition partners—the libertarian ACT Party and Winston Peters’ New Zealand First—have announced they will vote against the measure"
       },
       "groundingChunkIndices": [
-        2,
-        1
+        0,
+        2
       ]
     },
     {
       "segment": {
-        "startIndex": 1000,
-        "endIndex": 1045,
-        "text": "** Excellent corporate tech/macro trend story"
+        "startIndex": 1056,
+        "endIndex": 1136,
+        "text": "Its passage depends on whether the opposition Labour Party decides to support it"
       },
       "groundingChunkIndices": [
-        0
+        2
       ]
     },
     {
       "segment": {
-        "startIndex": 1053,
-        "endIndex": 1327,
-        "text": "#### **[3] US corporate spending on equipment and infrastructure outpacing Europe 3x due to AI race**\n* **Confirmed:** An Oxford Economics analysis reported by the *Financial Times* projects US corporate spending on equipment and facilities to rise 40% between 2021 and 2027"
+        "startIndex": 1251,
+        "endIndex": 1536,
+        "text": "#### **Candidate [17]: Nvidia in Talks to Invest in Perplexity at $30B+ Valuation**\n* **What is confirmed:** *The Information* reported on August 23/24, 2026, that Nvidia is in talks to invest in a new funding round for AI search startup Perplexity at a valuation exceeding $30 billion"
       },
       "groundingChunkIndices": [
-        3
+        3,
+        4
       ]
     },
     {
       "segment": {
-        "startIndex": 1329,
-        "endIndex": 1492,
-        "text": "This rate is more than three times faster than European expenditure growth, driven primarily by investments in data centers, chips, and power infrastructure for AI"
-      },
-      "groundingChunkIndices": [
-        3
-      ]
-    },
-    {
-      "segment": {
-        "startIndex": 1682,
-        "endIndex": 1723,
-        "text": "** Strong transatlantic economic analysis"
+        "startIndex": 1538,
+        "endIndex": 1720,
+        "text": "Perplexity’s annualized revenue has reportedly grown from under $250 million at the start of 2026 to over $750 million, driven in part by its \"Perplexity Computer\" enterprise agent"
       },
       "groundingChunkIndices": [
         3
@@ -224,94 +248,139 @@
     },
     {
       "segment": {
-        "startIndex": 1731,
-        "endIndex": 2130,
-        "text": "#### **[6] New Zealand proposes social media ban for under-16s, but faces internal coalition opposition**\n* **Confirmed:** Prime Minister Christopher Luxon announced that New Zealand will introduce the *Online Safety (Minimum Age and Child Safety Risk Assessment) Bill*, requiring platforms like Instagram, TikTok, Snapchat, and Facebook to verify user age or face fines up to 10% of global turnover"
+        "startIndex": 1722,
+        "endIndex": 1858,
+        "text": "The report notes Nvidia previously considered tech licensing and talent deals with Perplexity before pivoting to equity investment talks"
+      },
+      "groundingChunkIndices": [
+        5
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 1860,
+        "endIndex": 1932,
+        "text": "* **Important caveats:** Deal negotiations are unclosed and confidential"
+      },
+      "groundingChunkIndices": [
+        4
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 1934,
+        "endIndex": 2015,
+        "text": "Neither Nvidia nor Perplexity has officially confirmed or commented on the report"
       },
       "groundingChunkIndices": [
         4,
-        5
-      ]
-    },
-    {
-      "segment": {
-        "startIndex": 2132,
-        "endIndex": 2379,
-        "text": "* **Caveats:** **Crucial political context:** Coalition partners ACT and New Zealand First (including Deputy PM Winston Peters) announced they will vote against the bill, meaning it currently lacks the parliamentary votes required to pass into law"
-      },
-      "groundingChunkIndices": [
-        5
-      ]
-    },
-    {
-      "segment": {
-        "startIndex": 2381,
-        "endIndex": 2526,
-        "text": "* **Publication status:** **Suitable for publication today**, provided the lack of parliamentary support/coalition rift is explicitly highlighted"
-      },
-      "groundingChunkIndices": [
-        5
-      ]
-    },
-    {
-      "segment": {
-        "startIndex": 2534,
-        "endIndex": 2869,
-        "text": "#### **[8] AI researcher Luke Metz leaves OpenAI for Meta's Superintelligence Labs**\n* **Confirmed:** *Axios* confirmed through sources familiar with the matter that researcher Luke Metz (a former OpenAI researcher who co-founded Thinking Machines Lab before rejoining OpenAI earlier in 2026) has joined Meta’s Superintelligence Labs"
-      },
-      "groundingChunkIndices": [
-        6,
-        7
-      ]
-    },
-    {
-      "segment": {
-        "startIndex": 2871,
-        "endIndex": 2902,
-        "text": "He will report to Alexandr Wang"
-      },
-      "groundingChunkIndices": [
         6
       ]
     },
     {
       "segment": {
-        "startIndex": 3064,
-        "endIndex": 3128,
-        "text": "** Clear evidence of ongoing talent mobility in frontier AI labs"
+        "startIndex": 2076,
+        "endIndex": 2156,
+        "text": "** (High-impact business/tech scoop, corroborated across financial news outlets)"
       },
       "groundingChunkIndices": [
-        6,
-        7
+        3,
+        4
       ]
     },
     {
       "segment": {
-        "startIndex": 3136,
-        "endIndex": 3427,
-        "text": "#### **[10] Nvidia in discussions to invest in Perplexity at $30B+ valuation**\n* **Confirmed:** *The Information* (and confirmed via Reuters) reported that Nvidia is in discussions to participate in an equity funding round for AI search engine Perplexity at a valuation exceeding $30 billion"
+        "startIndex": 2164,
+        "endIndex": 2521,
+        "text": "#### **Candidate [19]: Shein Seeks Post-Closing CFIUS Review for Everlane Acquisition**\n* **What is confirmed:** *Bloomberg News* reported that fast-fashion retailer Shein voluntarily requested a national security review from the Committee on Foreign Investment in the United States (CFIUS) regarding its $80 million acquisition of US apparel brand Everlane"
       },
       "groundingChunkIndices": [
-        8,
-        9
-      ]
-    },
-    {
-      "segment": {
-        "startIndex": 3429,
-        "endIndex": 3546,
-        "text": "Reports also state Perplexity’s annualized revenue has grown from under $250 million to over $750 million this year"
-      },
-      "groundingChunkIndices": [
-        10,
+        7,
         8
       ]
     },
     {
       "segment": {
-        "startIndex": 3600,
-        "endIndex": 3754,
-        "text": "Talks are ongoing and investment terms could change or fall through before closing; neither company has officially confirmed the transaction on the record"
+        "startIndex": 2523,
+        "endIndex": 2610,
+        "text": "The review focuses on data security risks relating to Americans' personal customer data"
+      },
+      "groundingChunkIndices": [
+        7,
+        9
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 2612,
+        "endIndex": 2741,
+        "text": "* **Important caveats:** It is highly unusual to submit a CFIUS filing *after* a deal closes (the transaction closed in May 2026)"
+      },
+      "groundingChunkIndices": [
+        7,
+        8
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 2743,
+        "endIndex": 2866,
+        "text": "Sources indicate the parties accelerated the closing without prior CFIUS filing due to Everlane's urgent financial distress"
+      },
+      "groundingChunkIndices": [
+        7,
+        9
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 2868,
+        "endIndex": 2926,
+        "text": "The outcome of the review remains pending and confidential"
+      },
+      "groundingChunkIndices": [
+        7,
+        9
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 2987,
+        "endIndex": 3083,
+        "text": "** (Solid trade/regulatory report, coinciding with Shein launching its Hong Kong IPO prospectus)"
+      },
+      "groundingChunkIndices": [
+        8,
+        10
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 3091,
+        "endIndex": 3384,
+        "text": "#### **Candidate [16]: Meta Hires OpenAI Researcher Luke Metz for Superintelligence Team**\n* **What is confirmed:** *Axios* reported on August 24, 2026, that prominent AI researcher Luke Metz (a key contributor to ChatGPT's initial launch) has left OpenAI to join Meta's Superintelligence Labs"
+      },
+      "groundingChunkIndices": [
+        11,
+        12
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 3386,
+        "endIndex": 3434,
+        "text": "He will report to Chief AI Officer Alexandr Wang"
+      },
+      "groundingChunkIndices": [
+        11,
+        12
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 3436,
+        "endIndex": 3535,
+        "text": "* **Important caveats:** Sourced from a person familiar with the move (though confirmed by *Axios*)"
       },
       "groundingChunkIndices": [
         11
@@ -319,42 +388,9 @@
     },
     {
       "segment": {
-        "startIndex": 3756,
-        "endIndex": 3875,
-        "text": "* **Publication status:** **Suitable for publication today**, characterized strictly as reported investment discussions"
-      },
-      "groundingChunkIndices": [
-        9,
-        11
-      ]
-    },
-    {
-      "segment": {
-        "startIndex": 3883,
-        "endIndex": 4281,
-        "text": "#### **[12] Shein seeks voluntary US CFIUS review over $80M Everlane purchase**\n* **Confirmed:** *Bloomberg* reported that the Committee on Foreign Investment in the United States (CFIUS) is reviewing fast-fashion retailer Shein’s $80 million acquisition of US clothing brand Everlane (completed in May), after Shein voluntarily submitted the transaction for post-closing national security review"
-      },
-      "groundingChunkIndices": [
-        12,
-        13
-      ]
-    },
-    {
-      "segment": {
-        "startIndex": 4283,
-        "endIndex": 4379,
-        "text": "The news coincides with Shein filing for a $1.8 billion Hong Kong IPO at a $27 billion valuation"
-      },
-      "groundingChunkIndices": [
-        14,
-        13
-      ]
-    },
-    {
-      "segment": {
-        "startIndex": 4381,
-        "endIndex": 4500,
-        "text": "* **Caveats:** CFIUS deliberations are legally confidential; details come from sources familiar with the review process"
+        "startIndex": 3537,
+        "endIndex": 3667,
+        "text": "Metz has moved repeatedly between frontier AI organizations in recent years (OpenAI → Thinking Machines Lab → OpenAI → Meta)"
       },
       "groundingChunkIndices": [
         12
@@ -362,52 +398,118 @@
     },
     {
       "segment": {
-        "startIndex": 4561,
-        "endIndex": 4613,
-        "text": "** Important regulatory and cross-border M&A context"
+        "startIndex": 3728,
+        "endIndex": 3782,
+        "text": "** (Strong scoop on AI executive and talent movements)"
       },
       "groundingChunkIndices": [
+        11,
         12
       ]
     },
     {
       "segment": {
-        "startIndex": 4621,
-        "endIndex": 4880,
-        "text": "#### **[13] Chinese humanoid robots record sub-9.4s 100m sprint times at Beijing games**\n* **Confirmed:** At the 2nd World Humanoid Robot Games in Beijing, the *Tiangong Ultra* robot (developed by Beijing Centre for Humanoid Robotics) ran 100m in 9.39 seconds"
+        "startIndex": 3790,
+        "endIndex": 4183,
+        "text": "#### **Candidate [1]: Anthropic’s Flagship Model Struggles as Enterprise Buyers Seek Lower Costs**\n* **What is confirmed:** The *Financial Times* reported on August 23, 2026, that spending on Anthropic's premier frontier model, Claude Fable 5, has plateaued at approximately 11% of total enterprise spend on Anthropic tools, based on corporate billing data from Ramp across 70,000 businesses"
       },
       "groundingChunkIndices": [
-        15,
-        16
+        13,
+        14
       ]
     },
     {
       "segment": {
-        "startIndex": 4882,
-        "endIndex": 4945,
-        "text": "A trial run by Honor’s *Lightning* robot clocked 9.32 seconds"
+        "startIndex": 4185,
+        "endIndex": 4340,
+        "text": "Enterprise customers are increasingly routing high-volume tasks to cheaper models (such as Claude Opus 5 or open-weight models) to manage operational costs"
       },
       "groundingChunkIndices": [
-        15,
-        17
+        13,
+        15
       ]
     },
     {
       "segment": {
-        "startIndex": 4947,
-        "endIndex": 5112,
-        "text": "* **Caveats:** These metrics represent controlled, single-purpose straight-line track tests where machines ran directly into crash mats or collapsed post-finish line"
+        "startIndex": 4342,
+        "endIndex": 4520,
+        "text": "* **Important caveats:** Despite the shift toward cheaper tiers, Anthropic's overall top-line growth remains strong, with annualized revenue reported at $65 billion for July 2026"
       },
       "groundingChunkIndices": [
-        15,
+        13,
+        14
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 4581,
+        "endIndex": 4666,
+        "text": "** (Significant business intelligence on AI enterprise adoption and pricing dynamics)"
+      },
+      "groundingChunkIndices": [
+        16,
+        15
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 4674,
+        "endIndex": 4944,
+        "text": "#### **Candidate [4]: NYT Details Collapse of Crypto Exchange Zondacrypto**\n* **What is confirmed:** *The New York Times* (Andrew Higgins) published an investigation into the collapse of Zondacrypto (formerly BitBay), Central and Eastern Europe's largest crypto platform"
+      },
+      "groundingChunkIndices": [
+        17,
         18
       ]
     },
     {
       "segment": {
-        "startIndex": 5239,
-        "endIndex": 5384,
-        "text": "* **Publication status:** **Suitable for publication today**, but must include contextual caveats explaining the limitations of the demonstration"
+        "startIndex": 4946,
+        "endIndex": 5140,
+        "text": "The exchange went dark in April 2026, locking up over $100M in customer funds, following money laundering probes, alleged links to illicit networks, and the disappearance of CEO Przemysław Kral"
+      },
+      "groundingChunkIndices": [
+        18
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 5142,
+        "endIndex": 5348,
+        "text": "* **Important caveats:** The operational collapse occurred earlier in April 2026; the *NYT* piece is an investigative feature offering background details and new context rather than breaking spot news today"
+      },
+      "groundingChunkIndices": [
+        17,
+        18
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 5409,
+        "endIndex": 5448,
+        "text": "** (High-quality investigative feature)"
+      },
+      "groundingChunkIndices": [
+        17
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 5456,
+        "endIndex": 5861,
+        "text": "#### **Candidate [9]: US Capital Spending Outpaces Europe 3x Driven by AI (Oxford Economics / FT)**\n* **What is confirmed:** An Oxford Economics study reported by the *Financial Times* projects US corporate spending on equipment and facilities to rise 40% between 2021 and 2027—more than three times the growth rate of European capital expenditure—heavily propelled by US AI infrastructure investments"
+      },
+      "groundingChunkIndices": [
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 6059,
+        "endIndex": 6097,
+        "text": "** (Solid economic briefing candidate)"
       },
       "groundingChunkIndices": [
         19
@@ -415,76 +517,54 @@
     },
     {
       "segment": {
-        "startIndex": 5524,
-        "endIndex": 5694,
-        "text": "filed for a 7-year, ¥1 trillion ($6.3 billion) retail bond sale in Japan expected to price on Sept 4, marking the largest retail corporate bond issue in Japanese history"
+        "startIndex": 6148,
+        "endIndex": 6309,
+        "text": "* **Candidate [14] (Slate / Microsoft Nonprofit Data):** While Microsoft did retire legacy free software grants leading to tenant unlicensing after grace periods"
       },
       "groundingChunkIndices": [
-        20,
-        21
-      ]
-    },
-    {
-      "segment": {
-        "startIndex": 5696,
-        "endIndex": 5803,
-        "text": "Proceeds are slated to support its $60B+ investment commitments to OpenAI and ongoing data center expansion"
-      },
-      "groundingChunkIndices": [
-        20,
-        21
-      ]
-    },
-    {
-      "segment": {
-        "startIndex": 5805,
-        "endIndex": 5902,
-        "text": "* **Caveats:** Final pricing and yield (indicative 4.3%–4.9%) will be determined on September 4"
-      },
-      "groundingChunkIndices": [
-        20
-      ]
-    },
-    {
-      "segment": {
-        "startIndex": 5904,
-        "endIndex": 6020,
-        "text": "Heavy reliance on retail investors reflects institutional caution toward unrated debt tied to speculative AI outlays"
-      },
-      "groundingChunkIndices": [
-        21,
         22
       ]
     },
     {
       "segment": {
-        "startIndex": 6081,
-        "endIndex": 6127,
-        "text": "** Major capital-raising story for global tech"
+        "startIndex": 6148,
+        "endIndex": 6374,
+        "text": "* **Candidate [14] (Slate / Microsoft Nonprofit Data):** While Microsoft did retire legacy free software grants leading to tenant unlicensing after grace periods, the headline framing (\"lost all their data\") is sensationalized"
       },
       "groundingChunkIndices": [
-        21
+        22
       ]
     },
     {
       "segment": {
-        "startIndex": 6437,
-        "endIndex": 6616,
-        "text": "* **[15] NYT AI in schools feature:** High-quality background feature by Natasha Singer, but lacks an immediate breaking news trigger compared to financial/regulatory developments"
+        "startIndex": 6376,
+        "endIndex": 6433,
+        "text": "The story is also several days old (published mid-August)"
       },
       "groundingChunkIndices": [
-        23
+        23,
+        24
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 6475,
+        "endIndex": 6601,
+        "text": "**\n* **Candidates [0], [3], [5], [6], [8], [11] (Hacker News posts):** Personal blog posts, developer tools, or opinion pieces"
+      },
+      "groundingChunkIndices": [
+        25
       ]
     }
   ],
   "webSearchQueries": [
-    "\"World Humanoid Robot Games\" Honor \"9.39\" OR \"38.16\" Telegraph",
-    "\"New Zealand plans a bill to ban social media for under-16s\" OR \"Tracy Withers\" Bloomberg New Zealand social media ban 16",
-    "\"Anthropic\" \"cheaper tools thrive\" OR \"struggles to attract users\" FT OR Financial Times",
-    "\"Oxford Economics\" \"corporate spending on equipment and facilities\" 2021 2027 FT OR Financial Times",
-    "\"Perplexity\" \"Nvidia\" \"30 billion\" OR \"$30B\" \"The Information\"",
-    "\"Shein\" \"Everlane\" CFIUS \"Bloomberg\"",
-    "\"Luke Metz\" Meta \"Superintelligence Labs\" OR \"Alexandr Wang\" Axios",
-    "\"SoftBank\" \"retail bond sale\" \"trillion\" OR \"6.3 billion\" Bloomberg OpenAI"
+    "\"Slate\" 170k Nonprofits Lost All Their Data Microsoft",
+    "\"Anthropic\" \"cheaper tools\" FT OR \"Financial Times\" August 2026",
+    "Shein Everlane CFIUS review Bloomberg",
+    "New Zealand social media ban under 16 bill August 2026",
+    "Nvidia Perplexity investment 30 billion valuation The Information",
+    "\"Zondacrypto\" Andrew Higgins New York Times",
+    "\"Oxford Economics\" US corporate spending equipment facilities 40% FT",
+    "Meta Luke Metz Superintelligence Labs Alexandr Wang Axios"
   ]
 }

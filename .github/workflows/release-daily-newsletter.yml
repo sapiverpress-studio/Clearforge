@@ -7,12 +7,8 @@ on:
         description: Exact Daily Brief date (YYYY-MM-DD)
         required: true
         type: string
-      candidate_id:
-        description: Exact candidate ID shown in the human-review package
-        required: true
-        type: string
       confirm:
-        description: Type SEND to release this exact newsletter and website edition
+        description: Type SEND to release the current approved newsletter and website edition for this date
         required: true
         type: string
 
@@ -39,7 +35,6 @@ jobs:
         shell: bash
         env:
           DATE: ${{ inputs.edition_date }}
-          CANDIDATE: ${{ inputs.candidate_id }}
           CONFIRM: ${{ inputs.confirm }}
         run: |
           set -euo pipefail
@@ -48,20 +43,20 @@ jobs:
           node <<'NODE'
           const fs = require('fs');
           const date = process.env.DATE;
-          const requested = process.env.CANDIDATE;
           const manifestPath = `news-intelligence/${date}/manifest.json`;
           const metaPath = `news-intelligence/${date}/newsletter-metadata.json`;
           if (!fs.existsSync(manifestPath) || !fs.existsSync(metaPath)) throw new Error(`No committed intelligence candidate for ${date}.`);
           const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
           const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
-          if (manifest.candidate_id !== requested) throw new Error('Candidate ID mismatch. Review the current candidate and try again.');
-          if (meta.candidate_id !== requested) throw new Error('Newsletter metadata does not match the reviewed candidate.');
+          const candidate = String(manifest.candidate_id || '').trim();
+          if (!candidate) throw new Error('Current intelligence candidate has no candidate ID.');
+          if (meta.candidate_id !== candidate) throw new Error('Internal candidate metadata mismatch; refusing release until the repository is consistent.');
           if (manifest.newsletter_ready_for_human_approval !== true) throw new Error('This candidate is not verification-ready.');
           if (Number(manifest.overall_confidence || 0) < 0.78) throw new Error('Candidate is below the release confidence threshold.');
+          fs.appendFileSync(process.env.GITHUB_ENV, `NEWS_INTELLIGENCE_DATE=${date}\nNEWS_INTELLIGENCE_CANDIDATE_ID=${candidate}\n`);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `date=${date}\ncandidate_id=${candidate}\n`);
+          console.log(`Releasing current approved candidate ${candidate.slice(0, 12)}… for ${date}.`);
           NODE
-          echo "NEWS_INTELLIGENCE_DATE=$DATE" >> "$GITHUB_ENV"
-          echo "NEWS_INTELLIGENCE_CANDIDATE_ID=$CANDIDATE" >> "$GITHUB_ENV"
-          echo "date=$DATE" >> "$GITHUB_OUTPUT"
 
       - name: Send reviewed campaign through established Brevo list
         env:

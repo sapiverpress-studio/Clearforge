@@ -1,11 +1,87 @@
-# Sapiver Forge Weekly Content Kit — 2026-08-17
+# Sapiver Forge Weekly Content Kit — 2026-08-24
 
 **Plan month:** 1/12 — Prove attention and capture
-**Candidate ID:** `6ca7d71db9f0fb25599d09b3a3099ef251daff50cfbef69c346390a5e7168e48`
+**Candidate ID:** `cc05ec42f9a3af797cc98bcbe18ffe8fe4ae3ae390a5a7be146d701e337e984c`
 
 **Commercial rules:** free Notion workspace is the primary CTA; one direct bundle promotion; no paid ads; no new product expansion; no generated audio or video.
 
-## Monday — Generation time is not the same as job time.
+## Monday — Before paying for another AI tool, ask what problem it actually removes.
+
+**Purpose:** useful-organic-and-list-growth
+
+**Short script**
+Before paying for another AI tool, ask what problem it actually removes. Small businesses rarely need three overlapping AI subscriptions. Compare the current method, a simple non-AI option and the real benefit first.
+
+**TikTok caption**
+Before paying for another AI tool, ask what problem it actually removes.
+
+Small businesses rarely need three overlapping AI subscriptions. Compare the current method, a simple non-AI option and the real benefit first.
+
+The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.
+
+#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI
+
+**YouTube Shorts**
+Title: Before paying for another AI tool, ask what problem it actually removes | Sapiver Forge #Shorts
+
+Small businesses rarely need three overlapping AI subscriptions. Compare the current method, a simple non-AI option and the real benefit first.
+
+The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.
+
+#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI #Shorts
+
+**Facebook**
+Before paying for another AI tool, ask what problem it actually removes.
+
+Small businesses rarely need three overlapping AI subscriptions. Compare the current method, a simple non-AI option and the real benefit first.
+
+The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.
+
+#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI
+
+**Destination:** Sapiver Forge Applied AI Gate System — Notion Workspace — https://payhip.com/b/gq89f
+
+---
+
+## Tuesday — If nobody owns the final decision, the workflow is not controlled.
+
+**Purpose:** useful-organic-and-list-growth
+
+**Short script**
+If nobody owns the final decision, the workflow is not controlled. Good control is not watching every step. It is putting one clear human decision at the point that matters.
+
+**TikTok caption**
+If nobody owns the final decision, the workflow is not controlled.
+
+Good control is not watching every step. It is putting one clear human decision at the point that matters.
+
+The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.
+
+#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI
+
+**YouTube Shorts**
+Title: If nobody owns the final decision, the workflow is not controlled | Sapiver Forge #Shorts
+
+Good control is not watching every step. It is putting one clear human decision at the point that matters.
+
+The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.
+
+#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI #Shorts
+
+**Facebook**
+If nobody owns the final decision, the workflow is not controlled.
+
+Good control is not watching every step. It is putting one clear human decision at the point that matters.
+
+The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.
+
+#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI
+
+**Destination:** Sapiver Forge Applied AI Gate System — Notion Workspace — https://payhip.com/b/gq89f
+
+---
+
+## Wednesday — Generation time is not the same as job time.
 
 **Purpose:** useful-organic-and-list-growth
 
@@ -43,7 +119,7 @@ The free Sapiver Forge Notion workspace helps you record these decisions. Link i
 
 ---
 
-## Tuesday — Looks finished and safe to release are two different things.
+## Thursday — Looks finished and safe to release are two different things.
 
 **Purpose:** useful-organic-and-list-growth
 
@@ -81,9 +157,9 @@ The free Sapiver Forge Notion workspace helps you record these decisions. Link i
 
 ---
 
-## Wednesday — Review the automation after it has met real work, not just the demo.
+## Friday — Review the automation after it has met real work, not just the demo.
 
-**Purpose:** useful-organic-and-list-growth
+**Purpose:** paid-offer-promotion
 
 **Short script**
 Review the automation after it has met real work, not just the demo. A workflow that saved time six months ago can become a burden after the task, client or subscription changes.
@@ -93,7 +169,7 @@ Review the automation after it has met real work, not just the demo.
 
 A workflow that saved time six months ago can become a burden after the task, client or subscription changes.
 
-The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.
+If you need the complete four-gate process, the Applied AI Gate System bundle is in the link in bio.
 
 #SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI
 
@@ -102,7 +178,7 @@ Title: Review the automation after it has met real work, not just the demo | Sap
 
 A workflow that saved time six months ago can become a burden after the task, client or subscription changes.
 
-The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.
+If you need the complete four-gate process, the Applied AI Gate System bundle is in the link in bio.
 
 #SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI #Shorts
 
@@ -111,15 +187,15 @@ Review the automation after it has met real work, not just the demo.
 
 A workflow that saved time six months ago can become a burden after the task, client or subscription changes.
 
-The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.
+If you need the complete four-gate process, the Applied AI Gate System bundle is in the link in bio.
 
 #SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI
 
-**Destination:** Sapiver Forge Applied AI Gate System — Notion Workspace — https://payhip.com/b/gq89f
+**Destination:** Sapiver Forge Applied AI Gate System Bundle — https://payhip.com/b/cmklU
 
 ---
 
-## Thursday — A decision you cannot find later has to be made twice.
+## Saturday — A decision you cannot find later has to be made twice.
 
 **Purpose:** useful-organic-and-list-growth
 
@@ -157,9 +233,9 @@ The free Sapiver Forge Notion workspace helps you record these decisions. Link i
 
 ---
 
-## Friday — You do not need more AI policy; you need clearer decision points.
+## Sunday — You do not need more AI policy; you need clearer decision points.
 
-**Purpose:** paid-offer-promotion
+**Purpose:** weekly-review-and-list-growth
 
 **Short script**
 You do not need more AI policy; you need clearer decision points. The Sapiver Forge Gate System covers whether AI belongs in the task, how the workflow is controlled, whether output can leave and whether the workflow should continue.
@@ -169,7 +245,7 @@ You do not need more AI policy; you need clearer decision points.
 
 The Sapiver Forge Gate System covers whether AI belongs in the task, how the workflow is controlled, whether output can leave and whether the workflow should continue.
 
-If you need the complete four-gate process, the Applied AI Gate System bundle is in the link in bio.
+Use the free Sapiver Forge Notion workspace to record the decision and review what actually worked. Link in bio.
 
 #SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI
 
@@ -178,7 +254,7 @@ Title: You do not need more AI policy; you need clearer decision points | Sapive
 
 The Sapiver Forge Gate System covers whether AI belongs in the task, how the workflow is controlled, whether output can leave and whether the workflow should continue.
 
-If you need the complete four-gate process, the Applied AI Gate System bundle is in the link in bio.
+Use the free Sapiver Forge Notion workspace to record the decision and review what actually worked. Link in bio.
 
 #SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI #Shorts
 
@@ -186,82 +262,6 @@ If you need the complete four-gate process, the Applied AI Gate System bundle is
 You do not need more AI policy; you need clearer decision points.
 
 The Sapiver Forge Gate System covers whether AI belongs in the task, how the workflow is controlled, whether output can leave and whether the workflow should continue.
-
-If you need the complete four-gate process, the Applied AI Gate System bundle is in the link in bio.
-
-#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI
-
-**Destination:** Sapiver Forge Applied AI Gate System Bundle — https://payhip.com/b/cmklU
-
----
-
-## Saturday — The first AI decision is whether the task needs AI at all.
-
-**Purpose:** useful-organic-and-list-growth
-
-**Short script**
-The first AI decision is whether the task needs AI at all. Extra tools create extra checking, setup and renewal decisions. Count those costs before calling something automation.
-
-**TikTok caption**
-The first AI decision is whether the task needs AI at all.
-
-Extra tools create extra checking, setup and renewal decisions. Count those costs before calling something automation.
-
-The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.
-
-#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI
-
-**YouTube Shorts**
-Title: The first AI decision is whether the task needs AI at all | Sapiver Forge #Shorts
-
-Extra tools create extra checking, setup and renewal decisions. Count those costs before calling something automation.
-
-The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.
-
-#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI #Shorts
-
-**Facebook**
-The first AI decision is whether the task needs AI at all.
-
-Extra tools create extra checking, setup and renewal decisions. Count those costs before calling something automation.
-
-The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.
-
-#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI
-
-**Destination:** Sapiver Forge Applied AI Gate System — Notion Workspace — https://payhip.com/b/gq89f
-
----
-
-## Sunday — Put the human decision before the point of no return.
-
-**Purpose:** weekly-review-and-list-growth
-
-**Short script**
-Put the human decision before the point of no return. Define what AI may do, what evidence the reviewer sees and who is allowed to approve the result.
-
-**TikTok caption**
-Put the human decision before the point of no return.
-
-Define what AI may do, what evidence the reviewer sees and who is allowed to approve the result.
-
-Use the free Sapiver Forge Notion workspace to record the decision and review what actually worked. Link in bio.
-
-#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI
-
-**YouTube Shorts**
-Title: Put the human decision before the point of no return | Sapiver Forge #Shorts
-
-Define what AI may do, what evidence the reviewer sees and who is allowed to approve the result.
-
-Use the free Sapiver Forge Notion workspace to record the decision and review what actually worked. Link in bio.
-
-#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI #Shorts
-
-**Facebook**
-Put the human decision before the point of no return.
-
-Define what AI may do, what evidence the reviewer sees and who is allowed to approve the result.
 
 Use the free Sapiver Forge Notion workspace to record the decision and review what actually worked. Link in bio.
 

@@ -1,4 +1,4 @@
-const USER_AGENT = "SapiverForge-News-Intelligence/1.0 (+https://sapiverpress.co.uk)";
+const USER_AGENT = "SapiverForge-News-Intelligence/1.1 (+https://sapiverpress.co.uk)";
 const TIMEOUT_MS = 15000;
 
 function decodeEntities(value = "") {
@@ -71,7 +71,7 @@ async function fetchJson(url, options = {}) {
   return (await fetchWithTimeout(url, { ...options, accept: "application/json" })).json();
 }
 
-function extractAnchors(html, base, predicate) {
+function extractAnchors(html, base, predicate = () => true) {
   const results = [];
   const anchorPattern = /<a\b[^>]*href=(?:"([^"]+)"|'([^']+)'|([^\s>]+))[^>]*>([\s\S]*?)<\/a>/gi;
   let match;
@@ -79,10 +79,22 @@ function extractAnchors(html, base, predicate) {
     const href = match[1] || match[2] || match[3] || "";
     const title = stripTags(match[4]);
     const url = canonicalUrl(href, base);
-    if (!url || title.length < 12 || !predicate(url, href, title)) continue;
+    if (!url || !predicate(url, href, title)) continue;
     results.push({ title, url });
   }
   return results;
+}
+
+function extractExternalLinks(html, base, blockedHosts = []) {
+  const blocked = blockedHosts.map((host) => host.toLowerCase());
+  return extractAnchors(html, base, (url) => {
+    try {
+      const host = new URL(url).hostname.toLowerCase();
+      return !blocked.some((blockedHost) => host === blockedHost || host.endsWith(`.${blockedHost}`));
+    } catch {
+      return false;
+    }
+  }).map((item) => item.url);
 }
 
 function parseRssItems(xml, base, limit = 12) {
@@ -97,12 +109,23 @@ function parseRssItems(xml, base, limit = 12) {
     };
     const title = stripTags(get("title"));
     const url = canonicalUrl(stripTags(get("link")), base);
-    const description = stripTags(get("description"));
+    const descriptionHtml = get("description");
+    const description = stripTags(descriptionHtml);
     const pubDateRaw = stripTags(get("pubDate"));
     const pubDate = pubDateRaw && !Number.isNaN(new Date(pubDateRaw).valueOf()) ? new Date(pubDateRaw).toISOString() : null;
-    if (title && url) out.push({ title, url, summary: description, published_at: pubDate });
+    if (title && url) out.push({ title, url, summary: description, description_html: descriptionHtml, published_at: pubDate });
   }
   return out;
+}
+
+function publisherFromTitle(title, url = "") {
+  const parenthetical = String(title || "").match(/\(([^()]{2,80})\)\s*$/);
+  if (parenthetical) return stripTags(parenthetical[1]);
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return "";
+  }
 }
 
 async function collectTechmeme() {
@@ -110,35 +133,109 @@ async function collectTechmeme() {
   const xml = await fetchText(feedUrl, { accept: "application/rss+xml,application/xml,text/xml;q=0.9,*/*;q=0.5" });
   const items = parseRssItems(xml, "https://www.techmeme.com", 12);
   if (!items.length) throw new Error("Techmeme feed returned no usable items");
-  return items.map((item, index) => ({
-    ...item,
-    source: "Techmeme",
-    source_home: "https://www.techmeme.com/",
-    source_rank: index + 1
-  }));
+  return items.map((item, index) => {
+    const discoveryUrl = item.url;
+    const externalLinks = extractExternalLinks(item.description_html || "", discoveryUrl, ["techmeme.com"]);
+    const originalUrl = externalLinks[0] || "";
+    const publisher = publisherFromTitle(item.title, originalUrl);
+    return {
+      ...item,
+      url: originalUrl || discoveryUrl,
+      discovery_url: discoveryUrl,
+      direct_source_url: originalUrl || null,
+      publisher: publisher || "Techmeme",
+      link_quality: originalUrl ? "original" : "aggregator_fallback",
+      source: "Techmeme",
+      source_home: "https://www.techmeme.com/",
+      source_rank: index + 1,
+      collection_mode: "rss"
+    };
+  });
+}
+
+function parseSitemapLocs(xml) {
+  return [...String(xml).matchAll(/<loc>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/loc>/gi)]
+    .map((match) => decodeEntities(match[1].trim()))
+    .filter(Boolean);
+}
+
+function parseReutersNewsSitemap(xml) {
+  const items = [];
+  const urlPattern = /<url\b[^>]*>([\s\S]*?)<\/url>/gi;
+  let match;
+  while ((match = urlPattern.exec(String(xml)))) {
+    const body = match[1];
+    const get = (tag) => {
+      const found = body.match(new RegExp(`<${tag}\\b[^>]*>(?:<!\\[CDATA\\[)?([\\s\\S]*?)(?:\\]\\]>)?<\\/${tag}>`, "i"));
+      return found ? decodeEntities(stripTags(found[1])).trim() : "";
+    };
+    const url = canonicalUrl(get("loc"), "https://www.reuters.com/");
+    const title = get("news:title") || get("title");
+    const publishedRaw = get("news:publication_date") || get("lastmod");
+    const publishedAt = publishedRaw && !Number.isNaN(new Date(publishedRaw).valueOf()) ? new Date(publishedRaw).toISOString() : parseDateFromUrl(url);
+    if (url && title) items.push({ title, url, summary: "", published_at: publishedAt });
+  }
+  return items;
+}
+
+function isReutersTechRelevant(item) {
+  let pathname = "";
+  try { pathname = new URL(item.url).pathname.toLowerCase(); } catch {}
+  if (pathname.startsWith("/technology/")) return true;
+  const text = `${item.title || ""} ${pathname}`.toLowerCase();
+  return /\b(ai|artificial intelligence|technology|tech|chip|semiconductor|software|cyber|cloud|robot|startup|social media|data center|data centre|nvidia|openai|anthropic|google|meta|microsoft|apple|amazon)\b/.test(text);
+}
+
+async function collectReutersFromSitemaps() {
+  const indexes = [
+    "https://www.reuters.com/arc/outboundfeeds/news-sitemap-index/?outputType=xml",
+    "https://www.reuters.com/arc/outboundfeeds/sitemap-index/?outputType=xml"
+  ];
+  let lastError;
+  for (const indexUrl of indexes) {
+    try {
+      const indexXml = await fetchText(indexUrl, { accept: "application/xml,text/xml;q=0.9,*/*;q=0.5" });
+      const locs = [...new Set(parseSitemapLocs(indexXml))].sort((a, b) => b.localeCompare(a));
+      if (!locs.length) throw new Error("Reuters sitemap index returned no child sitemaps");
+      const selected = [...new Set([...locs.slice(0, 6), ...locs.slice(-3)])];
+      const collected = [];
+      const seen = new Set();
+      for (const sitemapUrl of selected) {
+        let sitemapXml;
+        try {
+          sitemapXml = await fetchText(sitemapUrl, { accept: "application/xml,text/xml;q=0.9,*/*;q=0.5" });
+        } catch {
+          continue;
+        }
+        for (const item of parseReutersNewsSitemap(sitemapXml)) {
+          if (!isReutersTechRelevant(item) || seen.has(item.url)) continue;
+          seen.add(item.url);
+          collected.push(item);
+          if (collected.length >= 12) break;
+        }
+        if (collected.length >= 12) break;
+      }
+      if (collected.length) return collected;
+      throw new Error("Reuters sitemaps returned no recent technology-relevant stories");
+    } catch (error) {
+      lastError = error;
+    }
+  }
+  throw lastError || new Error("Reuters sitemap collection failed");
 }
 
 async function collectReuters() {
-  const sourceUrl = "https://www.reuters.com/technology/";
-  const html = await fetchText(sourceUrl);
-  const anchors = extractAnchors(html, sourceUrl, (url) => {
-    const parsed = new URL(url);
-    return parsed.hostname.endsWith("reuters.com") && /^\/technology\/.+/.test(parsed.pathname) && !/^\/technology\/?$/.test(parsed.pathname);
-  });
-  const seen = new Set();
-  const items = [];
-  for (const item of anchors) {
-    if (seen.has(item.url)) continue;
-    seen.add(item.url);
-    items.push({ ...item, published_at: parseDateFromUrl(item.url), summary: "" });
-    if (items.length >= 12) break;
-  }
-  if (!items.length) throw new Error("Reuters technology page returned no usable article links");
-  return items.map((item, index) => ({
+  const items = await collectReutersFromSitemaps();
+  return items.slice(0, 12).map((item, index) => ({
     ...item,
     source: "Reuters",
-    source_home: sourceUrl,
-    source_rank: index + 1
+    publisher: "Reuters",
+    source_home: "https://www.reuters.com/technology/",
+    source_rank: index + 1,
+    direct_source_url: item.url,
+    discovery_url: item.url,
+    link_quality: "original",
+    collection_mode: "sitemap"
   }));
 }
 
@@ -155,17 +252,25 @@ async function collectHackerNews() {
     .sort((a, b) => (Number(b.score || 0) + Number(b.descendants || 0) * 0.3) - (Number(a.score || 0) + Number(a.descendants || 0) * 0.3))
     .slice(0, 10);
   if (!stories.length) throw new Error("Hacker News returned no recent usable stories");
-  return stories.map((item, index) => ({
-    source: "Hacker News",
-    source_home: "https://news.ycombinator.com/",
-    source_rank: index + 1,
-    title: stripTags(item.title),
-    url: canonicalUrl(item.url || `https://news.ycombinator.com/item?id=${item.id}`, "https://news.ycombinator.com/"),
-    discussion_url: `https://news.ycombinator.com/item?id=${item.id}`,
-    summary: item.text ? stripTags(item.text).slice(0, 500) : "",
-    published_at: new Date(Number(item.time) * 1000).toISOString(),
-    engagement: { score: Number(item.score || 0), comments: Number(item.descendants || 0) }
-  }));
+  return stories.map((item, index) => {
+    const url = canonicalUrl(item.url || `https://news.ycombinator.com/item?id=${item.id}`, "https://news.ycombinator.com/");
+    return {
+      source: "Hacker News",
+      publisher: publisherFromTitle(item.title, url) || "Hacker News",
+      source_home: "https://news.ycombinator.com/",
+      source_rank: index + 1,
+      title: stripTags(item.title),
+      url,
+      direct_source_url: item.url ? url : null,
+      discovery_url: `https://news.ycombinator.com/item?id=${item.id}`,
+      link_quality: item.url ? "original" : "discussion_fallback",
+      discussion_url: `https://news.ycombinator.com/item?id=${item.id}`,
+      summary: item.text ? stripTags(item.text).slice(0, 500) : "",
+      published_at: new Date(Number(item.time) * 1000).toISOString(),
+      engagement: { score: Number(item.score || 0), comments: Number(item.descendants || 0) },
+      collection_mode: "api"
+    };
+  });
 }
 
 async function collectHuggingFace() {
@@ -175,15 +280,21 @@ async function collectHuggingFace() {
   const items = data.slice(0, 12).map((entry, index) => {
     const paper = entry.paper || entry;
     const id = paper.id || entry.id;
+    const url = id ? `https://huggingface.co/papers/${encodeURIComponent(id)}` : "https://huggingface.co/papers";
     return {
       source: "Hugging Face",
+      publisher: "Hugging Face",
       source_home: "https://huggingface.co/papers",
       source_rank: index + 1,
       title: stripTags(entry.title || paper.title || ""),
-      url: id ? `https://huggingface.co/papers/${encodeURIComponent(id)}` : "https://huggingface.co/papers",
+      url,
+      direct_source_url: url,
+      discovery_url: url,
+      link_quality: "original",
       summary: stripTags(entry.summary || paper.ai_summary || paper.summary || "").slice(0, 1200),
       published_at: entry.publishedAt || paper.publishedAt || paper.submittedOnDailyAt || null,
-      engagement: { upvotes: Number(paper.upvotes || entry.upvotes || 0) }
+      engagement: { upvotes: Number(paper.upvotes || entry.upvotes || 0) },
+      collection_mode: "api"
     };
   }).filter((item) => item.title && item.url);
   if (!items.length) throw new Error("Hugging Face daily papers returned no usable papers");
@@ -196,9 +307,9 @@ async function collectSifted() {
   for (const sourceUrl of pages) {
     try {
       const html = await fetchText(sourceUrl);
-      const anchors = extractAnchors(html, sourceUrl, (url) => {
+      const anchors = extractAnchors(html, sourceUrl, (url, _href, title) => {
         const parsed = new URL(url);
-        return parsed.hostname.endsWith("sifted.eu") && /^\/articles\/.+/.test(parsed.pathname);
+        return title.length >= 12 && parsed.hostname.endsWith("sifted.eu") && /^\/articles\/.+/.test(parsed.pathname);
       });
       const seen = new Set();
       const items = [];
@@ -212,8 +323,13 @@ async function collectSifted() {
       return items.map((item, index) => ({
         ...item,
         source: "Sifted",
+        publisher: "Sifted",
         source_home: "https://sifted.eu/",
-        source_rank: index + 1
+        source_rank: index + 1,
+        direct_source_url: item.url,
+        discovery_url: item.url,
+        link_quality: "original",
+        collection_mode: "html"
       }));
     } catch (error) {
       lastError = error;
@@ -249,6 +365,7 @@ function scoreCandidate(item) {
   if (item.engagement?.comments) score += Math.min(0.5, Math.log10(item.engagement.comments + 1) / 4);
   if (item.engagement?.upvotes) score += Math.min(0.8, Math.log10(item.engagement.upvotes + 1) / 2);
   if (item.summary?.length > 80) score += 0.35;
+  if (item.link_quality === "original") score += 0.25;
   return Number(score.toFixed(3));
 }
 
@@ -272,7 +389,15 @@ export async function collectNewsSources() {
     const started = Date.now();
     try {
       const items = await collector();
-      return { name, ok: true, item_count: items.length, elapsed_ms: Date.now() - started, items };
+      return {
+        name,
+        ok: true,
+        item_count: items.length,
+        elapsed_ms: Date.now() - started,
+        collection_mode: items[0]?.collection_mode || "direct",
+        original_link_count: items.filter((item) => item.link_quality === "original").length,
+        items
+      };
     } catch (error) {
       return { name, ok: false, item_count: 0, elapsed_ms: Date.now() - started, error: String(error?.message || error), items: [] };
     }
@@ -296,4 +421,16 @@ export async function collectNewsSources() {
   };
 }
 
-export const __test = { stripTags, canonicalUrl, parseRssItems, extractAnchors, titleKey, dedupeCandidates, scoreCandidate };
+export const __test = {
+  stripTags,
+  canonicalUrl,
+  parseRssItems,
+  extractAnchors,
+  extractExternalLinks,
+  parseSitemapLocs,
+  parseReutersNewsSitemap,
+  publisherFromTitle,
+  titleKey,
+  dedupeCandidates,
+  scoreCandidate
+};

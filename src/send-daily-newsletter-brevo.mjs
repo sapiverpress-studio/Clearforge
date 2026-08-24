@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { resolveBrevoListId } from "./brevo-list-resolver.mjs";
+import { isBrevoEmptyRecipientsError } from "./brevo-campaign-errors.mjs";
 
 const ROOT = process.cwd();
 const date = String(process.env.NEWS_INTELLIGENCE_DATE || new Intl.DateTimeFormat("sv-SE", {
@@ -57,6 +58,20 @@ if (!campaignId) {
     })
   });
   const createText = await createResponse.text();
+
+  if (!createResponse.ok && isBrevoEmptyRecipientsError(createResponse.status, createText)) {
+    Object.assign(metadata, {
+      status: "ready_no_subscribers",
+      brevo_campaign_id: null,
+      recipient_list_id: listId,
+      email_skipped_reason: "no_daily_brief_subscribers",
+      email_skipped_at: new Date().toISOString()
+    });
+    fs.writeFileSync(metaPath, JSON.stringify(metadata, null, 2) + "\n");
+    console.log(`No contacts are currently subscribed to ${targetListName}; Brevo draft/send skipped without failing the Daily Brief run.`);
+    process.exit(0);
+  }
+
   if (!createResponse.ok) throw new Error(`Brevo campaign creation failed (${createResponse.status}): ${createText}`);
   const campaign = JSON.parse(createText);
   if (!campaign.id) throw new Error("Brevo did not return a campaign id.");
@@ -65,7 +80,9 @@ if (!campaignId) {
     status: "brevo_draft",
     brevo_campaign_id: campaignId,
     recipient_list_id: listId,
-    campaign_created_at: new Date().toISOString()
+    campaign_created_at: new Date().toISOString(),
+    email_skipped_reason: null,
+    email_skipped_at: null
   });
   fs.writeFileSync(metaPath, JSON.stringify(metadata, null, 2) + "\n");
   console.log(`Created Brevo draft campaign ${campaignId} for Sapiver Forge Daily Brief ${date}.`);
@@ -88,7 +105,9 @@ Object.assign(metadata, {
   approved: true,
   sent_at: new Date().toISOString(),
   brevo_campaign_id: campaignId,
-  recipient_list_id: listId
+  recipient_list_id: listId,
+  email_skipped_reason: null,
+  email_skipped_at: null
 });
 fs.writeFileSync(metaPath, JSON.stringify(metadata, null, 2) + "\n");
 console.log(`Sent Sapiver Forge Daily Brief ${date} through Brevo campaign ${campaignId}.`);

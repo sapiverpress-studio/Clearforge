@@ -1,0 +1,452 @@
+{
+  "searchEntryPoint": {
+    "renderedContent": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n<a class=\"chip\" href=\"https://www.google.com/search?q=Lambda+pre-IPO+round+3+billion+12+billion+valuation+2026+Bloomberg&client=app-vertex-grounding&safesearch=active\">Lambda pre-IPO round 3 billion 12 billion valuation 2026 Bloomberg</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Oceans+hit+highest+temperature+on+record%22+BBC+2026&client=app-vertex-grounding&safesearch=active\">&quot;Oceans hit highest temperature on record&quot; BBC 2026</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22ARIA%22+AI+music+chart+ban+Australia+2026&client=app-vertex-grounding&safesearch=active\">&quot;ARIA&quot; AI music chart ban Australia 2026</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Unitree%22+Shanghai+debut+slump+2026+Reuters&client=app-vertex-grounding&safesearch=active\">&quot;Unitree&quot; Shanghai debut slump 2026 Reuters</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%222026-the-end-of-ipfs-at-shipyard%22&client=app-vertex-grounding&safesearch=active\">&quot;2026-the-end-of-ipfs-at-shipyard&quot;</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Xiaomi%22+%22single+threaded%22+%22multithreaded%22+lemire+2026&client=app-vertex-grounding&safesearch=active\">&quot;Xiaomi&quot; &quot;single threaded&quot; &quot;multithreaded&quot; lemire 2026</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Hide+My+Email%22+developer.apple.com+2026+icloud.com&client=app-vertex-grounding&safesearch=active\">&quot;Hide My Email&quot; developer.apple.com 2026 icloud.com</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=Airbound+37+million+Greenoaks+2026+TechCrunch&client=app-vertex-grounding&safesearch=active\">Airbound 37 million Greenoaks 2026 TechCrunch</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22mspaint_invisible_watermark%22+xusheng.dev&client=app-vertex-grounding&safesearch=active\">&quot;mspaint_invisible_watermark&quot; xusheng.dev</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Mac+mini%22+M5+M6+Gurman+2026+Bloomberg&client=app-vertex-grounding&safesearch=active\">&quot;Mac mini&quot; M5 M6 Gurman 2026 Bloomberg</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22OpenAI+restores+5-hour+Codex%22+9to5mac+2026&client=app-vertex-grounding&safesearch=active\">&quot;OpenAI restores 5-hour Codex&quot; 9to5mac 2026</a>\n  </div>\n</div>"
+  },
+  "groundingChunks": [
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnsv_aQxib5bkrYmd_ePYSf8oY891IFEOoKMGoOPAX-JyPwVmmAfhNv-eI6TbjPNW7NsAgE7bISRsuyM1WYxQ6gxGGBd_0mkJa6e_RZveTnUjCfJeNSRatfJ4jute7wZkwtKWghtpAXMPIrFpeykQKE6YVW5j3Srz2hx_DhZQ5KGgFBIWGlD0848VNh-Lx99nYSiD9spRZnraW6rNymEBGTQXEjJy5gFZK",
+        "title": "local10.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHx43JhZZrPNqxrWvd9VjjXmKaz44EoU4BK9xLBs2RV5E2B82NZw2GdhTgaOnShrghycsLDgjDl3cQcsaso2U85hFVzHvb89EKLFkfjkmmOtLpQ5rtlMl2NXwRXkW86_gBpl1kU-0LrNPA4bUL5FEG6BuZUt508QzsyOMZYYn1CkXHy73rKGo1mVfOW2x28Z6sbowmX5AKN2R3fzF27AzUdzVRg",
+        "title": "rollingstone.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTi1bqGx3kAxEVdFnGviziEYP3RyCfmEy71mvnwze6xT64ZpdIEoRu4v4Q2dzgsS9V1YuhvN1UKvzU1fOE-dloXq7uFmw49n3GDcanvm0uBeVuRVHGh55XZy0Gl_fOnEb-m1u4BAP3EE8P3dJ8CHG7FPrjVhLZpVhbPyoxkmgh_W-MR0S6w4Zt25t8ip4nYiv6SVnWqepYKjxvMACBTYxilu9NtWlZLwLJNds=",
+        "title": "aljazeera.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdlvMNEv9PO1QIsfoQbZ_voecLqM7Ekmr-pN5PeShi822RiaYIcuNW-yLOuGmTQKRYWR-hfczc0OwplDUSqcUHC5GajLRdUu97PcdfmRT6WxSC0zDJ1_aGZGgFUuwbY7pmwYseS1rM2B14mZmshqq4vttzjCbHQHgC-_Nwpg0n_NlXhQ==",
+        "title": "thedailyaus.com.au"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvE32OrLtF8E9aIa7BEAmfSTmEysF5QUiGpoKn5z2ehp8PoTQWQwmhIEKrONwD6CU_rfn1XXI-DW8g8wvkJljfrSl2-4Yxt_S3hvFd_xdApQvQGYMoqUW24aF4CImRcSEA4l6rPPHcyYvz4DyEVYZrtbcawIYdJdRg7PbbVTGCOxoS7B53FYwyHUmabOoE0M-_CiSh1ECBF60A0Fd7vnTkUlxzallFsWroK9lYbi9j",
+        "title": "dailymirror.lk"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLtYBTOF3d5OE2-vYoCbMWPg4umK-amxwobSv1FTe0klVArREibmvTBBdmFqqLna98GYglZroezAJjKdtVxIADVjRfymbrvE9GklCBC6QjU5JzOkvC2Ss3WR5dR9YysLA8ZCoBon60JHtt2YAmoTxxxq7VNNehmNgEmqh3xvfMvFvUXVnBuP_EYK0O",
+        "title": "tippinsights.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEnWXMWUF6FdgZ0M82v3OnpfiZ-ztkI6nGZg86Py95NzqLZGpN3FCUMXcO_TcEFD7fFbZa_FD89fj3sfUxCwvL3VpU7mjd_GC0aL97iNc9uuyDqt6CC8HPeZshrqTA2tCp3zIRBCBY7hYqEvTYrZeWhQO5XooCZDTPANjvslzbCWd9mmVF4B1O_PVRGL5TMMbeGKuB",
+        "title": "asiaone.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEc5BkG0fH5hqToX0rLwZSMzjJMJxDNYTRHByivQiahBfFw7NLttCEi6IlgO9IP8Q0bYxQLVJh_cizD5fqeUha5oAd4W5QlT7zQvdCIodFxYeUfF43jx5h2rEUxVRAyOepwlGPY0aoMfpykv9t9Shoi4j8gYlaKeGzXEyXoS7vBZX8nm2wMzTAQ5mfdfwPkhP7zXKPE4svt_lo23vMz99UjX6HLYIgDCrjVYqTkVjZqOa2SnTi0lxgJpE_miigMSswWL_1R9Jh_PDsOelvBO-MziE9kA7vGetECXD0DbzL9Lu0Jhk4cZablQ41Bvg8=",
+        "title": "economictimes.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHknDmx6PEycZI98HVH3OmUshk8j2f1zpkrqxcZ96Y9LQVMY4PX1Y-lxtaZ-zTPF8KZCluvNO_ETvBk-wYyxaXc6WqoEEjvz5SG3vs-zp_6spZN7-eCIH8jTZmdfCflJ3CbjyyhzBQmvQu7vDnYDWphaxqFUXXlRwGWeLLxd-LWSpavnua2Ql-RBfMND4wmFop1UQt6wmkoXDjpSWPspXW0FRx4nJ5M",
+        "title": "all-about-industries.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG65XvND2ahMdvWrx9YrHjYvvmp-x8cZ3fcXSqoYpTWbrtMhjNoSdzUgFzUX7VfgomU_WGWBWkiGl7S4Q9vZwTqyb80BS15cTZXd13VEjUNsp_9C05tesgvHhvcTl94A0NdWzg=",
+        "title": "apple.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1oLJ74D02P6s5N7pi6mYI6JTk4LB7ZHcZJ-7DNTkUB0GSWejILL4_IrKQJybD9EAfKosW-Q2S1Gm-PGXtL7aq-tjIVGJrT-fsuJzrItqS8qNLfK0Bb167uY8vaBszrPPSYJLi6jZ-ypEXxODeC7yJJ5RIJyul",
+        "title": "macrumors.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-oZ5AQMc4n3GSxgS-1TjjDimAlQwBDg1clTMl3xNKhoUkzpn5JgQK_Su4kUswEkR4N_K2PlWDc-uA9uB40tF94WQ9Xin3_Cfbf2uEPVN41d2NaSwUb2msR1q248ILTqHlDZIx5VrrIV2W3EYq8EnSLBWOaVKNdgCKBOdEiTe4Ur9uwnY3tGc5a6eYA9vRzYTrEU8ykeSZEzvavtA=",
+        "title": "9to5mac.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0iBfE0SVs4_8lHHmMLp4iuozjrIec0ij1P_pGVnkcYokcSq2xHdIFTd4Hm2O7OaPPIkm6Hw_9-OBFPp22t0ZMwm3RYCUdJmzTCZLgdWBxF8TbyoM_G95tTyaHk4iiUF5DzuJgSLTaBmpt-uiiQFmyJQl7",
+        "title": "ipshipyard.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEARnIDVOwMCMds4mMtTST8GmcGx9jJPKNaAhEcD_MHJTsEkyYodnHdELeLWBasHe1AlkGZiZcX9TkRqXK-eoQtWTFY90q4nfq_S3LmKCnzMqNWoHqqrDxj6jQBx5QEtDeOJQfnhvtT6kYJ3bYAJqrt",
+        "title": "gigazine.net"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXefnTtzv9li32OtH9d5GwcufVmoU2lbycsFElak0T4gDniOGa0Ndlk-DNq5UcyU6Kn261dsYN4bnDDV8H_wPyvIgkNuD09Uf-HhswZhrsrHodHWHViTSaWcp0Mv2wCpGnzoJyIlU_",
+        "title": "techmeme.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGu4gyg7cIIy_3tKsBWpCfW3DUkxhKiatkShyoZuKmEDCGP_obagKvMapw2eQzp_BuZFNA0pOyJmL04GjDBSEpZWuBtYWex7xwxJE-TWWQNbJjSsnhsEu1r-MheJ0wGDU1mnokPm2u9zF1jgRFguLEan6N2JIqAWpjA80KZk0L4hLaTd4G8VEZzwfXQfyhOp8eZrdFqB3zrzLKz8YOGr51OWoFtQT7F3CqbScl37VlwnnvJlKKoYdCg",
+        "title": "investing.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWEd4wvVxs6XG6VxgWjNlEByokerQT8JWzK3Z80r84fGDl-HpBpMs0BiOQfK1U3Ab_NshxgipuSbiYN05eAacNh-KfM4775CccibWLQ1CpS9YLxg==",
+        "title": "aiweekly.co"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIX_Osn5OUzrw38VdW9a31nKswUtkESmOSMYkAcTMbtlLDFldWcuoPcjqaW5aKhKPrS7vhFwFVI_32bx7LgW5BHMEt1bNDHd12eayjB4IqU4zMD3kDjLsCtgBzf-r0DgqFChzhgl2FEG6JD9Lfv_yJFt3kUDRcEQP4u_9qc_jfPs-u4Gwyazhp3z4IRiLfe0k1Kom_8Wc7klw=",
+        "title": "9to5mac.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtg-31Tgon6qTGmBwfK1kL8XQRHd3tu3rQWkgMKuGP8T5bORSt3u_XqX6pQKKa7PfTL7ktZwEQb1UsHJNoLs8S9Tjwj0dUquAvlqEqDceoHtTSDhEx_0G1--YZox4PHF_UO10PkKq0zUO4UiGNXAGkE_F_Go_fk0fxTZtMzMCqGz2Vlyx6LvAp1q-FcyQ0zb9o6-_Wpnkdduyp8zVmA_crWd4jeQ==",
+        "title": "ndtvprofit.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjY8ST8jk7_9LL_IrJTgH__YueaMSVp3dJidCAZnC9mfP8M835GDg4kEQsyr_pIFdTUbaOFvOBaiYK2OR1zZeRoSVO4tAzGeclNSEee7Nf3aYy3pFn4g3O51WU84Eeyo5ZnAW8k-3UW2sK9bVjTR5NWOYDSk6S8p-PNGHk45AZ8E7HubFT8khWSipSJOZzXzr3fs3jgyodUOUpbRW2326Qla7rIDr6ZPXszg1R3zwBpdCWbwkpHBff8QOwoRdVxJxPQUKQ7pey8NufmtQYQlT8I5c=",
+        "title": "economictimes.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQGJVW-xD2OBVE9cd_y-J3ItPrwDpYvAnBI1l9HVr3rca4hh8j2atnsO9JnTOyIGAmQN2XD3ex3rTJ0QZ-ifvWUWz7uxxkJHW16eu1C2wOeXRNryXHNKOAcrZQqHwfaoYmmolIQzvTiBc0zAXkeIdiFn6wqnrDXXIt5-hlO9amRyA2gzspT4VpoxyZDtBOOW8jg5U=",
+        "title": "businessworld.in"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeoIWj9TrPq25qJ6oGJlCe2vzTY3AFIWl1k9EpY8PySE5O3ObgvP00k9iAstD1cQUhVJbC6HjigLAwQDiCH08vT5Gk_nO6-aYCkZ2hVKcl8grLBkaCZeAZdsPeF5AMf6uBKXItTpPaPu_76q9IO_oRyq8ikjMKJAKrrTY=",
+        "title": "xusheng.dev"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcCBA4w6GzsAP3FzUzOfi-auyNmQa04dwBVkKERfEqyA3dF3-aH7z2w95ONCUDhmPVR-9x7W-TCZMhL7BxzvGqhg0IQRmafLbojCUNYUPbTVIl5qzOOh3aiFGrrbCpp_yANud7XQ==",
+        "title": "note.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAxBNmWLITxjH1B9Zw7lQoeXTCYHRXKXpdOxMkBP45iC5uV262McuSo-af74Nn5zf0LK_yTprMxHwLXUftUe7kBmDlGl_k_icJ1YkzhnFIcyJIx1yjOR7YS7Brs06TsDikVo-Ci2lhGW12MQ9b4VWtlCcA9KctQ1h4Eg4RyKhJeUx2kgMyDazu6bStRYPEq2DY8tdTbs5OC-w_ZkKwau4RP3P3-bQztE4OfOJQrm-ydDI=",
+        "title": "smartprix.com"
+      }
+    }
+  ],
+  "groundingSupports": [
+    {
+      "segment": {
+        "startIndex": 136,
+        "endIndex": 388,
+        "text": "#### [3] ARIA Bans Wholly AI-Generated Songs from Australian Music Charts\n* **Confirmed:** The Australian Recording Industry Association (ARIA) officially updated its Charts Code of Practice to exclude songs that are wholly or primarily generated by AI"
+      },
+      "groundingChunkIndices": [
+        0,
+        1
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 390,
+        "endIndex": 520,
+        "text": "To qualify, tracks must be \"substantially human-made,\" with human-written compositions and human-performed lead vocals/instruments"
+      },
+      "groundingChunkIndices": [
+        0
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 522,
+        "endIndex": 639,
+        "text": "The decision follows chart controversy over an AI-assisted cover of *Like a Prayer* that topped Australian radio play"
+      },
+      "groundingChunkIndices": [
+        2,
+        3
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 641,
+        "endIndex": 773,
+        "text": "* **Caveats:** AI-assisted tracks created using authorized, legal AI tools remain eligible as long as human artistry remains primary"
+      },
+      "groundingChunkIndices": [
+        0,
+        1
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 906,
+        "endIndex": 1211,
+        "text": "#### [4] Ocean Surface Temperatures Reach Record High in August\n* **Confirmed:** Data from the EU Copernicus Climate Change Service confirms global average sea surface temperatures outside polar regions reached 21.1°C (70°F) on August 22, 2026, breaking the previous record of 21.09°C set in March 2024"
+      },
+      "groundingChunkIndices": [
+        4,
+        5
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 1213,
+        "endIndex": 1290,
+        "text": "* **Caveats:** The numerical margin above the 2024 record is narrow (0.01°C)"
+      },
+      "groundingChunkIndices": [
+        4,
+        5
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 1213,
+        "endIndex": 1510,
+        "text": "* **Caveats:** The numerical margin above the 2024 record is narrow (0.01°C), but scientists emphasize that breaking global ocean temperature records in August—rather than the usual peak month of March/April—is highly unusual and driven by an intensifying El Niño on top of long-term warming"
+      },
+      "groundingChunkIndices": [
+        4,
+        5
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 1578,
+        "endIndex": 1861,
+        "text": "#### [8] Unitree Shares Drop 45% Following Blockbuster Shanghai IPO Debut\n* **Confirmed:** Shares of Chinese humanoid robot maker Unitree Robotics fell ~45% over three trading sessions following its August 19 debut on Shanghai’s STAR Market, where shares initially surged over 500%"
+      },
+      "groundingChunkIndices": [
+        6,
+        7
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 1863,
+        "endIndex": 1934,
+        "text": "The retreat wiped ~$30B off its peak market value, bringing it to ~$36B"
+      },
+      "groundingChunkIndices": [
+        6,
+        7
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 1936,
+        "endIndex": 2078,
+        "text": "* **Caveats:** Despite the post-listing drop, Unitree’s valuation remains far higher than its initial IPO issue valuation (~$8.3B / CNY 61B)"
+      },
+      "groundingChunkIndices": [
+        8
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 2179,
+        "endIndex": 2375,
+        "text": "#### [6] Apple Reverses Decision to Change \"Hide My Email\" Domain\n* **Confirmed:** Apple updated its developer portal confirming that `iCloud+ Hide My Email` addresses will remain on `@icloud.com`"
+      },
+      "groundingChunkIndices": [
+        9
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 2377,
+        "endIndex": 2536,
+        "text": "Apple reversed its June plan following user and developer backlash over concerns that web services would easily identify and block aliases on a separate domain"
+      },
+      "groundingChunkIndices": [
+        10,
+        11
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 2538,
+        "endIndex": 2685,
+        "text": "* **Caveats:** `Sign in with Apple` relay addresses will still transition to `@private.icloud.com` from `@privaterelay.appleid.com` later this year"
+      },
+      "groundingChunkIndices": [
+        9,
+        11
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 2753,
+        "endIndex": 3058,
+        "text": "#### [10] IPFS Core Maintenance Team Shipyard to Wind Down\n* **Confirmed:** Shipyard, the primary engineering and infrastructure maintenance organization for the InterPlanetary File System (IPFS), announced it will wind down its IPFS operations by September 30, 2026, after Protocol Labs ended its funding"
+      },
+      "groundingChunkIndices": [
+        12
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 3060,
+        "endIndex": 3242,
+        "text": "* **Caveats:** IPFS open-source repositories will remain available, but core tools and HTTP gateways will lose dedicated full-time maintainers unless taken over by community entities"
+      },
+      "groundingChunkIndices": [
+        12
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 3310,
+        "endIndex": 3448,
+        "text": "#### [1] Xiaomi Unveils \"XRING O3\" 3nm Mobile CPU\n* **Confirmed:** Xiaomi announced its in-house 3nm mobile system-on-chip, the \"XRING O3\""
+      },
+      "groundingChunkIndices": [
+        13,
+        14
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 3450,
+        "endIndex": 3688,
+        "text": "Independent analysis and early Geekbench/AnTuTu benchmarks highlight single-core performance matching Apple's flagship cores and multi-threaded performance exceeding them due to a 10-core configuration (6 ultra-large cores) and 44MB cache"
+      },
+      "groundingChunkIndices": [
+        13,
+        14
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 3690,
+        "endIndex": 3799,
+        "text": "* **Caveats:** Benchmark scores originate from early channel tests (e.g., Geekerwan) and Xiaomi launch claims"
+      },
+      "groundingChunkIndices": [
+        13
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 3988,
+        "endIndex": 4233,
+        "text": "#### [9] Lambda in Talks to Raise $3B at $12B+ Valuation Ahead of IPO\n* **Confirmed:** Bloomberg reported that Nvidia-backed AI cloud provider Lambda Inc. is in negotiations to raise up to $3B in pre-IPO funding, targeting a valuation above $12B"
+      },
+      "groundingChunkIndices": [
+        15,
+        16
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 4235,
+        "endIndex": 4290,
+        "text": "Its 2026 annualized revenue is estimated to cross $1.5B"
+      },
+      "groundingChunkIndices": [
+        16
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 4508,
+        "endIndex": 4774,
+        "text": "#### [13] OpenAI Restores 5-Hour Codex and Work Usage Limits on ChatGPT Plus\n* **Confirmed:** OpenAI engineering lead Thibault Sottiaux confirmed that a 5-hour usage limit is being reinstated for Codex and ChatGPT Work on ChatGPT Plus accounts to manage compute load"
+      },
+      "groundingChunkIndices": [
+        17
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 4776,
+        "endIndex": 4836,
+        "text": "* **Caveats:** Pro, Enterprise, and Edu tiers are unaffected"
+      },
+      "groundingChunkIndices": [
+        18
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 4893,
+        "endIndex": 5101,
+        "text": "#### [7] Drone Startup Airbound Raises $37M Series A\n* **Confirmed:** Bengaluru-based autonomous drone startup Airbound raised $37M in Series A funding led by Greenoaks, bringing total raised capital to ~$50M"
+      },
+      "groundingChunkIndices": [
+        19,
+        20
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 5103,
+        "endIndex": 5214,
+        "text": "The company also signed a deployment agreement with the Andhra Pradesh government for intracity drone logistics"
+      },
+      "groundingChunkIndices": [
+        19,
+        20
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 5284,
+        "endIndex": 5555,
+        "text": "#### [5] MS Paint and Photos Embed GUID Watermarks in Local AI Output\n* **Confirmed:** Reverse engineer Xusheng Li documented that Microsoft Paint and Photos silently embed a server-issued GUID watermark into image pixels generated locally via Windows AI/Copilot features"
+      },
+      "groundingChunkIndices": [
+        21,
+        22
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 5557,
+        "endIndex": 5695,
+        "text": "* **Caveats:** Applies specifically to AI-generated images created within Microsoft's native applications, not standard non-AI image edits"
+      },
+      "groundingChunkIndices": [
+        21
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 6154,
+        "endIndex": 6343,
+        "text": "* **[12] Apple Mac Mini Rumor (Bloomberg):** Speculation regarding unannounced product timing ahead of Apple's September event; best treated as a rumor/watch item rather than confirmed news"
+      },
+      "groundingChunkIndices": [
+        23
+      ]
+    }
+  ],
+  "webSearchQueries": [
+    "Lambda pre-IPO round 3 billion 12 billion valuation 2026 Bloomberg",
+    "\"Oceans hit highest temperature on record\" BBC 2026",
+    "\"ARIA\" AI music chart ban Australia 2026",
+    "\"Unitree\" Shanghai debut slump 2026 Reuters",
+    "\"2026-the-end-of-ipfs-at-shipyard\"",
+    "\"Xiaomi\" \"single threaded\" \"multithreaded\" lemire 2026",
+    "\"Hide My Email\" developer.apple.com 2026 icloud.com",
+    "Airbound 37 million Greenoaks 2026 TechCrunch",
+    "\"mspaint_invisible_watermark\" xusheng.dev",
+    "\"Mac mini\" M5 M6 Gurman 2026 Bloomberg",
+    "\"OpenAI restores 5-hour Codex\" 9to5mac 2026"
+  ]
+}

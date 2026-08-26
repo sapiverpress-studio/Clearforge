@@ -1,0 +1,91 @@
+Here are the evidence notes for the news candidates for the **2026-08-26 UK morning briefing**.
+
+---
+
+### **Top Priority Candidates**
+
+#### **[0] Dolly Parton has died**
+* **Confirmed:** Country music legend Dolly Parton died on August 25, 2026, at age 80 in Nashville, Tennessee. Her death was publicly announced by her family (nephew Bryan Seaver) and confirmed by her publicist. Representatives stated she passed away at the Vanderbilt-Ingram Cancer Center following a brief battle with cancer.
+* **Caveats:** Initial tabloid speculation mentioned acute kidney issues prior to the official statement confirming cancer.
+* **Publication status:** **Suitable for publication.** (Lead obituary story).
+
+---
+
+#### **[1], [7], [11] Apple introduces M6, M5 Ultra, and new Mac mini / Mac Studio models**
+* **Confirmed:** Apple officially announced its next-generation silicon—the 2nm **M6** chip and the quad-architecture **M5 Ultra**—alongside new Mac mini (M6 and M5 Pro) and Mac Studio (M5 Max and M5 Ultra) desktop models on August 25, 2026. 
+* **Caveats:** These announcements originate directly from Apple Press Releases. Performance claims (e.g., up to 4.3x faster AI compute, 2nm efficiency gains) are Apple’s internal benchmark figures.
+* **Publication status:** **Suitable for publication.** (Best published as a single consolidated hardware/chip release item).
+
+---
+
+#### **[4] OpenAI Jalapeño chip benchmarks outperforming Nvidia Blackwell**
+* **Confirmed:** At the Hot Chips 2026 conference, OpenAI disclosed the first benchmark metrics for its Broadcom-developed custom inference ASIC, codenamed **Jalapeño**. Independent analysis by *SemiAnalysis* using the open-source *InferenceX* benchmark showed Jalapeño achieving 1.5×–1.9× higher processing capacity per watt and 1.7×–3.6× lower latency compared to Nvidia Blackwell GPU clusters on open-weight models (including GPT-OSS 120B and DeepSeek R1).
+* **Caveats:** Jalapeño is an ASIC strictly optimized for AI inference (not training). The comparison relies on OpenAI-provided execution data run through SemiAnalysis’s framework.
+* **Publication status:** **Suitable for publication.**
+
+---
+
+#### **[6] TfL delays delay London robotaxi rollout timeline**
+* **Confirmed:** The *Financial Times* reported on August 26, 2026, that Transport for London (TfL) has delayed publishing regulatory safety guidance for driverless taxis. As a result, operators (including Waymo, Wayve, and Baidu) have pushed back expectations of launching fully driverless commercial services in London this year.
+* **Caveats:** Operators have not abandoned London plans; the delay is driven by local regulatory guidance timeline slips rather than technology withdrawal.
+* **Publication status:** **Suitable for publication.** (High priority for UK briefing).
+
+---
+
+#### **[10] FDA authorizes Abbott Libre Duo (continuous dual ketone & blood sugar wearable)**
+* **Confirmed:** On August 25, 2026, the US FDA authorized Abbott's *Libre Duo 10 Day Continuous Dual Glucose-Ketone Monitoring System* for individuals aged 2 and older. It is the first wearable device cleared in the US to continuously monitor ketone levels and the first globally to track both glucose and ketones in a single sensor.
+* **Caveats:** The authorization covers sensor measurement accuracy; real-world efficacy in reducing Diabetic Ketoacidosis (DKA) hospitalizations will require downstream clinical tracking.
+* **Publication status:** **Suitable for publication.**
+
+---
+
+#### **[2] Nitter and XCancel receive X Corp. cease-and-desist notices**
+* **Confirmed:** Open-source developer `zedeus` announced on GitHub issue #1442 that X Corp. served cease-and-desist letters demanding the permanent takedown of Nitter (the open-source X/Twitter frontend) and primary mirror instances like XCancel. Official instances have gone offline and development is halted while legal counsel is consulted.
+* **Caveats:** A few independent, third-party self-hosted instances remain temporarily accessible outside US jurisdiction.
+* **Publication status:** **Suitable for publication.**
+
+---
+
+### **Secondary & Industry Candidates**
+
+#### **[3] Pew Research: 34% of Americans use AI chatbots for health queries**
+* **Confirmed:** Pew Research Center published a study (survey of 3,488 US adults conducted late June 2026, released Aug 25, 2026) showing 34% of Americans use AI chatbots for health purposes. Primary drivers include obtaining quick health info (28%), self-diagnosing symptoms (25%), and accessing free health information (22%).
+* **Caveats:** Data is based on self-reported survey responses from US adults.
+* **Publication status:** **Suitable for publication.**
+
+---
+
+#### **[13] AM Intelligence orders 9,000 Nvidia Vera Rubin systems for $8B Indian AI project**
+* **Confirmed:** Indian AI infrastructure firm AM Intelligence (backed by Greenko Group) placed a binding order for 9,000 Nvidia Vera Rubin NVL72 rack systems. The deployment targets a 30MW initial AI factory in Hyderabad for Q1 2027 as part of a planned 1GW compute expansion.
+* **Caveats:** Deliveries and facility operations are scheduled for Q1 2027.
+* **Publication status:** **Suitable for publication.**
+
+---
+
+#### **[12] HP and Huawei sign global Wi-Fi patent cross-licensing agreement**
+* **Confirmed:** HP and Huawei signed a multi-year global cross-licensing deal covering standard-essential Wi-Fi patents (including Wi-Fi 6 and Wi-Fi 7), resolving a 2025 European patent suit.
+* **Caveats:** Despite Huawei remaining on the US Entity List, standard-essential patent licensing cross-agreements of this nature remain legally permissible.
+* **Publication status:** **Suitable for publication.**
+
+---
+
+#### **[14] YMTC targets top NAND flash market spot ahead of $5B IPO**
+* **Confirmed:** The *Financial Times* reported that YMTC (Yangtze Memory Technologies Corp) informed prospective investors during Shanghai IPO preparation meetings (aiming to raise $5B) that it intends to become the world's largest NAND flash supplier by late 2027.
+* **Caveats:** Target relies heavily on domestic Chinese equipment substitution and aggressive capital spending while remaining subject to US technology sanctions.
+* **Publication status:** **Suitable for publication.**
+
+---
+
+#### **[9] Intel details 256-core Xeon 7 "Diamond Rapids" at Hot Chips**
+* **Confirmed:** Intel presented technical package details for its 2027 Xeon 7 ("Diamond Rapids") processor at Hot Chips 2026. It incorporates 16 core chiplets manufactured on Intel’s 18A-P process, providing up to 256 P-cores and 1.28GB of L3 cache.
+* **Caveats:** Commercial release is slated for 2027.
+* **Publication status:** **Suitable for publication.**
+
+---
+
+### **Not Recommended / Reject**
+
+* **[5] BBC China Automation feature:** Valid BBC piece by Laura Bicker on China's manufacturing automation push [5], but it is a background feature essay rather than time-sensitive breaking news.
+* **[8] My Friend Aaron:** Personal blog post on rorz.io. **Unsuitable** (not noteworthy news).
+* **[15] Digs $25.3M Series A:** Minor niche venture funding round; low relevance for a general UK briefing.
+* **[16]–[19] Reuters foreign language market tickers:** Routine financial snippets or outdated market updates from earlier dates. **Unsuitable.**

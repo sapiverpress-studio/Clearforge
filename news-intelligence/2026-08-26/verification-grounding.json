@@ -1,0 +1,596 @@
+{
+  "searchEntryPoint": {
+    "renderedContent": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Pew+Research+Center%22+%22AI+chatbots%22+health+2026+OR+2025+OR+2024&client=app-vertex-grounding&safesearch=active\">&quot;Pew Research Center&quot; &quot;AI chatbots&quot; health 2026 OR 2025 OR 2024</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22OpenAI+Jalape%C3%B1o%22+OR+%22OpenAI+Jalapeno%22+SemiAnalysis&client=app-vertex-grounding&safesearch=active\">&quot;OpenAI Jalapeño&quot; OR &quot;OpenAI Jalapeno&quot; SemiAnalysis</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Dolly+Parton%22+died+August+2026+OR+2024+OR+2025&client=app-vertex-grounding&safesearch=active\">&quot;Dolly Parton&quot; died August 2026 OR 2024 OR 2025</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Apple%22+M6+%22M5+Ultra%22+2026+OR+2025&client=app-vertex-grounding&safesearch=active\">&quot;Apple&quot; M6 &quot;M5 Ultra&quot; 2026 OR 2025</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22FDA%22+wearable+ketone+%22blood+sugar%22+2026&client=app-vertex-grounding&safesearch=active\">&quot;FDA&quot; wearable ketone &quot;blood sugar&quot; 2026</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Nitter%22+%22XCancel%22+cease+desist+issue+1442&client=app-vertex-grounding&safesearch=active\">&quot;Nitter&quot; &quot;XCancel&quot; cease desist issue 1442</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Transport+for+London%22+robotaxi+guidance+FT&client=app-vertex-grounding&safesearch=active\">&quot;Transport for London&quot; robotaxi guidance FT</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22HP%22+%22Huawei%22+%22Wi-Fi%22+patents+CNBC+2026&client=app-vertex-grounding&safesearch=active\">&quot;HP&quot; &quot;Huawei&quot; &quot;Wi-Fi&quot; patents CNBC 2026</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22YMTC%22+IPO+%22%245B%22+%22Financial+Times%22+2026+OR+2025&client=app-vertex-grounding&safesearch=active\">&quot;YMTC&quot; IPO &quot;$5B&quot; &quot;Financial Times&quot; 2026 OR 2025</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Xeon+7%22+%22Diamond+Rapids%22+%2218A-P%22+%22256+cores%22+2026&client=app-vertex-grounding&safesearch=active\">&quot;Xeon 7&quot; &quot;Diamond Rapids&quot; &quot;18A-P&quot; &quot;256 cores&quot; 2026</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22AM+Intelligence%22+Nvidia+Vera+Rubin+Bloomberg&client=app-vertex-grounding&safesearch=active\">&quot;AM Intelligence&quot; Nvidia Vera Rubin Bloomberg</a>\n  </div>\n</div>"
+  },
+  "groundingChunks": [
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvJSz6lBxlzv93hvGwGpFYS2Wcz9Xb5BjtrpPI-hEYYI1l54Dk07UMyNMSSk0uU_Pw0lpa2spJRxVqPJaorc-bhZNLULXdwCBlpWR5pFSDtoaZUmhzLLNKGtvxJu6vFUkK",
+        "title": "youtube.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiklygH3RgmKI4KPcDGLrF0OAtsoptAL1wECDNtT05J0cfeCt0eqsFmdYLoVLF0o_XSMbPfK2MzvJlqB3b28rhtefWW_TcY-PgukiJTui13c8yknZVdjAdpXQJqDG7ptIodeoYy84DDvkoOX54XnIk4dG8Cv6iipOG7UziQzIkPYGKSN0=",
+        "title": "theguardian.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGh9RvmVrkOB5tPV-YS_a1Dr3SsbqBAdSWmg-Xz532UKikgG0JnhDKIyxdgJ3tC18M4FpVNMLrNeZ0qNftXgAm5y6RahTvbOwaClTtw7cRQ_SM9LZt427jrxqEF9t_UOWo=",
+        "title": "wikipedia.org"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDqO96VbEZId-cJaegPaEXD_t3nV63QUjD18vnfP-1SxJV-e8ABi5-enrdlvQsgBDVlK59XeHe-7b9HkBDML675uorr25TRu8dOnqNaRaZKoOvD_O8qw-vmDBvPK40-8Yl9FGjNoo1PfSp8BRxkbsENaKLDZAYERhxP88D56P95d1AL2KcEK6vzrTXOd8J2tAh9EkZ-WQ=",
+        "title": "facebook.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1zm9C2kFN8TXXhEvKreBBtwWhltuUP59d-pCdcXPg42BZUKY_UFBwocFFDFUL_iJSPnXk2JaYp5X6PiH_nFHOgU97XG0lRHbEwywS2vdh9GBMWF4Du96p1YDTh2kQIDwW8DrCiFn6e4YoSTUx_nOFZU5eE9n-Hlxrx3xzSUbVj_BWTxZMgFoAoHpU7SvSH99PnhPV",
+        "title": "aljazeera.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzBFumCXxPfKG_OB3XakCmN8FDD3aIoiQjewUzA6jy_mxRZ3sm9FvljI3ohoj4ppGlp3ncVcqd5xkTQLP3kh6uH3xPmwtoss8vsYhYtsdykwHji3U-5QCHbYt_rSUrz0mze7sTa2PfJdyozlJFR1EAH_3PmXkTk64XB_gOpSWCjwEdtamvcJbdsBNtbTWnwLLZ0zCmU08oUYeLwxhVielRHKfgSw==",
+        "title": "latimes.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSUy-l_QoLtXIXBux-Ri6pJbYjpo8s7jiJ0v21zTVITgEUPz-uspnXLwEAJpSYjkd6Ho5JQ4gs2PQimmLXAbX4dkdGF76H3ysTlnMm8SM8OXmuQLBLuEqvYWRRik3VrTYLRHFzIojmhZTqh8E0e2PEDZafyNItYjY65_gBauxjxLA0BKqUxrlFyi78eIoTz7PIuW5_VFm5OFIq18N1TbWwG_QuWbMZnXBceLNrbw==",
+        "title": "apple.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVyesB4MDN8fDs5EYcgITiYY_DqbQr_ZudwkB4c94Q9SSlvnpteZcyUhgQ1lwCohfG7f2QuBuBTIAQ82UKhwkgHy4bdPoYkiFul30B6ZopTwakfZqsBqcliTqOJkds_QoqocLSBzQNzs-wumoKvLbO0LmWUDYNbMx5JqVYWWw1k4Bq9kGeW0hXsW2Vwct42-q3C7ezyg==",
+        "title": "apple.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdgW1tL5Mx-hMmg2JfQl5gCn6T9pOSOP9c5sb5d4qbGFqYGfb6C_fh5Sj7Jg3FrDxINrQghiJeghk1xBLjshZ__dfpInaSYM_sef8kPzBW0fabYjLXGwwq4lV-HRSifJoyUzr0Dov4xeA334_fF6JpHKKfe7k4srywa_vrnNT_tropJ8dgZIFqV2B_qkJDcSrB0pbJwOdo1hcTPr_2a13CHmSJjVvnc9EcO2UR8PRdOTKtxgnS70c=",
+        "title": "xataka.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAk4gwz_pnjn6SPpsW0NXsXdg5a6QXLHM7BvDS69kyLSjPe8i9OnbdwKkOMhIN2A0bspclek-WbdXzDZcTb8CULNdSWI2QcSnmbeAJ1hyfXQVxiaAh-1wRgf5d9gyi7cXsdrJT0ncO4MS8zr4h0MOc164l0_xd6HTbyI6nQj_dzH42ea0gp2tr60ItMKw1HOezGf31q5ldU6upUeiE4A2uhyIazHYHuQ==",
+        "title": "apple.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaM8HPIV9-M8rTxaYBHAJpJo31bbN8_9cx95SYg54oIf1Eqqc3XcvByePBI2b5ak2rXxRuqzb6ph7-5_dpDkfb6DBIx7gCI_YbXbN4Nzsaz3IOTpvE4NTx-SXDpVI-_4uWPVu0LA6CLnqXo1vrxvfwexwOQkDFCDD8csh0D5DfiuLA3a30Rg==",
+        "title": "chosun.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfrZvwN8odnVIiIy1JbSvWnLGILDg-0q8wnhEnkQ01OPk1E1Djzc_bq8qkoVdwTXuEe-ChCACkcfWG08jsnpyLPIFfxEpRz_KODKPbAajRPt4Dvb1DjY8psECFcZTScRuRD2J3P7t4MNctBi9unDXOmmLm1BXLIRpv",
+        "title": "servethehome.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6X5T0w5FYALiOo5ZebiFgdNLhWOrYOUPv-cAWiKjisfITh5e5rhD0mzAPyRrEzoPd5NcllC0Ht4UrvwQbWl8cv5vBc2YSlO5_T_dRObgxntnDYnH28QZdD1Lq67oGB5cfjUL4Y4gZuw0EIeCwutQufEaNA1RnW2FrJHDxA3lQfp4YbZ9lo_L8dH6x9rMyo364gVzt7ej_RrlpFPUBoEfgjtCppHoafCw9Me7y8jm8GA-wpE3tEtItkl9GR8YeoxyirDNmn-aDpg==",
+        "title": "tradingview.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF65WogAutxzUOk7fjKwrQ-QhQX9aS_c38sQWEfH_PDrmJihBqYvQL3kfXETzh5hQY956xAFRiBwL1ezkyoSgjiz4tZrzWwGAdjBc3PgTaKIkiHj4UNSDJzmMmkMTj0c8wDTxPG_7qUi4R3HNRW58kiqDmkecTm426ut-kuz-jQ3M9C0-Q=",
+        "title": "ft.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaCewE7CZDY-1Xc6Z3FZ6uhLC_TTIzPc9oxhSIRixCXvFl7vkS1-AN1I4aVNJbFudkjQZthUZVNrDIkAEFZFoK2G2j0cwzjV50y1jYrw7eKBKzpvdTpbQDztv9MNLG7cvSGqboY2sJnZb_NcxKVE0CqvoD7CDaM9ZYUZD53tQxRh381V0WoxzPbNOqiGPHgAkA2BGc0o4O-PShgHZx9qBO3dnVLUIscuV-qPqUUnCuD4r0zkPzEKeBo59CM--lkpSuvJ4Vvqz9iw==",
+        "title": "fda.gov"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_DdwSy5T5DjonxF3RJx9h2uXpPOi2KSkUwKGXfgrU5X4YPtLUd4Pj7WxgLjiely0bC_dMERinnqjE9JRD_owoRTGRnu93MAS3x61vUO48x15RS0rCC0IpLQQyQhhdPZ6a_nyC0Pql5ungOwShRovrB9XR4kq5VIzpME3EUI9cXQhZiWPyvitKFOn6CiCQKIgqN6EqiXbPAjS50Q==",
+        "title": "contemporarypediatrics.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFA7tfZOr1SZ3OMqOfcLB_o6i1Hwl9imY8FKpCfUqnrgjEClYGszSwVwJ7S2O_zO5op2a9JUUbQdg1-kmHRwJCn6xvqOJTwzIiiLFT6HOFOoqxCT0pNrg==",
+        "title": "lemmy.world"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFA7tfZOr1SZ3OMqOfcLB_o6i1Hwl9imY8FKpCfUqnrgjEClYGszSwVwJ7S2O_zO5op2a9JUUbQdg1-kmHRwJCn6xvqOJTwzIiiLFT6HOFOoqxCT0pNrg==",
+        "title": "lemmy.world"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHrpaOM35b8C4RCoZ25pFxBmgAGtW3CnNSz1X6faf_53UODnaokrOCxtc3kZT5s08x6_2jBc4PC1gNO1JTnMDNn0St3oKFGWpBCzuorTKV4UW8Knu90hDsnkppMvW0uFx0-s2DCaDnnolXaK68-1FnUHsJi6ZuRXKgQ7dOmWVWOw==",
+        "title": "reddit.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGYNypYfUogefg7y3RgWH5URjbDK01Dqqu9jp3_64TovgKoLQer2-mhQiOwxNnktbFuqGfJ0GwB2mK_rY_FS3-LNHQWmZTqvIDwgTzyr9EX3ItUlBJKtlqpBX-MRtDGEu4QeuyvRAw8ud8-OZGddhkB9lcc4_hnHFtr6ZRJuA_24PZ1GebQjzV8cVG77FwmtTKWHdVA09VUL62NvxmPZ8v",
+        "title": "pewresearch.org"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHu-h2tx7ItHt93_XtgsxlcxixJL7jGVgygfgrGcH5ssoUpMaefgE6thHsG4h2LExQL3CGzoZ7hnqfUnFJPJf1NPxKgLaEgSv1mOPVyHswum8PBrOx_e_8a_7q1kOQm-lZuH9iB6vVGdVfbH_J-nXHqCGhgXNeNtvUklbABusZczK_8UO0=",
+        "title": "pewresearch.org"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdGLqLLJNstwNjc0qXlsg5ofNF7p7OvSUIRNIPY0kchwvpeobiDgh9sna7mADD6tx5dCXWQHoBS3MYf6C7u70sIBlaJsjcWbXbw7aG8GLIm7lSVQ7VColFeL0gjwrHS1x-L3rtX6G-KMILclrsbEEWMjcyeIBstPEKPb1zP8eRXbPOJA==",
+        "title": "peakdigital.online"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHa22dmfgkLUzLe1PPRnXHRF2lJm1ELXec76UyRTYMxKts0cXeQULQl99SBc8bJSR9LlvGRdssGJVXodNl6Mdap_9aQvMC9TrUtbpXQA1W8j24YSDpvrm_0SWTZjB5yC9HDpQvlYgGjvF6Ij57I0c1hDxhN6H_j4AkfA_Ya1t1cKr88tDyh25cPyzohFh9Hbe7TqurJMdxzmZi8iwoQNWRO2lAmStUnCNMNJKGd7TgynjdNWU4sBdSLiY13UTImD5OHsgFVnXN2Ygg=",
+        "title": "business-standard.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiBvDCfTvDj3LCuGvb4RQnnj6i7414pTUJ-BVkPDGtTPLeykmeb4Ai-5-WpbVB24Vc7-4Qa-kk1099plmk8LezSME1JjpF9Y_oFgoIDth1b1Y6JTK1HnrZirvo7YrKzOdAFGXTpNdRo0gyaIuL3wmNfzCCTcgG3Sv9xvomyCKOqHQ=",
+        "title": "indiatimes.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiX4c2pKT710Ztt8COLVq4b9jZ20uj5Dyc0GXU2Q4rXGXxT3_fn8jjOLdLVJmltkWiI2og357bnxy1pjIZ-E1RCMgQ3igDSgdpcxPQwi9Dc6gBV2nZsd13lvi5t_DD9gXDMPrKq_5O0cipfvZ7qq-1tB2lgd5jbcyFRrSjhSFYC1VNDt6o3xITPyU2CasncgoNit8Ij1zv2jv3YC6UTnP6bAFyYHU=",
+        "title": "magzter.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-4OWaa0UqS2xlmBl5syIdzzibtEVrN-Wjvz_lwmBok5nqP9pKtykvgEAXLc6uJeL1Pk3F8RdM7pyQ--9gui3rNsw2jGC8J_dU2Bvdp6f8sH1BwjsRtS7hVJ4QZO6JyVMuqPGkE0WjX6T1PhE5STl6huI2_xGQmzV8m36XKz0gFSShVlOc-TZsqfL84Eqse4XTfCk=",
+        "title": "financialexpress.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCaKRod4yBMjj501S2nIQD18UZsOvij0e7uZXh2ASXuUrbU7QbuledXjpMu5N7wDg7A5ocG-urZxtXyxwfIOjOa0PZlGOcXOG0sXrjs1988quP5k-PFPR8yl4M6_e5nmPCfvZaO5y0y9GxrAVEqBJs0PlaxpznLZE90pK0X38BqcGLGVTav9hKpTZB7TsMzE0Mo9dW5n8zaxTU0U-SW1BBaId-y74=",
+        "title": "ground.news"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZq5kXVuFWktr8DuisKSI6I0j4NWGvpVi06X8MQ2djhOJcPQbWa4ciFZDcUP6tvkD2757OPfU9bXf9Fz5sBXzMNGINe69xbb6bCSbBVuCeBGVb175v9Qof",
+        "title": "techmeme.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0GOehuewCBQkKvVhbtP9Lkiq4wCoeFHAgDVXO_cwPU7XP6Rr80EwXF0xUx92jj0vsweYn-pGClTy7y87unZ884VwSVvmIzDvwKyhqL2oHWtFZ",
+        "title": "llm-stats.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3eGVsB2SJgBJcMkCTiBpVOZ3aSgb45kowl0FjzRq137M4-GIPKWQaG9YpM2M78Kd8xaNHBRdcoxFFwuqUmX_XZ7cdgMy1PjWQm2NWb7PVfavhgA==",
+        "title": "techmeme.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEA8WEhrLqvXr9gHqN5ydXrHYbaPAQtCX7WNyV1nSvYvBn3jYYYiWypF1GIwZ2KP1aaQPMsYDHuo6nzFF2d5nYLFPIKRpxQgi7GJaHVlOhpfApp_6hjVr0m6FIRkTVov7oF-h2qpHyAa-9Y25nVy286-sDu3uiFzMkEx6tvlGOkwV7RsV4nXeJmEJzbkbRd-PGDgvWtWIQhC0ktGzkA7LUyC4wKtvG5wScZMDCtJpMXseFM1rQK-s2WJFCfRzp3KG9Jx0Uy",
+        "title": "facebook.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdiorPrels2MGwHfFe4_v1iI997ORM14QZpQ_cenXKKnOeXiAL4TViq-jAEiG1gDz6pnBlt5LPkAL1tSM_dwHzrubk96L19VcHXy7kadDXBinTB-puCqAgjg_hsq8NbdLOhz9qv-_OMvEFdQ3r5r-EJOgdMT6wiK2S_XPT-s9kYmwE3rA2nkuRfcdD3RzjjtV_4aezQDSrjxT-A-bpDdHyCA==",
+        "title": "videocardz.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHn2yy3RCpZMjB5Bu1a27wfxWGw4qi-mTAEpsKl1oBItFGRjEn_PmM7RcsXOaMnnqf2CpAO0Z5i44NqpME0CQ0P-ILaiw9L1h6Xg-7xueR9PPQUUwEFS0nZ1Piyn8ITpgLQzl7ml8-5wii1nvz72HNpAgp74olvsklXWc9ySbAuPpyqsMjpfrQbLk5PD8Y6LHhSYHc6O4PbtKtu_fmQ75SMbA9Slz4Lb-EXargtxroDKjHhKi315DEjdINunNP2CVlXCbUHxsMy8wRIyEw7O9li6lnt2Eb7lE=",
+        "title": "trendforce.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFa1uJ1KxuQWQDjoQq1R_X-nJ4LvlKf9ROLPoSj1KUFV9v9DNpTTKaxQ2564IyC9YZ-tD88QPuyLqDnoURfIslyzxp3qbx67lVQd8X0z2ffvJQalpjEbZi4dtISOzCIp8qwSmIu8A-JTWfgACku6S7NjKYxa2hNzgSVu21fAKRUUDTc5tU6BNKyb51w0cSZ9hVZ4VgxvNVqTeBrfVnKaX3uGPBMNZbsdShjwLl5eSrmRj246-pPlri0pqwQmhFPDwDQ1anZ3baWeX48rys0tTYeTXreYDif4GWo6utMaYrxT75JJUcToyLb7lxjo-M2U5YFLZ9mwNngpPBgzS8OefrnGofJ",
+        "title": "tomshardware.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWjLwuFm6aQCzXdLUhEit2l2MeH0_8wycNGmyxIF5GocsvVEnzMOJ-lAQBTFVVdco9elk2eqZ3NaxWckCVrnmjR04cozX8MMxGV-KNLSI1KUuTSfV5U8njb8ruz6SbKhlaEX0T_r119lt6oUfRiAfiG7t-z67TsNoc78ErYJfZnmD7Kvj7iCMhZeDQowyvG6Auve5G8zUGNw==",
+        "title": "techpowerup.com"
+      }
+    }
+  ],
+  "groundingSupports": [
+    {
+      "segment": {
+        "startIndex": 135,
+        "endIndex": 279,
+        "text": "#### **[0] Dolly Parton has died**\n* **Confirmed:** Country music legend Dolly Parton died on August 25, 2026, at age 80 in Nashville, Tennessee"
+      },
+      "groundingChunkIndices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 281,
+        "endIndex": 380,
+        "text": "Her death was publicly announced by her family (nephew Bryan Seaver) and confirmed by her publicist"
+      },
+      "groundingChunkIndices": [
+        3,
+        1,
+        4
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 382,
+        "endIndex": 496,
+        "text": "Representatives stated she passed away at the Vanderbilt-Ingram Cancer Center following a brief battle with cancer"
+      },
+      "groundingChunkIndices": [
+        1,
+        5
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 498,
+        "endIndex": 620,
+        "text": "* **Caveats:** Initial tabloid speculation mentioned acute kidney issues prior to the official statement confirming cancer"
+      },
+      "groundingChunkIndices": [
+        5
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 707,
+        "endIndex": 1043,
+        "text": "#### **[1], [7], [11] Apple introduces M6, M5 Ultra, and new Mac mini / Mac Studio models**\n* **Confirmed:** Apple officially announced its next-generation silicon—the 2nm **M6** chip and the quad-architecture **M5 Ultra**—alongside new Mac mini (M6 and M5 Pro) and Mac Studio (M5 Max and M5 Ultra) desktop models on August 25, 2026"
+      },
+      "groundingChunkIndices": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 1046,
+        "endIndex": 1125,
+        "text": "* **Caveats:** These announcements originate directly from Apple Press Releases"
+      },
+      "groundingChunkIndices": [
+        6,
+        7,
+        9
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 1127,
+        "endIndex": 1245,
+        "text": "Performance claims (e.g., up to 4.3x faster AI compute, 2nm efficiency gains) are Apple’s internal benchmark figures"
+      },
+      "groundingChunkIndices": [
+        6,
+        7
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 1379,
+        "endIndex": 1625,
+        "text": "#### **[4] OpenAI Jalapeño chip benchmarks outperforming Nvidia Blackwell**\n* **Confirmed:** At the Hot Chips 2026 conference, OpenAI disclosed the first benchmark metrics for its Broadcom-developed custom inference ASIC, codenamed **Jalapeño**"
+      },
+      "groundingChunkIndices": [
+        10,
+        11
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 1627,
+        "endIndex": 1924,
+        "text": "Independent analysis by *SemiAnalysis* using the open-source *InferenceX* benchmark showed Jalapeño achieving 1.5×–1.9× higher processing capacity per watt and 1.7×–3.6× lower latency compared to Nvidia Blackwell GPU clusters on open-weight models (including GPT-OSS 120B and DeepSeek R1)"
+      },
+      "groundingChunkIndices": [
+        10,
+        12
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 1926,
+        "endIndex": 2012,
+        "text": "* **Caveats:** Jalapeño is an ASIC strictly optimized for AI inference (not training)"
+      },
+      "groundingChunkIndices": [
+        10
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 2014,
+        "endIndex": 2108,
+        "text": "The comparison relies on OpenAI-provided execution data run through SemiAnalysis’s framework"
+      },
+      "groundingChunkIndices": [
+        10
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 2172,
+        "endIndex": 2405,
+        "text": "#### **[6] TfL delays delay London robotaxi rollout timeline**\n* **Confirmed:** The *Financial Times* reported on August 26, 2026, that Transport for London (TfL) has delayed publishing regulatory safety guidance for driverless taxis"
+      },
+      "groundingChunkIndices": [
+        13
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 2407,
+        "endIndex": 2565,
+        "text": "As a result, operators (including Waymo, Wayve, and Baidu) have pushed back expectations of launching fully driverless commercial services in London this year"
+      },
+      "groundingChunkIndices": [
+        13
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 2567,
+        "endIndex": 2722,
+        "text": "* **Caveats:** Operators have not abandoned London plans; the delay is driven by local regulatory guidance timeline slips rather than technology withdrawal"
+      },
+      "groundingChunkIndices": [
+        13
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 2819,
+        "endIndex": 3081,
+        "text": "#### **[10] FDA authorizes Abbott Libre Duo (continuous dual ketone & blood sugar wearable)**\n* **Confirmed:** On August 25, 2026, the US FDA authorized Abbott's *Libre Duo 10 Day Continuous Dual Glucose-Ketone Monitoring System* for individuals aged 2 and older"
+      },
+      "groundingChunkIndices": [
+        14,
+        15
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 3083,
+        "endIndex": 3246,
+        "text": "It is the first wearable device cleared in the US to continuously monitor ketone levels and the first globally to track both glucose and ketones in a single sensor"
+      },
+      "groundingChunkIndices": [
+        14
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 3248,
+        "endIndex": 3315,
+        "text": "* **Caveats:** The authorization covers sensor measurement accuracy"
+      },
+      "groundingChunkIndices": [
+        15
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 3248,
+        "endIndex": 3435,
+        "text": "* **Caveats:** The authorization covers sensor measurement accuracy; real-world efficacy in reducing Diabetic Ketoacidosis (DKA) hospitalizations will require downstream clinical tracking"
+      },
+      "groundingChunkIndices": [
+        15
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 3665,
+        "endIndex": 3818,
+        "text": "served cease-and-desist letters demanding the permanent takedown of Nitter (the open-source X/Twitter frontend) and primary mirror instances like XCancel"
+      },
+      "groundingChunkIndices": [
+        16,
+        17
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 3820,
+        "endIndex": 3915,
+        "text": "Official instances have gone offline and development is halted while legal counsel is consulted"
+      },
+      "groundingChunkIndices": [
+        16
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 3917,
+        "endIndex": 4038,
+        "text": "* **Caveats:** A few independent, third-party self-hosted instances remain temporarily accessible outside US jurisdiction"
+      },
+      "groundingChunkIndices": [
+        18
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 4143,
+        "endIndex": 4413,
+        "text": "#### **[3] Pew Research: 34% of Americans use AI chatbots for health queries**\n* **Confirmed:** Pew Research Center published a study (survey of 3,488 US adults conducted late June 2026, released Aug 25, 2026) showing 34% of Americans use AI chatbots for health purposes"
+      },
+      "groundingChunkIndices": [
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 4415,
+        "endIndex": 4549,
+        "text": "Primary drivers include obtaining quick health info (28%), self-diagnosing symptoms (25%), and accessing free health information (22%)"
+      },
+      "groundingChunkIndices": [
+        21
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 4551,
+        "endIndex": 4628,
+        "text": "* **Caveats:** Data is based on self-reported survey responses from US adults"
+      },
+      "groundingChunkIndices": [
+        19
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 4692,
+        "endIndex": 4945,
+        "text": "#### **[13] AM Intelligence orders 9,000 Nvidia Vera Rubin systems for $8B Indian AI project**\n* **Confirmed:** Indian AI infrastructure firm AM Intelligence (backed by Greenko Group) placed a binding order for 9,000 Nvidia Vera Rubin NVL72 rack systems"
+      },
+      "groundingChunkIndices": [
+        22,
+        23
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 4947,
+        "endIndex": 5063,
+        "text": "The deployment targets a 30MW initial AI factory in Hyderabad for Q1 2027 as part of a planned 1GW compute expansion"
+      },
+      "groundingChunkIndices": [
+        24,
+        25
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 5065,
+        "endIndex": 5140,
+        "text": "* **Caveats:** Deliveries and facility operations are scheduled for Q1 2027"
+      },
+      "groundingChunkIndices": [
+        24
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 5204,
+        "endIndex": 5474,
+        "text": "#### **[12] HP and Huawei sign global Wi-Fi patent cross-licensing agreement**\n* **Confirmed:** HP and Huawei signed a multi-year global cross-licensing deal covering standard-essential Wi-Fi patents (including Wi-Fi 6 and Wi-Fi 7), resolving a 2025 European patent suit"
+      },
+      "groundingChunkIndices": [
+        26,
+        27
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 5476,
+        "endIndex": 5633,
+        "text": "* **Caveats:** Despite Huawei remaining on the US Entity List, standard-essential patent licensing cross-agreements of this nature remain legally permissible"
+      },
+      "groundingChunkIndices": [
+        27
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 5697,
+        "endIndex": 6033,
+        "text": "#### **[14] YMTC targets top NAND flash market spot ahead of $5B IPO**\n* **Confirmed:** The *Financial Times* reported that YMTC (Yangtze Memory Technologies Corp) informed prospective investors during Shanghai IPO preparation meetings (aiming to raise $5B) that it intends to become the world's largest NAND flash supplier by late 2027"
+      },
+      "groundingChunkIndices": [
+        28,
+        29
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 6035,
+        "endIndex": 6197,
+        "text": "* **Caveats:** Target relies heavily on domestic Chinese equipment substitution and aggressive capital spending while remaining subject to US technology sanctions"
+      },
+      "groundingChunkIndices": [
+        30
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 6261,
+        "endIndex": 6459,
+        "text": "#### **[9] Intel details 256-core Xeon 7 \"Diamond Rapids\" at Hot Chips**\n* **Confirmed:** Intel presented technical package details for its 2027 Xeon 7 (\"Diamond Rapids\") processor at Hot Chips 2026"
+      },
+      "groundingChunkIndices": [
+        31,
+        32
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 6461,
+        "endIndex": 6585,
+        "text": "It incorporates 16 core chiplets manufactured on Intel’s 18A-P process, providing up to 256 P-cores and 1.28GB of L3 cache"
+      },
+      "groundingChunkIndices": [
+        33,
+        34,
+        31
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 6587,
+        "endIndex": 6639,
+        "text": "* **Caveats:** Commercial release is slated for 2027"
+      },
+      "groundingChunkIndices": [
+        33,
+        31
+      ]
+    }
+  ],
+  "webSearchQueries": [
+    "\"Pew Research Center\" \"AI chatbots\" health 2026 OR 2025 OR 2024",
+    "\"OpenAI Jalapeño\" OR \"OpenAI Jalapeno\" SemiAnalysis",
+    "\"Dolly Parton\" died August 2026 OR 2024 OR 2025",
+    "\"Apple\" M6 \"M5 Ultra\" 2026 OR 2025",
+    "\"FDA\" wearable ketone \"blood sugar\" 2026",
+    "\"Nitter\" \"XCancel\" cease desist issue 1442",
+    "\"Transport for London\" robotaxi guidance FT",
+    "\"HP\" \"Huawei\" \"Wi-Fi\" patents CNBC 2026",
+    "\"YMTC\" IPO \"$5B\" \"Financial Times\" 2026 OR 2025",
+    "\"Xeon 7\" \"Diamond Rapids\" \"18A-P\" \"256 cores\" 2026",
+    "\"AM Intelligence\" Nvidia Vera Rubin Bloomberg"
+  ]
+}

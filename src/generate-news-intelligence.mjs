@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { collectNewsSources } from "./news-intelligence-sources.mjs";
 import { generateGroundedEvidence, generateStructured } from "./gemini-provider.mjs";
+import { isEditoriallyRelevant, stripOurReadPrefix } from "./news-intelligence-editorial-rules.mjs";
 
 const ROOT = process.cwd();
 const DATE = String(process.env.NEWS_INTELLIGENCE_DATE || new Intl.DateTimeFormat("sv-SE", {
@@ -44,6 +45,7 @@ function candidateLines(candidates) {
     `[${index}] ${item.source} | score ${item.score}`,
     `Title: ${item.title}`,
     `Publisher: ${item.publisher || "unknown"}`,
+    `Editorial scope: ${isEditoriallyRelevant(item) ? "IN SCOPE" : "OUT OF SCOPE"}`,
     `Source URL: ${item.direct_source_url || item.url}`,
     item.discovery_url && item.discovery_url !== item.url ? `Discovered via: ${item.discovery_url}` : "",
     `Link quality: ${item.link_quality || "unknown"}`,
@@ -90,7 +92,7 @@ async function createEditorialOutput(sourceBundle) {
   }
   if (!process.env.GEMINI_API_KEY) return { ok: false, reason: "GEMINI_API_KEY is not configured." };
 
-  const evidencePrompt = `You are the evidence desk for Sapiver Forge. Verify the news candidates below for the ${DATE} UK morning briefing.\n\nUse Google Search grounding to check whether each significant candidate is current and accurately characterised. Prefer primary sources, company announcements, filings, papers and Reuters for confirmation. Treat Techmeme and Hacker News as discovery signals, not proof. Treat Hugging Face paper summaries as claims made by the paper unless independently corroborated. Do not invent facts.\n\nProduce concise evidence notes for the strongest candidates. For each one state the candidate number, what is confirmed, important caveats, and whether it is suitable for publication today. If a claim cannot be checked, say so. Minor source availability problems are not a reason to reject an otherwise well-corroborated story.\n\nCANDIDATES:\n\n${candidateLines(candidates)}`;
+  const evidencePrompt = `You are the evidence desk for Sapiver Forge. Verify the news candidates below for the ${DATE} UK morning briefing.\n\nUse Google Search grounding to check whether each significant candidate is current and accurately characterised. Prefer primary sources, company announcements, filings, papers and Reuters for confirmation. Treat Techmeme and Hacker News as discovery signals, not proof. Treat Hugging Face paper summaries as claims made by the paper unless independently corroborated. Do not invent facts.\n\nSapiver Forge covers AI, technology, digital business, research, technology regulation and adjacent innovation. General celebrity, entertainment, sport, crime, lifestyle or political news is out of scope unless it has a direct material connection to those areas. Candidates marked OUT OF SCOPE must not be recommended merely because they are prominent or highly ranked.\n\nProduce concise evidence notes for the strongest in-scope candidates. For each one state the candidate number, what is confirmed, important caveats, and whether it is suitable for publication today. If a claim cannot be checked, say so. Minor source availability problems are not a reason to reject an otherwise well-corroborated story.\n\nCANDIDATES:\n\n${candidateLines(candidates)}`;
 
   const evidence = await generateGroundedEvidence({
     system: "You are a cautious news verification editor. Separate confirmed facts from interpretation and uncertainty.",
@@ -101,6 +103,8 @@ async function createEditorialOutput(sourceBundle) {
     system: [
       "You edit the Sapiver Forge Daily Brief for practical UK readers interested in AI, technology and business.",
       "Use only facts supported by the supplied candidate metadata and verification evidence.",
+      "The editorial scope is AI, technology, digital business, research, technology regulation and adjacent innovation. General celebrity, entertainment, sport, crime, lifestyle or political news is out of scope unless it has a direct material connection to those areas.",
+      "Never select a candidate marked OUT OF SCOPE, regardless of discovery score or general news prominence.",
       "Never turn speculation into fact. Keep interpretation clearly labelled as interpretation.",
       "Do not attribute motive, strategy, intention or inevitability unless the evidence explicitly supports it.",
       "Do not invent a fixed future time horizon. Avoid deterministic language such as 'will dictate', 'will force', 'ensuring' or 'guarantees'. Use may, could, suggests or would depend on where appropriate.",
@@ -108,7 +112,7 @@ async function createEditorialOutput(sourceBundle) {
       "Prefer consequential developments over novelty. Avoid hype, clickbait and investment advice.",
       "Prefer candidates with direct publisher/original URLs. Aggregator links are discovery fallbacks, not preferred publication links."
     ],
-    prompt: `Build today's short daily intelligence edition from the verified evidence. Aim for a 3-5 minute read.\n\nRules:\n- Choose 3 to 6 stories.\n- source_index MUST refer to one of the numbered candidates below.\n- Use one lead story and cover AI, technology/business/research where genuinely available.\n- confirmed_fact should be one or two concise sentences.\n- why_it_matters should explain practical significance without overstating certainty.\n- interpretation must begin from evidence and use cautious language such as "Our read" where it goes beyond confirmed fact. Do not claim a company's motive or intended strategy unless directly supported.\n- practical_takeaway must be useful but non-deterministic; do not invent a three-year or other fixed horizon unless the evidence itself supplies it.\n- confidence is 0 to 1. Do not include a story below 0.72 confidence.\n- overall_confidence is 0 to 1.\n\nVERIFICATION EVIDENCE:\n${evidence.text}\n\nCANDIDATES:\n${candidateLines(candidates)}`,
+    prompt: `Build today's short daily intelligence edition from the verified evidence. Aim for a 3-5 minute read.\n\nRules:\n- Choose 3 to 6 stories.\n- source_index MUST refer to one of the numbered candidates below.\n- NEVER choose a candidate marked Editorial scope: OUT OF SCOPE.\n- Use one lead story and cover AI, technology/business/research where genuinely available.\n- confirmed_fact should be one or two concise sentences.\n- why_it_matters should explain practical significance without overstating certainty.\n- interpretation must contain only the interpretation text. It MUST NOT begin with "Our read", "Our read is", or another copy of the template label. Do not claim a company's motive or intended strategy unless directly supported.\n- practical_takeaway must be derived only from stories selected for this final edition. Do not introduce a recommendation based on a candidate that was researched but not selected.\n- watch_next must follow directly from one or more stories selected for this final edition. Do not introduce an unrelated researched candidate.\n- practical_takeaway must be useful but non-deterministic; do not invent a three-year or other fixed horizon unless the evidence itself supplies it.\n- confidence is 0 to 1. Do not include a story below 0.72 confidence.\n- overall_confidence is 0 to 1.\n\nVERIFICATION EVIDENCE:\n${evidence.text}\n\nCANDIDATES:\n${candidateLines(candidates)}`,
     schema: STORY_SCHEMA
   });
 
@@ -117,7 +121,7 @@ async function createEditorialOutput(sourceBundle) {
   for (const story of Array.isArray(structured.stories) ? structured.stories : []) {
     const index = Number(story.source_index);
     const candidate = candidates[index];
-    if (!candidate || seen.has(index)) continue;
+    if (!candidate || seen.has(index) || !isEditoriallyRelevant(candidate)) continue;
     const confidence = Math.max(0, Math.min(1, Number(story.confidence || 0)));
     if (confidence < 0.72) continue;
     seen.add(index);
@@ -127,7 +131,7 @@ async function createEditorialOutput(sourceBundle) {
       headline: clean(story.headline || candidate.title),
       confirmed_fact: clean(story.confirmed_fact),
       why_it_matters: clean(story.why_it_matters),
-      interpretation: cautiousEditorialText(story.interpretation),
+      interpretation: cautiousEditorialText(stripOurReadPrefix(story.interpretation)),
       confidence,
       source: clean(candidate.publisher || candidate.source),
       discovered_via: candidate.source,
@@ -139,7 +143,7 @@ async function createEditorialOutput(sourceBundle) {
       discovery_score: candidate.score
     });
   }
-  if (mapped.length < 3) return { ok: false, reason: "Verification did not leave at least three publishable stories.", evidence };
+  if (mapped.length < 3) return { ok: false, reason: "Editorial relevance and verification did not leave at least three publishable in-scope stories.", evidence };
 
   return {
     ok: true,

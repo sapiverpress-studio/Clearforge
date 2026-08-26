@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { __test } from "../src/news-intelligence-sources.mjs";
+import { isEditoriallyRelevant, stripOurReadPrefix } from "../src/news-intelligence-editorial-rules.mjs";
 
 const {
   canonicalUrl,
@@ -54,4 +55,11 @@ assert.equal(deduped.length, 2);
 assert.equal(deduped[0].source, "Reuters");
 assert.equal(deduped[1].source, "Sifted");
 
-console.log("News intelligence source contract passed.");
+assert.equal(isEditoriallyRelevant({ title: "Nvidia invests in AI search startup" }), true);
+assert.equal(isEditoriallyRelevant({ title: "New social media age-verification law proposed" }), true);
+assert.equal(isEditoriallyRelevant({ title: "Dolly Parton dies aged 80", summary: "Country music star remembered by fans." }), false);
+assert.equal(isEditoriallyRelevant({ title: "Football club wins cup final", summary: "A dramatic match went to penalties." }), false);
+assert.equal(stripOurReadPrefix("Our read is that the bill may struggle to pass."), "the bill may struggle to pass.");
+assert.equal(stripOurReadPrefix("Our read: This suggests slower adoption."), "This suggests slower adoption.");
+
+console.log("News intelligence source and editorial contract passed.");

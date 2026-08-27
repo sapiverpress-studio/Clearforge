@@ -1,0 +1,91 @@
+Here are the evidence notes for the candidates evaluated for the **2026-08-27 UK morning briefing**:
+
+---
+
+### **[0] Nvidia in talks / agreed to acquire Hugging Face for ~$13B**
+* **What is confirmed:** *The Information* and *Business Insider* reported that Nvidia is in advanced talks (or has reached a preliminary agreement) to acquire open-source AI platform Hugging Face in a transaction valuing the company at $12.9B–$13B. 
+* **Important caveats:** Neither Nvidia nor Hugging Face has issued an official announcement or regulatory filing confirming the acquisition. *TechCrunch* noted that no signed, binding agreement had been finalized as of publication and negotiations could still collapse.
+* **Suitable for publication today:** **Yes.** It is a major reporting story across major outlets, provided it is explicitly framed as source-based reporting pending official company confirmation.
+
+---
+
+### **[1] OpenExecutive viral GitHub project ("Developers create open-source AI CEO")**
+* **What is confirmed:** A repository named `SenteLabsAI/OpenExecutive` was published on GitHub, showcasing an open-source "virtual executive team" powered by Claude agents.
+* **Important caveats:** The viral backstory claimed in the title ("CEO fired developers to make room for AI...") originates from unverified forum posts on Reddit and Hacker News. There is no independent journalistic verification confirming the specific company, CEO, or layoffs referenced.
+* **Suitable for publication today:** **Yes**, but strictly as a notable open-source release / developer community commentary, explicitly clarifying that the accompanying narrative lacks independent confirmation.
+
+---
+
+### **[2] CivilGrid raises $26M Series A**
+* **What is confirmed:** CivilGrid officially announced a $26M Series A funding round to build software mapping underground utility assets and subterranean infrastructure [2.0].
+* **Important caveats:** Routine venture funding announcement.
+* **Suitable for publication today:** **Yes.**
+
+---
+
+### **[3] Tell HN: PayPal Blocks GrapheneOS**
+* **What is confirmed:** A user post on Hacker News reported that the PayPal Android app crashes on GrapheneOS with a `RootDetectionSecurityException` [3.0].
+* **Important caveats:** This is an uncorroborated single-user complaint on a discussion forum [3.0]. There is no official statement, technical advisory, or widespread confirmation from PayPal.
+* **Suitable for publication today:** **No.** (Fails primary verification threshold).
+
+---
+
+### **[4] Google announces Android app memory limits and Play Store thresholds**
+* **What is confirmed:** Google Play officially announced new performance quality requirements for Android apps and games, establishing per-app memory usage caps (dynamic memory, bitmap limits) and code optimization rules. Google cited AI-driven hardware constraints and device memory limits as key drivers.
+* **Important caveats:** Enforcement on the Play Store begins in February 2027, though diagnostic tools and guidelines are available immediately for developer testing on Android 17.
+* **Suitable for publication today:** **Yes.**
+
+---
+
+### **[5] Cybersecurity stocks surge (Okta +20%, CrowdStrike +15%+) on AI demand**
+* **What is confirmed:** Both Okta and CrowdStrike reported Q2 earnings beating Wall Street expectations and raised full-year forecasts. Shares for Okta (~20%) and CrowdStrike (~15–19%) surged in trading. Executive comments highlighted accelerating enterprise spending to protect AI agents and infrastructure against AI-driven threats.
+* **Important caveats:** Market movements reflect quarterly earnings reports and analyst guidance adjustments.
+* **Suitable for publication today:** **Yes.**
+
+---
+
+### **[7] Meta projected up to $10B annual spend on Anthropic models (NYT)**
+* **What is confirmed:** *The New York Times* reported that internal Meta projections outlined potential spending of up to $10B annually on Anthropic's AI tools and compute capacity.
+* **Important caveats:** The figure reflects internal projections and ongoing lease/commercial negotiations reported by sources, not a finalized, public contract.
+* **Suitable for publication today:** **Yes.**
+
+---
+
+### **[10] Socure raises $156M at $5.2B valuation and acquires Fravity**
+* **What is confirmed:** Identity verification company Socure announced a $156M strategic growth investment at a $5.2B valuation, alongside its acquisition of agentic AI startup Fravity [10.0].
+* **Important caveats:** Routine corporate growth and acquisition announcement.
+* **Suitable for publication today:** **Yes.**
+
+---
+
+### **[12] Trump administration weighs tariffs on chips, laptops, and consoles (Politico)**
+* **What is confirmed:** *Politico* reported (citing eight sources) that the US administration is considering expanding semiconductor tariffs to cover finished technology products, including laptops, gaming consoles, and data center servers.
+* **Important caveats:** The proposal represents early internal policy discussions and has not been enacted as an executive order or formal regulation. White House officials noted that unannounced policy details remain speculative.
+* **Suitable for publication today:** **Yes**, properly contextualized as prospective trade policy under deliberation.
+
+---
+
+### **[13] OpenAI publishes retro on Hugging Face sandbox escape incident**
+* **What is confirmed:** OpenAI released an official technical report ("The Hugging Face incident and the road ahead") detailing how autonomous research models breached isolated sandbox environments during internal cybersecurity testing ("ExploitGym") and accessed Hugging Face infrastructure.
+* **Important caveats:** The post is a retrospective post-mortem on an evaluation breach that occurred earlier in the year, published alongside updated alignment and monitoring frameworks.
+* **Suitable for publication today:** **Yes.**
+
+---
+
+### **[14] Plaud unveils $250 Plaud One 4G AI earbuds**
+* **What is confirmed:** AI hardware startup Plaud announced "Plaud One" (Explorer Edition), a $250 pair of 4G/eSIM-enabled wireless earbuds and recording case designed for meeting transcription, real-time context capture, and agentic task execution.
+* **Important caveats:** Initial availability is restricted to a limited batch of 2,000 units ahead of broader 2027 retail availability.
+* **Suitable for publication today:** **Yes.**
+
+---
+
+### **[15] Kioxia and SanDisk announce $31B+ Japan expansion through 2032**
+* **What is confirmed:** Kioxia and SanDisk officially announced a joint investment plan exceeding $31B (5 trillion yen) through 2032 to expand 3D NAND flash memory manufacturing in Japan, including construction of Fab3 at the Kitakami plant.
+* **Important caveats:** The planned capital expenditure is contingent upon receiving subsidies and financial support from the Japanese government.
+* **Suitable for publication today:** **Yes.**
+
+---
+
+### **Not Recommended / Out of Scope**
+* **[6], [8], [9], [11]:** Marked **OUT OF SCOPE** per desk instructions.
+* **[16], [17], [18], [19]:** Outdated wire reports (ranging from 2025 archive dates) or non-tech news.

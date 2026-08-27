@@ -3,11 +3,11 @@
   "subject": "Sapiver Forge Daily Brief — 2026-08-27",
   "status": "brevo_draft",
   "approved": false,
-  "brevo_campaign_id": 10,
+  "brevo_campaign_id": 11,
   "sent_at": null,
-  "candidate_id": "aca56fb4b8fe2a140e2714f5eb67f3117dfb2fcbf0f82a8e14bc80ad602016cf",
+  "candidate_id": "333c91bcab004b0bc7de5e21ea4f8b42e09bb0a4d0525882a733221218562e76",
   "recipient_list_id": 2,
-  "campaign_created_at": "2026-08-27T15:21:29.319Z",
+  "campaign_created_at": "2026-08-27T17:36:17.661Z",
   "email_skipped_reason": null,
   "email_skipped_at": null
 }

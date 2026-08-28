@@ -1,4 +1,4 @@
-name: Release Sapiver Forge Daily Newsletter
+name: Publish and Deploy Sapiver Forge Daily Brief
 
 on:
   workflow_dispatch:
@@ -102,3 +102,21 @@ jobs:
             git pull --rebase origin main
           done
           git push
+
+      - name: Deploy the complete website to Netlify production
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: 8e72a4fc-5ad6-4377-8f4a-399d4c936060
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${NETLIFY_AUTH_TOKEN:-}" ]; then
+            echo "::error::Missing NETLIFY_AUTH_TOKEN repository secret."
+            exit 1
+          fi
+          npx --yes netlify-cli@latest deploy \
+            --prod \
+            --dir=public \
+            --site="${NETLIFY_SITE_ID}" \
+            --auth="${NETLIFY_AUTH_TOKEN}" \
+            --message="Publish approved Sapiver Forge Daily Brief and Sapiver Learn"

@@ -342,6 +342,7 @@ function pageTemplate(title, description, body, options = {}) {
     <nav aria-label="Site links">
       <a href="/">Sapiver Forge</a>
       <a href="/daily-brief/">Daily Brief</a>
+      <a href="/learn/">Sapiver Learn</a>
       <a href="/resources/">Resources</a>
       <a href="/newsletter/">Weekly digest</a>
     </nav>
@@ -350,7 +351,7 @@ function pageTemplate(title, description, body, options = {}) {
   <footer class="site-footer">
     <p>Turning human input into clear, usable systems.</p>
     <p>Produced with AI assistance and released with human approval by Sapiver Forge.</p>
-    <p><a href="/">Sapiver Forge</a> · <a href="/daily-brief/">Daily Brief</a> · <a href="/resources/">Resources</a> · <a href="/newsletter/">Weekly digest</a></p>
+    <p><a href="/">Sapiver Forge</a> · <a href="/daily-brief/">Daily Brief</a> · <a href="/learn/">Sapiver Learn</a> · <a href="/resources/">Resources</a> · <a href="/newsletter/">Weekly digest</a></p>
   </footer>
 </body>
 </html>`;
@@ -407,7 +408,7 @@ function buildTopics(entries) {
 }
 
 function buildDiscoveryFiles(entries) {
-  const staticPaths = ["/", "/daily-brief/", "/daily-brief/videos/", "/resources/", "/topics/", "/reports/", "/podcast/", "/newsletter/"];
+  const staticPaths = ["/", "/daily-brief/", "/daily-brief/videos/", "/learn/", "/resources/", "/topics/", "/reports/", "/podcast/", "/newsletter/"];
   const topicPaths = topicDefinitions.map((topic) => `/topics/${topic.slug}/`);
   const urls = [...new Set([...staticPaths, ...topicPaths, ...entries.map((entry) => entry.url)])];
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((pathname) => `  <url><loc>${xmlEscape(canonical(pathname))}</loc></url>`).join("\n")}\n</urlset>\n`;

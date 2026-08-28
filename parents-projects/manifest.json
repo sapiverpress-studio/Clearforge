@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "projects": [
+    {
+      "day": 1,
+      "slug": "rainy-day-scavenger-hunt",
+      "title": "Rainy-Day Scavenger Hunt",
+      "category": "Family fun",
+      "summary": "Create a printable or screen-friendly clue trail for a rainy day at home.",
+      "path": "/parents/projects/day-001/",
+      "poster": "/parents/projects/day-001/poster.svg",
+      "status": "ready",
+      "privacy": "Runs entirely in the browser; no answers are uploaded.",
+      "supervision": "Designed for a grown-up to prepare and supervise.",
+      "published_date": "2026-08-28"
+    }
+  ]
+}

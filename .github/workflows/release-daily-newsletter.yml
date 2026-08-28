@@ -100,6 +100,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          git config user.name "sapiver-forge-intelligence-bot"
+          git config user.email "actions@users.noreply.github.com"
           git add "news-intelligence/${NEWS_INTELLIGENCE_DATE}/site-release.json" \
                   public/daily-brief/intelligence \
                   public/daily-brief/index.html

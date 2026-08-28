@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       edition_date:
-        description: Exact Daily Brief date (YYYY-MM-DD)
-        required: true
+        description: Optional Daily Brief date (YYYY-MM-DD). Leave blank for today in Europe/London.
+        required: false
         type: string
       confirm:
         description: Type SEND to release the current approved newsletter and website edition for this date
@@ -39,7 +39,90 @@ jobs:
         run: |
           set -euo pipefail
           [ "$CONFIRM" = "SEND" ] || { echo "Confirmation must be exactly SEND" >&2; exit 1; }
-          echo "$DATE" | grep -Eq '^[0-9]{4}-[0-9]{2}-[0-9]{2}$'
+          DATE="${DATE:-$(TZ=Europe/London date +%F)}"
+          export DATE
+          echo "$DATE" | grep -Eq '^[0-9]{4}-[0-9]{2}-[0-9]{2}
+          const fs = require('fs');
+          const date = process.env.DATE;
+          const manifestPath = `news-intelligence/${date}/manifest.json`;
+          const metaPath = `news-intelligence/${date}/newsletter-metadata.json`;
+          if (!fs.existsSync(manifestPath) || !fs.existsSync(metaPath)) throw new Error(`No committed intelligence candidate for ${date}.`);
+          const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+          const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+          const candidate = String(manifest.candidate_id || '').trim();
+          if (!candidate) throw new Error('Current intelligence candidate has no candidate ID.');
+          if (meta.candidate_id !== candidate) throw new Error('Internal candidate metadata mismatch; refusing release until the repository is consistent.');
+          if (manifest.newsletter_ready_for_human_approval !== true) throw new Error('This candidate is not verification-ready.');
+          if (Number(manifest.overall_confidence || 0) < 0.78) throw new Error('Candidate is below the release confidence threshold.');
+          fs.appendFileSync(process.env.GITHUB_ENV, `NEWS_INTELLIGENCE_DATE=${date}\nNEWS_INTELLIGENCE_CANDIDATE_ID=${candidate}\n`);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `date=${date}\ncandidate_id=${candidate}\n`);
+          console.log(`Releasing current approved candidate ${candidate.slice(0, 12)}… for ${date}.`);
+          NODE
+
+      - name: Send reviewed campaign through established Brevo list
+        env:
+          BREVO_SEND_MODE: send
+          NEWSLETTER_APPROVED: 'true'
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          BREVO_LIST_ID: ${{ secrets.BREVO_LIST_ID }}
+        run: node src/send-daily-newsletter-brevo.mjs
+
+      - name: Persist Brevo send receipt immediately
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "sapiver-forge-intelligence-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add "news-intelligence/${NEWS_INTELLIGENCE_DATE}/newsletter-metadata.json"
+          if ! git diff --cached --quiet; then
+            git commit -m "Record Daily Brief send ${NEWS_INTELLIGENCE_DATE} [skip ci]"
+            for attempt in 1 2 3; do
+              if git push; then break; fi
+              git pull --rebase origin main
+            done
+          fi
+
+      - name: Publish the same approved candidate into the website source
+        env:
+          BLOG_BASE_URL: https://sapiverforge-daily-brief.netlify.app
+        run: |
+          node src/publish-news-intelligence-site.mjs
+          node scripts/inject-news-intelligence-site.mjs
+
+      - name: Commit website edition
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add "news-intelligence/${NEWS_INTELLIGENCE_DATE}/site-release.json" \
+                  public/daily-brief/intelligence \
+                  public/daily-brief/index.html
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Publish Daily Brief ${NEWS_INTELLIGENCE_DATE} website edition [skip ci]"
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase origin main
+          done
+          git push
+
+      - name: Deploy the complete website to Netlify production
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: 8e72a4fc-5ad6-4377-8f4a-399d4c936060
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${NETLIFY_AUTH_TOKEN:-}" ]; then
+            echo "::error::Missing NETLIFY_AUTH_TOKEN repository secret."
+            exit 1
+          fi
+          npx --yes netlify-cli@latest deploy \
+            --prod \
+            --dir=public \
+            --site="${NETLIFY_SITE_ID}" \
+            --auth="${NETLIFY_AUTH_TOKEN}" \
+            --message="Publish approved Sapiver Forge Daily Brief and Sapiver Learn"
+
+          echo "Publishing Daily Brief date: $DATE"
           node <<'NODE'
           const fs = require('fs');
           const date = process.env.DATE;

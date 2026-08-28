@@ -359,6 +359,30 @@ function pageTemplate(title, description, body, options = {}) {
 }
 
 function buildParents() {
+  const dailyManifestPath = path.join(ROOT, "parents-projects", "manifest.json");
+  const dailyManifest = fs.existsSync(dailyManifestPath)
+    ? JSON.parse(fs.readFileSync(dailyManifestPath, "utf8"))
+    : { projects: [] };
+  const dailyProjects = Array.isArray(dailyManifest.projects)
+    ? dailyManifest.projects.filter((project) => project.status === "ready").sort((a, b) => Number(b.day) - Number(a.day))
+    : [];
+  const dailyCards = dailyProjects.map((project, index) => `<article class="daily-parent-project${index === 0 ? " daily-parent-project-latest" : ""}">
+      <a class="daily-parent-poster" href="${escapeHtml(project.path)}"><img src="${escapeHtml(project.poster)}" alt="${escapeHtml(project.title)} daily project poster" loading="${index === 0 ? "eager" : "lazy"}"></a>
+      <div class="daily-parent-copy">
+        <p class="product-kicker">${escapeHtml(project.category)} · Day ${String(project.day).padStart(3, "0")}${index === 0 ? " · Latest" : ""}</p>
+        <h3><a href="${escapeHtml(project.path)}">${escapeHtml(project.title)}</a></h3>
+        <p>${escapeHtml(project.summary)}</p>
+        <ul class="parent-project-facts"><li>${escapeHtml(project.privacy)}</li><li>${escapeHtml(project.supervision)}</li></ul>
+        <div class="report-actions"><a class="button" href="${escapeHtml(project.path)}">Try the web app</a><a class="button button-secondary" href="${escapeHtml(project.poster)}">Open poster</a></div>
+      </div>
+    </article>`).join("");
+  const dailySection = dailyProjects.length
+    ? `<section class="parents-daily" aria-labelledby="parents-daily-title">
+        <div class="parents-section-heading"><div><p class="eyebrow">A new build each day</p><h2 id="parents-daily-title">Daily family web-app ideas</h2></div><p>Every poster has a working browser app behind it. New projects appear here when the Daily Brief is published.</p></div>
+        <div class="daily-parent-grid">${dailyCards}</div>
+      </section>`
+    : "";
+
   const body = `<section class="parents-hero">
     <div class="parents-hero-copy">
       <p class="eyebrow">AI Inquisitive Parents</p>
@@ -379,6 +403,8 @@ function buildParents() {
     <h2 id="parents-intro-title">Seven different starting points</h2>
     <p>These are offered as suggestions and inspiration rather than products every family needs. Some are finished tools and some are working experiments. Each one began with a real interest or practical problem, then used AI to help turn the idea into something usable.</p>
   </section>
+
+  ${dailySection}
 
   <section class="parents-projects" id="projects" aria-labelledby="parents-projects-title">
     <div class="parents-section-heading">

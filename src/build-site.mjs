@@ -343,7 +343,7 @@ function pageTemplate(title, description, body, options = {}) {
       <a href="/">Sapiver Forge</a>
       <a href="/daily-brief/">Daily Brief</a>
       <a href="/learn/">Sapiver Learn</a>
-      <a href="/parents/">AI for Parents</a>
+      <a href="/parents/">AI Inquisitive Parents</a>
       <a href="/resources/">Resources</a>
       <a href="/newsletter/">Weekly digest</a>
     </nav>
@@ -352,7 +352,7 @@ function pageTemplate(title, description, body, options = {}) {
   <footer class="site-footer">
     <p>Turning human input into clear, usable systems.</p>
     <p>Produced with AI assistance and released with human approval by Sapiver Forge.</p>
-    <p><a href="/">Sapiver Forge</a> · <a href="/daily-brief/">Daily Brief</a> · <a href="/learn/">Sapiver Learn</a> · <a href="/parents/">AI for Parents</a> · <a href="/resources/">Resources</a> · <a href="/newsletter/">Weekly digest</a></p>
+    <p><a href="/">Sapiver Forge</a> · <a href="/daily-brief/">Daily Brief</a> · <a href="/learn/">Sapiver Learn</a> · <a href="/parents/">AI Inquisitive Parents</a> · <a href="/resources/">Resources</a> · <a href="/newsletter/">Weekly digest</a></p>
   </footer>
 </body>
 </html>`;
@@ -361,7 +361,7 @@ function pageTemplate(title, description, body, options = {}) {
 function buildParents() {
   const body = `<section class="parents-hero">
     <div class="parents-hero-copy">
-      <p class="eyebrow">AI for curious parents</p>
+      <p class="eyebrow">AI Inquisitive Parents</p>
       <h1>You do not need to be technical to make something useful with AI.</h1>
       <p class="parents-lead">This is a collection of real family projects made by a working parent: tools for learning, music, creativity, practice and everyday moments. Try one, borrow an idea or use them as proof that a small personal project is a perfectly good place to begin.</p>
       <div class="report-actions"><a class="button" href="#projects">Explore the projects</a><a class="button button-secondary" href="/learn/">Start with Sapiver Learn</a></div>
@@ -468,7 +468,7 @@ function buildParents() {
   </section>`;
 
   write(path.join(publicDir, "parents", "index.html"), pageTemplate(
-    "AI for Parents",
+    "AI Inquisitive Parents",
     "Real family projects showing curious parents how AI can support learning, creativity, hobbies and everyday life.",
     body,
     {
@@ -476,7 +476,7 @@ function buildParents() {
       structuredData: {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        name: "AI for Parents",
+        name: "AI Inquisitive Parents",
         description: "Real family projects showing curious parents how AI can support learning, creativity, hobbies and everyday life.",
         url: canonical("/parents/"),
         isPartOf: { "@type": "WebSite", name: "Sapiver Forge", url: blogBase }

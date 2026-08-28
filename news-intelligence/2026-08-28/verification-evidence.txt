@@ -1,0 +1,85 @@
+### Briefing Evidence Notes: 2026-08-28 UK Morning Briefing
+
+---
+
+### Candidate [0]: Tencent Releases Hy4 Preview Foundational Model
+* **What is confirmed:** On August 28, 2026, Tencent released and open-sourced **Hy4 Preview**, a Mixture-of-Experts (MoE) foundation model featuring 770 billion total parameters (49B active) and a 1-million-token context window. Tencent reports that internal blind evaluations show Hy4 Preview slightly outperforming GLM 5.3 and Kimi K3 (Moonshot) on productivity tasks, coding, office analytics, and scientific research.
+* **Important caveats:** The performance leadership claims rely on internal blind tests and benchmarks published by Tencent rather than independent third-party evaluations.
+* **Suitable for publication today:** **Yes.** Strong in-scope AI model release story.
+
+---
+
+### Candidate [4]: Nvidia Reportedly Acquiring Hugging Face for ~$13 Billion
+* **What is confirmed:** Major media outlets (The Information, Business Insider, Forbes) reported on August 26–27, 2026, that Nvidia is in advanced negotiations or has reached an agreement to acquire open-source AI platform Hugging Face for approximately $12.9 billion to $13 billion.
+* **Important caveats:** Neither Nvidia nor Hugging Face has issued an official press release or regulatory filing confirming the acquisition. The deal remains subject to final terms and regulatory scrutiny.
+* **Suitable for publication today:** **Yes**, provided it is strictly framed as an unconfirmed report based on insider sources.
+
+---
+
+### Candidate [5]: Tech Firms Courting Democrats Ahead of Potential Midterm Shift (WSJ)
+* **What is confirmed:** The *Wall Street Journal* published an exclusive report on August 27–28, 2026, stating that several major U.S. technology companies and corporate donors are hiring advisory teams and building ties with congressional Democrats to prepare for potential oversight investigations if Republicans lose control of the House in the upcoming midterms.
+* **Important caveats:** The story relies on anonymous political strategists and corporate advisers describing defensive strategy preparations rather than formal regulatory or legislative actions.
+* **Suitable for publication today:** **Yes.** In-scope coverage of tech policy, corporate strategy, and political risk.
+
+---
+
+### Candidate [7]: Pollen Robotics / Hugging Face Announce Microduck Hardware
+* **What is confirmed:** Pollen Robotics (part of Hugging Face) opened pre-orders on August 26–27, 2026, for **Microduck**, a 25 cm open-source biped robot priced at $399. It includes 15 motors, camera, LiDAR, and an open-source sim-to-real reinforcement learning pipeline.
+* **Important caveats:** This is an early developer hardware release aimed at AI researchers and robotics hobbyists, with initial deliveries expected in late 2026.
+* **Suitable for publication today:** **Yes.** Highly relevant to open-source robotics and AI hardware developments.
+
+---
+
+### Candidate [8]: Google Launches Gemini 3.5 Transcribe
+* **What is confirmed:** Google announced **Gemini 3.5 Transcribe** on August 26, 2026, launching it in public preview across the Gemini API and Google Antigravity. The model specializes in intelligent speech-to-text, context-aware transcription, and automatic filler-word removal.
+* **Important caveats:** The model is currently restricted to developer and enterprise previews, with consumer app integrations (such as Chrome) slated for later release.
+* **Suitable for publication today:** **Yes.** Solid in-scope update on enterprise speech AI tools.
+
+---
+
+### Candidate [12]: Google Updates Gemini Omni 1.1 Flash
+* **What is confirmed:** Google released an update on August 27, 2026, for **Gemini Omni 1.1 Flash**, introducing enhanced creative controls and generative video capabilities for developers via the Gemini API and AI Studio.
+* **Important caveats:** This represents an incremental iteration (v1.1 Flash) focusing on developer tooling and video generation controls rather than a major architectural release.
+* **Suitable for publication today:** **Yes.** Best grouped with Candidate [8] under a Google developer model release roundup.
+
+---
+
+### Candidate [13]: Stripe and Advent Abandon $53B+ PayPal Buyout Pursuit
+* **What is confirmed:** Bloomberg reported on August 27, 2026 (corroborated by Axios and Reuters) that the consortium of Stripe and Advent International has ended its pursuit of acquiring PayPal following board resistance to their $60.50/share proposal. PayPal shares dropped over 12% in extended trading following the report.
+* **Important caveats:** Stripe, Advent, and PayPal declined to provide official commentary on the record.
+* **Suitable for publication today:** **Yes.** Major fintech M&A development.
+
+---
+
+### Candidate [14]: Federal Judge Blocks Pentagon Blacklist of Anthropic
+* **What is confirmed:** On August 27, 2026, U.S. District Judge Rita Lin issued a preliminary injunction blocking the Department of Defense from designating Anthropic as a national security supply-chain risk, ruling that the Pentagon's decision was "illegal and baseless".
+* **Important caveats:** The ruling grants a preliminary injunction in ongoing litigation rather than a final judgment, though it immediately prevents the Pentagon from enforcing contract restrictions on Anthropic during the lawsuit.
+* **Suitable for publication today:** **Yes.** Major landmark ruling regarding AI safety, military procurement, and tech regulation.
+
+---
+
+### Candidate [16]: CISA Details Cyberattacks on U.S. Water Infrastructure
+* **What is confirmed:** TechCrunch reported on August 26–28, 2026, that CISA confirmed cyberattacks in July 2026 targeted over 100 internet-exposed programmable logic controllers (PLCs) across U.S. water and wastewater facilities.
+* **Important caveats:** The intrusions primarily targeted PLCs connected via unsegmented cellular modems; while operational disruptions and alarm outages occurred, municipal water supplies were not compromised.
+* **Suitable for publication today:** **Yes.** Essential critical-infrastructure cybersecurity briefing item.
+
+---
+
+### Candidate [18]: Research Paper: "PILOT in the Loop: Live Self-Improvement for Long-Horizon Agents"
+* **What is confirmed:** A research paper published on arXiv (2608.26530) introduces **PILOT**, a supervisor-worker harness that allows live steering and context updates during active long-horizon AI agent execution [18].
+* **Important caveats:** Claims regarding performance gains and dynamic trajectory steering are derived solely from the authors' paper benchmarks and await independent replication [18].
+* **Suitable for publication today:** **Yes**, suitable specifically for the AI research summary section [18].
+
+---
+
+### Summary of Excluded / Out-of-Scope Candidates
+* **[1] Cloudflare DNS cache:** Out of scope (infrastructure engineering post).
+* **[2] UK Treasury / BoE Objective:** Out of scope (general macroeconomic / monetary policy).
+* **[3] Small Models Have Arrived:** Out of scope (individual blog post).
+* **[6] 507 Mechanical Movements:** Out of scope (historical mechanical design).
+* **[9] BitGo / NYDIG:** Out of scope (crypto asset trade).
+* **[10] Prediction Markets Insider Trading:** Out of scope (financial crime / enforcement).
+* **[11] Suica Transit Card:** Out of scope (transit history).
+* **[15] Mexico Google Android Ruling:** Excluded; stale December 2025 item.
+* **[17] Brazil IPCA-15:** Out of scope (macroeconomics).
+* **[19] Nvidia Q2 Earnings:** Stale; reported in prior news cycle (Aug 26).

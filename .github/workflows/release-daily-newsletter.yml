@@ -41,7 +41,9 @@ jobs:
           [ "$CONFIRM" = "SEND" ] || { echo "Confirmation must be exactly SEND" >&2; exit 1; }
           DATE="${DATE:-$(TZ=Europe/London date +%F)}"
           export DATE
-          echo "$DATE" | grep -Eq '^[0-9]{4}-[0-9]{2}-[0-9]{2}
+          echo "$DATE" | grep -Eq '^[0-9]{4}-[0-9]{2}-[0-9]{2}$'
+          echo "Publishing Daily Brief date: $DATE"
+          node <<'NODE'
           const fs = require('fs');
           const date = process.env.DATE;
           const manifestPath = `news-intelligence/${date}/manifest.json`;

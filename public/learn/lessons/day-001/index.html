@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sapiver Learn — Day 1: What Actually Happens When You Use Software?</title>
+  <style>
+    :root{
+      --bg:#0f1115;
+      --panel:#171a21;
+      --panel-2:#1e232c;
+      --text:#f3f5f7;
+      --muted:#aeb7c2;
+      --accent:#ff8a3d;
+      --accent-soft:#3a2418;
+      --good:#51c878;
+      --bad:#ff6b6b;
+      --border:#303744;
+      --max:880px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.65;
+    }
+    main{
+      width:min(var(--max),calc(100% - 28px));
+      margin:0 auto;
+      padding:28px 0 60px;
+    }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:22px;
+    }
+    .brand{
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+    .pill{
+      display:inline-block;
+      padding:5px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:22px;
+      margin:16px 0;
+    }
+    h1,h2,h3{line-height:1.25}
+    h1{font-size:clamp(1.9rem,5vw,3rem); margin:.2rem 0 1rem}
+    h2{font-size:1.35rem; margin-top:0}
+    h3{font-size:1.05rem}
+    p{margin:.75rem 0}
+    code{
+      background:var(--panel-2);
+      padding:.15rem .35rem;
+      border-radius:6px;
+    }
+    .callout{
+      border-left:4px solid var(--accent);
+      background:var(--accent-soft);
+      padding:14px 16px;
+      border-radius:10px;
+      margin:18px 0;
+    }
+    .controls{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:18px 0 8px;
+    }
+    button{
+      border:1px solid var(--border);
+      background:var(--panel-2);
+      color:var(--text);
+      padding:11px 15px;
+      border-radius:10px;
+      cursor:pointer;
+      font-size:1rem;
+    }
+    button:hover{border-color:var(--accent)}
+    button.primary{
+      background:var(--accent);
+      color:#1a120c;
+      border-color:var(--accent);
+      font-weight:700;
+    }
+    .muted{color:var(--muted)}
+    .flow{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:8px;
+      align-items:center;
+      margin:18px 0;
+    }
+    .flow div{
+      background:var(--panel-2);
+      border:1px solid var(--border);
+      border-radius:10px;
+      text-align:center;
+      padding:12px 8px;
+      min-height:68px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .terms{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+    }
+    .term{
+      background:var(--panel-2);
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:12px;
+    }
+    .term strong{display:block;margin-bottom:4px}
+    .question{
+      margin:20px 0;
+      padding:18px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:var(--panel-2);
+    }
+    .option{
+      display:block;
+      width:100%;
+      text-align:left;
+      margin:8px 0;
+      background:#202632;
+    }
+    .option.correct{
+      border-color:var(--good);
+      background:#163120;
+    }
+    .option.wrong{
+      border-color:var(--bad);
+      background:#351c1c;
+    }
+    .feedback{
+      min-height:1.4em;
+      margin-top:10px;
+      font-weight:600;
+    }
+    .score{
+      font-size:1.15rem;
+      font-weight:700;
+    }
+    #lesson h2,
+    #lesson p,
+    #lesson .term{
+      scroll-margin-block:35vh;
+      transition:background-color .18s ease, outline-color .18s ease;
+    }
+    .speech-active{
+      background:var(--accent-soft);
+      outline:2px solid var(--accent);
+      outline-offset:4px;
+      border-radius:6px;
+    }
+    ::highlight(sapiver-reading){
+      background-color:rgba(255,138,61,.38);
+      color:var(--text);
+    }
+    @media (prefers-reduced-motion:reduce){
+      #lesson h2,
+      #lesson p,
+      #lesson .term{transition:none}
+    }
+    footer{
+      margin-top:28px;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    @media (max-width:700px){
+      .flow{grid-template-columns:1fr}
+      .terms{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+<main>
+  <div class="topbar">
+    <div class="brand"><a href="../../" style="color:inherit;text-decoration:none;">Sapiver Learn</a></div>
+    <div class="pill">Phase 1 · Day 1 · Foundations</div>
+  </div>
+
+  <section>
+    <h1>What actually happens when you use software?</h1>
+    <p class="muted">A 5–10 minute foundation lesson in computing and AI literacy.</p>
+
+    <div class="controls">
+      <button class="primary" id="playBtn">▶ Listen to lesson</button>
+      <button id="pauseBtn">⏸ Pause</button>
+      <button id="resumeBtn">▶ Resume</button>
+      <button id="stopBtn">■ Stop</button>
+    </div>
+    <div id="audioStatus" class="muted">Uses your browser or device's built-in text-to-speech where available.</div>
+
+    <div class="callout">
+      <strong>Core mental model:</strong><br>
+      hardware → operating system → application → data → network/server
+    </div>
+  </section>
+
+  <section id="lesson">
+    <div class="card">
+      <h2>1. Hardware</h2>
+      <p><strong>Hardware</strong> is the physical equipment inside a computer or phone.</p>
+      <p>Examples include the processor, memory, storage, screen, cameras and network hardware.</p>
+      <p>The <strong>CPU</strong> executes instructions. <strong>RAM</strong> temporarily holds information a program is actively using. <strong>Storage</strong> keeps information after the device is switched off.</p>
+      <p><em>A useful simplification: RAM is the workbench; storage is the cupboard.</em></p>
+    </div>
+
+    <div class="card">
+      <h2>2. Operating system</h2>
+      <p>The <strong>operating system</strong>, or <strong>OS</strong>, manages the device and provides services to applications.</p>
+      <p>Examples include Android, Windows, macOS, Linux and iOS.</p>
+      <p>When an app wants to use the camera, save a file, display something or access the internet, it normally goes through services provided by the operating system rather than controlling the hardware directly.</p>
+    </div>
+
+    <div class="card">
+      <h2>3. Applications and code</h2>
+      <p>An <strong>application</strong> is software designed to perform a task.</p>
+      <p>Examples include Chrome, Spotify, ChatGPT, a calculator, an Android app or a website running in your browser.</p>
+      <p>Applications are built from instructions expressed as <strong>code</strong>.</p>
+      <p>This is why files such as <code>.py</code>, <code>.js</code>, <code>.html</code>, <code>.apk</code> and <code>.exe</code> are not interchangeable: they represent different kinds or forms of software.</p>
+    </div>
+
+    <div class="card">
+      <h2>4. Data</h2>
+      <p><strong>Code</strong> describes what a system should do. <strong>Data</strong> is information the system stores, receives or operates on.</p>
+      <p>If a notes app contains instructions saying “save the user's note”, those instructions are code. The words “buy compost on Saturday” are data.</p>
+      <p>AI systems may operate on text, photographs, audio, databases, JSON, spreadsheets and many other forms of data.</p>
+    </div>
+
+    <div class="card">
+      <h2>5. Local and remote computing</h2>
+      <p>If your own device performs the work, the processing is <strong>local</strong>.</p>
+      <p>If your device sends a request across a network to another computer that performs the work, that other computer is commonly acting as a <strong>server</strong>.</p>
+
+      <div class="flow" aria-label="Simplified remote computing flow">
+        <div>Your phone</div>
+        <div>→</div>
+        <div>Internet</div>
+        <div>→</div>
+        <div>Server</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>6. What people mean by “the cloud”</h2>
+      <p>At a basic level, <strong>cloud computing</strong> means using computing resources running on infrastructure somewhere else and accessing them through a network.</p>
+      <p>Those machines still exist physically. They normally sit in data centres.</p>
+      <p>The phrase “the cloud” can make this sound abstract, but it still depends on real computers, networking, power and storage.</p>
+    </div>
+
+    <div class="card">
+      <h2>7. Frontend and backend</h2>
+      <p>The <strong>frontend</strong> is the part of an application a user interacts with: buttons, menus, forms and layouts.</p>
+      <p>The <strong>backend</strong> is software working behind the interface. It might manage accounts, databases, files, authentication or AI requests.</p>
+    </div>
+
+    <div class="card">
+      <h2>8. Runtime</h2>
+      <p>A <strong>runtime</strong> is the environment in which software actually executes.</p>
+      <p>Code sitting in a repository is not necessarily doing anything. It needs an appropriate environment in which to run.</p>
+    </div>
+
+    <div class="card">
+      <h2>Example: asking ChatGPT a question</h2>
+      <p>A simplified sequence looks like this:</p>
+      <p><strong>You → ChatGPT app → Android → internet → remote infrastructure → AI model → response → your app</strong></p>
+      <p>This is deliberately simplified. Later lessons will unpack APIs, models, inference, servers and networking separately.</p>
+    </div>
+
+    <div class="card">
+      <h2>Why this matters for AI</h2>
+      <p>AI is not separate from ordinary computing.</p>
+      <p>AI systems still need <strong>hardware, software, data, runtimes and often networking</strong>. AI adds specialised components—particularly trained models—but the underlying computing foundations remain.</p>
+      <p>If you understand the layers underneath AI, later concepts such as APIs, model hosting, local AI, cloud costs, privacy and deployment become much easier to reason about.</p>
+    </div>
+
+    <div class="card">
+      <h2>Key terms</h2>
+      <div class="terms">
+        <div class="term"><strong>Hardware</strong>Physical computing equipment</div>
+        <div class="term"><strong>Operating system</strong>Software that manages the device</div>
+        <div class="term"><strong>Application</strong>Software designed to perform a task</div>
+        <div class="term"><strong>Data</strong>Information processed or stored by software</div>
+        <div class="term"><strong>Server</strong>A computer providing services to other computers</div>
+        <div class="term"><strong>Runtime</strong>The environment where software executes</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Day 1 check</h2>
+    <p class="muted">Tap an answer. You will get immediate feedback.</p>
+
+    <div class="question" data-correct="B">
+      <h3>1. Your phone sends an AI request to a powerful computer elsewhere. What is that computer generally called?</h3>
+      <button class="option" data-value="A">A. Runtime</button>
+      <button class="option" data-value="B">B. Server</button>
+      <button class="option" data-value="C">C. Operating system</button>
+      <button class="option" data-value="D">D. Database</button>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="question" data-correct="B">
+      <h3>2. What is the main distinction between code and data?</h3>
+      <button class="option" data-value="A">A. They are the same thing</button>
+      <button class="option" data-value="B">B. Code gives instructions; data is information those instructions operate on</button>
+      <button class="option" data-value="C">C. Data only exists online</button>
+      <button class="option" data-value="D">D. Code only exists on internet-connected computers</button>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="question" data-correct="B">
+      <h3>3. A program exists in a GitHub repository but has not been run or deployed. Is it necessarily performing its intended job?</h3>
+      <button class="option" data-value="A">A. Yes</button>
+      <button class="option" data-value="B">B. No, not necessarily</button>
+      <div class="feedback"></div>
+    </div>
+
+    <p class="score" id="score">Score: 0 / 3</p>
+    <button id="resetBtn">Reset quiz</button>
+  </section>
+
+  <section class="callout">
+    <strong>Next lesson:</strong><br>
+    Day 2 — How computers communicate: networks, the internet, IP addresses, domains, URLs and your first introduction to APIs.
+  </section>
+
+  <footer>
+    Sapiver Learn · Phase 1 · Day 1<br>
+    <a href="../../" style="color:var(--accent);text-decoration:none;">← Back to Sapiver Learn</a>
+  </footer>
+</main>
+
+<script>
+(() => {
+  const questions = [...document.querySelectorAll('.question')];
+  const scoreEl = document.getElementById('score');
+  let state = new Map();
+
+  function updateScore(){
+    let correct = 0;
+    state.forEach(v => { if(v === true) correct++; });
+    scoreEl.textContent = `Score: ${correct} / ${questions.length}`;
+  }
+
+  questions.forEach((q, index) => {
+    const correct = q.dataset.correct;
+    const buttons = [...q.querySelectorAll('.option')];
+    const feedback = q.querySelector('.feedback');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('correct','wrong'));
+
+        if(btn.dataset.value === correct){
+          btn.classList.add('correct');
+          feedback.textContent = 'Correct.';
+          feedback.style.color = 'var(--good)';
+          state.set(index, true);
+        }else{
+          btn.classList.add('wrong');
+          const right = buttons.find(b => b.dataset.value === correct);
+          right.classList.add('correct');
+          feedback.textContent = 'Not quite. The correct answer is highlighted.';
+          feedback.style.color = 'var(--bad)';
+          state.set(index, false);
+        }
+        updateScore();
+      });
+    });
+  });
+
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    state = new Map();
+    questions.forEach(q => {
+      q.querySelectorAll('.option').forEach(b => b.classList.remove('correct','wrong'));
+      q.querySelector('.feedback').textContent = '';
+    });
+    updateScore();
+  });
+
+  const lessonRoot = document.getElementById('lesson');
+  const audioStatus = document.getElementById('audioStatus');
+  const playBtn = document.getElementById('playBtn');
+  const pauseBtn = document.getElementById('pauseBtn');
+  const resumeBtn = document.getElementById('resumeBtn');
+  const stopBtn = document.getElementById('stopBtn');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let utterance = null;
+  let speechUnits = [];
+  let currentSpeechIndex = 0;
+  let speechStopped = true;
+  let speechPaused = false;
+  let activeBlock = null;
+
+  function sentenceSegments(text){
+    const results = [];
+
+    if(window.Intl && Intl.Segmenter){
+      const segmenter = new Intl.Segmenter('en-GB', {granularity:'sentence'});
+      for(const item of segmenter.segment(text)){
+        const raw = item.segment;
+        const leading = raw.length - raw.trimStart().length;
+        const trailing = raw.length - raw.trimEnd().length;
+        const start = item.index + leading;
+        const end = item.index + raw.length - trailing;
+        const spoken = raw.trim();
+        if(spoken) results.push({text:spoken, start, end});
+      }
+      return results;
+    }
+
+    const pattern = /[^.!?]+(?:[.!?]+|$)/g;
+    let match;
+    while((match = pattern.exec(text)) !== null){
+      const raw = match[0];
+      const leading = raw.length - raw.trimStart().length;
+      const trailing = raw.length - raw.trimEnd().length;
+      const spoken = raw.trim();
+      if(spoken){
+        results.push({
+          text:spoken,
+          start:match.index + leading,
+          end:match.index + raw.length - trailing
+        });
+      }
+    }
+    return results;
+  }
+
+  function textNodesFor(element){
+    const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, {
+      acceptNode(node){
+        return node.nodeValue && node.nodeValue.length
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes = [];
+    let node;
+    while((node = walker.nextNode())) nodes.push(node);
+    return nodes;
+  }
+
+  function rangeForOffsets(element, start, end){
+    const nodes = textNodesFor(element);
+    let offset = 0;
+    let startNode = null;
+    let startOffset = 0;
+    let endNode = null;
+    let endOffset = 0;
+
+    for(const node of nodes){
+      const nextOffset = offset + node.nodeValue.length;
+
+      if(startNode === null && start >= offset && start <= nextOffset){
+        startNode = node;
+        startOffset = Math.max(0, Math.min(node.nodeValue.length, start - offset));
+      }
+
+      if(endNode === null && end >= offset && end <= nextOffset){
+        endNode = node;
+        endOffset = Math.max(0, Math.min(node.nodeValue.length, end - offset));
+        break;
+      }
+
+      offset = nextOffset;
+    }
+
+    if(!startNode || !endNode) return null;
+
+    const range = document.createRange();
+    range.setStart(startNode, startOffset);
+    range.setEnd(endNode, endOffset);
+    return range;
+  }
+
+  function buildSpeechUnits(){
+    const blocks = [...lessonRoot.querySelectorAll('h2, p, .term')];
+    const units = [];
+
+    blocks.forEach(block => {
+      const text = block.textContent || '';
+      sentenceSegments(text).forEach(segment => {
+        units.push({
+          text:segment.text,
+          block,
+          range:rangeForOffsets(block, segment.start, segment.end)
+        });
+      });
+    });
+
+    return units;
+  }
+
+  function clearReadingHighlight(){
+    if(window.CSS && CSS.highlights) CSS.highlights.delete('sapiver-reading');
+    if(activeBlock) activeBlock.classList.remove('speech-active');
+    activeBlock = null;
+  }
+
+  function highlightSpeechUnit(unit){
+    clearReadingHighlight();
+    activeBlock = unit.block;
+
+    if(window.CSS && CSS.highlights && window.Highlight && unit.range){
+      CSS.highlights.set('sapiver-reading', new Highlight(unit.range));
+    }else{
+      unit.block.classList.add('speech-active');
+    }
+
+    const rect = unit.block.getBoundingClientRect();
+    const topLimit = window.innerHeight * 0.18;
+    const bottomLimit = window.innerHeight * 0.78;
+    if(rect.top < topLimit || rect.bottom > bottomLimit){
+      unit.block.scrollIntoView({
+        behavior:prefersReducedMotion ? 'auto' : 'smooth',
+        block:'center'
+      });
+    }
+  }
+
+  function speakCurrentUnit(){
+    if(speechStopped) return;
+
+    if(currentSpeechIndex >= speechUnits.length){
+      speechStopped = true;
+      speechPaused = false;
+      clearReadingHighlight();
+      audioStatus.textContent = 'Lesson audio finished.';
+      return;
+    }
+
+    const unit = speechUnits[currentSpeechIndex];
+    highlightSpeechUnit(unit);
+
+    utterance = new SpeechSynthesisUtterance(unit.text);
+    utterance.lang = 'en-GB';
+    utterance.rate = 0.92;
+
+    utterance.onstart = () => {
+      if(!speechStopped){
+        audioStatus.textContent = `Playing lesson audio… ${currentSpeechIndex + 1} of ${speechUnits.length}`;
+      }
+    };
+
+    utterance.onend = () => {
+      if(speechStopped) return;
+      currentSpeechIndex += 1;
+      speakCurrentUnit();
+    };
+
+    utterance.onerror = event => {
+      if(speechStopped || event.error === 'interrupted' || event.error === 'canceled') return;
+      speechStopped = true;
+      speechPaused = false;
+      clearReadingHighlight();
+      audioStatus.textContent = 'Audio playback could not continue.';
+    };
+
+    speechSynthesis.speak(utterance);
+  }
+
+  function startLessonAudio(){
+    speechSynthesis.cancel();
+    clearReadingHighlight();
+    speechUnits = buildSpeechUnits();
+    currentSpeechIndex = 0;
+    speechStopped = false;
+    speechPaused = false;
+
+    if(!speechUnits.length){
+      speechStopped = true;
+      audioStatus.textContent = 'No lesson text was available to read.';
+      return;
+    }
+
+    window.setTimeout(speakCurrentUnit, 60);
+  }
+
+  if(!('speechSynthesis' in window)){
+    audioStatus.textContent = 'Audio is not supported in this browser.';
+    [playBtn,pauseBtn,resumeBtn,stopBtn].forEach(button => {
+      button.disabled = true;
+    });
+  }else{
+    playBtn.addEventListener('click', startLessonAudio);
+
+    pauseBtn.addEventListener('click', () => {
+      if(speechStopped || speechPaused) return;
+      speechSynthesis.pause();
+      speechPaused = true;
+      audioStatus.textContent = 'Audio paused.';
+    });
+
+    resumeBtn.addEventListener('click', () => {
+      if(speechStopped || !speechPaused) return;
+      speechSynthesis.resume();
+      speechPaused = false;
+      audioStatus.textContent = `Playing lesson audio… ${currentSpeechIndex + 1} of ${speechUnits.length}`;
+    });
+
+    stopBtn.addEventListener('click', () => {
+      speechStopped = true;
+      speechPaused = false;
+      speechSynthesis.cancel();
+      clearReadingHighlight();
+      audioStatus.textContent = 'Audio stopped.';
+    });
+
+    window.addEventListener('pagehide', () => {
+      speechStopped = true;
+      speechSynthesis.cancel();
+      clearReadingHighlight();
+    });
+  }
+})();
+</script>
+</body>
+</html>

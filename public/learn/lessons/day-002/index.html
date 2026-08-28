@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sapiver Learn — Day 2: How Computers Communicate</title>
+  <style>
+    :root{
+      --bg:#0f1115;
+      --panel:#171a21;
+      --panel-2:#1e232c;
+      --text:#f3f5f7;
+      --muted:#aeb7c2;
+      --accent:#ff8a3d;
+      --accent-soft:#3a2418;
+      --good:#51c878;
+      --bad:#ff6b6b;
+      --border:#303744;
+      --max:880px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.65;
+    }
+    main{
+      width:min(var(--max),calc(100% - 28px));
+      margin:0 auto;
+      padding:28px 0 60px;
+    }
+    a{color:var(--accent)}
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:22px;
+    }
+    .brand{
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+    .brand a{
+      color:inherit;
+      text-decoration:none;
+    }
+    .pill{
+      display:inline-block;
+      padding:5px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:22px;
+      margin:16px 0;
+    }
+    h1,h2,h3{line-height:1.25}
+    h1{font-size:clamp(1.9rem,5vw,3rem); margin:.2rem 0 1rem}
+    h2{font-size:1.35rem; margin-top:0}
+    h3{font-size:1.05rem}
+    p{margin:.75rem 0}
+    code{
+      background:var(--panel-2);
+      padding:.15rem .35rem;
+      border-radius:6px;
+      overflow-wrap:anywhere;
+    }
+    .callout{
+      border-left:4px solid var(--accent);
+      background:var(--accent-soft);
+      padding:14px 16px;
+      border-radius:10px;
+      margin:18px 0;
+    }
+    .controls{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:18px 0 8px;
+    }
+    button{
+      border:1px solid var(--border);
+      background:var(--panel-2);
+      color:var(--text);
+      padding:11px 15px;
+      border-radius:10px;
+      cursor:pointer;
+      font-size:1rem;
+    }
+    button:hover{border-color:var(--accent)}
+    button:disabled{opacity:.55;cursor:not-allowed}
+    button.primary{
+      background:var(--accent);
+      color:#1a120c;
+      border-color:var(--accent);
+      font-weight:700;
+    }
+    .muted{color:var(--muted)}
+    .flow{
+      display:grid;
+      grid-template-columns:repeat(7,1fr);
+      gap:8px;
+      align-items:center;
+      margin:18px 0;
+    }
+    .flow div{
+      background:var(--panel-2);
+      border:1px solid var(--border);
+      border-radius:10px;
+      text-align:center;
+      padding:12px 8px;
+      min-height:68px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-width:0;
+      overflow-wrap:anywhere;
+    }
+    .terms{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+    }
+    .term{
+      background:var(--panel-2);
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:12px;
+    }
+    .term strong{display:block;margin-bottom:4px}
+    .question{
+      margin:20px 0;
+      padding:18px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:var(--panel-2);
+    }
+    .option{
+      display:block;
+      width:100%;
+      text-align:left;
+      margin:8px 0;
+      background:#202632;
+    }
+    .option.correct{
+      border-color:var(--good);
+      background:#163120;
+    }
+    .option.wrong{
+      border-color:var(--bad);
+      background:#351c1c;
+    }
+    .feedback{
+      min-height:1.4em;
+      margin-top:10px;
+      font-weight:600;
+    }
+    .resource-link{
+      display:inline-block;
+      margin-top:8px;
+      font-weight:600;
+      text-decoration:none;
+    }
+    .score{
+      font-size:1.15rem;
+      font-weight:700;
+    }
+    .progress-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 18px;
+      color:var(--muted);
+      margin:.5rem 0 1rem;
+    }
+    #lesson h2,
+    #lesson p,
+    #lesson .term{
+      scroll-margin-block:35vh;
+      transition:background-color .18s ease, outline-color .18s ease;
+    }
+    .speech-active{
+      background:var(--accent-soft);
+      outline:2px solid var(--accent);
+      outline-offset:4px;
+      border-radius:6px;
+    }
+    ::highlight(sapiver-reading){
+      background-color:rgba(255,138,61,.38);
+      color:var(--text);
+    }
+    @media (prefers-reduced-motion:reduce){
+      #lesson h2,
+      #lesson p,
+      #lesson .term{transition:none}
+    }
+    footer{
+      margin-top:28px;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    @media (max-width:700px){
+      .flow{grid-template-columns:1fr}
+      .terms{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+<main>
+  <div class="topbar">
+    <div class="brand"><a href="../../">Sapiver Learn</a></div>
+    <div class="pill">Phase 1 · Day 2 · Networks & Web</div>
+  </div>
+
+  <section>
+    <h1>How computers communicate</h1>
+    <p class="muted">Estimated learning time: 8–10 minutes.</p>
+
+    <div class="controls">
+      <button class="primary" id="playBtn">▶ Listen</button>
+      <button id="pauseBtn">⏸ Pause</button>
+      <button id="resumeBtn">▶ Resume</button>
+      <button id="stopBtn">■ Stop</button>
+    </div>
+    <div id="audioStatus" class="muted" aria-live="polite">Ready to listen.</div>
+
+    <div class="callout">
+      <strong>Core mental model:</strong><br>
+      A network moves data between devices. The internet connects networks. Names and addresses help traffic reach the right place, and APIs define how software can ask other software to do something.
+    </div>
+  </section>
+
+  <section id="lesson">
+    <div class="card">
+      <h2>1. Start with a network</h2>
+      <p>A <strong>network</strong> is a group of devices that can communicate with one another.</p>
+      <p>Your home Wi-Fi is a network: phones, televisions, laptops and other devices can connect through networking equipment such as a router.</p>
+      <p>Yesterday we separated your device from a remote server. Today we are looking at the path that lets those two machines exchange data.</p>
+    </div>
+
+    <div class="card">
+      <h2>2. The internet is a network of networks</h2>
+      <p>The <strong>internet</strong> is not one enormous computer and it is not the same thing as the Web.</p>
+      <p>It is global infrastructure that links many separate networks so data can travel between them.</p>
+      <p>The <strong>Web</strong> is one service built on top of the internet. Email, messaging and many other services also use internet infrastructure.</p>
+      <p>This is a simplification: real internet routing involves many organisations, routers, protocols and possible paths.</p>
+    </div>
+
+    <div class="card">
+      <h2>3. Data travels in packets</h2>
+      <p>Network data is generally broken into smaller units called <strong>packets</strong> for transmission.</p>
+      <p>Packets carry information that networking systems use to move data towards its destination, and protocols define the rules for communication.</p>
+      <p>You do not need to memorise protocol details yet. The useful idea is that a large message does not usually travel across the internet as one indivisible object.</p>
+    </div>
+
+    <div class="card">
+      <h2>4. IP addresses help identify destinations</h2>
+      <p>An <strong>IP address</strong> is an address used by the Internet Protocol so network traffic can be directed to the correct destination.</p>
+      <p>IPv4 addresses often look like <code>192.0.2.10</code>, while IPv6 addresses use a longer format.</p>
+      <p>For now, think of an IP address as a machine-readable network address, but remember that the real relationship between people, devices and public IP addresses can be more complicated because of technologies such as NAT, hosting platforms and load balancing.</p>
+    </div>
+
+    <div class="card">
+      <h2>5. Domain names make addresses usable for people</h2>
+      <p>Humans are better at remembering names such as <code>sapiverpress.co.uk</code> than changing strings of numbers.</p>
+      <p>A <strong>domain name</strong> is a human-readable name used in internet addressing.</p>
+      <p>The <strong>Domain Name System</strong>, or <strong>DNS</strong>, helps translate domain names into technical records that computers can use, commonly including IP addresses.</p>
+      <p>A useful beginner analogy is a contacts list: you choose a name, and the system helps find the address needed to make the connection.</p>
+    </div>
+
+    <div class="card">
+      <h2>6. A URL is more specific than a domain</h2>
+      <p>A <strong>URL</strong>, or Uniform Resource Locator, identifies where a resource can be found and how it should be accessed.</p>
+      <p>Consider <code>https://example.com/lessons/day-002/</code>.</p>
+      <p><code>https</code> is the scheme, <code>example.com</code> is the host or domain portion, and <code>/lessons/day-002/</code> is the path to a particular resource or location on that site.</p>
+      <p>So a domain and a URL are not synonyms. A domain is one part that can appear inside a URL.</p>
+    </div>
+
+    <div class="card">
+      <h2>7. Requests and responses</h2>
+      <p>When software wants something from another system, a common pattern is <strong>request → response</strong>.</p>
+      <p>Your browser might request a web page from a server, and the server responds with the data needed to display it.</p>
+      <p>The details depend on the protocol and application, but this request-and-response model will appear repeatedly throughout the course.</p>
+    </div>
+
+    <div class="card">
+      <h2>8. Your first mental model of an API</h2>
+      <p>An <strong>API</strong>, or Application Programming Interface, is an interface that allows software to interact with other software through defined features or rules.</p>
+      <p>For remote web services, that often means one program sends a structured request to an API endpoint and receives a structured response.</p>
+      <p>An API is broader than a website or a URL. APIs can exist inside operating systems, browsers, libraries and other software as well as across the internet.</p>
+      <p>For now, think of an API as a defined software-facing doorway: it specifies what another program is allowed to ask for and how that interaction works.</p>
+    </div>
+
+    <div class="card">
+      <h2>Worked example: opening a Sapiver Learn page</h2>
+      <p>Suppose you enter a Sapiver Learn web address into your browser.</p>
+      <p>At a simplified level, the browser identifies the domain, DNS helps it discover the network destination, the browser sends a request across the internet, the server or hosting infrastructure returns the requested files, and the browser displays the page.</p>
+
+      <div class="flow" aria-label="Simplified web request flow">
+        <div>Browser</div>
+        <div>→</div>
+        <div>DNS / network</div>
+        <div>→</div>
+        <div>Server</div>
+        <div>→</div>
+        <div>Response</div>
+      </div>
+
+      <p>That explanation hides a lot of engineering, but it is technically useful because it separates the name you type, the network address used underneath, the request and the returned resource.</p>
+    </div>
+
+    <div class="card">
+      <h2>Why this matters for AI</h2>
+      <p>Many AI applications are distributed systems: the interface on your phone or website may communicate with remote servers that host models or other services.</p>
+      <p>When you later learn about model APIs, authentication, endpoints, latency and cloud deployment, they will all sit on top of the networking ideas introduced today.</p>
+      <p>Understanding this also helps you ask an important practical question: <strong>where is the computation actually happening?</strong></p>
+    </div>
+
+    <div class="card">
+      <h2>Key terms</h2>
+      <div class="terms">
+        <div class="term"><strong>Network</strong> — A group of connected devices able to communicate.</div>
+        <div class="term"><strong>Internet</strong> — Global infrastructure connecting many networks.</div>
+        <div class="term"><strong>Packet</strong> — A unit of data transmitted across a network.</div>
+        <div class="term"><strong>IP address</strong> — An address used by Internet Protocol networking.</div>
+        <div class="term"><strong>Domain name</strong> — A human-readable name used in internet addressing.</div>
+        <div class="term"><strong>DNS</strong> — The system that resolves domain names to technical records used to locate services.</div>
+        <div class="term"><strong>URL</strong> — An address identifying a resource and how to access it.</div>
+        <div class="term"><strong>API</strong> — A defined interface that allows software to interact with software.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="quiz">
+    <h2>Day 2 knowledge check</h2>
+    <p class="muted">Six questions. Your progress is saved in this browser when storage is available.</p>
+
+    <div class="question"
+         data-correct="C"
+         data-explanation="The internet is the wider infrastructure connecting networks. The Web is one service that uses that infrastructure."
+         data-resource="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/How_does_the_Internet_work">
+      <h3>1. Which statement best describes the relationship between the internet and the Web?</h3>
+      <button class="option" data-value="A">A. They are exactly the same thing</button>
+      <button class="option" data-value="B">B. The Web contains the internet</button>
+      <button class="option" data-value="C">C. The Web is a service built on internet infrastructure</button>
+      <button class="option" data-value="D">D. The internet only exists inside web browsers</button>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <div class="question"
+         data-correct="B"
+         data-explanation="An IP address is used by IP networking to identify and route traffic towards network destinations."
+         data-resource="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/How_does_the_Internet_work">
+      <h3>2. What is the main role of an IP address in today's mental model?</h3>
+      <button class="option" data-value="A">A. It is the human-readable title of a website</button>
+      <button class="option" data-value="B">B. It provides a network address used to direct traffic</button>
+      <button class="option" data-value="C">C. It stores the HTML for every website</button>
+      <button class="option" data-value="D">D. It is another name for a browser</button>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <div class="question"
+         data-correct="A"
+         data-explanation="DNS resolves human-readable domain names to technical records that computers can use, commonly including IP addresses."
+         data-resource="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_domain_name">
+      <h3>3. What does DNS help software do?</h3>
+      <button class="option" data-value="A">A. Resolve domain names to technical network records</button>
+      <button class="option" data-value="B">B. Convert source code into an Android app</button>
+      <button class="option" data-value="C">C. Increase a computer's RAM</button>
+      <button class="option" data-value="D">D. Replace the operating system</button>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <div class="question"
+         data-correct="D"
+         data-explanation="A URL can include a scheme, domain or host, path and other components. The domain is only one part of many URLs."
+         data-resource="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL">
+      <h3>4. Which statement about a domain name and a URL is accurate?</h3>
+      <button class="option" data-value="A">A. Every domain is an operating system</button>
+      <button class="option" data-value="B">B. A URL and a domain are always identical</button>
+      <button class="option" data-value="C">C. A URL cannot contain a path</button>
+      <button class="option" data-value="D">D. A domain can be one component of a larger URL</button>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <div class="question"
+         data-correct="B"
+         data-explanation="Request and response describes one system asking for something and another system returning a result or data."
+         data-resource="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works">
+      <h3>5. A browser asks a web server for a page and receives the page data back. Which model best describes this?</h3>
+      <button class="option" data-value="A">A. Storage → RAM</button>
+      <button class="option" data-value="B">B. Request → response</button>
+      <button class="option" data-value="C">C. Hardware → operating system</button>
+      <button class="option" data-value="D">D. Domain → application</button>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <div class="question"
+         data-correct="C"
+         data-explanation="An API is a defined interface through which software can interact with other software. Remote web APIs are one important form, but APIs are not limited to the internet."
+         data-resource="https://developer.mozilla.org/en-US/docs/Glossary/API">
+      <h3>6. Which is the best beginner definition of an API?</h3>
+      <button class="option" data-value="A">A. A physical cable between two computers</button>
+      <button class="option" data-value="B">B. A human-facing webpage design</button>
+      <button class="option" data-value="C">C. A defined interface that lets software interact with software</button>
+      <button class="option" data-value="D">D. A replacement for all network protocols</button>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <p class="score" id="score">Score: 0 / 6</p>
+    <div class="progress-row">
+      <span id="answeredStatus">Answered: 0 / 6</span>
+      <span id="bestStatus">Best: —</span>
+      <span id="attemptStatus">Completed attempts: 0</span>
+    </div>
+    <button id="resetBtn">Reset quiz</button>
+  </section>
+
+  <section class="callout">
+    <strong>Next lesson:</strong><br>
+    Day 3 — What code actually does: instructions, variables, conditions, functions and programming languages.
+  </section>
+
+  <footer>
+    Sapiver Learn · Phase 1 · Day 2<br>
+    <a href="../../" style="text-decoration:none;">← Back to Sapiver Learn</a>
+  </footer>
+</main>
+
+<script>
+(() => {
+  const STORAGE_KEY = 'sapiverLearnDay002';
+  const questions = [...document.querySelectorAll('.question')];
+  const scoreEl = document.getElementById('score');
+  const answeredStatus = document.getElementById('answeredStatus');
+  const bestStatus = document.getElementById('bestStatus');
+  const attemptStatus = document.getElementById('attemptStatus');
+  let state = new Map();
+  let progress = {
+    completed:false,
+    currentScore:0,
+    lastScore:null,
+    bestScore:null,
+    attempts:0,
+    answers:{}
+  };
+  let storageAvailable = true;
+  let countedThisCompletion = false;
+
+  function readProgress(){
+    try{
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if(!raw) return;
+      const saved = JSON.parse(raw);
+      progress = Object.assign(progress, saved || {});
+      if(progress.answers && typeof progress.answers === 'object'){
+        Object.entries(progress.answers).forEach(([index, answer]) => {
+          state.set(Number(index), answer.correct === true);
+          const q = questions[Number(index)];
+          if(!q) return;
+          const buttons = [...q.querySelectorAll('.option')];
+          const chosen = buttons.find(b => b.dataset.value === answer.value);
+          if(chosen){
+            chosen.classList.add(answer.correct ? 'correct' : 'wrong');
+            if(!answer.correct){
+              const right = buttons.find(b => b.dataset.value === q.dataset.correct);
+              if(right) right.classList.add('correct');
+            }
+          }
+          renderFeedback(q, answer.correct === true);
+        });
+      }
+      countedThisCompletion = Boolean(progress.completed && Object.keys(progress.answers || {}).length === questions.length);
+    }catch(error){
+      storageAvailable = false;
+    }
+  }
+
+  function saveProgress(){
+    if(!storageAvailable) return;
+    try{
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    }catch(error){
+      storageAvailable = false;
+    }
+  }
+
+  function renderFeedback(q, isCorrect){
+    const feedback = q.querySelector('.feedback');
+    if(isCorrect){
+      feedback.innerHTML = '<span style="color:var(--good)">Correct.</span>';
+      return;
+    }
+    const explanation = q.dataset.explanation || 'Review this concept and try again.';
+    const resource = q.dataset.resource || '';
+    let html = '<span style="color:var(--bad)">Not quite.</span> ' + explanation;
+    if(resource){
+      html += '<br><a class="resource-link" href="' + resource + '" target="_blank" rel="noopener noreferrer">Read more about this concept ↗</a>';
+    }
+    feedback.innerHTML = html;
+  }
+
+  function updateScore(){
+    let correct = 0;
+    state.forEach(v => { if(v === true) correct++; });
+    const answered = state.size;
+
+    progress.currentScore = correct;
+    progress.completed = answered === questions.length;
+    scoreEl.textContent = `Score: ${correct} / ${questions.length}`;
+    answeredStatus.textContent = `Answered: ${answered} / ${questions.length}`;
+
+    if(progress.completed && !countedThisCompletion){
+      progress.attempts = Number(progress.attempts || 0) + 1;
+      progress.lastScore = correct;
+      progress.bestScore = progress.bestScore === null || progress.bestScore === undefined
+        ? correct
+        : Math.max(Number(progress.bestScore), correct);
+      countedThisCompletion = true;
+    }
+
+    bestStatus.textContent = progress.bestScore === null || progress.bestScore === undefined
+      ? 'Best: —'
+      : `Best: ${progress.bestScore} / ${questions.length}`;
+
+    attemptStatus.textContent = `Completed attempts: ${Number(progress.attempts || 0)}`;
+    saveProgress();
+  }
+
+  questions.forEach((q, index) => {
+    const correct = q.dataset.correct;
+    const buttons = [...q.querySelectorAll('.option')];
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('correct','wrong'));
+
+        const isCorrect = btn.dataset.value === correct;
+        if(isCorrect){
+          btn.classList.add('correct');
+        }else{
+          btn.classList.add('wrong');
+          const right = buttons.find(b => b.dataset.value === correct);
+          if(right) right.classList.add('correct');
+        }
+
+        state.set(index, isCorrect);
+        progress.answers[index] = {
+          value:btn.dataset.value,
+          correct:isCorrect
+        };
+        renderFeedback(q, isCorrect);
+        updateScore();
+      });
+    });
+  });
+
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    state = new Map();
+    progress.answers = {};
+    progress.currentScore = 0;
+    progress.completed = false;
+    countedThisCompletion = false;
+
+    questions.forEach(q => {
+      q.querySelectorAll('.option').forEach(b => b.classList.remove('correct','wrong'));
+      q.querySelector('.feedback').textContent = '';
+    });
+
+    updateScore();
+  });
+
+  readProgress();
+  updateScore();
+
+  const lessonRoot = document.getElementById('lesson');
+  const audioStatus = document.getElementById('audioStatus');
+  const playBtn = document.getElementById('playBtn');
+  const pauseBtn = document.getElementById('pauseBtn');
+  const resumeBtn = document.getElementById('resumeBtn');
+  const stopBtn = document.getElementById('stopBtn');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let utterance = null;
+  let speechUnits = [];
+  let currentSpeechIndex = 0;
+  let speechStopped = true;
+  let speechPaused = false;
+  let activeBlock = null;
+
+  function sentenceSegments(text){
+    const results = [];
+
+    if(window.Intl && Intl.Segmenter){
+      const segmenter = new Intl.Segmenter('en-GB', {granularity:'sentence'});
+      for(const item of segmenter.segment(text)){
+        const raw = item.segment;
+        const leading = raw.length - raw.trimStart().length;
+        const trailing = raw.length - raw.trimEnd().length;
+        const start = item.index + leading;
+        const end = item.index + raw.length - trailing;
+        const spoken = raw.trim();
+        if(spoken) results.push({text:spoken, start, end});
+      }
+      return results;
+    }
+
+    const pattern = /[^.!?]+(?:[.!?]+|$)/g;
+    let match;
+    while((match = pattern.exec(text)) !== null){
+      const raw = match[0];
+      const leading = raw.length - raw.trimStart().length;
+      const trailing = raw.length - raw.trimEnd().length;
+      const spoken = raw.trim();
+      if(spoken){
+        results.push({
+          text:spoken,
+          start:match.index + leading,
+          end:match.index + raw.length - trailing
+        });
+      }
+    }
+    return results;
+  }
+
+  function textNodesFor(element){
+    const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, {
+      acceptNode(node){
+        return node.nodeValue && node.nodeValue.length
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes = [];
+    let node;
+    while((node = walker.nextNode())) nodes.push(node);
+    return nodes;
+  }
+
+  function rangeForOffsets(element, start, end){
+    const nodes = textNodesFor(element);
+    let offset = 0;
+    let startNode = null;
+    let startOffset = 0;
+    let endNode = null;
+    let endOffset = 0;
+
+    for(const node of nodes){
+      const nextOffset = offset + node.nodeValue.length;
+
+      if(startNode === null && start >= offset && start <= nextOffset){
+        startNode = node;
+        startOffset = Math.max(0, Math.min(node.nodeValue.length, start - offset));
+      }
+
+      if(endNode === null && end >= offset && end <= nextOffset){
+        endNode = node;
+        endOffset = Math.max(0, Math.min(node.nodeValue.length, end - offset));
+        break;
+      }
+
+      offset = nextOffset;
+    }
+
+    if(!startNode || !endNode) return null;
+
+    const range = document.createRange();
+    range.setStart(startNode, startOffset);
+    range.setEnd(endNode, endOffset);
+    return range;
+  }
+
+  function buildSpeechUnits(){
+    const blocks = [...lessonRoot.querySelectorAll('h2, p, .term')];
+    const units = [];
+
+    blocks.forEach(block => {
+      const text = block.textContent || '';
+      sentenceSegments(text).forEach(segment => {
+        units.push({
+          text:segment.text,
+          block,
+          range:rangeForOffsets(block, segment.start, segment.end)
+        });
+      });
+    });
+
+    return units;
+  }
+
+  function clearReadingHighlight(){
+    if(window.CSS && CSS.highlights) CSS.highlights.delete('sapiver-reading');
+    if(activeBlock) activeBlock.classList.remove('speech-active');
+    activeBlock = null;
+  }
+
+  function highlightSpeechUnit(unit){
+    clearReadingHighlight();
+    activeBlock = unit.block;
+
+    if(window.CSS && CSS.highlights && window.Highlight && unit.range){
+      CSS.highlights.set('sapiver-reading', new Highlight(unit.range));
+    }else{
+      unit.block.classList.add('speech-active');
+    }
+
+    const rect = unit.block.getBoundingClientRect();
+    const topLimit = window.innerHeight * 0.18;
+    const bottomLimit = window.innerHeight * 0.78;
+    if(rect.top < topLimit || rect.bottom > bottomLimit){
+      unit.block.scrollIntoView({
+        behavior:prefersReducedMotion ? 'auto' : 'smooth',
+        block:'center'
+      });
+    }
+  }
+
+  function speakCurrentUnit(){
+    if(speechStopped) return;
+
+    if(currentSpeechIndex >= speechUnits.length){
+      speechStopped = true;
+      speechPaused = false;
+      clearReadingHighlight();
+      audioStatus.textContent = 'Lesson audio finished.';
+      return;
+    }
+
+    const unit = speechUnits[currentSpeechIndex];
+    highlightSpeechUnit(unit);
+
+    utterance = new SpeechSynthesisUtterance(unit.text);
+    utterance.lang = 'en-GB';
+    utterance.rate = 0.92;
+
+    utterance.onstart = () => {
+      if(!speechStopped){
+        audioStatus.textContent = `Playing… ${currentSpeechIndex + 1} of ${speechUnits.length}`;
+      }
+    };
+
+    utterance.onend = () => {
+      if(speechStopped) return;
+      currentSpeechIndex += 1;
+      speakCurrentUnit();
+    };
+
+    utterance.onerror = event => {
+      if(speechStopped || event.error === 'interrupted' || event.error === 'canceled') return;
+      speechStopped = true;
+      speechPaused = false;
+      clearReadingHighlight();
+      audioStatus.textContent = 'Audio playback could not continue.';
+    };
+
+    speechSynthesis.speak(utterance);
+  }
+
+  function startLessonAudio(){
+    speechSynthesis.cancel();
+    clearReadingHighlight();
+    speechUnits = buildSpeechUnits();
+    currentSpeechIndex = 0;
+    speechStopped = false;
+    speechPaused = false;
+
+    if(!speechUnits.length){
+      speechStopped = true;
+      audioStatus.textContent = 'No lesson text was available to read.';
+      return;
+    }
+
+    window.setTimeout(speakCurrentUnit, 60);
+  }
+
+  if(!('speechSynthesis' in window)){
+    audioStatus.textContent = 'Audio is unavailable in this browser.';
+    [playBtn,pauseBtn,resumeBtn,stopBtn].forEach(button => {
+      button.disabled = true;
+    });
+  }else{
+    playBtn.addEventListener('click', startLessonAudio);
+
+    pauseBtn.addEventListener('click', () => {
+      if(speechStopped || speechPaused) return;
+      speechSynthesis.pause();
+      speechPaused = true;
+      audioStatus.textContent = 'Audio paused.';
+    });
+
+    resumeBtn.addEventListener('click', () => {
+      if(speechStopped || !speechPaused) return;
+      speechSynthesis.resume();
+      speechPaused = false;
+      audioStatus.textContent = `Playing… ${currentSpeechIndex + 1} of ${speechUnits.length}`;
+    });
+
+    stopBtn.addEventListener('click', () => {
+      speechStopped = true;
+      speechPaused = false;
+      speechSynthesis.cancel();
+      clearReadingHighlight();
+      audioStatus.textContent = 'Audio stopped.';
+    });
+
+    window.addEventListener('pagehide', () => {
+      speechStopped = true;
+      speechSynthesis.cancel();
+      clearReadingHighlight();
+    });
+  }
+})();
+</script>
+</body>
+</html>

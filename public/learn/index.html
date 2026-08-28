@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sapiver Learn — short daily lessons that build practical AI literacy from the computing foundations upward." />
+  <title>Sapiver Learn — Practical AI Learning</title>
+  <style>
+    :root{
+      --bg:#0f1115;
+      --panel:#171a21;
+      --panel-2:#1e232c;
+      --text:#f3f5f7;
+      --muted:#aeb7c2;
+      --accent:#ff8a3d;
+      --accent-2:#ffb06f;
+      --accent-soft:#3a2418;
+      --border:#303744;
+      --success:#7dd3a7;
+      --max:1080px;
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at top right, rgba(255,138,61,.10), transparent 34rem),
+        var(--bg);
+      color:var(--text);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.6;
+    }
+
+    a{color:inherit}
+    .wrap{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+
+    header{
+      border-bottom:1px solid rgba(48,55,68,.75);
+      background:rgba(15,17,21,.88);
+      backdrop-filter:blur(12px);
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+
+    .nav{
+      min-height:68px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      text-decoration:none;
+      font-weight:800;
+      letter-spacing:.1px;
+    }
+
+    .brand-mark{
+      width:13px;
+      height:13px;
+      border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 18px rgba(255,138,61,.72);
+      flex:0 0 auto;
+    }
+
+    nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end}
+    nav a{color:var(--muted);text-decoration:none;font-size:.94rem}
+    nav a:hover{color:var(--text)}
+
+    main{padding:64px 0 72px}
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 11px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      color:var(--accent-2);
+      background:rgba(30,35,44,.65);
+      font-size:.86rem;
+      font-weight:700;
+      letter-spacing:.02em;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr);
+      gap:30px;
+      align-items:center;
+      padding:36px 0 56px;
+    }
+
+    h1,h2,h3{line-height:1.15}
+    h1{
+      font-size:clamp(2.6rem,7vw,5.2rem);
+      max-width:840px;
+      margin:18px 0 20px;
+      letter-spacing:-.045em;
+    }
+    h2{font-size:clamp(1.7rem,4vw,2.45rem);margin:0 0 12px;letter-spacing:-.025em}
+    h3{font-size:1.15rem;margin:0 0 8px}
+
+    .lead{
+      color:var(--muted);
+      font-size:clamp(1.08rem,2vw,1.25rem);
+      max-width:740px;
+      margin:0 0 28px;
+    }
+
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:12px 17px;
+      border-radius:11px;
+      text-decoration:none;
+      border:1px solid var(--border);
+      font-weight:750;
+    }
+    .button.primary{background:var(--accent);color:#1a120c;border-color:var(--accent)}
+    .button.secondary{background:var(--panel);color:var(--text)}
+    .button[aria-disabled="true"]{opacity:.55;pointer-events:none}
+    .button:hover{transform:translateY(-1px)}
+
+    .hero-card,.card{
+      border:1px solid var(--border);
+      background:linear-gradient(180deg,rgba(30,35,44,.92),rgba(23,26,33,.96));
+      border-radius:var(--radius);
+      box-shadow:0 18px 60px rgba(0,0,0,.16);
+    }
+    .hero-card{padding:24px}
+    .mini-label{color:var(--muted);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+    .big-number{font-size:3rem;line-height:1;font-weight:850;color:var(--accent);margin:8px 0 10px}
+    .hero-card p{color:var(--muted);margin:.4rem 0}
+
+    .section{padding:46px 0;border-top:1px solid rgba(48,55,68,.62)}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}
+    .section-head p{margin:0;color:var(--muted);max-width:620px}
+
+    .lesson-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .lesson-card{
+      display:flex;
+      flex-direction:column;
+      min-height:235px;
+      padding:24px;
+      border:1px solid var(--border);
+      background:var(--panel);
+      border-radius:var(--radius);
+      text-decoration:none;
+      transition:border-color .18s ease, transform .18s ease;
+    }
+    a.lesson-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .lesson-meta{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:22px}
+    .day{color:var(--accent-2);font-weight:800}
+    .status{border:1px solid var(--border);border-radius:999px;padding:4px 9px;color:var(--muted);font-size:.8rem}
+    .status.latest{color:var(--success);border-color:rgba(125,211,167,.35)}
+    .lesson-card p{color:var(--muted);margin:.4rem 0 22px}
+    .lesson-link{margin-top:auto;font-weight:750;color:var(--accent-2)}
+
+    .loading-card{min-height:190px;justify-content:center;color:var(--muted)}
+    .empty-state{grid-column:1/-1;padding:24px;border:1px dashed var(--border);border-radius:var(--radius);color:var(--muted)}
+    .empty-state strong{color:var(--text)}
+
+    .principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .card{padding:23px}
+    .card p{color:var(--muted);margin:.4rem 0 0}
+
+    .callout{margin-top:18px;padding:22px 24px;border-left:4px solid var(--accent);border-radius:12px;background:var(--accent-soft)}
+    .callout strong{display:block;margin-bottom:4px}
+
+    footer{border-top:1px solid rgba(48,55,68,.75);padding:28px 0 40px;color:var(--muted);font-size:.92rem}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-row a{color:var(--muted);text-decoration:none}
+    .footer-row a:hover{color:var(--text)}
+
+    @media (max-width:780px){
+      .hero{grid-template-columns:1fr;padding-top:28px}
+      .lesson-grid,.principles{grid-template-columns:1fr}
+      .section-head{align-items:start;flex-direction:column}
+      nav a:not(.main-link){display:none}
+      main{padding-top:30px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="./" aria-label="Sapiver Learn home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Sapiver Learn</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#lessons">Lessons</a>
+        <a href="#approach">How it works</a>
+        <a class="main-link" href="https://suite.sapiverpress.co.uk/">Sapiver Press ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero">
+        <div>
+          <span class="eyebrow">Daily AI literacy · 5–10 minutes</span>
+          <h1>Understand AI properly, from the foundations up.</h1>
+          <p class="lead">
+            Modern AI sits on top of ordinary computing. Sapiver Learn starts with software, networks, storage,
+            data and algorithms, then builds toward AI itself — one short, plain-English lesson at a time.
+          </p>
+          <div class="actions">
+            <a id="startButton" class="button primary" href="#lessons" aria-disabled="true">Finding lessons…</a>
+            <a id="latestButton" class="button secondary" href="#lessons" aria-disabled="true">Open latest lesson</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Current course status">
+          <div class="mini-label">Latest published lesson</div>
+          <div id="latestDay" class="big-number">—</div>
+          <h3 id="latestTitle">Checking published lessons…</h3>
+          <p id="latestSummary">Looking for the lessons included in this deployment.</p>
+          <p id="lessonCount" class="mini-label" style="margin-top:16px">—</p>
+        </aside>
+      </section>
+
+      <section class="section" id="lessons">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Learning path</span>
+            <h2>Available lessons</h2>
+          </div>
+          <p>
+            New here? Start with Day 1. Returning? Open the newest lesson. The list updates from the lesson folders you deploy.
+          </p>
+        </div>
+
+        <div id="lessonGrid" class="lesson-grid" aria-live="polite">
+          <div class="lesson-card loading-card">Checking which lessons are available…</div>
+        </div>
+
+      </section>
+
+      <section class="section" id="approach">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">How it works</span>
+            <h2>Build the missing context behind everyday AI use.</h2>
+          </div>
+        </div>
+
+        <div class="principles">
+          <div class="card">
+            <h3>Foundations first</h3>
+            <p>Understand the ordinary computing concepts that AI systems depend on instead of treating AI as a black box.</p>
+          </div>
+          <div class="card">
+            <h3>One useful step at a time</h3>
+            <p>Each short lesson adds one concept without assuming a technical background or burying it in jargon.</p>
+          </div>
+          <div class="card">
+            <h3>Bring it back to AI</h3>
+            <p>Use the foundations to understand what AI tools are doing, where their limits come from and what deserves checking.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div>
+        <strong>Sapiver Learn</strong><br />
+        Practical learning from Sapiver Press.
+      </div>
+      <div><a href="https://suite.sapiverpress.co.uk/">Sapiver Press</a></div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const MAX_LESSONS = 365;
+      const lessonGrid = document.getElementById('lessonGrid');
+      const lessonCount = document.getElementById('lessonCount');
+      const latestDay = document.getElementById('latestDay');
+      const latestTitle = document.getElementById('latestTitle');
+      const latestSummary = document.getElementById('latestSummary');
+      const startButton = document.getElementById('startButton');
+      const latestButton = document.getElementById('latestButton');
+
+      const padDay = number => String(number).padStart(3, '0');
+
+      function cleanText(value) {
+        return (value || '').replace(/\s+/g, ' ').trim();
+      }
+
+      function getLessonDescription(doc) {
+        const meta = doc.querySelector('meta[name="description"]');
+        if (meta && cleanText(meta.content)) return cleanText(meta.content);
+
+        const candidates = [...doc.querySelectorAll('.lead, .intro, main p, article p')];
+        for (const node of candidates) {
+          const text = cleanText(node.textContent);
+          if (!text) continue;
+          if (/^(estimated )?learning time|^a \d+[–-]\d+ minute/i.test(text)) continue;
+          if (text.length >= 55) return text;
+        }
+
+        return '';
+      }
+
+      function getLessonTitle(doc, day) {
+        const heading = doc.querySelector('h1');
+        if (heading && cleanText(heading.textContent)) return cleanText(heading.textContent);
+
+        const title = cleanText(doc.title)
+          .replace(/\s*[|—–-]\s*Sapiver Learn.*$/i, '')
+          .replace(/^Sapiver Learn\s*[|—–-]\s*/i, '');
+
+        return title || `Day ${day}`;
+      }
+
+      async function fetchLesson(day) {
+        const href = `./lessons/day-${padDay(day)}/`;
+
+        try {
+          const response = await fetch(href, { cache: 'no-store' });
+          if (!response.ok) return null;
+
+          const html = await response.text();
+          const doc = new DOMParser().parseFromString(html, 'text/html');
+
+          // Protect against a host configuration that serves a generic 404 page with HTTP 200.
+          const bodyText = cleanText(doc.body ? doc.body.textContent : '');
+          const pageIdentity = `${doc.title} ${bodyText.slice(0, 1200)}`;
+          const looksLike404 = /\bpage not found\b|\b404\b|directory listing/i.test(pageIdentity);
+          const expectedDay = new RegExp(`\\bDay\\s+0*${day}\\b`, 'i');
+
+          // A valid lesson must identify itself as the numbered day being requested.
+          // This rejects empty folders, directory listings and hosts that return
+          // the homepage or a branded error page with HTTP 200.
+          if (looksLike404 || !expectedDay.test(pageIdentity)) return null;
+
+          return {
+            day,
+            href,
+            title: getLessonTitle(doc, day),
+            description: getLessonDescription(doc)
+          };
+        } catch (error) {
+          console.warn(`Could not check lesson ${day}`, error);
+          return null;
+        }
+      }
+
+      function renderLessons(lessons) {
+        lessonGrid.innerHTML = '';
+
+        if (!lessons.length) {
+          lessonGrid.innerHTML = `
+            <div class="empty-state">
+              <strong>No lesson folders were found in this deployment.</strong><br />
+              Add <code>lessons/day-001/index.html</code>, then deploy the complete Sapiver Learn folder.
+            </div>`;
+          lessonCount.textContent = '0 lessons available';
+          latestDay.textContent = '—';
+          latestTitle.textContent = 'No published lessons found';
+          latestSummary.textContent = 'Check that the lesson folders were included in the deployment.';
+          startButton.textContent = 'No lessons available yet';
+          startButton.setAttribute('href', '#lessons');
+          startButton.setAttribute('aria-disabled', 'true');
+          latestButton.setAttribute('href', '#lessons');
+          latestButton.setAttribute('aria-disabled', 'true');
+          return;
+        }
+
+        const newest = lessons.reduce((best, lesson) => lesson.day > best.day ? lesson : best, lessons[0]);
+        const first = lessons.reduce((best, lesson) => lesson.day < best.day ? lesson : best, lessons[0]);
+
+        [...lessons].sort((a, b) => b.day - a.day).forEach(lesson => {
+          const card = document.createElement('a');
+          card.className = 'lesson-card';
+          card.href = lesson.href;
+
+          const summary = lesson.description || `Open Day ${lesson.day} of the Sapiver Learn learning path.`;
+          const status = lesson.day === newest.day ? '<span class="status latest">Latest</span>' : '<span class="status">Available</span>';
+
+          card.innerHTML = `
+            <div class="lesson-meta">
+              <span class="day">Day ${lesson.day}</span>
+              ${status}
+            </div>
+            <h3></h3>
+            <p></p>
+            <span class="lesson-link">Open lesson →</span>`;
+
+          card.querySelector('h3').textContent = lesson.title;
+          card.querySelector('p').textContent = summary;
+          lessonGrid.appendChild(card);
+        });
+
+        latestDay.textContent = `Day ${newest.day}`;
+        lessonCount.textContent = `${lessons.length} lesson${lessons.length === 1 ? '' : 's'} available`;
+        latestTitle.textContent = newest.title;
+        latestSummary.textContent = newest.description || 'The newest lesson in the current learning path.';
+
+        startButton.textContent = first.day === 1 ? 'Start with Day 1' : `Start with Day ${first.day}`;
+        startButton.href = first.href;
+        startButton.removeAttribute('aria-disabled');
+
+        latestButton.textContent = `Open Day ${newest.day}`;
+        latestButton.href = newest.href;
+        latestButton.removeAttribute('aria-disabled');
+      }
+
+      async function discoverLessons() {
+        const lessons = [];
+        const MAX_CONSECUTIVE_MISSES = 12;
+        let missesAfterLastLesson = 0;
+        let foundAny = false;
+
+        // Do not stop at a single missing folder. A skipped, empty or accidentally
+        // omitted day must not hide later lessons from the homepage.
+        for (let day = 1; day <= MAX_LESSONS; day += 1) {
+          const lesson = await fetchLesson(day);
+
+          if (lesson) {
+            lessons.push(lesson);
+            foundAny = true;
+            missesAfterLastLesson = 0;
+            continue;
+          }
+
+          if (foundAny) {
+            missesAfterLastLesson += 1;
+            if (missesAfterLastLesson >= MAX_CONSECUTIVE_MISSES) break;
+          }
+        }
+
+        renderLessons(lessons);
+      }
+
+      discoverLessons();
+    })();
+  </script>
+</body>
+</html>

@@ -2,18 +2,6 @@ name: Deploy Sapiver Forge public changes
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - "public/**"
-      - "src/build-site.mjs"
-      - "scripts/build-sapiver-forge-site.mjs"
-      - "scripts/rebrand-public-sapiver-forge.mjs"
-      - "scripts/inject-podcast-upload-link.mjs"
-      - "scripts/inject-app-privacy-link.mjs"
-      - "netlify/functions/**"
-      - "netlify.toml"
 
 permissions:
   contents: write

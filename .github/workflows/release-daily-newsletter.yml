@@ -57,11 +57,15 @@ jobs:
           if (manifest.newsletter_ready_for_human_approval !== true) throw new Error('This candidate is not verification-ready.');
           if (Number(manifest.overall_confidence || 0) < 0.78) throw new Error('Candidate is below the release confidence threshold.');
           fs.appendFileSync(process.env.GITHUB_ENV, `NEWS_INTELLIGENCE_DATE=${date}\nNEWS_INTELLIGENCE_CANDIDATE_ID=${candidate}\n`);
-          fs.appendFileSync(process.env.GITHUB_OUTPUT, `date=${date}\ncandidate_id=${candidate}\n`);
-          console.log(`Releasing current approved candidate ${candidate.slice(0, 12)}… for ${date}.`);
+          const alreadySent = meta.status === 'sent' && Boolean(meta.sent_at);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `date=${date}\ncandidate_id=${candidate}\nalready_sent=${alreadySent}\n`);
+          console.log(alreadySent
+            ? `Campaign for ${date} was already sent; continuing with website deploy and comic bridge only.`
+            : `Releasing current approved candidate ${candidate.slice(0, 12)}… for ${date}.`);
           NODE
 
       - name: Send reviewed campaign through established Brevo list
+        if: steps.release.outputs.already_sent != 'true'
         env:
           BREVO_SEND_MODE: send
           NEWSLETTER_APPROVED: 'true'
@@ -70,6 +74,7 @@ jobs:
         run: node src/send-daily-newsletter-brevo.mjs
 
       - name: Persist Brevo send receipt immediately
+        if: steps.release.outputs.already_sent != 'true'
         shell: bash
         run: |
           set -euo pipefail

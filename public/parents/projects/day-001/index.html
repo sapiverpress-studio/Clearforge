@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Create a family-friendly rainy-day scavenger hunt in your browser. No account, tracking or uploaded answers.">
+<title>Rainy-Day Scavenger Hunt | AI Inquisitive Parents</title>
+<style>
+:root{--ink:#173c35;--ink2:#24574c;--paper:#fffaf0;--soft:#f2ead8;--gold:#c9a75d;--line:#d9ccb3;--muted:#53665f}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#102f29,#24574c);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+a{color:inherit}.shell{width:min(940px,calc(100% - 24px));margin:auto;padding:18px 0 48px}.top{display:flex;justify-content:space-between;gap:16px;align-items:center;color:#fff8e8;padding:8px 4px 22px}.top a{text-decoration:none;font-weight:800}.top span{color:#e2c584}
+.hero,.panel{background:var(--paper);border:2px solid var(--gold);border-radius:24px;box-shadow:0 18px 50px rgba(0,0,0,.2)}.hero{padding:clamp(24px,6vw,54px);background:radial-gradient(circle at 95% 5%,rgba(201,167,93,.25),transparent 30%),var(--paper)}
+.eyebrow{margin:0 0 8px;color:var(--ink2);font-weight:850;letter-spacing:.11em;text-transform:uppercase;font-size:.8rem}h1{font-size:clamp(2.25rem,8vw,4.8rem);line-height:1.02;letter-spacing:-.05em;margin:.2rem 0 1rem}.lead{font-size:1.12rem;color:var(--muted);max-width:670px}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.badge{padding:6px 10px;border-radius:999px;background:#e5efe9;color:var(--ink);font-size:.82rem;font-weight:750}
+.panel{margin-top:18px;padding:clamp(20px,5vw,38px)}h2{font-size:clamp(1.45rem,4vw,2.1rem);margin:0 0 14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:flex;flex-direction:column;gap:6px}label{font-weight:760}select,input{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff;font:inherit;color:var(--ink)}.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.check{display:flex;gap:8px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:10px;background:#fff}.check input{width:auto}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}button,.button{border:0;border-radius:999px;padding:12px 18px;background:var(--ink2);color:#fff;font:inherit;font-weight:800;cursor:pointer;text-decoration:none}.secondary{background:transparent;color:var(--ink2);border:1px solid var(--ink2)}
+#hunt[hidden]{display:none}.clues{display:grid;gap:12px;counter-reset:clue}.clue{position:relative;padding:18px 18px 18px 62px;border:1px solid var(--line);border-radius:14px;background:#fff}.clue:before{counter-increment:clue;content:counter(clue);position:absolute;left:18px;top:17px;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--gold);font-weight:900}.clue strong{display:block;margin-bottom:4px}.answer{color:var(--muted);font-size:.9rem}.note{padding:14px 16px;border-left:4px solid var(--gold);background:var(--soft);border-radius:10px}.poster{display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:center}.poster img{display:block;width:100%;border-radius:12px;border:1px solid var(--line)}
+footer{color:#dfe9e3;text-align:center;padding:26px 10px 0;font-size:.9rem}
+@media(max-width:680px){.grid,.poster{grid-template-columns:1fr}.rooms{grid-template-columns:1fr 1fr}.poster img{width:min(220px,70%);margin:auto}.actions>*{width:100%;text-align:center}.top{align-items:flex-start;flex-direction:column}}
+@media print{body{background:#fff}.top,.hero,.setup,.poster-panel,footer,.actions{display:none!important}.shell{width:100%;padding:0}.panel{box-shadow:none;border:0;margin:0;padding:0}.clue{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top"><a href="/parents/">← AI Inquisitive Parents</a><span>Daily project · Day 001</span></header>
+<section class="hero">
+<p class="eyebrow">Family fun idea</p>
+<h1>Rainy-Day Scavenger Hunt</h1>
+<p class="lead">Choose an age range, a theme and safe rooms. This little web app creates a clue trail for a grown-up to check and set up.</p>
+<div class="badges"><span class="badge">Runs in this browser</span><span class="badge">No account</span><span class="badge">Grown-up supervised</span></div>
+</section>
+<section class="panel setup" aria-labelledby="setup-title">
+<h2 id="setup-title">Build your hunt</h2>
+<div class="grid">
+<div class="field"><label for="age">Age range</label><select id="age"><option value="little">4–6: very simple</option><option value="middle" selected>7–9: short riddles</option><option value="older">10–12: trickier clues</option></select></div>
+<div class="field"><label for="theme">Theme</label><select id="theme"><option value="detective">Detective mystery</option><option value="space">Space mission</option><option value="jungle">Jungle expedition</option><option value="pirate">Treasure pirates</option></select></div>
+<div class="field"><label for="count">Number of clues</label><select id="count"><option>4</option><option selected>6</option><option>8</option></select></div>
+<div class="field"><label for="reward">Final reward or activity</label><input id="reward" maxlength="60" value="Choose the family film" aria-describedby="reward-help"><small id="reward-help">Keep it simple: a snack, choosing a game or picking the film.</small></div>
+</div>
+<fieldset style="border:0;padding:0;margin:20px 0 0"><legend style="font-weight:800;margin-bottom:8px">Safe places you want to use</legend>
+<div class="rooms">
+<label class="check"><input type="checkbox" value="kitchen" checked>Kitchen</label><label class="check"><input type="checkbox" value="living room" checked>Living room</label><label class="check"><input type="checkbox" value="bedroom" checked>Bedroom</label><label class="check"><input type="checkbox" value="hallway" checked>Hallway</label><label class="check"><input type="checkbox" value="bathroom">Bathroom</label><label class="check"><input type="checkbox" value="garden">Garden</label>
+</div></fieldset>
+<p class="note"><strong>Grown-up check:</strong> Remove any clue location near medicines, cleaning products, heat, stairs, roads, water or anything breakable. Never hide a clue inside an appliance.</p>
+<div class="actions"><button id="generate">Create the hunt</button></div>
+</section>
+<section class="panel" id="hunt" hidden aria-live="polite">
+<p class="eyebrow">Your clue trail</p><h2 id="hunt-title">Ready to set up</h2><p>Read every clue first. Place clue 1 where the children will begin, then put each following clue at the previous answer location.</p>
+<div class="clues" id="clues"></div>
+<div class="actions"><button class="secondary" id="shuffle">Make another version</button><button onclick="window.print()">Print clues</button></div>
+</section>
+<section class="panel poster-panel"><div class="poster"><img src="./poster.svg" alt="AI Inquisitive Parents rainy-day scavenger hunt poster"><div><p class="eyebrow">Share the idea</p><h2>Today’s project poster</h2><p>The poster introduces the idea; this page provides the working version. Download the SVG or share the project link.</p><div class="actions"><a class="button" href="./poster.svg" download="ai-inquisitive-parents-day-001.svg">Download poster</a></div></div></div></section>
+<footer>Sapiver Press · Built with AI assistance and checked by a human before release.</footer>
+</div>
+<script>
+(()=>{
+const banks={
+kitchen:{little:["Where plates wait for dinner","Find the cold food cupboard"],middle:["I hum all day and keep food cold","Cups and plates live behind my door"],older:["I preserve tonight's leftovers without cooking them","Find the cupboard that holds something you drink from"]},
+"living room":{little:["Look where the family sits","Find the screen used for films"],middle:["Cushions gather where stories are watched","I have a remote but never travel"],older:["Find the place where comfort faces entertainment","My controls are remote, but I stay in one room"]},
+bedroom:{little:["Look where a pillow sleeps","Find where clean clothes wait"],middle:["Your head visits me every night","I hold clothes but never wear them"],older:["I support dreams without having any","Behind my doors is a daily choice of fabric"]},
+hallway:{little:["Find where shoes wait","Look near the front door"],middle:["Pairs of outdoor feet wait here","I welcome everyone but never leave"],older:["Find the place where journeys begin in pairs","I separate home from everywhere else"]},
+bathroom:{little:["Find where hands get washed","Look near the towels"],middle:["Turn my handle and water appears","I dry you without sunshine"],older:["I make clean water appear on command","Find the cloth that works only after water"]},
+garden:{little:["Find a plant pot","Look by the garden chair"],middle:["I hold roots but never walk","Find the seat that stays outside"],older:["I contain a living thing while remaining still","Weather visits this chair more than people do"]}
+};
+const themeOpen={detective:"Detective clue",space:"Mission signal",jungle:"Explorer clue",pirate:"Treasure clue"};
+const checkedRooms=()=>[...document.querySelectorAll('.rooms input:checked')].map(x=>x.value);
+function build(){
+ const rooms=checkedRooms(),age=document.getElementById('age').value,theme=document.getElementById('theme').value,count=Number(document.getElementById('count').value),reward=document.getElementById('reward').value.trim()||"Choose the next family activity";
+ if(rooms.length<2){alert("Choose at least two safe places.");return}
+ const sequence=[];let last="";
+ for(let i=0;i<count;i++){let choices=rooms.filter(x=>x!==last);let room=choices[Math.floor(Math.random()*choices.length)];sequence.push(room);last=room}
+ const wrap=document.getElementById('clues');wrap.innerHTML="";
+ sequence.forEach((room,i)=>{const clues=banks[room][age],text=clues[Math.floor(Math.random()*clues.length)],d=document.createElement('div');d.className='clue';d.innerHTML='<strong>'+themeOpen[theme]+' '+(i+1)+'</strong><span></span><div class="answer"></div>';d.querySelector('span').textContent=text;d.querySelector('.answer').textContent='Grown-up answer: '+room;wrap.appendChild(d)});
+ const end=document.createElement('div');end.className='clue';end.innerHTML='<strong>Final discovery</strong><span></span><div class="answer">Place this after the final clue.</div>';end.querySelector('span').textContent='You solved the trail. Your family reward is: '+reward;wrap.appendChild(end);
+ document.getElementById('hunt').hidden=false;document.getElementById('hunt').scrollIntoView({behavior:'smooth',block:'start'})
+}
+document.getElementById('generate').onclick=build;document.getElementById('shuffle').onclick=build;
+})();
+</script>
+</body>
+</html>

@@ -14,10 +14,9 @@ a{color:inherit}.shell{width:min(940px,calc(100% - 24px));margin:auto;padding:18
 .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.badge{padding:6px 10px;border-radius:999px;background:#e5efe9;color:var(--ink);font-size:.82rem;font-weight:750}
 .panel{margin-top:18px;padding:clamp(20px,5vw,38px)}h2{font-size:clamp(1.45rem,4vw,2.1rem);margin:0 0 14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:flex;flex-direction:column;gap:6px}label{font-weight:760}select,input{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff;font:inherit;color:var(--ink)}.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.check{display:flex;gap:8px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:10px;background:#fff}.check input{width:auto}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}button,.button{border:0;border-radius:999px;padding:12px 18px;background:var(--ink2);color:#fff;font:inherit;font-weight:800;cursor:pointer;text-decoration:none}.secondary{background:transparent;color:var(--ink2);border:1px solid var(--ink2)}
-#hunt[hidden]{display:none}.clues{display:grid;gap:12px;counter-reset:clue}.clue{position:relative;padding:18px 18px 18px 62px;border:1px solid var(--line);border-radius:14px;background:#fff}.clue:before{counter-increment:clue;content:counter(clue);position:absolute;left:18px;top:17px;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--gold);font-weight:900}.clue strong{display:block;margin-bottom:4px}.answer{color:var(--muted);font-size:.9rem}.note{padding:14px 16px;border-left:4px solid var(--gold);background:var(--soft);border-radius:10px}.poster{display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:center}.poster img{display:block;width:100%;border-radius:12px;border:1px solid var(--line)}
-footer{color:#dfe9e3;text-align:center;padding:26px 10px 0;font-size:.9rem}
-@media(max-width:680px){.grid,.poster{grid-template-columns:1fr}.rooms{grid-template-columns:1fr 1fr}.poster img{width:min(220px,70%);margin:auto}.actions>*{width:100%;text-align:center}.top{align-items:flex-start;flex-direction:column}}
-@media print{body{background:#fff}.top,.hero,.setup,.poster-panel,footer,.actions{display:none!important}.shell{width:100%;padding:0}.panel{box-shadow:none;border:0;margin:0;padding:0}.clue{break-inside:avoid}}
+#hunt[hidden]{display:none}.clues{display:grid;gap:12px;counter-reset:clue}.clue{position:relative;padding:18px 18px 18px 62px;border:1px solid var(--line);border-radius:14px;background:#fff}.clue:before{counter-increment:clue;content:counter(clue);position:absolute;left:18px;top:17px;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--gold);font-weight:900}.clue strong{display:block;margin-bottom:4px}.answer{color:var(--muted);font-size:.9rem}.note{padding:14px 16px;border-left:4px solid var(--gold);background:var(--soft);border-radius:10px}footer{color:#dfe9e3;text-align:center;padding:26px 10px 0;font-size:.9rem}
+@media(max-width:680px){.grid{grid-template-columns:1fr}.rooms{grid-template-columns:1fr 1fr}.actions>*{width:100%;text-align:center}.top{align-items:flex-start;flex-direction:column}}
+@media print{body{background:#fff}.top,.hero,.setup,footer,.actions{display:none!important}.shell{width:100%;padding:0}.panel{box-shadow:none;border:0;margin:0;padding:0}.clue{break-inside:avoid}}
 </style>
 </head>
 <body>
@@ -49,28 +48,57 @@ footer{color:#dfe9e3;text-align:center;padding:26px 10px 0;font-size:.9rem}
 <div class="clues" id="clues"></div>
 <div class="actions"><button class="secondary" id="shuffle">Make another version</button><button onclick="window.print()">Print clues</button></div>
 </section>
-<section class="panel poster-panel"><div class="poster"><img src="./poster.svg" alt="AI Inquisitive Parents rainy-day scavenger hunt poster"><div><p class="eyebrow">Share the idea</p><h2>Today’s project poster</h2><p>The poster introduces the idea; this page provides the working version. Download the SVG or share the project link.</p><div class="actions"><a class="button" href="./poster.svg" download="ai-inquisitive-parents-day-001.svg">Download poster</a></div></div></div></section>
 <footer>Sapiver Press · Built with AI assistance and checked by a human before release.</footer>
 </div>
 <script>
 (()=>{
 const banks={
-kitchen:{little:["Where plates wait for dinner","Find the cold food cupboard"],middle:["I hum all day and keep food cold","Cups and plates live behind my door"],older:["I preserve tonight's leftovers without cooking them","Find the cupboard that holds something you drink from"]},
-"living room":{little:["Look where the family sits","Find the screen used for films"],middle:["Cushions gather where stories are watched","I have a remote but never travel"],older:["Find the place where comfort faces entertainment","My controls are remote, but I stay in one room"]},
-bedroom:{little:["Look where a pillow sleeps","Find where clean clothes wait"],middle:["Your head visits me every night","I hold clothes but never wear them"],older:["I support dreams without having any","Behind my doors is a daily choice of fabric"]},
-hallway:{little:["Find where shoes wait","Look near the front door"],middle:["Pairs of outdoor feet wait here","I welcome everyone but never leave"],older:["Find the place where journeys begin in pairs","I separate home from everywhere else"]},
-bathroom:{little:["Find where hands get washed","Look near the towels"],middle:["Turn my handle and water appears","I dry you without sunshine"],older:["I make clean water appear on command","Find the cloth that works only after water"]},
-garden:{little:["Find a plant pot","Look by the garden chair"],middle:["I hold roots but never walk","Find the seat that stays outside"],older:["I contain a living thing while remaining still","Weather visits this chair more than people do"]}
-};
+kitchen:[
+ {answer:"fridge door",little:"Find the cold food door",middle:"I keep food cold and hum quietly",older:"Find the door that guards chilled ingredients"},
+ {answer:"cutlery drawer",little:"Find where forks and spoons sleep",middle:"Knives, forks and spoons line up inside me",older:"Find the drawer holding tools used at every meal"},
+ {answer:"kitchen table",little:"Find where the family eats",middle:"Plates gather on my flat top",older:"Find the surface that turns ingredients into a family meal"},
+ {answer:"mug cupboard",little:"Find where cups wait",middle:"Open the door where drinking cups live",older:"Find the cupboard holding handles but no doors"}
+],
+"living room":[
+ {answer:"television",little:"Find the screen used for films",middle:"I show stories and answer to a remote",older:"Find the screen controlled from the sofa"},
+ {answer:"sofa",little:"Find the big comfy seat",middle:"The family sits on my cushions",older:"Find the seat large enough to share"},
+ {answer:"bookshelf",little:"Find where books stand up",middle:"Stories wait in rows on my shelves",older:"Find the furniture holding adventures between covers"},
+ {answer:"living-room lamp",little:"Find the light beside the seats",middle:"I brighten the room without being the ceiling",older:"Find the smaller light that helps evening reading"}
+],
+bedroom:[
+ {answer:"bed",little:"Look where a pillow sleeps",middle:"Your head visits me every night",older:"Find the furniture that supports dreams"},
+ {answer:"wardrobe",little:"Find where hanging clothes wait",middle:"I hold clothes but never wear them",older:"Behind my doors is tomorrow's choice of clothes"},
+ {answer:"bedside table",little:"Find the little table beside the bed",middle:"I stand beside where you sleep",older:"Find the small piece of furniture within reach at night"},
+ {answer:"laundry basket",little:"Find where worn clothes wait",middle:"Clothes visit me before they are washed",older:"Find the basket that collects clothes after their day is done"}
+],
+hallway:[
+ {answer:"front door",little:"Find the door used to leave home",middle:"I welcome everyone but never leave",older:"Find the boundary between home and the outside"},
+ {answer:"coat hooks",little:"Find where coats hang",middle:"Jackets wait on me before a journey",older:"Find the wall fittings that hold outdoor layers"},
+ {answer:"shoe rack",little:"Find where outdoor shoes wait",middle:"Pairs of shoes rest on my shelves",older:"Find the furniture that keeps outdoor footwear together"},
+ {answer:"doormat",little:"Find the mat beside the front door",middle:"Shoes wipe their feet on me",older:"Find the flat welcome that helps keep floors clean"}
+],
+bathroom:[
+ {answer:"bathroom sink",little:"Find where hands get washed",middle:"Turn my tap and water appears",older:"Find the basin used before clean hands leave the room"},
+ {answer:"towel rail",little:"Find where towels hang",middle:"I hold towels while they dry",older:"Find the rail carrying cloth used after water"},
+ {answer:"bathroom mirror",little:"Find the glass that shows your face",middle:"I copy you without a camera",older:"Find the surface that reflects but remembers nothing"},
+ {answer:"bath mat",little:"Find the mat near the bath",middle:"Wet feet step on me",older:"Find the soft floor covering waiting after a wash"}
+],
+garden:[
+ {answer:"plant pot",little:"Find a pot with a plant",middle:"I hold roots but never grow",older:"Find the container giving a plant its patch of soil"},
+ {answer:"garden chair",little:"Find the seat that stays outside",middle:"I sit in the weather and wait for people",older:"Find the furniture that gets more sunshine than its owner"},
+ {answer:"watering can",little:"Find what gives plants a drink",middle:"I carry rain when the clouds do not",older:"Find the container with a handle and a long spout"},
+ {answer:"shed door",little:"Find the garden storage door",middle:"I guard the tools used outside",older:"Find the door between the garden and its stored tools"}
+]};
 const themeOpen={detective:"Detective clue",space:"Mission signal",jungle:"Explorer clue",pirate:"Treasure clue"};
 const checkedRooms=()=>[...document.querySelectorAll('.rooms input:checked')].map(x=>x.value);
 function build(){
  const rooms=checkedRooms(),age=document.getElementById('age').value,theme=document.getElementById('theme').value,count=Number(document.getElementById('count').value),reward=document.getElementById('reward').value.trim()||"Choose the next family activity";
  if(rooms.length<2){alert("Choose at least two safe places.");return}
- const sequence=[];let last="";
- for(let i=0;i<count;i++){let choices=rooms.filter(x=>x!==last);let room=choices[Math.floor(Math.random()*choices.length)];sequence.push(room);last=room}
+ const pool=rooms.flatMap(room=>banks[room].map(place=>({...place,room})));
+ for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]]}
+ const sequence=pool.slice(0,Math.min(count,pool.length));
  const wrap=document.getElementById('clues');wrap.innerHTML="";
- sequence.forEach((room,i)=>{const clues=banks[room][age],text=clues[Math.floor(Math.random()*clues.length)],d=document.createElement('div');d.className='clue';d.innerHTML='<strong>'+themeOpen[theme]+' '+(i+1)+'</strong><span></span><div class="answer"></div>';d.querySelector('span').textContent=text;d.querySelector('.answer').textContent='Grown-up answer: '+room;wrap.appendChild(d)});
+ sequence.forEach((place,i)=>{const text=place[age],d=document.createElement('div');d.className='clue';d.innerHTML='<strong>'+themeOpen[theme]+' '+(i+1)+'</strong><span></span><div class="answer"></div>';d.querySelector('span').textContent=text;d.querySelector('.answer').textContent='Grown-up answer: '+place.answer+' ('+place.room+')';wrap.appendChild(d)});
  const end=document.createElement('div');end.className='clue';end.innerHTML='<strong>Final discovery</strong><span></span><div class="answer">Place this after the final clue.</div>';end.querySelector('span').textContent='You solved the trail. Your family reward is: '+reward;wrap.appendChild(end);
  document.getElementById('hunt').hidden=false;document.getElementById('hunt').scrollIntoView({behavior:'smooth',block:'start'})
 }

@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sapiver Learn — Day 3: What Code Actually Does</title>
+  <style>
+    :root{
+      --bg:#0f1115;
+      --panel:#171a21;
+      --panel-2:#1e232c;
+      --text:#f3f5f7;
+      --muted:#aeb7c2;
+      --accent:#ff8a3d;
+      --accent-soft:#3a2418;
+      --good:#51c878;
+      --bad:#ff6b6b;
+      --border:#303744;
+      --max:880px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.65;
+    }
+    main{
+      width:min(var(--max),calc(100% - 28px));
+      margin:0 auto;
+      padding:28px 0 60px;
+    }
+    a{color:var(--accent)}
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:22px;
+    }
+    .brand{font-weight:700;letter-spacing:.2px}
+    .brand a{color:inherit;text-decoration:none}
+    .pill{
+      display:inline-block;
+      padding:5px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:22px;
+      margin:16px 0;
+    }
+    h1,h2,h3{line-height:1.25}
+    h1{font-size:clamp(1.9rem,5vw,3rem);margin:.2rem 0 1rem}
+    h2{font-size:1.35rem;margin-top:0}
+    h3{font-size:1.05rem}
+    p{margin:.75rem 0}
+    code{
+      background:var(--panel-2);
+      padding:.15rem .35rem;
+      border-radius:6px;
+      overflow-wrap:anywhere;
+    }
+    pre{
+      background:var(--panel-2);
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:14px;
+      overflow:auto;
+      color:var(--text);
+      font-size:.95rem;
+    }
+    pre code{background:transparent;padding:0}
+    .callout{
+      border-left:4px solid var(--accent);
+      background:var(--accent-soft);
+      padding:14px 16px;
+      border-radius:10px;
+      margin:18px 0;
+    }
+    .controls{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:flex-end;
+      margin:18px 0 8px;
+    }
+    button, select{
+      border:1px solid var(--border);
+      background:var(--panel-2);
+      color:var(--text);
+      padding:11px 15px;
+      border-radius:10px;
+      font-size:1rem;
+    }
+    button{cursor:pointer}
+    button:hover, select:hover{border-color:var(--accent)}
+    button:disabled, select:disabled{opacity:.55;cursor:not-allowed}
+    button.primary{
+      background:var(--accent);
+      color:#1a120c;
+      border-color:var(--accent);
+      font-weight:700;
+    }
+    .voice-wrap{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      min-width:min(100%,260px);
+      flex:1 1 260px;
+    }
+    .voice-wrap label{
+      color:var(--muted);
+      font-size:.9rem;
+    }
+    .voice-wrap select{
+      width:100%;
+      min-width:0;
+    }
+    .muted{color:var(--muted)}
+    .terms{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+    }
+    .term{
+      background:var(--panel-2);
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:12px;
+    }
+    .term strong{display:block;margin-bottom:4px}
+    .question{
+      margin:20px 0;
+      padding:18px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:var(--panel-2);
+    }
+    .option{
+      display:block;
+      width:100%;
+      text-align:left;
+      margin:8px 0;
+      background:#202632;
+    }
+    .option.correct{
+      border-color:var(--good);
+      background:#163120;
+    }
+    .option.wrong{
+      border-color:var(--bad);
+      background:#351c1c;
+    }
+    .feedback{
+      min-height:1.4em;
+      margin-top:10px;
+      font-weight:600;
+    }
+    .resource-link{
+      display:inline-block;
+      margin-top:8px;
+      font-weight:600;
+      text-decoration:none;
+    }
+    .score{
+      font-size:1.15rem;
+      font-weight:700;
+    }
+    .progress-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 18px;
+      color:var(--muted);
+      margin:.5rem 0 1rem;
+    }
+    #lesson h2,
+    #lesson p,
+    #lesson pre,
+    #lesson .term{
+      scroll-margin-block:35vh;
+      transition:background-color .18s ease,outline-color .18s ease;
+    }
+    .speech-active{
+      background:var(--accent-soft);
+      outline:2px solid var(--accent);
+      outline-offset:4px;
+      border-radius:6px;
+    }
+    ::highlight(sapiver-reading){
+      background-color:rgba(255,138,61,.38);
+      color:var(--text);
+    }
+    footer{
+      margin-top:28px;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    @media (max-width:700px){
+      .terms{grid-template-columns:1fr}
+      .controls > button{flex:1 1 130px}
+      .voice-wrap{flex-basis:100%}
+    }
+    @media (prefers-reduced-motion:reduce){
+      #lesson h2,#lesson p,#lesson pre,#lesson .term{transition:none}
+    }
+  </style>
+</head>
+<body>
+<main>
+  <div class="topbar">
+    <div class="brand"><a href="../../">Sapiver Learn</a></div>
+    <div class="pill">Phase 1 · Day 3 · Programming Fundamentals</div>
+  </div>
+
+  <section>
+    <h1>What code actually does</h1>
+    <p class="muted">Estimated learning time: 8–10 minutes.</p>
+
+    <div class="controls">
+      <button class="primary" id="playBtn">▶ Listen</button>
+      <button id="pauseBtn">⏸ Pause</button>
+      <button id="resumeBtn">▶ Resume</button>
+      <button id="stopBtn">■ Stop</button>
+
+      <div class="voice-wrap">
+        <label for="voiceSelect">Voice</label>
+        <select id="voiceSelect" aria-label="Choose lesson voice">
+          <option value="">Loading voices…</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="audioStatus" class="muted" aria-live="polite">Ready to listen. Speed: 1.00×.</div>
+
+    <div class="callout">
+      <strong>Core mental model:</strong><br>
+      Code is a precise set of instructions. Programs store values, make decisions, repeat work and group reusable behaviour into functions.
+    </div>
+  </section>
+
+  <section id="lesson">
+    <div class="card">
+      <h2>1. Code is instruction, not intelligence</h2>
+      <p>A computer program is made from instructions written in a programming language.</p>
+      <p>The computer does not understand those instructions the way a human understands a sentence. The source code must ultimately be interpreted, compiled or otherwise translated into operations the machine can execute.</p>
+      <p>Different languages use different syntax, but many share the same underlying ideas: store information, transform it, test conditions, repeat operations and call reusable blocks of behaviour.</p>
+    </div>
+
+    <div class="card">
+      <h2>2. Statements tell the program to do something</h2>
+      <p>A <strong>statement</strong> is an instruction in a program.</p>
+      <p>For example, a statement might assign a value, call a function or make a decision.</p>
+      <p>Programming languages differ in their exact grammar, so the same idea can look different in Python, JavaScript, Java or another language.</p>
+    </div>
+
+    <div class="card">
+      <h2>3. Variables give values names</h2>
+      <p>A <strong>variable</strong> lets a program refer to a value by name.</p>
+      <p>In JavaScript, this might look like:</p>
+      <pre><code>let score = 3;</code></pre>
+      <p>The important idea is not the punctuation. The useful mental model is that the program now has a named value called <code>score</code> whose current value is <code>3</code>.</p>
+      <p>Variables can hold different kinds of values, such as numbers, text, true-or-false values, arrays and objects.</p>
+    </div>
+
+    <div class="card">
+      <h2>4. Data types describe kinds of values</h2>
+      <p>Programs often need to distinguish different kinds of data.</p>
+      <p>A number such as <code>25</code> is different from text such as <code>"25"</code>. They may look similar on screen, but software may treat them differently.</p>
+      <p>A <strong>Boolean</strong> value represents one of two logical states: <code>true</code> or <code>false</code>.</p>
+      <p>This distinction becomes important because conditions often evaluate to true or false.</p>
+    </div>
+
+    <div class="card">
+      <h2>5. Conditions let code choose a path</h2>
+      <p>A <strong>conditional</strong> tells a program to run different code depending on whether a test is true or false.</p>
+      <pre><code>if (score >= 4) {
+  showMessage("Passed");
+} else {
+  showMessage("Try again");
+}</code></pre>
+      <p>This does not mean the program has judgement in the human sense. It is following a rule written by the developer.</p>
+      <p>The program tests a condition, then executes the matching branch.</p>
+    </div>
+
+    <div class="card">
+      <h2>6. Functions package reusable behaviour</h2>
+      <p>A <strong>function</strong> is a reusable block of code that performs a task.</p>
+      <p>Instead of rewriting the same instructions repeatedly, a developer can define them once and call the function whenever that behaviour is needed.</p>
+      <pre><code>function double(number) {
+  return number * 2;
+}</code></pre>
+      <p>Here, <code>number</code> is a parameter. Calling <code>double(4)</code> gives the function the value <code>4</code>, and the function returns <code>8</code>.</p>
+    </div>
+
+    <div class="card">
+      <h2>7. Loops repeat work</h2>
+      <p>A <strong>loop</strong> lets a program repeat a set of instructions.</p>
+      <p>If you wanted to process 500 records, you would normally avoid writing the same operation 500 times. A loop can apply the operation repeatedly.</p>
+      <p>The loop needs rules controlling when repetition starts, continues or stops. Poorly written loop conditions can produce bugs such as an infinite loop.</p>
+    </div>
+
+    <div class="card">
+      <h2>8. Programming languages are tools, not different universes</h2>
+      <p>Python, JavaScript, Java, C#, Rust and other languages differ in syntax, type systems, runtimes, performance characteristics and intended uses.</p>
+      <p>But concepts such as values, functions, conditions and repetition appear across many languages.</p>
+      <p>This is why learning programming concepts is more valuable than memorising one language's punctuation.</p>
+    </div>
+
+    <div class="card">
+      <h2>Worked example: your Sapiver Learn quiz</h2>
+      <p>When someone taps a quiz answer, JavaScript can read which button was selected, compare its value with the stored correct answer, update the score and change the page.</p>
+      <p>The code uses several concepts from today's lesson at once.</p>
+      <p>A variable can store the score. A conditional can decide whether the answer was correct. A function can update the score display. A loop can process all quiz questions when resetting the lesson.</p>
+      <p>The visible interface is the frontend, while the JavaScript provides behaviour inside that frontend. That connects today's lesson directly to Day 1's application model and Day 2's web concepts.</p>
+    </div>
+
+    <div class="card">
+      <h2>Why this matters for AI</h2>
+      <p>AI applications still depend on ordinary software.</p>
+      <p>A model may generate a response, but surrounding code decides when to call the model, what data to send, how to validate inputs, what to display and what should happen next.</p>
+      <p>Later, when we discuss AI agents and automation, this distinction becomes critical: a language model can propose or generate information, while deterministic code can enforce specific rules and operations.</p>
+    </div>
+
+    <div class="card">
+      <h2>Key terms</h2>
+      <div class="terms">
+        <div class="term"><strong>Statement</strong>An instruction in a program.</div>
+        <div class="term"><strong>Variable</strong>A named reference used to work with a value.</div>
+        <div class="term"><strong>Data type</strong>A category describing what kind of value something is.</div>
+        <div class="term"><strong>Boolean</strong>A logical value that is either true or false.</div>
+        <div class="term"><strong>Conditional</strong>Logic that chooses a code path based on a test.</div>
+        <div class="term"><strong>Function</strong>A reusable block of behaviour that can be called.</div>
+        <div class="term"><strong>Parameter</strong>A named input accepted by a function.</div>
+        <div class="term"><strong>Loop</strong>A structure that repeats instructions according to rules.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="quiz">
+    <h2>Day 3 knowledge check</h2>
+    <p class="muted">Six questions. Your progress is saved in this browser when storage is available.</p>
+
+    <div class="question" data-correct="B" data-explanation="A variable gives a value a name that code can refer to and, depending on how it is declared, may later update." data-resource="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Variables">
+      <h3>1. What is the best beginner mental model for a variable?</h3>
+      <button class="option" data-value="A">A. A physical part of the CPU</button>
+      <button class="option" data-value="B">B. A named way for code to refer to a value</button>
+      <button class="option" data-value="C">C. A type of network address</button>
+      <button class="option" data-value="D">D. A replacement for a function</button>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <div class="question" data-correct="D" data-explanation="A Boolean represents one of two logical values: true or false. Conditions commonly use Boolean results." data-resource="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Language_overview">
+      <h3>2. Which pair represents Boolean values?</h3>
+      <button class="option" data-value="A">A. 1 and 2</button>
+      <button class="option" data-value="B">B. text and number</button>
+      <button class="option" data-value="C">C. input and output</button>
+      <button class="option" data-value="D">D. true and false</button>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <div class="question" data-correct="A" data-explanation="A conditional tests a condition and lets the program execute different branches depending on the result." data-resource="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Conditionals">
+      <h3>3. What is a conditional primarily used for?</h3>
+      <button class="option" data-value="A">A. Choosing which code path to run based on a test</button>
+      <button class="option" data-value="B">B. Giving a server an IP address</button>
+      <button class="option" data-value="C">C. Converting every value into text</button>
+      <button class="option" data-value="D">D. Creating physical memory</button>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <div class="question" data-correct="C" data-explanation="A function packages a task into a reusable block that can be called when needed." data-resource="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Functions">
+      <h3>4. Why are functions useful?</h3>
+      <button class="option" data-value="A">A. They make the internet unnecessary</button>
+      <button class="option" data-value="B">B. They store every file permanently</button>
+      <button class="option" data-value="C">C. They package reusable behaviour into callable blocks</button>
+      <button class="option" data-value="D">D. They turn a domain name into an IP address</button>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <div class="question" data-correct="B" data-explanation="A loop is designed to repeat instructions under defined conditions, which avoids manually duplicating the same code many times." data-resource="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Loops">
+      <h3>5. Which programming structure is designed for repetition?</h3>
+      <button class="option" data-value="A">A. Domain name</button>
+      <button class="option" data-value="B">B. Loop</button>
+      <button class="option" data-value="C">C. IP address</button>
+      <button class="option" data-value="D">D. Operating system</button>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <div class="question" data-correct="D" data-explanation="AI applications use ordinary software around the model. Code can handle inputs, rules, model calls, validation, interfaces and follow-on actions." data-resource="https://developer.mozilla.org/en-US/docs/MDN/Tutorials">
+      <h3>6. Which statement about AI applications is most accurate?</h3>
+      <button class="option" data-value="A">A. Once AI is added, normal programming concepts stop mattering</button>
+      <button class="option" data-value="B">B. AI models replace operating systems</button>
+      <button class="option" data-value="C">C. AI applications cannot use conditions or functions</button>
+      <button class="option" data-value="D">D. AI models usually operate inside larger software systems that still use ordinary code</button>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <p class="score" id="score">Score: 0 / 6</p>
+    <div class="progress-row">
+      <span id="answeredStatus">Answered: 0 / 6</span>
+      <span id="bestStatus">Best: —</span>
+      <span id="attemptStatus">Completed attempts: 0</span>
+    </div>
+    <button id="resetBtn">Reset quiz</button>
+  </section>
+
+  <section class="callout">
+    <strong>Next lesson:</strong><br>
+    Day 4 — How software stores information: files, databases, structured data and JSON.
+  </section>
+
+  <footer>
+    Sapiver Learn · Phase 1 · Day 3<br>
+    <a href="../../" style="text-decoration:none;">← Back to Sapiver Learn</a>
+  </footer>
+</main>
+
+<script>
+(() => {
+  const STORAGE_KEY='sapiverLearnDay003';
+  const VOICE_KEY='sapiverLearnVoice';
+  const questions=[...document.querySelectorAll('.question')];
+  const scoreEl=document.getElementById('score');
+  const answeredStatus=document.getElementById('answeredStatus');
+  const bestStatus=document.getElementById('bestStatus');
+  const attemptStatus=document.getElementById('attemptStatus');
+
+  let state=new Map();
+  let progress={
+    completed:false,
+    currentScore:0,
+    lastScore:null,
+    bestScore:null,
+    attempts:0,
+    answers:{}
+  };
+  let storageAvailable=true;
+  let countedThisCompletion=false;
+
+  function renderFeedback(q,isCorrect){
+    const feedback=q.querySelector('.feedback');
+    if(isCorrect){
+      feedback.innerHTML='<span style="color:var(--good)">Correct.</span>';
+      return;
+    }
+    const explanation=q.dataset.explanation||'Review this concept and try again.';
+    const resource=q.dataset.resource||'';
+    let html='<span style="color:var(--bad)">Not quite.</span> '+explanation;
+    if(resource){
+      html+='<br><a class="resource-link" href="'+resource+'" target="_blank" rel="noopener noreferrer">Read more about this concept ↗</a>';
+    }
+    feedback.innerHTML=html;
+  }
+
+  function readProgress(){
+    try{
+      const raw=localStorage.getItem(STORAGE_KEY);
+      if(!raw)return;
+      const saved=JSON.parse(raw);
+      progress=Object.assign(progress,saved||{});
+      if(progress.answers&&typeof progress.answers==='object'){
+        Object.entries(progress.answers).forEach(([index,answer])=>{
+          const i=Number(index);
+          state.set(i,answer.correct===true);
+          const q=questions[i];
+          if(!q)return;
+          const buttons=[...q.querySelectorAll('.option')];
+          const chosen=buttons.find(b=>b.dataset.value===answer.value);
+          if(chosen){
+            chosen.classList.add(answer.correct?'correct':'wrong');
+            if(!answer.correct){
+              const right=buttons.find(b=>b.dataset.value===q.dataset.correct);
+              if(right)right.classList.add('correct');
+            }
+          }
+          renderFeedback(q,answer.correct===true);
+        });
+      }
+      countedThisCompletion=Boolean(
+        progress.completed &&
+        Object.keys(progress.answers||{}).length===questions.length
+      );
+    }catch(e){
+      storageAvailable=false;
+    }
+  }
+
+  function saveProgress(){
+    if(!storageAvailable)return;
+    try{
+      localStorage.setItem(STORAGE_KEY,JSON.stringify(progress));
+    }catch(e){
+      storageAvailable=false;
+    }
+  }
+
+  function updateScore(){
+    let correct=0;
+    state.forEach(v=>{if(v===true)correct++});
+    const answered=state.size;
+
+    progress.currentScore=correct;
+    progress.completed=answered===questions.length;
+
+    scoreEl.textContent=`Score: ${correct} / ${questions.length}`;
+    answeredStatus.textContent=`Answered: ${answered} / ${questions.length}`;
+
+    if(progress.completed&&!countedThisCompletion){
+      progress.attempts=Number(progress.attempts||0)+1;
+      progress.lastScore=correct;
+      progress.bestScore=progress.bestScore==null
+        ? correct
+        : Math.max(Number(progress.bestScore),correct);
+      countedThisCompletion=true;
+    }
+
+    bestStatus.textContent=progress.bestScore==null
+      ? 'Best: —'
+      : `Best: ${progress.bestScore} / ${questions.length}`;
+
+    attemptStatus.textContent=`Completed attempts: ${Number(progress.attempts||0)}`;
+
+    saveProgress();
+  }
+
+  questions.forEach((q,index)=>{
+    const correct=q.dataset.correct;
+    const buttons=[...q.querySelectorAll('.option')];
+
+    buttons.forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        buttons.forEach(b=>b.classList.remove('correct','wrong'));
+
+        const isCorrect=btn.dataset.value===correct;
+
+        if(isCorrect){
+          btn.classList.add('correct');
+        }else{
+          btn.classList.add('wrong');
+          const right=buttons.find(b=>b.dataset.value===correct);
+          if(right)right.classList.add('correct');
+        }
+
+        state.set(index,isCorrect);
+        progress.answers[index]={
+          value:btn.dataset.value,
+          correct:isCorrect
+        };
+
+        renderFeedback(q,isCorrect);
+        updateScore();
+      });
+    });
+  });
+
+  document.getElementById('resetBtn').addEventListener('click',()=>{
+    state=new Map();
+    progress.answers={};
+    progress.currentScore=0;
+    progress.completed=false;
+    countedThisCompletion=false;
+
+    questions.forEach(q=>{
+      q.querySelectorAll('.option').forEach(
+        b=>b.classList.remove('correct','wrong')
+      );
+      q.querySelector('.feedback').textContent='';
+    });
+
+    updateScore();
+  });
+
+  readProgress();
+  updateScore();
+
+  const lessonRoot=document.getElementById('lesson');
+  const audioStatus=document.getElementById('audioStatus');
+  const playBtn=document.getElementById('playBtn');
+  const pauseBtn=document.getElementById('pauseBtn');
+  const resumeBtn=document.getElementById('resumeBtn');
+  const stopBtn=document.getElementById('stopBtn');
+  const voiceSelect=document.getElementById('voiceSelect');
+  const prefersReducedMotion=
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let englishVoices=[];
+  let selectedVoice=null;
+  let utterance=null;
+  let speechUnits=[];
+  let currentSpeechIndex=0;
+  let speechStopped=true;
+  let speechPaused=false;
+  let activeBlock=null;
+
+  function loadSavedVoice(){
+    try{
+      return localStorage.getItem(VOICE_KEY)||'';
+    }catch(e){
+      return '';
+    }
+  }
+
+  function saveVoice(name){
+    try{
+      localStorage.setItem(VOICE_KEY,name);
+    }catch(e){}
+  }
+
+  function populateVoices(){
+    if(!('speechSynthesis' in window))return;
+
+    const voices=speechSynthesis.getVoices();
+    englishVoices=voices
+      .filter(v => /^en(?:-|_)/i.test(v.lang || ''))
+      .sort((a,b)=>{
+        const locale=(a.lang||'').localeCompare(b.lang||'');
+        if(locale!==0)return locale;
+        return a.name.localeCompare(b.name);
+      });
+
+    voiceSelect.innerHTML='';
+
+    if(!englishVoices.length){
+      const option=document.createElement('option');
+      option.value='';
+      option.textContent='Browser default voice';
+      voiceSelect.appendChild(option);
+      selectedVoice=null;
+      return;
+    }
+
+    englishVoices.forEach((voice,index)=>{
+      const option=document.createElement('option');
+      option.value=voice.name;
+      option.textContent=`${voice.name} (${voice.lang})`;
+      voiceSelect.appendChild(option);
+    });
+
+    const saved=loadSavedVoice();
+    const savedVoice=englishVoices.find(v=>v.name===saved);
+
+    if(savedVoice){
+      selectedVoice=savedVoice;
+      voiceSelect.value=savedVoice.name;
+    }else{
+      const defaultEnglish=
+        englishVoices.find(v=>v.default) ||
+        englishVoices[0];
+
+      selectedVoice=defaultEnglish;
+      voiceSelect.value=defaultEnglish.name;
+    }
+  }
+
+  voiceSelect.addEventListener('change',()=>{
+    selectedVoice=englishVoices.find(v=>v.name===voiceSelect.value)||null;
+    if(selectedVoice){
+      saveVoice(selectedVoice.name);
+      audioStatus.textContent=`Voice: ${selectedVoice.name}. Speed: 1.00×.`;
+    }else{
+      audioStatus.textContent='Using browser default voice. Speed: 1.00×.';
+    }
+  });
+
+  function sentenceSegments(text){
+    const results=[];
+
+    if(window.Intl&&Intl.Segmenter){
+      const segmenter=new Intl.Segmenter('en',{granularity:'sentence'});
+
+      for(const item of segmenter.segment(text)){
+        const raw=item.segment;
+        const leading=raw.length-raw.trimStart().length;
+        const trailing=raw.length-raw.trimEnd().length;
+        const spoken=raw.trim();
+
+        if(spoken){
+          results.push({
+            text:spoken,
+            start:item.index+leading,
+            end:item.index+raw.length-trailing
+          });
+        }
+      }
+
+      return results;
+    }
+
+    const pattern=/[^.!?]+(?:[.!?]+|$)/g;
+    let match;
+
+    while((match=pattern.exec(text))!==null){
+      const raw=match[0];
+      const leading=raw.length-raw.trimStart().length;
+      const trailing=raw.length-raw.trimEnd().length;
+      const spoken=raw.trim();
+
+      if(spoken){
+        results.push({
+          text:spoken,
+          start:match.index+leading,
+          end:match.index+raw.length-trailing
+        });
+      }
+    }
+
+    return results;
+  }
+
+  function textNodesFor(element){
+    const walker=document.createTreeWalker(
+      element,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode(node){
+          return node.nodeValue&&node.nodeValue.length
+            ? NodeFilter.FILTER_ACCEPT
+            : NodeFilter.FILTER_REJECT;
+        }
+      }
+    );
+
+    const nodes=[];
+    let node;
+    while((node=walker.nextNode()))nodes.push(node);
+    return nodes;
+  }
+
+  function rangeForOffsets(element,start,end){
+    const nodes=textNodesFor(element);
+    let offset=0;
+    let startNode=null;
+    let startOffset=0;
+    let endNode=null;
+    let endOffset=0;
+
+    for(const node of nodes){
+      const nextOffset=offset+node.nodeValue.length;
+
+      if(startNode===null&&start>=offset&&start<=nextOffset){
+        startNode=node;
+        startOffset=Math.max(
+          0,
+          Math.min(node.nodeValue.length,start-offset)
+        );
+      }
+
+      if(endNode===null&&end>=offset&&end<=nextOffset){
+        endNode=node;
+        endOffset=Math.max(
+          0,
+          Math.min(node.nodeValue.length,end-offset)
+        );
+        break;
+      }
+
+      offset=nextOffset;
+    }
+
+    if(!startNode||!endNode)return null;
+
+    const range=document.createRange();
+    range.setStart(startNode,startOffset);
+    range.setEnd(endNode,endOffset);
+    return range;
+  }
+
+  function buildSpeechUnits(){
+    const blocks=[...lessonRoot.querySelectorAll('h2,p,.term')];
+    const units=[];
+
+    blocks.forEach(block=>{
+      const text=block.textContent||'';
+
+      sentenceSegments(text).forEach(segment=>{
+        units.push({
+          text:segment.text,
+          block,
+          range:rangeForOffsets(block,segment.start,segment.end)
+        });
+      });
+    });
+
+    return units;
+  }
+
+  function clearReadingHighlight(){
+    if(window.CSS&&CSS.highlights){
+      CSS.highlights.delete('sapiver-reading');
+    }
+
+    if(activeBlock){
+      activeBlock.classList.remove('speech-active');
+    }
+
+    activeBlock=null;
+  }
+
+  function highlightSpeechUnit(unit){
+    clearReadingHighlight();
+    activeBlock=unit.block;
+
+    if(window.CSS&&CSS.highlights&&window.Highlight&&unit.range){
+      CSS.highlights.set(
+        'sapiver-reading',
+        new Highlight(unit.range)
+      );
+    }else{
+      unit.block.classList.add('speech-active');
+    }
+
+    const rect=unit.block.getBoundingClientRect();
+    const topLimit=window.innerHeight*.18;
+    const bottomLimit=window.innerHeight*.78;
+
+    if(rect.top<topLimit||rect.bottom>bottomLimit){
+      unit.block.scrollIntoView({
+        behavior:prefersReducedMotion?'auto':'smooth',
+        block:'center'
+      });
+    }
+  }
+
+  function speakCurrentUnit(){
+    if(speechStopped)return;
+
+    if(currentSpeechIndex>=speechUnits.length){
+      speechStopped=true;
+      speechPaused=false;
+      clearReadingHighlight();
+      audioStatus.textContent='Lesson audio finished.';
+      return;
+    }
+
+    const unit=speechUnits[currentSpeechIndex];
+    highlightSpeechUnit(unit);
+
+    utterance=new SpeechSynthesisUtterance(unit.text);
+    utterance.rate=1.00;
+
+    if(selectedVoice){
+      utterance.voice=selectedVoice;
+      utterance.lang=selectedVoice.lang || 'en';
+    }else{
+      utterance.lang='en';
+    }
+
+    utterance.onstart=()=>{
+      if(!speechStopped){
+        audioStatus.textContent=
+          `Playing… ${currentSpeechIndex+1} of ${speechUnits.length} · 1.00×`;
+      }
+    };
+
+    utterance.onend=()=>{
+      if(speechStopped)return;
+      currentSpeechIndex+=1;
+      speakCurrentUnit();
+    };
+
+    utterance.onerror=event=>{
+      if(
+        speechStopped ||
+        event.error==='interrupted' ||
+        event.error==='canceled'
+      )return;
+
+      speechStopped=true;
+      speechPaused=false;
+      clearReadingHighlight();
+      audioStatus.textContent='Audio playback could not continue.';
+    };
+
+    speechSynthesis.speak(utterance);
+  }
+
+  function startLessonAudio(){
+    speechSynthesis.cancel();
+    clearReadingHighlight();
+
+    speechUnits=buildSpeechUnits();
+    currentSpeechIndex=0;
+    speechStopped=false;
+    speechPaused=false;
+
+    if(!speechUnits.length){
+      speechStopped=true;
+      audioStatus.textContent='No lesson text was available to read.';
+      return;
+    }
+
+    window.setTimeout(speakCurrentUnit,60);
+  }
+
+  if(!('speechSynthesis' in window)){
+    audioStatus.textContent='Audio is unavailable in this browser.';
+    [playBtn,pauseBtn,resumeBtn,stopBtn].forEach(button=>{
+      button.disabled=true;
+    });
+    voiceSelect.disabled=true;
+  }else{
+    populateVoices();
+
+    if(typeof speechSynthesis.onvoiceschanged!=='undefined'){
+      speechSynthesis.addEventListener('voiceschanged',populateVoices);
+    }
+
+    playBtn.addEventListener('click',startLessonAudio);
+
+    pauseBtn.addEventListener('click',()=>{
+      if(speechStopped||speechPaused)return;
+      speechSynthesis.pause();
+      speechPaused=true;
+      audioStatus.textContent='Audio paused.';
+    });
+
+    resumeBtn.addEventListener('click',()=>{
+      if(speechStopped||!speechPaused)return;
+      speechSynthesis.resume();
+      speechPaused=false;
+      audioStatus.textContent=
+        `Playing… ${currentSpeechIndex+1} of ${speechUnits.length} · 1.00×`;
+    });
+
+    stopBtn.addEventListener('click',()=>{
+      speechStopped=true;
+      speechPaused=false;
+      speechSynthesis.cancel();
+      clearReadingHighlight();
+      audioStatus.textContent='Audio stopped.';
+    });
+
+    window.addEventListener('pagehide',()=>{
+      speechStopped=true;
+      speechSynthesis.cancel();
+      clearReadingHighlight();
+    });
+  }
+})();
+</script>
+</body>
+</html>

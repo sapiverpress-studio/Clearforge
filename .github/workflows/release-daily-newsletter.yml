@@ -89,10 +89,14 @@ jobs:
             done
           fi
 
-      - name: Publish the same approved candidate into the website source
+      - name: Install locked website dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Build the complete website and publish the approved candidate
         env:
-          BLOG_BASE_URL: https://sapiverforge-daily-brief.netlify.app
+          BLOG_BASE_URL: https://suite.sapiverpress.co.uk
         run: |
+          node src/build-site.mjs
           node src/publish-news-intelligence-site.mjs
           node scripts/inject-news-intelligence-site.mjs
 
@@ -116,7 +120,7 @@ jobs:
       - name: Deploy the complete website to Netlify production
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: 8e72a4fc-5ad6-4377-8f4a-399d4c936060
+          NETLIFY_SITE_ID: 47bda30e-4698-4cf5-bcd4-d59785e1f399
         shell: bash
         run: |
           set -euo pipefail
@@ -130,7 +134,7 @@ jobs:
             --dir=public \
             --site="${NETLIFY_SITE_ID}" \
             --auth="${NETLIFY_AUTH_TOKEN}" \
-            --message="Publish approved Sapiver Forge Daily Brief and Sapiver Learn"
+            --message="Publish Daily Brief, Sapiver Learn and AI Inquisitive Parents"
 
       - name: Trigger the comic Daily Brief bridge
         env:

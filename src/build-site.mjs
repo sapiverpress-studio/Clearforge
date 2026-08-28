@@ -343,6 +343,7 @@ function pageTemplate(title, description, body, options = {}) {
       <a href="/">Sapiver Forge</a>
       <a href="/daily-brief/">Daily Brief</a>
       <a href="/learn/">Sapiver Learn</a>
+      <a href="/parents/">AI for Parents</a>
       <a href="/resources/">Resources</a>
       <a href="/newsletter/">Weekly digest</a>
     </nav>
@@ -351,10 +352,137 @@ function pageTemplate(title, description, body, options = {}) {
   <footer class="site-footer">
     <p>Turning human input into clear, usable systems.</p>
     <p>Produced with AI assistance and released with human approval by Sapiver Forge.</p>
-    <p><a href="/">Sapiver Forge</a> · <a href="/daily-brief/">Daily Brief</a> · <a href="/learn/">Sapiver Learn</a> · <a href="/resources/">Resources</a> · <a href="/newsletter/">Weekly digest</a></p>
+    <p><a href="/">Sapiver Forge</a> · <a href="/daily-brief/">Daily Brief</a> · <a href="/learn/">Sapiver Learn</a> · <a href="/parents/">AI for Parents</a> · <a href="/resources/">Resources</a> · <a href="/newsletter/">Weekly digest</a></p>
   </footer>
 </body>
 </html>`;
+}
+
+function buildParents() {
+  const body = `<section class="parents-hero">
+    <div class="parents-hero-copy">
+      <p class="eyebrow">AI for curious parents</p>
+      <h1>You do not need to be technical to make something useful with AI.</h1>
+      <p class="parents-lead">This is a collection of real family projects made by a working parent: tools for learning, music, creativity, practice and everyday moments. Try one, borrow an idea or use them as proof that a small personal project is a perfectly good place to begin.</p>
+      <div class="report-actions"><a class="button" href="#projects">Explore the projects</a><a class="button button-secondary" href="/learn/">Start with Sapiver Learn</a></div>
+    </div>
+    <aside class="parents-first-step" aria-label="A simple first step">
+      <p class="product-kicker">A simple first step</p>
+      <h2>Start with something your family already cares about.</h2>
+      <p>A hobby, repeated frustration or question is enough. You do not need a business plan or a complicated app idea.</p>
+      <ul><li>What does your child keep asking about?</li><li>What do you already practise or make together?</li><li>What small task would be easier with a purpose-built tool?</li></ul>
+    </aside>
+  </section>
+
+  <section class="parents-intro" aria-labelledby="parents-intro-title">
+    <p class="eyebrow">Projects, not prescriptions</p>
+    <h2 id="parents-intro-title">Seven different starting points</h2>
+    <p>These are offered as suggestions and inspiration rather than products every family needs. Some are finished tools and some are working experiments. Each one began with a real interest or practical problem, then used AI to help turn the idea into something usable.</p>
+  </section>
+
+  <section class="parents-projects" id="projects" aria-labelledby="parents-projects-title">
+    <div class="parents-section-heading">
+      <div><p class="eyebrow">Try, adapt, imagine</p><h2 id="parents-projects-title">Explore the family projects</h2></div>
+      <p>External projects open in a new tab, so you can return here for another idea.</p>
+    </div>
+    <div class="parents-project-grid">
+      <article class="parent-project parent-project-featured">
+        <div class="parent-project-top"><span class="parent-project-icon" aria-hidden="true">◎</span><span class="parent-project-tag">Learn together</span></div>
+        <h3>Sapiver Learn</h3>
+        <p>Short daily lessons that build practical AI understanding from ordinary computing foundations upward.</p>
+        <p class="parent-project-origin"><strong>The spark:</strong> AI feels less mysterious when you understand the systems underneath it.</p>
+        <ul class="parent-project-facts"><li>5–10 minute lessons</li><li>No technical background assumed</li><li>Read or listen</li></ul>
+        <a class="button" href="/learn/">Open Sapiver Learn</a>
+      </article>
+
+      <article class="parent-project">
+        <div class="parent-project-top"><span class="parent-project-icon" aria-hidden="true">♫</span><span class="parent-project-tag">Music learning</span></div>
+        <h3>Hen &amp; Bea’s Music House</h3>
+        <p>A story-led Grade 1 music journey with clear companion guidance for grown-ups who may not know music theory themselves.</p>
+        <p class="parent-project-origin"><strong>The spark:</strong> Make learning music feel like an illustrated adventure shared by children and adults.</p>
+        <ul class="parent-project-facts"><li>Made for children and grown-ups</li><li>No previous music knowledge required</li><li>Story and practical activities</li></ul>
+        <a class="button button-secondary" href="https://henandbeas-musichouse.netlify.app/" target="_blank" rel="noopener noreferrer">Visit the Music House ↗</a>
+      </article>
+
+      <article class="parent-project">
+        <div class="parent-project-top"><span class="parent-project-icon" aria-hidden="true">✎</span><span class="parent-project-tag">Create together</span></div>
+        <h3>Free Colouring Studio</h3>
+        <p>A touch-friendly colouring space with 50 pages, large controls and simple grown-up tools for saving and printing.</p>
+        <p class="parent-project-origin"><strong>The spark:</strong> Turn a collection of pictures into an activity children can use on the device already nearby.</p>
+        <ul class="parent-project-facts"><li>Free to use</li><li>Big controls for small hands</li><li>Save and print options</li></ul>
+        <a class="button button-secondary" href="https://kidscolouring.netlify.app/" target="_blank" rel="noopener noreferrer">Open Colouring Studio ↗</a>
+      </article>
+
+      <article class="parent-project">
+        <div class="parent-project-top"><span class="parent-project-icon" aria-hidden="true">⚡</span><span class="parent-project-tag">Play and solve</span></div>
+        <h3>Henry’s Electric Loop</h3>
+        <p>A compact path-rotation puzzle: tap the pieces until the energy route connects.</p>
+        <p class="parent-project-origin"><strong>The spark:</strong> A child’s interest can become the theme for a simple game made specifically for them.</p>
+        <ul class="parent-project-facts"><li>One-tap interaction</li><li>No instructions to study</li><li>Small experimental game</li></ul>
+        <a class="button button-secondary" href="https://henrys-electric-loop.netlify.app/" target="_blank" rel="noopener noreferrer">Try Electric Loop ↗</a>
+      </article>
+
+      <article class="parent-project">
+        <div class="parent-project-top"><span class="parent-project-icon" aria-hidden="true">♩</span><span class="parent-project-tag">Practise a hobby</span></div>
+        <h3>TempoTune Practice</h3>
+        <p>A metronome, chromatic tuner and rhythm builder combined into one focused music-practice tool.</p>
+        <p class="parent-project-origin"><strong>The spark:</strong> Build the exact practice setup you want instead of juggling several unrelated apps.</p>
+        <ul class="parent-project-facts"><li>Local-first</li><li>No analytics included</li><li>Works as a static web app</li></ul>
+        <a class="button button-secondary" href="https://tempotune-practice.netlify.app/" target="_blank" rel="noopener noreferrer">Open TempoTune ↗</a>
+      </article>
+
+      <article class="parent-project">
+        <div class="parent-project-top"><span class="parent-project-icon" aria-hidden="true">≈</span><span class="parent-project-tag">Everyday family help</span></div>
+        <h3>Settling Rhythm</h3>
+        <p>A simple aid that repeats a familiar tapping or shushing rhythm quietly, with optional gradual fade-out.</p>
+        <p class="parent-project-origin"><strong>The spark:</strong> Preserve a small thing that already seems to help, without claiming to solve sleep or health problems.</p>
+        <ul class="parent-project-facts"><li>Recordings stay in the browser</li><li>Built-in sound-safety guidance</li><li>Not a medical treatment</li></ul>
+        <a class="button button-secondary" href="https://sapiver-settle.netlify.app/" target="_blank" rel="noopener noreferrer">Open Settling Rhythm ↗</a>
+      </article>
+
+      <article class="parent-project">
+        <div class="parent-project-top"><span class="parent-project-icon" aria-hidden="true">♬</span><span class="parent-project-tag">Build the resource</span></div>
+        <h3>LilyPond Snippet Studio</h3>
+        <p>A behind-the-scenes tool for styling, previewing and exporting music snippets for children’s learning resources.</p>
+        <p class="parent-project-origin"><strong>The spark:</strong> AI can help make the production tool as well as the finished family activity.</p>
+        <ul class="parent-project-facts"><li>Live visual preview</li><li>Reusable design settings</li><li>Specialist working experiment</li></ul>
+        <a class="button button-secondary" href="https://sapiver-lily-pond.netlify.app/" target="_blank" rel="noopener noreferrer">See Snippet Studio ↗</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="parents-safety" aria-labelledby="parents-safety-title">
+    <div><p class="eyebrow">Keep the grown-up in the loop</p><h2 id="parents-safety-title">Curiosity works better with a few clear boundaries.</h2></div>
+    <div class="parents-safety-grid">
+      <div><strong>Protect private information</strong><p>Do not give an AI service names, school details, health information, photographs or other personal material unless you understand where it goes and why it is needed.</p></div>
+      <div><strong>Check what it produces</strong><p>AI can create convincing mistakes. A grown-up should review factual, educational or safety-related output before a child relies on it.</p></div>
+      <div><strong>Use tools together</strong><p>Choose services appropriate to the child’s age and stay involved. A purpose-built family tool does not remove parental judgement.</p></div>
+    </div>
+  </section>
+
+  <section class="parents-closing">
+    <p class="eyebrow">Your turn</p>
+    <h2>What could you make for your family?</h2>
+    <p>Begin with one small idea. Ask AI to help you describe the problem, sketch the simplest useful version and explain anything you do not understand. Keep checking the result as you go.</p>
+    <div class="report-actions"><a class="button" href="/learn/">Build your understanding</a><a class="button button-secondary" href="/">Explore Sapiver Forge</a></div>
+  </section>`;
+
+  write(path.join(publicDir, "parents", "index.html"), pageTemplate(
+    "AI for Parents",
+    "Real family projects showing curious parents how AI can support learning, creativity, hobbies and everyday life.",
+    body,
+    {
+      pathname: "/parents/",
+      structuredData: {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "AI for Parents",
+        description: "Real family projects showing curious parents how AI can support learning, creativity, hobbies and everyday life.",
+        url: canonical("/parents/"),
+        isPartOf: { "@type": "WebSite", name: "Sapiver Forge", url: blogBase }
+      }
+    }
+  ));
 }
 
 function buildReports() {
@@ -408,7 +536,7 @@ function buildTopics(entries) {
 }
 
 function buildDiscoveryFiles(entries) {
-  const staticPaths = ["/", "/daily-brief/", "/daily-brief/videos/", "/learn/", "/resources/", "/topics/", "/reports/", "/podcast/", "/newsletter/"];
+  const staticPaths = ["/", "/daily-brief/", "/daily-brief/videos/", "/learn/", "/parents/", "/resources/", "/topics/", "/reports/", "/podcast/", "/newsletter/"];
   const topicPaths = topicDefinitions.map((topic) => `/topics/${topic.slug}/`);
   const urls = [...new Set([...staticPaths, ...topicPaths, ...entries.map((entry) => entry.url)])];
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((pathname) => `  <url><loc>${xmlEscape(canonical(pathname))}</loc></url>`).join("\n")}\n</urlset>\n`;
@@ -421,6 +549,7 @@ function main() {
   ensureDir(postsDir);
   ensureDir(featuresDir);
   const reportCount = buildReports();
+  buildParents();
   buildNewsletter();
   buildDailyVideos();
   const dates = fs.existsSync(draftsDir)

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-labelledby="title desc">
+<title id="title">AI Inquisitive Parents — Rainy-Day Scavenger Hunt</title>
+<desc id="desc">Daily family fun web app idea poster from Sapiver Press.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#102f29"/><stop offset="1" stop-color="#24574c"/></linearGradient>
+  <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fffaf0"/><stop offset="1" stop-color="#f2ead8"/></linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#071c18" flood-opacity=".28"/></filter>
+</defs>
+<rect width="1080" height="1920" fill="url(#bg)"/>
+<g fill="none" stroke="#c9a75d" stroke-width="3" opacity=".9"><path d="M70 142h340M670 142h340"/><circle cx="540" cy="142" r="7" fill="#c9a75d"/></g>
+<text x="540" y="245" text-anchor="middle" fill="#fff8e8" font-family="Georgia,serif" font-size="70" letter-spacing="7">AI INQUISITIVE</text>
+<text x="540" y="327" text-anchor="middle" fill="#fff8e8" font-family="Georgia,serif" font-size="70" letter-spacing="7">PARENTS</text>
+<rect x="58" y="390" width="964" height="1250" rx="42" fill="url(#paper)" stroke="#c9a75d" stroke-width="5" filter="url(#shadow)"/>
+<rect x="300" y="445" width="480" height="70" rx="35" fill="#173c35" stroke="#c9a75d" stroke-width="3"/>
+<text x="540" y="493" text-anchor="middle" fill="#e2c584" font-family="Arial,sans-serif" font-size="34" font-weight="700" letter-spacing="3">FAMILY FUN IDEA • 01</text>
+<text x="540" y="650" text-anchor="middle" fill="#12352e" font-family="Arial,sans-serif" font-size="92" font-weight="900">BUILD A RAINY-DAY</text>
+<text x="540" y="752" text-anchor="middle" fill="#12352e" font-family="Arial,sans-serif" font-size="92" font-weight="900">SCAVENGER HUNT</text>
+<g transform="translate(120 830)">
+  <rect width="840" height="500" rx="30" fill="#e5d5b6"/>
+  <rect x="0" y="0" width="840" height="500" rx="30" fill="#dfe9e1" opacity=".55"/>
+  <path d="M0 390 Q170 315 330 385 T660 370 T840 390V500H0Z" fill="#b8cdbf"/>
+  <rect x="70" y="74" width="250" height="215" rx="12" fill="#d2e3e2" stroke="#769b91" stroke-width="8"/>
+  <path d="M195 74v215M70 182h250" stroke="#769b91" stroke-width="7"/>
+  <g stroke="#7c9b96" stroke-width="5" opacity=".65"><path d="M92 100l-15 30M145 95l-15 30M245 100l-15 30M295 95l-15 30"/></g>
+  <rect x="610" y="95" width="165" height="220" rx="12" fill="#b48655"/><rect x="630" y="120" width="125" height="25" fill="#765637"/><rect x="630" y="168" width="125" height="25" fill="#765637"/><rect x="630" y="216" width="125" height="25" fill="#765637"/>
+  <circle cx="419" cy="182" r="62" fill="#d9a06c"/><path d="M356 178q8-90 68-86 58 5 63 80-56-34-131 6Z" fill="#263e38"/>
+  <path d="M340 260q80-70 160 0l30 160H310Z" fill="#24574c"/>
+  <circle cx="250" cy="294" r="48" fill="#c78958"/><path d="M205 285q10-64 56-55 38 8 41 58-49-21-97-3Z" fill="#4a3428"/><path d="M185 350q65-50 130 0l20 105H165Z" fill="#c9973b"/>
+  <circle cx="590" cy="300" r="48" fill="#d6a06e"/><path d="M548 295q6-64 50-59 39 6 44 54-48-18-94 5Z" fill="#3c302b"/><path d="M520 355q70-55 140 0l20 100H500Z" fill="#f5efe2" stroke="#24574c" stroke-width="7"/>
+  <g transform="rotate(-8 385 300)"><rect x="342" y="270" width="92" height="122" rx="8" fill="#fffaf0" stroke="#c9a75d" stroke-width="4"/><circle cx="387" cy="320" r="20" fill="none" stroke="#24574c" stroke-width="8"/><path d="M402 336l22 23" stroke="#24574c" stroke-width="8"/></g>
+  <g transform="rotate(7 500 390)"><rect x="455" y="338" width="98" height="125" rx="8" fill="#fffaf0" stroke="#c9a75d" stroke-width="4"/><path d="M503 366l11 24 27 3-20 18 6 27-24-13-24 13 5-27-19-18 27-3Z" fill="#c9a75d"/></g>
+  <path d="M278 450c110-70 205-45 325 5" fill="none" stroke="#fffaf0" stroke-width="8" stroke-dasharray="18 18"/>
+</g>
+<text x="540" y="1440" text-anchor="middle" fill="#173c35" font-family="Arial,sans-serif" font-size="48" font-weight="600">Use AI to create clues for your home.</text>
+<rect x="115" y="1685" width="850" height="105" rx="52" fill="none" stroke="#c9a75d" stroke-width="4"/>
+<text x="540" y="1753" text-anchor="middle" fill="#fff8e8" font-family="Arial,sans-serif" font-size="48" font-weight="800" letter-spacing="3">TRY BUILDING IT WITH AI</text>
+<text x="540" y="1860" text-anchor="middle" fill="#e2c584" font-family="Georgia,serif" font-size="38" letter-spacing="12">SAPIVER PRESS</text>
+</svg>

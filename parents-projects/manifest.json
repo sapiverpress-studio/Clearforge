@@ -13,6 +13,22 @@
       "privacy": "Runs entirely in the browser; no answers are uploaded.",
       "supervision": "Designed for a grown-up to prepare and supervise.",
       "published_date": "2026-08-28"
+    },
+    {
+      "day": 2,
+      "slug": "silly-story-spinner",
+      "title": "Silly Story Spinner",
+      "category": "Family creativity",
+      "summary": "Mix a character, a place and a surprise to create a family story prompt, then take turns adding the next line.",
+      "path": "/parents/projects/day-002/",
+      "poster_art": "/parents/projects/day-002/poster-art.jpg",
+      "social_hook": "MAKE TONIGHT'S STORY TOGETHER",
+      "social_subtitle": "Build a Silly Story Spinner with AI",
+      "social_caption": "AI Inquisitive Parents: try building a Silly Story Spinner with AI. Choose a character, a place and a surprise, then make up the story together. I made a working browser version—so can you. Try it at https://suite.sapiverpress.co.uk/parents/projects/day-002/ #AIInquisitiveParents #FamilyFun #BuildWithAI",
+      "status": "ready",
+      "privacy": "Runs entirely in the browser; choices are not uploaded or saved.",
+      "supervision": "Designed for families to create and tell stories together.",
+      "published_date": "2026-08-29"
     }
   ]
 }

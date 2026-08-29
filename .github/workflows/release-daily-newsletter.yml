@@ -136,14 +136,14 @@ jobs:
             --auth="${NETLIFY_AUTH_TOKEN}" \
             --message="Publish Daily Brief, Sapiver Learn and AI Inquisitive Parents"
 
-      - name: Trigger the comic Daily Brief bridge
+      - name: Trigger the AI Inquisitive Parents social-poster bridge
         env:
           COMIC_GITHUB_TOKEN: ${{ secrets.COMIC_GITHUB_TOKEN }}
         shell: bash
         run: |
           set -euo pipefail
           if [ -z "${COMIC_GITHUB_TOKEN:-}" ]; then
-            echo "::error::Missing COMIC_GITHUB_TOKEN repository secret; the comic bridge cannot run."
+            echo "::error::Missing COMIC_GITHUB_TOKEN repository secret; the AI Inquisitive Parents social-poster bridge cannot run."
             exit 1
           fi
           curl --fail-with-body --silent --show-error \
@@ -153,4 +153,4 @@ jobs:
             --header "X-GitHub-Api-Version: 2022-11-28" \
             https://api.github.com/repos/sapiverpress-studio/SapiverPress_comic_public/actions/workflows/sapiver-forge-news-intelligence.yml/dispatches \
             --data "{\"ref\":\"main\",\"inputs\":{\"edition_date\":\"${NEWS_INTELLIGENCE_DATE}\"}}"
-          echo "Triggered comic bridge for ${NEWS_INTELLIGENCE_DATE}."
+          echo "Triggered AI Inquisitive Parents social-poster bridge for ${NEWS_INTELLIGENCE_DATE}."

@@ -1,0 +1,433 @@
+{
+  "searchEntryPoint": {
+    "renderedContent": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Anthropic%22+judge+blacklisting+illegal+NYT+court+listener&client=app-vertex-grounding&safesearch=active\">&quot;Anthropic&quot; judge blacklisting illegal NYT court listener</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Xiaomi+18+Fold%22+%22CXMT%22+LPDDR6+Reuters&client=app-vertex-grounding&safesearch=active\">&quot;Xiaomi 18 Fold&quot; &quot;CXMT&quot; LPDDR6 Reuters</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22SK+Hynix%22+Indiana+ground+breaking+4+billion+memory+packaging+facility&client=app-vertex-grounding&safesearch=active\">&quot;SK Hynix&quot; Indiana ground breaking 4 billion memory packaging facility</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22GLM-5.3%22+zai+huggingface+OR+release&client=app-vertex-grounding&safesearch=active\">&quot;GLM-5.3&quot; zai huggingface OR release</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Yardstik%22+%22Harbert+Growth+Partners%22+%2230M%22+OR+%2230+million%22&client=app-vertex-grounding&safesearch=active\">&quot;Yardstik&quot; &quot;Harbert Growth Partners&quot; &quot;30M&quot; OR &quot;30 million&quot;</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Wall+Street+Journal%22+%22data+center%22+%22trade+unions%22+OR+%22politicians%22&client=app-vertex-grounding&safesearch=active\">&quot;Wall Street Journal&quot; &quot;data center&quot; &quot;trade unions&quot; OR &quot;politicians&quot;</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22OpenAI%22+%22Cursor%22+%22SpaceX%22+%22November+12%22+OR+%22feud%22&client=app-vertex-grounding&safesearch=active\">&quot;OpenAI&quot; &quot;Cursor&quot; &quot;SpaceX&quot; &quot;November 12&quot; OR &quot;feud&quot;</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Google%22+%22privacy%22+%22class+action%22+%22147+million%22+%22legal+fees%22+Reuters&client=app-vertex-grounding&safesearch=active\">&quot;Google&quot; &quot;privacy&quot; &quot;class action&quot; &quot;147 million&quot; &quot;legal fees&quot; Reuters</a>\n  </div>\n</div>"
+  },
+  "groundingChunks": [
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGoypZ2XjGwRQgRwLeuOQSk9lSY69-JGUJx8nr_vfRcStZewtfyqLY1OjWEYTlF3x02ySIvBpU4D8wCMlKNRpcOPDKdl5gk7aRlaKzSKtaBDUNb6-ZdJOE52pwow==",
+        "title": "huggingface.co"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmGc-6rOF7IWr4LEDgHZHqUH9UqGippssiEw5c10dSF5XPyDMKCgrZdF0ax4oWok6QLiR2DsbhrSIgzwbj1rJrmohj_QruuWcibqFd01K3VEeGQEUtq2K7gqTYU89S2DXJyXTDrpIhBMaV5m2xJBChnDGqryR5WKhmcf4I0OtUH-73M7lE0w82cac7VLlqSLp_zBEI3H18Fzzl_wRyRKTndTv55RtzjUaLfm_hGJoyW_N2BxuF9pxVFLAlUz8ClDfxvg==",
+        "title": "purdue.edu"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHp7oYKPi8qeO3a4uVO6Lx0xC2bxS_jYjzH-CXtNe3BFff4JJip5sMHjtrIjAlXRKEV58f4d8hB00y-YD8NgyQeky3JrkbLy79ttZNrxobB4on0PcMBRysJco9G18oyAge8Eg1fSrG7e69Gb9DxMrmM-WlVXY=",
+        "title": "mallory.ai"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESb_fJbzGK_jututecAz5BAJr0OXKuid0Zzx3AYLsvjXWg4TlaEtSOqjnEEhsCpcHtlprjRgbCZfUgP9d1tS4BxlLCw2uyvR4nCf905N3B57622PgsEk9_xlhD1laT_OhRdtwlgIZqdZTMsCv-WwfBYKALAmJzgXTdbDaSYU7952FA4EUaxNcOWCntl8qnchJDsSDb7FSqCQZM-13HpjflZ9BZ-NhFCsgsRCsD7_Co52C5unnERmN4JahX-qh3pZmc54xloSFXG7NnF8p7UQ==",
+        "title": "trendforce.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdUYb1sg4izKdowMh4m6NBdgZi28DrSaWphW-PwMOtXa0zk7dQ5jWxrTC4Oftr6TkzVUd4hbOYMLgRv4ukGyOgn3ZPNwbW1NjKg7XOw_lwx1CmsqDPg5F_99RJZVpnzB1Xw1LgZa-3sejFzhFjYQ7WJVwlyWf95LzaOn5ZlQsSrWJ9emJwwSVB68T1n459HKTqLBLdQMjdKQ==",
+        "title": "businessinsider.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgXrSgp-3po7pxzSpqjLWZ2fu6wGdHJ2eZox-Kzo_qAvv1SlxU8QtBM1fm95r16_roTXvHWV56lxvkG91CJH_OTIbjsdMrKO5M_bqateChd1SEuI-ZHSbijn_UvZhyKusJUO8ct8jwDujQN6BeRxdsydw0A2DjjXsxtFa7ofteDldUb_nrjMVSH-sdCUxZPqcTgbsVOQ==",
+        "title": "moomoo.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqMfLieMCPPABRS6KDvx5XJqzT-MRmsAt3fVO2cIesdUz8WebxaR1RwVH1j5PToPMAcJeXbBYfD1CWA3ayk2zci915CW1cL3MiLoYGnI0GlM_XAieGoAe4PMx_ozVWvAkuTbcgCpUvG4hWKz1q7EshfWaTfk73mGBxYW8tUSvykuUCcaVW3-kdzoQS_OTE6J6FTuTwWnYgOdTWAMbjzgzrCoCZ6hbOL0uNxGrqQq0Ep6VdAD2albb2NWQobyRwfTyqIymIJw==",
+        "title": "prnewswire.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_1cOz_UaDIJYb2pL4l7x_ExGfZfBcUyBmJGRqHSHhmIy2oOBE6WeVW1MTEuJkcC02B_lrbYjhAm_YaVlaa4dxBnB8DNu7rhkvhL0pklbMddja7izU52TAaXjv3ffbG_kUIR2Gm9em9-5Nfcymu2wj-gA-NoWZ-aLIPDJW5v_Hu7aVhdGRt2KMxFJT4gjz_ixva8ofXBX2G7QqvuXFMlm-njcL09UNRhBj-RqEVWYDRXx5ctuHy2Ax1m_3oIamauebb8URoL_ZehwX8d_WRw==",
+        "title": "economictimes.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErzK0L0pzoLBrLk7W2YrGENNsYpaRuoXbYhV61jaj9ZZ6D2XBmvi1kzs-K88ffdXcGzEKjIYY2o2QVdA2_H4oEdfHrCvfMbhadZCAjCM7fp3Gvo7ILDnW9iYaRbxD88TD_cuq3rSwTLxUG51dBaMC1cUVMFRBa8OpA8Uhj5XCV1_F7G4Q=",
+        "title": "wmbdradio.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6rUp_RjdqABWG-U-2hN1FnIGcN8MHn8cvQgsQ2VlkvkVGOtssTm137VB4mjJEbrTVF-nUDOY2FOmR42x0alRJAO-4IlS_m0-cUFcm0NICR5Xspy8vtsV2DAxlKs9JFk48edL4zUfQSSKVapVJnhZwsrDzQJfowhhuVypCSeYtmxdJ16MznGQyJkoWq6piC9FOhixSTh0=",
+        "title": "thenews.com.pk"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtt8gzZvHXdjDT5NyHKISN6wJRsJpAnePPaXTCcpK8tMGoaQEksWE2OFqsU1JgqWTAKnnpLDU5dG784FFkAHFRTxUK_eKikFPXrSreVRgb34OeMU73G-oh0UtJA4wZp1YxY8v4nZ4N-zV4VQy7Vn6E",
+        "title": "thecyberwire.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoehHJX0paIskc8VxTQ6SmkqToELYEzPr-3rV_sChdypjPnEniB4APUK8qjhbc6dg1RrV9UtMD2Ctmo18JqcyD3npoVP6QXSDn6X5Fk4km2PT3UdFyiBJMWw==",
+        "title": "techmeme.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxaCSbJ8YYLzmox2G8lh9LAvPyayosyd2Tz-f5La8JvY0R0nEnGfI1xxQIA49syeotA8i9wTjcHWxwVKAGOYdjiOncNsevhSTvtMeHtf1n9nqBjgkAKc9lbrX9jhFhBatRgkExaJLz0O3KjgEd5p2tuck=",
+        "title": "substack.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFfyDATa1rrENtrJ7aZnvqd2jsD6Mqco0dcEUGAszx8BYXmHVRPKWoKTzyI7od1MU5E1q2nz_7g5V4viueCPqhSemarC2sXAVlrc-eyBAut8WjqCivIk6JYabgSwpsOxeH8Q==",
+        "title": "huggingface.co"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHausDuqnMBAvluB6_Jq126T9ZlKUJm05FXNBW8re6sjov2hg8meS0TZa3a-vHS2byYDxykQaoN4Ug9Wr0oy1pDiXKjA2hTHy5l-zNakL3D",
+        "title": "z.ai"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbV3mh4duMB-Mz9ImnueQPoEuhoyymhgx_Nz7W_cJwu6NNoiErxdqKECHvjRFryoYD9wcoMTTZbvymqEjR8KjTY2wssWthf8YfFbnusDVwvb6X-60-VIwPsRD9FpjA1mAMAvmI9A==",
+        "title": "thenewstack.io"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtqlhhhRaJ4kkPm7iK0ibHmIswz1YH1dGrUo7XVJWkhapdzWTH5kQEu5SqxvqOL3N88W7KvZsT_i6K4mZPwYcQFCX4yJKMB1F2VHmuyJDniOlFUXG0es_hRRpNOchomtGjC3R1i5eCdWy1ferhIEU3EfLrBcnJSpzo1UVHanoZdewkSyI=",
+        "title": "heygotrade.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSQsWnEDpEoEJ8LQFl93rMpXordhXjmJgPGg2N39UuOhhUb87pq3q-NCURgg1ztwtqeXS0lIJAq0PlE3C4pKic93SMjmLsSbi3MEnif4ChEYxZaGNV0oT_IzRNDZXKKV-tRyTGakuptkDeClr4qj_5PE4LI6myGrWxLw==",
+        "title": "substack.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2YrkUfVxyfEvLiJmHugr5PJSIzOwgk4oDPyEfzI1-XJPQSZTak7oiTgvxTBLrL17P0O0qXRO7UNtXbZ2VazfqnAH8Jmrffg_S_-F8VryzaxEampocvQxBmTM_zkygXmPBhBfcC64wxpDoaU3e9Q==",
+        "title": "thelec.net"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2fzhCKI-H3psWkmlOAijY5KgW-m0EVk1nlKyDSEhR7LmsXb5Y9IzyrGmbh4_YYbk2Yq-0vo77BzNafK0A18kyhkclwQtU23oh8OdBLpgj8eSs3n52VcQb6jy6z8sCkgPGaT-A1QB-khclgbDFVeAb7H0bGZro51UFpkfQIRnIUSzNEEhD9owbsBDJg0j3Ucs0rjajdjPo6IdcEfzfxVWQr97xB3o8hscwRi0Mo-7WNKUn7AMjbnfIStd--nzARhHe",
+        "title": "facebook.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9gbZGSjKJ15vmAFWVu-FMafo-8LHTCAjg5k4AWu4GmZURBaS5O0uB9VxouQ-ohV_PvlkmWqa3rcUjfEiZoX85JZT5N_u7dI5VNrhgs30gwxaTOMu3e6XGWefA8ATZoi5GoSJLPL5iZHC6AX4l1kob",
+        "title": "chinatechdaily.org"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZapFxJW9UsbZKr0f9mF4YYULvF87YVLIDMQP3qvUmnH9_UuRHMQenHIQEvToow45YgRShwi167w1pEQdzmgA7Vya_OnJqo_GGJSlb3K8D7gUEWoLGnT-exW4q3v6xn4w3pjXTPOhg0pRP4LbNEZEzNBY6ZDBUQPaCpFC1Q0PPvPcNj_NX8FJUIhlIe5i4yV2dZTvBL0xJuw7IZCQF0g4UX_4D-ai3wA==",
+        "title": "businessreport.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5BAW6KgxRWgg23jcyKnmop8XhlC6LLDt-V0hItxzmlfSS_Rtiq691ShprUHpS1T5o0Q-4wFpfsdKY0F7w-1SjCw_ncXYBYa6Gb-N6PhGdFJ-EEA==",
+        "title": "techmeme.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqXZF4zzCc6j4PPrpEG8SwLPE-bRXwnS9CjpKlcyY_qx38cgWYC6qp2uDRY62go9dGT6G_LmajYewQpIjjDtTtFk50AcCFr6Y04Csl9SafMVBhjOtVCd49",
+        "title": "techmeme.com"
+      }
+    },
+    {
+      "web": {
+        "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4hRkbvib74SqtabFSaw6L7wWTX_ORF-ropVbwFbPpotg5pL4SMDTQtT1xVIpgZ8GheyzV8QZyG8X0LHJ_MkhtIBAuak74ANbLQgzDsvLMihtwhbDjpPL6oY-RSA8XrbZ_Ir1R77G2uRt898kDGLl4oAXlW8yWzvymyx5nOxiCoKA3Lf0YedWjG85gAkCMUEE2wu5yEWvq44D00t9Z6g==",
+        "title": "pymnts.com"
+      }
+    }
+  ],
+  "groundingSupports": [
+    {
+      "segment": {
+        "endIndex": 140,
+        "text": "Here are the evidence verification notes for the **2026-08-29 UK morning briefing**, based on direct source checks and primary corroboration"
+      },
+      "groundingChunkIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 209,
+        "endIndex": 515,
+        "text": "#### **Candidate [16]: OpenAI to cut off AI models for SpaceX-owned Cursor**\n* **What is confirmed:** OpenAI officially notified SpaceX and announced late Friday that it will terminate its contract to supply AI models to Cursor (the AI coding assistant created by Anysphere and acquired by SpaceX for $60B)"
+      },
+      "groundingChunkIndices": [
+        4,
+        8
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 517,
+        "endIndex": 677,
+        "text": "OpenAI set a model shutoff date of November 12, 2026, invoking a change-of-control clause and citing contractual trust concerns regarding Elon Musk’s entities"
+      },
+      "groundingChunkIndices": [
+        4,
+        9
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 679,
+        "endIndex": 912,
+        "text": "* **Important caveats:** Cursor executive Michael Truell noted discussions remain ongoing and OpenAI models represent a relatively small portion of Cursor’s user traffic, which also relies on models from Anthropic, Google, and Grok"
+      },
+      "groundingChunkIndices": [
+        9
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 1169,
+        "endIndex": 1358,
+        "text": "ruled on August 27/28 that the Department of Defense’s designation of Anthropic as a national security supply chain risk was unlawful retaliatory behavior violating First Amendment rights"
+      },
+      "groundingChunkIndices": [
+        2,
+        10,
+        11
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 1360,
+        "endIndex": 1558,
+        "text": "The court vacated the designation, which had been imposed after Anthropic demanded contractual restrictions preventing its AI from being used for mass surveillance or fully autonomous lethal weapons"
+      },
+      "groundingChunkIndices": [
+        2,
+        10,
+        12
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 1560,
+        "endIndex": 1640,
+        "text": "* **Important caveats:** The federal government is expected to appeal the ruling"
+      },
+      "groundingChunkIndices": [
+        11
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 1705,
+        "endIndex": 1890,
+        "text": "#### **Candidate [3]: Z.ai releases open-weights for GLM-5.3 model**\n* **What is confirmed:** AI lab Z.ai uploaded the open weights for its GLM-5.3 base and Flash models to Hugging Face"
+      },
+      "groundingChunkIndices": [
+        0,
+        13
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 1892,
+        "endIndex": 2085,
+        "text": "The release relies on post-training scaling (RL and long-horizon task benchmarks) and demonstrates major benchmark improvements in coding (Terminal Bench) and vulnerability discovery (CyberGym)"
+      },
+      "groundingChunkIndices": [
+        0,
+        14
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 2087,
+        "endIndex": 2288,
+        "text": "* **Important caveats:** Z.ai altered its licensing terms from MIT: companies generating over $10 billion in annual revenue now require explicit security clearance from Z.ai to host or deploy the model"
+      },
+      "groundingChunkIndices": [
+        15
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 2353,
+        "endIndex": 2631,
+        "text": "#### **Candidate [9]: SK Hynix breaks ground on $4B Indiana advanced memory packaging facility**\n* **What is confirmed:** SK Hynix held a formal groundbreaking ceremony on August 27 in West Lafayette, Indiana (Purdue Research Park) for a $4B+ advanced packaging and R&D facility"
+      },
+      "groundingChunkIndices": [
+        1,
+        16
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 2633,
+        "endIndex": 2803,
+        "text": "The plant will handle advanced packaging for High Bandwidth Memory (HBM4E) with cleanroom operations targeted for October 2028 and volume production scheduled for H2 2029"
+      },
+      "groundingChunkIndices": [
+        17,
+        18
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 2805,
+        "endIndex": 2868,
+        "text": "The project is supported by $458M in direct US CHIPS Act grants"
+      },
+      "groundingChunkIndices": [
+        18,
+        16
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 2870,
+        "endIndex": 3025,
+        "text": "* **Important caveats:** Mass commercial production remains three years away; the plant performs back-end packaging on HBM wafers imported from South Korea"
+      },
+      "groundingChunkIndices": [
+        18
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 3090,
+        "endIndex": 3437,
+        "text": "#### **Candidate [12]: Xiaomi 18 Fold to debut CXMT LPDDR6 memory and in-house 3nm SoC**\n* **What is confirmed:** Xiaomi and ChangXin Memory Technologies (CXMT) confirmed that Xiaomi’s flagship 18 Fold smartphone (launching September 2026) will debut CXMT’s LPDDR6 DRAM chips alongside Xiaomi’s in-house 3nm Xring O3 SoC (fabricated by TSMC)"
+      },
+      "groundingChunkIndices": [
+        19,
+        3
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 3439,
+        "endIndex": 3640,
+        "text": "* **Important caveats:** This marks the first commercial deployment of a Chinese-developed LPDDR6 memory chip in a flagship mobile processor, positioning CXMT to challenge Samsung, SK Hynix, and Micron"
+      },
+      "groundingChunkIndices": [
+        3,
+        20
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 3705,
+        "endIndex": 4119,
+        "text": "#### **Candidate [4]: Construction unions threaten political pushback over data center opposition**\n* **What is confirmed:** The *Wall Street Journal* reported that major trade and construction unions (e.g., Steamfitters UA Local 602) are threatening to withhold political endorsements and campaign support from lawmakers who block data center projects, citing the loss of thousands of building and mechanical jobs"
+      },
+      "groundingChunkIndices": [
+        21,
+        5
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 4121,
+        "endIndex": 4308,
+        "text": "* **Important caveats:** Highlights a growing political split ahead of US midterms where local environmental/energy grid concerns clash with organized labor jobs tied to AI infrastructure"
+      },
+      "groundingChunkIndices": [
+        21,
+        5
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 4373,
+        "endIndex": 4638,
+        "text": "#### **Candidate [14]: Texas negotiates $1.05B side settlement deal with Meta**\n* **What is confirmed:** *Bloomberg Law* reports that Texas, which opted out of the 47-state $17 billion mid-trial settlement with Meta, negotiated its own $1.05 billion side settlement"
+      },
+      "groundingChunkIndices": [
+        22,
+        23
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 4640,
+        "endIndex": 4814,
+        "text": "* **Important caveats:** The payout total can rise to $1.335 billion if peer platforms TikTok and YouTube adopt specific teen safety provisions negotiated under the agreement"
+      },
+      "groundingChunkIndices": [
+        22,
+        23
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 4879,
+        "endIndex": 5259,
+        "text": "#### **Candidate [18]: Federal judge awards $147M in legal fees in Google privacy class action**\n* **What is confirmed:** U.S. District Judge Richard Seeborg awarded $147 million in attorney fees to law firms (Boies Schiller Flexner, Susman Godfrey, Morgan & Morgan) following a $425 million privacy verdict against Google for tracking users who had disabled app activity settings"
+      },
+      "groundingChunkIndices": [
+        24,
+        7
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 5261,
+        "endIndex": 5346,
+        "text": "* **Important caveats:** Google denies liability and is appealing the primary verdict"
+      },
+      "groundingChunkIndices": [
+        7
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 5348,
+        "endIndex": 5428,
+        "text": "Individual compensation for the ~98 million class members is under $5 per person"
+      },
+      "groundingChunkIndices": [
+        7
+      ]
+    },
+    {
+      "segment": {
+        "startIndex": 5774,
+        "endIndex": 5921,
+        "text": "* **Candidate [7] (Yardstik $30M Series B - SiliconANGLE):** Confirmed via company press release led by Harbert Growth Partners (total raised $65M)"
+      },
+      "groundingChunkIndices": [
+        6
+      ]
+    }
+  ],
+  "webSearchQueries": [
+    "\"Anthropic\" judge blacklisting illegal NYT court listener",
+    "\"Xiaomi 18 Fold\" \"CXMT\" LPDDR6 Reuters",
+    "\"SK Hynix\" Indiana ground breaking 4 billion memory packaging facility",
+    "\"GLM-5.3\" zai huggingface OR release",
+    "\"Yardstik\" \"Harbert Growth Partners\" \"30M\" OR \"30 million\"",
+    "\"Wall Street Journal\" \"data center\" \"trade unions\" OR \"politicians\"",
+    "\"OpenAI\" \"Cursor\" \"SpaceX\" \"November 12\" OR \"feud\"",
+    "\"Google\" \"privacy\" \"class action\" \"147 million\" \"legal fees\" Reuters"
+  ]
+}

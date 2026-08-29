@@ -1,0 +1,66 @@
+Here are the evidence verification notes for the **2026-08-29 UK morning briefing**, based on direct source checks and primary corroboration.
+
+---
+
+### **In-Scope Candidates — Recommended for Publication**
+
+#### **Candidate [16]: OpenAI to cut off AI models for SpaceX-owned Cursor**
+* **What is confirmed:** OpenAI officially notified SpaceX and announced late Friday that it will terminate its contract to supply AI models to Cursor (the AI coding assistant created by Anysphere and acquired by SpaceX for $60B). OpenAI set a model shutoff date of November 12, 2026, invoking a change-of-control clause and citing contractual trust concerns regarding Elon Musk’s entities.
+* **Important caveats:** Cursor executive Michael Truell noted discussions remain ongoing and OpenAI models represent a relatively small portion of Cursor’s user traffic, which also relies on models from Anthropic, Google, and Grok.
+* **Publication status:** **Suitable for publication today.** (Lead story for AI/tech business).
+
+#### **Candidate [10]: Judge rules U.S. government blacklisting of Anthropic was illegal**
+* **What is confirmed:** U.S. District Judge Rita Lin (N.D. Cal.) ruled on August 27/28 that the Department of Defense’s designation of Anthropic as a national security supply chain risk was unlawful retaliatory behavior violating First Amendment rights. The court vacated the designation, which had been imposed after Anthropic demanded contractual restrictions preventing its AI from being used for mass surveillance or fully autonomous lethal weapons.
+* **Important caveats:** The federal government is expected to appeal the ruling.
+* **Publication status:** **Suitable for publication today.**
+
+#### **Candidate [3]: Z.ai releases open-weights for GLM-5.3 model**
+* **What is confirmed:** AI lab Z.ai uploaded the open weights for its GLM-5.3 base and Flash models to Hugging Face. The release relies on post-training scaling (RL and long-horizon task benchmarks) and demonstrates major benchmark improvements in coding (Terminal Bench) and vulnerability discovery (CyberGym).
+* **Important caveats:** Z.ai altered its licensing terms from MIT: companies generating over $10 billion in annual revenue now require explicit security clearance from Z.ai to host or deploy the model.
+* **Publication status:** **Suitable for publication today.**
+
+#### **Candidate [9]: SK Hynix breaks ground on $4B Indiana advanced memory packaging facility**
+* **What is confirmed:** SK Hynix held a formal groundbreaking ceremony on August 27 in West Lafayette, Indiana (Purdue Research Park) for a $4B+ advanced packaging and R&D facility. The plant will handle advanced packaging for High Bandwidth Memory (HBM4E) with cleanroom operations targeted for October 2028 and volume production scheduled for H2 2029. The project is supported by $458M in direct US CHIPS Act grants.
+* **Important caveats:** Mass commercial production remains three years away; the plant performs back-end packaging on HBM wafers imported from South Korea.
+* **Publication status:** **Suitable for publication today.**
+
+#### **Candidate [12]: Xiaomi 18 Fold to debut CXMT LPDDR6 memory and in-house 3nm SoC**
+* **What is confirmed:** Xiaomi and ChangXin Memory Technologies (CXMT) confirmed that Xiaomi’s flagship 18 Fold smartphone (launching September 2026) will debut CXMT’s LPDDR6 DRAM chips alongside Xiaomi’s in-house 3nm Xring O3 SoC (fabricated by TSMC).
+* **Important caveats:** This marks the first commercial deployment of a Chinese-developed LPDDR6 memory chip in a flagship mobile processor, positioning CXMT to challenge Samsung, SK Hynix, and Micron.
+* **Publication status:** **Suitable for publication today.**
+
+#### **Candidate [4]: Construction unions threaten political pushback over data center opposition**
+* **What is confirmed:** The *Wall Street Journal* reported that major trade and construction unions (e.g., Steamfitters UA Local 602) are threatening to withhold political endorsements and campaign support from lawmakers who block data center projects, citing the loss of thousands of building and mechanical jobs.
+* **Important caveats:** Highlights a growing political split ahead of US midterms where local environmental/energy grid concerns clash with organized labor jobs tied to AI infrastructure.
+* **Publication status:** **Suitable for publication today.**
+
+#### **Candidate [14]: Texas negotiates $1.05B side settlement deal with Meta**
+* **What is confirmed:** *Bloomberg Law* reports that Texas, which opted out of the 47-state $17 billion mid-trial settlement with Meta, negotiated its own $1.05 billion side settlement.
+* **Important caveats:** The payout total can rise to $1.335 billion if peer platforms TikTok and YouTube adopt specific teen safety provisions negotiated under the agreement.
+* **Publication status:** **Suitable for publication today.**
+
+#### **Candidate [18]: Federal judge awards $147M in legal fees in Google privacy class action**
+* **What is confirmed:** U.S. District Judge Richard Seeborg awarded $147 million in attorney fees to law firms (Boies Schiller Flexner, Susman Godfrey, Morgan & Morgan) following a $425 million privacy verdict against Google for tracking users who had disabled app activity settings.
+* **Important caveats:** Google denies liability and is appealing the primary verdict. Individual compensation for the ~98 million class members is under $5 per person.
+* **Publication status:** **Suitable for publication today.**
+
+---
+
+### **Lower Priority or Niche In-Scope Candidates**
+
+* **Candidate [1] (AI dramas surge in China - FT):** Confirmed by FT and DataEye (89 of top 100 animated dramas on Douyin in May were AI-generated) [1]. Valid trend story, though secondary to breaking corporate/legal news.
+* **Candidate [7] (Yardstik $30M Series B - SiliconANGLE):** Confirmed via company press release led by Harbert Growth Partners (total raised $65M). Standard startup funding announcement.
+* **Candidate [8] (Virtual iPhone CLI tool - GitHub):** Confirmed developer utility (`vphone-cli`) utilizing Apple’s Virtualization.framework [8]. High developer interest on Hacker News, but low macro news impact.
+* **Candidate [19] (Bond yields & AI productivity - Reuters):** JPMorgan Private Bank analytical commentary suggesting bond markets may be pricing long-term AI productivity gains [19]. Market interpretation rather than concrete corporate news.
+
+---
+
+### **Out-of-Scope Candidates (Excluded)**
+* **Candidate [0] (A/I Collective sanctions):** Marked OUT OF SCOPE.
+* **Candidate [2] (Keyboard-driven GUIs blog):** Out of scope (UI opinion blog post).
+* **Candidate [5] (Bitcoin treasury market cap drop):** Marked OUT OF SCOPE (crypto finance).
+* **Candidate [6] (Htmx 4.0 release):** Marked OUT OF SCOPE.
+* **Candidate [11] (Rumour of a bug essay):** Out of scope (general cybersecurity opinion essay).
+* **Candidate [13] (Inception-style map demo):** Out of scope (interactive map demo).
+* **Candidate [15] (Meituan Q2 earnings):** Marked OUT OF SCOPE (food delivery platform earnings).
+* **Candidate [17] (Pinterest CFO resignation):** Marked OUT OF SCOPE (routine corporate personnel change).

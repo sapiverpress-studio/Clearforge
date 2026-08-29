@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Learn how prompting and context shape large language model behaviour through instructions, examples, constraints, delimiters and context engineering.">
+<title>Sapiver Learn — Day 9: Prompting and Context</title>
+<style>
+:root{--bg:#0f1115;--p:#171a21;--p2:#1e232c;--t:#f3f5f7;--m:#aeb7c2;--a:#ff8a3d;--as:#3a2418;--g:#51c878;--r:#ff6b6b;--b:#303744}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}main{width:min(880px,calc(100% - 28px));margin:auto;padding:28px 0 60px}a{color:var(--a)}
+.top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:22px}.brand{font-weight:700}.brand a{color:inherit;text-decoration:none}.pill{padding:5px 10px;border:1px solid var(--b);border-radius:999px;color:var(--m);font-size:.9rem}
+.card{background:var(--p);border:1px solid var(--b);border-radius:16px;padding:22px;margin:16px 0}h1,h2,h3{line-height:1.25}h1{font-size:clamp(1.9rem,5vw,3rem);margin:.2rem 0 1rem}h2{font-size:1.35rem;margin-top:0}.call{border-left:4px solid var(--a);background:var(--as);padding:14px 16px;border-radius:10px;margin:18px 0}.muted{color:var(--m)}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin:18px 0 8px}button,select{border:1px solid var(--b);background:var(--p2);color:var(--t);padding:11px 15px;border-radius:10px;font-size:1rem}button{cursor:pointer}.primary{background:var(--a);color:#1a120c;border-color:var(--a);font-weight:700}.voice{display:flex;flex-direction:column;gap:4px;flex:1 1 260px}.voice label{color:var(--m)}.voice select{width:100%}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:10px}.compare>div,.term{background:var(--p2);border:1px solid var(--b);border-radius:10px;padding:12px}.terms{display:grid;grid-template-columns:1fr 1fr;gap:10px}.term strong{display:block}pre{background:var(--p2);border:1px solid var(--b);border-radius:12px;padding:14px;white-space:pre-wrap}
+.q{background:var(--p2);border:1px solid var(--b);border-radius:14px;padding:18px;margin:20px 0}.opt{display:block;width:100%;text-align:left;margin:8px 0;background:#202632}.correct{border-color:var(--g)!important;background:#163120!important}.wrong{border-color:var(--r)!important;background:#351c1c!important}.fb{min-height:1.4em;margin-top:10px;font-weight:600}.score{font-size:1.15rem;font-weight:700}.speech-active{background:var(--as);outline:2px solid var(--a);outline-offset:4px;border-radius:6px}::highlight(sapiver-reading){background:rgba(255,138,61,.38);color:var(--t)}footer{margin-top:28px;color:var(--m);font-size:.92rem}
+@media(max-width:700px){.compare,.terms{grid-template-columns:1fr}.controls>button{flex:1 1 130px}.voice{flex-basis:100%}}
+</style>
+</head>
+<body><main>
+<div class="top"><div class="brand"><a href="../../">Sapiver Learn</a></div><div class="pill">Phase 1 · Day 9 · Prompting & Context</div></div>
+<section>
+<h1>Prompting and context</h1>
+<p class="muted">Estimated learning time: 8–10 minutes.</p>
+<div class="controls"><button class="primary" id="play">▶ Listen</button><button id="pause">⏸ Pause</button><button id="resume">▶ Resume</button><button id="stop">■ Stop</button><div class="voice"><label for="voices">Voice</label><select id="voices"><option>Loading voices…</option></select></div></div>
+<div id="status" class="muted">Ready to listen. Speed: 1.00×.</div>
+<div class="call"><strong>Core mental model:</strong><br>A prompt is not a magic command. It is part of the model's current context. Clear instructions, relevant evidence, useful examples and explicit constraints make the intended task easier to infer and execute.</div>
+</section>
+
+<section id="lesson">
+<div class="card"><h2>1. Prompting works through context</h2><p>Yesterday, we saw that a large language model predicts the next token using the context available to it.</p><p>A <strong>prompt</strong> is part of that context. It can contain instructions, questions, examples, source material, formatting requirements and constraints.</p><p>The model does not read the prompt as a legal contract. It processes the prompt as tokens and uses learned patterns to generate a continuation that appears to satisfy the request.</p></div>
+
+<div class="card"><h2>2. Clear task instructions reduce ambiguity</h2><p>Vague instructions leave more of the task unspecified.</p><p><code>Summarise this</code> does not specify audience, length, emphasis or format.</p><p>A more precise instruction might say: <code>Summarise this report for a non-technical manager in five bullet points. Include the main risk and recommended next action.</code></p><p>The second prompt is not better because it is longer. It is better because it removes important ambiguity.</p></div>
+
+<div class="card"><h2>3. Relevant context supplies missing information</h2><p>If a task depends on specific facts, policies, documents or circumstances, those need to be available to the model.</p><p>Asking for a summary of a private document without providing the document gives the model no reliable access to its contents.</p><p>Good context engineering therefore includes deciding what evidence should be supplied, not simply finding clever wording.</p></div>
+
+<div class="card"><h2>4. Examples can demonstrate the desired pattern</h2><p>Sometimes a task is easier to specify by showing an example.</p><p>This is often called <strong>few-shot prompting</strong> when one or more examples are included.</p><p>Examples can demonstrate tone, output structure, classification rules or treatment of edge cases.</p><p>A misleading example can teach the wrong pattern, so examples need to represent the behaviour you actually want.</p></div>
+
+<div class="card"><h2>5. Constraints define boundaries</h2><p>Constraints tell the model what limits matter.</p><p>They can specify output length, required fields, forbidden actions, acceptable sources, language, tone or what to do when information is missing.</p><p>For factual work, a useful constraint is: <code>If the supplied evidence does not support the answer, say that the information is insufficient.</code></p><p>This does not guarantee perfect compliance, but it gives the model a clearer target behaviour.</p></div>
+
+<div class="card"><h2>6. Structure separates instructions from data</h2><p>Prompts become easier to interpret when sections have clear boundaries.</p><p>Headings, labels, quotation marks, Markdown fences or XML-style tags can distinguish instructions from source material.</p><pre>Task:
+Summarise the source in three bullet points.
+
+Source:
+&lt;document&gt;
+...source text...
+&lt;/document&gt;
+
+Rules:
+- Use only information in the source.
+- If a fact is missing, say so.</pre><p>The exact delimiter style matters less than making the structure clear and consistent.</p></div>
+
+<div class="card"><h2>7. Output format can be explicit</h2><p>If software must process a response, format matters.</p><p>You might request a table, fixed headings or structured JSON rather than free-form prose.</p><p>For human-facing work, a shape such as <code>Problem → Evidence → Recommendation</code> can improve consistency.</p><p>When an API offers schema-constrained structured output, that is generally stronger than relying on prompt wording alone to enforce machine-readable structure.</p></div>
+
+<div class="card"><h2>8. Prompting is iterative, not mystical</h2><p>Prompt engineering is sometimes presented as finding one perfect phrase. That is the wrong mental model.</p><p>A better process is: define the task, test the output, identify failure modes, improve the instructions or context, then test again.</p><p>If repeated failures come from missing evidence, rewriting the same instruction will not solve the real problem. The context or system design must change.</p></div>
+
+<div class="card"><h2>9. Context engineering is broader than prompt wording</h2><p><strong>Context engineering</strong> is a broader term for deciding what the model should see when it performs a task.</p><p>That can include system instructions, user input, retrieved documents, tool outputs, examples, memory summaries and metadata.</p><p>This is an architectural concern as well as a writing concern. Later, retrieval and agent systems will actively assemble context before asking the model to respond or act.</p></div>
+
+<div class="card"><h2>Worked example: extracting decisions from meeting notes</h2><p>Suppose you want an AI system to extract decisions from meeting notes.</p><div class="compare"><div><strong>Weak request</strong><br><code>Read these notes and tell me what matters.</code></div><div><strong>Better specified request</strong><br><code>Return only confirmed decisions. For each give: decision, owner, deadline. If owner or deadline is absent, write "Not specified". Do not infer missing facts.</code></div></div><p>The stronger version defines the task, output shape and missing-information rule.</p><p>If the notes are then provided in a clearly marked source section, the model has both instructions and evidence.</p></div>
+
+<div class="card"><h2>Why this matters</h2><p>Prompting sits between raw model capability and useful application behaviour.</p><p>Clear prompts improve the chance that the model understands the task, but prompts do not create missing facts, permissions or reliable external state.</p><p>Robust AI systems therefore combine prompting with retrieval, tools, structured data, validation and deterministic controls.</p></div>
+
+<div class="card"><h2>Key terms</h2><div class="terms">
+<div class="term"><strong>Prompt</strong>Instructions and information supplied as part of the model's current context.</div>
+<div class="term"><strong>Context</strong>The tokenised information available to the model during an operation.</div>
+<div class="term"><strong>Constraint</strong>An explicit boundary or requirement on output or behaviour.</div>
+<div class="term"><strong>Few-shot prompting</strong>Including examples to demonstrate a desired pattern.</div>
+<div class="term"><strong>Delimiter</strong>A marker used to separate prompt sections.</div>
+<div class="term"><strong>Output format</strong>The requested structure of the response.</div>
+<div class="term"><strong>Context engineering</strong>Designing the information supplied to a model for a task.</div>
+<div class="term"><strong>Failure mode</strong>A recurring way a system produces an undesirable result.</div>
+</div></div>
+</section>
+
+<section class="card" id="quiz"><h2>Day 9 knowledge check</h2><p class="muted">Six questions. Progress is saved in this browser when storage is available.</p>
+<div class="q" data-c="B" data-e="A prompt is part of the model's current context and can contain instructions, examples, source material and constraints." data-r="https://help.openai.com/en/articles/4936848-how-do-i-create-a-good-prompt-for-an-ai-model"><h3>1. What is the best mental model for a prompt?</h3><button class="opt" data-v="A">A. A guaranteed command the model must obey perfectly</button><button class="opt" data-v="B">B. Instructions and information supplied as part of the model's context</button><button class="opt" data-v="C">C. A replacement for model training</button><button class="opt" data-v="D">D. A database language</button><div class="fb"></div></div>
+<div class="q" data-c="C" data-e="Specific instructions reduce important ambiguity about the task and desired result." data-r="https://help.openai.com/en/articles/4936848-how-do-i-create-a-good-prompt-for-an-ai-model"><h3>2. Why is a specific instruction often more useful?</h3><button class="opt" data-v="A">A. Longer prompts always make models smarter</button><button class="opt" data-v="B">B. They increase the model's parameter count</button><button class="opt" data-v="C">C. They reduce ambiguity about the task and output</button><button class="opt" data-v="D">D. They permanently alter training data</button><div class="fb"></div></div>
+<div class="q" data-c="D" data-e="Few-shot prompting provides examples that demonstrate a desired pattern, format or behaviour." data-r="https://developers.google.com/machine-learning/resources/prompt-eng"><h3>3. What is few-shot prompting?</h3><button class="opt" data-v="A">A. Limiting a response to a few tokens</button><button class="opt" data-v="B">B. Running the model only a few times</button><button class="opt" data-v="C">C. Removing all context</button><button class="opt" data-v="D">D. Including examples that demonstrate the desired pattern</button><div class="fb"></div></div>
+<div class="q" data-c="A" data-e="Delimiters and labels help distinguish instructions, source material and other prompt components." data-r="https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api"><h3>4. Why use delimiters or labelled sections?</h3><button class="opt" data-v="A">A. To separate instructions and data more clearly</button><button class="opt" data-v="B">B. To increase the context-window size</button><button class="opt" data-v="C">C. To guarantee factual accuracy</button><button class="opt" data-v="D">D. To retrain the model during inference</button><div class="fb"></div></div>
+<div class="q" data-c="C" data-e="If required evidence is absent, the real problem is missing context. Rewording alone cannot supply the missing facts." data-r="https://developers.google.com/machine-learning/resources/prompt-eng"><h3>5. A prompt fails because the required source document is missing. What is the best fix?</h3><button class="opt" data-v="A">A. Make the same instruction more dramatic</button><button class="opt" data-v="B">B. Add more adjectives</button><button class="opt" data-v="C">C. Supply or retrieve the missing evidence into context</button><button class="opt" data-v="D">D. Ask the model to guess more confidently</button><div class="fb"></div></div>
+<div class="q" data-c="B" data-e="Context engineering includes selecting and assembling the instructions, evidence, examples, tool outputs and other information the model should receive." data-r="https://developers.google.com/machine-learning/resources/prompt-eng"><h3>6. What is context engineering?</h3><button class="opt" data-v="A">A. Choosing a brighter interface colour</button><button class="opt" data-v="B">B. Designing what information the model receives for a task</button><button class="opt" data-v="C">C. Increasing training-data size after every prompt</button><button class="opt" data-v="D">D. Replacing application code with natural language</button><div class="fb"></div></div>
+<p class="score" id="score">Score: 0 / 6</p><p class="muted" id="meta">Answered: 0 / 6 · Best: — · Completed attempts: 0</p><button id="reset">Reset quiz</button>
+</section>
+
+<section class="call"><strong>Next lesson:</strong><br>Day 10 — APIs: how software systems request data and capabilities from one another, and how AI applications call models through APIs.</section>
+<footer>Sapiver Learn · Phase 1 · Day 9<br><a href="../../">← Back to Sapiver Learn</a></footer>
+</main>
+
+<script>
+(()=>{
+const K='sapiverLearnDay009',VK='sapiverLearnVoice',qs=[...document.querySelectorAll('.q')],score=document.getElementById('score'),meta=document.getElementById('meta');
+let s={answers:{},attempts:0,bestScore:null,lastScore:null,currentScore:0,completed:false},counted=false,storageOK=true;
+try{Object.assign(s,JSON.parse(localStorage.getItem(K)||'{}'));counted=!!s.completed}catch(e){storageOK=false}
+function save(){if(!storageOK)return;try{localStorage.setItem(K,JSON.stringify(s))}catch(e){storageOK=false}}
+function fb(q,ok){const f=q.querySelector('.fb');if(ok){f.innerHTML='<span style="color:var(--g)">Correct.</span>';return}f.innerHTML='<span style="color:var(--r)">Not quite.</span> '+q.dataset.e+'<br><a target="_blank" rel="noopener noreferrer" href="'+q.dataset.r+'">Read more about this concept ↗</a>'}
+function draw(){let n=0,a=0;qs.forEach((q,i)=>{const x=s.answers[i];q.querySelectorAll('.opt').forEach(b=>b.classList.remove('correct','wrong'));q.querySelector('.fb').textContent='';if(!x)return;a++;if(x.correct)n++;const bs=[...q.querySelectorAll('.opt')],chosen=bs.find(b=>b.dataset.v===x.value);if(chosen){chosen.classList.add(x.correct?'correct':'wrong');if(!x.correct){const r=bs.find(b=>b.dataset.v===q.dataset.c);if(r)r.classList.add('correct')}}fb(q,x.correct)});s.currentScore=n;s.completed=a===qs.length;if(s.completed&&!counted){s.attempts=(s.attempts||0)+1;s.lastScore=n;s.bestScore=s.bestScore==null?n:Math.max(s.bestScore,n);counted=true}score.textContent=`Score: ${n} / ${qs.length}`;meta.textContent=`Answered: ${a} / ${qs.length} · Best: ${s.bestScore==null?'—':s.bestScore+' / '+qs.length} · Completed attempts: ${s.attempts||0}`;save()}
+qs.forEach((q,i)=>q.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{s.answers[i]={value:b.dataset.v,correct:b.dataset.v===q.dataset.c};draw()}));
+document.getElementById('reset').onclick=()=>{s.answers={};s.completed=false;s.currentScore=0;counted=false;draw()};draw();
+
+const root=document.getElementById('lesson'),vsel=document.getElementById('voices'),status=document.getElementById('status');
+let voices=[],voice=null,units=[],idx=0,stopped=true,paused=false,active=null;
+function loadVoiceName(){try{return localStorage.getItem(VK)||''}catch(e){return ''}}
+function saveVoiceName(n){try{localStorage.setItem(VK,n)}catch(e){}}
+function loadVoices(){voices=speechSynthesis.getVoices().filter(v=>/^en(?:-|_)/i.test(v.lang||'')).sort((a,b)=>(a.lang||'').localeCompare(b.lang||'')||a.name.localeCompare(b.name));vsel.innerHTML='';if(!voices.length){vsel.innerHTML='<option value="">Browser default voice</option>';voice=null;return}voices.forEach(v=>{const o=document.createElement('option');o.value=v.name;o.textContent=`${v.name} (${v.lang})`;vsel.appendChild(o)});const saved=loadVoiceName();voice=voices.find(v=>v.name===saved)||voices.find(v=>v.default)||voices[0];vsel.value=voice.name}
+vsel.onchange=()=>{voice=voices.find(v=>v.name===vsel.value)||null;if(voice)saveVoiceName(voice.name);status.textContent=`Voice: ${voice?voice.name:'browser default'}. Speed: 1.00×.`};
+
+function sentenceSegments(text){const out=[];if(window.Intl&&Intl.Segmenter){for(const x of new Intl.Segmenter('en',{granularity:'sentence'}).segment(text)){const raw=x.segment,lead=raw.length-raw.trimStart().length,trail=raw.length-raw.trimEnd().length,spoken=raw.trim();if(spoken)out.push({text:spoken,start:x.index+lead,end:x.index+raw.length-trail})}return out}const re=/[^.!?]+(?:[.!?]+|$)/g;let m;while((m=re.exec(text))){const raw=m[0],lead=raw.length-raw.trimStart().length,trail=raw.length-raw.trimEnd().length,spoken=raw.trim();if(spoken)out.push({text:spoken,start:m.index+lead,end:m.index+raw.length-trail})}return out}
+function textNodes(el){const w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),nodes=[];let n;while((n=w.nextNode()))nodes.push(n);return nodes}
+function rangeFor(el,start,end){let off=0,sn=null,so=0,en=null,eo=0;for(const n of textNodes(el)){const next=off+n.nodeValue.length;if(sn===null&&start>=off&&start<=next){sn=n;so=Math.max(0,Math.min(n.nodeValue.length,start-off))}if(en===null&&end>=off&&end<=next){en=n;eo=Math.max(0,Math.min(n.nodeValue.length,end-off));break}off=next}if(!sn||!en)return null;const r=document.createRange();r.setStart(sn,so);r.setEnd(en,eo);return r}
+function buildUnits(){const out=[];[...root.querySelectorAll('h2,p,pre,.term,.compare>div')].forEach(el=>sentenceSegments(el.textContent||'').forEach(seg=>out.push({el,text:seg.text,range:rangeFor(el,seg.start,seg.end)})));return out}
+function clear(){if(window.CSS&&CSS.highlights)CSS.highlights.delete('sapiver-reading');if(active)active.classList.remove('speech-active');active=null}
+function highlight(u){clear();active=u.el;if(window.CSS&&CSS.highlights&&window.Highlight&&u.range){CSS.highlights.set('sapiver-reading',new Highlight(u.range))}else{u.el.classList.add('speech-active')}const r=u.el.getBoundingClientRect();if(r.top<innerHeight*.18||r.bottom>innerHeight*.78)u.el.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'})}
+function speak(){if(stopped)return;if(idx>=units.length){stopped=true;paused=false;clear();status.textContent='Lesson audio finished.';return}const u=units[idx];highlight(u);const x=new SpeechSynthesisUtterance(u.text);x.rate=1.00;if(voice){x.voice=voice;x.lang=voice.lang||'en'}else{x.lang='en'}x.onstart=()=>{if(!stopped)status.textContent=`Playing… ${idx+1} of ${units.length} · 1.00×`};x.onend=()=>{if(!stopped){idx++;speak()}};x.onerror=e=>{if(stopped||e.error==='interrupted'||e.error==='canceled')return;stopped=true;paused=false;clear();status.textContent='Audio playback could not continue.'};speechSynthesis.speak(x)}
+document.getElementById('play').onclick=()=>{speechSynthesis.cancel();clear();units=buildUnits();idx=0;stopped=false;paused=false;setTimeout(speak,60)};
+document.getElementById('pause').onclick=()=>{if(!stopped&&!paused){speechSynthesis.pause();paused=true;status.textContent='Audio paused.'}};
+document.getElementById('resume').onclick=()=>{if(!stopped&&paused){speechSynthesis.resume();paused=false}};
+document.getElementById('stop').onclick=()=>{stopped=true;paused=false;speechSynthesis.cancel();clear();status.textContent='Audio stopped.'};
+if('speechSynthesis'in window){loadVoices();speechSynthesis.addEventListener('voiceschanged',loadVoices)}else{status.textContent='Audio is unavailable in this browser.';vsel.disabled=true}
+addEventListener('pagehide',()=>{stopped=true;if('speechSynthesis'in window)speechSynthesis.cancel();clear()});
+})();
+</script>
+</body>
+</html>

@@ -18,7 +18,7 @@ Today's briefing covers the escalating corporate tensions between OpenAI and Spa
 
 **Why it matters:** The ruling limits the government's ability to use supply chain blacklisting as a tool to pressure AI companies into accepting specific contractual terms regarding model deployment.
 
-**Sapiver Forge interpretation:** This sets a significant legal precedent for how AI labs can challenge government oversight when they refuse to comply with state-mandated restrictions on their technology.
+**Sapiver Forge interpretation:** This ruling could influence how AI companies challenge government blacklisting, although its wider effect will depend on any appeal and subsequent cases.
 
 **Source:** [nytimes.com](https://www.nytimes.com/2026/08/27/technology/anthropic-government-blacklisting-ruling.html) · discovered via Hacker News · confidence 90%
 

@@ -29,6 +29,22 @@
       "privacy": "Runs entirely in the browser; choices are not uploaded or saved.",
       "supervision": "Designed for families to create and tell stories together.",
       "published_date": "2026-08-29"
+    },
+    {
+      "day": 3,
+      "slug": "family-adventure-dice",
+      "title": "Family Adventure Dice",
+      "category": "Family fun",
+      "summary": "Roll a place, a mission and a playful twist to turn an ordinary half-hour into a tiny family adventure.",
+      "path": "/parents/projects/day-003/",
+      "poster_art": "/parents/projects/day-003/poster-art.svg",
+      "social_hook": "ROLL TONIGHT'S FAMILY ADVENTURE",
+      "social_subtitle": "Build Family Adventure Dice with AI",
+      "social_caption": "AI Inquisitive Parents: try building Family Adventure Dice with AI. Roll a place, a mission and a funny twist, then enjoy a small activity together. I made a private browser version—so can you. Try it at https://suite.sapiverpress.co.uk/parents/projects/day-003/ #AIInquisitiveParents #FamilyFun #BuildWithAI",
+      "status": "ready",
+      "privacy": "Runs entirely in the browser; choices are not uploaded or saved.",
+      "supervision": "Designed for families to adapt and enjoy together; grown-ups choose what suits their home and children.",
+      "published_date": "2026-08-30"
     }
   ]
 }

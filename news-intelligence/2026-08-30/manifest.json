@@ -65,8 +65,8 @@
   "stories": [
     {
       "category": "lead",
-      "headline": "Nvidia’s physical AI segment reaches $10B annual revenue",
-      "confirmed_fact": "Nvidia’s physical AI business, which includes robotics and autonomous systems, now generates $10B in annual revenue. Chinese robotics developers remain heavily reliant on Nvidia’s hardware and software stack despite broader export restrictions.",
+      "headline": "Chinese robot makers remain heavily reliant on Nvidia’s physical AI stack",
+      "confirmed_fact": "Nvidia’s physical AI business, which includes robotics and autonomous systems, generates about $10B in annual revenue. Chinese robotics developers remain heavily reliant on Nvidia’s hardware and software stack despite broader export restrictions.",
       "why_it_matters": "The reliance of international robotics firms on a single US-based technology stack highlights the critical role of specialized silicon in the physical automation sector.",
       "interpretation": "The growth of this segment suggests that Nvidia's influence extends well beyond data center LLM training, positioning the company as a foundational layer for global industrial robotics.",
       "confidence": 0.95,
@@ -82,7 +82,7 @@
     {
       "category": "technology",
       "headline": "SpaceX builds in-house foundry to accelerate data center power supply",
-      "confirmed_fact": "SpaceX is establishing an in-house foundry to produce nickel-superalloy turbine blades and vanes. The initiative aims to bypass global supply chain backlogs to bring natural gas turbines for AI data centers online up to 18 months faster.",
+      "confirmed_fact": "SpaceX is laying the groundwork for an in-house foundry to produce nickel-superalloy turbine blades and vanes. The initiative aims to bypass global supply chain backlogs to bring natural gas turbines for AI data centers online up to 18 months faster.",
       "why_it_matters": "Vertical integration of critical hardware components could provide a significant speed advantage for entities managing massive AI infrastructure, such as xAI.",
       "interpretation": "This move indicates that power infrastructure, rather than just compute availability, is becoming a primary bottleneck for large-scale AI deployment.",
       "confidence": 0.9,
@@ -97,7 +97,7 @@
     },
     {
       "category": "technology",
-      "headline": "California passes bill exempting open-source OS from age-verification mandates",
+      "headline": "California Legislature passes open-source OS exemption from age-verification mandates",
       "confirmed_fact": "The California Legislature unanimously passed AB 1856, which explicitly exempts open-source operating systems distributed under permissive or copyleft licenses from mandatory age-verification requirements.",
       "why_it_matters": "The exemption provides legal clarity for open-source projects, preventing them from being burdened by compliance costs that would otherwise be prohibitive for community-led development.",
       "interpretation": "The unanimous vote suggests a legislative recognition of the distinct operational model of open-source software compared to proprietary commercial platforms.",
@@ -132,12 +132,12 @@
   "watch_next": "Monitor the operational ramp-up of SpaceX's turbine foundry and its impact on the deployment timelines of large-scale AI data centers.",
   "social": {
     "date": "2026-08-30",
-    "lead_headline": "Nvidia’s physical AI segment reaches $10B annual revenue",
-    "facebook_post": "Nvidia’s physical AI segment reaches $10B annual revenue\n\nThe reliance of international robotics firms on a single US-based technology stack highlights the critical role of specialized silicon in the physical automation sector.\n\nToday's Sapiver Forge Daily Brief covers 4 developments across AI, technology and business.\n\nhttps://sapiverforge-daily-brief.netlify.app/daily-brief/",
-    "pinterest_title": "Nvidia’s physical AI segment reaches $10B annual revenue",
-    "pinterest_description": "The reliance of international robotics firms on a single US-based technology stack highlights the critical role of specialized silicon in the physical automation sector.\n\nRead today's Sapiver Forge Daily Brief: https://sapiverforge-daily-brief.netlify.app/daily-brief/",
-    "tiktok_caption": "Nvidia’s physical AI segment reaches $10B annual revenue. Today's Sapiver Forge Daily Brief separates what is confirmed from what it might mean. #SapiverForge #AI #Technology #Business",
-    "spoken_script": "Nvidia’s physical AI segment reaches $10B annual revenue. Nvidia’s physical AI business, which includes robotics and autonomous systems, now generates $10B in annual revenue. Chinese robotics developers remain heavily reliant on Nvidia’s hardware and software stack despite broader export restrictions. Why it matters: The reliance of international robotics firms on a single US-based technology stack highlights the critical role of specialized silicon in the physical automation sector. That's one of today's stories in the Sapiver Forge Daily Brief."
+    "lead_headline": "Chinese robot makers remain heavily reliant on Nvidia’s physical AI stack",
+    "facebook_post": "Chinese robot makers remain heavily reliant on Nvidia’s physical AI stack\n\nThe reliance of international robotics firms on a single US-based technology stack highlights the critical role of specialized silicon in the physical automation sector.\n\nToday's Sapiver Forge Daily Brief covers 4 developments across AI, technology and business.\n\nhttps://suite.sapiverpress.co.uk/daily-brief/",
+    "pinterest_title": "Chinese robot makers remain heavily reliant on Nvidia’s physical AI stack",
+    "pinterest_description": "The reliance of international robotics firms on a single US-based technology stack highlights the critical role of specialized silicon in the physical automation sector.\n\nRead today's Sapiver Forge Daily Brief: https://suite.sapiverpress.co.uk/daily-brief/",
+    "tiktok_caption": "Chinese robot makers remain heavily reliant on Nvidia’s physical AI stack. Today's Sapiver Forge Daily Brief separates what is confirmed from what it might mean. #SapiverForge #AI #Technology #Business",
+    "spoken_script": "Chinese robot makers remain heavily reliant on Nvidia’s physical AI stack. Nvidia’s physical AI business, which includes robotics and autonomous systems, generates about $10B in annual revenue. Chinese robotics developers remain heavily reliant on Nvidia’s hardware and software stack despite broader export restrictions. Why it matters: The reliance of international robotics firms on a single US-based technology stack highlights the critical role of specialized silicon in the physical automation sector. That's one of today's stories in the Sapiver Forge Daily Brief."
   },
   "candidate_id": "6588183f8572fd89aa23c71c0be5e68e3999b585299ba810bc173d939c912f32"
 }

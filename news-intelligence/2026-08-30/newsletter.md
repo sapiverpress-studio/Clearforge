@@ -2,9 +2,9 @@
 
 Today's briefing covers the intersection of physical infrastructure and AI, regulatory shifts for open-source software, and the evolving landscape of AI-integrated business models.
 
-## 1. Nvidia’s physical AI segment reaches $10B annual revenue
+## 1. Chinese robot makers remain heavily reliant on Nvidia’s physical AI stack
 
-**Confirmed:** Nvidia’s physical AI business, which includes robotics and autonomous systems, now generates $10B in annual revenue. Chinese robotics developers remain heavily reliant on Nvidia’s hardware and software stack despite broader export restrictions.
+**Confirmed:** Nvidia’s physical AI business, which includes robotics and autonomous systems, generates about $10B in annual revenue. Chinese robotics developers remain heavily reliant on Nvidia’s hardware and software stack despite broader export restrictions.
 
 **Why it matters:** The reliance of international robotics firms on a single US-based technology stack highlights the critical role of specialized silicon in the physical automation sector.
 
@@ -14,7 +14,7 @@ Today's briefing covers the intersection of physical infrastructure and AI, regu
 
 ## 2. SpaceX builds in-house foundry to accelerate data center power supply
 
-**Confirmed:** SpaceX is establishing an in-house foundry to produce nickel-superalloy turbine blades and vanes. The initiative aims to bypass global supply chain backlogs to bring natural gas turbines for AI data centers online up to 18 months faster.
+**Confirmed:** SpaceX is laying the groundwork for an in-house foundry to produce nickel-superalloy turbine blades and vanes. The initiative aims to bypass global supply chain backlogs to bring natural gas turbines for AI data centers online up to 18 months faster.
 
 **Why it matters:** Vertical integration of critical hardware components could provide a significant speed advantage for entities managing massive AI infrastructure, such as xAI.
 
@@ -22,7 +22,7 @@ Today's briefing covers the intersection of physical infrastructure and AI, regu
 
 **Source:** [Ann Davis Vaughan/The Information](https://www.theinformation.com/articles/exclusive-spacex-lays-groundwork-turbine-blade-factory-solve-data-center-power-crunch) · discovered via Techmeme · confidence 90%
 
-## 3. California passes bill exempting open-source OS from age-verification mandates
+## 3. California Legislature passes open-source OS exemption from age-verification mandates
 
 **Confirmed:** The California Legislature unanimously passed AB 1856, which explicitly exempts open-source operating systems distributed under permissive or copyleft licenses from mandatory age-verification requirements.
 

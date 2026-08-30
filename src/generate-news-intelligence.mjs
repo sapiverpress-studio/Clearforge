@@ -9,7 +9,7 @@ const ROOT = process.cwd();
 const DATE = String(process.env.NEWS_INTELLIGENCE_DATE || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date())).trim();
-const BASE = String(process.env.BLOG_BASE_URL || "https://sapiverforge-daily-brief.netlify.app").replace(/\/$/, "");
+const BASE = String(process.env.BLOG_BASE_URL || "https://suite.sapiverpress.co.uk").replace(/\/$/, "");
 const OUT = path.join(ROOT, "news-intelligence", DATE);
 const BRIDGE = path.join(ROOT, "bridge", "news-intelligence", "latest");
 

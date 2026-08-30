@@ -1,0 +1,86 @@
+Here are the evidence notes for the morning briefing:
+
+---
+
+### **Recommended / Strongest In-Scope Candidates**
+
+#### **Candidate [1]: Nvidia’s physical AI business hits $10B as Chinese robot makers rely on its stack**
+* **Confirmed:** *The Wall Street Journal* (Raffaele Huang) reports that Nvidia’s physical AI business (covering robotics, autonomous vehicles, and drones) generates ~$10B in annual revenue out of its $303B total trailing 12-month revenue. CEO Jensen Huang projects this segment will grow 10-fold to $100B over the next decade. Chinese robotics developers (e.g., Unitree, Fourier) heavily depend on Nvidia hardware (like Jetson chips), software, and open-weight models (e.g., GR00T, Cosmos). Current US export restrictions block high-end data center GPUs to China but leave trade open for robotics and automotive silicon.
+* **Caveats:** The $10B run-rate figure was previously disclosed by Jensen Huang in July podcast appearances; the news hook here is the WSJ’s investigation into the degree of Chinese robotic sector reliance on Nvidia’s stack despite broader tech export controls.
+* **Publication Suitability:** **Suitable for publication today.**
+
+---
+
+#### **Candidate [10]: California Legislature passes AB 1856 exempting open-source OSes from age-verification law**
+* **Confirmed:** The California Legislature unanimously passed Assembly Bill 1856 (Assembly 69-0, Senate 39-0). The bill amends 2025’s Digital Age Assurance Act (AB 1043) by redefining "operating system provider" to explicitly exempt open-source operating systems distributed under permissive or copyleft licenses (such as GPL, MIT, BSD, and Apache). This excludes Linux distributions (Debian, Fedora, Ubuntu) and BSD projects from mandatory account-setup age verification. Commercial proprietary OSes (Windows, macOS, iOS, Android) remain in scope. The bill now awaits Governor Gavin Newsom's signature.
+* **Caveats:** Civil liberties groups (e.g., EFF) note that while AB 1856 resolves open-source compliance fears, it expands age-gating mandates for web browsers and online platform operators.
+* **Publication Suitability:** **Suitable for publication today.**
+
+---
+
+#### **Candidate [15]: SpaceX building in-house turbine blade foundry to solve AI data center power bottlenecks**
+* **Confirmed:** *The Information* reported—corroborated by SpaceX job listings in Bastrop, Texas, and public statements from Elon Musk—that SpaceX is building an in-house "Blades and Vanes Foundry". The facility will produce nickel-superalloy castings for large natural gas turbines used to power AI data centers (including xAI’s Colossus site). Musk stated in-house casting could bring gas turbine deployments online up to 18 months faster by bypassing global foundry backlogs.
+* **Caveats:** Superalloy hot-section casting is technically complex, with only three global suppliers currently dominating the market. Operational timelines for full production ramp-up remain unverified.
+* **Publication Suitability:** **Suitable for publication today.**
+
+---
+
+#### **Candidate [16]: OpenAI terminating AI model contract with SpaceX-owned Cursor**
+* **Confirmed:** OpenAI officially announced plans to wind down its agreement providing AI models to coding tool Cursor (recently acquired by SpaceX). OpenAI set a contract termination date of November 12, 2026, citing a lack of confidence that SpaceX will adhere to its terms of service due to prior contract disputes with Elon Musk entities. Cursor co-founder Michael Truell stated OpenAI models currently account for ~5% of Cursor’s traffic.
+* **Caveats:** Cursor operates as a multi-model IDE, so users retain access to non-OpenAI models (Anthropic, xAI, open-weight models). The shutoff is scheduled for November 2026.
+* **Publication Suitability:** **Suitable for publication today.**
+
+---
+
+#### **Candidate [17]: Anthropic adjusting Claude Code limits, resulting in net 17% reduction from promo levels**
+* **Confirmed:** Anthropic (@claudedevs) announced that starting September 14, 2026, baseline weekly limits for Claude Code will permanently increase by 25% for Pro, Max, Team, and Enterprise plans. However, because subscribers currently have a temporary 50% promotional boost active through September 13, the transition to the permanent 25% baseline will result in a net 17% reduction in weekly usage capacity compared to current levels.
+* **Caveats:** Anthropic initially framed the move strictly as a "25% permanent increase," leading to community backlash and Community Notes before Anthropic clarified the net step-down from promotional levels in follow-up posts.
+* **Publication Suitability:** **Suitable for publication today.**
+
+---
+
+#### **Candidate [5]: Grindr CEO pushes $350/month premium subscription tier**
+* **Confirmed:** *Financial Times* reporting details Grindr CEO George Arison’s monetization strategy, focusing on high-tier subscription plans including "Edge," an AI-assisted tier priced at up to $349.99/month. Grindr reported ~1.4 million paying users among 15 million monthly active users in Q2 2026.
+* **Caveats:** The $350 pricing point was disclosed during Q2 earnings testing in early August; the FT piece synthesizes these pricing experiments into a broader executive profile.
+* **Publication Suitability:** **Suitable for publication today.**
+
+---
+
+#### **Candidate [6]: Glassdoor study shows Gen X workers more positive on workplace AI than Gen Z**
+* **Confirmed:** *Bloomberg* reported on an analysis of Glassdoor employee review data showing generational disparities in workplace AI sentiment: 47% of Gen X employees wrote positively about company AI implementation, compared with 40% of millennials and 33% of Gen Z workers.
+* **Caveats:** Data relies on voluntary reviews posted to Glassdoor, introducing potential self-selection bias compared to scientific random polling.
+* **Publication Suitability:** **Suitable for publication today.**
+
+---
+
+#### **Candidate [8]: Dance music producers deploy ear-training to call out Suno AI-generated tracks**
+* **Confirmed:** *The Verge* reported on a grassroots effort within the electronic dance music (EDM) community, led by producers Max "H4RRIS" Harris and Nihil Young, publicly calling out tracks suspected of using AI music generators like Suno. Producers identify artifacts such as high-frequency background noise and synchronized multi-element stuttering.
+* **Caveats:** Informal auditory detection is not definitive technical proof, and false accusations are possible when assessing polished studio mixes.
+* **Publication Suitability:** **Suitable for publication today.**
+
+---
+
+#### **Candidate [9]: Open-source `vphone-cli` enables virtual iPhone instances on Apple Silicon**
+* **Confirmed:** Developer Lakr233 released `vphone-cli` on GitHub. The command-line tool leverages Apple’s native `Virtualization.framework` (derived from Private Cloud Compute research VMs) to instantiate and run virtualized iOS firmware on Apple Silicon Macs.
+* **Caveats:** The tool relies on reverse-engineered research VM workflows; virtual instances do not support Apple ID, App Store connectivity, or standard cellular/hardware APIs out of the box.
+* **Publication Suitability:** **Suitable for publication today** (as a developer/research release note).
+
+---
+
+#### **Candidate [12]: AI data center growth driving boom for acoustic engineering consultants**
+* **Confirmed:** *Bloomberg* published an industry report on how massive expansion of AI data centers is spurring demand for acoustic engineering consultants to measure and mitigate continuous low-frequency noise from industrial cooling units and backup power systems.
+* **Caveats:** Industry trend report based on qualitative interviews and local zoning disputes rather than single regulatory actions.
+* **Publication Suitability:** **Suitable for publication today.**
+
+---
+
+### **Out of Scope / Stale / Unsuitable Candidates**
+
+* **Candidate [0]:** *OUT OF SCOPE* (DHS law enforcement summonses; marked out of scope).
+* **Candidate [2]:** *Not Suitable* (Newsletter opinion essay; lacks breaking news or primary empirical data).
+* **Candidate [3]:** *OUT OF SCOPE* (Marked out of scope).
+* **Candidate [4]:** *OUT OF SCOPE* (Marked out of scope).
+* **Candidate [7]:** *OUT OF SCOPE* (Marked out of scope).
+* **Candidate [11]:** *OUT OF SCOPE* (Marked out of scope).
+* **Candidate [13]:** *OUT OF SCOPE* (Marked out of scope).
+* **Candidates [14], [18], [19]:** *Stale / Out of Date* (Reuters items published in 2025 and earlier months in 2026; archived wire reports).

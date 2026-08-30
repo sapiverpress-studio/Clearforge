@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn how APIs let software systems request data and capabilities from one another, including endpoints, HTTP methods, requests, responses, JSON, authentication and AI model APIs.">
+<title>Sapiver Learn — Day 10: How APIs Connect Software</title>
+<style>
+:root{--bg:#0f1115;--panel:#171a21;--panel-2:#1e232c;--text:#f3f5f7;--muted:#aeb7c2;--accent:#ff8a3d;--accent-soft:#3a2418;--good:#51c878;--bad:#ff6b6b;--border:#303744;--max:880px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}main{width:min(var(--max),calc(100% - 28px));margin:0 auto;padding:28px 0 60px}a{color:var(--accent)}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:22px}.brand{font-weight:700}.brand a{color:inherit;text-decoration:none}.pill{display:inline-block;padding:5px 10px;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:.9rem}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:22px;margin:16px 0}h1,h2,h3{line-height:1.25}h1{font-size:clamp(1.9rem,5vw,3rem);margin:.2rem 0 1rem}h2{font-size:1.35rem;margin-top:0}h3{font-size:1.05rem}p{margin:.75rem 0}code{background:var(--panel-2);padding:.15rem .35rem;border-radius:6px;overflow-wrap:anywhere}pre{background:var(--panel-2);border:1px solid var(--border);border-radius:12px;padding:14px;overflow:auto;white-space:pre-wrap}
+.callout{border-left:4px solid var(--accent);background:var(--accent-soft);padding:14px 16px;border-radius:10px;margin:18px 0}.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;margin:18px 0 8px}button,select{border:1px solid var(--border);background:var(--panel-2);color:var(--text);padding:11px 15px;border-radius:10px;font-size:1rem}button{cursor:pointer}.primary{background:var(--accent);color:#1a120c;border-color:var(--accent);font-weight:700}.voice-wrap{display:flex;flex-direction:column;gap:4px;min-width:min(100%,260px);flex:1 1 260px}.voice-wrap label,.muted{color:var(--muted)}.voice-wrap select{width:100%}
+.flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:16px 0}.flow>div,.term{background:var(--panel-2);border:1px solid var(--border);border-radius:10px;padding:12px}.flow>div{text-align:center}.terms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.term strong{display:block}
+.question{margin:20px 0;padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--panel-2)}.option{display:block;width:100%;text-align:left;margin:8px 0;background:#202632}.option.correct{border-color:var(--good);background:#163120}.option.wrong{border-color:var(--bad);background:#351c1c}.feedback{min-height:1.4em;margin-top:10px;font-weight:600}.resource-link{display:inline-block;margin-top:8px;font-weight:600;text-decoration:none}.score{font-size:1.15rem;font-weight:700}.progress-row{display:flex;flex-wrap:wrap;gap:10px 18px;color:var(--muted);margin:.5rem 0 1rem}
+.speech-active{background:var(--accent-soft);outline:2px solid var(--accent);outline-offset:4px;border-radius:6px}::highlight(sapiver-reading){background-color:rgba(255,138,61,.38);color:var(--text)}footer{margin-top:28px;color:var(--muted);font-size:.92rem}
+@media(max-width:700px){.terms,.flow{grid-template-columns:1fr}.controls>button{flex:1 1 130px}.voice-wrap{flex-basis:100%}}
+</style>
+</head>
+<body><main>
+<div class="topbar"><div class="brand"><a href="../../">Sapiver Learn</a></div><div class="pill">Phase 1 · Day 10 · APIs & Software Integration</div></div>
+
+<section>
+<h1>How APIs connect software</h1>
+<p class="muted">Estimated learning time: 8–10 minutes.</p>
+<div class="controls"><button class="primary" id="playBtn">▶ Listen</button><button id="pauseBtn">⏸ Pause</button><button id="resumeBtn">▶ Resume</button><button id="stopBtn">■ Stop</button><div class="voice-wrap"><label for="voiceSelect">Voice</label><select id="voiceSelect"><option>Loading voices…</option></select></div></div>
+<div id="audioStatus" class="muted">Ready to listen. Speed: 1.00×.</div>
+<div class="callout"><strong>Core mental model:</strong><br>An API is a defined interface that lets one piece of software request data or capabilities from another. The caller sends a request in an agreed format; the API processes it and returns a response. The contract matters more than the implementation hidden behind it.</div>
+</section>
+
+<section id="lesson">
+<div class="card"><h2>1. API means Application Programming Interface</h2><p>An <strong>API</strong> is an interface designed for software to interact with software.</p><p>It defines what operations are available, what inputs are expected, what outputs can be returned and what rules the caller must follow.</p><p>APIs exist in many forms. Today's lesson focuses mainly on web APIs, where applications communicate over HTTP.</p></div>
+
+<div class="card"><h2>2. An endpoint identifies where a request goes</h2><p>A web API usually exposes one or more <strong>endpoints</strong>.</p><p>An endpoint is a specific address, often a URL path, that represents a resource or operation.</p><p>For example, an imaginary weather service might expose <code>/forecast</code> and <code>/locations</code>.</p><p>The exact endpoint names are defined by the API provider; they are not universal conventions.</p></div>
+
+<div class="card"><h2>3. HTTP methods express the intended operation</h2><p>HTTP requests include a method that communicates the intended action.</p><p><code>GET</code> is used to retrieve a representation of a resource. <code>POST</code> submits data to a resource and often causes processing or a change in server state.</p><p>Other common methods include <code>PUT</code>, <code>PATCH</code> and <code>DELETE</code>.</p><p>The method is part of the API contract: a URL alone does not fully describe a request.</p></div>
+
+<div class="card"><h2>4. A request carries more than a URL</h2><p>An HTTP API request can include a method, URL, headers, query parameters and sometimes a request body.</p><p><strong>Headers</strong> carry metadata such as content type or authentication information.</p><p><strong>Query parameters</strong> are values attached to a URL, while a request body can carry larger or more structured input.</p><p>Different APIs define which fields are required and where they belong.</p></div>
+
+<div class="card"><h2>5. JSON is a common API data format</h2><p>Many web APIs exchange structured data using JSON, the format introduced on Day 4.</p><pre><code>{
+  "city": "Leeds",
+  "units": "metric"
+}</code></pre><p>The API documentation defines what keys are allowed, which are required and what value types they accept.</p><p>JSON is common, but APIs can use other formats too.</p></div>
+
+<div class="card"><h2>6. Responses contain status, headers and usually data</h2><p>The server returns an HTTP response after processing the request.</p><p>The response includes a status code. A <code>200 OK</code> response indicates success, while other codes describe creation, client errors or server errors.</p><p>The response may also contain headers and a body containing JSON, text, binary data or another representation.</p><p>Good application code checks the response status rather than assuming every request succeeded.</p></div>
+
+<div class="card"><h2>7. Authentication controls who may use an API</h2><p>Many APIs require credentials before accepting a request.</p><p>Common mechanisms include API keys, access tokens and OAuth-based flows.</p><p>Credentials should be treated as secrets. Putting a private API key directly into browser-delivered JavaScript can expose it to users.</p><p>A common architecture is therefore browser → your server → external API, with the secret stored server-side.</p></div>
+
+<div class="card"><h2>8. Errors are normal engineering cases</h2><p>Network calls can fail because of invalid input, missing authentication, rate limits, unavailable services, timeouts or connectivity problems.</p><p>Robust software handles these possibilities deliberately.</p><p>That can mean validating input, checking status codes, retrying only when appropriate, recording useful diagnostics and showing a clear fallback.</p><p>An API integration is not complete just because the successful case works.</p></div>
+
+<div class="card"><h2>9. AI applications commonly call models through APIs</h2><p>An AI model can be offered as an API capability.</p><p>Your application sends model input, such as instructions and context, to an API endpoint. The provider runs inference and returns output that your application can process.</p><p>The model API does not automatically control your whole application. Your code still decides when to make the request, what information to send, what to do with the response and whether any resulting action is permitted.</p></div>
+
+<div class="card"><h2>Worked example: a website that summarises text</h2><p>Imagine a website where a user pastes a report and presses <strong>Summarise</strong>.</p><div class="flow"><div>User submits report</div><div>Server validates input</div><div>Server calls model API</div><div>API returns response</div><div>Website displays summary</div></div><p>The server might send a <code>POST</code> request containing the prompt and report text as structured data. The model provider performs inference and returns a structured response.</p><p>The website checks that response, extracts the output and displays it. If the API rejects the request or times out, the application needs a separate error path.</p><p>This connects Days 5, 8 and 9: deterministic software controls the workflow, the language model generates content, and the prompt becomes part of the API request.</p></div>
+
+<div class="card"><h2>Why this matters</h2><p>APIs are one of the main ways separate software systems are composed into useful products.</p><p>Weather data, payments, maps, email services, databases and AI models can all be exposed through APIs.</p><p>Understanding requests, responses, authentication and failure handling lets you see an AI feature as an ordinary software integration rather than a mysterious capability embedded inside a page.</p></div>
+
+<div class="card"><h2>Key terms</h2><div class="terms">
+<div class="term"><strong>API</strong>A defined interface that allows software systems to interact.</div>
+<div class="term"><strong>Endpoint</strong>A specific API address representing a resource or operation.</div>
+<div class="term"><strong>HTTP method</strong>A request method such as GET or POST describing the intended operation.</div>
+<div class="term"><strong>Request</strong>The message a client sends to an API.</div>
+<div class="term"><strong>Response</strong>The message the server returns after processing a request.</div>
+<div class="term"><strong>Status code</strong>A numeric HTTP result describing the outcome of a request.</div>
+<div class="term"><strong>Authentication</strong>The process of establishing that a caller may access a capability.</div>
+<div class="term"><strong>API key</strong>A credential some APIs use to identify or authorise a caller.</div>
+</div></div>
+</section>
+
+<section class="card" id="quiz">
+<h2>Day 10 knowledge check</h2>
+<p class="muted">Six questions. Your progress is saved in this browser when storage is available.</p>
+
+<div class="question" data-correct="B" data-explanation="An API is a defined software interface: it specifies how another program can request supported data or capabilities." data-resource="https://developer.mozilla.org/en-US/docs/Glossary/API"><h3>1. What is the best description of an API?</h3><button class="option" data-value="A">A. A programming language used only for AI</button><button class="option" data-value="B">B. A defined interface that lets software interact with another system</button><button class="option" data-value="C">C. A permanent database backup</button><button class="option" data-value="D">D. A type of browser window</button><div class="feedback"></div></div>
+
+<div class="question" data-correct="A" data-explanation="GET requests a representation of a resource and is intended for retrieval." data-resource="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/GET"><h3>2. Which HTTP method is normally used to retrieve a resource?</h3><button class="option" data-value="A">A. GET</button><button class="option" data-value="B">B. POST</button><button class="option" data-value="C">C. DELETE</button><button class="option" data-value="D">D. PATCH</button><div class="feedback"></div></div>
+
+<div class="question" data-correct="D" data-explanation="An HTTP request can include a method, URL, headers, query parameters and, where appropriate, a body." data-resource="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Messages"><h3>3. Which combination can be part of an HTTP API request?</h3><button class="option" data-value="A">A. Only a filename</button><button class="option" data-value="B">B. Only a status code</button><button class="option" data-value="C">C. Only a browser tab title</button><button class="option" data-value="D">D. Method, URL, headers and sometimes a body</button><div class="feedback"></div></div>
+
+<div class="question" data-correct="C" data-explanation="HTTP status codes describe the outcome of a request. 200 OK is a successful response code." data-resource="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/200"><h3>4. What does an HTTP status code tell the client?</h3><button class="option" data-value="A">A. How many model parameters exist</button><button class="option" data-value="B">B. Which programming language the server uses internally</button><button class="option" data-value="C">C. The outcome category of the HTTP request</button><button class="option" data-value="D">D. The user's screen resolution</button><div class="feedback"></div></div>
+
+<div class="question" data-correct="B" data-explanation="A private API key embedded in browser JavaScript can be exposed. Secrets are normally kept in a protected server-side environment or secret store." data-resource="https://developer.mozilla.org/en-US/docs/Web/Security"><h3>5. Why should a private API key usually not be embedded directly in browser JavaScript?</h3><button class="option" data-value="A">A. Browsers cannot send HTTP requests</button><button class="option" data-value="B">B. Users may be able to inspect and extract the secret</button><button class="option" data-value="C">C. API keys only work in databases</button><button class="option" data-value="D">D. JavaScript cannot represent text</button><div class="feedback"></div></div>
+
+<div class="question" data-correct="C" data-explanation="Application code still controls when the model API is called, what context is sent, how the response is handled and which actions are permitted." data-resource="https://platform.openai.com/docs/quickstart"><h3>6. Which statement best describes an application using an AI model API?</h3><button class="option" data-value="A">A. The API automatically becomes the whole application</button><button class="option" data-value="B">B. The model automatically receives every private file the user owns</button><button class="option" data-value="C">C. Application code sends input to the API and decides how to handle the returned output</button><button class="option" data-value="D">D. Using an API removes the need for authentication and error handling</button><div class="feedback"></div></div>
+
+<p class="score" id="score">Score: 0 / 6</p>
+<div class="progress-row"><span id="answeredStatus">Answered: 0 / 6</span><span id="bestStatus">Best: —</span><span id="attemptStatus">Completed attempts: 0</span></div>
+<button id="resetBtn">Reset quiz</button>
+</section>
+
+<section class="callout"><strong>Next lesson:</strong><br>Day 11 — Embeddings and semantic similarity: how meaning can be represented as vectors and used to find related information.</section>
+
+<footer>Sapiver Learn · Phase 1 · Day 10<br><a href="../../">← Back to Sapiver Learn</a></footer>
+</main>
+
+<script>
+(() => {
+const STORAGE_KEY='sapiverLearnDay010', VOICE_KEY='sapiverLearnVoice';
+const questions=[...document.querySelectorAll('.question')], scoreEl=document.getElementById('score'), answeredStatus=document.getElementById('answeredStatus'), bestStatus=document.getElementById('bestStatus'), attemptStatus=document.getElementById('attemptStatus');
+let state=new Map(), progress={completed:false,currentScore:0,lastScore:null,bestScore:null,attempts:0,answers:{}}, storageAvailable=true, countedThisCompletion=false;
+
+function renderFeedback(q,isCorrect){
+  const feedback=q.querySelector('.feedback');
+  if(isCorrect){feedback.innerHTML='<span style="color:var(--good)">Correct.</span>';return}
+  let html='<span style="color:var(--bad)">Not quite.</span> '+(q.dataset.explanation||'Review this concept and try again.');
+  if(q.dataset.resource) html+='<br><a class="resource-link" href="'+q.dataset.resource+'" target="_blank" rel="noopener noreferrer">Read more about this concept ↗</a>';
+  feedback.innerHTML=html;
+}
+function readProgress(){
+  try{
+    const raw=localStorage.getItem(STORAGE_KEY); if(!raw)return;
+    progress=Object.assign(progress,JSON.parse(raw)||{});
+    Object.entries(progress.answers||{}).forEach(([index,answer])=>{
+      const i=Number(index), q=questions[i]; if(!q)return;
+      state.set(i,answer.correct===true);
+      const buttons=[...q.querySelectorAll('.option')], chosen=buttons.find(b=>b.dataset.value===answer.value);
+      if(chosen){chosen.classList.add(answer.correct?'correct':'wrong'); if(!answer.correct){const right=buttons.find(b=>b.dataset.value===q.dataset.correct); if(right)right.classList.add('correct')}}
+      renderFeedback(q,answer.correct===true);
+    });
+    countedThisCompletion=Boolean(progress.completed&&Object.keys(progress.answers||{}).length===questions.length);
+  }catch(e){storageAvailable=false}
+}
+function saveProgress(){if(!storageAvailable)return;try{localStorage.setItem(STORAGE_KEY,JSON.stringify(progress))}catch(e){storageAvailable=false}}
+function updateScore(){
+  let correct=0; state.forEach(v=>{if(v===true)correct++});
+  const answered=state.size; progress.currentScore=correct; progress.completed=answered===questions.length;
+  scoreEl.textContent=`Score: ${correct} / ${questions.length}`; answeredStatus.textContent=`Answered: ${answered} / ${questions.length}`;
+  if(progress.completed&&!countedThisCompletion){progress.attempts=Number(progress.attempts||0)+1;progress.lastScore=correct;progress.bestScore=progress.bestScore==null?correct:Math.max(Number(progress.bestScore),correct);countedThisCompletion=true}
+  bestStatus.textContent=progress.bestScore==null?'Best: —':`Best: ${progress.bestScore} / ${questions.length}`;
+  attemptStatus.textContent=`Completed attempts: ${Number(progress.attempts||0)}`; saveProgress();
+}
+questions.forEach((q,index)=>{const buttons=[...q.querySelectorAll('.option')];buttons.forEach(btn=>btn.addEventListener('click',()=>{buttons.forEach(b=>b.classList.remove('correct','wrong'));const ok=btn.dataset.value===q.dataset.correct;if(ok)btn.classList.add('correct');else{btn.classList.add('wrong');const right=buttons.find(b=>b.dataset.value===q.dataset.correct);if(right)right.classList.add('correct')}state.set(index,ok);progress.answers[index]={value:btn.dataset.value,correct:ok};renderFeedback(q,ok);updateScore()}))});
+document.getElementById('resetBtn').addEventListener('click',()=>{state=new Map();progress.answers={};progress.currentScore=0;progress.completed=false;countedThisCompletion=false;questions.forEach(q=>{q.querySelectorAll('.option').forEach(b=>b.classList.remove('correct','wrong'));q.querySelector('.feedback').textContent=''});updateScore()});
+readProgress();updateScore();
+
+const lessonRoot=document.getElementById('lesson'), audioStatus=document.getElementById('audioStatus'), playBtn=document.getElementById('playBtn'), pauseBtn=document.getElementById('pauseBtn'), resumeBtn=document.getElementById('resumeBtn'), stopBtn=document.getElementById('stopBtn'), voiceSelect=document.getElementById('voiceSelect'), prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let englishVoices=[], selectedVoice=null, utterance=null, speechUnits=[], currentSpeechIndex=0, speechStopped=true, speechPaused=false, activeBlock=null;
+
+function loadSavedVoice(){try{return localStorage.getItem(VOICE_KEY)||''}catch(e){return ''}}
+function saveVoice(name){try{localStorage.setItem(VOICE_KEY,name)}catch(e){}}
+function populateVoices(){
+  if(!('speechSynthesis' in window))return;
+  englishVoices=speechSynthesis.getVoices().filter(v=>/^en(?:-|_)/i.test(v.lang||'')).sort((a,b)=>{const l=(a.lang||'').localeCompare(b.lang||'');return l||a.name.localeCompare(b.name)});
+  voiceSelect.innerHTML='';
+  if(!englishVoices.length){const o=document.createElement('option');o.value='';o.textContent='Browser default voice';voiceSelect.appendChild(o);selectedVoice=null;return}
+  englishVoices.forEach(v=>{const o=document.createElement('option');o.value=v.name;o.textContent=`${v.name} (${v.lang})`;voiceSelect.appendChild(o)});
+  const saved=loadSavedVoice();selectedVoice=englishVoices.find(v=>v.name===saved)||englishVoices.find(v=>v.default)||englishVoices[0];voiceSelect.value=selectedVoice.name;
+}
+voiceSelect.addEventListener('change',()=>{selectedVoice=englishVoices.find(v=>v.name===voiceSelect.value)||null;if(selectedVoice){saveVoice(selectedVoice.name);audioStatus.textContent=`Voice: ${selectedVoice.name}. Speed: 1.00×.`}});
+
+function sentenceSegments(text){
+  const results=[];
+  if(window.Intl&&Intl.Segmenter){for(const item of new Intl.Segmenter('en',{granularity:'sentence'}).segment(text)){const raw=item.segment,leading=raw.length-raw.trimStart().length,trailing=raw.length-raw.trimEnd().length,spoken=raw.trim();if(spoken)results.push({text:spoken,start:item.index+leading,end:item.index+raw.length-trailing})}return results}
+  const pattern=/[^.!?]+(?:[.!?]+|$)/g;let match;while((match=pattern.exec(text))!==null){const raw=match[0],leading=raw.length-raw.trimStart().length,trailing=raw.length-raw.trimEnd().length,spoken=raw.trim();if(spoken)results.push({text:spoken,start:match.index+leading,end:match.index+raw.length-trailing})}return results;
+}
+function textNodesFor(element){const walker=document.createTreeWalker(element,NodeFilter.SHOW_TEXT),nodes=[];let node;while((node=walker.nextNode()))nodes.push(node);return nodes}
+function rangeForOffsets(element,start,end){const nodes=textNodesFor(element);let offset=0,startNode=null,startOffset=0,endNode=null,endOffset=0;for(const node of nodes){const next=offset+node.nodeValue.length;if(startNode===null&&start>=offset&&start<=next){startNode=node;startOffset=Math.max(0,Math.min(node.nodeValue.length,start-offset))}if(endNode===null&&end>=offset&&end<=next){endNode=node;endOffset=Math.max(0,Math.min(node.nodeValue.length,end-offset));break}offset=next}if(!startNode||!endNode)return null;const range=document.createRange();range.setStart(startNode,startOffset);range.setEnd(endNode,endOffset);return range}
+function buildSpeechUnits(){const units=[];[...lessonRoot.querySelectorAll('h2,p,pre,.term,.flow > div')].forEach(block=>sentenceSegments(block.textContent||'').forEach(s=>units.push({text:s.text,block,range:rangeForOffsets(block,s.start,s.end)})));return units}
+function clearReadingHighlight(){if(window.CSS&&CSS.highlights)CSS.highlights.delete('sapiver-reading');if(activeBlock)activeBlock.classList.remove('speech-active');activeBlock=null}
+function highlightSpeechUnit(unit){clearReadingHighlight();activeBlock=unit.block;if(window.CSS&&CSS.highlights&&window.Highlight&&unit.range)CSS.highlights.set('sapiver-reading',new Highlight(unit.range));else unit.block.classList.add('speech-active');const rect=unit.block.getBoundingClientRect();if(rect.top<window.innerHeight*.18||rect.bottom>window.innerHeight*.78)unit.block.scrollIntoView({behavior:prefersReducedMotion?'auto':'smooth',block:'center'})}
+function speakCurrentUnit(){
+  if(speechStopped)return;
+  if(currentSpeechIndex>=speechUnits.length){speechStopped=true;speechPaused=false;clearReadingHighlight();audioStatus.textContent='Lesson audio finished.';return}
+  const unit=speechUnits[currentSpeechIndex];highlightSpeechUnit(unit);utterance=new SpeechSynthesisUtterance(unit.text);utterance.rate=1.00;
+  if(selectedVoice){utterance.voice=selectedVoice;utterance.lang=selectedVoice.lang||'en'}else utterance.lang='en';
+  utterance.onstart=()=>{if(!speechStopped)audioStatus.textContent=`Playing… ${currentSpeechIndex+1} of ${speechUnits.length} · 1.00×`};
+  utterance.onend=()=>{if(!speechStopped){currentSpeechIndex+=1;speakCurrentUnit()}};
+  utterance.onerror=event=>{if(speechStopped||event.error==='interrupted'||event.error==='canceled')return;speechStopped=true;speechPaused=false;clearReadingHighlight();audioStatus.textContent='Audio playback could not continue.'};
+  speechSynthesis.speak(utterance);
+}
+function startLessonAudio(){speechSynthesis.cancel();clearReadingHighlight();speechUnits=buildSpeechUnits();currentSpeechIndex=0;speechStopped=false;speechPaused=false;if(!speechUnits.length){speechStopped=true;audioStatus.textContent='No lesson text was available to read.';return}setTimeout(speakCurrentUnit,60)}
+if(!('speechSynthesis' in window)){audioStatus.textContent='Audio is unavailable in this browser.';[playBtn,pauseBtn,resumeBtn,stopBtn].forEach(b=>b.disabled=true);voiceSelect.disabled=true}else{populateVoices();speechSynthesis.addEventListener('voiceschanged',populateVoices);playBtn.addEventListener('click',startLessonAudio);pauseBtn.addEventListener('click',()=>{if(!speechStopped&&!speechPaused){speechSynthesis.pause();speechPaused=true;audioStatus.textContent='Audio paused.'}});resumeBtn.addEventListener('click',()=>{if(!speechStopped&&speechPaused){speechSynthesis.resume();speechPaused=false}});stopBtn.addEventListener('click',()=>{speechStopped=true;speechPaused=false;speechSynthesis.cancel();clearReadingHighlight();audioStatus.textContent='Audio stopped.'});window.addEventListener('pagehide',()=>{speechStopped=true;speechSynthesis.cancel();clearReadingHighlight()})}
+})();
+</script>
+</body>
+</html>

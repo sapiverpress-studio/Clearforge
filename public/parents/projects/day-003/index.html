@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#123b33">
+  <title>Family Adventure Dice | AI Inquisitive Parents</title>
+  <style>
+    :root{--ink:#173c35;--green:#123b33;--gold:#c9a75d;--cream:#fff8e9;--mint:#dcebe5;--coral:#e98268;--white:#fff;--shadow:0 18px 50px rgba(18,59,51,.15)}
+    *{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#f4ead4,#fff8e9 45%,#e7f1ed);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}.wrap{width:min(960px,92vw);margin:auto;padding:24px 0 56px}.brand{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:30px}.brand a{color:var(--ink);text-decoration:none;font-weight:800}.tag{font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;color:#53726a}.hero{background:var(--green);color:white;border-radius:28px;padding:clamp(28px,6vw,60px);position:relative;overflow:hidden;box-shadow:var(--shadow)}.hero:after{content:"";position:absolute;width:230px;height:230px;border:45px solid rgba(228,196,118,.13);border-radius:50%;right:-80px;top:-90px}.eyebrow{color:#e4c476;font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:.8rem}.hero h1{font-family:Georgia,serif;font-size:clamp(2.3rem,7vw,4.6rem);line-height:.94;max-width:720px;margin:.35em 0 .3em}.hero p{font-size:clamp(1rem,2.5vw,1.25rem);line-height:1.55;max-width:650px;margin:0}.panel{background:rgba(255,255,255,.88);backdrop-filter:blur(8px);border:1px solid rgba(201,167,93,.45);border-radius:28px;padding:clamp(22px,5vw,44px);margin-top:24px;box-shadow:var(--shadow)}.controls{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px}label{font-weight:750;font-size:.9rem}select{width:100%;margin-top:7px;padding:13px;border:1px solid #aabdb7;border-radius:12px;background:white;color:var(--ink);font:inherit}.dice{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.die{min-height:175px;background:var(--cream);border:2px solid var(--gold);border-radius:20px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .22s}.die.rolling{transform:rotate(2deg) scale(.97)}.icon{font-size:2.2rem}.die small{color:#617a73;text-transform:uppercase;letter-spacing:.14em;font-weight:800}.die strong{font-family:Georgia,serif;font-size:clamp(1.25rem,3.5vw,1.8rem);line-height:1.1}.result{margin:20px 0 0;padding:18px 20px;border-radius:16px;background:var(--mint);font-size:1.05rem;line-height:1.55}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}button{border:0;border-radius:999px;padding:14px 22px;font:inherit;font-weight:850;cursor:pointer}.primary{background:var(--coral);color:#1e2c29;box-shadow:0 8px 0 #b85342}.primary:active{transform:translateY(5px);box-shadow:0 3px 0 #b85342}.secondary{background:white;color:var(--ink);border:2px solid var(--ink)}.how{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:24px}.card{background:#fff;border-radius:22px;padding:24px;border:1px solid #d8d3c5}.card h2{font-family:Georgia,serif;margin-top:0}.prompt{background:#172f2a;color:#f9efda;border-radius:14px;padding:16px;font-family:ui-monospace,monospace;font-size:.9rem;line-height:1.5}.footer{text-align:center;margin-top:28px;color:#5d716c;font-size:.88rem}@media(max-width:650px){.dice,.how{grid-template-columns:1fr}.die{min-height:120px}.controls{grid-template-columns:1fr}.brand{align-items:flex-start;flex-direction:column}}@media print{.brand,.actions,.how,.footer{display:none}.hero{box-shadow:none}.panel{box-shadow:none}.wrap{width:100%}}
+  </style>
+</head>
+<body>
+<main class="wrap">
+  <header class="brand"><a href="/parents/">← AI Inquisitive Parents</a><span class="tag">Family project · Day 003</span></header>
+  <section class="hero"><div class="eyebrow">Try it together</div><h1>Family Adventure Dice</h1><p>Roll three friendly idea dice and turn an ordinary half-hour into a tiny family adventure. No accounts, adverts or purchases.</p></section>
+  <section class="panel" aria-labelledby="maker-title">
+    <div class="controls"><label>Time available<select id="time"><option value="10">10 minutes</option><option value="20" selected>20 minutes</option><option value="30">30 minutes</option></select></label><label>Adventure style<select id="style"><option value="mixed">Surprise us</option><option value="calm">Calm</option><option value="active">Active</option><option value="creative">Creative</option></select></label></div>
+    <h2 id="maker-title">Your three adventure dice</h2>
+    <div class="dice" aria-live="polite">
+      <article class="die"><span class="icon">🗺️</span><small>Place</small><strong id="place">Living room</strong></article>
+      <article class="die"><span class="icon">🎯</span><small>Mission</small><strong id="mission">Build the tallest paper tower</strong></article>
+      <article class="die"><span class="icon">✨</span><small>Twist</small><strong id="twist">Everyone uses one hand</strong></article>
+    </div>
+    <p class="result" id="result">In the living room, build the tallest paper tower. The twist: everyone uses one hand. Set a 20-minute timer and celebrate the attempt, not just the result.</p>
+    <div class="actions"><button class="primary" id="roll">Roll a new adventure</button><button class="secondary" id="copy">Copy idea</button><button class="secondary" onclick="window.print()">Print</button></div>
+  </section>
+  <section class="how"><article class="card"><h2>Make it yours</h2><p>Change or skip anything that does not suit your family, home, time or mobility. The aim is shared fun—not completing a perfect challenge.</p></article><article class="card"><h2>Ask AI to build your version</h2><div class="prompt">Build a private, single-page Family Adventure Dice web app. Let me choose the available time and activity style. Randomly combine a safe place, a simple mission and a funny twist. Keep all data in the browser.</div></article></section>
+  <footer class="footer">Sapiver Press · Built with AI assistance and checked by a human before release.</footer>
+</main>
+<script>
+const data={
+ places:["living room","kitchen table","hallway","garden or yard","cosiest corner","space beside a window"],
+ missions:{calm:["invent a five-line story","make a shadow creature","create a family handshake","find five things sharing one colour"],active:["design a three-move dance","build a cushion obstacle route","move like three different animals","complete a slow-motion relay"],creative:["build the tallest paper tower","draw a map of an imaginary island","make a tiny museum display","invent a new family flag"]},
+ twists:["everyone uses one hand","nobody may say the word ‘yes’","add a sound effect to every step","the youngest person leads","complete it in reverse order","give everything a ridiculous name"]
+};
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+function roll(){document.querySelectorAll('.die').forEach(x=>x.classList.add('rolling'));setTimeout(()=>{const style=document.querySelector('#style').value;const pool=style==='mixed'?Object.values(data.missions).flat():data.missions[style];const p=pick(data.places),m=pick(pool),t=pick(data.twists),mins=document.querySelector('#time').value;place.textContent=p[0].toUpperCase()+p.slice(1);mission.textContent=m[0].toUpperCase()+m.slice(1);twist.textContent=t[0].toUpperCase()+t.slice(1);result.textContent=`In the ${p}, ${m}. The twist: ${t}. Set a ${mins}-minute timer and celebrate the attempt, not just the result.`;document.querySelectorAll('.die').forEach(x=>x.classList.remove('rolling'))},180)}
+document.querySelector('#roll').addEventListener('click',roll);document.querySelector('#copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(result.textContent);copy.textContent='Copied';setTimeout(()=>copy.textContent='Copy idea',1400)}catch{copy.textContent='Select and copy the idea'}});document.querySelector('#style').addEventListener('change',roll);document.querySelector('#time').addEventListener('change',roll);
+</script>
+</body></html>

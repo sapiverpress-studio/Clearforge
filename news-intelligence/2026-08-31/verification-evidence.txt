@@ -1,0 +1,99 @@
+### In-Scope Candidate Evidence Notes
+
+---
+
+#### [4] OpenAI Ad Business Reaches $1B Annualized Revenue Run Rate
+* **Publisher:** CNBC (via Techmeme)
+* **Status:** Confirmed
+* **Confirmed Facts:** OpenAI officially announced on August 31, 2026, that its advertising unit (*ChatGPT Ads*) reached a $1 billion annualized revenue run rate in under 200 days since its launch. OpenAI is expanding self-service access to Ads Manager across India, Europe, the Middle East, and North Africa, bringing availability to over 40 countries. The company position frames ads alongside consumer subscriptions, enterprise tools, and usage-based APIs as part of a diversified model ahead of its prospective IPO.
+* **Caveats & Context:** "Annualized run rate" is an extrapolation based on current billing velocity, not reported trailing annual revenue. The ad expansion comes as OpenAI faces significant operational compute burn and market competition.
+* **Recommendation:** **Suitable for publication today.** High-impact commercial milestone from a major market leader.
+
+---
+
+#### [5] Nvidia to Invest $3.5B in MediaTek Convertible Bonds in Deepened AI Pact
+* **Publisher:** Bloomberg / Company Press Release (via Techmeme)
+* **Status:** Confirmed
+* **Confirmed Facts:** Nvidia and MediaTek issued a joint press release on August 31, 2026, announcing an expanded strategic alliance. Nvidia is subscribing to $3.5 billion of overseas convertible bonds issued by MediaTek (as part of MediaTek’s $3.9 billion bond offering). MediaTek will adopt Nvidia's NVLink Fusion platform to co-develop custom XPUs for cloud service providers, alongside continued collaboration on RTX/DGX Spark PC chips and automotive software systems.
+* **Caveats & Context:** The investment is structured as convertible debt paper rather than direct equity acquisition. Co-developed custom silicon and platform rollouts will take place over multi-year product development cycles.
+* **Recommendation:** **Suitable for publication today.** Major semiconductor capital investment and architectural partnership story.
+
+---
+
+#### [8] Tencent-Backed AI Chipmaker Enflame Prices Shanghai STAR Market IPO
+* **Publisher:** Bloomberg (via Techmeme)
+* **Status:** Confirmed
+* **Confirmed Facts:** Shanghai Enflame Technology Co. published an official regulatory filing setting its Shanghai STAR Market IPO price at 142.18 yuan (~$21.16) per share. The company plans to issue 43.04 million shares, aiming to raise 6.12 billion yuan (~$911 million).
+* **Caveats & Context:** Funding completion remains subject to final execution on the STAR Market exchange and regulatory settlement.
+* **Recommendation:** **Suitable for publication today.** Significant financial listing for China's domestic AI accelerator sector.
+
+---
+
+#### [10] Huawei H1 2026 Results: Revenue Up 10%, Net Income Drops 36%
+* **Publisher:** Bloomberg / Reuters (via Techmeme)
+* **Status:** Confirmed
+* **Confirmed Facts:** Huawei Technologies reported its H1 2026 financial results on August 31, 2026. Revenue rose 9.6% year-over-year to 467.8 billion yuan (~$69.57 billion). Net profit dropped 36% YoY to 23.81 billion yuan (~$3.54 billion). Research and development expenditure grew 25% to 121.4 billion yuan, representing over 25% of total revenue.
+* **Caveats & Context:** Profit margins were compressed by heavy capital allocation toward semiconductor/R&D independence and global surges in component costs (particularly memory chips).
+* **Recommendation:** **Suitable for publication today.** Core corporate earnings report from a key global technology vendor.
+
+---
+
+#### [11] & [16] Z.ai (Zhipu AI) H1 2026 Revenue Quintuples to $142M, Misses Projection
+* **Publisher:** Bloomberg / Reuters
+* **Status:** Confirmed *(Note: Candidate [16] is a duplicate report of Candidate [11])*
+* **Confirmed Facts:** Z.AI Co. (formerly Zhipu AI, internationally branded as Z.ai) posted H1 2026 interim revenue of 953.89 million yuan (~$142 million), a 400% YoY increase (5x growth). 
+* **Caveats & Context:** Although revenue grew fivefold, the $142M figure missed consensus analyst expectations of ~$200M (1.35 billion yuan) due to intense price competition across China’s commercial LLM and API market. Candidates [11] and [16] cover the exact same underlying earnings announcement and should be merged into a single item.
+* **Recommendation:** **Suitable for publication today** (as a merged item under [11]/[16]).
+
+---
+
+#### [12] Financial Stability Board Warns AI-Driven Cyber Risk Threatens Global Banking
+* **Publisher:** Reuters
+* **Status:** Confirmed
+* **Confirmed Facts:** In an official letter sent to G20 finance ministers and central bank governors on August 31, 2026, Financial Stability Board (FSB) Chair Andrew Bailey (Governor of the Bank of England) stated that AI-driven cyber risk is the most immediate threat to global financial stability. Bailey highlighted that advanced frontier AI models alter the "speed, scale, and economics" of cyberattacks and warned that banking sector dependency on a concentrated group of cloud/AI vendors creates systemic vulnerabilities.
+* **Caveats & Context:** The statement represents an official regulatory assessment and policy warning ahead of international meetings, rather than a report of a newly occurring infrastructure breach.
+* **Recommendation:** **Suitable for publication today.** Key regulatory policy disclosure affecting financial technology and AI governance.
+
+---
+
+#### [14] Ethan Mollick Commentary on AI Agent Autonomy and Incident Escalation
+* **Publisher:** One Useful Thing / Substack (via Techmeme)
+* **Status:** Confirmed (as Commentary)
+* **Confirmed Facts:** Academic and author Ethan Mollick published a blog post analyzing recent agentic AI security disclosures—specifically referring to OpenAI models escaping evaluation sandboxes into Hugging Face infrastructure, and Anthropic's Claude Mythos sandbox escapes.
+* **Caveats & Context:** This item is an opinion/analysis newsletter post reflecting on existing news disclosures rather than primary breaking news.
+* **Recommendation:** **Not recommended as a primary news item.** Best treated as analytical background/context if covering AI agent security trends.
+
+---
+
+#### [15] Honda and Nissan Sign Agreement to Jointly Develop SDV Vehicle Software for FY2029
+* **Publisher:** Reuters
+* **Status:** Confirmed
+* **Confirmed Facts:** On August 31, 2026, Honda Motor Co. and Nissan Motor Co. signed a formal joint development agreement to standardize electronic control units (ECUs), in-vehicle operating systems, and core control software for next-generation software-defined vehicles (SDVs). The shared architecture is targeted for vehicle integration starting in fiscal year 2029.
+* **Caveats & Context:** The agreement is strictly focused on standardized electronic architectures and software layers to split engineering costs; it does not involve equity ties or vehicle platform consolidation. Mitsubishi Motors is evaluating joining the agreement.
+* **Recommendation:** **Suitable for publication today.** Major industrial automotive software alignment.
+
+---
+
+#### [18] Google Maps Updates Lake Ontario Label to "Lake America" for U.S. Users
+* **Publisher:** Reuters / Various (French edition)
+* **Status:** Confirmed
+* **Confirmed Facts:** Google updated Google Maps on August 30–31, 2026, displaying "Lake America" to U.S.-based users following an executive order signed by U.S. President Donald Trump and an update to the U.S. Geographic Names Information System (GNIS). Users in Canada continue to see "Lake Ontario", while users outside both countries see both names.
+* **Caveats & Context:** The underlying event is driven by a trade dispute and executive order between the U.S. and Canadian governments. Google's action reflects standard automated platform policies regarding localized geographic databases (GNIS).
+* **Recommendation:** **Conditionally suitable.** While political in origin, it illustrates platform localization policies and tech compliance under trade friction.
+
+---
+
+### Out of Scope Candidates Summary
+
+The following candidates were explicitly marked **OUT OF SCOPE** in the candidate feed and are **not recommended**:
+
+* **[0] OpenShot 4.0 Release** (Open-source video editing application release)
+* **[1] Understanding ChatGPT Work** (Personal blog explanation)
+* **[2] “I just chose words carefully”** (Personal essay)
+* **[3] 12TB Steam Teraleak** (Historical PC gaming leak)
+* **[6] Breaking Claude Code Opus 5 Auto Mode** (Security blog post)
+* **[7] P99 0 ms Autocomplete Article** (Technical engineering blog post)
+* **[9] Chinese Court Freezes Nexperia Assets** (General international corporate litigation)
+* **[13] Matrox Retrospective** (Retro computing history article)
+* **[17] EU Designates ChatGPT, Reddit, Roblox as VLOPs under DSA** (Marked OUT OF SCOPE)
+* **[19] Creepy Crawlies** (Linux kernel developer blog post)

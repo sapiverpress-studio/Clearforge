@@ -83,7 +83,7 @@ jobs:
         if: github.event_name != 'pull_request'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          BLOG_BASE_URL: https://sapiverforge-daily-brief.netlify.app
+          BLOG_BASE_URL: https://suite.sapiverpress.co.uk
         run: node src/generate-news-intelligence.mjs
 
       - name: Validate intelligence contract

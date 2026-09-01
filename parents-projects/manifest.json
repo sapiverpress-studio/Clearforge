@@ -45,6 +45,22 @@
       "privacy": "Runs entirely in the browser; choices are not uploaded or saved.",
       "supervision": "Designed for families to adapt and enjoy together; grown-ups choose what suits their home and children.",
       "published_date": "2026-08-30"
+    },
+    {
+      "day": 4,
+      "slug": "make-it-yours-planner",
+      "title": "Make-It-Yours Planner",
+      "category": "Practical family tools",
+      "summary": "Choose, rename and print the sections you actually need in a private planner built around real family life.",
+      "path": "/parents/projects/day-004/",
+      "poster_art": "/parents/projects/day-004/poster-art.svg",
+      "social_hook": "CAN'T FIND THE APP YOU NEED?",
+      "social_subtitle": "Make the useful version yourself with AI",
+      "social_caption": "AI Inquisitive Parents: can't find the app that would genuinely make life easier? It may be because you haven't made it yet. Describe what you need, what you do not want and your level of AI knowledge—then build the first useful version. Try my private Make-It-Yours Planner at https://suite.sapiverpress.co.uk/parents/projects/day-004/ #AIInquisitiveParents #BuildWithAI #ParentTools #FamilyOrganisation #PracticalAI",
+      "status": "ready",
+      "privacy": "Runs entirely in the browser; planner choices and writing stay on the device.",
+      "supervision": "Designed for adults to tailor around their own household; it does not prescribe diets, targets or routines for children.",
+      "published_date": "2026-09-01"
     }
   ]
 }

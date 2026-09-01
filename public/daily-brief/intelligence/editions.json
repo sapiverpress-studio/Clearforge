@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-09-01",
+    "candidate_id": "d0bd627755f15c26b523b71ecd9cf8d54afcf5b243c6c08f9c83a1333a82b4de",
+    "title": "Sapiver Forge Daily Brief — 2026-09-01",
+    "url": "/daily-brief/intelligence/2026-09-01/",
+    "released_at": "2026-09-01T04:18:03.820Z",
+    "story_count": 5,
+    "practical_takeaway": "Enterprises should monitor the increasing regulatory and security requirements surrounding AI tools. As labs like Anthropic tighten alignment protocols and government bodies like the Pentagon set strict security standards, businesses should ensure their own AI procurement processes include rigorous vetting for data security and model safety."
+  },
+  {
     "date": "2026-08-30",
     "candidate_id": "6588183f8572fd89aa23c71c0be5e68e3999b585299ba810bc173d939c912f32",
     "title": "Sapiver Forge Daily Brief — 2026-08-30",

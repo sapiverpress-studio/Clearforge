@@ -61,6 +61,19 @@
       "privacy": "Runs entirely in the browser; planner choices and writing stay on the device.",
       "supervision": "Designed for adults to tailor around their own household; it does not prescribe diets, targets or routines for children.",
       "published_date": "2026-09-01"
+    },
+    {
+      "day": 5,
+      "slug": "family-meal-picker",
+      "title": "Family Meal Picker",
+      "category": "Practical family tools",
+      "summary": "Add the meals your family actually eats, collect everyone's votes and choose fairly from the highest-rated available options.",
+      "path": "/parents/projects/day-005/",
+      "status": "ready",
+      "privacy": "Runs entirely in the browser; names, meals and votes stay in local browser storage.",
+      "supervision": "A grown-up must check allergies, dietary needs, ingredients and suitability.",
+      "published_date": "2026-09-02"
     }
   ]
 }
+

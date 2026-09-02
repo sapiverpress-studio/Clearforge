@@ -1,0 +1,73 @@
+Here are the evidence notes for the morning briefing candidate list:
+
+---
+
+### Strongest In-Scope Candidates
+
+#### **[0] Claude Fable 5.1 and Claude Mythos 5.1 Released**
+* **What is confirmed:** Anthropic officially launched Claude Fable 5.1 (generally available) and Claude Mythos 5.1 (restricted access for vetted partners in cybersecurity and life sciences). Fable 5.1 introduces upgrades for long-horizon coding, multistep research, and agentic workflows. Anthropic reduced API cache read pricing by 75% to $0.25/1M tokens (lowering overall costs for typical workloads by ~25% and agentic tasks by up to ~45%) and introduced "Enterprise Frontier Safeguards" (EFS) to allow zero data retention on customer-controlled infrastructure. Output text is now watermarked.
+* **Important caveats:** Base token prices ($10 input / $50 output per 1M tokens) remain unchanged from Fable 5. Community feedback and benchmarks show mixed performance gains depending on the task (e.g., DeepSWE benchmark scores saw slight regressions relative to Opus 5).
+* **Publication suitability:** **Suitable today.** Headline AI model release. *(Note: Candidates [14] and [15] cover pricing sub-angles of this same release).*
+
+---
+
+#### **[12] Cognition Raising ~$1B at ~$47B Valuation**
+* **What is confirmed:** *Bloomberg* reports that AI coding startup Cognition AI (creators of the Devin software engineering agent) is in late-stage talks to raise around $1 billion in new funding at a valuation of approximately $47 billion. The round reportedly attracted nearly $10 billion in investor interest, driven by annualized revenue surging past $900 million.
+* **Important caveats:** The deal terms are based on anonymous sources familiar with the matter; while near completion, final terms could shift before formal signing.
+* **Publication suitability:** **Suitable today.** Significant digital business / venture capital story.
+
+---
+
+#### **[11] OpenAI's Astra Model Uses "Recurrent Depth" Technique**
+* **What is confirmed:** *The Information* reports that OpenAI's upcoming "Astra" AI model utilizes a technique called "recurrent depth" (looping layers / latent space reasoning) to boost performance and cut inference costs. 
+* **Important caveats:** AI safety researchers express concern that recurrent depth bypasses readable step-by-step chain-of-thought (CoT) text, making internal reasoning harder to monitor for safety and alignment. OpenAI has not publicly released full technical documentation or confirmed the architecture details ahead of Astra's official launch.
+* **Publication suitability:** **Suitable today.** Major technical and AI safety governance report.
+
+---
+
+#### **[7] NYC Department of Education Restricts AI in Public Schools**
+* **What is confirmed:** The New York City Department of Education adopted a comprehensive AI policy barring public school students below high school from using AI tools in school classrooms. The policy explicitly bans AI companion chatbots (e.g., Character.AI, Replika) across all grade levels.
+* **Important caveats:** While the policy sets clear district-wide rules for 1.1 million students, practical enforcement depends on local school-level network restrictions and device management policy.
+* **Publication suitability:** **Suitable today.** High-impact technology regulation and education policy news.
+
+---
+
+#### **[3] SciFin Launches Out of Stealth with $44M Funding**
+* **What is confirmed:** SciFin Tech Inc. launched with $44 million in seed funding co-led by Altimeter Capital and Madrona, with participation from Foundation Capital. Founded by Mohit Aron (co-founder of Nutanix and founder of Cohesity), SciFin builds enterprise context-convergence software aimed at unifying fragmented data across revenue and go-to-market teams.
+* **Important caveats:** Product effectiveness claims rely on company-provided launch metrics and initial enterprise partner pilot feedback.
+* **Publication suitability:** **Suitable today.** Validated enterprise startup launch.
+
+---
+
+#### **[8] Wall Street Journal Profile on Snap's $2,195 Specs AR Glasses**
+* **What is confirmed:** *The Wall Street Journal* reported on internal challenges facing Snap's hardware division following the rollout of its $2,195 Specs augmented reality glasses. The report detailed that CEO Evan Spiegel wore them for an interview against internal advice and that planned external funding for the hardware unit failed to materialize.
+* **Important caveats:** Specs were initially introduced to developers earlier in summer 2026; the WSJ report provides retrospective reporting on financial friction and investor pushback rather than a brand-new hardware product launch.
+* **Publication suitability:** **Suitable today.** Material business and hardware strategy insight.
+
+---
+
+#### **[4] ChatGPT / Codex Desktop App Bundles Full LibreOffice Suite**
+* **What is confirmed:** Independent developer Simon Willison published analysis showing that OpenAI's desktop application (formerly Codex / ChatGPT desktop) installs a ~1.7GB local runtime in `~/.cache/` containing native headless binaries for LibreOffice, Python, Node.js, Poppler, and Git to execute document handling tasks locally.
+* **Important caveats:** Based on independent local file analysis rather than official product documentation from OpenAI.
+* **Publication suitability:** **Suitable today.** Informative technical discovery regarding desktop AI agent implementations.
+
+---
+
+#### **[2] Dan Luu Fact-Checks Ed Zitron's AI Skeptic Predictions**
+* **What is confirmed:** Engineer Dan Luu published a detailed post reviewing checkable predictions made by prominent AI critic Ed Zitron from 2024–2025 against actual market outcomes, finding that a majority of Zitron's specific, dated predictions were incorrect.
+* **Important caveats:** This is an independent blog analysis rather than formal academic research or an official industry paper.
+* **Publication suitability:** **Suitable today** as an opinion/analysis snippet, clearly framed as blogger fact-checking.
+
+---
+
+#### **[5] Google Play Restricts AnkiDroid Open Collective Links**
+* **What is confirmed:** Open-source flashcard app AnkiDroid reported on GitHub (#21656) that Google Play flagged their app update for violating store payment policy due to including direct links to non-tax-exempt donation channels (Open Collective).
+* **Important caveats:** This is a routine developer administrative dispute over app store donation links rather than a systemic platform policy change.
+* **Publication suitability:** **Marginal/Optional.** Relevant to open-source developers, but minor compared to major news.
+
+---
+
+### Candidates Rejected or Out of Scope
+
+* **[1], [6], [9], [10], [17]:** Explicitly marked **OUT OF SCOPE** or fall outside core tech/AI coverage rules.
+* **[13], [16], [18], [19]:** **STALE / UNRELIABLE AGGREGATION.** Grounding checks confirm these Italian Reuters URLs stem from archived 2025 wire stories (dated March/April 2025) re-indexed by RSS feeds. They are **not** current news for September 2, 2026.

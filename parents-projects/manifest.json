@@ -73,6 +73,18 @@
       "privacy": "Runs entirely in the browser; names, meals and votes stay in local browser storage.",
       "supervision": "A grown-up must check allergies, dietary needs, ingredients and suitability.",
       "published_date": "2026-09-02"
+    },
+    {
+      "day": 6,
+      "slug": "my-words-spelling-game",
+      "title": "My Words Spelling Game",
+      "category": "Personalised learning games",
+      "summary": "Turn the words a child is learning now into a private listen-and-type spelling game with a choice of English browser voices.",
+      "path": "/parents/projects/day-006/",
+      "status": "ready",
+      "privacy": "Runs entirely in the browser; the word list, selected voice and score stay in local browser storage.",
+      "supervision": "A grown-up chooses suitable words and checks that the selected browser voice pronounces them clearly.",
+      "published_date": "2026-09-03"
     }
   ]
 }

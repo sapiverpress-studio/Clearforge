@@ -67,7 +67,7 @@
       "category": "lead",
       "headline": "Google avoids structural breakup in ad tech antitrust case",
       "confirmed_fact": "U.S. District Judge Leonie Brinkema rejected the Department of Justice's request to force a breakup of Google's advertising technology business. Instead, the court ordered behavioral remedies requiring the company to ensure its ad tech tools are interoperable with competitors.",
-      "why_it_matters": "The ruling signals a judicial preference for behavioral oversight over structural divestiture in complex tech markets, potentially setting a precedent for future antitrust enforcement.",
+      "why_it_matters": "The court chose behavioral controls instead of the structural remedy sought by the Justice Department. Whether that approach influences other antitrust cases will depend on their facts and later rulings.",
       "interpretation": "The decision reflects a judicial caution regarding the disruption of integrated digital ecosystems, though the final scope of the required interoperability remains subject to upcoming redaction reviews.",
       "confidence": 0.95,
       "source": "nytimes.com",
@@ -81,14 +81,14 @@
     },
     {
       "category": "ai",
-      "headline": "G20 nations adopt 'Carolina Principles' for AI regulation",
-      "confirmed_fact": "All G20 nations have unanimously endorsed the non-binding 'Carolina Principles,' a U.S.-led framework that encourages a light-touch, sector-specific approach to AI governance rather than the creation of new, centralized regulatory bodies.",
-      "why_it_matters": "This consensus provides a unified international signal to businesses that major economies are currently prioritizing innovation over restrictive, AI-specific oversight.",
-      "interpretation": "The alignment suggests that the current global policy trajectory favors existing regulatory frameworks, though domestic implementation will vary by jurisdiction.",
+      "headline": "G20 members adopt 'Carolina Principles' for AI regulation",
+      "confirmed_fact": "G20 members have endorsed the non-binding 'Carolina Principles,' a U.S.-led framework that encourages a light-touch, sector-specific approach to AI governance rather than creating a new centralized regulatory body.",
+      "why_it_matters": "The agreement provides businesses with a common policy reference point, but its practical effect will depend on how individual members apply it through domestic rules.",
+      "interpretation": "The agreement favours sector-specific implementation over a new centralised AI regulator, but domestic laws may still differ substantially.",
       "confidence": 0.9,
       "source": "Maggie Eastland/Bloomberg",
       "discovered_via": "Techmeme",
-      "source_title": "All G20 nations unanimously endorse the non-binding Carolina Principles, a US-proposed framework advocating for a lighter-touch, sector-specific AI regulation (Maggie Eastland/Bloomberg)",
+      "source_title": "G20 members endorse the non-binding Carolina Principles, a US-proposed framework advocating for a lighter-touch, sector-specific AI regulation (Maggie Eastland/Bloomberg)",
       "url": "https://www.bloomberg.com/news/articles/2026-09-02/us-strikes-light-touch-ai-regulation-accord-with-g20-members",
       "discovery_url": "https://www.techmeme.com/260903/p9",
       "link_quality": "original",
@@ -105,7 +105,7 @@
       "source": "Dawn Lim/Bloomberg",
       "discovered_via": "Techmeme",
       "source_title": "How organized opposition that toppled a $100B data center project in Virginia's Prince William County became a blueprint for data center backlash in the US (Dawn Lim/Bloomberg)",
-      "url": "https://www.bloomberg.com/news/features/2026-09-02/how-a-revolt-toppled-a-100-billion-data-center-by-historic-battlefield?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc4ODQwODkzMiwiZXhwIjoxNzg5MDEzNzMyLCJhcnRpY2xlSWQiOiJUS1I5VUVWVFREMEswMCIsImJjb25uZWN0SWQiOiIwNEFGQkMxQkYyMTA0NUVEODg3MzQxQkQwQzIyNzRBMCJ9.H33P86mAG6ZYn1Y387kYFG-SIBe6au3JvgiP6O6ELZc",
+      "url": "https://www.bloomberg.com/news/features/2026-09-02/how-a-revolt-toppled-a-100-billion-data-center-by-historic-battlefield",
       "discovery_url": "https://www.techmeme.com/260903/p7",
       "link_quality": "original",
       "published_at": "2026-09-03T06:30:41.000Z",
@@ -133,11 +133,11 @@
   "social": {
     "date": "2026-09-03",
     "lead_headline": "Google avoids structural breakup in ad tech antitrust case",
-    "facebook_post": "Google avoids structural breakup in ad tech antitrust case\n\nThe ruling signals a judicial preference for behavioral oversight over structural divestiture in complex tech markets, potentially setting a precedent for future antitrust enforcement.\n\nToday's Sapiver Forge Daily Brief covers 4 developments across AI, technology and business.\n\nhttps://suite.sapiverpress.co.uk/daily-brief/",
+    "facebook_post": "Google avoids structural breakup in ad tech antitrust case\n\nThe court chose behavioral controls instead of the structural remedy sought by the Justice Department. Whether that approach influences other antitrust cases will depend on their facts and later rulings.\n\nToday's Sapiver Forge Daily Brief covers 4 developments across AI, technology and business.\n\nhttps://suite.sapiverpress.co.uk/daily-brief/",
     "pinterest_title": "Google avoids structural breakup in ad tech antitrust case",
-    "pinterest_description": "The ruling signals a judicial preference for behavioral oversight over structural divestiture in complex tech markets, potentially setting a precedent for future antitrust enforcement.\n\nRead today's Sapiver Forge Daily Brief: https://suite.sapiverpress.co.uk/daily-brief/",
+    "pinterest_description": "The court chose behavioral controls instead of the structural remedy sought by the Justice Department. Whether that approach influences other antitrust cases will depend on their facts and later rulings.\n\nRead today's Sapiver Forge Daily Brief: https://suite.sapiverpress.co.uk/daily-brief/",
     "tiktok_caption": "Google avoids structural breakup in ad tech antitrust case. Today's Sapiver Forge Daily Brief separates what is confirmed from what it might mean. #SapiverForge #AI #Technology #Business",
-    "spoken_script": "Google avoids structural breakup in ad tech antitrust case. U.S. District Judge Leonie Brinkema rejected the Department of Justice's request to force a breakup of Google's advertising technology business. Instead, the court ordered behavioral remedies requiring the company to ensure its ad tech tools are interoperable with competitors. Why it matters: The ruling signals a judicial preference for behavioral oversight over structural divestiture in complex tech markets, potentially setting a precedent for future antitrust enforcement. That's one of today's stories in the Sapiver Forge Daily Brief."
+    "spoken_script": "Google avoids structural breakup in ad tech antitrust case. U.S. District Judge Leonie Brinkema rejected the Department of Justice's request to force a breakup of Google's advertising technology business. Instead, the court ordered behavioral remedies requiring the company to ensure its ad tech tools are interoperable with competitors. Why it matters: The court chose behavioral controls instead of the structural remedy sought by the Justice Department. Whether that approach influences other antitrust cases will depend on their facts and later rulings. That's one of today's stories in the Sapiver Forge Daily Brief."
   },
   "candidate_id": "8ff0fafe38ec2ec86544f982b49204b9c356c8293c9e666dc3794e388e659104"
 }

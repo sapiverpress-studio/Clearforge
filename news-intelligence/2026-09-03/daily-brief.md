@@ -1,24 +1,24 @@
 # Sapiver Forge Daily Brief
 
-Today's briefing covers a significant antitrust ruling for Google, a unified international stance on AI regulation, and emerging operational challenges for AI infrastructure.
+Today's briefing covers a significant antitrust ruling for Google, a non-binding G20 agreement on AI regulation, and emerging operational challenges for AI infrastructure.
 
 ## 1. Google avoids structural breakup in ad tech antitrust case
 
 **Confirmed:** U.S. District Judge Leonie Brinkema rejected the Department of Justice's request to force a breakup of Google's advertising technology business. Instead, the court ordered behavioral remedies requiring the company to ensure its ad tech tools are interoperable with competitors.
 
-**Why it matters:** The ruling signals a judicial preference for behavioral oversight over structural divestiture in complex tech markets, potentially setting a precedent for future antitrust enforcement.
+**Why it matters:** The court chose behavioral controls instead of the structural remedy sought by the Justice Department. Whether that approach influences other antitrust cases will depend on their facts and later rulings.
 
 **Sapiver Forge interpretation:** The decision reflects a judicial caution regarding the disruption of integrated digital ecosystems, though the final scope of the required interoperability remains subject to upcoming redaction reviews.
 
 **Source:** [nytimes.com](https://www.nytimes.com/2026/09/02/technology/google-ad-tech-remedies.html) · discovered via Hacker News · confidence 95%
 
-## 2. G20 nations adopt 'Carolina Principles' for AI regulation
+## 2. G20 members adopt 'Carolina Principles' for AI regulation
 
-**Confirmed:** All G20 nations have unanimously endorsed the non-binding 'Carolina Principles,' a U.S.-led framework that encourages a light-touch, sector-specific approach to AI governance rather than the creation of new, centralized regulatory bodies.
+**Confirmed:** G20 members have endorsed the non-binding 'Carolina Principles,' a U.S.-led framework that encourages a light-touch, sector-specific approach to AI governance rather than creating a new centralized regulatory body.
 
-**Why it matters:** This consensus provides a unified international signal to businesses that major economies are currently prioritizing innovation over restrictive, AI-specific oversight.
+**Why it matters:** The agreement provides businesses with a common policy reference point, but its practical effect will depend on how individual members apply it through domestic rules.
 
-**Sapiver Forge interpretation:** The alignment suggests that the current global policy trajectory favors existing regulatory frameworks, though domestic implementation will vary by jurisdiction.
+**Sapiver Forge interpretation:** The agreement favours sector-specific implementation over a new centralised AI regulator, but domestic laws may still differ substantially.
 
 **Source:** [Maggie Eastland/Bloomberg](https://www.bloomberg.com/news/articles/2026-09-02/us-strikes-light-touch-ai-regulation-accord-with-g20-members) · discovered via Techmeme · confidence 90%
 
@@ -30,7 +30,7 @@ Today's briefing covers a significant antitrust ruling for Google, a unified int
 
 **Sapiver Forge interpretation:** The Virginia case highlights that the physical footprint of AI is increasingly subject to the same local planning and environmental scrutiny as traditional industrial projects.
 
-**Source:** [Dawn Lim/Bloomberg](https://www.bloomberg.com/news/features/2026-09-02/how-a-revolt-toppled-a-100-billion-data-center-by-historic-battlefield?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc4ODQwODkzMiwiZXhwIjoxNzg5MDEzNzMyLCJhcnRpY2xlSWQiOiJUS1I5VUVWVFREMEswMCIsImJjb25uZWN0SWQiOiIwNEFGQkMxQkYyMTA0NUVEODg3MzQxQkQwQzIyNzRBMCJ9.H33P86mAG6ZYn1Y387kYFG-SIBe6au3JvgiP6O6ELZc) · discovered via Techmeme · confidence 85%
+**Source:** [Dawn Lim/Bloomberg](https://www.bloomberg.com/news/features/2026-09-02/how-a-revolt-toppled-a-100-billion-data-center-by-historic-battlefield) · discovered via Techmeme · confidence 85%
 
 ## 4. Google expands Gemini 3.8 model lineup
 

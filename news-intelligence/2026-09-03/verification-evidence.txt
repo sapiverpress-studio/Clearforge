@@ -12,7 +12,7 @@ Here are the evidence notes for the 2026-09-03 morning briefing candidates:
 ---
 
 #### **[10] & [11] G20 unanimously endorses the "Carolina Principles" on AI regulation / Tech CEO lobbying**
-* **Confirmed:** At the G20 Innovation Ministerial meeting in Chapel Hill, North Carolina, all G20 nations unanimously endorsed the non-binding "Carolina Principles" proposed by the US. The framework advocates a light-touch approach, urging governments to rely on existing sector-specific regulators rather than creating new AI-specific regulatory agencies. Tech leaders—including Jensen Huang, Sam Altman, Mark Zuckerberg, and Elon Musk—participated alongside Trump administration officials to advocate for lighter regulation and infrastructure expansion.
+* **Confirmed:** At the G20 Innovation Ministerial meeting in Chapel Hill, North Carolina, G20 members endorsed the non-binding "Carolina Principles" proposed by the US. The framework advocates a light-touch approach, urging governments to rely on existing sector-specific regulators rather than creating new AI-specific regulatory agencies. Tech leaders—including Jensen Huang, Sam Altman, Mark Zuckerberg, and Elon Musk—participated alongside Trump administration officials to advocate for lighter regulation and infrastructure expansion.
 * **Important Caveats:** The principles are non-binding guidelines. While representative of international policy alignment, actual enforcement depends on domestic legislation in member states.
 * **Publication Status:** **Suitable for publication today.** (Recommend combining [10] and [11]).
 

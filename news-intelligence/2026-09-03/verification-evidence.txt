@@ -1,79 +1,77 @@
-### Executive Summary & Editorial Guidance
-
-The strongest stories for the September 3, 2026 briefing cover major regulatory rulings, global AI policy developments, frontier/workhorse model releases, and AI infrastructure backlash.
+Here are the evidence notes for the 2026-09-03 morning briefing candidates:
 
 ---
 
-### Strongest Candidates: Evidence Notes
+### **Strongest In-Scope Candidates (Recommended)**
 
-#### Candidate [2]: Google Defeats DOJ Bid for Ad Tech Breakup
-* **What is confirmed:** On September 2, 2026, US District Judge Leonie Brinkema in Alexandria, Virginia, issued an order rejecting the Department of Justice's attempt to force Google to divest its online ad exchange (AdX). Following an earlier liability ruling that Google held illegal monopolies in ad tech markets, the court opted for behavioral remedies (requiring interoperability with competing ad tools) rather than structural breakup.
-* **Important caveats:** The court’s detailed memorandum opinion remains sealed for 14 days. The DOJ and Google have 30 days to confer and submit a joint proposed final judgment. The DOJ noted it is evaluating next steps (including potential appeals).
-* **Publication status:** **Suitable for publication today.** This is the primary regulatory story of the day.
-
----
-
-#### Candidates [10] & [11]: G20 Endorses US-Led "Carolina Principles" for Light-Touch AI Regulation
-* **What is confirmed:** At the conclusion of the two-day G20 Innovation Ministerial in Chapel Hill, North Carolina (September 1–2, 2026), G20 member nations adopted a joint statement endorsing the "Carolina Principles for Emerging Technologies". Proposed by US OSTP Director Michael Kratsios and Commerce Secretary Howard Lutnick, the non-binding framework urges governments to reserve new regulations for genuinely novel issues, avoid establishing dedicated AI oversight agencies, and focus on foundational research and commercial growth. Top tech executives—including Elon Musk, Mark Zuckerberg, Sam Altman, Jensen Huang, and Demis Hassabis—attended and lobbied against heavy-handed rules.
-* **Important caveats:** The statement is non-binding and feeds into the G20 leaders' summit in December. EU representatives attending the meeting noted that the European Commission is continuing to enforce the EU AI Act and issuing formal information requests to AI labs, underscoring persistent transatlantic divergence.
-* **Publication status:** **Suitable for publication today.** High-value global policy story.
+#### **[2] Google avoids a breakup of its ad tech business**
+* **Confirmed:** On September 2, 2026, U.S. District Judge Leonie Brinkema issued an order rejecting the Department of Justice’s demand to force Alphabet/Google to break up its advertising technology stack or divest its AdX exchange. Instead, the judge ordered targeted behavioral remedies requiring Google to make its ad tech tools interoperable with competitors.
+* **Important Caveats:** The detailed opinion and exact behavioral requirements remain under seal for 14 days to allow the parties to propose redactions. Google is appealing the underlying 2025 ruling on antitrust liability, while the DOJ may appeal the refusal of structural remedies.
+* **Publication Status:** **Suitable for publication today.** (Lead story).
 
 ---
 
-#### Candidate [3]: Google Releases Gemini 3.8 Flash and 3.8 Flash Cyber
-* **What is confirmed:** On September 2, 2026, Google announced Gemini 3.8 Flash and Gemini 3.8 Flash Cyber, its third Flash-tier release in six weeks. The standard 3.8 Flash targets long-horizon coding and agentic workflows at $0.75/$3.75 per million tokens. Gemini 3.8 Flash Cyber is a specialized cybersecurity variant focused on vulnerability detection and automated patching, made available to verified security teams via Google's new Fairwind Program.
-* **Important caveats:** Performance benchmarks (e.g. DeepSWE v1.1, Terminal-Bench 2.1) are company-stated metrics. Access to 3.8 Flash Cyber is restricted/gated to trusted defenders rather than general developer API availability.
-* **Publication status:** **Suitable for publication today.**
+#### **[10] & [11] G20 unanimously endorses the "Carolina Principles" on AI regulation / Tech CEO lobbying**
+* **Confirmed:** At the G20 Innovation Ministerial meeting in Chapel Hill, North Carolina, all G20 nations unanimously endorsed the non-binding "Carolina Principles" proposed by the US. The framework advocates a light-touch approach, urging governments to rely on existing sector-specific regulators rather than creating new AI-specific regulatory agencies. Tech leaders—including Jensen Huang, Sam Altman, Mark Zuckerberg, and Elon Musk—participated alongside Trump administration officials to advocate for lighter regulation and infrastructure expansion.
+* **Important Caveats:** The principles are non-binding guidelines. While representative of international policy alignment, actual enforcement depends on domestic legislation in member states.
+* **Publication Status:** **Suitable for publication today.** (Recommend combining [10] and [11]).
 
 ---
 
-#### Candidate [0]: Meta Launches Muse Spark 1.3
-* **What is confirmed:** Meta released Muse Spark 1.3 on September 2, 2026, available via the Meta Model API and Muse Code. The model brings updates to agentic task tracking, multi-step tool use, and long-context coding. Meta introduced two pricing structures: standard API pricing ($1.25/$4.25 per 1M tokens) and a heavily discounted "Contributor" tier ($0.10/$0.20 per 1M tokens) for developers who opt in to allow Meta to train on their prompt data.
-* **Important caveats:** While the "xhigh" reasoning mode is live, the top-tier "max" reasoning mode remains gated behind partner preview/safety testing at launch. Benchmark claims comparing it to Claude Fable 5.1 and GPT-5.6 are internal or partner-preview evaluations.
-* **Publication status:** **Suitable for publication today.**
+#### **[3] Google releases Gemini 3.8 Flash and 3.8 Flash Cyber**
+* **Confirmed:** Google announced Gemini 3.8 Flash and a specialized variant, Gemini 3.8 Flash Cyber. Gemini 3.8 Flash targets long-horizon coding and autonomous agentic tasks at the same introductory price as 3.7 Flash ($0.75 / $3.75 per million tokens). Flash Cyber is tailored for automated vulnerability detection and patching.
+* **Important Caveats:** Gemini 3.8 Flash Cyber is restricted to approved security defenders through Google’s new Fairwind Program rather than general open API access.
+* **Publication Status:** **Suitable for publication today.**
 
 ---
 
-#### Candidate [9]: Investigation Reveals 215k Manufactured Pages Gaming Perplexity AI Search
-* **What is confirmed:** Trellner Research published an empirical report (TR-2026-009) on September 2, 2026, examining citation sources used by Perplexity’s Sonar and Sonar Pro models across 380 software categories. The study found that 59.8% of citations pointed to domains outside the Tranco top 100,000. Crucially, three interconnected automated template sites accounted for 215,128 machine-generated "best software" pages designed specifically to capture grounding queries in AI retrieval engines.
-* **Important caveats:** The study specifically measured Perplexity's API models and explicitly noted that results cannot be generalized to other retrieval-augmented engines without separate auditing. A low domain rank does not automatically prove factual inaccuracy, though mass-generating pages for AI grounding poses clear search quality concerns.
-* **Publication status:** **Suitable for publication today.** Excellent original research coverage.
+#### **[0] Meta introduces Muse Spark 1.3**
+* **Confirmed:** Meta launched Muse Spark 1.3 on September 2, 2026, making it available in Muse Code and through the Meta Model API. The model focuses on long-horizon, agentic, and multi-agent coding workflows, featuring a 1M-token context window and standard API pricing alongside a discounted "contributor" tier.
+* **Important Caveats:** Meta’s top "max" reasoning effort mode remains in additional safety testing at launch, meaning public deployment initially relies on lower reasoning tiers. Benchmark comparisons against prior versions reflect changes in reasoning effort tiers.
+* **Publication Status:** **Suitable for publication today.**
 
 ---
 
-#### Candidate [8]: Anker Unveils Eufy MindBase Local AI Hub at IFA 2026
-* **What is confirmed:** At the IFA tech show in Berlin on September 3, 2026, Anker announced the Eufy MindBase, an on-device AI hub for smart home security. The device runs an in-house developed LLM ("TrueSmart Agent") on a dedicated AI processor, processes video local-only without cloud transfer, supports Matter 1.5, and offers expandable local storage up to 48TB.
-* **Important caveats:** Local AI processing currently targets security camera feeds, with broader whole-home automation features slated for phased rollout. Anker also announced a global brand consolidation moving sub-brands under "Anker".
-* **Publication status:** **Suitable for publication today.**
+#### **[1] US imposes tariffs of up to 100% on foreign drones**
+* **Confirmed:** The Trump administration imposed tariffs of up to 100% on foreign-manufactured drones, specifically targeting commercial models weighing over 55 lbs or equipped with thermal imaging technology, aimed at curbing Chinese dominance in the market. The FCC is simultaneously considering restrictions on common drone features like thermal imaging and aerosol spraying [1].
+* **Important Caveats:** The tariff measures apply to imported completed units and key components [1]; the FCC tech restrictions remain under administrative review and have not been enacted as final rules [1].
+* **Publication Status:** **Suitable for publication today.**
 
 ---
 
-#### Candidate [1]: US Section 232 Drone Tariffs Take Effect
-* **What is confirmed:** On September 3, 2026, Section 232 tariffs imposed by the US administration officially took effect. Importers face tariffs up to 100% on foreign drones exceeding 25 kg (55 lbs), models equipped with thermal imaging, and docking stations. Smaller non-sensitive commercial drones face a 25% tariff. Certified allied manufacturers receive lower capped rates (EU/Japan 15%, UK 10%), leaving Chinese manufacturers (e.g. DJI, Autel) facing full duties.
-* **Important caveats:** President Trump signed the original proclamation on August 13, 2026; September 3 is the effective implementation date. The NYT feature focuses on the implementation impact and accompanying FCC considerations regarding thermal and agricultural spraying drone technologies [1].
-* **Publication status:** **Suitable for publication today.**
+#### **[8] Anker unveils Eufy MindBase local AI hub at IFA 2026**
+* **Confirmed:** At IFA 2026 in Berlin, Anker announced the Eufy MindBase, a local smart home hub equipped with an on-device LLM, dedicated AI processing chip, Matter 1.5 support, and up to 48TB local storage to process camera video locally without cloud transmission. Anker also announced consolidating its sub-brands under the main Anker name.
+* **Important Caveats:** Product announcement at a trade event; real-world performance of the on-device LLM and shipping dates depend on retail rollout.
+* **Publication Status:** **Suitable for publication today.**
 
 ---
 
-#### Candidate [15]: Local Backlash Derails $100B Virginia AI Data Center Project
-* **What is confirmed:** Bloomberg published a detailed report detailing how organized community opposition and legal challenges successfully stalled and forced the withdrawal of key developments within the $100 billion, 2,100-acre "Digital Gateway" data center project in Prince William County, Virginia. Developers backed by Blackstone (QTS) and Brookfield withdrew major court appeals and project phases near Manassas National Battlefield Park.
-* **Important caveats:** Portions of the developer withdrawals occurred over the summer of 2026; the Bloomberg report synthesizes the full timeline, establishing the Virginia fight as a national blueprint for anti-data-center activism across the US.
-* **Publication status:** **Suitable for publication today.**
+#### **[15] Opposition to $100B Virginia data center project establishes blueprint for AI infrastructure backlash**
+* **Confirmed:** Bloomberg reported on how community opposition in Prince William County, Virginia, successfully halted a proposed $100 billion data center development, creating an operational template for local activism against energy- and land-intensive AI infrastructure across the United States [15].
+* **Important Caveats:** A deep-dive analytical feature on grassroots opposition trends rather than an immediate single-day regulatory or judicial action [15].
+* **Publication Status:** **Suitable for publication today.**
 
 ---
 
-### Secondary Candidates (Contextual or Lower Priority)
-
-* **Candidate [5] (Big Tech Antitrust Remedies Analysis):** NYT analysis piece published September 3, 2026, examining why US federal courts hesitate to enforce structural breakups [5]. **Status:** Best integrated as editorial context alongside **Candidate [2]**.
-* **Candidate [4] (Anil Dash "Cancer Capital"):** Opinion essay published September 2, 2026, criticizing the financial and political incentives of mega-VCs. **Status:** Not a breaking news item; pass on primary briefing unless running an opinion/essay roundup.
-* **Candidate [6] (FT Domestic AI Feature):** Consumer interest piece on mothers using AI apps (Ollie, Cozi Max) for family scheduling [6]. **Status:** Optional human-interest filler; low hard news value.
-* **Candidate [7] (Mistral Training Opt-Out Documentation):** Updated Help Center documentation clarifying opt-out toggles. **Status:** Minor documentation update; pass in favor of primary model launches.
+#### **[9] Investigation reveals manufactured SEO sites feeding Perplexity AI recommendations**
+* **Confirmed:** An independent investigation published by Jakob Greenfeld (trellner.com) showed that three interconnected network domains auto-generated over 215,000 "best software" SEO pages that are actively cited by Perplexity AI when serving user recommendations.
+* **Important Caveats:** Single-author technical research, though verified via domain crawl data and widely discussed across technical forums.
+* **Publication Status:** **Suitable for publication** as a niche technical/AI search signal.
 
 ---
 
-### Out of Scope Candidates (Do Not Publish)
+### **Secondary Commentary & Other In-Scope Candidates**
 
-* **Candidate [12] (Dark Matter Detector):** Physics / fundamental science news. Marked **OUT OF SCOPE**.
-* **Candidate [13] (Fable 5.1 World Modeling):** Marked **OUT OF SCOPE**.
-* **Candidate [14] (Aging Brain Memory Blending):** Neuroscience / medical study. Marked **OUT OF SCOPE**.
-* **Candidates [16]–[19] (Reuters Macro Market Summaries):** Italian language wire briefs carrying 2025 URL datelines; generic macro market updates [16, 17, 18, 19]. **OUT OF SCOPE**.
+* **[5] Steve Lohr / NYT Big Tech Analysis:** Analysis exploring federal court reluctance to enforce structural remedies on tech giants. Directly complements **Candidate [2]**; recommended as context for the Google ruling rather than a standalone piece.
+* **[4] Anil Dash "Cancer Capital" Essay:** Commentary criticizing mega-fund venture capital ($50B+) for shifting into fee extraction and political lobbying. Suitable as an opinion link, but secondary to major product or regulatory announcements.
+* **[6] FT AI Parents Feature:** Feature on mothers using consumer AI apps (Ollie, Cozi Max) for family organization [6]. In scope, but low priority human-interest feature.
+* **[7] Mistral Data Opt-Out Page:** Routine update to Mistral’s Help Center detailing opt-out toggles for model training. Minor administrative documentation update; **not recommended** as standalone news.
+
+---
+
+### **Out of Scope or Unsuitable Candidates**
+
+* **[12] Dark Matter Detector:** OUT OF SCOPE (General astrophysics research) [12].
+* **[13] Fable 5.1 World Modeling:** OUT OF SCOPE [13].
+* **[14] Aging Brains Study:** OUT OF SCOPE (Neuroscience/health study) [14].
+* **[16]–[19] Italian Reuters Articles:** **Unsuitable / Stale.** Article URLs confirm these are archived news items from March and April 2025, improperly scraped into today's candidate pool [16, 17, 18, 19].

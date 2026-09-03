@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-09-03T11:03:04.974Z",
+  "collected_at": "2026-09-03T11:06:41.343Z",
   "expected_sources": [
     "Techmeme",
     "Reuters",
@@ -13,7 +13,7 @@
       "name": "Techmeme",
       "ok": true,
       "item_count": 12,
-      "elapsed_ms": 347,
+      "elapsed_ms": 451,
       "collection_mode": "rss",
       "original_link_count": 12
     },
@@ -21,7 +21,7 @@
       "name": "Reuters",
       "ok": true,
       "item_count": 12,
-      "elapsed_ms": 1504,
+      "elapsed_ms": 766,
       "collection_mode": "sitemap",
       "original_link_count": 12
     },
@@ -29,7 +29,7 @@
       "name": "Hacker News",
       "ok": true,
       "item_count": 10,
-      "elapsed_ms": 407,
+      "elapsed_ms": 279,
       "collection_mode": "api",
       "original_link_count": 10
     },
@@ -37,7 +37,7 @@
       "name": "Hugging Face",
       "ok": true,
       "item_count": 12,
-      "elapsed_ms": 299,
+      "elapsed_ms": 209,
       "collection_mode": "api",
       "original_link_count": 12
     },
@@ -45,7 +45,7 @@
       "name": "Sifted",
       "ok": false,
       "item_count": 0,
-      "elapsed_ms": 1155,
+      "elapsed_ms": 726,
       "error": "Sifted returned no usable articles: 404 Not Found"
     }
   ],
@@ -64,11 +64,11 @@
       "summary": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
       "published_at": "2026-09-02T19:35:04.000Z",
       "engagement": {
-        "score": 597,
+        "score": 598,
         "comments": 393
       },
       "collection_mode": "api",
-      "score": 8.126
+      "score": 8.123
     },
     {
       "title": "The Trump administration imposes tariffs of up to 100% on foreign drones, including 100% on models over 55lbs or with thermal imaging, in a bid to thwart China (Farah Stockman/New York Times)",
@@ -84,7 +84,7 @@
       "source_home": "https://www.techmeme.com/",
       "source_rank": 1,
       "collection_mode": "rss",
-      "score": 8.098
+      "score": 8.095
     },
     {
       "source": "Hacker News",
@@ -100,11 +100,11 @@
       "summary": "https://archive.ph/rlAbY https://www.reuters.com/legal/litigation/google-defeats-us-b...",
       "published_at": "2026-09-02T14:46:16.000Z",
       "engagement": {
-        "score": 403,
+        "score": 404,
         "comments": 284
       },
       "collection_mode": "api",
-      "score": 8.035
+      "score": 8.032
     },
     {
       "source": "Hacker News",
@@ -120,11 +120,11 @@
       "summary": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
       "published_at": "2026-09-02T15:12:40.000Z",
       "engagement": {
-        "score": 1041,
+        "score": 1043,
         "comments": 581
       },
       "collection_mode": "api",
-      "score": 8.023
+      "score": 8.021
     },
     {
       "title": "Modern venture capital has transformed into an unchecked oligarchy, or \"Cancer Capital\", where mega-firms managing $50B+ live off fees and shift risk elsewhere (Anil Dash)",
@@ -140,7 +140,7 @@
       "source_home": "https://www.techmeme.com/",
       "source_rank": 2,
       "collection_mode": "rss",
-      "score": 8.011
+      "score": 8.008
     },
     {
       "title": "US federal courts have consistently shown a wariness in demanding structural remedies against Big Tech despite finding antitrust liability, as tech races ahead (Steve Lohr/New York Times)",
@@ -156,7 +156,7 @@
       "source_home": "https://www.techmeme.com/",
       "source_rank": 3,
       "collection_mode": "rss",
-      "score": 7.921
+      "score": 7.918
     },
     {
       "title": "How some parents, mostly mothers, use AI to help them organize their families' schedules and automate mundane household tasks via apps like Ollie and Cozi Max (Valeriya Safronova/Financial Times)",
@@ -172,7 +172,7 @@
       "source_home": "https://www.techmeme.com/",
       "source_rank": 4,
       "collection_mode": "rss",
-      "score": 7.834
+      "score": 7.831
     },
     {
       "source": "Hacker News",
@@ -188,11 +188,11 @@
       "summary": "",
       "published_at": "2026-09-02T12:30:39.000Z",
       "engagement": {
-        "score": 452,
+        "score": 453,
         "comments": 207
       },
       "collection_mode": "api",
-      "score": 7.751
+      "score": 7.748
     },
     {
       "title": "Anker unveils the Eufy MindBase, a local AI hub for its cameras that runs an on-device, Anker-developed LLM, with a dedicated AI chip and up to 48TB of storage (Jennifer Pattison Tuohy/The Verge)",
@@ -208,7 +208,7 @@
       "source_home": "https://www.techmeme.com/",
       "source_rank": 5,
       "collection_mode": "rss",
-      "score": 7.743
+      "score": 7.741
     },
     {
       "source": "Hacker News",
@@ -224,11 +224,11 @@
       "summary": "",
       "published_at": "2026-09-02T13:59:59.000Z",
       "engagement": {
-        "score": 435,
-        "comments": 212
+        "score": 436,
+        "comments": 213
       },
       "collection_mode": "api",
-      "score": 7.733
+      "score": 7.73
     },
     {
       "title": "All G20 nations unanimously endorse the non-binding Carolina Principles, a US-proposed framework advocating for a lighter-touch, sector-specific AI regulation (Maggie Eastland/Bloomberg)",
@@ -244,7 +244,7 @@
       "source_home": "https://www.techmeme.com/",
       "source_rank": 6,
       "collection_mode": "rss",
-      "score": 7.653
+      "score": 7.65
     },
     {
       "title": "At the G20 summit, Jensen Huang, Mark Zuckerberg, Sam Altman, and Elon Musk joined Trump officials in lobbying policymakers against heavy AI regulations (Amrith Ramkumar/Wall Street Journal)",
@@ -260,7 +260,7 @@
       "source_home": "https://www.techmeme.com/",
       "source_rank": 7,
       "collection_mode": "rss",
-      "score": 7.566
+      "score": 7.563
     },
     {
       "source": "Hacker News",
@@ -280,7 +280,7 @@
         "comments": 105
       },
       "collection_mode": "api",
-      "score": 7.559
+      "score": 7.557
     },
     {
       "source": "Hacker News",
@@ -296,11 +296,11 @@
       "summary": "",
       "published_at": "2026-09-02T19:49:01.000Z",
       "engagement": {
-        "score": 269,
-        "comments": 78
+        "score": 271,
+        "comments": 79
       },
       "collection_mode": "api",
-      "score": 7.55
+      "score": 7.549
     },
     {
       "source": "Hacker News",
@@ -320,7 +320,7 @@
         "comments": 119
       },
       "collection_mode": "api",
-      "score": 7.451
+      "score": 7.448
     },
     {
       "title": "How organized opposition that toppled a $100B data center project in Virginia's Prince William County became a blueprint for data center backlash in the US (Dawn Lim/Bloomberg)",
@@ -336,7 +336,7 @@
       "source_home": "https://www.techmeme.com/",
       "source_rank": 8,
       "collection_mode": "rss",
-      "score": 7.351
+      "score": 7.348
     },
     {
       "title": "Commissione Ue lavora a nuovo piano per sostenere industria chip",
@@ -354,6 +354,21 @@
       "score": 6.55
     },
     {
+      "title": "Amazon presenta offerta per TikTok - NYT",
+      "url": "https://www.reuters.com/it/azienda/amazon-presenta-offerta-per-tiktok-nyt-2025-04-02/",
+      "summary": "",
+      "published_at": "2026-09-01T13:53:39.067Z",
+      "source": "Reuters",
+      "publisher": "Reuters",
+      "source_home": "https://www.reuters.com/technology/",
+      "source_rank": 2,
+      "direct_source_url": "https://www.reuters.com/it/azienda/amazon-presenta-offerta-per-tiktok-nyt-2025-04-02/",
+      "discovery_url": "https://www.reuters.com/it/azienda/amazon-presenta-offerta-per-tiktok-nyt-2025-04-02/",
+      "link_quality": "original",
+      "collection_mode": "sitemap",
+      "score": 6.47
+    },
+    {
       "title": "BORSE EUROPA Crollo ai minimi di 16 mesi su timori guerra commerciale",
       "url": "https://www.reuters.com/it/azienda/borse-europa-crollo-ai-minimi-di-16-mesi-su-timori-guerra-commerciale-2025-04-07/",
       "summary": "",
@@ -361,12 +376,12 @@
       "source": "Reuters",
       "publisher": "Reuters",
       "source_home": "https://www.reuters.com/technology/",
-      "source_rank": 2,
+      "source_rank": 3,
       "direct_source_url": "https://www.reuters.com/it/azienda/borse-europa-crollo-ai-minimi-di-16-mesi-su-timori-guerra-commerciale-2025-04-07/",
       "discovery_url": "https://www.reuters.com/it/azienda/borse-europa-crollo-ai-minimi-di-16-mesi-su-timori-guerra-commerciale-2025-04-07/",
       "link_quality": "original",
       "collection_mode": "sitemap",
-      "score": 6.47
+      "score": 6.39
     },
     {
       "title": "BORSA USA In lieve rialzo sostenuta da tech, nervosismo su escalation guerra dazi Usa-Cina",
@@ -376,24 +391,9 @@
       "source": "Reuters",
       "publisher": "Reuters",
       "source_home": "https://www.reuters.com/technology/",
-      "source_rank": 3,
+      "source_rank": 4,
       "direct_source_url": "https://www.reuters.com/it/azienda/borsa-usa-lieve-rialzo-sostenuta-da-tech-nervosismo-su-escalation-guerra-dazi-2025-04-09/",
       "discovery_url": "https://www.reuters.com/it/azienda/borsa-usa-lieve-rialzo-sostenuta-da-tech-nervosismo-su-escalation-guerra-dazi-2025-04-09/",
-      "link_quality": "original",
-      "collection_mode": "sitemap",
-      "score": 6.39
-    },
-    {
-      "title": "GREGGIO Scende ai minimi da febbraio 2021 con entrata in vigore dazi Trump",
-      "url": "https://www.reuters.com/it/azienda/greggio-scende-ai-minimi-da-febbraio-2021-con-entrata-vigore-dazi-trump-2025-04-09/",
-      "summary": "",
-      "published_at": "2026-09-01T15:29:03.957Z",
-      "source": "Reuters",
-      "publisher": "Reuters",
-      "source_home": "https://www.reuters.com/technology/",
-      "source_rank": 4,
-      "direct_source_url": "https://www.reuters.com/it/azienda/greggio-scende-ai-minimi-da-febbraio-2021-con-entrata-vigore-dazi-trump-2025-04-09/",
-      "discovery_url": "https://www.reuters.com/it/azienda/greggio-scende-ai-minimi-da-febbraio-2021-con-entrata-vigore-dazi-trump-2025-04-09/",
       "link_quality": "original",
       "collection_mode": "sitemap",
       "score": 6.31
@@ -417,6 +417,21 @@
       "score": 6.287
     },
     {
+      "title": "GREGGIO Scende ai minimi da febbraio 2021 con entrata in vigore dazi Trump",
+      "url": "https://www.reuters.com/it/azienda/greggio-scende-ai-minimi-da-febbraio-2021-con-entrata-vigore-dazi-trump-2025-04-09/",
+      "summary": "",
+      "published_at": "2026-09-01T15:29:03.957Z",
+      "source": "Reuters",
+      "publisher": "Reuters",
+      "source_home": "https://www.reuters.com/technology/",
+      "source_rank": 5,
+      "direct_source_url": "https://www.reuters.com/it/azienda/greggio-scende-ai-minimi-da-febbraio-2021-con-entrata-vigore-dazi-trump-2025-04-09/",
+      "discovery_url": "https://www.reuters.com/it/azienda/greggio-scende-ai-minimi-da-febbraio-2021-con-entrata-vigore-dazi-trump-2025-04-09/",
+      "link_quality": "original",
+      "collection_mode": "sitemap",
+      "score": 6.23
+    },
+    {
       "title": "BORSA USA In calo, Nvidia pesante dopo nuove restrizioni a export chip in Cina",
       "url": "https://www.reuters.com/it/azienda/borsa-usa-calo-nvidia-pesante-dopo-nuove-restrizioni-export-chip-cina-2025-04-16/",
       "summary": "",
@@ -424,12 +439,12 @@
       "source": "Reuters",
       "publisher": "Reuters",
       "source_home": "https://www.reuters.com/technology/",
-      "source_rank": 5,
+      "source_rank": 6,
       "direct_source_url": "https://www.reuters.com/it/azienda/borsa-usa-calo-nvidia-pesante-dopo-nuove-restrizioni-export-chip-cina-2025-04-16/",
       "discovery_url": "https://www.reuters.com/it/azienda/borsa-usa-calo-nvidia-pesante-dopo-nuove-restrizioni-export-chip-cina-2025-04-16/",
       "link_quality": "original",
       "collection_mode": "sitemap",
-      "score": 6.23
+      "score": 6.15
     },
     {
       "title": "Google affronta in GB causa Antitrust da 5 mld sterline in class action",
@@ -439,24 +454,9 @@
       "source": "Reuters",
       "publisher": "Reuters",
       "source_home": "https://www.reuters.com/technology/",
-      "source_rank": 6,
+      "source_rank": 7,
       "direct_source_url": "https://www.reuters.com/it/azienda/google-affronta-gb-causa-antitrust-da-5-mld-sterline-class-action-2025-04-16/",
       "discovery_url": "https://www.reuters.com/it/azienda/google-affronta-gb-causa-antitrust-da-5-mld-sterline-class-action-2025-04-16/",
-      "link_quality": "original",
-      "collection_mode": "sitemap",
-      "score": 6.15
-    },
-    {
-      "title": "BORSA USA Futures giù, Nvidia in forte calo su nuove restrizioni a export chip in Cina",
-      "url": "https://www.reuters.com/it/azienda/borsa-usa-futures-gi-nvidia-forte-calo-su-nuove-restrizioni-export-chip-cina-2025-04-16/",
-      "summary": "",
-      "published_at": "2026-09-01T15:22:01.674Z",
-      "source": "Reuters",
-      "publisher": "Reuters",
-      "source_home": "https://www.reuters.com/technology/",
-      "source_rank": 7,
-      "direct_source_url": "https://www.reuters.com/it/azienda/borsa-usa-futures-gi-nvidia-forte-calo-su-nuove-restrizioni-export-chip-cina-2025-04-16/",
-      "discovery_url": "https://www.reuters.com/it/azienda/borsa-usa-futures-gi-nvidia-forte-calo-su-nuove-restrizioni-export-chip-cina-2025-04-16/",
       "link_quality": "original",
       "collection_mode": "sitemap",
       "score": 6.07
@@ -498,19 +498,19 @@
       "score": 6.048
     },
     {
-      "title": "Jason Isbell, other musicians sue Suno over AI training",
-      "url": "https://www.reuters.com/legal/government/jason-isbell-other-musicians-sue-suno-over-ai-training-2026-09-01/",
+      "title": "BORSA USA Futures giù, Nvidia in forte calo su nuove restrizioni a export chip in Cina",
+      "url": "https://www.reuters.com/it/azienda/borsa-usa-futures-gi-nvidia-forte-calo-su-nuove-restrizioni-export-chip-cina-2025-04-16/",
       "summary": "",
-      "published_at": "2026-09-02T01:21:56.356Z",
+      "published_at": "2026-09-01T15:22:01.674Z",
       "source": "Reuters",
       "publisher": "Reuters",
       "source_home": "https://www.reuters.com/technology/",
-      "source_rank": 9,
-      "direct_source_url": "https://www.reuters.com/legal/government/jason-isbell-other-musicians-sue-suno-over-ai-training-2026-09-01/",
-      "discovery_url": "https://www.reuters.com/legal/government/jason-isbell-other-musicians-sue-suno-over-ai-training-2026-09-01/",
+      "source_rank": 8,
+      "direct_source_url": "https://www.reuters.com/it/azienda/borsa-usa-futures-gi-nvidia-forte-calo-su-nuove-restrizioni-export-chip-cina-2025-04-16/",
+      "discovery_url": "https://www.reuters.com/it/azienda/borsa-usa-futures-gi-nvidia-forte-calo-su-nuove-restrizioni-export-chip-cina-2025-04-16/",
       "link_quality": "original",
       "collection_mode": "sitemap",
-      "score": 6.006
+      "score": 5.99
     },
     {
       "source": "Hugging Face",

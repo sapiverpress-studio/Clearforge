@@ -1,9 +1,9 @@
 {
-  "manifest.json": "e6bdc154ef9eaf1a5cca0d517f90f90c953926b46308c27cdfb8ac5404ef9565",
-  "daily-brief.md": "008ccee4553fcecb31f91e8e45eeb0b581771c4e1516c98bf7392a5fe3fb65db",
-  "newsletter.html": "64ffc3d7b470ebb3430189a78f28ad31ab5bd87a7055724de7811e942620ef7e",
-  "newsletter-metadata.json": "e8e48cbc89b6db14f350fcd4498bfa24e07c6eab29dd703aa7c445bd48431167",
-  "social.json": "edb791501942639e26c691d362346da1c3b622ff61ef38738285ac0660c72842",
-  "sources.json": "e9769020623f51ef53ba70db2b6817f27ba1ff8041904cbfc9cef03562fe2947",
-  "human-review.html": "9b3834297351e138dd8e0a01a0fde38facef3be980f5297867669a2a51fd7daa"
+  "manifest.json": "d0405055ab205f0b116b29c99fe28a587b55e52dfc81c1be453c3637edd9fca0",
+  "daily-brief.md": "65965014144edf7b32f02d28009b70a36ee2d6446657920f3c687eba7739c97e",
+  "newsletter.html": "ea257ee57adfff09c27f243d32ff30e595d696018e767b3639c57b3eea48bb60",
+  "newsletter-metadata.json": "27719c87b4e3fb53ec4a2016506dcbc4a6186cf46d9f309bca9e9e2553dca938",
+  "social.json": "8c2ca016117f9cb8d807022e3f0f980c2e9a26860513c66a8fa25ecdae973dd0",
+  "sources.json": "1f139a1c0595eba1d04802b4ee54e3bcabf2f435213ab62a1719d324b483f294",
+  "human-review.html": "f39cf41f10c2777b9a6406f2163621252a7e269fe5b2663853a3f1b072c4b54a"
 }

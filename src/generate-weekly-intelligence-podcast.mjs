@@ -100,14 +100,14 @@ async function main() {
       "Separate confirmed facts from interpretation, avoid hype and investment advice, and do not invent new facts.",
       "The spoken script must sound natural when read by a calm British voice. Do not include stage directions or raw URLs."
     ],
-    prompt: `Create the weekly Sapiver Forge Intelligence Brief covering ${WEEK_START} to ${WEEK_END}.\n\nTarget 10-15 minutes of spoken audio, roughly 1,450-2,000 words total. Choose the five or six developments that mattered most across AI, technology, business, research and developer activity. Connect related developments and explain what changed over the week. End with what is worth watching next.\n\nDo not mention source URLs in spoken narration. Do not claim predictions are facts. Do not advertise products.\n\nVERIFIED DAILY EDITIONS:\n\n${buildInput(editions)}`,
+    prompt: `Create the weekly Sapiver Forge Intelligence Brief covering ${WEEK_START} to ${WEEK_END}.\n\nTarget a focused 5-8 minutes of spoken audio, roughly 650-1,050 words total. Choose only the four or five developments that mattered most across AI, technology, business, research and developer activity. Connect related developments and explain what changed over the week. End briefly with what is worth watching next. Do not pad the script or repeat facts simply to make it longer.\n\nDo not mention source URLs in spoken narration. Do not claim predictions are facts. Do not advertise products.\n\nVERIFIED DAILY EDITIONS:\n\n${buildInput(editions)}`,
     schema: PODCAST_SCHEMA
   });
 
   const transcript = makeTranscript(podcast);
   const wordCount = transcript.split(/\s+/).filter(Boolean).length;
-  if (wordCount < 900) throw new Error(`Weekly podcast script is too short (${wordCount} words).`);
-  if (wordCount > 2600) throw new Error(`Weekly podcast script is too long (${wordCount} words).`);
+  if (wordCount < 500) throw new Error(`Weekly podcast script is too short (${wordCount} words).`);
+  if (wordCount > 1400) throw new Error(`Weekly podcast script is too long (${wordCount} words).`);
 
   const allSources = [];
   const seen = new Set();
@@ -125,7 +125,7 @@ async function main() {
       episode_description: clean(podcast.episode_description),
       date: WEEK_END,
       published_at: `${WEEK_END}T09:00:00Z`,
-      estimated_duration_minutes: Math.max(8, Math.min(16, Number(podcast.estimated_duration_minutes || wordCount / 145))),
+      estimated_duration_minutes: Math.max(4, Math.min(10, Number(podcast.estimated_duration_minutes || wordCount / 145))),
       selection_reason: `Weekly synthesis of ${editions.length} verification-ready Sapiver Forge Daily Brief editions.`,
       related_article_url: `${BASE}/posts/${slug}.html`,
       related_feature_url: `${BASE}/features/${slug}.html`

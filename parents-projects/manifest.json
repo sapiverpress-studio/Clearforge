@@ -85,7 +85,18 @@
       "privacy": "Runs entirely in the browser; the word list, selected voice and score stay in local browser storage.",
       "supervision": "A grown-up chooses suitable words and checks that the selected browser voice pronounces them clearly.",
       "published_date": "2026-09-03"
+    },
+    {
+      "day": 7,
+      "slug": "ready-to-go-bag-checker",
+      "title": "Ready-to-Go Bag Checker",
+      "category": "Practical family tools",
+      "summary": "Create reusable, personalised packing lists for school, nursery, swimming or days out, then tick, reset and reuse them.",
+      "path": "/parents/projects/day-007/",
+      "status": "ready",
+      "privacy": "Runs entirely in the browser; bag names, items and packing status stay in local browser storage.",
+      "supervision": "A grown-up creates and checks each list, including any medication or safety-critical items.",
+      "published_date": "2026-09-04"
     }
   ]
 }
-

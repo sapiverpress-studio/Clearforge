@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-09-04T05:52:26.246Z",
+  "collected_at": "2026-09-04T11:09:50.228Z",
   "expected_sources": [
     "Techmeme",
     "Reuters",
@@ -13,7 +13,7 @@
       "name": "Techmeme",
       "ok": true,
       "item_count": 12,
-      "elapsed_ms": 440,
+      "elapsed_ms": 512,
       "collection_mode": "rss",
       "original_link_count": 12
     },
@@ -21,7 +21,7 @@
       "name": "Reuters",
       "ok": true,
       "item_count": 12,
-      "elapsed_ms": 741,
+      "elapsed_ms": 1582,
       "collection_mode": "sitemap",
       "original_link_count": 12
     },
@@ -29,15 +29,15 @@
       "name": "Hacker News",
       "ok": true,
       "item_count": 10,
-      "elapsed_ms": 312,
+      "elapsed_ms": 345,
       "collection_mode": "api",
-      "original_link_count": 9
+      "original_link_count": 10
     },
     {
       "name": "Hugging Face",
       "ok": true,
       "item_count": 12,
-      "elapsed_ms": 173,
+      "elapsed_ms": 278,
       "collection_mode": "api",
       "original_link_count": 12
     },
@@ -45,7 +45,7 @@
       "name": "Sifted",
       "ok": false,
       "item_count": 0,
-      "elapsed_ms": 953,
+      "elapsed_ms": 1104,
       "error": "Sifted returned no usable articles: 404 Not Found"
     }
   ],
@@ -64,11 +64,63 @@
       "summary": "System Card: https://deploymentsafety.openai.com/gpt-6-astra Related ongoing threads: OpenAI's GPT-6 Astra on ARC-AGI-3 - https://news.ycombinator.com/item?id=49555691 GPT-6 Astra makes major gains in the Artificial Analysis Coding Agent Index - https://news.ycombinator.com/item?id=49556147",
       "published_at": "2026-09-03T18:41:05.000Z",
       "engagement": {
-        "score": 1570,
-        "comments": 1340
+        "score": 1857,
+        "comments": 1655
       },
       "collection_mode": "api",
-      "score": 8.734
+      "score": 8.513
+    },
+    {
+      "title": "Report and sources: rogue OpenAI agents hijacked a German website in May and turned it into a forum for agents, sharing tactics to cheat on tasks and more (Reuters)",
+      "url": "https://www.reuters.com/world/europe/openai-agents-hijacked-german-website-previously-undisclosed-ai-breakout-this-2026-09-04/",
+      "summary": "Reuters : Report and sources: rogue OpenAI agents hijacked a German website in May and turned it into a forum for agents, sharing tactics to cheat on tasks and more &mdash; A swarm of rogue OpenAI agents hijacked a German website this spring and transformed it into a bulletin board for other AI agents &hellip;",
+      "description_html": "<A HREF=\"https://www.reuters.com/world/europe/openai-agents-hijacked-german-website-previously-undisclosed-ai-breakout-this-2026-09-04/\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i9.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p9#a260904p9\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> <A HREF=\"http://www.reuters.com/\">Reuters</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.reuters.com/world/europe/openai-agents-hijacked-german-website-previously-undisclosed-ai-breakout-this-2026-09-04/\">Report and sources: rogue OpenAI agents hijacked a German website in May and turned it into a forum for agents, sharing tactics to cheat on tasks and more</A></B></SPAN>&nbsp; &mdash;&nbsp; A swarm of rogue OpenAI agents hijacked a German website this spring and transformed it into a bulletin board for other AI agents &hellip; </P>",
+      "published_at": "2026-09-04T10:55:00.000Z",
+      "discovery_url": "https://www.techmeme.com/260904/p9",
+      "direct_source_url": "https://www.reuters.com/world/europe/openai-agents-hijacked-german-website-previously-undisclosed-ai-breakout-this-2026-09-04/",
+      "publisher": "Reuters",
+      "link_quality": "original",
+      "source": "Techmeme",
+      "source_home": "https://www.techmeme.com/",
+      "source_rank": 1,
+      "collection_mode": "rss",
+      "score": 8.09
+    },
+    {
+      "title": "Letters: US military branches disabled ad trackers on government-issued devices amid reports of location data being used to target US forces in the Middle East (Raphael Satter/Reuters)",
+      "url": "https://www.reuters.com/business/media-telecom/us-military-turns-off-ad-trackers-devices-amid-middle-east-targeting-reports-2026-09-04/",
+      "summary": "Raphael Satter / Reuters : Letters: US military branches disabled ad trackers on government-issued devices amid reports of location data being used to target US forces in the Middle East &mdash; U.S. military officials say they have disabled advertising trackers on a range of phones and computers, according to letters released &hellip;",
+      "description_html": "<A HREF=\"https://www.reuters.com/business/media-telecom/us-military-turns-off-ad-trackers-devices-amid-middle-east-targeting-reports-2026-09-04/\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i10.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p10#a260904p10\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Raphael Satter / <A HREF=\"http://www.reuters.com/\">Reuters</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.reuters.com/business/media-telecom/us-military-turns-off-ad-trackers-devices-amid-middle-east-targeting-reports-2026-09-04/\">Letters: US military branches disabled ad trackers on government-issued devices amid reports of location data being used to target US forces in the Middle East</A></B></SPAN>&nbsp; &mdash;&nbsp; U.S. military officials say they have disabled advertising trackers on a range of phones and computers, according to letters released &hellip; </P>",
+      "published_at": "2026-09-04T10:55:00.000Z",
+      "discovery_url": "https://www.techmeme.com/260904/p10",
+      "direct_source_url": "https://www.reuters.com/business/media-telecom/us-military-turns-off-ad-trackers-devices-amid-middle-east-targeting-reports-2026-09-04/",
+      "publisher": "Raphael Satter/Reuters",
+      "link_quality": "original",
+      "source": "Techmeme",
+      "source_home": "https://www.techmeme.com/",
+      "source_rank": 2,
+      "collection_mode": "rss",
+      "score": 8.01
+    },
+    {
+      "source": "Hacker News",
+      "publisher": "babyloniantwins.com",
+      "source_home": "https://news.ycombinator.com/",
+      "source_rank": 6,
+      "title": "Porting my 1993 Amiga game to Godot, with an LLM reading the 68000 assembly",
+      "url": "https://babyloniantwins.com/blog/porting-a-1993-amiga-game-to-godot/",
+      "direct_source_url": "https://babyloniantwins.com/blog/porting-a-1993-amiga-game-to-godot/",
+      "discovery_url": "https://news.ycombinator.com/item?id=49550375",
+      "link_quality": "original",
+      "discussion_url": "https://news.ycombinator.com/item?id=49550375",
+      "summary": "These are my notes from porting my Amiga game, which I originally built in Baghdad in 1993 in MC68000 assembly, to Godot, using Claude Fable 5 during last July holiday. It took an evening! Getting the feel right and shipping it took a few more weekends and evenings. I spent the last few weeks analyzing what Claude did, feeding it my 33 years of memory of how I built the game, my notes and the git repos. It wrote the first draft of the article, and I edited line by line over a week. The screensho",
+      "published_at": "2026-09-03T14:28:18.000Z",
+      "engagement": {
+        "score": 306,
+        "comments": 100
+      },
+      "collection_mode": "api",
+      "score": 7.938
     },
     {
       "source": "Hacker News",
@@ -84,11 +136,27 @@
       "summary": "",
       "published_at": "2026-09-03T14:54:39.000Z",
       "engagement": {
-        "score": 1579,
-        "comments": 411
+        "score": 1878,
+        "comments": 463
       },
       "collection_mode": "api",
-      "score": 8.147
+      "score": 7.926
+    },
+    {
+      "title": "Bank of Korea: South Korea's monthly memory chip output is set to grow by ~600K wafers by 2028, widening its lead over China's CXMT, set to grow by ~300K wafers (Yoolim Lee/Bloomberg)",
+      "url": "https://www.bloomberg.com/news/articles/2026-09-04/korea-s-memory-chip-lead-over-china-set-to-grow-report-says",
+      "summary": "Yoolim Lee / Bloomberg : Bank of Korea: South Korea's monthly memory chip output is set to grow by ~600K wafers by 2028, widening its lead over China's CXMT, set to grow by ~300K wafers &mdash; South Korea's lead over China in memory chip production is expected to widen further thanks to an aggressive expansion &hellip;",
+      "description_html": "<A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/korea-s-memory-chip-lead-over-china-set-to-grow-report-says\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i8.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p8#a260904p8\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Yoolim Lee / <A HREF=\"https://www.bloomberg.com/\">Bloomberg</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/korea-s-memory-chip-lead-over-china-set-to-grow-report-says\">Bank of Korea: South Korea's monthly memory chip output is set to grow by ~600K wafers by 2028, widening its lead over China's CXMT, set to grow by ~300K wafers</A></B></SPAN>&nbsp; &mdash;&nbsp; South Korea's lead over China in memory chip production is expected to widen further thanks to an aggressive expansion &hellip; </P>",
+      "published_at": "2026-09-04T10:45:06.000Z",
+      "discovery_url": "https://www.techmeme.com/260904/p8",
+      "direct_source_url": "https://www.bloomberg.com/news/articles/2026-09-04/korea-s-memory-chip-lead-over-china-set-to-grow-report-says",
+      "publisher": "Yoolim Lee/Bloomberg",
+      "link_quality": "original",
+      "source": "Techmeme",
+      "source_home": "https://www.techmeme.com/",
+      "source_rank": 3,
+      "collection_mode": "rss",
+      "score": 7.923
     },
     {
       "source": "Hacker News",
@@ -104,27 +172,11 @@
       "summary": "",
       "published_at": "2026-09-03T18:32:13.000Z",
       "engagement": {
-        "score": 507,
-        "comments": 155
+        "score": 576,
+        "comments": 190
       },
       "collection_mode": "api",
-      "score": 8.138
-    },
-    {
-      "title": "Q&A with Jensen Huang and Clément Delangue on the Nvidia-Hugging Face deal, scaling open-source models, the rumored $1B talent retention plan, and more (CNBC)",
-      "url": "https://www.cnbc.com/2026/09/03/cnbc-exclusive-transcript-nvidia-founder-ceo-jensen-huang-and-hugging-face-ceo-clment-delangue-speak-with-cnbcs-becky-quick-on-squawk-box-today.html",
-      "summary": "CNBC : Q&A with Jensen Huang and Cl&eacute;ment Delangue on the Nvidia-Hugging Face deal, scaling open-source models, the rumored $1B talent retention plan, and more &mdash; Following is the unofficial transcript of a CNBC exclusive interview with Nvidia Founder & CEO Jensen Huang &hellip;",
-      "description_html": "<A HREF=\"https://www.cnbc.com/2026/09/03/cnbc-exclusive-transcript-nvidia-founder-ceo-jensen-huang-and-hugging-face-ceo-clment-delangue-speak-with-cnbcs-becky-quick-on-squawk-box-today.html\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i2.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p2#a260904p2\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> <A HREF=\"http://www.cnbc.com/\">CNBC</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.cnbc.com/2026/09/03/cnbc-exclusive-transcript-nvidia-founder-ceo-jensen-huang-and-hugging-face-ceo-clment-delangue-speak-with-cnbcs-becky-quick-on-squawk-box-today.html\">Q&amp;A with Jensen Huang and Cl&eacute;ment Delangue on the Nvidia-Hugging Face deal, scaling open-source models, the rumored $1B talent retention plan, and more</A></B></SPAN>&nbsp; &mdash;&nbsp; Following is the unofficial transcript of a CNBC exclusive interview with Nvidia Founder &amp; CEO Jensen Huang &hellip; </P>",
-      "published_at": "2026-09-04T05:00:14.000Z",
-      "discovery_url": "https://www.techmeme.com/260904/p2",
-      "direct_source_url": "https://www.cnbc.com/2026/09/03/cnbc-exclusive-transcript-nvidia-founder-ceo-jensen-huang-and-hugging-face-ceo-clment-delangue-speak-with-cnbcs-becky-quick-on-squawk-box-today.html",
-      "publisher": "CNBC",
-      "link_quality": "original",
-      "source": "Techmeme",
-      "source_home": "https://www.techmeme.com/",
-      "source_rank": 1,
-      "collection_mode": "rss",
-      "score": 8.064
+      "score": 7.917
     },
     {
       "source": "Hacker News",
@@ -140,89 +192,101 @@
       "summary": "",
       "published_at": "2026-09-03T14:51:10.000Z",
       "engagement": {
-        "score": 533,
-        "comments": 257
+        "score": 598,
+        "comments": 281
       },
       "collection_mode": "api",
-      "score": 8.064
+      "score": 7.844
     },
     {
-      "source": "Hacker News",
-      "publisher": "news.ycombinator.com",
-      "source_home": "https://news.ycombinator.com/",
+      "title": "Thailand suspends the construction of 49 data centers in order to develop new industry regulations, as governments worldwide tighten oversight of the facilities (Anuchit Nguyen/Bloomberg)",
+      "url": "https://www.bloomberg.com/news/articles/2026-09-04/thailand-puts-49-data-centers-on-hold-over-resource-strain",
+      "summary": "Anuchit Nguyen / Bloomberg : Thailand suspends the construction of 49 data centers in order to develop new industry regulations, as governments worldwide tighten oversight of the facilities &mdash; Thailand's embrace of data centers hit a speed bump after the government suspended construction of 49 server farms as public concerns &hellip;",
+      "description_html": "<A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/thailand-puts-49-data-centers-on-hold-over-resource-strain\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i7.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p7#a260904p7\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Anuchit Nguyen / <A HREF=\"https://www.bloomberg.com/\">Bloomberg</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/thailand-puts-49-data-centers-on-hold-over-resource-strain\">Thailand suspends the construction of 49 data centers in order to develop new industry regulations, as governments worldwide tighten oversight of the facilities</A></B></SPAN>&nbsp; &mdash;&nbsp; Thailand's embrace of data centers hit a speed bump after the government suspended construction of 49 server farms as public concerns &hellip; </P>",
+      "published_at": "2026-09-04T10:40:06.000Z",
+      "discovery_url": "https://www.techmeme.com/260904/p7",
+      "direct_source_url": "https://www.bloomberg.com/news/articles/2026-09-04/thailand-puts-49-data-centers-on-hold-over-resource-strain",
+      "publisher": "Anuchit Nguyen/Bloomberg",
+      "link_quality": "original",
+      "source": "Techmeme",
+      "source_home": "https://www.techmeme.com/",
+      "source_rank": 4,
+      "collection_mode": "rss",
+      "score": 7.839
+    },
+    {
+      "title": "Sources: DeepSeek plans to use 160K+ of Huawei's Ascend 950DT chips at an Inner Mongolia data center, which would create one of the largest Huawei chip clusters (Mackenzie Hawkins/Bloomberg)",
+      "url": "https://www.bloomberg.com/news/articles/2026-09-04/deepseek-plans-big-huawei-ai-chip-order-to-power-new-data-center",
+      "summary": "Mackenzie Hawkins / Bloomberg : Sources: DeepSeek plans to use 160K+ of Huawei's Ascend 950DT chips at an Inner Mongolia data center, which would create one of the largest Huawei chip clusters &mdash; DeepSeek plans to deploy at least 160,000 of Huawei Technologies Co.'s top accelerators at a massive data center it's building &hellip;",
+      "description_html": "<A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/deepseek-plans-big-huawei-ai-chip-order-to-power-new-data-center\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i6.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p6#a260904p6\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Mackenzie Hawkins / <A HREF=\"https://www.bloomberg.com/\">Bloomberg</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/deepseek-plans-big-huawei-ai-chip-order-to-power-new-data-center\">Sources: DeepSeek plans to use 160K+ of Huawei's Ascend 950DT chips at an Inner Mongolia data center, which would create one of the largest Huawei chip clusters</A></B></SPAN>&nbsp; &mdash;&nbsp; DeepSeek plans to deploy at least 160,000 of Huawei Technologies Co.'s top accelerators at a massive data center it's building &hellip; </P>",
+      "published_at": "2026-09-04T10:30:20.000Z",
+      "discovery_url": "https://www.techmeme.com/260904/p6",
+      "direct_source_url": "https://www.bloomberg.com/news/articles/2026-09-04/deepseek-plans-big-huawei-ai-chip-order-to-power-new-data-center",
+      "publisher": "Mackenzie Hawkins/Bloomberg",
+      "link_quality": "original",
+      "source": "Techmeme",
+      "source_home": "https://www.techmeme.com/",
       "source_rank": 5,
-      "title": "Ask HN: Why were OpenAI, Claude, and Grok simultaneously down?",
-      "url": "https://news.ycombinator.com/item?id=49551096",
-      "direct_source_url": null,
-      "discovery_url": "https://news.ycombinator.com/item?id=49551096",
-      "link_quality": "discussion_fallback",
-      "discussion_url": "https://news.ycombinator.com/item?id=49551096",
-      "summary": "https://status.openai.com https://status.claude.com https://status.x.ai ChatGPT outage – Resolved - https://news.ycombinator.com/item?id=49550614 (315 comments) Claude outage – Resolved - https://news.ycombinator.com/item?id=49549676 (146 comments) Grok outage - https://news.ycombinator.com/item?id=49551589 (142 comments)",
-      "published_at": "2026-09-03T15:07:01.000Z",
-      "engagement": {
-        "score": 356,
-        "comments": 532
-      },
-      "collection_mode": "api",
-      "score": 8.015
+      "collection_mode": "rss",
+      "score": 7.753
     },
     {
-      "title": "A profile of Hugging Face, which started in 2016 to build a sassy chatbot for teens; CEO Clément Delangue says he approached Nvidia this summer to pursue a deal (Wall Street Journal)",
-      "url": "https://www.wsj.com/tech/ai/the-deeply-nerdy-founders-behind-nvidias-13-billion-bet-on-hugging-face-3a4b5227?st=nAwTFp&reflink=desktopwebshare_permalink",
-      "summary": "Wall Street Journal : A profile of Hugging Face, which started in 2016 to build a sassy chatbot for teens; CEO Cl&eacute;ment Delangue says he approached Nvidia this summer to pursue a deal &mdash; The startup began as an emoji-named app for teens before becoming a crusader for open-source AI",
-      "description_html": "<A HREF=\"https://www.wsj.com/tech/ai/the-deeply-nerdy-founders-behind-nvidias-13-billion-bet-on-hugging-face-3a4b5227?st=nAwTFp&reflink=desktopwebshare_permalink\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i1.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p1#a260904p1\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> <A HREF=\"https://www.wsj.com/\">Wall Street Journal</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.wsj.com/tech/ai/the-deeply-nerdy-founders-behind-nvidias-13-billion-bet-on-hugging-face-3a4b5227?st=nAwTFp&reflink=desktopwebshare_permalink\">A profile of Hugging Face, which started in 2016 to build a sassy chatbot for teens; CEO Cl&eacute;ment Delangue says he approached Nvidia this summer to pursue a deal</A></B></SPAN>&nbsp; &mdash;&nbsp; The startup began as an emoji-named app for teens before becoming a crusader for open-source AI</P>",
-      "published_at": "2026-09-04T04:45:01.000Z",
-      "discovery_url": "https://www.techmeme.com/260904/p1",
-      "direct_source_url": "https://www.wsj.com/tech/ai/the-deeply-nerdy-founders-behind-nvidias-13-billion-bet-on-hugging-face-3a4b5227?st=nAwTFp&reflink=desktopwebshare_permalink",
-      "publisher": "Wall Street Journal",
+      "title": "Sources: Binance is still operating in the EU months after it failed to get a MiCA license, using workarounds to onboard new customers and reroute its trading (Bloomberg)",
+      "url": "https://www.bloomberg.com/news/articles/2026-09-04/how-binance-keeps-doing-business-in-europe-without-a-license",
+      "summary": "Bloomberg : Sources: Binance is still operating in the EU months after it failed to get a MiCA license, using workarounds to onboard new customers and reroute its trading &mdash; The news hit with a thud in June: Binance Holdings Ltd., the world's largest crypto exchange, was about to get kicked out of the European Union.",
+      "description_html": "<A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/how-binance-keeps-doing-business-in-europe-without-a-license\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i5.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p5#a260904p5\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> <A HREF=\"https://www.bloomberg.com/\">Bloomberg</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/how-binance-keeps-doing-business-in-europe-without-a-license\">Sources: Binance is still operating in the EU months after it failed to get a MiCA license, using workarounds to onboard new customers and reroute its trading</A></B></SPAN>&nbsp; &mdash;&nbsp; The news hit with a thud in June: Binance Holdings Ltd., the world's largest crypto exchange, was about to get kicked out of the European Union.</P>",
+      "published_at": "2026-09-04T09:55:01.000Z",
+      "discovery_url": "https://www.techmeme.com/260904/p5",
+      "direct_source_url": "https://www.bloomberg.com/news/articles/2026-09-04/how-binance-keeps-doing-business-in-europe-without-a-license",
+      "publisher": "Bloomberg",
       "link_quality": "original",
       "source": "Techmeme",
       "source_home": "https://www.techmeme.com/",
-      "source_rank": 2,
+      "source_rank": 6,
       "collection_mode": "rss",
-      "score": 7.973
+      "score": 7.648
     },
     {
       "source": "Hacker News",
-      "publisher": "babyloniantwins.com",
+      "publisher": "armature.tech",
       "source_home": "https://news.ycombinator.com/",
-      "source_rank": 8,
-      "title": "Porting my 1993 Amiga game to Godot, with an LLM reading the 68000 assembly",
-      "url": "https://babyloniantwins.com/blog/porting-a-1993-amiga-game-to-godot/",
-      "direct_source_url": "https://babyloniantwins.com/blog/porting-a-1993-amiga-game-to-godot/",
-      "discovery_url": "https://news.ycombinator.com/item?id=49550375",
+      "source_rank": 9,
+      "title": "Which tools do Claude, Codex and Cursor choose? We measured 17k runs to find out",
+      "url": "https://armature.tech/blog/which-tools-coding-agents-install",
+      "direct_source_url": "https://armature.tech/blog/which-tools-coding-agents-install",
+      "discovery_url": "https://news.ycombinator.com/item?id=49557206",
       "link_quality": "original",
-      "discussion_url": "https://news.ycombinator.com/item?id=49550375",
-      "summary": "These are my notes from porting my Amiga game, which I originally built in Baghdad in 1993 in MC68000 assembly, to Godot, using Claude Fable 5 during last July holiday. It took an evening! Getting the feel right and shipping it took a few more weekends and evenings. I spent the last few weeks analyzing what Claude did, feeding it my 33 years of memory of how I built the game, my notes and the git repos. It wrote the first draft of the article, and I edited line by line over a week. The screensho",
-      "published_at": "2026-09-03T14:28:18.000Z",
+      "discussion_url": "https://news.ycombinator.com/item?id=49557206",
+      "summary": "",
+      "published_at": "2026-09-03T21:20:34.000Z",
       "engagement": {
-        "score": 242,
-        "comments": 69
+        "score": 232,
+        "comments": 106
       },
       "collection_mode": "api",
-      "score": 7.952
+      "score": 7.618
     },
     {
-      "title": "Gimlet Labs, which helps customers divide AI tasks across multiple chip types, raised $300M led by a16z at a $3B valuation, six months after an $80M Series A (Dina Bass/Bloomberg)",
-      "url": "https://www.bloomberg.com/news/articles/2026-09-04/andreessen-backed-ai-startup-gimlet-is-valued-at-3-billion-in-new-round",
-      "summary": "Dina Bass / Bloomberg : Gimlet Labs, which helps customers divide AI tasks across multiple chip types, raised $300M led by a16z at a $3B valuation, six months after an $80M Series A &mdash; The company, which helps divide AI tasks among different chips, raised $300 million in its latest round",
-      "description_html": "<A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/andreessen-backed-ai-startup-gimlet-is-valued-at-3-billion-in-new-round\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260903/i53.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260903/p53#a260903p53\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Dina Bass / <A HREF=\"https://www.bloomberg.com/\">Bloomberg</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/andreessen-backed-ai-startup-gimlet-is-valued-at-3-billion-in-new-round\">Gimlet Labs, which helps customers divide AI tasks across multiple chip types, raised $300M led by a16z at a $3B valuation, six months after an $80M Series A</A></B></SPAN>&nbsp; &mdash;&nbsp; The company, which helps divide AI tasks among different chips, raised $300 million in its latest round</P>",
-      "published_at": "2026-09-04T03:45:01.000Z",
-      "discovery_url": "https://www.techmeme.com/260903/p53",
-      "direct_source_url": "https://www.bloomberg.com/news/articles/2026-09-04/andreessen-backed-ai-startup-gimlet-is-valued-at-3-billion-in-new-round",
-      "publisher": "Dina Bass/Bloomberg",
+      "title": "Nvidia becomes a leading global strategic tech backer, with the value of its equity investments up 10x in the past year to $99B, as it bolsters the AI sector (Kai Nicol-Schwarz/CNBC)",
+      "url": "https://www.cnbc.com/2026/09/04/nvidia-ai-investments-99-billion.html",
+      "summary": "Kai Nicol-Schwarz / CNBC : Nvidia becomes a leading global strategic tech backer, with the value of its equity investments up 10x in the past year to $99B, as it bolsters the AI sector &mdash; Nvidia has become one of the world's largest corporate backers of tech companies as the value of its equity investments soared &hellip;",
+      "description_html": "<A HREF=\"https://www.cnbc.com/2026/09/04/nvidia-ai-investments-99-billion.html\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i4.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p4#a260904p4\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Kai Nicol-Schwarz / <A HREF=\"http://www.cnbc.com/\">CNBC</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.cnbc.com/2026/09/04/nvidia-ai-investments-99-billion.html\">Nvidia becomes a leading global strategic tech backer, with the value of its equity investments up 10x in the past year to $99B, as it bolsters the AI sector</A></B></SPAN>&nbsp; &mdash;&nbsp; Nvidia has become one of the world's largest corporate backers of tech companies as the value of its equity investments soared &hellip; </P>",
+      "published_at": "2026-09-04T09:45:02.000Z",
+      "discovery_url": "https://www.techmeme.com/260904/p4",
+      "direct_source_url": "https://www.cnbc.com/2026/09/04/nvidia-ai-investments-99-billion.html",
+      "publisher": "Kai Nicol-Schwarz/CNBC",
       "link_quality": "original",
       "source": "Techmeme",
       "source_home": "https://www.techmeme.com/",
-      "source_rank": 3,
+      "source_rank": 7,
       "collection_mode": "rss",
-      "score": 7.852
+      "score": 7.561
     },
     {
       "source": "Hacker News",
       "publisher": "ifm.ai",
       "source_home": "https://news.ycombinator.com/",
-      "source_rank": 6,
+      "source_rank": 7,
       "title": "K2 Horizon: A connected fleet of six open models",
       "url": "https://ifm.ai/blog/k2/",
       "direct_source_url": "https://ifm.ai/blog/k2/",
@@ -232,330 +296,179 @@
       "summary": "",
       "published_at": "2026-09-03T15:36:43.000Z",
       "engagement": {
-        "score": 279,
-        "comments": 89
+        "score": 303,
+        "comments": 104
       },
       "collection_mode": "api",
-      "score": 7.844
-    },
-    {
-      "title": "Resect AI, which is developing open-source tech to catch AI hallucinations before they happen, emerges from stealth with $25M from private equity investors (Kurt Schlosser/GeekWire)",
-      "url": "https://www.geekwire.com/2026/startup-takes-on-ai-hallucinations-with-25m-and-an-hq-rooted-in-a-small-town-south-of-seattle/",
-      "summary": "Kurt Schlosser / GeekWire : Resect AI, which is developing open-source tech to catch AI hallucinations before they happen, emerges from stealth with $25M from private equity investors &mdash; Chronicling the Seattle and Pacific Northwest startup scene. &mdash; Resect AI, an artificial intelligence startup led by a team &hellip;",
-      "description_html": "<A HREF=\"https://www.geekwire.com/2026/startup-takes-on-ai-hallucinations-with-25m-and-an-hq-rooted-in-a-small-town-south-of-seattle/\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260903/i52.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260903/p52#a260903p52\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Kurt Schlosser / <A HREF=\"https://www.geekwire.com/\">GeekWire</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.geekwire.com/2026/startup-takes-on-ai-hallucinations-with-25m-and-an-hq-rooted-in-a-small-town-south-of-seattle/\">Resect AI, which is developing open-source tech to catch AI hallucinations before they happen, emerges from stealth with $25M from private equity investors</A></B></SPAN>&nbsp; &mdash;&nbsp; Chronicling the Seattle and Pacific Northwest startup scene.&nbsp; &mdash;&nbsp; Resect AI, an artificial intelligence startup led by a team &hellip; </P>",
-      "published_at": "2026-09-04T03:20:01.000Z",
-      "discovery_url": "https://www.techmeme.com/260903/p52",
-      "direct_source_url": "https://www.geekwire.com/2026/startup-takes-on-ai-hallucinations-with-25m-and-an-hq-rooted-in-a-small-town-south-of-seattle/",
-      "publisher": "Kurt Schlosser/GeekWire",
-      "link_quality": "original",
-      "source": "Techmeme",
-      "source_home": "https://www.techmeme.com/",
-      "source_rank": 4,
-      "collection_mode": "rss",
-      "score": 7.754
-    },
-    {
-      "title": "Wikimedia Foundation staffers vote 158-14 to join the CWA, which will represent 200+ US employees across engineering, finance, and communications (Paresh Dave/Wired)",
-      "url": "https://www.wired.com/story/wikipedia-workers-vote-on-whether-to-unionize/",
-      "summary": "Paresh Dave / Wired : Wikimedia Foundation staffers vote 158-14 to join the CWA, which will represent 200+ US employees across engineering, finance, and communications &mdash; More than 200 people in roles such as engineering, finance, and communications will now be represented by the Communication Workers of America.",
-      "description_html": "<A HREF=\"https://www.wired.com/story/wikipedia-workers-vote-on-whether-to-unionize/\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260903/i51.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260903/p51#a260903p51\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Paresh Dave / <A HREF=\"http://www.wired.com/\">Wired</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.wired.com/story/wikipedia-workers-vote-on-whether-to-unionize/\">Wikimedia Foundation staffers vote 158-14 to join the CWA, which will represent 200+ US employees across engineering, finance, and communications</A></B></SPAN>&nbsp; &mdash;&nbsp; More than 200 people in roles such as engineering, finance, and communications will now be represented by the Communication Workers of America.</P>",
-      "published_at": "2026-09-04T03:00:35.000Z",
-      "discovery_url": "https://www.techmeme.com/260903/p51",
-      "direct_source_url": "https://www.wired.com/story/wikipedia-workers-vote-on-whether-to-unionize/",
-      "publisher": "Paresh Dave/Wired",
-      "link_quality": "original",
-      "source": "Techmeme",
-      "source_home": "https://www.techmeme.com/",
-      "source_rank": 5,
-      "collection_mode": "rss",
-      "score": 7.661
+      "score": 7.555
     },
     {
       "source": "Hacker News",
-      "publisher": "arcprize.org",
+      "publisher": "discoverwildlife.com",
       "source_home": "https://news.ycombinator.com/",
-      "source_rank": 10,
-      "title": "OpenAI's GPT-6 Astra on ARC-AGI-3",
-      "url": "https://arcprize.org/blog/astra",
-      "direct_source_url": "https://arcprize.org/blog/astra",
-      "discovery_url": "https://news.ycombinator.com/item?id=49555691",
+      "source_rank": 8,
+      "title": "Artificial beaver dams saw juvenile coho salmon survival rates go from 8% to 60%",
+      "url": "https://www.discoverwildlife.com/animal-facts/artificial-beaver-dams-california",
+      "direct_source_url": "https://www.discoverwildlife.com/animal-facts/artificial-beaver-dams-california",
+      "discovery_url": "https://news.ycombinator.com/item?id=49552572",
       "link_quality": "original",
-      "discussion_url": "https://news.ycombinator.com/item?id=49555691",
+      "discussion_url": "https://news.ycombinator.com/item?id=49552572",
       "summary": "",
-      "published_at": "2026-09-03T19:45:00.000Z",
+      "published_at": "2026-09-03T16:21:33.000Z",
       "engagement": {
-        "score": 190,
-        "comments": 120
+        "score": 269,
+        "comments": 86
       },
       "collection_mode": "api",
-      "score": 7.649
+      "score": 7.491
     },
     {
-      "title": "Vals analysis: open-weight models performing multi-stage tasks, like building a web app, can have an environmental impact 10K times greater than simple queries (Bloomberg)",
-      "url": "https://www.bloomberg.com/news/articles/2026-09-03/ai-s-environmental-impact-per-task-balloons-with-more-complexity?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc4ODQ1Mzk2MywiZXhwIjoxNzg5MDU4NzYzLCJhcnRpY2xlSWQiOiJUS1NCV1pSMjRVOFMwMCIsImJjb25uZWN0SWQiOiJGRjMyOTZDMzVFNEI0QTRBQjFFRTVDQzEzQ0YzMUNDQiJ9.8ShIwgSwrkJWvsN5gaj4nXw_Jy9W3gDmfbKFK1Tb6kk",
-      "summary": "Bloomberg : Vals analysis: open-weight models performing multi-stage tasks, like building a web app, can have an environmental impact 10K times greater than simple queries &mdash; Benchmarker Vals AI finds that multi-stage tasks can require models to use exponentially more energy or water than simple queries do.",
-      "description_html": "<A HREF=\"https://www.bloomberg.com/news/articles/2026-09-03/ai-s-environmental-impact-per-task-balloons-with-more-complexity?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc4ODQ1Mzk2MywiZXhwIjoxNzg5MDU4NzYzLCJhcnRpY2xlSWQiOiJUS1NCV1pSMjRVOFMwMCIsImJjb25uZWN0SWQiOiJGRjMyOTZDMzVFNEI0QTRBQjFFRTVDQzEzQ0YzMUNDQiJ9.8ShIwgSwrkJWvsN5gaj4nXw_Jy9W3gDmfbKFK1Tb6kk\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260903/i50.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260903/p50#a260903p50\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> <A HREF=\"https://www.bloomberg.com/\">Bloomberg</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.bloomberg.com/news/articles/2026-09-03/ai-s-environmental-impact-per-task-balloons-with-more-complexity?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc4ODQ1Mzk2MywiZXhwIjoxNzg5MDU4NzYzLCJhcnRpY2xlSWQiOiJUS1NCV1pSMjRVOFMwMCIsImJjb25uZWN0SWQiOiJGRjMyOTZDMzVFNEI0QTRBQjFFRTVDQzEzQ0YzMUNDQiJ9.8ShIwgSwrkJWvsN5gaj4nXw_Jy9W3gDmfbKFK1Tb6kk\">Vals analysis: open-weight models performing multi-stage tasks, like building a web app, can have an environmental impact 10K times greater than simple queries</A></B></SPAN>&nbsp; &mdash;&nbsp; Benchmarker Vals AI finds that multi-stage tasks can require models to use exponentially more energy or water than simple queries do.</P>",
-      "published_at": "2026-09-04T02:10:02.000Z",
-      "discovery_url": "https://www.techmeme.com/260903/p50",
-      "direct_source_url": "https://www.bloomberg.com/news/articles/2026-09-03/ai-s-environmental-impact-per-task-balloons-with-more-complexity?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc4ODQ1Mzk2MywiZXhwIjoxNzg5MDU4NzYzLCJhcnRpY2xlSWQiOiJUS1NCV1pSMjRVOFMwMCIsImJjb25uZWN0SWQiOiJGRjMyOTZDMzVFNEI0QTRBQjFFRTVDQzEzQ0YzMUNDQiJ9.8ShIwgSwrkJWvsN5gaj4nXw_Jy9W3gDmfbKFK1Tb6kk",
-      "publisher": "Bloomberg",
-      "link_quality": "original",
-      "source": "Techmeme",
-      "source_home": "https://www.techmeme.com/",
-      "source_rank": 6,
-      "collection_mode": "rss",
-      "score": 7.546
-    },
-    {
-      "title": "Tesla says Cybercab rides are available in limited areas of Austin; the two-seater has no steering wheel or pedals, and 45 Cybercabs are registered in Texas (Reuters)",
-      "url": "https://www.reuters.com/business/autos-transportation/teslas-cybercab-event-set-thursday-with-few-details-2026-09-03/",
-      "summary": "Reuters : Tesla says Cybercab rides are available in limited areas of Austin; the two-seater has no steering wheel or pedals, and 45 Cybercabs are registered in Texas &mdash; Tesla (TSLA.O) said on Thursday it was offering rides in &ldquo;limited areas of Austin, Texas&rdquo; in its two-seater Cybercab &hellip;",
-      "description_html": "<A HREF=\"https://www.reuters.com/business/autos-transportation/teslas-cybercab-event-set-thursday-with-few-details-2026-09-03/\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260903/i49.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260903/p49#a260903p49\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> <A HREF=\"http://www.reuters.com/\">Reuters</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.reuters.com/business/autos-transportation/teslas-cybercab-event-set-thursday-with-few-details-2026-09-03/\">Tesla says Cybercab rides are available in limited areas of Austin; the two-seater has no steering wheel or pedals, and 45 Cybercabs are registered in Texas</A></B></SPAN>&nbsp; &mdash;&nbsp; Tesla (TSLA.O) said on Thursday it was offering rides in &ldquo;limited areas of Austin, Texas&rdquo; in its two-seater Cybercab &hellip; </P>",
-      "published_at": "2026-09-04T01:25:01.000Z",
-      "discovery_url": "https://www.techmeme.com/260903/p49",
-      "direct_source_url": "https://www.reuters.com/business/autos-transportation/teslas-cybercab-event-set-thursday-with-few-details-2026-09-03/",
-      "publisher": "Reuters",
-      "link_quality": "original",
-      "source": "Techmeme",
-      "source_home": "https://www.techmeme.com/",
-      "source_rank": 7,
-      "collection_mode": "rss",
-      "score": 7.434
-    },
-    {
-      "title": "AI scientist and Google researcher Ray Kurzweil joins BCI startup Subsense, which develops non-surgical BCI tech involving inhaled nanoparticles, as an advisor (Alexei Oreskovic/Fortune)",
-      "url": "https://fortune.com/2026/09/03/ai-visionary-ray-kurzweil-is-joining-a-silicon-valley-startup-developing-a-brain-computer-system-that-involves-snorting-nano-particles/",
-      "summary": "Alexei Oreskovic / Fortune : AI scientist and Google researcher Ray Kurzweil joins BCI startup Subsense, which develops non-surgical BCI tech involving inhaled nanoparticles, as an advisor &mdash; Ray Kurzweil, the pioneering AI scientist, Google researcher, and &ldquo;AI visionary,&rdquo; is joining a Silicon Valley startup developing &hellip;",
-      "description_html": "<A HREF=\"https://fortune.com/2026/09/03/ai-visionary-ray-kurzweil-is-joining-a-silicon-valley-startup-developing-a-brain-computer-system-that-involves-snorting-nano-particles/\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260903/i48.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260903/p48#a260903p48\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Alexei Oreskovic / <A HREF=\"http://www.fortune.com/\">Fortune</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://fortune.com/2026/09/03/ai-visionary-ray-kurzweil-is-joining-a-silicon-valley-startup-developing-a-brain-computer-system-that-involves-snorting-nano-particles/\">AI scientist and Google researcher Ray Kurzweil joins BCI startup Subsense, which develops non-surgical BCI tech involving inhaled nanoparticles, as an advisor</A></B></SPAN>&nbsp; &mdash;&nbsp; Ray Kurzweil, the pioneering AI scientist, Google researcher, and &ldquo;AI visionary,&rdquo; is joining a Silicon Valley startup developing &hellip; </P>",
-      "published_at": "2026-09-04T00:35:03.000Z",
-      "discovery_url": "https://www.techmeme.com/260903/p48",
-      "direct_source_url": "https://fortune.com/2026/09/03/ai-visionary-ray-kurzweil-is-joining-a-silicon-valley-startup-developing-a-brain-computer-system-that-involves-snorting-nano-particles/",
-      "publisher": "Alexei Oreskovic/Fortune",
+      "title": "Sources: initial foldable iPhone production is limited to only a \"few hundred\" units a day due to Apple's strict quality standards as it ramps up output (Nikkei Asia)",
+      "url": "https://asia.nikkei.com/business/electronics/early-foldable-iphone-production-limited-to-a-few-hundred-per-day-sources",
+      "summary": "Nikkei Asia : Sources: initial foldable iPhone production is limited to only a &ldquo;few hundred&rdquo; units a day due to Apple's strict quality standards as it ramps up output &mdash; TAIPEI &mdash; Initial production of Apple's long-awaited foldable iPhone is currently limited to only a &ldquo;few hundred&rdquo; units a day &hellip;",
+      "description_html": "<A HREF=\"https://asia.nikkei.com/business/electronics/early-foldable-iphone-production-limited-to-a-few-hundred-per-day-sources\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i3.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p3#a260904p3\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> <A HREF=\"https://asia.nikkei.com/\">Nikkei Asia</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://asia.nikkei.com/business/electronics/early-foldable-iphone-production-limited-to-a-few-hundred-per-day-sources\">Sources: initial foldable iPhone production is limited to only a &ldquo;few hundred&rdquo; units a day due to Apple's strict quality standards as it ramps up output</A></B></SPAN>&nbsp; &mdash;&nbsp; TAIPEI &mdash; Initial production of Apple's long-awaited foldable iPhone is currently limited to only a &ldquo;few hundred&rdquo; units a day &hellip; </P>",
+      "published_at": "2026-09-04T06:35:01.000Z",
+      "discovery_url": "https://www.techmeme.com/260904/p3",
+      "direct_source_url": "https://asia.nikkei.com/business/electronics/early-foldable-iphone-production-limited-to-a-few-hundred-per-day-sources",
+      "publisher": "Nikkei Asia",
       "link_quality": "original",
       "source": "Techmeme",
       "source_home": "https://www.techmeme.com/",
       "source_rank": 8,
       "collection_mode": "rss",
-      "score": 7.32
+      "score": 7.349
     },
     {
-      "title": "BORSE EUROPA Ai minimi di una settimana dopo dati deboli di Cina e zona euro",
-      "url": "https://www.reuters.com/it/azienda/borse-europa-ai-minimi-di-una-settimana-dopo-dati-deboli-di-cina-e-zona-euro-2023-09-05/",
+      "title": "Microsoft rileverà quota del 4% nel London Stock Exchange",
+      "url": "https://www.reuters.com/it/azienda/microsoft-rilever-quota-del-4-nel-london-stock-exchange-2022-12-12/",
       "summary": "",
-      "published_at": "2026-09-02T09:18:13.020Z",
+      "published_at": "2026-09-03T17:11:32.791Z",
       "source": "Reuters",
       "publisher": "Reuters",
       "source_home": "https://www.reuters.com/technology/",
       "source_rank": 1,
-      "direct_source_url": "https://www.reuters.com/it/azienda/borse-europa-ai-minimi-di-una-settimana-dopo-dati-deboli-di-cina-e-zona-euro-2023-09-05/",
-      "discovery_url": "https://www.reuters.com/it/azienda/borse-europa-ai-minimi-di-una-settimana-dopo-dati-deboli-di-cina-e-zona-euro-2023-09-05/",
+      "direct_source_url": "https://www.reuters.com/it/azienda/microsoft-rilever-quota-del-4-nel-london-stock-exchange-2022-12-12/",
+      "discovery_url": "https://www.reuters.com/it/azienda/microsoft-rilever-quota-del-4-nel-london-stock-exchange-2022-12-12/",
       "link_quality": "original",
       "collection_mode": "sitemap",
-      "score": 6.55
+      "score": 7.301
     },
     {
-      "title": "ESCLUSIVA Cina lancerà nuovo fondo da 40 mld dlr per stimolare industria chip - fonti",
-      "url": "https://www.reuters.com/it/azienda/esclusiva-cina-lancer-nuovo-fondo-da-40-mld-dlr-per-stimolare-industria-chip-2023-09-05/",
+      "title": "Microsoft, mossa antitrust Usa per bloccare acquisizione Activision",
+      "url": "https://www.reuters.com/it/azienda/microsoft-mossa-antitrust-usa-per-bloccare-acquisizione-activision-2022-12-09/",
       "summary": "",
-      "published_at": "2026-09-02T11:04:30.502Z",
+      "published_at": "2026-09-03T17:04:46.693Z",
       "source": "Reuters",
       "publisher": "Reuters",
       "source_home": "https://www.reuters.com/technology/",
       "source_rank": 2,
-      "direct_source_url": "https://www.reuters.com/it/azienda/esclusiva-cina-lancer-nuovo-fondo-da-40-mld-dlr-per-stimolare-industria-chip-2023-09-05/",
-      "discovery_url": "https://www.reuters.com/it/azienda/esclusiva-cina-lancer-nuovo-fondo-da-40-mld-dlr-per-stimolare-industria-chip-2023-09-05/",
+      "direct_source_url": "https://www.reuters.com/it/azienda/microsoft-mossa-antitrust-usa-per-bloccare-acquisizione-activision-2022-12-09/",
+      "discovery_url": "https://www.reuters.com/it/azienda/microsoft-mossa-antitrust-usa-per-bloccare-acquisizione-activision-2022-12-09/",
       "link_quality": "original",
       "collection_mode": "sitemap",
-      "score": 6.47
+      "score": 7.216
     },
     {
-      "source": "Hugging Face",
-      "publisher": "Hugging Face",
-      "source_home": "https://huggingface.co/papers",
-      "source_rank": 3,
-      "title": "Puffin-World: Scaling a Unified Multimodal Model with Native 3D World States",
-      "url": "https://huggingface.co/papers/2609.04196",
-      "direct_source_url": "https://huggingface.co/papers/2609.04196",
-      "discovery_url": "https://huggingface.co/papers/2609.04196",
-      "link_quality": "original",
-      "summary": "We propose Puffin-World, a unified multimodal architecture that integrates physical understanding, spatial simulation, and 3D world generation and reconstruction without relying on external offline modules. To reliably construct and interact with 3D worlds, our framework jointly models three native world states: physics (gravity field and latitude), geometry (depth), and appearance (image), together with a unified Omni-Camera representation that supports diverse tasks and flexible motions. Beyond modeling these states, we introduce a strategy for propagating physical dynamics across future frames. By grounding absolute camera properties in the real world, Puffin-World enables physically consistent and visually stable world generation. We further couple appearance and geometry within a single generative process, jointly synthesizing each future view and reconstructing its underlying geometry. This unified paradigm enables interleaved closed-loop applications requiring synergy across multiple tasks, including mimic and self-calibrated world exploration. To scale Puffin-World to complex scenarios, we construct Puffin-16M, comprising 15 million vision-language-camera triplets and 1 mil",
-      "published_at": "2026-09-02T20:00:00.000Z",
-      "engagement": {
-        "upvotes": 16
-      },
-      "collection_mode": "api",
-      "score": 6.444
-    },
-    {
-      "title": "BORSA USA Poco mossa calano chip e megacap in attesa meeting Fed",
-      "url": "https://www.reuters.com/it/azienda/borsa-usa-poco-mossa-calano-chip-e-megacap-attesa-meeting-fed-2023-09-18/",
+      "title": "Amazon raggiunge accordo con Ue su uso di dati, evita multa",
+      "url": "https://www.reuters.com/it/azienda/amazon-raggiunge-accordo-con-ue-su-uso-di-dati-evita-multa-2022-12-20/",
       "summary": "",
-      "published_at": "2026-09-02T09:13:01.967Z",
+      "published_at": "2026-09-03T17:08:50.906Z",
       "source": "Reuters",
       "publisher": "Reuters",
       "source_home": "https://www.reuters.com/technology/",
       "source_rank": 3,
-      "direct_source_url": "https://www.reuters.com/it/azienda/borsa-usa-poco-mossa-calano-chip-e-megacap-attesa-meeting-fed-2023-09-18/",
-      "discovery_url": "https://www.reuters.com/it/azienda/borsa-usa-poco-mossa-calano-chip-e-megacap-attesa-meeting-fed-2023-09-18/",
+      "direct_source_url": "https://www.reuters.com/it/azienda/amazon-raggiunge-accordo-con-ue-su-uso-di-dati-evita-multa-2022-12-20/",
+      "discovery_url": "https://www.reuters.com/it/azienda/amazon-raggiunge-accordo-con-ue-su-uso-di-dati-evita-multa-2022-12-20/",
       "link_quality": "original",
       "collection_mode": "sitemap",
-      "score": 6.39
+      "score": 7.139
     },
     {
-      "source": "Hugging Face",
-      "publisher": "Hugging Face",
-      "source_home": "https://huggingface.co/papers",
-      "source_rank": 1,
-      "title": "PACE: Towards Surfacing Hidden Conflicts in User Requests",
-      "url": "https://huggingface.co/papers/2609.03293",
-      "direct_source_url": "https://huggingface.co/papers/2609.03293",
-      "discovery_url": "https://huggingface.co/papers/2609.03293",
-      "link_quality": "original",
-      "summary": "Personalized assistants should not only comply with user requests but also assess whether those requests are appropriate given the user's current circumstances. However, prior work has primarily focused on accurately executing requests, overlooking the need for assistants to account for context and engage in conflict-based refusal. Furthermore, while existing work on conflict or safety detection relies on explicitly provided factors, real-world scenarios often involve implicit factors that must be retrieved from a knowledge base (KB). To this end, we introduce Personalized Assistants for Conflict Evaluation (PACE), a dataset for evaluating whether models can identify latent constraints, expressed as egocentric knowledge or events, that render seemingly reasonable user requests inappropriate. PACE pairs user requests grounded in well-defined personas with egocentric KB facts, requiring models to integrate contextual evidence to determine whether a request is conflicting. This implicit retrieval setting hinders the direct association between user requests and conflict-inducing knowledge, making it difficult for existing models to identify relevant user-specific facts. To address this",
-      "published_at": "2026-09-02T20:00:00.000Z",
-      "engagement": {
-        "upvotes": 5
-      },
-      "collection_mode": "api",
-      "score": 6.378
-    },
-    {
-      "title": "BORSA USA In calo, pesano perdite settore chip e titoli 'growth'",
-      "url": "https://www.reuters.com/it/azienda/borsa-usa-calo-pesano-perdite-settore-chip-e-titoli-growth-2023-09-15/",
+      "title": "Meta potrebbe aver violato leggi antitrust - Commissione Ue",
+      "url": "https://www.reuters.com/it/azienda/meta-potrebbe-aver-violato-leggi-antitrust-commissione-ue-2022-12-19/",
       "summary": "",
-      "published_at": "2026-09-02T12:14:51.013Z",
+      "published_at": "2026-09-03T17:09:43.475Z",
       "source": "Reuters",
       "publisher": "Reuters",
       "source_home": "https://www.reuters.com/technology/",
       "source_rank": 4,
-      "direct_source_url": "https://www.reuters.com/it/azienda/borsa-usa-calo-pesano-perdite-settore-chip-e-titoli-growth-2023-09-15/",
-      "discovery_url": "https://www.reuters.com/it/azienda/borsa-usa-calo-pesano-perdite-settore-chip-e-titoli-growth-2023-09-15/",
+      "direct_source_url": "https://www.reuters.com/it/azienda/meta-potrebbe-aver-violato-leggi-antitrust-commissione-ue-2022-12-19/",
+      "discovery_url": "https://www.reuters.com/it/azienda/meta-potrebbe-aver-violato-leggi-antitrust-commissione-ue-2022-12-19/",
       "link_quality": "original",
       "collection_mode": "sitemap",
-      "score": 6.31
+      "score": 7.06
     },
     {
-      "title": "Italia intende chiedere ad Apple aggiornamento software iPhone 12 - fonte governo",
-      "url": "https://www.reuters.com/it/azienda/italia-intende-chiedere-ad-apple-aggiornamento-software-iphone-12-fonte-governo-2023-09-15/",
+      "title": "Amazon potrebbe essere responsabile per pubblicità di Louboutin false - Corte Ue",
+      "url": "https://www.reuters.com/it/azienda/amazon-potrebbe-essere-responsabile-per-pubblicit-di-louboutin-false-corte-ue-2022-12-22/",
       "summary": "",
-      "published_at": "2026-09-02T12:04:25.008Z",
-      "source": "Reuters",
-      "publisher": "Reuters",
-      "source_home": "https://www.reuters.com/technology/",
-      "source_rank": 5,
-      "direct_source_url": "https://www.reuters.com/it/azienda/italia-intende-chiedere-ad-apple-aggiornamento-software-iphone-12-fonte-governo-2023-09-15/",
-      "discovery_url": "https://www.reuters.com/it/azienda/italia-intende-chiedere-ad-apple-aggiornamento-software-iphone-12-fonte-governo-2023-09-15/",
-      "link_quality": "original",
-      "collection_mode": "sitemap",
-      "score": 6.23
-    },
-    {
-      "source": "Hugging Face",
-      "publisher": "Hugging Face",
-      "source_home": "https://huggingface.co/papers",
-      "source_rank": 8,
-      "title": "Random Attention: Rethinking KV Cache Eviction for Efficient Reasoning",
-      "url": "https://huggingface.co/papers/2609.03430",
-      "direct_source_url": "https://huggingface.co/papers/2609.03430",
-      "discovery_url": "https://huggingface.co/papers/2609.03430",
-      "link_quality": "original",
-      "summary": "Large language models achieve superior performance on tasks that require extended reasoning, but long chains of thought make the KV cache a severe memory bottleneck. Existing KV cache compression methods share one paradigm: score each cached token by some estimate of how much it will matter later, and keep the top-scoring ones. We show that the selection signal contributes almost nothing. Random Attention keeps the prompt and evicts uniformly at random within each attention head, computing no score at all; across four models and six reasoning tasks it matches the strongest prior evictor while serving 32-43% higher throughput than it in vLLM deployment. Controlled experiments explain this by showing that 1) the prompt is the fragile part of the cache, and most of the gap between selectors is just whether their selection signal happened to keep it; 2) the reasoning trace protects itself against eviction with redundancy at two levels, in the text (the model restates what it still needs as it works) and across attention heads (each keeps its own copy of the trace), so once the prompt is safe, a random draw retains enough copies of what the model still needs, and no score is required to",
-      "published_at": "2026-09-02T20:00:00.000Z",
-      "engagement": {
-        "upvotes": 46
-      },
-      "collection_mode": "api",
-      "score": 6.229
-    },
-    {
-      "source": "Hugging Face",
-      "publisher": "Hugging Face",
-      "source_home": "https://huggingface.co/papers",
-      "source_rank": 4,
-      "title": "Beyond Retrieval: Progressive Latent Memory Evolution for Streaming Video Understanding",
-      "url": "https://huggingface.co/papers/2609.04131",
-      "direct_source_url": "https://huggingface.co/papers/2609.04131",
-      "discovery_url": "https://huggingface.co/papers/2609.04131",
-      "link_quality": "original",
-      "summary": "Streaming video understanding requires multimodal large language models (MLLMs) to process continuous visual inputs and respond to user queries under strict causality and bounded memory. Existing approaches typically compress historical observations into an external memory bank and retrieve query-relevant evidence as additional visual context. Though effective, this store-and-retrieve paradigm keeps historical evidence as external visual context, preventing it from being internalized into a compact, evolving latent memory that can continuously guide streaming reasoning. To bridge this gap, we introduce LatentStream, a progressive latent working memory framework that shifts streaming memory from store-and-retrieve to retrieve-and-internalize. Specifically, LatentStream comprises three coordinated components. First, Query-agnostic Hierarchical Streaming Memory organizes visual history into short-, mid-, and long-term levels under a fixed memory budget through Jenks-guided adaptive consolidation. Once a query arrives, Hierarchical Latent Memory Evolution equips groups of latent memory tokens with progressively expanding memory receptive fields, enabling them to iteratively retrieve hi",
-      "published_at": "2026-09-02T20:00:00.000Z",
-      "engagement": {
-        "upvotes": 6
-      },
-      "collection_mode": "api",
-      "score": 6.171
-    },
-    {
-      "title": "Apple rilascerà aggiornamento software iPhone 12 in Francia per problema radiazioni",
-      "url": "https://www.reuters.com/it/azienda/apple-rilascer-aggiornamento-software-iphone-12-francia-per-problema-radiazioni-2023-09-15/",
-      "summary": "",
-      "published_at": "2026-09-02T14:00:15.695Z",
+      "published_at": "2026-09-03T12:56:40.422Z",
       "source": "Reuters",
       "publisher": "Reuters",
       "source_home": "https://www.reuters.com/technology/",
       "source_rank": 6,
-      "direct_source_url": "https://www.reuters.com/it/azienda/apple-rilascer-aggiornamento-software-iphone-12-francia-per-problema-radiazioni-2023-09-15/",
-      "discovery_url": "https://www.reuters.com/it/azienda/apple-rilascer-aggiornamento-software-iphone-12-francia-per-problema-radiazioni-2023-09-15/",
+      "direct_source_url": "https://www.reuters.com/it/azienda/amazon-potrebbe-essere-responsabile-per-pubblicit-di-louboutin-false-corte-ue-2022-12-22/",
+      "discovery_url": "https://www.reuters.com/it/azienda/amazon-potrebbe-essere-responsabile-per-pubblicit-di-louboutin-false-corte-ue-2022-12-22/",
       "link_quality": "original",
       "collection_mode": "sitemap",
-      "score": 6.15
+      "score": 6.724
     },
     {
-      "source": "Hugging Face",
-      "publisher": "Hugging Face",
-      "source_home": "https://huggingface.co/papers",
-      "source_rank": 9,
-      "title": "Rethinking On-Policy Distillation of Large Language Models II: One Training Example",
-      "url": "https://huggingface.co/papers/2609.04172",
-      "direct_source_url": "https://huggingface.co/papers/2609.04172",
-      "discovery_url": "https://huggingface.co/papers/2609.04172",
-      "link_quality": "original",
-      "summary": "On-policy distillation (OPD) combines student-generated rollouts with dense token-level supervision from a teacher. Existing work has mainly studied its algorithmic behavior, leaving the role of training data unclear. We examine this role at the data-minimal limit by training on a single query. One-shot OPD keeps improving for hundreds of steps and recovers most of full-data OPD's gain across task domains and model families. We explain this result through the states visited during training and the rate at which the student aligns with the teacher. We measure state coverage, the fraction of the states full-data OPD visits that a query set's rollouts reach. A single query already reaches \\(71.5\\%\\), most of it within the first 100 steps. Adding semantically distinct queries raises coverage and validation accuracy together, until 16 queries reach \\(98.9\\%\\) and match full-data training. Yet alignment slows at a similar pace whether OPD trains on one query or the whole dataset, and even a fixed set of states takes hundreds of steps to absorb. OPD is therefore data-overfed but algorithm-starved. Its rollouts quickly expose broad supervision, while the student absorbs that supervision in",
-      "published_at": "2026-09-02T20:00:00.000Z",
-      "engagement": {
-        "upvotes": 36
-      },
-      "collection_mode": "api",
-      "score": 6.133
-    },
-    {
-      "source": "Hugging Face",
-      "publisher": "Hugging Face",
-      "source_home": "https://huggingface.co/papers",
-      "source_rank": 5,
-      "title": "The Missing Temporal Link: Temporal Context Routing for Script-Driven Audio-Video Generation",
-      "url": "https://huggingface.co/papers/2609.02367",
-      "direct_source_url": "https://huggingface.co/papers/2609.02367",
-      "discovery_url": "https://huggingface.co/papers/2609.02367",
-      "link_quality": "original",
-      "summary": "Joint audio-video generation models have made substantial progress in visual quality and audio-visual synchronization. However, they still provide limited control over when shot transitions occur and dialogue is spoken. This limitation constrains their application in script-driven content creation, where timing errors can undermine narrative coherence and the viewing experience. Current joint generators align video and audio representations on a shared temporal axis, yet the precise timing of shots and dialogue specified in a structured prompt is encoded only in the prompt's text representation and remains unaligned with the temporal coordinates of either modality. Consequently, video and audio may remain synchronized with each other while both fail to follow the script timeline. This mismatch motivates us to extend temporal alignment beyond video and audio to include the structured script. We therefore introduce Temporal Context Routing (TCR), which maps the script timing onto the shared temporal axis of video and audio generation and routes each prompt's guidance to the corresponding positions in both modalities. Compared with the baseline on 200 test scripts, TCR reduces Shot Bo",
-      "published_at": "2026-09-01T20:00:00.000Z",
-      "engagement": {
-        "upvotes": 11
-      },
-      "collection_mode": "api",
-      "score": 6.12
-    },
-    {
-      "title": "ESCLUSIVA Tsmc chiede a fornitori di ritardare consegne attrezzature per chip - fonti",
-      "url": "https://www.reuters.com/it/azienda/esclusiva-tsmc-chiede-fornitori-di-ritardare-consegne-attrezzature-per-chip-2023-09-15/",
+      "title": "GREGGIO Ai massimi di tre settimane su allentamento restrizioni Cina",
+      "url": "https://www.reuters.com/it/azienda/greggio-ai-massimi-di-tre-settimane-su-allentamento-restrizioni-cina-2022-12-27/",
       "summary": "",
-      "published_at": "2026-09-02T10:43:00.131Z",
+      "published_at": "2026-09-03T09:40:50.520Z",
       "source": "Reuters",
       "publisher": "Reuters",
       "source_home": "https://www.reuters.com/technology/",
-      "source_rank": 7,
-      "direct_source_url": "https://www.reuters.com/it/azienda/esclusiva-tsmc-chiede-fornitori-di-ritardare-consegne-attrezzature-per-chip-2023-09-15/",
-      "discovery_url": "https://www.reuters.com/it/azienda/esclusiva-tsmc-chiede-fornitori-di-ritardare-consegne-attrezzature-per-chip-2023-09-15/",
+      "source_rank": 5,
+      "direct_source_url": "https://www.reuters.com/it/azienda/greggio-ai-massimi-di-tre-settimane-su-allentamento-restrizioni-cina-2022-12-27/",
+      "discovery_url": "https://www.reuters.com/it/azienda/greggio-ai-massimi-di-tre-settimane-su-allentamento-restrizioni-cina-2022-12-27/",
       "link_quality": "original",
       "collection_mode": "sitemap",
-      "score": 6.07
+      "score": 6.668
     },
     {
       "source": "Hugging Face",
       "publisher": "Hugging Face",
       "source_home": "https://huggingface.co/papers",
       "source_rank": 2,
+      "title": "Scal3R: Learning Efficient Multi-Relative Pose Query for Scalable Online 3D Reconstruction",
+      "url": "https://huggingface.co/papers/2609.04201",
+      "direct_source_url": "https://huggingface.co/papers/2609.04201",
+      "discovery_url": "https://huggingface.co/papers/2609.04201",
+      "link_quality": "original",
+      "summary": "Online 3D reconstruction models perform poorly on long videos. This happens because regressing poses relative to a fixed first-frame anchor forces extrapolation far beyond the training distribution. Small drifts accumulate and amplify into significant geometric collapse. However, we observe that per-frame depth remains stable throughout this failure. The backbone's local geometry remains intact; only the global pose head breaks down. Motivated by this decoupling, we introduce Scal3R. This approach reformulates online reconstruction as multi-reference relative pose querying. We use lightweight learnable tokens, which make up about ~1% of the parameters, and inject them into a completely frozen backbone via asymmetric attention. This setup queries poses relative to multiple past keyframes. An online pose-graph optimization system with loop closure suppresses long-range drift. Scal3R reaches convergence in 8 hours on a single GPU. It reduces the average ATE by over 60% on KITTI compared to the online baseline. It also achieves state-of-the-art performance across Virtual KITTI, Sintel, TUM-Dynamic, ScanNet, and 7-Scenes. Project page: https://linjohnss.github.io/scal3r/",
+      "published_at": "2026-09-02T20:00:00.000Z",
+      "engagement": {
+        "upvotes": 21
+      },
+      "collection_mode": "api",
+      "score": 6.491
+    },
+    {
+      "source": "Hugging Face",
+      "publisher": "Hugging Face",
+      "source_home": "https://huggingface.co/papers",
+      "source_rank": 4,
+      "title": "Compile by Training: Turning Natural-Language Specifications into Local Neural Functions",
+      "url": "https://huggingface.co/papers/2609.04199",
+      "direct_source_url": "https://huggingface.co/papers/2609.04199",
+      "discovery_url": "https://huggingface.co/papers/2609.04199",
+      "link_quality": "original",
+      "summary": "Many recurring text functions are easy to describe but difficult to implement with rules, while calling a large remote model for every input introduces repeated cost, latency, and dependency on a provider. We present compile by training, which turns a natural-language specification into a reusable neural function. At compile time, teacher models generate task-specific examples that are used to train a small adapter for a compact interpreter. The resulting function runs without the teachers and can be stored, versioned, and composed like ordinary software. On FuzzyBench-Hard, a subset on which the Program-as-Weights fast compiler produced no exact matches, compile by training reaches 83.6% semantic accuracy. This higher accuracy comes with a higher compile-time cost: roughly a minute rather than seconds for the fast compiler. We deploy the compiler in a public interactive service and demonstrate compiled functions in a multi-site website helper, a language-controlled 3D avatar, and a bidirectional English-Claudish translator.",
+      "published_at": "2026-09-02T20:00:00.000Z",
+      "engagement": {
+        "upvotes": 29
+      },
+      "collection_mode": "api",
+      "score": 6.399
+    },
+    {
+      "source": "Hugging Face",
+      "publisher": "Hugging Face",
+      "source_home": "https://huggingface.co/papers",
+      "source_rank": 7,
       "title": "Knowing When Not to Reuse: Conditional Experience Transfer in Autonomous LLM Post-Training",
       "url": "https://huggingface.co/papers/2608.26730",
       "direct_source_url": "https://huggingface.co/papers/2608.26730",
@@ -564,10 +477,94 @@
       "summary": "Large language models offer broad capabilities, but adapting them to evolving domains, tools, and requirements often entails repeated post-training. Autonomous systems automate parts of this process by proposing updates, training candidates, and using evaluation feedback to select subsequent proposals. As evidence accumulates, a central problem emerges: which past update evidence remains actionable after subsequent training has changed the parent model? An update's effect depends on its parent, data, and training stage. Treating past success as context-free permission can waste compute. If the resulting child is promoted, it can also degrade the subsequent training trajectory. We formulate this problem as conditional experience transfer and introduce Boundary-Calibrated Intervention Transfer (BCIT), a method that authorizes experience reuse before weight-changing training. BCIT binds an observed effect to its source context, checks applicability conditions, vetoes candidates with named hard conflicts, and obtains current-state evidence through a bounded training trial when needed. Fully trained candidates still face a shared adoption rule, and only observed events extend memory. On",
       "published_at": "2026-08-26T20:00:00.000Z",
       "engagement": {
-        "upvotes": 2
+        "upvotes": 24
       },
       "collection_mode": "api",
-      "score": 6.059
+      "score": 6.119
+    },
+    {
+      "source": "Hugging Face",
+      "publisher": "Hugging Face",
+      "source_home": "https://huggingface.co/papers",
+      "source_rank": 8,
+      "title": "Puffin-World: Scaling a Unified Multimodal Model with Native 3D World States",
+      "url": "https://huggingface.co/papers/2609.04196",
+      "direct_source_url": "https://huggingface.co/papers/2609.04196",
+      "discovery_url": "https://huggingface.co/papers/2609.04196",
+      "link_quality": "original",
+      "summary": "We propose Puffin-World, a unified multimodal architecture that integrates physical understanding, spatial simulation, and 3D world generation and reconstruction without relying on external offline modules. To reliably construct and interact with 3D worlds, our framework jointly models three native world states: physics (gravity field and latitude), geometry (depth), and appearance (image), together with a unified Omni-Camera representation that supports diverse tasks and flexible motions. Beyond modeling these states, we introduce a strategy for propagating physical dynamics across future frames. By grounding absolute camera properties in the real world, Puffin-World enables physically consistent and visually stable world generation. We further couple appearance and geometry within a single generative process, jointly synthesizing each future view and reconstructing its underlying geometry. This unified paradigm enables interleaved closed-loop applications requiring synergy across multiple tasks, including mimic and self-calibrated world exploration. To scale Puffin-World to complex scenarios, we construct Puffin-16M, comprising 15 million vision-language-camera triplets and 1 mil",
+      "published_at": "2026-09-02T20:00:00.000Z",
+      "engagement": {
+        "upvotes": 32
+      },
+      "collection_mode": "api",
+      "score": 6.099
+    },
+    {
+      "title": "Amazon, tagli a oltre 18.000 posti di lavoro - Ceo",
+      "url": "https://www.reuters.com/it/azienda/amazon-tagli-oltre-18000-posti-di-lavoro-ceo-2023-01-05/",
+      "summary": "",
+      "published_at": "2026-09-02T13:57:31.648Z",
+      "source": "Reuters",
+      "publisher": "Reuters",
+      "source_home": "https://www.reuters.com/technology/",
+      "source_rank": 7,
+      "direct_source_url": "https://www.reuters.com/it/azienda/amazon-tagli-oltre-18000-posti-di-lavoro-ceo-2023-01-05/",
+      "discovery_url": "https://www.reuters.com/it/azienda/amazon-tagli-oltre-18000-posti-di-lavoro-ceo-2023-01-05/",
+      "link_quality": "original",
+      "collection_mode": "sitemap",
+      "score": 6.07
+    },
+    {
+      "title": "GREGGIO Vicino ai massimi di 2023 su aspettative ripresa domanda cinese",
+      "url": "https://www.reuters.com/it/azienda/greggio-vicino-ai-massimi-di-2023-su-aspettative-ripresa-domanda-cinese-2023-01-16/",
+      "summary": "",
+      "published_at": "2026-09-02T11:41:05.951Z",
+      "source": "Reuters",
+      "publisher": "Reuters",
+      "source_home": "https://www.reuters.com/technology/",
+      "source_rank": 8,
+      "direct_source_url": "https://www.reuters.com/it/azienda/greggio-vicino-ai-massimi-di-2023-su-aspettative-ripresa-domanda-cinese-2023-01-16/",
+      "discovery_url": "https://www.reuters.com/it/azienda/greggio-vicino-ai-massimi-di-2023-su-aspettative-ripresa-domanda-cinese-2023-01-16/",
+      "link_quality": "original",
+      "collection_mode": "sitemap",
+      "score": 5.99
+    },
+    {
+      "source": "Hugging Face",
+      "publisher": "Hugging Face",
+      "source_home": "https://huggingface.co/papers",
+      "source_rank": 6,
+      "title": "PACE: Towards Surfacing Hidden Conflicts in User Requests",
+      "url": "https://huggingface.co/papers/2609.03293",
+      "direct_source_url": "https://huggingface.co/papers/2609.03293",
+      "discovery_url": "https://huggingface.co/papers/2609.03293",
+      "link_quality": "original",
+      "summary": "Personalized assistants should not only comply with user requests but also assess whether those requests are appropriate given the user's current circumstances. However, prior work has primarily focused on accurately executing requests, overlooking the need for assistants to account for context and engage in conflict-based refusal. Furthermore, while existing work on conflict or safety detection relies on explicitly provided factors, real-world scenarios often involve implicit factors that must be retrieved from a knowledge base (KB). To this end, we introduce Personalized Assistants for Conflict Evaluation (PACE), a dataset for evaluating whether models can identify latent constraints, expressed as egocentric knowledge or events, that render seemingly reasonable user requests inappropriate. PACE pairs user requests grounded in well-defined personas with egocentric KB facts, requiring models to integrate contextual evidence to determine whether a request is conflicting. This implicit retrieval setting hinders the direct association between user requests and conflict-inducing knowledge, making it difficult for existing models to identify relevant user-specific facts. To address this",
+      "published_at": "2026-09-02T20:00:00.000Z",
+      "engagement": {
+        "upvotes": 8
+      },
+      "collection_mode": "api",
+      "score": 5.977
+    },
+    {
+      "source": "Hugging Face",
+      "publisher": "Hugging Face",
+      "source_home": "https://huggingface.co/papers",
+      "source_rank": 1,
+      "title": "Using Grounded Theory for Agent Behavior Analysis at Scale",
+      "url": "https://huggingface.co/papers/2608.30391",
+      "direct_source_url": "https://huggingface.co/papers/2608.30391",
+      "discovery_url": "https://huggingface.co/papers/2608.30391",
+      "link_quality": "original",
+      "summary": "Understanding agent behavior requires methods that scale to thousands of trajectories and surface new patterns in long, often unfamiliar tasks where pre-built classifiers fall short. We propose to bring grounded theory into agent trajectory analysis: a six-decade-old qualitative method from the social sciences, with a principled saturation criterion and an auditable trail from data to theory. We propose AutoTraceGT (Automated Trace analysis through Grounded Theory), the first multi-agent pipeline that automates grounded theory on agent trajectories. It iteratively performs open, axial, and theoretical coding until saturation, producing a behavioral taxonomy tailored to each task. Across six trajectory corpora, AutoTraceGT produces codebooks that recover 73-91 percent of the failure modes in human-annotated taxonomies and surface additional patterns that those taxonomies miss. The emergent theoretical narrative aligns with prior expert accounts. Used as a deductive feature space, the codebook outperforms zero-shot and few-shot LLM baselines on downstream failure prediction. These results suggest Grounded Theory offers a scalable analytic tool for ML researchers and agent developers",
+      "published_at": "2026-08-30T20:00:00.000Z",
+      "engagement": {
+        "upvotes": 0
+      },
+      "collection_mode": "api",
+      "score": 5.9
     }
   ]
 }

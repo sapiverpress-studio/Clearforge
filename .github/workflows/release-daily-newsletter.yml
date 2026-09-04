@@ -22,13 +22,20 @@ concurrency:
 jobs:
   release:
     runs-on: ubuntu-latest
-    timeout-minutes: 7
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+
+      - name: Podcast pipeline syntax checks
+        run: |
+          node --check src/generate-weekly-intelligence-podcast.mjs
+          node --check scripts/generate-gemini-podcast-wav.mjs
+          node --check scripts/publish-podcast-feed.mjs
+          node --check src/gemini-provider.mjs
 
       - name: Verify human release request
         id: release
@@ -58,7 +65,27 @@ jobs:
           if (Number(manifest.overall_confidence || 0) < 0.78) throw new Error('Candidate is below the release confidence threshold.');
           fs.appendFileSync(process.env.GITHUB_ENV, `NEWS_INTELLIGENCE_DATE=${date}\nNEWS_INTELLIGENCE_CANDIDATE_ID=${candidate}\n`);
           const alreadySent = meta.status === 'sent' && Boolean(meta.sent_at);
-          fs.appendFileSync(process.env.GITHUB_OUTPUT, `date=${date}\ncandidate_id=${candidate}\nalready_sent=${alreadySent}\n`);
+          const weeklyDir = `reports/weekly-intelligence/${date}`;
+          const weeklyManifestPath = `${weeklyDir}/candidate-manifest.json`;
+          let hasWeeklyPodcast = false;
+          let weeklySlug = '';
+          if (fs.existsSync(weeklyManifestPath)) {
+            const weeklyManifest = JSON.parse(fs.readFileSync(weeklyManifestPath, 'utf8'));
+            if (weeklyManifest.type !== 'sapiver_forge_weekly_intelligence_podcast') throw new Error('Unexpected weekly podcast candidate type.');
+            if (weeklyManifest.week_end !== date) throw new Error('Weekly podcast date does not match the release date.');
+            for (const [name, expected] of Object.entries(weeklyManifest.file_hashes || {})) {
+              const file = `${weeklyDir}/${name}`;
+              if (!fs.existsSync(file)) throw new Error(`Weekly podcast candidate file missing: ${name}`);
+              const actual = require('crypto').createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+              if (actual !== expected) throw new Error(`Weekly podcast candidate hash mismatch: ${name}`);
+            }
+            const weeklyMeta = JSON.parse(fs.readFileSync(`${weeklyDir}/episode-metadata.json`, 'utf8'));
+            weeklySlug = String(weeklyMeta.slug || '').trim();
+            if (!/^[a-z0-9][a-z0-9-]*$/i.test(weeklySlug)) throw new Error('Weekly podcast candidate has an unsafe slug.');
+            hasWeeklyPodcast = true;
+            fs.appendFileSync(process.env.GITHUB_ENV, `PODCAST_REPORT_DIR=${weeklyDir}\nPODCAST_SLUG=${weeklySlug}\n`);
+          }
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `date=${date}\ncandidate_id=${candidate}\nalready_sent=${alreadySent}\nhas_weekly_podcast=${hasWeeklyPodcast}\n`);
           console.log(alreadySent
             ? `Campaign for ${date} was already sent; continuing with the website deploy only.`
             : `Releasing current approved candidate ${candidate.slice(0, 12)}… for ${date}.`);
@@ -92,6 +119,34 @@ jobs:
       - name: Install locked website dependencies
         run: npm ci --no-audit --no-fund
 
+      - name: Generate and publish the approved Friday recap podcast
+        if: steps.release.outputs.has_weekly_podcast == 'true'
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_TTS_MODEL: gemini-2.5-flash-preview-tts
+          GEMINI_TTS_VOICE: Charon
+          INPUT_PATH: ${{ env.PODCAST_REPORT_DIR }}/COPY_PASTE_INTO_ELEVENLABS.txt
+          OUTPUT_PATH: ${{ runner.temp }}/sapiver-forge-weekly.wav
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -s "public/podcast/episodes/${PODCAST_SLUG}.mp3" ]; then
+            echo "Weekly podcast ${PODCAST_SLUG} is already published; skipping generation."
+            exit 0
+          fi
+          node scripts/generate-gemini-podcast-wav.mjs
+          command -v ffmpeg >/dev/null || { echo "::error::ffmpeg is unavailable on this runner."; exit 1; }
+          ffmpeg -hide_banner -loglevel error -y -i "${OUTPUT_PATH}" -codec:a libmp3lame -b:a 128k "${RUNNER_TEMP}/sapiver-forge-weekly.mp3"
+          SOURCE_MP3="${RUNNER_TEMP}/sapiver-forge-weekly.mp3" \
+          METADATA_PATH="${PODCAST_REPORT_DIR}/episode-metadata.json" \
+          EPISODE_SLUG="${PODCAST_SLUG}" \
+          PODCAST_KIND="weekly recap" \
+          PODCAST_BASE_URL="https://suite.sapiverpress.co.uk" \
+            node scripts/publish-podcast-feed.mjs
+          mkdir -p public/posts
+          cp "${PODCAST_REPORT_DIR}/weekly-article.html" "public/posts/${PODCAST_SLUG}.html"
+
       - name: Build the complete website and publish the approved candidate
         env:
           BLOG_BASE_URL: https://suite.sapiverpress.co.uk
@@ -108,7 +163,9 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add "news-intelligence/${NEWS_INTELLIGENCE_DATE}/site-release.json" \
                   public/daily-brief/intelligence \
-                  public/daily-brief/index.html
+                  public/daily-brief/index.html \
+                  public/podcast \
+                  public/posts
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Publish Daily Brief ${NEWS_INTELLIGENCE_DATE} website edition [skip ci]"
           for attempt in 1 2 3; do
@@ -135,5 +192,3 @@ jobs:
             --site="${NETLIFY_SITE_ID}" \
             --auth="${NETLIFY_AUTH_TOKEN}" \
             --message="Publish Daily Brief, Sapiver Learn and AI Inquisitive Parents"
-
-

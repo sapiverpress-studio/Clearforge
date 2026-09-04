@@ -7,7 +7,7 @@ const ROOT = process.cwd();
 const WEEK_END = String(process.env.PODCAST_WEEK_END || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date())).trim();
-const BASE = String(process.env.BLOG_BASE_URL || "https://sapiverforge-daily-brief.netlify.app").replace(/\/$/, "");
+const BASE = String(process.env.BLOG_BASE_URL || "https://suite.sapiverpress.co.uk").replace(/\/$/, "");
 if (!/^\d{4}-\d{2}-\d{2}$/.test(WEEK_END)) throw new Error("PODCAST_WEEK_END must use YYYY-MM-DD.");
 
 const end = new Date(`${WEEK_END}T12:00:00Z`);
@@ -146,6 +146,7 @@ async function main() {
   const scriptMd = `# ${podcast.episode_title}\n\n${podcast.episode_description}\n\n## Opening\n\n${podcast.opening}\n\n${podcast.sections.map((section) => `## ${section.heading}\n\n${section.narration}`).join("\n\n")}\n\n## Closing\n\n${podcast.closing}\n`;
   const articleHtml = weeklyArticleHtml(podcast, editions, allSources);
 
+  // Retain the established filename because the feed publisher also uses it as the public transcript.
   fs.writeFileSync(path.join(OUT, "COPY_PASTE_INTO_ELEVENLABS.txt"), transcript + "\n", "utf8");
   fs.writeFileSync(path.join(OUT, "podcast-script.md"), scriptMd, "utf8");
   fs.writeFileSync(path.join(OUT, "episode-metadata.json"), JSON.stringify(metadata, null, 2) + "\n", "utf8");

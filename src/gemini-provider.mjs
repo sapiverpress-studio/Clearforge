@@ -159,11 +159,12 @@ function wavHeader(pcmLength, sampleRate = 24000, channels = 1, bitsPerSample = 
 }
 
 export async function generateSpeechWav(text, {
-  model = process.env.GEMINI_TTS_MODEL || "gemini-3.1-flash-tts-preview",
-  voice = process.env.GEMINI_TTS_VOICE || "Kore",
+  model = process.env.GEMINI_TTS_MODEL || "gemini-2.5-flash-preview-tts",
+  voice = process.env.GEMINI_TTS_VOICE || "Charon",
   style = "Speak clearly, naturally and conversationally."
 } = {}) {
-  const result = await withModelFallback(model, ["gemini-3.1-flash-tts-preview", "gemini-2.5-flash-preview-tts"], async (selectedModel) => {
+  // Do not silently fall back to a more expensive TTS model.
+  const result = await withModelFallback(model, ["gemini-2.5-flash-preview-tts"], async (selectedModel) => {
     const request = {
       input: `${style}\n\nSPOKEN TRANSCRIPT:\n${text}`,
       response_format: { type: "audio" },

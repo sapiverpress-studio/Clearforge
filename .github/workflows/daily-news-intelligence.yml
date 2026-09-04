@@ -13,12 +13,16 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/daily-news-intelligence.yml'
+      - '.github/workflows/release-daily-newsletter.yml'
       - 'src/news-intelligence-sources.mjs'
       - 'src/generate-news-intelligence.mjs'
       - 'src/send-daily-newsletter-brevo.mjs'
       - 'src/brevo-list-resolver.mjs'
       - 'src/brevo-campaign-errors.mjs'
       - 'scripts/sync-netlify-subscribers-to-brevo.mjs'
+      - 'src/generate-weekly-intelligence-podcast.mjs'
+      - 'scripts/generate-gemini-podcast-wav.mjs'
+      - 'scripts/publish-podcast-feed.mjs'
       - 'test/news-intelligence-sources-contract.mjs'
       - 'test/brevo-empty-list-contract.mjs'
       - 'src/gemini-provider.mjs'
@@ -33,7 +37,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 16
     steps:
       - uses: actions/checkout@v4
 
@@ -56,6 +60,11 @@ jobs:
           echo "$DATE" | grep -Eq '^[0-9]{4}-[0-9]{2}-[0-9]{2}$'
           echo "NEWS_INTELLIGENCE_DATE=$DATE" >> "$GITHUB_ENV"
           echo "date=$DATE" >> "$GITHUB_OUTPUT"
+          if [ "$(date -u -d "$DATE" +%u)" = "5" ]; then
+            echo "is_friday=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "is_friday=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Syntax checks
         run: |
@@ -65,6 +74,10 @@ jobs:
           node --check src/brevo-list-resolver.mjs
           node --check src/brevo-campaign-errors.mjs
           node --check scripts/sync-netlify-subscribers-to-brevo.mjs
+          node --check src/generate-weekly-intelligence-podcast.mjs
+          node --check scripts/generate-gemini-podcast-wav.mjs
+          node --check scripts/publish-podcast-feed.mjs
+          node --check src/gemini-provider.mjs
           node test/news-intelligence-sources-contract.mjs
           node test/brevo-empty-list-contract.mjs
 
@@ -125,6 +138,16 @@ jobs:
           BREVO_LIST_ID: ${{ secrets.BREVO_LIST_ID }}
         run: node src/send-daily-newsletter-brevo.mjs
 
+      - name: Build Friday podcast candidate from this week's verified briefs
+        id: weekly_podcast
+        if: github.event_name != 'pull_request' && steps.edition.outputs.is_friday == 'true' && steps.contract.outputs.ready == 'true'
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PODCAST_WEEK_END: ${{ steps.edition.outputs.date }}
+          BLOG_BASE_URL: https://suite.sapiverpress.co.uk
+        run: node src/generate-weekly-intelligence-podcast.mjs
+
       - name: Commit daily intelligence and bridge
         if: always() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         shell: bash
@@ -135,6 +158,9 @@ jobs:
           git config user.name "sapiver-forge-intelligence-bot"
           git config user.email "actions@users.noreply.github.com"
           git add "news-intelligence/$DATE" bridge/news-intelligence/latest
+          if [ -d "reports/weekly-intelligence/$DATE" ]; then
+            git add "reports/weekly-intelligence/$DATE"
+          fi
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Publish Sapiver Forge intelligence candidate $DATE [skip ci]"
           for attempt in 1 2 3; do
@@ -148,6 +174,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: sapiver-forge-daily-intelligence-${{ steps.edition.outputs.date }}-${{ github.run_number }}
-          path: news-intelligence/${{ steps.edition.outputs.date }}/
+          path: |
+            news-intelligence/${{ steps.edition.outputs.date }}/
+            reports/weekly-intelligence/${{ steps.edition.outputs.date }}/
           retention-days: 14
           if-no-files-found: warn

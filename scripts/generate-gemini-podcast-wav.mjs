@@ -5,16 +5,16 @@ import { generateSpeechWav } from "../src/gemini-provider.mjs";
 
 const inputPath = process.env.INPUT_PATH;
 const outputPath = process.env.OUTPUT_PATH;
-const model = process.env.GEMINI_TTS_MODEL || "gemini-3.1-flash-tts-preview";
-const voice = process.env.GEMINI_TTS_VOICE || "Kore";
+const model = process.env.GEMINI_TTS_MODEL || "gemini-2.5-flash-preview-tts";
+const voice = process.env.GEMINI_TTS_VOICE || "Charon";
 const maxChunkCharacters = Number(process.env.MAX_CHUNK_CHARACTERS || 1600);
 
 if (!inputPath || !outputPath)
   throw new Error("INPUT_PATH and OUTPUT_PATH are required.");
 if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is required.");
-if (voice !== "Kore")
+if (!["Charon", "Gacrux"].includes(voice))
   throw new Error(
-    "Voice substitution blocked: Sapiver Forge full podcasts must use Kore.",
+    "Voice substitution blocked: Sapiver Forge weekly podcasts must use Charon or Gacrux.",
   );
 if (!fs.existsSync(inputPath))
   throw new Error(`Approved narration file not found: ${inputPath}`);
@@ -107,7 +107,7 @@ for (let index = 0; index < chunks.length; index += 1) {
 
   pcmParts.push(audio.subarray(0, 4).toString() === "RIFF" ? audio.subarray(44) : audio);
   console.log(
-    `Generated Gemini Kore podcast chunk ${index + 1}/${chunks.length}.`,
+    `Generated Gemini ${voice} podcast chunk ${index + 1}/${chunks.length}.`,
   );
 }
 
@@ -131,4 +131,4 @@ fs.writeFileSync(
   `${JSON.stringify(metadata, null, 2)}\n`,
   "utf8",
 );
-console.log(`Saved Gemini Kore podcast draft to ${outputPath}.`);
+console.log(`Saved Gemini ${voice} podcast draft to ${outputPath}.`);

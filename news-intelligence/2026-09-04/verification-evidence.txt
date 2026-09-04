@@ -1,0 +1,64 @@
+Here are the evidence verification notes for the September 4, 2026 morning briefing.
+
+---
+
+### **Candidate [0] (and [12]): OpenAI Launches GPT-6 Astra**
+* **What is confirmed:** OpenAI officially announced GPT-6 Astra on September 3, 2026. It is OpenAI's flagship frontier model, featuring state-of-the-art computer-use, software engineering, and cybersecurity capabilities. OpenAI confirmed Astra reached a "Critical" threshold for cybersecurity capabilities under its Preparedness Framework. On the ARC-AGI-3 benchmark, Astra achieved 62.7% on the standard harness and up to 98.6%–99.9% using OpenAI's specialized Provider Adapter harness ($19k–$26k compute run). Rollout began September 3 for Trusted Access Program users, rolling out to ChatGPT Plus/Pro/Business/Enterprise and API over coming days at $10/1M input and $50/1M output tokens.
+* **Important caveats:** Performance gains on ARC-AGI-3 rely heavily on custom harness architecture (preserving opaque reasoning state and conversation compaction). On independent third-party evaluations like Artificial Analysis, Astra's baseline intelligence index score (61) matches GPT-5.6 Sol and trails Anthropic's Claude Fable 5.1.
+* **Suitable for publication today:** **Yes.** Highest-priority frontier LLM product and capability story.
+
+---
+
+### **Candidates [3] & [6]: Nvidia Acquires Hugging Face for $12.93 Billion**
+* **What is confirmed:** Nvidia entered into a definitive agreement on September 2, 2026, to acquire open-source AI platform Hugging Face for $12.93 billion ($11.9B to shareholders plus $1.0B in employee retention incentives), confirmed via SEC Form 8-K filing and public announcements on September 3. Hugging Face CEO Clément Delangue confirmed he approached Nvidia CEO Jensen Huang over the summer to pursue the deal. Nvidia committed to maintaining Hugging Face as an open, multi-cloud, and hardware-agnostic platform.
+* **Important caveats:** The transaction is targeted to close in H1 2027, pending customary regulatory approvals and closing conditions. Industry observers note potential antitrust scrutiny and ecosystem concern over long-term neutrality under hardware giant ownership.
+* **Suitable for publication today:** **Yes.** Major strategic enterprise acquisition.
+
+---
+
+### **Candidate [8]: Gimlet Labs Raises $300M at $3B Valuation**
+* **What is confirmed:** AI hardware-orchestration startup Gimlet Labs raised $300 million in a new funding round led by Andreessen Horowitz (a16z), valuing the company at $3 billion. The round comes six months after its $80 million Series A. Co-founded by Natalie Serrino, Gimlet develops software to partition and route multi-stage AI tasks across heterogeneous chips (GPUs, TPUs, etc.).
+* **Important caveats:** High valuation reflects rapid speculative investor demand around solving inference compute bottlenecks.
+* **Suitable for publication today:** **Yes.** Strong capital and infrastructure signal for multi-chip AI orchestration.
+
+---
+
+### **Candidate [14]: Tesla Begins Cybercab Passenger Rides in Austin**
+* **What is confirmed:** Tesla initiated passenger rides in its purpose-built Cybercab robotaxi in limited areas of Austin, Texas, on September 3, 2026. State Department of Motor Vehicles records confirm Tesla registered 45 Cybercab two-seater vehicles (which lack steering wheels and pedals) for autonomous operations in Texas.
+* **Important caveats:** Cybercab operations remain an extended geofenced pilot. Commercial scaling faces strict federal regulatory constraints (NHTSA exemptions for vehicles without manual controls).
+* **Suitable for publication today:** **Yes.** Key milestone for physical autonomous vehicle deployment.
+
+---
+
+### **Candidate [13]: Vals AI Report on Environmental Footprint of Agentic AI**
+* **What is confirmed:** AI benchmarker Vals AI published an environmental impact analysis evaluating 16 open-weight models across multi-stage agentic tasks. The analysis found that multi-step reasoning workflows (such as building a web app) consume up to 10,000 times the carbon, electricity, and water of simple, single-shot queries due to token explosion.
+* **Important caveats:** Environmental footprint varies widely depending on whether models use extended chain-of-thought "thinking" loops or direct response generation.
+* **Suitable for publication today:** **Yes.** Valuable data-driven piece on AI energy consumption dynamics.
+
+---
+
+### **Candidate [10]: Resect AI Emerges from Stealth with $25M**
+* **What is confirmed:** Startup Resect AI launched out of stealth on September 3, 2026, with $25 million in funding from private equity investors. Based in Washougal, WA, the company is commercializing open-source and enterprise technology that inspects internal LLM neural states in-stream during inference to catch and modify hallucinations before output generation.
+* **Important caveats:** In-stream neural intervention technology is early stage and requires production validation across large enterprise workloads.
+* **Suitable for publication today:** **Yes.** Relevant startup launch in AI safety and interpretability.
+
+---
+
+### **Candidate [2]: Qwen 3.8 27B Deployed on Cerebras at 1,500 Tokens/Sec**
+* **What is confirmed:** Cerebras documentation updated September 3, 2026, confirming Alibaba’s open-weight Qwen 3.8 27B model is hosted on Cerebras public API endpoints, delivering ~1,500 tokens/second throughput.
+* **Important caveats:** Standard API account token-per-minute (TPM) caps (e.g., 150k TPM) can cause user throttling during high-concurrency or long-context agent runs.
+* **Suitable for publication today:** **Yes.** Useful technical brief for developer tooling.
+
+---
+
+### **Candidate [15]: Ray Kurzweil Joins BCI Startup Subsense as Advisor**
+* **What is confirmed:** Futurist and Google AI researcher Ray Kurzweil officially joined Subsense as a product and vision advisor on September 3, 2026. Subsense is developing a non-surgical brain-computer interface (BCI) using intranasally administered nanoparticles controlled via external magnetic-coil headwear.
+* **Important caveats:** Subsense's technology remains in early preclinical testing (mouse models) and is years away from human clinical trials. Kurzweil's role is advisory.
+* **Suitable for publication today:** **Yes.** Brief note on BCI innovation and executive advisory moves.
+
+---
+
+### **Out-of-Scope Candidates (Not Recommended)**
+* **Candidate [1] (.name Termination):** Explicitly marked OUT OF SCOPE.
+* **Candidate [4] (Any Human Ever):** Explicitly marked OUT OF SCOPE.
+* **Candidate [11] (Wikimedia Foundation CWA Union Vote):** General labor news without direct material technical/AI industry focus; marked OUT OF SCOPE.

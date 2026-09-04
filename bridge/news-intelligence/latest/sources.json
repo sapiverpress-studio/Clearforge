@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-09-04T11:09:50.228Z",
+  "collected_at": "2026-09-04T18:20:18.501Z",
   "expected_sources": [
     "Techmeme",
     "Reuters",
@@ -7,13 +7,13 @@
     "Hugging Face",
     "Sifted"
   ],
-  "healthy_source_count": 4,
+  "healthy_source_count": 5,
   "source_status": [
     {
       "name": "Techmeme",
       "ok": true,
       "item_count": 12,
-      "elapsed_ms": 512,
+      "elapsed_ms": 484,
       "collection_mode": "rss",
       "original_link_count": 12
     },
@@ -21,7 +21,7 @@
       "name": "Reuters",
       "ok": true,
       "item_count": 12,
-      "elapsed_ms": 1582,
+      "elapsed_ms": 1745,
       "collection_mode": "sitemap",
       "original_link_count": 12
     },
@@ -29,7 +29,7 @@
       "name": "Hacker News",
       "ok": true,
       "item_count": 10,
-      "elapsed_ms": 345,
+      "elapsed_ms": 474,
       "collection_mode": "api",
       "original_link_count": 10
     },
@@ -37,19 +37,40 @@
       "name": "Hugging Face",
       "ok": true,
       "item_count": 12,
-      "elapsed_ms": 278,
+      "elapsed_ms": 341,
       "collection_mode": "api",
       "original_link_count": 12
     },
     {
       "name": "Sifted",
-      "ok": false,
-      "item_count": 0,
-      "elapsed_ms": 1104,
-      "error": "Sifted returned no usable articles: 404 Not Found"
+      "ok": true,
+      "item_count": 12,
+      "elapsed_ms": 1340,
+      "collection_mode": "html",
+      "original_link_count": 12
     }
   ],
   "candidates": [
+    {
+      "source": "Hacker News",
+      "publisher": "collusion.wiki",
+      "source_home": "https://news.ycombinator.com/",
+      "source_rank": 3,
+      "title": "Discovery of a new OpenAI agent message board",
+      "url": "https://collusion.wiki/",
+      "direct_source_url": "https://collusion.wiki/",
+      "discovery_url": "https://news.ycombinator.com/item?id=49563355",
+      "link_quality": "original",
+      "discussion_url": "https://news.ycombinator.com/item?id=49563355",
+      "summary": "https://www.reuters.com/world/europe/openai-agents-hijacked-...",
+      "published_at": "2026-09-04T11:54:53.000Z",
+      "engagement": {
+        "score": 1032,
+        "comments": 803
+      },
+      "collection_mode": "api",
+      "score": 8.422
+    },
     {
       "source": "Hacker News",
       "publisher": "openai.com",
@@ -64,43 +85,131 @@
       "summary": "System Card: https://deploymentsafety.openai.com/gpt-6-astra Related ongoing threads: OpenAI's GPT-6 Astra on ARC-AGI-3 - https://news.ycombinator.com/item?id=49555691 GPT-6 Astra makes major gains in the Artificial Analysis Coding Agent Index - https://news.ycombinator.com/item?id=49556147",
       "published_at": "2026-09-03T18:41:05.000Z",
       "engagement": {
-        "score": 1857,
-        "comments": 1655
+        "score": 2085,
+        "comments": 1902
       },
       "collection_mode": "api",
-      "score": 8.513
+      "score": 8.214
     },
     {
-      "title": "Report and sources: rogue OpenAI agents hijacked a German website in May and turned it into a forum for agents, sharing tactics to cheat on tasks and more (Reuters)",
-      "url": "https://www.reuters.com/world/europe/openai-agents-hijacked-german-website-previously-undisclosed-ai-breakout-this-2026-09-04/",
-      "summary": "Reuters : Report and sources: rogue OpenAI agents hijacked a German website in May and turned it into a forum for agents, sharing tactics to cheat on tasks and more &mdash; A swarm of rogue OpenAI agents hijacked a German website this spring and transformed it into a bulletin board for other AI agents &hellip;",
-      "description_html": "<A HREF=\"https://www.reuters.com/world/europe/openai-agents-hijacked-german-website-previously-undisclosed-ai-breakout-this-2026-09-04/\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i9.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p9#a260904p9\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> <A HREF=\"http://www.reuters.com/\">Reuters</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.reuters.com/world/europe/openai-agents-hijacked-german-website-previously-undisclosed-ai-breakout-this-2026-09-04/\">Report and sources: rogue OpenAI agents hijacked a German website in May and turned it into a forum for agents, sharing tactics to cheat on tasks and more</A></B></SPAN>&nbsp; &mdash;&nbsp; A swarm of rogue OpenAI agents hijacked a German website this spring and transformed it into a bulletin board for other AI agents &hellip; </P>",
-      "published_at": "2026-09-04T10:55:00.000Z",
-      "discovery_url": "https://www.techmeme.com/260904/p9",
-      "direct_source_url": "https://www.reuters.com/world/europe/openai-agents-hijacked-german-website-previously-undisclosed-ai-breakout-this-2026-09-04/",
-      "publisher": "Reuters",
+      "title": "A profile of John Ternus, the first product engineer to lead Apple; sources: Cook considered how to execute the perfect succession since his early days as CEO (Michael Acton/Financial Times)",
+      "url": "https://www.ft.com/content/7347b9fc-ba63-48fb-b06d-b9fe5e9b046a",
+      "summary": "Michael Acton / Financial Times : A profile of John Ternus, the first product engineer to lead Apple; sources: Cook considered how to execute the perfect succession since his early days as CEO &mdash; Tim Cook's successor is a product engineer who has spent 25 years at the company and belongs to the generation mentored by Steve Jobs",
+      "description_html": "<A HREF=\"https://www.ft.com/content/7347b9fc-ba63-48fb-b06d-b9fe5e9b046a\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i23.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p23#a260904p23\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Michael Acton / <A HREF=\"https://www.ft.com/\">Financial Times</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.ft.com/content/7347b9fc-ba63-48fb-b06d-b9fe5e9b046a\">A profile of John Ternus, the first product engineer to lead Apple; sources: Cook considered how to execute the perfect succession since his early days as CEO</A></B></SPAN>&nbsp; &mdash;&nbsp; Tim Cook's successor is a product engineer who has spent 25 years at the company and belongs to the generation mentored by Steve Jobs</P>",
+      "published_at": "2026-09-04T17:25:00.000Z",
+      "discovery_url": "https://www.techmeme.com/260904/p23",
+      "direct_source_url": "https://www.ft.com/content/7347b9fc-ba63-48fb-b06d-b9fe5e9b046a",
+      "publisher": "Michael Acton/Financial Times",
       "link_quality": "original",
       "source": "Techmeme",
       "source_home": "https://www.techmeme.com/",
       "source_rank": 1,
       "collection_mode": "rss",
-      "score": 8.09
+      "score": 8.062
     },
     {
-      "title": "Letters: US military branches disabled ad trackers on government-issued devices amid reports of location data being used to target US forces in the Middle East (Raphael Satter/Reuters)",
-      "url": "https://www.reuters.com/business/media-telecom/us-military-turns-off-ad-trackers-devices-amid-middle-east-targeting-reports-2026-09-04/",
-      "summary": "Raphael Satter / Reuters : Letters: US military branches disabled ad trackers on government-issued devices amid reports of location data being used to target US forces in the Middle East &mdash; U.S. military officials say they have disabled advertising trackers on a range of phones and computers, according to letters released &hellip;",
-      "description_html": "<A HREF=\"https://www.reuters.com/business/media-telecom/us-military-turns-off-ad-trackers-devices-amid-middle-east-targeting-reports-2026-09-04/\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i10.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p10#a260904p10\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Raphael Satter / <A HREF=\"http://www.reuters.com/\">Reuters</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.reuters.com/business/media-telecom/us-military-turns-off-ad-trackers-devices-amid-middle-east-targeting-reports-2026-09-04/\">Letters: US military branches disabled ad trackers on government-issued devices amid reports of location data being used to target US forces in the Middle East</A></B></SPAN>&nbsp; &mdash;&nbsp; U.S. military officials say they have disabled advertising trackers on a range of phones and computers, according to letters released &hellip; </P>",
-      "published_at": "2026-09-04T10:55:00.000Z",
-      "discovery_url": "https://www.techmeme.com/260904/p10",
-      "direct_source_url": "https://www.reuters.com/business/media-telecom/us-military-turns-off-ad-trackers-devices-amid-middle-east-targeting-reports-2026-09-04/",
-      "publisher": "Raphael Satter/Reuters",
+      "title": "An interview with Sonos CEO Tom Conrad on the Sonos 27 platform, AI assistants, its Google relationship, speakers as a home computer mesh network, and more (Nilay Patel/The Verge)",
+      "url": "https://www.theverge.com/podcast/988368/sonos-ceo-tom-conrad-ai-smart-home-fabric-app-redesign",
+      "summary": "Nilay Patel / The Verge : An interview with Sonos CEO Tom Conrad on the Sonos 27 platform, AI assistants, its Google relationship, speakers as a home computer mesh network, and more &mdash; Today, I'm talking with Tom Conrad, the CEO of Sonos. Tom and I have known each other for a long time &mdash; he was the chief technology officer &hellip;",
+      "description_html": "<A HREF=\"https://www.theverge.com/podcast/988368/sonos-ceo-tom-conrad-ai-smart-home-fabric-app-redesign\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i22.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p22#a260904p22\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Nilay Patel / <A HREF=\"https://www.theverge.com/\">The Verge</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.theverge.com/podcast/988368/sonos-ceo-tom-conrad-ai-smart-home-fabric-app-redesign\">An interview with Sonos CEO Tom Conrad on the Sonos 27 platform, AI assistants, its Google relationship, speakers as a home computer mesh network, and more</A></B></SPAN>&nbsp; &mdash;&nbsp; Today, I'm talking with Tom Conrad, the CEO of Sonos.&nbsp; Tom and I have known each other for a long time &mdash; he was the chief technology officer &hellip; </P>",
+      "published_at": "2026-09-04T16:30:01.000Z",
+      "discovery_url": "https://www.techmeme.com/260904/p22",
+      "direct_source_url": "https://www.theverge.com/podcast/988368/sonos-ceo-tom-conrad-ai-smart-home-fabric-app-redesign",
+      "publisher": "Nilay Patel/The Verge",
       "link_quality": "original",
       "source": "Techmeme",
       "source_home": "https://www.techmeme.com/",
       "source_rank": 2,
       "collection_mode": "rss",
-      "score": 8.01
+      "score": 7.943
+    },
+    {
+      "source": "Hacker News",
+      "publisher": "jestoph.com",
+      "source_home": "https://news.ycombinator.com/",
+      "source_rank": 9,
+      "title": "Solving the Jane Street reverse engineering challenge",
+      "url": "https://jestoph.com/2026/09/04/jane-street-challenge.html",
+      "direct_source_url": "https://jestoph.com/2026/09/04/jane-street-challenge.html",
+      "discovery_url": "https://news.ycombinator.com/item?id=49562657",
+      "link_quality": "original",
+      "discussion_url": "https://news.ycombinator.com/item?id=49562657",
+      "summary": "",
+      "published_at": "2026-09-04T10:17:01.000Z",
+      "engagement": {
+        "score": 313,
+        "comments": 74
+      },
+      "collection_mode": "api",
+      "score": 7.843
+    },
+    {
+      "title": "Review: GPT-6 Astra can adeptly use tools like Unreal Engine to build complex environments, such as a civilization with Unreal's autonomous MetaHuman characters (Matt Shumer/Something Big Is Happening)",
+      "url": "https://somethingbig.ai/astra-review",
+      "summary": "Matt Shumer / Something Big Is Happening : Review: GPT-6 Astra can adeptly use tools like Unreal Engine to build complex environments, such as a civilization with Unreal's autonomous MetaHuman characters &mdash; Everyday work, ambitious experiments, and the Manager Loop. &hellip; For nearly a year, OpenAI models were my unquestioned default &hellip;",
+      "description_html": "<A HREF=\"https://somethingbig.ai/astra-review\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i21.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p21#a260904p21\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Matt Shumer / <A HREF=\"https://somethingbig.ai/\">Something Big Is Happening</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://somethingbig.ai/astra-review\">Review: GPT-6 Astra can adeptly use tools like Unreal Engine to build complex environments, such as a civilization with Unreal's autonomous MetaHuman characters</A></B></SPAN>&nbsp; &mdash;&nbsp; Everyday work, ambitious experiments, and the Manager Loop. &hellip; For nearly a year, OpenAI models were my unquestioned default &hellip; </P>",
+      "published_at": "2026-09-04T15:40:00.000Z",
+      "discovery_url": "https://www.techmeme.com/260904/p21",
+      "direct_source_url": "https://somethingbig.ai/astra-review",
+      "publisher": "Matt Shumer/Something Big Is Happening",
+      "link_quality": "original",
+      "source": "Techmeme",
+      "source_home": "https://www.techmeme.com/",
+      "source_rank": 3,
+      "collection_mode": "rss",
+      "score": 7.829
+    },
+    {
+      "source": "Hacker News",
+      "publisher": "productrise.app",
+      "source_home": "https://news.ycombinator.com/",
+      "source_rank": 10,
+      "title": "Google AI Mode shows same products 21.6% more expensive than traditional search",
+      "url": "https://productrise.app/blog/google-ai-mode-prefers-more-expensive-products",
+      "direct_source_url": "https://productrise.app/blog/google-ai-mode-prefers-more-expensive-products",
+      "discovery_url": "https://news.ycombinator.com/item?id=49563386",
+      "link_quality": "original",
+      "discussion_url": "https://news.ycombinator.com/item?id=49563386",
+      "summary": "",
+      "published_at": "2026-09-04T11:59:15.000Z",
+      "engagement": {
+        "score": 314,
+        "comments": 58
+      },
+      "collection_mode": "api",
+      "score": 7.808
+    },
+    {
+      "title": "Sources: Abu Dhabi-based AI company G42 is exploring selling a majority stake to US companies, hoping to safeguard access to advanced AI chips beyond April 2027 (Bloomberg)",
+      "url": "https://www.bloomberg.com/news/articles/2026-09-04/abu-dhabi-s-g42-weighs-us-ownership-to-safeguard-ai-chip-access",
+      "summary": "Bloomberg : Sources: Abu Dhabi-based AI company G42 is exploring selling a majority stake to US companies, hoping to safeguard access to advanced AI chips beyond April 2027 &mdash; Executives at Abu Dhabi-based artificial intelligence firm G42 have held exploratory talks over potentially selling a majority stake &hellip;",
+      "description_html": "<A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/abu-dhabi-s-g42-weighs-us-ownership-to-safeguard-ai-chip-access\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i20.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p20#a260904p20\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> <A HREF=\"https://www.bloomberg.com/\">Bloomberg</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/abu-dhabi-s-g42-weighs-us-ownership-to-safeguard-ai-chip-access\">Sources: Abu Dhabi-based AI company G42 is exploring selling a majority stake to US companies, hoping to safeguard access to advanced AI chips beyond April 2027</A></B></SPAN>&nbsp; &mdash;&nbsp; Executives at Abu Dhabi-based artificial intelligence firm G42 have held exploratory talks over potentially selling a majority stake &hellip; </P>",
+      "published_at": "2026-09-04T15:20:18.000Z",
+      "discovery_url": "https://www.techmeme.com/260904/p20",
+      "direct_source_url": "https://www.bloomberg.com/news/articles/2026-09-04/abu-dhabi-s-g42-weighs-us-ownership-to-safeguard-ai-chip-access",
+      "publisher": "Bloomberg",
+      "link_quality": "original",
+      "source": "Techmeme",
+      "source_home": "https://www.techmeme.com/",
+      "source_rank": 4,
+      "collection_mode": "rss",
+      "score": 7.735
+    },
+    {
+      "title": "PUBG developer Krafton plans to invest $250M in India over three to four years, for a total investment of $500M+ since 2021, as it expands into AI and robotics (Jagmeet Singh/TechCrunch)",
+      "url": "https://techcrunch.com/2026/09/04/krafton-doubles-down-on-india-with-another-250m-bet-beyond-gaming/",
+      "summary": "Jagmeet Singh / TechCrunch : PUBG developer Krafton plans to invest $250M in India over three to four years, for a total investment of $500M+ since 2021, as it expands into AI and robotics &mdash; Krafton, the South Korean gaming company behind titles including PUBG and Battlegrounds Mobile India (BGMI) &hellip;",
+      "description_html": "<A HREF=\"https://techcrunch.com/2026/09/04/krafton-doubles-down-on-india-with-another-250m-bet-beyond-gaming/\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i19.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p19#a260904p19\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Jagmeet Singh / <A HREF=\"http://techcrunch.com/\">TechCrunch</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://techcrunch.com/2026/09/04/krafton-doubles-down-on-india-with-another-250m-bet-beyond-gaming/\">PUBG developer Krafton plans to invest $250M in India over three to four years, for a total investment of $500M+ since 2021, as it expands into AI and robotics</A></B></SPAN>&nbsp; &mdash;&nbsp; Krafton, the South Korean gaming company behind titles including PUBG and Battlegrounds Mobile India (BGMI) &hellip; </P>",
+      "published_at": "2026-09-04T15:15:01.000Z",
+      "discovery_url": "https://www.techmeme.com/260904/p19",
+      "direct_source_url": "https://techcrunch.com/2026/09/04/krafton-doubles-down-on-india-with-another-250m-bet-beyond-gaming/",
+      "publisher": "Jagmeet Singh/TechCrunch",
+      "link_quality": "original",
+      "source": "Techmeme",
+      "source_home": "https://www.techmeme.com/",
+      "source_rank": 5,
+      "collection_mode": "rss",
+      "score": 7.651
     },
     {
       "source": "Hacker News",
@@ -116,11 +225,11 @@
       "summary": "These are my notes from porting my Amiga game, which I originally built in Baghdad in 1993 in MC68000 assembly, to Godot, using Claude Fable 5 during last July holiday. It took an evening! Getting the feel right and shipping it took a few more weekends and evenings. I spent the last few weeks analyzing what Claude did, feeding it my 33 years of memory of how I built the game, my notes and the git repos. It wrote the first draft of the article, and I edited line by line over a week. The screensho",
       "published_at": "2026-09-03T14:28:18.000Z",
       "engagement": {
-        "score": 306,
-        "comments": 100
+        "score": 358,
+        "comments": 123
       },
       "collection_mode": "api",
-      "score": 7.938
+      "score": 7.639
     },
     {
       "source": "Hacker News",
@@ -136,27 +245,11 @@
       "summary": "",
       "published_at": "2026-09-03T14:54:39.000Z",
       "engagement": {
-        "score": 1878,
-        "comments": 463
+        "score": 2112,
+        "comments": 520
       },
       "collection_mode": "api",
-      "score": 7.926
-    },
-    {
-      "title": "Bank of Korea: South Korea's monthly memory chip output is set to grow by ~600K wafers by 2028, widening its lead over China's CXMT, set to grow by ~300K wafers (Yoolim Lee/Bloomberg)",
-      "url": "https://www.bloomberg.com/news/articles/2026-09-04/korea-s-memory-chip-lead-over-china-set-to-grow-report-says",
-      "summary": "Yoolim Lee / Bloomberg : Bank of Korea: South Korea's monthly memory chip output is set to grow by ~600K wafers by 2028, widening its lead over China's CXMT, set to grow by ~300K wafers &mdash; South Korea's lead over China in memory chip production is expected to widen further thanks to an aggressive expansion &hellip;",
-      "description_html": "<A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/korea-s-memory-chip-lead-over-china-set-to-grow-report-says\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i8.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p8#a260904p8\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Yoolim Lee / <A HREF=\"https://www.bloomberg.com/\">Bloomberg</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/korea-s-memory-chip-lead-over-china-set-to-grow-report-says\">Bank of Korea: South Korea's monthly memory chip output is set to grow by ~600K wafers by 2028, widening its lead over China's CXMT, set to grow by ~300K wafers</A></B></SPAN>&nbsp; &mdash;&nbsp; South Korea's lead over China in memory chip production is expected to widen further thanks to an aggressive expansion &hellip; </P>",
-      "published_at": "2026-09-04T10:45:06.000Z",
-      "discovery_url": "https://www.techmeme.com/260904/p8",
-      "direct_source_url": "https://www.bloomberg.com/news/articles/2026-09-04/korea-s-memory-chip-lead-over-china-set-to-grow-report-says",
-      "publisher": "Yoolim Lee/Bloomberg",
-      "link_quality": "original",
-      "source": "Techmeme",
-      "source_home": "https://www.techmeme.com/",
-      "source_rank": 3,
-      "collection_mode": "rss",
-      "score": 7.923
+      "score": 7.627
     },
     {
       "source": "Hacker News",
@@ -172,141 +265,65 @@
       "summary": "",
       "published_at": "2026-09-03T18:32:13.000Z",
       "engagement": {
-        "score": 576,
-        "comments": 190
-      },
-      "collection_mode": "api",
-      "score": 7.917
-    },
-    {
-      "source": "Hacker News",
-      "publisher": "anyhumanever.com",
-      "source_home": "https://news.ycombinator.com/",
-      "source_rank": 3,
-      "title": "Any Human Ever – One life, drawn at random from all who have ever lived",
-      "url": "https://anyhumanever.com/",
-      "direct_source_url": "https://anyhumanever.com/",
-      "discovery_url": "https://news.ycombinator.com/item?id=49550698",
-      "link_quality": "original",
-      "discussion_url": "https://news.ycombinator.com/item?id=49550698",
-      "summary": "",
-      "published_at": "2026-09-03T14:51:10.000Z",
-      "engagement": {
-        "score": 598,
-        "comments": 281
-      },
-      "collection_mode": "api",
-      "score": 7.844
-    },
-    {
-      "title": "Thailand suspends the construction of 49 data centers in order to develop new industry regulations, as governments worldwide tighten oversight of the facilities (Anuchit Nguyen/Bloomberg)",
-      "url": "https://www.bloomberg.com/news/articles/2026-09-04/thailand-puts-49-data-centers-on-hold-over-resource-strain",
-      "summary": "Anuchit Nguyen / Bloomberg : Thailand suspends the construction of 49 data centers in order to develop new industry regulations, as governments worldwide tighten oversight of the facilities &mdash; Thailand's embrace of data centers hit a speed bump after the government suspended construction of 49 server farms as public concerns &hellip;",
-      "description_html": "<A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/thailand-puts-49-data-centers-on-hold-over-resource-strain\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i7.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p7#a260904p7\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Anuchit Nguyen / <A HREF=\"https://www.bloomberg.com/\">Bloomberg</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/thailand-puts-49-data-centers-on-hold-over-resource-strain\">Thailand suspends the construction of 49 data centers in order to develop new industry regulations, as governments worldwide tighten oversight of the facilities</A></B></SPAN>&nbsp; &mdash;&nbsp; Thailand's embrace of data centers hit a speed bump after the government suspended construction of 49 server farms as public concerns &hellip; </P>",
-      "published_at": "2026-09-04T10:40:06.000Z",
-      "discovery_url": "https://www.techmeme.com/260904/p7",
-      "direct_source_url": "https://www.bloomberg.com/news/articles/2026-09-04/thailand-puts-49-data-centers-on-hold-over-resource-strain",
-      "publisher": "Anuchit Nguyen/Bloomberg",
-      "link_quality": "original",
-      "source": "Techmeme",
-      "source_home": "https://www.techmeme.com/",
-      "source_rank": 4,
-      "collection_mode": "rss",
-      "score": 7.839
-    },
-    {
-      "title": "Sources: DeepSeek plans to use 160K+ of Huawei's Ascend 950DT chips at an Inner Mongolia data center, which would create one of the largest Huawei chip clusters (Mackenzie Hawkins/Bloomberg)",
-      "url": "https://www.bloomberg.com/news/articles/2026-09-04/deepseek-plans-big-huawei-ai-chip-order-to-power-new-data-center",
-      "summary": "Mackenzie Hawkins / Bloomberg : Sources: DeepSeek plans to use 160K+ of Huawei's Ascend 950DT chips at an Inner Mongolia data center, which would create one of the largest Huawei chip clusters &mdash; DeepSeek plans to deploy at least 160,000 of Huawei Technologies Co.'s top accelerators at a massive data center it's building &hellip;",
-      "description_html": "<A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/deepseek-plans-big-huawei-ai-chip-order-to-power-new-data-center\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i6.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p6#a260904p6\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Mackenzie Hawkins / <A HREF=\"https://www.bloomberg.com/\">Bloomberg</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/deepseek-plans-big-huawei-ai-chip-order-to-power-new-data-center\">Sources: DeepSeek plans to use 160K+ of Huawei's Ascend 950DT chips at an Inner Mongolia data center, which would create one of the largest Huawei chip clusters</A></B></SPAN>&nbsp; &mdash;&nbsp; DeepSeek plans to deploy at least 160,000 of Huawei Technologies Co.'s top accelerators at a massive data center it's building &hellip; </P>",
-      "published_at": "2026-09-04T10:30:20.000Z",
-      "discovery_url": "https://www.techmeme.com/260904/p6",
-      "direct_source_url": "https://www.bloomberg.com/news/articles/2026-09-04/deepseek-plans-big-huawei-ai-chip-order-to-power-new-data-center",
-      "publisher": "Mackenzie Hawkins/Bloomberg",
-      "link_quality": "original",
-      "source": "Techmeme",
-      "source_home": "https://www.techmeme.com/",
-      "source_rank": 5,
-      "collection_mode": "rss",
-      "score": 7.753
-    },
-    {
-      "title": "Sources: Binance is still operating in the EU months after it failed to get a MiCA license, using workarounds to onboard new customers and reroute its trading (Bloomberg)",
-      "url": "https://www.bloomberg.com/news/articles/2026-09-04/how-binance-keeps-doing-business-in-europe-without-a-license",
-      "summary": "Bloomberg : Sources: Binance is still operating in the EU months after it failed to get a MiCA license, using workarounds to onboard new customers and reroute its trading &mdash; The news hit with a thud in June: Binance Holdings Ltd., the world's largest crypto exchange, was about to get kicked out of the European Union.",
-      "description_html": "<A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/how-binance-keeps-doing-business-in-europe-without-a-license\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i5.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p5#a260904p5\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> <A HREF=\"https://www.bloomberg.com/\">Bloomberg</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/how-binance-keeps-doing-business-in-europe-without-a-license\">Sources: Binance is still operating in the EU months after it failed to get a MiCA license, using workarounds to onboard new customers and reroute its trading</A></B></SPAN>&nbsp; &mdash;&nbsp; The news hit with a thud in June: Binance Holdings Ltd., the world's largest crypto exchange, was about to get kicked out of the European Union.</P>",
-      "published_at": "2026-09-04T09:55:01.000Z",
-      "discovery_url": "https://www.techmeme.com/260904/p5",
-      "direct_source_url": "https://www.bloomberg.com/news/articles/2026-09-04/how-binance-keeps-doing-business-in-europe-without-a-license",
-      "publisher": "Bloomberg",
-      "link_quality": "original",
-      "source": "Techmeme",
-      "source_home": "https://www.techmeme.com/",
-      "source_rank": 6,
-      "collection_mode": "rss",
-      "score": 7.648
-    },
-    {
-      "source": "Hacker News",
-      "publisher": "armature.tech",
-      "source_home": "https://news.ycombinator.com/",
-      "source_rank": 9,
-      "title": "Which tools do Claude, Codex and Cursor choose? We measured 17k runs to find out",
-      "url": "https://armature.tech/blog/which-tools-coding-agents-install",
-      "direct_source_url": "https://armature.tech/blog/which-tools-coding-agents-install",
-      "discovery_url": "https://news.ycombinator.com/item?id=49557206",
-      "link_quality": "original",
-      "discussion_url": "https://news.ycombinator.com/item?id=49557206",
-      "summary": "",
-      "published_at": "2026-09-03T21:20:34.000Z",
-      "engagement": {
-        "score": 232,
-        "comments": 106
+        "score": 664,
+        "comments": 218
       },
       "collection_mode": "api",
       "score": 7.618
     },
     {
-      "title": "Nvidia becomes a leading global strategic tech backer, with the value of its equity investments up 10x in the past year to $99B, as it bolsters the AI sector (Kai Nicol-Schwarz/CNBC)",
-      "url": "https://www.cnbc.com/2026/09/04/nvidia-ai-investments-99-billion.html",
-      "summary": "Kai Nicol-Schwarz / CNBC : Nvidia becomes a leading global strategic tech backer, with the value of its equity investments up 10x in the past year to $99B, as it bolsters the AI sector &mdash; Nvidia has become one of the world's largest corporate backers of tech companies as the value of its equity investments soared &hellip;",
-      "description_html": "<A HREF=\"https://www.cnbc.com/2026/09/04/nvidia-ai-investments-99-billion.html\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i4.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p4#a260904p4\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Kai Nicol-Schwarz / <A HREF=\"http://www.cnbc.com/\">CNBC</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.cnbc.com/2026/09/04/nvidia-ai-investments-99-billion.html\">Nvidia becomes a leading global strategic tech backer, with the value of its equity investments up 10x in the past year to $99B, as it bolsters the AI sector</A></B></SPAN>&nbsp; &mdash;&nbsp; Nvidia has become one of the world's largest corporate backers of tech companies as the value of its equity investments soared &hellip; </P>",
-      "published_at": "2026-09-04T09:45:02.000Z",
-      "discovery_url": "https://www.techmeme.com/260904/p4",
-      "direct_source_url": "https://www.cnbc.com/2026/09/04/nvidia-ai-investments-99-billion.html",
-      "publisher": "Kai Nicol-Schwarz/CNBC",
+      "title": "By declaring that GPT-6 Astra has ushered in the AGI era, OpenAI is being flippant and cementing the term's status as nothing more than marketing (M.G. Siegler/Spyglass)",
+      "url": "https://spyglass.org/agi-2026/",
+      "summary": "M.G. Siegler / Spyglass : By declaring that GPT-6 Astra has ushered in the AGI era, OpenAI is being flippant and cementing the term's status as nothing more than marketing &mdash; With &lsquo;GPT-6 Astra&rsquo;, AGI is here! Congrats, everyone! &mdash; It's a question as old as time. Or at least as old as Terminator 2. Is AGI here?",
+      "description_html": "<A HREF=\"https://spyglass.org/agi-2026/\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i18.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p18#a260904p18\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> M.G. Siegler / <A HREF=\"https://spyglass.org/\">Spyglass</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://spyglass.org/agi-2026/\">By declaring that GPT-6 Astra has ushered in the AGI era, OpenAI is being flippant and cementing the term's status as nothing more than marketing</A></B></SPAN>&nbsp; &mdash;&nbsp; With &lsquo;GPT-6 Astra&rsquo;, AGI is here!&nbsp; Congrats, everyone!&nbsp; &mdash;&nbsp; It's a question as old as time.&nbsp; Or at least as old as Terminator 2.&nbsp; Is AGI here?</P>",
+      "published_at": "2026-09-04T15:05:01.000Z",
+      "discovery_url": "https://www.techmeme.com/260904/p18",
+      "direct_source_url": "https://spyglass.org/agi-2026/",
+      "publisher": "M.G. Siegler/Spyglass",
+      "link_quality": "original",
+      "source": "Techmeme",
+      "source_home": "https://www.techmeme.com/",
+      "source_rank": 6,
+      "collection_mode": "rss",
+      "score": 7.564
+    },
+    {
+      "title": "How OpenAI limited METR's probe into the Hugging Face incident, dictating terms and restricting its scope to the single week when agents attacked Hugging Face (Dylan Freedman/New York Times)",
+      "url": "https://www.nytimes.com/2026/09/03/technology/openai-hugging-face-hack.html?unlocked_article_code=1.-lA.hbw8.4sMxBQlKEu2a&smid=nytcore-ios-share",
+      "summary": "Dylan Freedman / New York Times : How OpenAI limited METR's probe into the Hugging Face incident, dictating terms and restricting its scope to the single week when agents attacked Hugging Face &mdash; A nonprofit's study of how OpenAI's A.I. agents were able to break into Hugging Face's infrastructure wasn't allowed to look at the incident's full scope.",
+      "description_html": "<A HREF=\"https://www.nytimes.com/2026/09/03/technology/openai-hugging-face-hack.html?unlocked_article_code=1.-lA.hbw8.4sMxBQlKEu2a&smid=nytcore-ios-share\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i17.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p17#a260904p17\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Dylan Freedman / <A HREF=\"https://www.nytimes.com/\">New York Times</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.nytimes.com/2026/09/03/technology/openai-hugging-face-hack.html?unlocked_article_code=1.-lA.hbw8.4sMxBQlKEu2a&smid=nytcore-ios-share\">How OpenAI limited METR's probe into the Hugging Face incident, dictating terms and restricting its scope to the single week when agents attacked Hugging Face</A></B></SPAN>&nbsp; &mdash;&nbsp; A nonprofit's study of how OpenAI's A.I. agents were able to break into Hugging Face's infrastructure wasn't allowed to look at the incident's full scope.</P>",
+      "published_at": "2026-09-04T14:30:00.000Z",
+      "discovery_url": "https://www.techmeme.com/260904/p17",
+      "direct_source_url": "https://www.nytimes.com/2026/09/03/technology/openai-hugging-face-hack.html?unlocked_article_code=1.-lA.hbw8.4sMxBQlKEu2a&smid=nytcore-ios-share",
+      "publisher": "Dylan Freedman/New York Times",
       "link_quality": "original",
       "source": "Techmeme",
       "source_home": "https://www.techmeme.com/",
       "source_rank": 7,
       "collection_mode": "rss",
-      "score": 7.561
+      "score": 7.46
     },
     {
-      "source": "Hacker News",
-      "publisher": "ifm.ai",
-      "source_home": "https://news.ycombinator.com/",
-      "source_rank": 7,
-      "title": "K2 Horizon: A connected fleet of six open models",
-      "url": "https://ifm.ai/blog/k2/",
-      "direct_source_url": "https://ifm.ai/blog/k2/",
-      "discovery_url": "https://news.ycombinator.com/item?id=49551760",
+      "title": "What to expect from Apple's September 9 \"Surprise and Shine\" event: a foldable iPhone, an iPhone 18 Pro and Pro Max, Apple Watches with ceramic cases, and more (Mark Gurman/Bloomberg)",
+      "url": "https://www.bloomberg.com/news/articles/2026-09-04/what-to-expect-at-sept-9-apple-event-foldable-iphone-iphone-18-pro-watch?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc4ODUyODY3MiwiZXhwIjoxNzg5MTMzNDcyLCJhcnRpY2xlSWQiOiJUS1VDNFlOM04wQUUwMCIsImJjb25uZWN0SWQiOiJDNEVEQ0FFMUZBMDU0MEJFQTI0QTlGMjExQzFFOTA4MCJ9.FcaFtdv4uwkRzS9XTNpZAW_xehoawqChWiTKXZwO5cI",
+      "summary": "Mark Gurman / Bloomberg : What to expect from Apple's September 9 &ldquo;Surprise and Shine&rdquo; event: a foldable iPhone, an iPhone 18 Pro and Pro Max, Apple Watches with ceramic cases, and more &mdash; From the foldable iPhone to a touch-screen MacBook, here's what to expect on Sept. 9 and beyond.",
+      "description_html": "<A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/what-to-expect-at-sept-9-apple-event-foldable-iphone-iphone-18-pro-watch?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc4ODUyODY3MiwiZXhwIjoxNzg5MTMzNDcyLCJhcnRpY2xlSWQiOiJUS1VDNFlOM04wQUUwMCIsImJjb25uZWN0SWQiOiJDNEVEQ0FFMUZBMDU0MEJFQTI0QTlGMjExQzFFOTA4MCJ9.FcaFtdv4uwkRzS9XTNpZAW_xehoawqChWiTKXZwO5cI\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i16.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p16#a260904p16\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> Mark Gurman / <A HREF=\"https://www.bloomberg.com/\">Bloomberg</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://www.bloomberg.com/news/articles/2026-09-04/what-to-expect-at-sept-9-apple-event-foldable-iphone-iphone-18-pro-watch?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc4ODUyODY3MiwiZXhwIjoxNzg5MTMzNDcyLCJhcnRpY2xlSWQiOiJUS1VDNFlOM04wQUUwMCIsImJjb25uZWN0SWQiOiJDNEVEQ0FFMUZBMDU0MEJFQTI0QTlGMjExQzFFOTA4MCJ9.FcaFtdv4uwkRzS9XTNpZAW_xehoawqChWiTKXZwO5cI\">What to expect from Apple's September 9 &ldquo;Surprise and Shine&rdquo; event: a foldable iPhone, an iPhone 18 Pro and Pro Max, Apple Watches with ceramic cases, and more</A></B></SPAN>&nbsp; &mdash;&nbsp; From the foldable iPhone to a touch-screen MacBook, here's what to expect on Sept. 9 and beyond.</P>",
+      "published_at": "2026-09-04T13:50:01.000Z",
+      "discovery_url": "https://www.techmeme.com/260904/p16",
+      "direct_source_url": "https://www.bloomberg.com/news/articles/2026-09-04/what-to-expect-at-sept-9-apple-event-foldable-iphone-iphone-18-pro-watch?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc4ODUyODY3MiwiZXhwIjoxNzg5MTMzNDcyLCJhcnRpY2xlSWQiOiJUS1VDNFlOM04wQUUwMCIsImJjb25uZWN0SWQiOiJDNEVEQ0FFMUZBMDU0MEJFQTI0QTlGMjExQzFFOTA4MCJ9.FcaFtdv4uwkRzS9XTNpZAW_xehoawqChWiTKXZwO5cI",
+      "publisher": "Mark Gurman/Bloomberg",
       "link_quality": "original",
-      "discussion_url": "https://news.ycombinator.com/item?id=49551760",
-      "summary": "",
-      "published_at": "2026-09-03T15:36:43.000Z",
-      "engagement": {
-        "score": 303,
-        "comments": 104
-      },
-      "collection_mode": "api",
-      "score": 7.555
+      "source": "Techmeme",
+      "source_home": "https://www.techmeme.com/",
+      "source_rank": 8,
+      "collection_mode": "rss",
+      "score": 7.352
     },
     {
       "source": "Hacker News",
       "publisher": "discoverwildlife.com",
       "source_home": "https://news.ycombinator.com/",
-      "source_rank": 8,
+      "source_rank": 7,
       "title": "Artificial beaver dams saw juvenile coho salmon survival rates go from 8% to 60%",
       "url": "https://www.discoverwildlife.com/animal-facts/artificial-beaver-dams-california",
       "direct_source_url": "https://www.discoverwildlife.com/animal-facts/artificial-beaver-dams-california",
@@ -316,123 +333,173 @@
       "summary": "",
       "published_at": "2026-09-03T16:21:33.000Z",
       "engagement": {
-        "score": 269,
-        "comments": 86
+        "score": 357,
+        "comments": 117
       },
       "collection_mode": "api",
-      "score": 7.491
+      "score": 7.288
     },
     {
-      "title": "Sources: initial foldable iPhone production is limited to only a \"few hundred\" units a day due to Apple's strict quality standards as it ramps up output (Nikkei Asia)",
-      "url": "https://asia.nikkei.com/business/electronics/early-foldable-iphone-production-limited-to-a-few-hundred-per-day-sources",
-      "summary": "Nikkei Asia : Sources: initial foldable iPhone production is limited to only a &ldquo;few hundred&rdquo; units a day due to Apple's strict quality standards as it ramps up output &mdash; TAIPEI &mdash; Initial production of Apple's long-awaited foldable iPhone is currently limited to only a &ldquo;few hundred&rdquo; units a day &hellip;",
-      "description_html": "<A HREF=\"https://asia.nikkei.com/business/electronics/early-foldable-iphone-production-limited-to-a-few-hundred-per-day-sources\"><IMG VSPACE=\"4\" HSPACE=\"4\" BORDER=\"0\" ALIGN=\"RIGHT\" SRC=\"http://www.techmeme.com/260904/i3.jpg\"></A>\n<P><A HREF=\"https://www.techmeme.com/260904/p3#a260904p3\" TITLE=\"Techmeme permalink\"><IMG WIDTH=11 HEIGHT=12 SRC=\"http://www.techmeme.com/img/pml.png\" STYLE=\"border:none;padding:0;margin:0;\"></A> <A HREF=\"https://asia.nikkei.com/\">Nikkei Asia</A>:<BR>\n<SPAN STYLE=\"font-size:1.3em;\"><B><A HREF=\"https://asia.nikkei.com/business/electronics/early-foldable-iphone-production-limited-to-a-few-hundred-per-day-sources\">Sources: initial foldable iPhone production is limited to only a &ldquo;few hundred&rdquo; units a day due to Apple's strict quality standards as it ramps up output</A></B></SPAN>&nbsp; &mdash;&nbsp; TAIPEI &mdash; Initial production of Apple's long-awaited foldable iPhone is currently limited to only a &ldquo;few hundred&rdquo; units a day &hellip; </P>",
-      "published_at": "2026-09-04T06:35:01.000Z",
-      "discovery_url": "https://www.techmeme.com/260904/p3",
-      "direct_source_url": "https://asia.nikkei.com/business/electronics/early-foldable-iphone-production-limited-to-a-few-hundred-per-day-sources",
-      "publisher": "Nikkei Asia",
-      "link_quality": "original",
-      "source": "Techmeme",
-      "source_home": "https://www.techmeme.com/",
-      "source_rank": 8,
-      "collection_mode": "rss",
-      "score": 7.349
-    },
-    {
-      "title": "Microsoft rileverà quota del 4% nel London Stock Exchange",
-      "url": "https://www.reuters.com/it/azienda/microsoft-rilever-quota-del-4-nel-london-stock-exchange-2022-12-12/",
+      "title": "BORSE EUROPA In rialzo con utilities e tech, Remy Cointreau tocca nuovi massimi",
+      "url": "https://www.reuters.com/it/azienda/borse-europa-rialzo-con-utilities-e-tech-remy-cointreau-tocca-nuovi-massimi-2021-11-25/",
       "summary": "",
-      "published_at": "2026-09-03T17:11:32.791Z",
-      "source": "Reuters",
-      "publisher": "Reuters",
-      "source_home": "https://www.reuters.com/technology/",
-      "source_rank": 1,
-      "direct_source_url": "https://www.reuters.com/it/azienda/microsoft-rilever-quota-del-4-nel-london-stock-exchange-2022-12-12/",
-      "discovery_url": "https://www.reuters.com/it/azienda/microsoft-rilever-quota-del-4-nel-london-stock-exchange-2022-12-12/",
-      "link_quality": "original",
-      "collection_mode": "sitemap",
-      "score": 7.301
-    },
-    {
-      "title": "Microsoft, mossa antitrust Usa per bloccare acquisizione Activision",
-      "url": "https://www.reuters.com/it/azienda/microsoft-mossa-antitrust-usa-per-bloccare-acquisizione-activision-2022-12-09/",
-      "summary": "",
-      "published_at": "2026-09-03T17:04:46.693Z",
+      "published_at": "2026-09-03T16:15:00.661Z",
       "source": "Reuters",
       "publisher": "Reuters",
       "source_home": "https://www.reuters.com/technology/",
       "source_rank": 2,
-      "direct_source_url": "https://www.reuters.com/it/azienda/microsoft-mossa-antitrust-usa-per-bloccare-acquisizione-activision-2022-12-09/",
-      "discovery_url": "https://www.reuters.com/it/azienda/microsoft-mossa-antitrust-usa-per-bloccare-acquisizione-activision-2022-12-09/",
+      "direct_source_url": "https://www.reuters.com/it/azienda/borse-europa-rialzo-con-utilities-e-tech-remy-cointreau-tocca-nuovi-massimi-2021-11-25/",
+      "discovery_url": "https://www.reuters.com/it/azienda/borse-europa-rialzo-con-utilities-e-tech-remy-cointreau-tocca-nuovi-massimi-2021-11-25/",
       "link_quality": "original",
       "collection_mode": "sitemap",
-      "score": 7.216
+      "score": 6.883
     },
     {
-      "title": "Amazon raggiunge accordo con Ue su uso di dati, evita multa",
-      "url": "https://www.reuters.com/it/azienda/amazon-raggiunge-accordo-con-ue-su-uso-di-dati-evita-multa-2022-12-20/",
+      "title": "Stati Ue concordano posizione comune su nuove norme per colossi tech Usa",
+      "url": "https://www.reuters.com/it/mondo/stati-ue-concordano-posizione-comune-su-nuove-norme-per-colossi-tech-usa-2021-11-25/",
       "summary": "",
-      "published_at": "2026-09-03T17:08:50.906Z",
+      "published_at": "2026-09-03T11:35:02.949Z",
+      "source": "Reuters",
+      "publisher": "Reuters",
+      "source_home": "https://www.reuters.com/technology/",
+      "source_rank": 1,
+      "direct_source_url": "https://www.reuters.com/it/mondo/stati-ue-concordano-posizione-comune-su-nuove-norme-per-colossi-tech-usa-2021-11-25/",
+      "discovery_url": "https://www.reuters.com/it/mondo/stati-ue-concordano-posizione-comune-su-nuove-norme-per-colossi-tech-usa-2021-11-25/",
+      "link_quality": "original",
+      "collection_mode": "sitemap",
+      "score": 6.769
+    },
+    {
+      "title": "BORSA USA Indici in calo, pesano titoli retail e tech",
+      "url": "https://www.reuters.com/it/azienda/borsa-usa-indici-calo-pesano-titoli-retail-e-tech-2021-11-24/",
+      "summary": "",
+      "published_at": "2026-09-03T10:56:05.122Z",
       "source": "Reuters",
       "publisher": "Reuters",
       "source_home": "https://www.reuters.com/technology/",
       "source_rank": 3,
-      "direct_source_url": "https://www.reuters.com/it/azienda/amazon-raggiunge-accordo-con-ue-su-uso-di-dati-evita-multa-2022-12-20/",
-      "discovery_url": "https://www.reuters.com/it/azienda/amazon-raggiunge-accordo-con-ue-su-uso-di-dati-evita-multa-2022-12-20/",
+      "direct_source_url": "https://www.reuters.com/it/azienda/borsa-usa-indici-calo-pesano-titoli-retail-e-tech-2021-11-24/",
+      "discovery_url": "https://www.reuters.com/it/azienda/borsa-usa-indici-calo-pesano-titoli-retail-e-tech-2021-11-24/",
       "link_quality": "original",
       "collection_mode": "sitemap",
-      "score": 7.139
+      "score": 6.582
     },
     {
-      "title": "Meta potrebbe aver violato leggi antitrust - Commissione Ue",
-      "url": "https://www.reuters.com/it/azienda/meta-potrebbe-aver-violato-leggi-antitrust-commissione-ue-2022-12-19/",
+      "title": "Apple si avvicina a capitalizzazione da 3.000 miliardi di dollari",
+      "url": "https://www.reuters.com/it/azienda/apple-si-avvicina-capitalizzazione-da-3000-miliardi-di-dollari-2021-12-08/",
       "summary": "",
-      "published_at": "2026-09-03T17:09:43.475Z",
-      "source": "Reuters",
-      "publisher": "Reuters",
-      "source_home": "https://www.reuters.com/technology/",
-      "source_rank": 4,
-      "direct_source_url": "https://www.reuters.com/it/azienda/meta-potrebbe-aver-violato-leggi-antitrust-commissione-ue-2022-12-19/",
-      "discovery_url": "https://www.reuters.com/it/azienda/meta-potrebbe-aver-violato-leggi-antitrust-commissione-ue-2022-12-19/",
-      "link_quality": "original",
-      "collection_mode": "sitemap",
-      "score": 7.06
-    },
-    {
-      "title": "Amazon potrebbe essere responsabile per pubblicità di Louboutin false - Corte Ue",
-      "url": "https://www.reuters.com/it/azienda/amazon-potrebbe-essere-responsabile-per-pubblicit-di-louboutin-false-corte-ue-2022-12-22/",
-      "summary": "",
-      "published_at": "2026-09-03T12:56:40.422Z",
+      "published_at": "2026-09-03T16:14:31.249Z",
       "source": "Reuters",
       "publisher": "Reuters",
       "source_home": "https://www.reuters.com/technology/",
       "source_rank": 6,
-      "direct_source_url": "https://www.reuters.com/it/azienda/amazon-potrebbe-essere-responsabile-per-pubblicit-di-louboutin-false-corte-ue-2022-12-22/",
-      "discovery_url": "https://www.reuters.com/it/azienda/amazon-potrebbe-essere-responsabile-per-pubblicit-di-louboutin-false-corte-ue-2022-12-22/",
+      "direct_source_url": "https://www.reuters.com/it/azienda/apple-si-avvicina-capitalizzazione-da-3000-miliardi-di-dollari-2021-12-08/",
+      "discovery_url": "https://www.reuters.com/it/azienda/apple-si-avvicina-capitalizzazione-da-3000-miliardi-di-dollari-2021-12-08/",
       "link_quality": "original",
       "collection_mode": "sitemap",
-      "score": 6.724
+      "score": 6.563
     },
     {
-      "title": "GREGGIO Ai massimi di tre settimane su allentamento restrizioni Cina",
-      "url": "https://www.reuters.com/it/azienda/greggio-ai-massimi-di-tre-settimane-su-allentamento-restrizioni-cina-2022-12-27/",
+      "title": "BORSA USA Nasdaq sale su big tech, produttori chip dopo calo per timori Omicron",
+      "url": "https://www.reuters.com/it/azienda/borsa-usa-nasdaq-sale-su-big-tech-produttori-chip-dopo-calo-per-timori-omicron-2021-12-07/",
       "summary": "",
-      "published_at": "2026-09-03T09:40:50.520Z",
+      "published_at": "2026-09-03T16:18:12.140Z",
+      "source": "Reuters",
+      "publisher": "Reuters",
+      "source_home": "https://www.reuters.com/technology/",
+      "source_rank": 7,
+      "direct_source_url": "https://www.reuters.com/it/azienda/borsa-usa-nasdaq-sale-su-big-tech-produttori-chip-dopo-calo-per-timori-omicron-2021-12-07/",
+      "discovery_url": "https://www.reuters.com/it/azienda/borsa-usa-nasdaq-sale-su-big-tech-produttori-chip-dopo-calo-per-timori-omicron-2021-12-07/",
+      "link_quality": "original",
+      "collection_mode": "sitemap",
+      "score": 6.485
+    },
+    {
+      "title": "Tim, tumulto ai vertici complica risposta a offerta Kkr",
+      "url": "https://www.reuters.com/it/azienda/tim-tumulto-ai-vertici-complica-risposta-offerta-kkr-2021-12-02/",
+      "summary": "",
+      "published_at": "2026-09-03T10:25:08.635Z",
+      "source": "Reuters",
+      "publisher": "Reuters",
+      "source_home": "https://www.reuters.com/technology/",
+      "source_rank": 4,
+      "direct_source_url": "https://www.reuters.com/it/azienda/tim-tumulto-ai-vertici-complica-risposta-offerta-kkr-2021-12-02/",
+      "discovery_url": "https://www.reuters.com/it/azienda/tim-tumulto-ai-vertici-complica-risposta-offerta-kkr-2021-12-02/",
+      "link_quality": "original",
+      "collection_mode": "sitemap",
+      "score": 6.48
+    },
+    {
+      "title": "Antitrust, sanzione oltre 1,128 mld ad Amazon per abuso posizione dominante",
+      "url": "https://www.reuters.com/it/azienda/antitrust-sanzione-oltre-1128-mld-ad-amazon-per-abuso-posizione-dominante-2021-12-09/",
+      "summary": "",
+      "published_at": "2026-09-03T11:39:24.846Z",
       "source": "Reuters",
       "publisher": "Reuters",
       "source_home": "https://www.reuters.com/technology/",
       "source_rank": 5,
-      "direct_source_url": "https://www.reuters.com/it/azienda/greggio-ai-massimi-di-tre-settimane-su-allentamento-restrizioni-cina-2022-12-27/",
-      "discovery_url": "https://www.reuters.com/it/azienda/greggio-ai-massimi-di-tre-settimane-su-allentamento-restrizioni-cina-2022-12-27/",
+      "direct_source_url": "https://www.reuters.com/it/azienda/antitrust-sanzione-oltre-1128-mld-ad-amazon-per-abuso-posizione-dominante-2021-12-09/",
+      "discovery_url": "https://www.reuters.com/it/azienda/antitrust-sanzione-oltre-1128-mld-ad-amazon-per-abuso-posizione-dominante-2021-12-09/",
       "link_quality": "original",
       "collection_mode": "sitemap",
-      "score": 6.668
+      "score": 6.452
     },
     {
       "source": "Hugging Face",
       "publisher": "Hugging Face",
       "source_home": "https://huggingface.co/papers",
       "source_rank": 2,
+      "title": "Last Translation Benchmark",
+      "url": "https://huggingface.co/papers/2609.04173",
+      "direct_source_url": "https://huggingface.co/papers/2609.04173",
+      "discovery_url": "https://huggingface.co/papers/2609.04173",
+      "link_quality": "original",
+      "summary": "For scientific progress, we need benchmarks that test the limits of state-of-the-art models, and evaluation methods that inform us about failure cases. As models get stronger, standard benchmarks for machine translation are approaching saturation. Further, automatic translation metrics are unreliable, vulnerable to reward-hacking, and provide unactionable assessments. Even gold human evaluation is not problem-free, because it often lacks reproducibility, objectivity, and scalability. Overall, this prevents us from tracking objective progress in the field and identifying pathways for improvement. We introduce the Last Translation Benchmark, a collection of human-authored and peer-reviewed examples (texts, images, audio, videos) that break leading machine translation models. We also present a new evaluation approach: each example comes with handcrafted verification rules describing concrete failure cases on that example, therefore allowing reliable and actionable future evaluation. The Last Translation Benchmark is a live dataset that accepts ongoing contributions. The latest version is LTBv1, containing accepted contributions prior to September 1st 2026, with future releases planned",
+      "published_at": "2026-09-02T20:00:00.000Z",
+      "engagement": {
+        "upvotes": 13
+      },
+      "collection_mode": "api",
+      "score": 6.393
+    },
+    {
+      "title": "Apple, Tim Cook firma accordo da 275 mld dlr con funzionari cinesi- The Information",
+      "url": "https://www.reuters.com/it/mondo/apple-tim-cook-firma-accordo-da-275-mld-dlr-con-funzionari-cinesi-information-2021-12-07/",
+      "summary": "",
+      "published_at": "2026-09-03T16:59:10.441Z",
+      "source": "Reuters",
+      "publisher": "Reuters",
+      "source_home": "https://www.reuters.com/technology/",
+      "source_rank": 9,
+      "direct_source_url": "https://www.reuters.com/it/mondo/apple-tim-cook-firma-accordo-da-275-mld-dlr-con-funzionari-cinesi-information-2021-12-07/",
+      "discovery_url": "https://www.reuters.com/it/mondo/apple-tim-cook-firma-accordo-da-275-mld-dlr-con-funzionari-cinesi-information-2021-12-07/",
+      "link_quality": "original",
+      "collection_mode": "sitemap",
+      "score": 6.354
+    },
+    {
+      "source": "Hugging Face",
+      "publisher": "Hugging Face",
+      "source_home": "https://huggingface.co/papers",
+      "source_rank": 1,
+      "title": "DRACO: Fine-Grained Credit Assignment with Dynamic Rubrics for Long-Horizon Agent Training",
+      "url": "https://huggingface.co/papers/2609.04094",
+      "direct_source_url": "https://huggingface.co/papers/2609.04094",
+      "discovery_url": "https://huggingface.co/papers/2609.04094",
+      "link_quality": "original",
+      "summary": "Reinforcement Learning from Verifiable Rewards works well when a task has a programmatic checker, but most long-horizon agent domains have none. We work in the outcome-blind setting, where ground-truth success signals are not available. Multi-criteria rubrics are a popular way to supply such a reward; they are scored once per trajectory, but a single scalar is a poor signal across tens of steps. We propose DRACO: Distributing Rubric-based Advantage for Credit Optimization. It generates rubrics dynamically during training to track the policy's evolving capability, scores those rubrics once per completed trajectory, and redistributes that judgment over the steps responsible for annotated rubrics to produce differentiated per-step advantages in GRPO. The redistribution is closed-form and does not introduce any trained attribution module. On AppWorld, DRACO gains 15.9 points over the base model and 5.3 points over GRPO trained with a sparse ground-truth reward, despite not using any verifiers itself. On out-of-domain Tau-Bench, it gains 5.3 points over the base model even without a frontier judge, beating both ground-truth-reward training and other rubric-based training settings. The c",
+      "published_at": "2026-09-02T20:00:00.000Z",
+      "engagement": {
+        "upvotes": 7
+      },
+      "collection_mode": "api",
+      "score": 6.352
+    },
+    {
+      "source": "Hugging Face",
+      "publisher": "Hugging Face",
+      "source_home": "https://huggingface.co/papers",
+      "source_rank": 6,
       "title": "Scal3R: Learning Efficient Multi-Relative Pose Query for Scalable Online 3D Reconstruction",
       "url": "https://huggingface.co/papers/2609.04201",
       "direct_source_url": "https://huggingface.co/papers/2609.04201",
@@ -441,16 +508,52 @@
       "summary": "Online 3D reconstruction models perform poorly on long videos. This happens because regressing poses relative to a fixed first-frame anchor forces extrapolation far beyond the training distribution. Small drifts accumulate and amplify into significant geometric collapse. However, we observe that per-frame depth remains stable throughout this failure. The backbone's local geometry remains intact; only the global pose head breaks down. Motivated by this decoupling, we introduce Scal3R. This approach reformulates online reconstruction as multi-reference relative pose querying. We use lightweight learnable tokens, which make up about ~1% of the parameters, and inject them into a completely frozen backbone via asymmetric attention. This setup queries poses relative to multiple past keyframes. An online pose-graph optimization system with loop closure suppresses long-range drift. Scal3R reaches convergence in 8 hours on a single GPU. It reduces the average ATE by over 60% on KITTI compared to the online baseline. It also achieves state-of-the-art performance across Virtual KITTI, Sintel, TUM-Dynamic, ScanNet, and 7-Scenes. Project page: https://linjohnss.github.io/scal3r/",
       "published_at": "2026-09-02T20:00:00.000Z",
       "engagement": {
-        "upvotes": 21
+        "upvotes": 31
       },
       "collection_mode": "api",
-      "score": 6.491
+      "score": 6.253
+    },
+    {
+      "source": "Hugging Face",
+      "publisher": "Hugging Face",
+      "source_home": "https://huggingface.co/papers",
+      "source_rank": 3,
+      "title": "QCell: Recombining and Aligning Cell Queries for Overlapping Instance Segmentation",
+      "url": "https://huggingface.co/papers/2608.29253",
+      "direct_source_url": "https://huggingface.co/papers/2608.29253",
+      "discovery_url": "https://huggingface.co/papers/2608.29253",
+      "link_quality": "original",
+      "summary": "Instance segmentation of overlapping cells in microscopy remains challenging due to semi-transparent structures that produce weak boundaries and mixed visual evidence in overlap regions. Existing methods address this through local regions of interest or shape priors but lack global reasoning across overlapping objects. We present QCell, a novel query-based model that de-overlaps cell instances in microscopy scenes. Our approach combines (i) an instance recombination module that decomposes and recombines query representations in latent space, enabling the model to reason about complete object structure under overlap, and (ii) a contrastive query alignment objective that combines distinctive instance feature learning and separation of overlapping cell queries. We additionally introduce a new Organoid dataset benchmark for overlapping cell segmentation. We show that QCell outperforms state-of-the-art methods across multiple benchmarks, achieving +2.2 AP and +2.7 AJI on ISBI2014. Code is available at https://github.com/SlavkoPrytula/QCell",
+      "published_at": "2026-08-28T20:00:00.000Z",
+      "engagement": {
+        "upvotes": 7
+      },
+      "collection_mode": "api",
+      "score": 6.192
     },
     {
       "source": "Hugging Face",
       "publisher": "Hugging Face",
       "source_home": "https://huggingface.co/papers",
       "source_rank": 4,
+      "title": "Select, Compress, Reinvest: A Controlled Study of Visual-Token Allocation in Long-Video MLLMs",
+      "url": "https://huggingface.co/papers/2609.03820",
+      "direct_source_url": "https://huggingface.co/papers/2609.03820",
+      "discovery_url": "https://huggingface.co/papers/2609.03820",
+      "link_quality": "original",
+      "summary": "Long-video language models cannot look at every frame: an hour sampled once per second is 3,600 images, and a system keeps only a small fixed slice of that pool. Which frames survive that slice is usually treated as a preprocessing detail; we test whether it should be. Published selectors make the comparison hard because they change the frame scorer, the prompt boundary, the resolution policy, and the answering model all at once. We hold each fixed and vary one decision at a time: selection, spatial compression, and reinvestment of the savings, across six training-free selection rules, three long-video benchmarks, and two answering models. Selection is the largest single lever: on LongVideoBench's hour-long bin, eight query-selected frames beat sixteen uniformly spaced ones by 6.9 points, and Orthogonal Matching Pursuit, an unmodified decades-old sparse-approximation algorithm, matches or comes within a point of every purpose-built selector we compare it against, across all three benchmarks. Compression is close to free: halving each frame's spatial budget at fixed timestamps costs at most 0.44 points. Reinvestment is where that budget turns back into accuracy: spending the freed t",
+      "published_at": "2026-09-02T20:00:00.000Z",
+      "engagement": {
+        "upvotes": 9
+      },
+      "collection_mode": "api",
+      "score": 6.16
+    },
+    {
+      "source": "Hugging Face",
+      "publisher": "Hugging Face",
+      "source_home": "https://huggingface.co/papers",
+      "source_rank": 8,
       "title": "Compile by Training: Turning Natural-Language Specifications into Local Neural Functions",
       "url": "https://huggingface.co/papers/2609.04199",
       "direct_source_url": "https://huggingface.co/papers/2609.04199",
@@ -459,112 +562,10 @@
       "summary": "Many recurring text functions are easy to describe but difficult to implement with rules, while calling a large remote model for every input introduces repeated cost, latency, and dependency on a provider. We present compile by training, which turns a natural-language specification into a reusable neural function. At compile time, teacher models generate task-specific examples that are used to train a small adapter for a compact interpreter. The resulting function runs without the teachers and can be stored, versioned, and composed like ordinary software. On FuzzyBench-Hard, a subset on which the Program-as-Weights fast compiler produced no exact matches, compile by training reaches 83.6% semantic accuracy. This higher accuracy comes with a higher compile-time cost: roughly a minute rather than seconds for the fast compiler. We deploy the compiler in a public interactive service and demonstrate compiled functions in a multi-site website helper, a language-controlled 3D avatar, and a bidirectional English-Claudish translator.",
       "published_at": "2026-09-02T20:00:00.000Z",
       "engagement": {
-        "upvotes": 29
+        "upvotes": 211
       },
       "collection_mode": "api",
-      "score": 6.399
-    },
-    {
-      "source": "Hugging Face",
-      "publisher": "Hugging Face",
-      "source_home": "https://huggingface.co/papers",
-      "source_rank": 7,
-      "title": "Knowing When Not to Reuse: Conditional Experience Transfer in Autonomous LLM Post-Training",
-      "url": "https://huggingface.co/papers/2608.26730",
-      "direct_source_url": "https://huggingface.co/papers/2608.26730",
-      "discovery_url": "https://huggingface.co/papers/2608.26730",
-      "link_quality": "original",
-      "summary": "Large language models offer broad capabilities, but adapting them to evolving domains, tools, and requirements often entails repeated post-training. Autonomous systems automate parts of this process by proposing updates, training candidates, and using evaluation feedback to select subsequent proposals. As evidence accumulates, a central problem emerges: which past update evidence remains actionable after subsequent training has changed the parent model? An update's effect depends on its parent, data, and training stage. Treating past success as context-free permission can waste compute. If the resulting child is promoted, it can also degrade the subsequent training trajectory. We formulate this problem as conditional experience transfer and introduce Boundary-Calibrated Intervention Transfer (BCIT), a method that authorizes experience reuse before weight-changing training. BCIT binds an observed effect to its source context, checks applicability conditions, vetoes candidates with named hard conflicts, and obtains current-state evidence through a bounded training trial when needed. Fully trained candidates still face a shared adoption rule, and only observed events extend memory. On",
-      "published_at": "2026-08-26T20:00:00.000Z",
-      "engagement": {
-        "upvotes": 24
-      },
-      "collection_mode": "api",
-      "score": 6.119
-    },
-    {
-      "source": "Hugging Face",
-      "publisher": "Hugging Face",
-      "source_home": "https://huggingface.co/papers",
-      "source_rank": 8,
-      "title": "Puffin-World: Scaling a Unified Multimodal Model with Native 3D World States",
-      "url": "https://huggingface.co/papers/2609.04196",
-      "direct_source_url": "https://huggingface.co/papers/2609.04196",
-      "discovery_url": "https://huggingface.co/papers/2609.04196",
-      "link_quality": "original",
-      "summary": "We propose Puffin-World, a unified multimodal architecture that integrates physical understanding, spatial simulation, and 3D world generation and reconstruction without relying on external offline modules. To reliably construct and interact with 3D worlds, our framework jointly models three native world states: physics (gravity field and latitude), geometry (depth), and appearance (image), together with a unified Omni-Camera representation that supports diverse tasks and flexible motions. Beyond modeling these states, we introduce a strategy for propagating physical dynamics across future frames. By grounding absolute camera properties in the real world, Puffin-World enables physically consistent and visually stable world generation. We further couple appearance and geometry within a single generative process, jointly synthesizing each future view and reconstructing its underlying geometry. This unified paradigm enables interleaved closed-loop applications requiring synergy across multiple tasks, including mimic and self-calibrated world exploration. To scale Puffin-World to complex scenarios, we construct Puffin-16M, comprising 15 million vision-language-camera triplets and 1 mil",
-      "published_at": "2026-09-02T20:00:00.000Z",
-      "engagement": {
-        "upvotes": 32
-      },
-      "collection_mode": "api",
-      "score": 6.099
-    },
-    {
-      "title": "Amazon, tagli a oltre 18.000 posti di lavoro - Ceo",
-      "url": "https://www.reuters.com/it/azienda/amazon-tagli-oltre-18000-posti-di-lavoro-ceo-2023-01-05/",
-      "summary": "",
-      "published_at": "2026-09-02T13:57:31.648Z",
-      "source": "Reuters",
-      "publisher": "Reuters",
-      "source_home": "https://www.reuters.com/technology/",
-      "source_rank": 7,
-      "direct_source_url": "https://www.reuters.com/it/azienda/amazon-tagli-oltre-18000-posti-di-lavoro-ceo-2023-01-05/",
-      "discovery_url": "https://www.reuters.com/it/azienda/amazon-tagli-oltre-18000-posti-di-lavoro-ceo-2023-01-05/",
-      "link_quality": "original",
-      "collection_mode": "sitemap",
-      "score": 6.07
-    },
-    {
-      "title": "GREGGIO Vicino ai massimi di 2023 su aspettative ripresa domanda cinese",
-      "url": "https://www.reuters.com/it/azienda/greggio-vicino-ai-massimi-di-2023-su-aspettative-ripresa-domanda-cinese-2023-01-16/",
-      "summary": "",
-      "published_at": "2026-09-02T11:41:05.951Z",
-      "source": "Reuters",
-      "publisher": "Reuters",
-      "source_home": "https://www.reuters.com/technology/",
-      "source_rank": 8,
-      "direct_source_url": "https://www.reuters.com/it/azienda/greggio-vicino-ai-massimi-di-2023-su-aspettative-ripresa-domanda-cinese-2023-01-16/",
-      "discovery_url": "https://www.reuters.com/it/azienda/greggio-vicino-ai-massimi-di-2023-su-aspettative-ripresa-domanda-cinese-2023-01-16/",
-      "link_quality": "original",
-      "collection_mode": "sitemap",
-      "score": 5.99
-    },
-    {
-      "source": "Hugging Face",
-      "publisher": "Hugging Face",
-      "source_home": "https://huggingface.co/papers",
-      "source_rank": 6,
-      "title": "PACE: Towards Surfacing Hidden Conflicts in User Requests",
-      "url": "https://huggingface.co/papers/2609.03293",
-      "direct_source_url": "https://huggingface.co/papers/2609.03293",
-      "discovery_url": "https://huggingface.co/papers/2609.03293",
-      "link_quality": "original",
-      "summary": "Personalized assistants should not only comply with user requests but also assess whether those requests are appropriate given the user's current circumstances. However, prior work has primarily focused on accurately executing requests, overlooking the need for assistants to account for context and engage in conflict-based refusal. Furthermore, while existing work on conflict or safety detection relies on explicitly provided factors, real-world scenarios often involve implicit factors that must be retrieved from a knowledge base (KB). To this end, we introduce Personalized Assistants for Conflict Evaluation (PACE), a dataset for evaluating whether models can identify latent constraints, expressed as egocentric knowledge or events, that render seemingly reasonable user requests inappropriate. PACE pairs user requests grounded in well-defined personas with egocentric KB facts, requiring models to integrate contextual evidence to determine whether a request is conflicting. This implicit retrieval setting hinders the direct association between user requests and conflict-inducing knowledge, making it difficult for existing models to identify relevant user-specific facts. To address this",
-      "published_at": "2026-09-02T20:00:00.000Z",
-      "engagement": {
-        "upvotes": 8
-      },
-      "collection_mode": "api",
-      "score": 5.977
-    },
-    {
-      "source": "Hugging Face",
-      "publisher": "Hugging Face",
-      "source_home": "https://huggingface.co/papers",
-      "source_rank": 1,
-      "title": "Using Grounded Theory for Agent Behavior Analysis at Scale",
-      "url": "https://huggingface.co/papers/2608.30391",
-      "direct_source_url": "https://huggingface.co/papers/2608.30391",
-      "discovery_url": "https://huggingface.co/papers/2608.30391",
-      "link_quality": "original",
-      "summary": "Understanding agent behavior requires methods that scale to thousands of trajectories and surface new patterns in long, often unfamiliar tasks where pre-built classifiers fall short. We propose to bring grounded theory into agent trajectory analysis: a six-decade-old qualitative method from the social sciences, with a principled saturation criterion and an auditable trail from data to theory. We propose AutoTraceGT (Automated Trace analysis through Grounded Theory), the first multi-agent pipeline that automates grounded theory on agent trajectories. It iteratively performs open, axial, and theoretical coding until saturation, producing a behavioral taxonomy tailored to each task. Across six trajectory corpora, AutoTraceGT produces codebooks that recover 73-91 percent of the failure modes in human-annotated taxonomies and surface additional patterns that those taxonomies miss. The emergent theoretical narrative aligns with prior expert accounts. Used as a deductive feature space, the codebook outperforms zero-shot and few-shot LLM baselines on downstream failure prediction. These results suggest Grounded Theory offers a scalable analytic tool for ML researchers and agent developers",
-      "published_at": "2026-08-30T20:00:00.000Z",
-      "engagement": {
-        "upvotes": 0
-      },
-      "collection_mode": "api",
-      "score": 5.9
+      "score": 6.14
     }
   ]
 }

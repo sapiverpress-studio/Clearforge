@@ -97,6 +97,18 @@
       "privacy": "Runs entirely in the browser; bag names, items and packing status stay in local browser storage.",
       "supervision": "A grown-up creates and checks each list, including any medication or safety-critical items.",
       "published_date": "2026-09-04"
+    },
+    {
+      "day": 8,
+      "slug": "family-job-board",
+      "title": "Family Job Board",
+      "category": "Practical family tools",
+      "summary": "Create paid family jobs, let children mark them finished and keep reward approval and pocket-money totals under grown-up control.",
+      "path": "/parents/projects/day-008/",
+      "status": "ready",
+      "privacy": "Runs entirely in the browser; names, jobs, approvals and balances stay in local browser storage.",
+      "supervision": "A grown-up agrees rewards, checks completed jobs, approves earnings and handles any real payment.",
+      "published_date": "2026-09-05"
     }
   ]
 }

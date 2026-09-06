@@ -109,6 +109,18 @@
       "privacy": "Runs entirely in the browser; names, jobs, approvals and balances stay in local browser storage.",
       "supervision": "A grown-up agrees rewards, checks completed jobs, approves earnings and handles any real payment.",
       "published_date": "2026-09-05"
+    },
+    {
+      "day": 9,
+      "slug": "make-it-your-own-quiz",
+      "title": "Make-It-Your-Own Quiz",
+      "category": "Personalised learning games",
+      "summary": "Build a private multiple-choice quiz around a child's current interests or learning, then shuffle, play, score and replay it.",
+      "path": "/parents/projects/day-009/",
+      "status": "ready",
+      "privacy": "Runs entirely in the browser; custom questions and answers stay in local browser storage.",
+      "supervision": "A grown-up creates or checks every question and answer for accuracy and suitability.",
+      "published_date": "2026-09-06"
     }
   ]
 }

@@ -121,6 +121,18 @@
       "privacy": "Runs entirely in the browser; custom questions and answers stay in local browser storage.",
       "supervision": "A grown-up creates or checks every question and answer for accuracy and suitability.",
       "published_date": "2026-09-06"
+    },
+    {
+      "day": 10,
+      "slug": "fair-turn-timer",
+      "title": "Fair Turn Timer",
+      "category": "Practical family tools",
+      "summary": "Create a fair, reusable turn order for shared screens, games or activities, with custom players, timings, changeovers and a local history.",
+      "path": "/parents/projects/day-010/",
+      "status": "ready",
+      "privacy": "Runs entirely in the browser; player names, settings and turn history stay in local browser storage.",
+      "supervision": "A grown-up chooses suitable turn lengths and remains responsible for screen-time and activity decisions.",
+      "published_date": "2026-09-07"
     }
   ]
 }

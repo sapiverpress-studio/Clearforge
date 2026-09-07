@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Fair Turn Timer | AI Inquisitive Parents</title>
+    <style>
+      :root {
+        --ink: #173c35;
+        --green: #0c5b4d;
+        --gold: #d5aa4c;
+        --cream: #fffaf0;
+        --soft: #e9f2eb;
+        --red: #a13d3d;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: linear-gradient(145deg, #0d4b41, #15352f);
+        font: 16px/1.45 system-ui;
+        color: var(--ink);
+      }
+      main {
+        max-width: 720px;
+        margin: auto;
+        padding: 18px;
+      }
+      .card {
+        background: var(--cream);
+        border: 2px solid #d7bd78;
+        border-radius: 24px;
+        padding: 22px;
+        margin: 14px 0;
+        box-shadow: 0 12px 35px #0018;
+      }
+      h1,
+      h2,
+      p {
+        margin-top: 0;
+      }
+      .eyebrow {
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--green);
+        font-size: 0.75rem;
+      }
+      .clock {
+        text-align: center;
+        font-size: clamp(4rem, 19vw, 7rem);
+        font-weight: 900;
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+      }
+      .who {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin: 12px;
+      }
+      button,
+      input,
+      select {
+        font: inherit;
+        border-radius: 12px;
+        border: 1px solid #9aa;
+        padding: 12px;
+      }
+      button {
+        font-weight: 800;
+        background: var(--green);
+        color: white;
+        border: 0;
+        cursor: pointer;
+      }
+      button.secondary {
+        background: white;
+        color: var(--green);
+        border: 2px solid var(--green);
+      }
+      button.danger {
+        background: var(--red);
+      }
+      .controls,
+      .row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .controls button {
+        flex: 1;
+        min-width: 120px;
+      }
+      .row input {
+        flex: 1;
+        min-width: 120px;
+      }
+      .players {
+        display: grid;
+        gap: 8px;
+        margin: 14px 0;
+      }
+      .player {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--soft);
+        padding: 11px 14px;
+        border-radius: 12px;
+      }
+      .player.active {
+        outline: 3px solid var(--gold);
+        background: #fff1bd;
+      }
+      .player button {
+        padding: 7px 10px;
+      }
+      .settings {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .settings label {
+        display: grid;
+        gap: 5px;
+        font-weight: 700;
+      }
+      .history {
+        padding-left: 20px;
+        max-height: 180px;
+        overflow: auto;
+      }
+      .note {
+        font-size: 0.9rem;
+        color: #48615c;
+      }
+      .prompt {
+        background: #183d36;
+        color: white;
+        border-radius: 16px;
+        padding: 16px;
+      }
+      .prompt button {
+        background: var(--gold);
+        color: #173c35;
+      }
+      .toast {
+        min-height: 1.5em;
+        color: var(--green);
+        font-weight: 700;
+      }
+      a {
+        color: inherit;
+      }
+      @media (max-width: 520px) {
+        .settings {
+          grid-template-columns: 1fr;
+        }
+        .card {
+          padding: 17px;
+        }
+        .clock {
+          font-size: 22vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="card">
+        <p class="eyebrow">AI Inquisitive Parents · Day 010</p>
+        <h1>Fair Turn Timer</h1>
+        <p>
+          Share a screen, game or favourite activity without arguing over whose
+          turn is next.
+        </p>
+        <div class="who" id="who">Add players to begin</div>
+        <div class="clock" id="clock">10:00</div>
+        <div class="controls">
+          <button id="start">Start</button
+          ><button class="secondary" id="next">Next turn</button
+          ><button class="secondary" id="reset">Reset round</button>
+        </div>
+        <p class="toast" id="toast" aria-live="polite"></p>
+      </section>
+      <section class="card">
+        <h2>Your family setup</h2>
+        <div class="row">
+          <input
+            id="name"
+            maxlength="24"
+            placeholder="Player name"
+            aria-label="Player name"
+          /><button id="add">Add player</button>
+        </div>
+        <div class="players" id="players"></div>
+        <div class="settings">
+          <label
+            >Minutes per turn<input
+              id="minutes"
+              type="number"
+              min="1"
+              max="60"
+              value="10" /></label
+          ><label
+            >Between-turn pause<select id="pause">
+              <option value="0">No pause</option>
+              <option value="10">10 seconds</option>
+              <option value="30">30 seconds</option>
+              <option value="60">1 minute</option>
+            </select></label
+          >
+        </div>
+        <p class="note">
+          Names, settings and turn history stay in this browser. Clearing
+          browser data removes them.
+        </p>
+      </section>
+      <section class="card">
+        <h2>Today’s turns</h2>
+        <ol class="history" id="history">
+          <li>No completed turns yet.</li>
+        </ol>
+        <button class="danger" id="clear">Clear history</button>
+      </section>
+      <section class="card prompt">
+        <h2>Build your own with AI</h2>
+        <p id="prompt">
+          Build me a mobile-friendly family turn timer in one HTML file. Let me
+          add and reorder player names, choose the turn length, start, pause,
+          skip and reset turns, rotate fairly through players, play an optional
+          sound at the end and save settings and history locally.
+        </p>
+        <button id="copy">Copy this prompt</button>
+      </section>
+      <p style="color: white; text-align: center">
+        <a href="https://suite.sapiverpress.co.uk">Back to Sapiver Press</a>
+      </p>
+    </main>
+    <script>
+      (() => {
+        "use strict";
+        const $ = (s) => document.querySelector(s),
+          key = "aip-fair-turn-timer-v1";
+        let data = { players: [], minutes: 10, pause: 0, history: [] },
+          idx = 0,
+          left = 600,
+          running = false,
+          timer = null,
+          inPause = false;
+        try {
+          data = { ...data, ...JSON.parse(localStorage.getItem(key) || "{}") };
+        } catch {}
+        $("#minutes").value = data.minutes;
+        $("#pause").value = data.pause;
+        const save = () => localStorage.setItem(key, JSON.stringify(data));
+        const fmt = (s) =>
+          String(Math.floor(s / 60)).padStart(2, "0") +
+          ":" +
+          String(s % 60).padStart(2, "0");
+        function render() {
+          left = inPause ? +data.pause * 1 : +data.minutes * 60;
+          $("#clock").textContent = fmt(left);
+          $("#who").textContent = data.players.length
+            ? inPause
+              ? "Changeover"
+              : data.players[idx % data.players.length] + "’s turn"
+            : "Add players to begin";
+          $("#players").replaceChildren(
+            ...data.players.map((n, i) => {
+              const d = document.createElement("div");
+              d.className = "player" + (i === idx && !inPause ? " active" : "");
+              const s = document.createElement("span");
+              s.textContent = n;
+              const controls = document.createElement("span");
+              const up = document.createElement("button");
+              up.className = "secondary";
+              up.textContent = "↑";
+              up.disabled = i === 0;
+              up.setAttribute("aria-label", `Move ${n} up`);
+              up.onclick = () => {
+                [data.players[i - 1], data.players[i]] = [
+                  data.players[i],
+                  data.players[i - 1],
+                ];
+                idx = 0;
+                save();
+                render();
+              };
+              const down = document.createElement("button");
+              down.className = "secondary";
+              down.textContent = "↓";
+              down.disabled = i === data.players.length - 1;
+              down.setAttribute("aria-label", `Move ${n} down`);
+              down.onclick = () => {
+                [data.players[i + 1], data.players[i]] = [
+                  data.players[i],
+                  data.players[i + 1],
+                ];
+                idx = 0;
+                save();
+                render();
+              };
+              const b = document.createElement("button");
+              b.className = "secondary";
+              b.textContent = "Remove";
+              b.onclick = () => {
+                data.players.splice(i, 1);
+                idx = 0;
+                stop();
+                save();
+                render();
+              };
+              controls.append(up, down, b);
+              d.append(s, controls);
+              return d;
+            }),
+          );
+          const h = $("#history");
+          h.replaceChildren(
+            ...(data.history.length
+              ? data.history
+                  .slice()
+                  .reverse()
+                  .map((x) => {
+                    const li = document.createElement("li");
+                    li.textContent = x;
+                    return li;
+                  })
+              : [
+                  Object.assign(document.createElement("li"), {
+                    textContent: "No completed turns yet.",
+                  }),
+                ]),
+          );
+        }
+        function stop() {
+          running = false;
+          clearInterval(timer);
+          $("#start").textContent = "Start";
+        }
+        function beep() {
+          try {
+            const a = new AudioContext(),
+              o = a.createOscillator(),
+              g = a.createGain();
+            o.connect(g);
+            g.connect(a.destination);
+            o.frequency.value = 660;
+            g.gain.setValueAtTime(0.15, a.currentTime);
+            g.gain.exponentialRampToValueAtTime(0.001, a.currentTime + 0.5);
+            o.start();
+            o.stop(a.currentTime + 0.5);
+          } catch {}
+        }
+        function advance(completed = true) {
+          stop();
+          if (data.players.length && completed) {
+            data.history.push(
+              data.players[idx % data.players.length] +
+                " completed a turn · " +
+                new Date().toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                }),
+            );
+            data.history = data.history.slice(-30);
+          }
+          idx = data.players.length ? (idx + 1) % data.players.length : 0;
+          beep();
+          inPause = +data.pause > 0;
+          if (inPause) {
+            left = +data.pause;
+            startTick();
+          } else render();
+          save();
+        }
+        function startTick() {
+          if (!data.players.length) {
+            $("#toast").textContent = "Add at least one player first.";
+            return;
+          }
+          $("#toast").textContent = "";
+          running = true;
+          $("#start").textContent = "Pause";
+          timer = setInterval(() => {
+            left--;
+            $("#clock").textContent = fmt(Math.max(0, left));
+            if (left <= 0) {
+              if (inPause) {
+                stop();
+                inPause = false;
+                render();
+                startTick();
+              } else advance(true);
+            }
+          }, 1000);
+        }
+        $("#start").onclick = () => {
+          if (running) stop();
+          else startTick();
+        };
+        $("#next").onclick = () => advance(false);
+        $("#reset").onclick = () => {
+          stop();
+          idx = 0;
+          inPause = false;
+          render();
+        };
+        $("#add").onclick = () => {
+          const n = $("#name").value.trim();
+          if (!n) return;
+          if (data.players.some((x) => x.toLowerCase() === n.toLowerCase())) {
+            $("#toast").textContent = "That player is already included.";
+            return;
+          }
+          data.players.push(n);
+          $("#name").value = "";
+          save();
+          render();
+        };
+        $("#name").onkeydown = (e) => {
+          if (e.key === "Enter") $("#add").click();
+        };
+        $("#minutes").onchange = (e) => {
+          data.minutes = Math.max(1, Math.min(60, +e.target.value || 10));
+          stop();
+          save();
+          render();
+        };
+        $("#pause").onchange = (e) => {
+          data.pause = +e.target.value;
+          save();
+        };
+        $("#clear").onclick = () => {
+          data.history = [];
+          save();
+          render();
+        };
+        $("#copy").onclick = async () => {
+          try {
+            await navigator.clipboard.writeText($("#prompt").textContent);
+            $("#copy").textContent = "Copied!";
+          } catch {
+            $("#copy").textContent = "Select and copy the prompt";
+          }
+        };
+        render();
+      })();
+    </script>
+  </body>
+</html>

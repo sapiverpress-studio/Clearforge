@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn how timeouts, fallbacks, retries, circuit breakers, graceful degradation and safe failure patterns improve reliability in AI systems.">
+<title>Sapiver Learn — Day 18: Reliability Patterns for AI Systems</title>
+<style>
+:root{--bg:#0f1115;--panel:#171a21;--panel-2:#1e232c;--text:#f3f5f7;--muted:#aeb7c2;--accent:#ff8a3d;--accent-soft:#3a2418;--good:#51c878;--bad:#ff6b6b;--border:#303744;--max:880px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+main{width:min(var(--max),calc(100% - 28px));margin:0 auto;padding:28px 0 60px}
+a{color:var(--accent)}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+.brand{font-weight:700}.brand a{color:inherit;text-decoration:none}
+.pill{padding:5px 10px;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:.9rem}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:22px;margin:16px 0}
+h1,h2,h3{line-height:1.25}h1{font-size:clamp(1.9rem,5vw,3rem);margin:.2rem 0 1rem}h2{font-size:1.35rem;margin-top:0}
+p{margin:.75rem 0}.muted{color:var(--muted)}
+.callout{border-left:4px solid var(--accent);background:var(--accent-soft);padding:14px 16px;border-radius:10px;margin:18px 0}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;margin:18px 0 8px}
+button,select{border:1px solid var(--border);background:var(--panel-2);color:var(--text);padding:11px 15px;border-radius:10px;font-size:1rem}
+button{cursor:pointer}.primary{background:var(--accent);color:#1a120c;border-color:var(--accent);font-weight:700}
+.voice-wrap{display:flex;flex-direction:column;gap:4px;flex:1 1 260px}.voice-wrap label{color:var(--muted)}.voice-wrap select{width:100%}
+.flow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:16px 0}
+.flow>div,.term{background:var(--panel-2);border:1px solid var(--border);border-radius:10px;padding:12px}
+.flow>div{text-align:center;display:flex;align-items:center;justify-content:center;min-height:78px}
+.terms{display:grid;grid-template-columns:1fr 1fr;gap:10px}.term strong{display:block}
+.question{margin:20px 0;padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--panel-2)}
+.option{display:block;width:100%;text-align:left;margin:8px 0;background:#202632}
+.option.correct{border-color:var(--good);background:#163120}.option.wrong{border-color:var(--bad);background:#351c1c}
+.feedback{min-height:1.4em;margin-top:10px;font-weight:600}.resource-link{display:inline-block;margin-top:8px;font-weight:600;text-decoration:none}
+.score{font-size:1.15rem;font-weight:700}.progress-row{display:flex;flex-wrap:wrap;gap:10px 18px;color:var(--muted);margin:.5rem 0 1rem}
+.speech-active{background:var(--accent-soft);outline:2px solid var(--accent);outline-offset:4px;border-radius:6px}
+::highlight(sapiver-reading){background-color:rgba(255,138,61,.38);color:var(--text)}
+footer{margin-top:28px;color:var(--muted);font-size:.92rem}
+@media(max-width:700px){.terms,.flow{grid-template-columns:1fr}.controls>button{flex:1 1 130px}.voice-wrap{flex-basis:100%}}
+</style>
+</head>
+<body><main>
+<div class="topbar"><div class="brand"><a href="../../">Sapiver Learn</a></div><div class="pill">Phase 1 · Day 18 · Reliability Patterns</div></div>
+
+<section>
+<h1>Reliability patterns for AI systems</h1>
+<p class="muted">Estimated learning time: 8–10 minutes.</p>
+<div class="controls"><button class="primary" id="playBtn">▶ Listen</button><button id="pauseBtn">⏸ Pause</button><button id="resumeBtn">▶ Resume</button><button id="stopBtn">■ Stop</button><div class="voice-wrap"><label for="voiceSelect">Voice</label><select id="voiceSelect"><option>Loading voices…</option></select></div></div>
+<div id="audioStatus" class="muted">Ready to listen. Speed: 1.00×.</div>
+<div class="callout"><strong>Core mental model:</strong><br>Reliable systems assume that dependencies will sometimes be slow, unavailable or wrong. The goal is not to prevent every failure; it is to contain failures, recover when sensible and preserve a safe, useful experience when full functionality is unavailable.</div>
+</section>
+
+<section id="lesson">
+<div class="card"><h2>1. Reliability is a system property</h2><p>An AI feature can fail even when the model is working correctly.</p><p>Networks time out, databases become slow, external APIs return errors, tools reject requests and users provide unexpected input.</p><p>Reliability therefore comes from the whole architecture: how components detect, contain and recover from failure.</p></div>
+
+<div class="card"><h2>2. Timeouts stop one dependency from blocking everything</h2><p>A <strong>timeout</strong> sets a maximum wait for an operation.</p><p>If a model call, database query or tool request exceeds that limit, the workflow can stop waiting and move to a fallback or error path.</p><p>Without timeouts, one slow dependency can tie up resources and make the entire product appear frozen.</p></div>
+
+<div class="card"><h2>3. Retries help only with transient failures</h2><p>A retry is useful when a failure may disappear on the next attempt, such as a short network interruption or temporary service overload.</p><p>Retries are harmful when the failure is permanent, such as invalid credentials or malformed input.</p><p>Reliable systems classify failures before retrying and use limits plus backoff to avoid creating retry storms.</p></div>
+
+<div class="card"><h2>4. Fallbacks preserve useful behaviour</h2><p>A <strong>fallback</strong> is an alternative path used when the preferred path fails.</p><p>A support assistant might fall back from a complex model to a simpler response, from semantic retrieval to keyword search, or from automated action to a human-review queue.</p><p>A good fallback is deliberately designed. It should be less capable if necessary, but still safe and understandable.</p></div>
+
+<div class="card"><h2>5. Graceful degradation is better than total failure</h2><p><strong>Graceful degradation</strong> means a system loses some capability while keeping the rest usable.</p><p>If AI summarisation is unavailable, the application might still show the original documents. If live recommendations fail, the core search function can remain available.</p><p>This separates optional enhancement from essential product function.</p></div>
+
+<div class="card"><h2>6. Circuit breakers protect struggling dependencies</h2><p>A <strong>circuit breaker</strong> stops repeatedly calling a dependency that is already failing.</p><p>After enough failures, the circuit opens and requests are rejected or redirected quickly instead of repeatedly hitting the unhealthy service.</p><p>After a recovery period, the system can test the dependency again before restoring normal traffic.</p></div>
+
+<div class="card"><h2>7. Bulkheads reduce blast radius</h2><p>The <strong>bulkhead</strong> pattern isolates resources so one overloaded function cannot consume everything.</p><p>For example, long-running document analysis can use a separate worker pool from interactive customer chat.</p><p>If document processing becomes overloaded, chat capacity remains available.</p></div>
+
+<div class="card"><h2>8. Safe failure means refusing to guess when evidence is missing</h2><p>For AI systems, reliability includes semantic failure as well as technical failure.</p><p>If retrieval returns no trustworthy evidence, the safest response may be “I do not have enough information” rather than generating a confident answer.</p><p>This is a form of graceful failure: the system remains useful by being explicit about its limits.</p></div>
+
+<div class="card"><h2>9. Observability tells you which reliability pattern is needed</h2><p>Metrics, logs and traces help distinguish slow dependencies, repeated retries, tool errors, model failures and user-input problems.</p><p>Without observability, teams often add retries or larger models to symptoms they do not understand.</p><p>Measure first, then apply the control that matches the actual failure mode.</p></div>
+
+<div class="card"><h2>Worked example: a product-support assistant</h2><p>Imagine an assistant that answers questions from a product knowledge base.</p><div class="flow"><div>User question</div><div>Retrieve documents</div><div>Call model</div><div>Validate answer</div><div>Fallback if needed</div><div>Return result</div></div><p>If retrieval times out, the system can retry once and then fall back to a keyword search.</p><p>If the model provider is unavailable, the application can show the most relevant source passages instead of inventing an answer.</p><p>If repeated model calls are failing, a circuit breaker can temporarily stop new calls and route users to the degraded experience.</p><p>The user still gets something useful, while the failing dependency is prevented from destabilising the rest of the system.</p></div>
+
+<div class="card"><h2>Why this matters</h2><p>AI products depend on probabilistic models and multiple external services, so failure is normal rather than exceptional.</p><p>Timeouts, fallbacks, circuit breakers, bulkheads and safe refusal paths turn unpredictable component failures into controlled system behaviour.</p><p>Reliability is not making every dependency perfect. It is preventing one imperfect dependency from taking down the whole experience.</p></div>
+
+<div class="card"><h2>Key terms</h2><div class="terms">
+<div class="term"><strong>Timeout</strong>A maximum permitted wait before an operation is treated as failed.</div>
+<div class="term"><strong>Retry</strong>A controlled repeat attempt after a potentially temporary failure.</div>
+<div class="term"><strong>Fallback</strong>An alternative behaviour used when the preferred path fails.</div>
+<div class="term"><strong>Graceful degradation</strong>Preserving reduced but useful functionality during failure.</div>
+<div class="term"><strong>Circuit breaker</strong>A control that temporarily stops calls to a failing dependency.</div>
+<div class="term"><strong>Bulkhead</strong>Isolation that prevents one overloaded area from exhausting shared resources.</div>
+<div class="term"><strong>Transient failure</strong>A temporary failure that may succeed on a later attempt.</div>
+<div class="term"><strong>Safe failure</strong>Failure behaviour designed to avoid harmful or misleading outcomes.</div>
+</div></div>
+</section>
+
+<section class="card" id="quiz">
+<h2>Day 18 knowledge check</h2>
+<p class="muted">Six questions. Your progress is saved in this browser when storage is available.</p>
+
+<div class="question" data-correct="B" data-explanation="A timeout prevents the system from waiting indefinitely on a slow or unavailable dependency." data-resource="https://learn.microsoft.com/en-us/azure/architecture/patterns/timeout"><h3>1. What is the main purpose of a timeout?</h3><button class="option" data-value="A">A. To guarantee the dependency succeeds</button><button class="option" data-value="B">B. To stop waiting after a defined maximum period</button><button class="option" data-value="C">C. To increase model quality</button><button class="option" data-value="D">D. To make every request asynchronous</button><div class="feedback"></div></div>
+
+<div class="question" data-correct="C" data-explanation="Retries are best for transient failures, not permanent failures such as invalid credentials or bad input." data-resource="https://learn.microsoft.com/en-us/azure/architecture/patterns/retry"><h3>2. When is a retry most appropriate?</h3><button class="option" data-value="A">A. When credentials are permanently invalid</button><button class="option" data-value="B">B. When the request format is definitely wrong</button><button class="option" data-value="C">C. When a temporary network or service failure may clear</button><button class="option" data-value="D">D. Whenever any error occurs, without limit</button><div class="feedback"></div></div>
+
+<div class="question" data-correct="A" data-explanation="A fallback provides an alternative path when the preferred one fails." data-resource=""><h3>3. What is a fallback?</h3><button class="option" data-value="A">A. An alternative behaviour used when the preferred path cannot complete</button><button class="option" data-value="B">B. A way to permanently retrain the model</button><button class="option" data-value="C">C. A requirement to repeat the same failing call forever</button><button class="option" data-value="D">D. A replacement for logging</button><div class="feedback"></div></div>
+
+<div class="question" data-correct="D" data-explanation="A circuit breaker stops repeated calls to a dependency that is already failing and allows recovery before normal traffic resumes." data-resource="https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker"><h3>4. What does a circuit breaker protect against?</h3><button class="option" data-value="A">A. Users choosing the wrong UI colour</button><button class="option" data-value="B">B. Model tokenisation</button><button class="option" data-value="C">C. The existence of all errors</button><button class="option" data-value="D">D. Repeatedly calling a dependency that is already failing</button><div class="feedback"></div></div>
+
+<div class="question" data-correct="B" data-explanation="Graceful degradation keeps useful parts of the product working even when a non-essential capability is unavailable." data-resource=""><h3>5. What is graceful degradation?</h3><button class="option" data-value="A">A. Hiding every error from monitoring</button><button class="option" data-value="B">B. Preserving reduced but useful functionality during failure</button><button class="option" data-value="C">C. Retrying every operation forever</button><button class="option" data-value="D">D. Shutting down the whole product when one feature fails</button><div class="feedback"></div></div>
+
+<div class="question" data-correct="C" data-explanation="If the evidence needed for a trustworthy answer is absent, a safe refusal is more reliable than a confident guess." data-resource=""><h3>6. Retrieval returns no trustworthy evidence for a factual question. What is the safest behaviour?</h3><button class="option" data-value="A">A. Invent an answer so the user sees no error</button><button class="option" data-value="B">B. Increase confidence wording</button><button class="option" data-value="C">C. State that there is not enough reliable information to answer</button><button class="option" data-value="D">D. Hide the missing evidence from the user</button><div class="feedback"></div></div>
+
+<p class="score" id="score">Score: 0 / 6</p>
+<div class="progress-row"><span id="answeredStatus">Answered: 0 / 6</span><span id="bestStatus">Best: —</span><span id="attemptStatus">Completed attempts: 0</span></div>
+<button id="resetBtn">Reset quiz</button>
+</section>
+
+<section class="callout"><strong>Next lesson:</strong><br>Day 19 — Data privacy and retention: minimising collected data, deciding what should be stored, and separating useful memory from unnecessary risk.</section>
+
+<footer>Sapiver Learn · Phase 1 · Day 18<br><a href="../../">← Back to Sapiver Learn</a></footer>
+</main>
+
+<script>
+(() => {
+const STORAGE_KEY='sapiverLearnDay018',VOICE_KEY='sapiverLearnVoice';
+const questions=[...document.querySelectorAll('.question')],scoreEl=document.getElementById('score'),answeredStatus=document.getElementById('answeredStatus'),bestStatus=document.getElementById('bestStatus'),attemptStatus=document.getElementById('attemptStatus');
+let state=new Map(),progress={completed:false,currentScore:0,lastScore:null,bestScore:null,attempts:0,answers:{}},storageAvailable=true,countedThisCompletion=false;
+function renderFeedback(q,ok){const f=q.querySelector('.feedback');if(ok){f.innerHTML='<span style="color:var(--good)">Correct.</span>';return}let html='<span style="color:var(--bad)">Not quite.</span> '+(q.dataset.explanation||'Review this concept and try again.');if(q.dataset.resource)html+='<br><a class="resource-link" href="'+q.dataset.resource+'" target="_blank" rel="noopener noreferrer">Read more about this concept ↗</a>';f.innerHTML=html}
+function readProgress(){try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return;progress=Object.assign(progress,JSON.parse(raw)||{});Object.entries(progress.answers||{}).forEach(([i,a])=>{const q=questions[Number(i)];if(!q)return;state.set(Number(i),a.correct===true);const bs=[...q.querySelectorAll('.option')],chosen=bs.find(b=>b.dataset.value===a.value);if(chosen){chosen.classList.add(a.correct?'correct':'wrong');if(!a.correct)bs.find(b=>b.dataset.value===q.dataset.correct)?.classList.add('correct')}renderFeedback(q,a.correct===true)});countedThisCompletion=Boolean(progress.completed&&Object.keys(progress.answers||{}).length===questions.length)}catch(e){storageAvailable=false}}
+function saveProgress(){if(!storageAvailable)return;try{localStorage.setItem(STORAGE_KEY,JSON.stringify(progress))}catch(e){storageAvailable=false}}
+function updateScore(){let correct=0;state.forEach(v=>{if(v)correct++});const answered=state.size;progress.currentScore=correct;progress.completed=answered===questions.length;scoreEl.textContent=`Score: ${correct} / ${questions.length}`;answeredStatus.textContent=`Answered: ${answered} / ${questions.length}`;if(progress.completed&&!countedThisCompletion){progress.attempts=Number(progress.attempts||0)+1;progress.lastScore=correct;progress.bestScore=progress.bestScore==null?correct:Math.max(Number(progress.bestScore),correct);countedThisCompletion=true}bestStatus.textContent=progress.bestScore==null?'Best: —':`Best: ${progress.bestScore} / ${questions.length}`;attemptStatus.textContent=`Completed attempts: ${Number(progress.attempts||0)}`;saveProgress()}
+questions.forEach((q,index)=>q.querySelectorAll('.option').forEach(btn=>btn.addEventListener('click',()=>{q.querySelectorAll('.option').forEach(b=>b.classList.remove('correct','wrong'));const ok=btn.dataset.value===q.dataset.correct;if(ok)btn.classList.add('correct');else{btn.classList.add('wrong');q.querySelector(`.option[data-value="${q.dataset.correct}"]`)?.classList.add('correct')}state.set(index,ok);progress.answers[index]={value:btn.dataset.value,correct:ok};renderFeedback(q,ok);updateScore()})));
+document.getElementById('resetBtn').onclick=()=>{state=new Map();progress.answers={};progress.completed=false;progress.currentScore=0;countedThisCompletion=false;questions.forEach(q=>{q.querySelectorAll('.option').forEach(b=>b.classList.remove('correct','wrong'));q.querySelector('.feedback').textContent=''});updateScore()};readProgress();updateScore();
+
+const root=document.getElementById('lesson'),status=document.getElementById('audioStatus'),voiceSelect=document.getElementById('voiceSelect'),reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let voices=[],voice=null,units=[],idx=0,stopped=true,paused=false,active=null,currentUtterance=null;
+function savedVoice(){try{return localStorage.getItem(VOICE_KEY)||''}catch(e){return ''}}
+function saveVoice(name){try{localStorage.setItem(VOICE_KEY,name)}catch(e){}}
+function populateVoices(){if(!('speechSynthesis'in window))return;voices=speechSynthesis.getVoices().filter(v=>/^en(?:-|_)/i.test(v.lang||'')).sort((a,b)=>{const l=(a.lang||'').localeCompare(b.lang||'');return l||a.name.localeCompare(b.name)});voiceSelect.innerHTML='';if(!voices.length){voiceSelect.innerHTML='<option value="">Browser default voice</option>';voice=null;return}voices.forEach(v=>{const o=document.createElement('option');o.value=v.name;o.textContent=`${v.name} (${v.lang})`;voiceSelect.appendChild(o)});voice=voices.find(v=>v.name===savedVoice())||voices.find(v=>v.default)||voices[0];voiceSelect.value=voice.name}
+voiceSelect.onchange=()=>{voice=voices.find(v=>v.name===voiceSelect.value)||null;if(voice)saveVoice(voice.name);status.textContent=`Voice: ${voice?voice.name:'browser default'}. Speed: 1.00×.`};
+
+function segments(text){const out=[];if(window.Intl&&Intl.Segmenter){for(const item of new Intl.Segmenter('en',{granularity:'sentence'}).segment(text)){const raw=item.segment,lead=raw.length-raw.trimStart().length,trail=raw.length-raw.trimEnd().length,s=raw.trim();if(s)out.push({text:s,start:item.index+lead,end:item.index+raw.length-trail})}return out}const rx=/[^.!?]+(?:[.!?]+|$)/g;let m;while((m=rx.exec(text))!==null){const raw=m[0],lead=raw.length-raw.trimStart().length,trail=raw.length-raw.trimEnd().length,s=raw.trim();if(s)out.push({text:s,start:m.index+lead,end:m.index+raw.length-trail})}return out}
+function textNodes(el){const w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),nodes=[];let n;while((n=w.nextNode()))nodes.push(n);return nodes}
+function makeRange(el,start,end){let off=0,sn=null,so=0,en=null,eo=0;for(const n of textNodes(el)){const next=off+n.nodeValue.length;if(sn===null&&start>=off&&start<=next){sn=n;so=Math.max(0,Math.min(n.nodeValue.length,start-off))}if(en===null&&end>=off&&end<=next){en=n;eo=Math.max(0,Math.min(n.nodeValue.length,end-off));break}off=next}if(!sn||!en)return null;const r=document.createRange();r.setStart(sn,so);r.setEnd(en,eo);return r}
+function clearHighlight(){if(window.CSS&&CSS.highlights)CSS.highlights.delete('sapiver-reading');if(active)active.classList.remove('speech-active');active=null}
+function highlight(u){clearHighlight();active=u.el;if(window.CSS&&CSS.highlights&&window.Highlight&&u.range)CSS.highlights.set('sapiver-reading',new Highlight(u.range));else u.el.classList.add('speech-active');const r=u.el.getBoundingClientRect();if(r.top<innerHeight*.18||r.bottom>innerHeight*.78)u.el.scrollIntoView({behavior:reduceMotion?'auto':'smooth',block:'center'})}
+function buildUnits(){const out=[];[...root.querySelectorAll('h2,p,.term,.flow>div')].forEach(el=>{const text=el.textContent||'';segments(text).forEach(s=>out.push({el,text:s.text,range:makeRange(el,s.start,s.end)}))});return out}
+function speak(){if(stopped)return;if(idx>=units.length){stopped=true;paused=false;clearHighlight();status.textContent='Lesson audio finished.';return}const u=units[idx];highlight(u);currentUtterance=new SpeechSynthesisUtterance(u.text);currentUtterance.rate=1.00;if(voice){currentUtterance.voice=voice;currentUtterance.lang=voice.lang||'en'}else currentUtterance.lang='en';currentUtterance.onend=()=>{if(!stopped){idx++;speak()}};speechSynthesis.speak(currentUtterance)}
+document.getElementById('playBtn').onclick=()=>{speechSynthesis.cancel();clearHighlight();units=buildUnits();idx=0;stopped=false;paused=false;setTimeout(speak,60)};
+document.getElementById('pauseBtn').onclick=()=>{if(!stopped&&!paused){speechSynthesis.pause();paused=true;status.textContent='Audio paused.'}};
+document.getElementById('resumeBtn').onclick=()=>{if(!stopped&&paused){speechSynthesis.resume();paused=false;status.textContent=`Playing… ${idx+1} of ${units.length} · 1.00×`}};
+document.getElementById('stopBtn').onclick=()=>{stopped=true;paused=false;speechSynthesis.cancel();clearHighlight();status.textContent='Audio stopped.'};
+if('speechSynthesis'in window){populateVoices();speechSynthesis.addEventListener('voiceschanged',populateVoices)}else{status.textContent='Audio is unavailable in this browser.';voiceSelect.disabled=true}
+addEventListener('pagehide',()=>{stopped=true;if('speechSynthesis'in window)speechSynthesis.cancel();clearHighlight()});
+})();
+</script>
+</body>
+</html>
